@@ -258,7 +258,7 @@ const HomepageDestinationTabContainer = () => {
   ];
   const [activeTab, setActiveTab] = useState(tabs[0]);
   return (
-    <div className="mt-5 container mx-auto px-32">
+    <div className="mt-5 container mx-auto 2xl:px-32">
       <HeroDestinationTab
         tabs={tabs}
         setActiveTab={setActiveTab}

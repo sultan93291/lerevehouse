@@ -12,6 +12,11 @@ export default {
       },
       container: {
         center: true,
+        padding: "1rem", // Optional padding for spacing
+        screens: {
+          DEFAULT: "100%", // Ensures the container does not inherit breakpoints
+          "4xl": "1600px",
+        },
       },
       screens: {
         xs: "360px",
@@ -23,7 +28,6 @@ export default {
         "3xl": "1500px", // Larger desktop displays
         "4xl": "1920px", // High-resolution or ultra-wide displays
       },
-
       colors: {
         primary: {
           DEFAULT: "#004265",

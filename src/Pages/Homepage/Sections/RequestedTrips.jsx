@@ -45,23 +45,23 @@ const RequestedTrips = () => {
     },
   ];
   return (
-    <section className="bg-[#E8F3FA] py-20">
+    <section className="bg-[#E8F3FA] py-10 2xl:py-20">
       {/* title */}
       <div>
-        <h2 className="text-center text-5xl font-editorsNoteNormal text-primary">
+        <h2 className="text-center text-3xl 2xl:text-5xl font-editorsNoteNormal text-primary">
           Here is a <span className="text-secondary">List of</span> Our Most{' '}
           <br /> Requested Trips
         </h2>
       </div>
 
       {/* cards */}
-      <div className="mt-16 grid grid-cols-6 gap-6 container mx-auto px-32">
+      <div className="mt-8 2xl:mt-16 grid grid-cols-6 gap-6 container mx-auto 2xl:px-32">
         {requestedTripsInfo?.map((item, idx) => (
           <RequestedTripCard idx={idx} key={item?.id} item={item} />
         ))}
 
         <div
-          className="h-[750px]   items-end col-span-2 hidden"
+          className="h-[750px] hidden   items-end col-span-2 "
           style={{
             background: ` url(${bg2})`,
             backgroundSize: 'cover',

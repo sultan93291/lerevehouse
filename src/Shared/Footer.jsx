@@ -63,7 +63,7 @@ const Footer = () => {
                 onClick={() => {
                   handleDestinationMap(" Via Nomentana, 160 Rome 00162 Italy");
                 }}
-                className="text-[#B0C4CF] cursor-pointer "
+                className="text-[#B0C4CF] text-sm lg:text-base cursor-pointer "
               >
                 Via Nomentana, 160 Rome 00162 Italy
               </p>
@@ -127,7 +127,7 @@ const Footer = () => {
       {/* footer bottom contents */}
       <section className="border-t border-white/10 pt-10">
         <div className="container mx-auto lg:px-8 2xl:px-16 3xl:px-32 pb-7 w-full flex flex-col lg:flex-row gap-y-4 items-center justify-between">
-          <div className="flex items-center text-[13px] md:text-sm lg:text-base gap-2 lg:gap-5">
+          <div className="flex items-center text-[13px] sm:text-sm lg:text-base gap-2 lg:gap-5">
             <p>© 2024 .</p>
             <p>Le Reve House</p>
             <p>Terms of service</p>

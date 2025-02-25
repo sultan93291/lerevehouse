@@ -81,8 +81,8 @@ const TopNavbar = () => {
   };
 
   return (
-    <div className="bg-white w-full relative">
-      <div className="container mx-auto  flex px-2  2xl:my-0 2xl:px-0 w-full  items-center justify-between h-24 2xl:gap-40">
+    <div className="bg-white">
+      <div className="container mx-auto  flex px-2  2xl:my-0 2xl:px-0 w-full  items-center justify-between h-24 xl:gap-40">
         <Link to="/" className="h-20 w-56 inline-block flex-shrink-0">
           <img className=" h-full w-full object-contain" src={logo} alt="" />
         </Link>
@@ -90,7 +90,7 @@ const TopNavbar = () => {
         {/* contact info */}
         <div className=" hidden 2xl:flex   items-center h-full w-full gap-10">
           <div className="border-x border-primary h-full px-8 flex items-center justify-center w-full">
-            <div className=" flex items-center  gap-7 text-text-black w-full">
+            <div className=" flex items-center justify-between  gap-7 text-text-black w-full">
               <Link
                 to={"tel:1-778 987 179"}
                 className="flex items-center gap-2"

@@ -7,7 +7,7 @@ const HeroDestinationGallery = ({tabContents}) => {
 
 
   return (
-    <div className="grid grid-cols-3 gap-8 mt-10">
+    <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 xl:gap-8 mt-10">
       {tabContents?.map((item) => (
         <DestinationCard key={item?.destinationTitle} item={item} />
       ))}
