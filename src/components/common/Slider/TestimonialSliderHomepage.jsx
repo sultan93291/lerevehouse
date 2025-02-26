@@ -3,7 +3,7 @@ import { TestimonialStarSvg } from '../SvgContainer/SvgContainer';
 
 const TestimonialSliderHomepage = () => {
   return (
-    <div className="max-w-[760px] mx-auto text-white pb-20">
+    <div className="max-w-[760px] mx-auto text-white pb-10 lg:pb-20">
       <div className="w-full flex items-center justify-center">
         <div className="size-24">
           <img
@@ -14,7 +14,7 @@ const TestimonialSliderHomepage = () => {
         </div>
       </div>
       {/* description */}
-      <p className="font-editorsNoteNormal text-xl tracking-wider font-light mt-6 text-center leading-[1.6]">
+      <p className="font-editorsNoteNormal text-lg lg:text-xl tracking-wider font-light mt-6 text-center leading-[1.6]">
         This is the second time we have used Le Re House. They are an
         exceptional company that goes above and beyond to make their clients
         happy. Every detail is taken care of. From the properties they recommend

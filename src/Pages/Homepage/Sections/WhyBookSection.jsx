@@ -33,7 +33,7 @@ const WhyBookSection = forwardRef(({ ...props }, ref) => {
       className=" py-14 2xl:py-28 container mx-auto 2xl:px-32   "
     >
       <div>
-        <h2 className=" text-4xl xltext-5xl font-editorsNoteNormal text-center text-primary">
+        <h2 className=" text-4xl xl:text-5xl font-editorsNoteNormal text-center text-primary">
           Why book with Lerevehouse?
         </h2>
       </div>

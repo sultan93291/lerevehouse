@@ -5,7 +5,7 @@ const TransparentButton = ({ title, path }) => {
   return (
     <Link
       to={path}
-      className="inline-block font-interTight font-semibold text-secondary py-3 px-6 border border-secondary text-center rounded-md hover:text-white hover:bg-secondary transition-all duration-300"
+      className="inline-block font-interTight font-semibold text-secondary text-sm md:text-base py-3 px-3 md:px-6 border border-secondary text-center rounded-md hover:text-white hover:bg-secondary transition-all duration-300"
     >
       {title}
     </Link>

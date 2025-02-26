@@ -7,13 +7,13 @@ import {
 
 const HomeFaqSection = () => {
   return (
-    <section className="container mx-auto px-32 flex gap-16 py-20">
+    <section className="container  flex-col mx-auto 2xl:px-32 xl:flex-row gap-14 2xl:gap-16 py-10 2xl:py-20">
       {/* title */}
-      <div className="space-y-2 flex-shrink-0">
-        <h2 className="text-xl font-interTight text-primary">
+      <div className=" space-y-1 lg:space-y-2 flex-shrink-0">
+        <h2 className=" text-lg lg:text-xl font-interTight text-primary">
           Frequently asked questions
         </h2>
-        <h3 className="text-3xl font-editorsNoteNormal text-secondary">
+        <h3 className=" text-[26px] lg:text-3xl font-editorsNoteNormal text-secondary">
           Questions? Answers.
         </h3>
       </div>
@@ -22,50 +22,50 @@ const HomeFaqSection = () => {
       <div className="w-full font-interTight">
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
-            <AccordionTrigger className="text-xl text-[#3E3E3E] hover:no-underline">
+            <AccordionTrigger className=" text-lg lg:text-xl text-[#3E3E3E] hover:no-underline">
               What makes Le Rêve House Adventure unique?
             </AccordionTrigger>
-            <AccordionContent className="text-lg text-[#3E3E3E]">
+            <AccordionContent className=" text-base lg:text-lg text-[#3E3E3E]">
               We are the only Italian tour operator based in Vancouver,
               specializing in organizing and managing exploration and adventure
               trips in the American Northwest without intermediaries.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
-            <AccordionTrigger className="text-xl text-[#3E3E3E] hover:no-underline">
+            <AccordionTrigger className="text-lg lg:text-xl text-[#3E3E3E] hover:no-underline">
               Where are your main destinations?
             </AccordionTrigger>
-            <AccordionContent className="text-lg text-[#3E3E3E]">
+            <AccordionContent className="text-base lg:text-lg text-[#3E3E3E]">
               We are the only Italian tour operator based in Vancouver,
               specializing in organizing and managing exploration and adventure
               trips in the American Northwest without intermediaries.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
-            <AccordionTrigger className="text-xl text-[#3E3E3E] hover:no-underline">
+            <AccordionTrigger className="text-lg lg:text-xl text-[#3E3E3E] hover:no-underline">
               Can I customize my trip?
             </AccordionTrigger>
-            <AccordionContent className="text-lg text-[#3E3E3E]">
+            <AccordionContent className="text-base lg:text-lg text-[#3E3E3E]">
               We are the only Italian tour operator based in Vancouver,
               specializing in organizing and managing exploration and adventure
               trips in the American Northwest without intermediaries.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-4">
-            <AccordionTrigger className="text-xl text-[#3E3E3E] hover:no-underline">
+            <AccordionTrigger className="text-lg lg:text-xl text-[#3E3E3E] hover:no-underline">
               What support do you provide during the trip?
             </AccordionTrigger>
-            <AccordionContent className="text-lg text-[#3E3E3E]">
+            <AccordionContent className=" text-base lg:text-lg text-[#3E3E3E]">
               We are the only Italian tour operator based in Vancouver,
               specializing in organizing and managing exploration and adventure
               trips in the American Northwest without intermediaries.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-5">
-            <AccordionTrigger className="text-xl text-[#3E3E3E] hover:no-underline">
+            <AccordionTrigger className=" text-lg lg:text-xl text-[#3E3E3E] hover:no-underline">
               What type of trips do you organize?
             </AccordionTrigger>
-            <AccordionContent className="text-lg text-[#3E3E3E]">
+            <AccordionContent className=" text-base lg:text-lg text-[#3E3E3E]">
               We are the only Italian tour operator based in Vancouver,
               specializing in organizing and managing exploration and adventure
               trips in the American Northwest without intermediaries.

@@ -20,6 +20,10 @@ const Homepage = () => {
       <HomepageTestimonials />
       <HomepageExtraOrdinarySection />
       <HomepageAdventure />
+      {/* 
+     
+     
+       */}
     </>
   );
 };

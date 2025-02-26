@@ -20,13 +20,13 @@ const HomepageTestimonials = () => {
       <div>
         {/* title */}
         <div className="py-10">
-          <h2 className="text-center text-white font-editorsNoteNormal font-medium text-5xl leading-[1.1]">
-            Client Experiences That Speak for <br /> Themselves
+          <h2 className="text-center text-white font-editorsNoteNormal font-medium text-3xl xl:text-5xl leading-[128%] lg:leading-[1.1]">
+            Client Experiences That Speak for <br className='hidden lg:block' /> Themselves
           </h2>
         </div>
 
         {/* slider */}
-        <div className="container mx-auto px-32 relative homepage-testimonial-slider">
+        <div className="container mx-auto 2xl:px-32 relative homepage-testimonial-slider">
           <Swiper
             slidesPerView={1}
             spaceBetween={30}
@@ -57,13 +57,13 @@ const HomepageTestimonials = () => {
           {/* left */}
           <button
             onClick={() => swiperRef.slidePrev()}
-            className="size-10 bg-transparent border border-white shadow-md rounded-full flex items-center justify-center absolute top-1/2 left-36 z-20 -translate-y-1/2"
+            className="size-10 hidden  bg-transparent border border-white shadow-md rounded-full 2xl:flex items-center justify-center absolute top-1/2 left-36 z-20 -translate-y-1/2"
           >
             <TestimonialPrevSlide />
           </button>
           <button
             onClick={() => swiperRef.slideNext()}
-            className="size-10 bg-transparent border border-white shadow-md rounded-full flex items-center justify-center absolute top-1/2 right-20 z-20 -translate-y-1/2"
+            className="size-10 bg-transparent border border-white shadow-md rounded-full hidden 2xl:flex items-center justify-center absolute top-1/2 right-20 z-20 -translate-y-1/2"
           >
             <TestimonialNextSlide />
           </button>

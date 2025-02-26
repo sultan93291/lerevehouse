@@ -45,10 +45,10 @@ const RequestedTrips = () => {
     },
   ];
   return (
-    <section className="bg-[#E8F3FA] py-10 2xl:py-20">
+    <section className="bg-[#E8F3FA] flex flex-col  py-10 2xl:py-20">
       {/* title */}
       <div>
-        <h2 className="text-center text-3xl 2xl:text-5xl font-editorsNoteNormal text-primary">
+        <h2 className="text-center  text-3xl 2xl:text-5xl font-editorsNoteNormal text-primary">
           Here is a <span className="text-secondary">List of</span> Our Most{' '}
           <br /> Requested Trips
         </h2>

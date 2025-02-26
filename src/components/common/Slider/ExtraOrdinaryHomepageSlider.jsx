@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const ExtraOrdinaryHomepageSlider = ({ destination }) => {
   return (
     <div
-      className="h-[500px] flex items-end justify-center py-10 w-[350px]"
+      className=" h-[300px] lg:h-[500px] flex items-end justify-center py-10 w-[220px] lg:w-[350px]"
       style={{
         background: `url(${destination?.image})`,
         backgroundSize: 'cover',
@@ -13,7 +13,7 @@ const ExtraOrdinaryHomepageSlider = ({ destination }) => {
     >
       <Link
         to={`/destination-details/${destination?.title}`}
-        className="flex items-center gap-2 font-interTight text-xl text-white"
+        className="flex items-center gap-2 font-interTight text-base md:text-lg px-2 lg:text-xl text-white"
       >
         <h5 className='uppercase'>{destination?.title}</h5>
         <span>

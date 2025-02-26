@@ -51,10 +51,10 @@ const HomepageExtraOrdinarySection = () => {
   ];
   const [swiperRef, setSwiperRef] = useState(null);
   return (
-    <section className="container mx-auto mb-20">
+    <section className="container mx-auto mb-10 lg:mb-20">
       {/* title */}
       <div className="py-10">
-        <h2 className="text-center text-primary font-editorsNoteNormal font-medium text-5xl leading-[1. ]">
+        <h2 className="text-center text-primary font-editorsNoteNormal font-medium text-3xl xl:text-5xl leading-[128%] lg:leading-[1.1]">
           Find the <span className="text-secondary">Hidden Gem</span> That Will
           Make Your Next <br />{' '}
           <span className="text-secondary">Trip Extraordinary</span>
@@ -93,13 +93,13 @@ const HomepageExtraOrdinarySection = () => {
         {/* left */}
         <button
           onClick={() => swiperRef.slidePrev()}
-          className="size-10 bg-white shadow-md rounded-full flex items-center justify-center absolute top-1/2 -left-8 z-20"
+          className="size-10 bg-white shadow-md rounded-full  hidden xl:flex items-center justify-center absolute top-1/2 lg:-left-4 -left-6 z-20"
         >
           <PrevSlideSvg />
         </button>
         <button
           onClick={() => swiperRef.slideNext()}
-          className="size-10 bg-white shadow-md rounded-full flex items-center justify-center absolute top-1/2 right-16 z-20"
+          className="size-10 bg-white shadow-md rounded-full hidden xl:flex items-center justify-center absolute top-1/2 lg:right-4 xl:right-6 z-20"
         >
           <NextSlideSvg />
         </button>

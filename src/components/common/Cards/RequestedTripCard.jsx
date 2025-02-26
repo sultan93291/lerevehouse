@@ -25,13 +25,13 @@ const RequestedTripCard = ({ item, idx }) => {
           }
           `}
       >
-        <div className="px-4 lg:px-8 relative z-10 space-y-2 md:space-y-3">
+        <div className="px-4 lg:px-8 relative z-10 space-y-1 md:space-y-3">
           <h3 className="text-lg lg:text-xl">{item?.title}</h3>
           <p className="text-sm lg:text-base">{item?.description}</p>
 
           <Link
             to={`/tour-list-details/${item?.id}`}
-            className="underline block pt-2 lg:pt-4"
+            className="underline block pt-1 lg:pt-4"
           >
             Discover More
           </Link>
