@@ -4,7 +4,7 @@ import DestinationDetailsDescriptionLeftSide from './DestinationDetailsDescripti
 import DestinationDetailsDescriptionRightSide from './DestinationDetailsDescriptionRightSide';
 const DestinationDetailsDescription = ({ id }) => {
   return (
-    <div id={id} className="w-full flex gap-12">
+    <div id={id} className="w-full flex xl:flex-row flex-col gap-6 xl:gap-12">
       {/* image */}
       <DestinationDetailsDescriptionLeftSide destinationBg={destinationBg} />
       {/* right side */}

@@ -7,8 +7,8 @@ const BookCard = ({ info }) => {
       </div>
       {/* title */}
       <div className="text-center mt-6 space-y-2">
-        <h3 className="text-text-black font-semibold text-2xl">{info?.title}</h3>
-        <p className="text-[#565656] text-lg">{info?.description}</p>
+        <h3 className="text-text-black font-semibold text-xl lg:text-2xl">{info?.title}</h3>
+        <p className="text-[#565656] text-base lg:text-lg">{info?.description}</p>
       </div>
     </div>
   );
