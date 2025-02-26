@@ -53,7 +53,7 @@ const HomepageExtraOrdinarySection = () => {
   return (
     <section className="container mx-auto px-4 lg:px-8 2xl:px-16 3xl:px-32 mb-10 lg:mb-20">
       {/* title */}
-      <div className="py-10">
+      <div className=" py-5 xl:py-10">
         <h2 className="text-center text-primary font-editorsNoteNormal font-medium text-3xl xl:text-4xl 2xl:text-5xl leading-[128%] lg:leading-[1.1]">
           Find the <span className="text-secondary">Hidden Gem</span> That Will
           Make Your Next <br />{" "}
