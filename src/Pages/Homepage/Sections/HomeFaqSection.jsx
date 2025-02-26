@@ -7,7 +7,7 @@ import {
 
 const HomeFaqSection = () => {
   return (
-    <section className="container  flex-col mx-auto 2xl:px-32 xl:flex-row gap-14 2xl:gap-16 py-10 2xl:py-20">
+    <section className="container  flex-col mx-auto px-4 lg:px-8 2xl:px-16 3xl:px-32 xl:flex-row gap-14 2xl:gap-16 py-10 2xl:py-20">
       {/* title */}
       <div className=" space-y-1 lg:space-y-2 flex-shrink-0">
         <h2 className=" text-lg lg:text-xl font-interTight text-primary">

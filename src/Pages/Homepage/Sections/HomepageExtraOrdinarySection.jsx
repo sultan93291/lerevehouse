@@ -51,12 +51,12 @@ const HomepageExtraOrdinarySection = () => {
   ];
   const [swiperRef, setSwiperRef] = useState(null);
   return (
-    <section className="container mx-auto mb-10 lg:mb-20">
+    <section className="container mx-auto px-4 lg:px-8 2xl:px-16 3xl:px-32 mb-10 lg:mb-20">
       {/* title */}
       <div className="py-10">
-        <h2 className="text-center text-primary font-editorsNoteNormal font-medium text-3xl xl:text-5xl leading-[128%] lg:leading-[1.1]">
+        <h2 className="text-center text-primary font-editorsNoteNormal font-medium text-3xl xl:text-4xl 2xl:text-5xl leading-[128%] lg:leading-[1.1]">
           Find the <span className="text-secondary">Hidden Gem</span> That Will
-          Make Your Next <br />{' '}
+          Make Your Next <br />{" "}
           <span className="text-secondary">Trip Extraordinary</span>
         </h2>
       </div>
@@ -64,7 +64,7 @@ const HomepageExtraOrdinarySection = () => {
       {/* extra ordinary slider */}
       <div className="pt-10 relative">
         <Swiper
-          effect={'coverflow'}
+          effect={"coverflow"}
           grabCursor={true}
           loop={true}
           onSwiper={setSwiperRef}
@@ -81,7 +81,7 @@ const HomepageExtraOrdinarySection = () => {
           modules={[EffectCoverflow, Pagination]}
           className="mySwiper"
         >
-          {extraordinaryDestinations?.map((destination) => (
+          {extraordinaryDestinations?.map(destination => (
             <SwiperSlide key={destination?.title}>
               <ExtraOrdinaryHomepageSlider destination={destination} />
             </SwiperSlide>

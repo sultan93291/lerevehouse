@@ -178,7 +178,7 @@ const DestinationDetails = () => {
   const [activeTab, setActiveTab] = useState(sectionTabs[0]);
 
   return (
-    <div className="relative">
+    <div className="relative ">
       {/* hero */}
       <CommonHeroBannerVideo
         heroBg={heroBg}
@@ -193,7 +193,7 @@ const DestinationDetails = () => {
         sectionTabs={sectionTabs}
       />
 
-      <section className="container mx-auto my-20">
+      <section className="container mx-auto my-20 px-4 lg:px-8 2xl:px-16 3xl:px-32  ">
         {/* description container*/}
         <DestinationDetailsDescription id={`${title}-holiday`} />
 

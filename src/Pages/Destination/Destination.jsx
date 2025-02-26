@@ -16,16 +16,16 @@ const Destination = () => {
       <CommonHeroBanner bg={bg} title="Explore" italic="Luxury Vacations" />
 
       {/* destination wrapper */}
-      <section className="my-20 container mx-auto">
+      <section className=" my-10 3xl:my-20 container px-4 lg:px-8 2xl:px-16 3xl:px-32 mx-auto">
         <div>
           {/* title */}
-          <h2 className="text-5xl font-editorsNoteNormal text-primary">
+          <h2 className=" text-3xl lg:text-4xl 3xl:text-5xl font-editorsNoteNormal text-primary">
             Our Destination
           </h2>
 
           {/*all destination  */}
-          <div className="mt-16 flex flex-col gap-7">
-            <div className="flex items-center gap-7">
+          <div className=" mt-8 3xl:mt-16 flex flex-col gap-4 3xl:gap-7">
+            <div className="flex items-center flex-wrap md:flex-nowrap gap-4 3xl:gap-7">
               <SingleDestinationCard
                 bg={destinationBg1}
                 title="Alaska"
@@ -37,11 +37,11 @@ const Destination = () => {
                 height="full"
               />
             </div>
-            <div className="flex items-center gap-7">
+            <div className="flex flex-wrap items-center md:flex-nowrap gap-4 3xl:gap-7">
               <SingleDestinationCard bg={destinationBg3} title="Canada East" />
               <SingleDestinationCard bg={destinationBg4} title="Caraibi" />
             </div>
-            <div className="flex items-center gap-7">
+            <div className="flex items-center flex-wrap lg:flex-nowrap gap-4 3xl:gap-7">
               <SingleDestinationCard
                 bg={destinationBg5}
                 title="Messico - Baja California"

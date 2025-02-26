@@ -1,9 +1,9 @@
-import person from '@/assets/images/person.png';
-import { TestimonialStarSvg } from '../SvgContainer/SvgContainer';
+import person from "@/assets/images/person.png";
+import { TestimonialStarSvg } from "../SvgContainer/SvgContainer";
 
 const TestimonialSliderHomepage = () => {
   return (
-    <div className="max-w-[760px] mx-auto text-white pb-10 lg:pb-20">
+    <div className=" xl:max-w-[760px] 4xl:max-w-[1060px] mx-auto text-white pb-10 2xl:pb-20">
       <div className="w-full flex items-center justify-center">
         <div className="size-24">
           <img
@@ -46,7 +46,7 @@ const TestimonialSliderHomepage = () => {
       <div className="mt-5 space-y-1">
         <h4 className="font-inter text-lg text-center">Name Surname</h4>
         <p className="font-inter text-lg text-center">
-          Published 05th December 2024 on Trustpilot{' '}
+          Published 05th December 2024 on Trustpilot{" "}
         </p>
       </div>
     </div>

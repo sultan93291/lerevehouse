@@ -66,7 +66,7 @@ const SmartOffersSection = () => {
   ];
   const [swiperRef, setSwiperRef] = useState(null);
   return (
-    <section className="container flex flex-col gap-y-[40px] lg:gap-y-[60px] mx-auto 2xl:px-32 py-10 2xl:py-20">
+    <section className="container flex flex-col gap-y-[40px] lg:gap-y-[60px] mx-auto px-4 lg:px-8 2xl:px-16 3xl:px-32 py-10 2xl:py-20">
       {/* title */}
       <div>
         <h2 className="text-center text-4xl xl:text-5xl font-editorsNoteNormal text-primary">

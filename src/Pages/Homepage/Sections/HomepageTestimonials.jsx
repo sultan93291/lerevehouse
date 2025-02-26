@@ -1,27 +1,28 @@
-import leftBg from '../../../assets/images/testimonials-left-bg.png';
-import rightBg from '../../../assets/images/testimonials-bg.png';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import leftBg from "../../../assets/images/testimonials-left-bg.png";
+import rightBg from "../../../assets/images/testimonials-bg.png";
+import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
-import TestimonialSliderHomepage from '@/components/common/Slider/TestimonialSliderHomepage';
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
+import TestimonialSliderHomepage from "@/components/common/Slider/TestimonialSliderHomepage";
 import {
   TestimonialNextSlide,
   TestimonialPrevSlide,
-} from '@/components/common/SvgContainer/SvgContainer';
-import { useState } from 'react';
+} from "@/components/common/SvgContainer/SvgContainer";
+import { useState } from "react";
 
 const HomepageTestimonials = () => {
   const [swiperRef, setSwiperRef] = useState(null);
   return (
-    <section className="bg-primary relative min-h-[750px]">
+    <section className="bg-primary relative px-4 lg:px-8 2xl:px-16 3xl:px-32 mx-auto w-full  2xl:min-h-[750px]  ">
       {/* main section */}
-      <div>
+      <div className="flex flex-col gap-y-[30px] 2xl:gap-y-[60px]">
         {/* title */}
         <div className="py-10">
-          <h2 className="text-center text-white font-editorsNoteNormal font-medium text-3xl xl:text-5xl leading-[128%] lg:leading-[1.1]">
-            Client Experiences That Speak for <br className='hidden lg:block' /> Themselves
+          <h2 className="text-center text-white font-editorsNoteNormal font-medium text-3xl xl:text-4xl 2xl:text-5xl leading-[128%] lg:leading-[1.1]">
+            Client Experiences That Speak for <br className="hidden lg:block" />{" "}
+            Themselves
           </h2>
         </div>
 
@@ -57,7 +58,7 @@ const HomepageTestimonials = () => {
           {/* left */}
           <button
             onClick={() => swiperRef.slidePrev()}
-            className="size-10 hidden  bg-transparent border border-white shadow-md rounded-full 2xl:flex items-center justify-center absolute top-1/2 left-36 z-20 -translate-y-1/2"
+            className="size-10 hidden mb-[500px]  bg-transparent border border-white shadow-md rounded-full 2xl:flex items-center justify-center absolute top-1/2 left-36 z-20 -translate-y-1/2"
           >
             <TestimonialPrevSlide />
           </button>

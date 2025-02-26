@@ -6,7 +6,7 @@ import bg from "@/assets/images/bg.png";
 const RequestedTripCard = ({ item, idx }) => {
   return (
     <div
-      className={` h-[350px] xl:h-[750px] flex ${
+      className={` h-[350px] xl:h-[450px] 2xl:h-[750px] flex ${
         item?.type == "horizontal" ? "items-center justify-end" : "items-end"
       }  ${idx == 1 ? "col-span-6 lg:col-span-2" : idx == 2 ? "col-span-6 lg:col-span-4" : "col-span-6"}`}
       style={{
@@ -20,14 +20,14 @@ const RequestedTripCard = ({ item, idx }) => {
         className={` font-interTight flex items-center justify-center text-white relative
           ${
             item?.type == "horizontal"
-              ? "  h-full max-w-[230px] lg:max-w-[500px]"
+              ? "  h-full max-w-[230px] lg: lg:max-w-[500px]"
               : "w-full h-[155px] md:h-[250px]"
           }
           `}
       >
         <div className="px-4 lg:px-8 relative z-10 space-y-1 md:space-y-3">
-          <h3 className="text-lg lg:text-xl">{item?.title}</h3>
-          <p className="text-sm lg:text-base">{item?.description}</p>
+          <h3 className="text-lg xl:text-xl">{item?.title}</h3>
+          <p className="text-sm xl:text-base">{item?.description}</p>
 
           <Link
             to={`/tour-list-details/${item?.id}`}
