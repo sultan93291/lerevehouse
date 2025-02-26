@@ -35,7 +35,7 @@ const TestModal = ({ setOpen }) => {
     setOpen(false);
   };
   return (
-    <DialogContent className=" w-[300px] 2xl:min-w-[1200px] px-10 py-6 text-center font-nunito">
+    <DialogContent className=" w-[300px] sm:w-[400px] md:w-[500px] lg:w-[700px] xl:w-[900px]  3xl:min-w-[1200px] px-5 lg:px-10 py-6 text-center font-nunito">
       {/* Wrap everything in a container that can scroll and hide scrollbar */}
       <div className="max-h-[80vh] overflow-y-auto scrollbar-hide">
         <DialogHeader>
@@ -55,26 +55,26 @@ const TestModal = ({ setOpen }) => {
               <CrossModalSvg />
             </div>
           </DialogTitle>
-          <DialogDescription className="text-[#052D4C] text-base">
+          <DialogDescription className="text-[#052D4C] text-base flex ">
             {/* modal body */}
             <div className="w-full mt-2">
               {/* Form */}
               <form
                 onSubmit={handleSubmit(onSubmit)}
-                className="flex gap-12 font-inter text-primary"
+                className="flex 3xl:flex-row flex-col gap-6 lg:gap-12 font-inter text-primary"
               >
                 {/* left side */}
                 <div className="space-y-5 w-full">
-                  <div className="space-y-2 w-full">
+                  <div className="space-y-2 flex flex-col gap-y-1 items-start w-full">
                     <label
                       htmlFor="destination"
-                      className="text-lg font-medium text"
+                      className=" text-base lg:text-lg font-medium text"
                     >
                       Where would you like to go?*
                     </label>
                     <div className="w-full">
                       <Select>
-                        <SelectTrigger className="w-full h-12 px-4 text-base">
+                        <SelectTrigger className="w-full h-12 px-2 lg:px-4 text-sm lg:text-base">
                           <SelectValue placeholder="Select a Destination" />
                         </SelectTrigger>
                         <SelectContent>
@@ -100,17 +100,17 @@ const TestModal = ({ setOpen }) => {
                       </Select>
                     </div>
                   </div>
-                  <div className="space-y-2 w-full">
+                  <div className="space-y-2 flex flex-col gap-y-1 items-start w-full">
                     <label
                       htmlFor="destination"
-                      className="text-lg font-medium text"
+                      className="text-base lg:text-lg  font-medium text"
                     >
                       When would you like to go?
                     </label>
-                    <div className="w-full flex items-center gap-3">
+                    <div className="w-full  flex lg:flex-row flex-col items-center gap-3">
                       {/* Month */}
                       <Select>
-                        <SelectTrigger className="w-full h-12 px-4 text-base">
+                        <SelectTrigger className="w-full h-12  px-2 lg:px-4 text-sm lg:text-base">
                           <SelectValue placeholder="Select a Month" />
                         </SelectTrigger>
                         <SelectContent>
@@ -134,7 +134,7 @@ const TestModal = ({ setOpen }) => {
 
                       {/* Year */}
                       <Select>
-                        <SelectTrigger className="w-full h-12 px-4 text-base">
+                        <SelectTrigger className="w-full h-12 px-2 lg:px-4 text-sm lg:text-base">
                           <SelectValue placeholder="Select a Year" />
                         </SelectTrigger>
                         <SelectContent>
@@ -154,17 +154,17 @@ const TestModal = ({ setOpen }) => {
                       </Select>
                     </div>
                   </div>
-                  <div className="space-y-2 w-full">
+                  <div className="space-y-2 flex flex-col gap-y-1 items-start  w-full">
                     <label
                       htmlFor="destination"
-                      className="text-lg font-medium text"
+                      className="text-base lg:text-lg  font-medium text"
                     >
                       How long for?*
                     </label>
                     <div className="w-full">
                       {/* Days */}
                       <Select>
-                        <SelectTrigger className="w-full h-12 px-4 text-base">
+                        <SelectTrigger className="w-full h-12 px-2 lg:px-4 text-sm lg:text-base">
                           <SelectValue placeholder="Select a Duration" />
                         </SelectTrigger>
                         <SelectContent>
@@ -184,17 +184,17 @@ const TestModal = ({ setOpen }) => {
                       </Select>
                     </div>
                   </div>
-                  <div className="space-y-2 w-full">
+                  <div className="space-y-2 w-full flex flex-col gap-y-1 items-start ">
                     <label
                       htmlFor="destination"
-                      className="text-lg font-medium text"
+                      className=" text-base lg:text-lg text-left font-medium text"
                     >
                       How many people are traveling?
                     </label>
                     <div className="w-full">
                       {/* Days */}
                       <Select>
-                        <SelectTrigger className="w-full h-12 px-4 text-base">
+                        <SelectTrigger className="w-full h-12 px-2 lg:px-4 text-sm lg:text-base">
                           <SelectValue placeholder="Select the Total Number of People" />
                         </SelectTrigger>
                         <SelectContent>
@@ -212,18 +212,18 @@ const TestModal = ({ setOpen }) => {
                       </Select>
                     </div>
                   </div>
-                  <div className="space-y-2 w-full">
+                  <div className="space-y-2 w-full flex flex-col gap-y-1 items-start">
                     <label
                       htmlFor="destination"
-                      className="text-lg font-medium text"
+                      className="text-base lg:text-lg font-medium text-left"
                     >
                       How much would you like to spend per person?
                     </label>
-                    <div className="w-full">
-                      <h5 className="font-semibold text-xl">
+                    <div className="w-full flex flex-col-reverse gap-y-4 lg:flex-col ">
+                      <h5 className="font-semibold text-base lg:text-xl">
                         £10,000 - £20,000
                       </h5>
-                      <div className='mt-5'>
+                      <div className="mt-5">
                         <RangeSlider />
                       </div>
                     </div>
@@ -231,20 +231,20 @@ const TestModal = ({ setOpen }) => {
                 </div>
                 {/* Right Side */}
                 <div className="space-y-5 w-full">
-                  <div className="space-y-2 w-full">
-                    <div className="space-y-2">
+                  <div className="space-y-2 w-full ">
+                    <div className="space-y-2 flex flex-col gap-y-1 items-start">
                       <label
                         htmlFor="name"
-                        className="text-lg font-medium text"
+                        className=" text-base lg:text-lg font-medium text"
                       >
                         Your name*
                       </label>
                       <div className="w-full">
-                        <div className="w-full flex gap-4">
+                        <div className="w-full flex-col md:flex-row   flex gap-4">
                           <input
                             required
                             placeholder="First Name"
-                            className="px-4 py-2 font-inter text-[#565656] h-12 focus:outline-none border border-black/10 w-full"
+                            className="px-4  font-inter text-[#565656] h-12 focus:outline-none border border-black/10 w-full"
                             type="text"
                             name=""
                             id="firstName"
@@ -262,10 +262,10 @@ const TestModal = ({ setOpen }) => {
                     </div>
                   </div>
                   <div className="space-y-2 w-full">
-                    <div className="space-y-2">
+                    <div className="space-y-2 flex flex-col gap-y-1 items-start ">
                       <label
                         htmlFor="email"
-                        className="text-lg font-medium text"
+                        className=" text-base lg:text-lg font-medium text"
                       >
                         Email address*
                       </label>
@@ -282,10 +282,10 @@ const TestModal = ({ setOpen }) => {
                     </div>
                   </div>
                   <div className="space-y-2 w-full">
-                    <div className="space-y-2">
+                    <div className="space-y-2 flex flex-col gap-y-1 items-start">
                       <label
                         htmlFor="confirmEmail"
-                        className="text-lg font-medium text"
+                        className="text-base lg:text-lg font-medium text"
                       >
                         Confirm email address*
                       </label>
@@ -302,10 +302,10 @@ const TestModal = ({ setOpen }) => {
                     </div>
                   </div>
                   <div className="space-y-2 w-full">
-                    <div className="space-y-2">
+                    <div className="space-y-2 flex flex-col gap-y-1 items-start ">
                       <label
                         htmlFor="telephone"
-                        className="text-lg font-medium text"
+                        className=" text-base lg:text-lg font-medium text"
                       >
                         Telephone*
                       </label>
@@ -333,10 +333,10 @@ const TestModal = ({ setOpen }) => {
                     </div>
                   </div>
                   <div className="space-y-2 w-full">
-                    <div className="space-y-2">
+                    <div className="space-y-2 flex flex-col gap-y-1 items-start">
                       <label
                         htmlFor="message"
-                        className="text-lg font-medium text"
+                        className=" text-base lg:text-lg font-medium text"
                       >
                         How did you hear about us?
                       </label>
@@ -354,11 +354,11 @@ const TestModal = ({ setOpen }) => {
                   </div>
 
                   {/* submit btn */}
-                  <div className="flex items-center justify-end">
-                    <div className="flex items-center gap-4">
+                  <div className="flex items-end  w-full justify-end">
+                    <div className="flex   md:justify-normal  items-end justify-end gap-4">
                       <button
                         onClick={() => handleSubmit}
-                        className="flex shadow-md items-center px-6 py-3 border border-primary gap-2"
+                        className="flex shadow-md items-center text-sm lg:text-base px-3 lg:px-6 py-3 border border-primary gap-2"
                       >
                         <span>
                           <ResetButtonSvg />
@@ -367,7 +367,7 @@ const TestModal = ({ setOpen }) => {
                       </button>
                       <button
                         onClick={() => handleSubmit}
-                        className="flex items-center bg-primary text-white px-6 py-3 border border-primary  gap-2"
+                        className="flex items-center bg-primary text-sm lg:text-base text-white px-6 py-3 border border-primary  gap-2"
                       >
                         Submit
                       </button>
