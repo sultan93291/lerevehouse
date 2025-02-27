@@ -11,7 +11,7 @@ const CommonHeroBanner = ({
 }) => {
   return (
     <section
-      className=" h-[400px] xl:h-[600px] mt-12 xl:mt-24 bg-cover bg-center flex flex-col gap-5 lg:gap-10 items-center justify-center"
+      className=" h-[400px] px-8 xl:px-0 xl:h-[600px] mt-12 xl:mt-24 bg-cover bg-center flex flex-col gap-5 lg:gap-10 items-center justify-center"
       style={{
         backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${bg})`,
         backgroundColor: 'lightgray',

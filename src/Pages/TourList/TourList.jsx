@@ -123,18 +123,18 @@ const TourList = () => {
       <CommonHeroBanner bg={bg} title="Travel to" italic={title} />
 
       {/* Tour Lists */}
-      <section className="my-20 container mx-auto">
+      <section className=" my-10 xl:my-20 container mx-auto px-4 lg:px-8 2xl:px-16 3xl:px-32 ">
         {/* title */}
         <div>
-          <h2 className="text-center text-4xl font-editorsNoteNormal text-primary">
+          <h2 className="text-center text-3xl xl:text-4xl font-editorsNoteNormal text-primary">
             All <span className="font-editorsNoteItalic">tours</span> for
             <span> {title}</span>
           </h2>
         </div>
 
         {/* cards */}
-        <div className="mt-16 grid grid-cols-3 gap-6">
-          {allTours?.map((item) => (
+        <div className=" grid grid-cols-1 lg:grid-cols-2 3xl:grid-cols-3  gap-4 xl:gap-6 mt-10">
+          {allTours?.map(item => (
             <TravelListCard key={item?.id} item={item} />
           ))}
         </div>

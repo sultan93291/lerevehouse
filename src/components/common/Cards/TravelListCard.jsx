@@ -34,7 +34,7 @@ const TravelListCard = ({ item }) => {
           <span className="text-primary text-sm lg:text-base font-semibold">€2,650.00</span>
           <Link
             to={`/tour-list-details/${item?.id}`}
-            className="bg-primary px-2 lg:px-4 py-2 text-white text-xs lg:text-sm border border-primary hover:bg-transparent hover:text-primary transition-all duration-300"
+            className="bg-primary px-4 px-4 py-2 text-white text-xs lg:text-sm border border-primary hover:bg-transparent hover:text-primary transition-all duration-300"
           >
             VIEW THIS TOUR
           </Link>
