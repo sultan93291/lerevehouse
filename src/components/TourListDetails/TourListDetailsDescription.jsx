@@ -1,9 +1,6 @@
 const TourListDetailsDescription = () => {
   return (
-    <div
-      id="description"
-      className=" my-10  "
-    >
+    <div id="description" className=" my-10 px-4 lg:px-8 2xl:px-16 3xl:px-32 ">
       {/* title */}
       <div className="space-y-2">
         <h2 className=" text-3xl lg:text-4xl font-editorsNoteNormal text-primary">

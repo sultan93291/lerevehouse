@@ -12,7 +12,7 @@ export default {
       },
       container: {
         center: true,
-        padding: "1rem", // Optional padding for spacing
+        padding: "", // Optional padding for spacing
         screens: {
           DEFAULT: "100%", // Ensures the container does not inherit breakpoints
           "4xl": "1600px",
