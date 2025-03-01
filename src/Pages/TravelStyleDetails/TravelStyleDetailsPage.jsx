@@ -7,7 +7,7 @@ import FeaturedTravels from '@/components/TravelStylesDetails/FeaturedTravels';
 const TravelStyleDetailsPage = () => {
   return (
     <div>
-      <CommonHeroBanner bg={bg} title="WILD LIFE" italic="SAFARI"/>
+      <CommonHeroBanner bg={bg} title="WILD LIFE" italic="SAFARI" />
       <ExploreJourney />
       <FeaturedTravels />
     </div>
