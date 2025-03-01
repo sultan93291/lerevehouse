@@ -36,7 +36,7 @@ const CommonHeroBanner = ({
       </h1>
 
       {duration && (
-        <div className="bg-white px-5 py-2 text-primary font-interTight font-semibold flex items-center gap-3">
+        <div className="bg-white px-2 lg:px-5 py-2 text-sm lg:text-base text-primary font-interTight font-semibold flex items-center gap-3">
           <TourListDetailsClockSvg />
           <span> {duration} </span>
         </div>
