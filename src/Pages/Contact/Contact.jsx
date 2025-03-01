@@ -20,23 +20,21 @@ const Contact = () => {
       <CommonHeroBannerVideo heroBg={heroBg} title="Contact" italic=" Us" />
 
       {/* main section */}
-      <section className="flex flex-col lg:flex-row items-stretch">
+      <section className="flex flex-col lg:flex-row items-stretch md:gap-0 gap-16">
         {/* left side */}
         <ContactForm />
 
         {/* right side */}
-        <div className="flex flex-col gap-6 justify-center w-1/2 pl-12">
+        <div className="flex flex-col gap-10 md:gap-6 justify-center lg:w-1/2 lg:pl-12  md:py-10 lg:py-0 px-5 lg:my-6 my-0 lg:mr-6 mr-0">
           <div className="flex flex-col lg:flex-row items-center gap-4">
             {/* img */}
-            <div className="size-[300px]">
-              <img
-                className="h-full w-full object-cover"
-                src={contactBg}
-                alt=""
-              />
-            </div>
+            <img
+              className="md:h-[300px] lg:w-[165px] xl:w-[215px] 2xl:w-[276px] 3xl:w-[300px] md:w-[300px] object-cover"
+              src={contactBg}
+              alt=""
+            />
             {/* contents */}
-            <div className="font-interTight">
+            <div className="font-interTight ml-4 md:ml-0">
               <h3 className="font-interTight text-xl">
                 Le Reve Canada Headquarters:
               </h3>
@@ -78,15 +76,15 @@ const Contact = () => {
           </div>
           <div className="flex flex-col lg:flex-row items-center gap-4">
             {/* img */}
-            <div className="size-[300px]">
+            <div className="lg:size-[300px]">
               <img
-                className="h-full w-full object-cover"
+                className="md:h-full md:w-full lg:w-[165px] xl:w-[215px] 2xl:w-[276px] 3xl:w-[300px] lg:object-cover"
                 src={contactBg}
                 alt=""
               />
             </div>
             {/* contents */}
-            <div className="font-interTight">
+            <div className="font-interTight mb-16 md:mb-0">
               <h3 className="font-interTight text-xl">Le Reve House Italia:</h3>
 
               {/* canada information */}

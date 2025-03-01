@@ -10,7 +10,7 @@ const ContactForm = () => {
 
       {/* main title */}
       <div>
-        <h2 className="font-editorsNoteNormal text-5xl font-medium mt-3">
+        <h2 className="font-editorsNoteNormal text-3xl lg:text-4xl 2xl:text-5xl font-medium mt-3">
           Get In Touch
         </h2>
 
