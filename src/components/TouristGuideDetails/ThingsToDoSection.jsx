@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import ThingsToDoItem from './ThingsToDoItem';
 
-const ThingsToDoSection = ({id}) => {
+const ThingsToDoSection = ({ id }) => {
   const thingsToDo = [
     {
       title: 'Explore the Denali Park Road',
@@ -55,13 +55,13 @@ const ThingsToDoSection = ({id}) => {
     },
   ];
   return (
-    <section id={id} className="bg-[#f4f4f4] py-10 px-8">
+    <section id={id} className="bg-[#f4f4f4] py-7 lg:py-10 px-5 lg:px-8">
       {/* title */}
       <div className="text-center space-y-5">
-        <h2 className="font-editorsNoteNormal text-3xl font-semibold tracking-wider">
+        <h2 className="font-editorsNoteNormal text-xl sm:text-2xl md:text-3xl font-semibold tracking-wider">
           Things To Do Denail National Park
         </h2>
-        <p className="w-2/4 mx-auto text-text-gray font-interTight text-lg">
+        <p className="xl:w-2/4 mx-auto text-text-gray font-interTight md:text-lg">
           Denali National Park offers a wide range of activities for nature
           enthusiasts, adventure seekers, and wildlife lovers. Here are some top
           things to do:
@@ -69,13 +69,13 @@ const ThingsToDoSection = ({id}) => {
       </div>
 
       {/* things to do */}
-      <div className="mt-10 flex gap-16">
-        <div className="space-y-5 w-1/2">
+      <div className="mt-10 flex flex-col md:flex-row gap-10 xl:gap-16">
+        <div className="space-y-5 w-full md:w-1/2">
           {thingsToDo?.slice(0, 5)?.map((item, idx) => (
             <ThingsToDoItem key={idx} item={item} index={idx} />
           ))}
         </div>
-        <div className="space-y-5 w-1/2">
+        <div className="space-y-5 w-full md:w-1/2">
           {thingsToDo?.slice(5)?.map((item, idx) => (
             <ThingsToDoItem key={idx} item={item} index={idx + 5} />
           ))}

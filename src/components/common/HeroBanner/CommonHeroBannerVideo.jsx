@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 const CommonHeroBannerVideo = ({ heroBg, title, italic, capitalize }) => {
   return (
-    <div className="relative h-[400px] lg:h-[600px] mt-24 w-full flex items-center justify-center overflow-hidden text-white">
+    <div className="relative h-[300px] xs:h-[320px] md:h-[400px] xl:h-[600px] mt-24 w-full flex items-center justify-center overflow-hidden text-white">
       {/* Background Video */}
       <video
         className="absolute top-0 left-0 w-full h-full object-cover z-0"
@@ -17,9 +17,8 @@ const CommonHeroBannerVideo = ({ heroBg, title, italic, capitalize }) => {
       {/* Content */}
       <div className="relative z-20 flex items-center justify-center flex-col text-center space-y-8">
         <h1
-          className={`text-3xl lg:text-6xl text-center xl:text-left font-editorsNoteNormal space-y-2 ${
-            capitalize ? "capitalize" : "normal-case"
-          }`}
+          className={`text-2xl xs:text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl text-center xl:text-left font-editorsNoteNormal space-y-2 ${capitalize ? "capitalize" : "normal-case"
+            }`}
         >
           {title}
           {italic && (

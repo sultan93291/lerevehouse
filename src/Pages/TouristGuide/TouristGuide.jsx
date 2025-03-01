@@ -12,17 +12,17 @@ const TouristGuide = () => {
       <CommonHeroBanner bg={bg} title="Tourist" italic="Guide" />
 
       {/* all tourist guide */}
-      <section className="container mx-auto my-20">
+      <section className="container mx-auto my-10 xs:my-12 xl:my-20">
         {/* title */}
 
         <div
           className="text-center space-y-4
         "
         >
-          <h2 className="font-editorsNoteNormal text-5xl text-primary ">
+          <h2 className="font-editorsNoteNormal text-3xl sm:text-4xl xl:text-5xl text-primary ">
             Our <span className="font-editorsNoteItalic">Featured Guide</span>
           </h2>
-          <p className="text-text-gray w-3/4 mx-auto font-interTight text-lg tracking-wide">
+          <p className="text-text-gray xl:w-3/4 mx-auto font-interTight xl:text-lg tracking-wide">
             Our Featured Guide offers expertly curated travel insights,
             showcasing the best destinations, attractions, and experiences.
             Whether you&lsquo;re planning a quick getaway or an adventurous
@@ -32,25 +32,25 @@ const TouristGuide = () => {
         </div>
 
         {/* featured tours */}
-        <div className="mt-16 flex flex-col gap-6">
-          <div className="flex gap-6">
-            <div className="w-3/5">
+        <div className="mt-16 flex flex-col gap-5 xl:gap-6">
+          <div className="flex flex-col lg:flex-row gap-5 xl:gap-6">
+            <div className="lg:w-3/5">
               <TouristGuideFeatureCard bg={bg1} title="ALASKA" />
             </div>
-            <div className="w-2/5 h-full flex flex-col gap-6">
-              <div className="h-1/2">
+            <div className="lg:w-2/5 h-full flex flex-col gap-5 xl:gap-6">
+              <div className="lg:h-1/2">
                 <TouristGuideFeatureCard bg={bg2} title="CARAIBI" />
               </div>
-              <div className="h-1/2">
+              <div className="lg:h-1/2">
                 <TouristGuideFeatureCard bg={bg3} title="PACIFICO" />
               </div>
             </div>
           </div>
-          <div className="flex gap-6 min-h-[600px]">
-            <div className="w-2/6">
+          <div className="flex flex-col lg:flex-row gap-5 xl:gap-6 min-h-[320px] xl:min-h-[600px]">
+            <div className="lg:w-2/6">
               <TouristGuideFeatureCard bg={bg4} title="MESSICO" />
             </div>
-            <div className="w-4/6 flex flex-col gap-6 ">
+            <div className="lg:w-4/6 flex flex-col gap-5 xl:gap-6 ">
               <TouristGuideFeatureCard bg={bg5} title="CANADA" />
             </div>
           </div>

@@ -12,11 +12,14 @@ export default {
       },
       container: {
         center: true,
-        padding: "1rem", // Optional padding for spacing
+        padding: "", // Optional padding for spacing
         screens: {
           DEFAULT: "100%", // Ensures the container does not inherit breakpoints
           "4xl": "1600px",
         },
+      },
+      boxShadow: {
+        primaryShadow: "0px 6px 30px 0px rgba(0, 0, 0, 0.08)",
       },
       screens: {
         xs: "360px",
@@ -41,7 +44,10 @@ export default {
         "text-gray": "#565656",
         "prmiary-blue": "#004265",
         "light-blue": "#1687C7",
+        offWhite:"rgba(0, 66, 101, 0.10)",
         chocolate: "#643500",
+        "black-transparent": "rgba(0, 0, 0, 0.3)",
+        "black-transparent2": "rgba(0, 0, 0, 0.4)",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
