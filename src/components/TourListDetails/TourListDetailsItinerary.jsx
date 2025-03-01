@@ -7,17 +7,17 @@ import {
 
 const TourListDetailsItinerary = () => {
   return (
-    <div id="itinerary-plan" className="flex gap-8">
+    <div id="itinerary-plan" className="flex flex-col lg:flex-row gap-8">
       {/* left section */}
-      <div className="p-6 border border-[#00426566] w-2/3">
+      <div className=" p-4 lg:p-6 border border-[#00426566] w-full lg:w-2/3">
         {/* title */}
         <div>
           <div>
-            <h4 className="text-4xl font-editorsNoteNormal text-primary">
+            <h4 className=" text-3xl 2xl:text-4xl font-editorsNoteNormal text-primary">
               Itinerary idea in details
             </h4>
           </div>
-          <p className="font-interTight font-medium text-text-gray text-lg mt-5">
+          <p className="font-interTight font-medium text-text-gray text-base lg:text-lg mt-5">
             Includes international flights from a choice of Itali airports,
             including Room, and others places{' '}
           </p>
