@@ -23,6 +23,7 @@ const TravelCta = ({ title, description, btnText }) => {
           >
             {btnText}
           </Link>
+
         </div>
       </div>
     </section>

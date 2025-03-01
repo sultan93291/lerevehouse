@@ -897,3 +897,125 @@ export const Arrow = () => {
     </svg>
   );
 };
+
+export const DropDown = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="14"
+      height="9"
+      viewBox="0 0 14 9"
+      fill="none"
+    >
+      <path
+        d="M1 1.00005L7.00005 7L13 1"
+        stroke="#004265"
+        stroke-width="1.5"
+        stroke-miterlimit="16"
+      />
+    </svg>
+  );
+};
+
+export const Location = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="17"
+      viewBox="0 0 16 17"
+      fill="none"
+    >
+      <path
+        d="M12.2427 3.59331C13.3443 4.69473 13.9743 6.18139 13.9995 7.73892C14.0248 9.29645 13.4433 10.8028 12.378 11.9393L12.2427 12.0793L9.41404 14.9073C9.05512 15.266 8.57329 15.4748 8.06614 15.4916C7.55899 15.5083 7.06445 15.3316 6.6827 14.9973L6.5867 14.9073L3.75737 12.0786C2.63215 10.9534 2 9.42728 2 7.83597C2 6.24467 2.63215 4.71853 3.75737 3.59331C4.8826 2.46808 6.40873 1.83594 8.00004 1.83594C9.59135 1.83594 11.1175 2.46808 12.2427 3.59331ZM8.00004 5.83597C7.73739 5.83597 7.47732 5.88771 7.23467 5.98822C6.99202 6.08872 6.77154 6.23604 6.58582 6.42176C6.40011 6.60748 6.25279 6.82796 6.15228 7.07061C6.05177 7.31326 6.00004 7.57333 6.00004 7.83597C6.00004 8.09862 6.05177 8.35869 6.15228 8.60134C6.25279 8.84399 6.40011 9.06447 6.58582 9.25019C6.77154 9.43591 6.99202 9.58322 7.23467 9.68373C7.47732 9.78424 7.73739 9.83597 8.00004 9.83597C8.53047 9.83597 9.03918 9.62526 9.41425 9.25019C9.78932 8.87512 10 8.36641 10 7.83597C10 7.30554 9.78932 6.79683 9.41425 6.42176C9.03918 6.04669 8.53047 5.83597 8.00004 5.83597Z"
+        fill="#004265"
+      />
+    </svg>
+  );
+};
+
+export const Plus = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+    >
+      <path
+        d="M12 5V19M5 12H19"
+        stroke="#004265"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
+
+export const Minus = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+    >
+      <path
+        d="M5 12H19"
+        stroke="#004265"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
+
+export const ArrowLeft = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+    >
+      <path
+        d="M6 4L10 8L6 12"
+        stroke="#004265"
+        stroke-width="1.33333"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
+
+export const CheckMark = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="22"
+      height="22"
+      viewBox="0 0 22 22"
+      fill="none"
+    >
+      <path
+        d="M20.4477 7.2C20.5 8.25014 20.5 9.49936 20.5 11C20.5 15.4783 20.5 17.7175 19.1088 19.1088C17.7175 20.5 15.4783 20.5 11 20.5C6.52166 20.5 4.28249 20.5 2.89124 19.1088C1.5 17.7175 1.5 15.4783 1.5 11C1.5 6.52166 1.5 4.28249 2.89124 2.89124C4.28249 1.5 6.52166 1.5 11 1.5C12.0719 1.5 13.0156 1.5 13.85 1.51908"
+        stroke="#004265"
+        stroke-width="1.5"
+        stroke-linecap="round"
+      />
+      <path
+        d="M7 10.5C7 10.5 8.5 10.5 10.5 14C10.5 14 15.5588 4.83333 20.5 3"
+        stroke="#004265"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};

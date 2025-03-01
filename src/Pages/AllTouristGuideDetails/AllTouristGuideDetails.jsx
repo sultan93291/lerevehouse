@@ -131,12 +131,12 @@ const AllTouristGuideDetails = () => {
   return (
     <div>
       {/* Hero  */}
-      <CommonHeroBanner bg={bg} title={title}   />
+      <CommonHeroBanner bg={bg} title={title} />
 
       {/* Tour Guide Tabs */}
       <TouristGuideDetailsTabs sectionTabs={sectionTabs} />
 
-      <section className="container mx-auto my-16 flex flex-col gap-28">
+      <section className="container mx-auto my-10 md:my-16 flex flex-col gap-10 md:gap-16 2xl:gap-28">
         {/* Highlights */}
         {touristTabContents?.map((item) =>
           item?.id == 'things-to-do' ? (
@@ -149,7 +149,7 @@ const AllTouristGuideDetails = () => {
       {/* featured guide */}
       <section className="my-16">
         {/* title */}
-        <div className="text-center space-y-4">
+        {/* <div className="text-center space-y-4">
           <h2 className="font-editorsNoteNormal text-3xl font-semibold text-center">
             Featured Guide
           </h2>
@@ -160,10 +160,10 @@ const AllTouristGuideDetails = () => {
             iconic landmarks, we provide tailored recommendations, ensuring your
             journey is nothing short of extraordinary.
           </p>
-        </div>
+        </div> */}
 
         {/* marquee */}
-        <Marquee pauseOnHover={true} autoFill={true} className="my-10">
+        {/* <Marquee pauseOnHover={true} autoFill={true} className="my-10">
           {allTours?.map((tour, idx) => (
             <AllTouristGuideCard
               key={idx}
@@ -171,7 +171,7 @@ const AllTouristGuideDetails = () => {
               className="w-96 aspect-[52/67] mr-6"
             />
           ))}
-        </Marquee>
+        </Marquee> */}
       </section>
     </div>
   );

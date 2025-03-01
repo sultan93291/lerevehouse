@@ -76,17 +76,17 @@ const AllTouristGuide = () => {
       {/* All tourist guide Tab */}
       <AllTouristGuideTabs sectionTabs={sectionTabs} />
 
-      <section className="container mx-auto my-16">
+      <section className="container mx-auto my-10 md:my-16">
         {/* Title */}
         <div
           className="text-center space-y-4
         "
         >
-          <h2 className="font-editorsNoteNormal text-5xl text-primary ">
+          <h2 className="font-editorsNoteNormal text-2xl xs:text-3xl md:text-4xl 2xl:text-5xl text-primary ">
             All <span className="capitalize">{title.toLowerCase()}</span> Travel
             Guides
           </h2>
-          <p className="text-text-gray w-3/4 mx-auto font-interTight text-lg tracking-wide">
+          <p className="text-text-gray md:pt-5 xl:w-3/4 mx-auto font-interTight xs:text-base text-[15px] lg:text-lg tracking-wide">
             Curated by our team of luxury travel specialists, these guides are
             packed with insider knowledge and inspiration to help you discover
             the world&lsquo;s most exquisite destinations. From hidden gems to
@@ -96,7 +96,7 @@ const AllTouristGuide = () => {
         </div>
 
         {/* cards */}
-        <div className="grid grid-cols-3 gap-8 mt-16 pb-10">
+        <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-5 2xl:gap-8 mt-10 lg:mt-16 pb-5 xl:pb-10">
           {allTours?.map((tour, idx) => (
             <AllTouristGuideCard key={idx} tour={tour} />
           ))}
