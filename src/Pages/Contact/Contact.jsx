@@ -10,7 +10,7 @@ import {
 } from "@/components/common/SvgContainer/SvgContainer";
 import { Link } from "react-router-dom";
 const Contact = () => {
-  const handleDestinationMap = address => {
+  const handleDestinationMap = (address) => {
     const location = `https://www.google.com/maps?q=${address}`;
     window.open(location, "_blank");
   };
@@ -20,13 +20,13 @@ const Contact = () => {
       <CommonHeroBannerVideo heroBg={heroBg} title="Contact" italic=" Us" />
 
       {/* main section */}
-      <section className="flex items-stretch">
+      <section className="flex flex-col lg:flex-row items-stretch">
         {/* left side */}
         <ContactForm />
 
         {/* right side */}
         <div className="flex flex-col gap-6 justify-center w-1/2 pl-12">
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col lg:flex-row items-center gap-4">
             {/* img */}
             <div className="size-[300px]">
               <img
@@ -76,7 +76,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col lg:flex-row items-center gap-4">
             {/* img */}
             <div className="size-[300px]">
               <img
