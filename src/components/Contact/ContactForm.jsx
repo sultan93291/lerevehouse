@@ -1,8 +1,8 @@
-import { WhiteDotSvg } from '../common/SvgContainer/SvgContainer';
+import { WhiteDotSvg } from "../common/SvgContainer/SvgContainer";
 
 const ContactForm = () => {
   return (
-    <div className="bg-primary w-1/2 pl-52 pr-12 py-16 text-white">
+    <div className="bg-primary w-full lg:w-1/2 px-4 lg:pl-8 3xl:pl-52 2xl:pl-16 3xl:pr-12 lg:pr-8 2xl:py-16 py-8 text-white">
       <div className="flex items-center gap-2 font-interTight text-lg">
         <WhiteDotSvg />
         <span>Plan Your Trip</span>
@@ -10,7 +10,7 @@ const ContactForm = () => {
 
       {/* main title */}
       <div>
-        <h2 className="font-editorsNoteNormal text-5xl font-medium mt-3">
+        <h2 className="font-editorsNoteNormal text-3xl lg:text-4xl 2xl:text-5xl font-medium mt-3">
           Get In Touch
         </h2>
 
