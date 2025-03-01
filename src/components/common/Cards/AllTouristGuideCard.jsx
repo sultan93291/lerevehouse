@@ -6,7 +6,7 @@ const AllTouristGuideCard = ({ tour, className }) => {
   return (
     <div
       className={cn(
-        'h-[600px] w-full flex items-end justify-center pb-10 group',
+        'h-[300px] sm:h-[350px] 2xl:h-[600px] w-full flex items-end justify-center pb-10 group',
         className
       )}
       style={{
@@ -19,7 +19,7 @@ const AllTouristGuideCard = ({ tour, className }) => {
     >
       <Link
         to={`/all-tourist-guide-details/${tour?.title}`}
-        className="block group-hover:scale-105 transition-all duration-500 font-editorsNoteNormal text-white font-semibold text-3xl"
+        className="block group-hover:scale-105 transition-all duration-500 font-editorsNoteNormal text-white font-semibold text-xl xs:text-2xl 2xl:text-3xl"
       >
         {tour?.title}
       </Link>

@@ -42,6 +42,8 @@ export default {
         "prmiary-blue": "#004265",
         "light-blue": "#1687C7",
         chocolate: "#643500",
+        "black-transparent": "rgba(0, 0, 0, 0.3)",
+        "black-transparent2": "rgba(0, 0, 0, 0.4)",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
