@@ -45,6 +45,7 @@
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
@@ -77,15 +78,19 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   .homepage-testimonial-slider .swiper-pagination-bullet-active {
     @apply bg-white scale-110;
   }
+
   .homepage-testimonial-slider.swiper-pagination-bullet {
     @apply bg-transparent;
   }
+
   .accordion-trigger .accordion-plus {
     @apply block;
     animation: rotating90 0.3s linear;
@@ -110,15 +115,19 @@
     0% {
       transform: rotate(0deg);
     }
+
     100% {
       transform: rotate(180deg);
     }
   }
+
   @keyframes rotating90 {
+
     /* Fixed from @keyframe to @keyframes */
     0% {
       transform: rotate(0deg);
     }
+
     100% {
       transform: rotate(90deg);
     }
@@ -130,27 +139,34 @@
 }
 
 @layer components {
+
   .TravelExploreCard:before,
   .travel-cta:before {
     content: "";
-    @apply absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.3)] z-[-1];
+    @apply absolute top-0 left-0 w-full h-full bg-black-transparent z-[-1];
   }
+
   .TravelExploreCard:after {
     content: "";
-    @apply absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.4)] z-[-1] opacity-0 duration-500 ease-in-out;
+    @apply absolute top-0 left-0 w-full h-full bg-black-transparent2 z-[-1] opacity-0 duration-500 ease-in-out;
   }
+
   .TravelExploreCard:hover:after {
     @apply opacity-100;
   }
+
   .TravelExploreCard:hover .front {
     @apply scale-0 opacity-0;
   }
+
   .TravelExploreCard .back {
     @apply scale-0 opacity-0;
   }
+
   .TravelExploreCard:hover .back {
     @apply scale-100 opacity-100;
   }
+
   .title--xxl {
     @apply text-[25px] xs:text-[28px] sm:text-[32px] lg:text-[40px] 2xl:text-[54px] font-medium text-[#004265] font-editorsNoteNormal leading-normal;
   }
@@ -161,3 +177,4 @@
     @apply scale-[1.1];
   }
 }
+

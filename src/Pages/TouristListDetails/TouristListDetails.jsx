@@ -1,33 +1,33 @@
-import CommonHeroBanner from '@/components/common/HeroBanner/CommonHeroBanner';
-import bg from '../../assets/images/destination-bg.jpg';
-import TourListDetailsTab from '@/components/TourListDetails/TourListDetailsTab';
-import TourListDetailsDescription from '@/components/TourListDetails/TourListDetailsDescription';
-import TourListDetailsItinerary from '@/components/TourListDetails/TourListDetailsItinerary';
-import TourListDetailsReview from '@/components/TourListDetails/TourListDetailsReview';
-import TourListDetailsDatesPrices from '@/components/TourListDetails/TourListDetailsDatesPrices';
-import TourListDetailsSuggestions from '@/components/TourListDetails/TourListDetailsSuggestions';
-import TourListDetailsVideoGallery from '@/components/TourListDetails/TourListDetailsVideoGallery';
+import CommonHeroBanner from "@/components/common/HeroBanner/CommonHeroBanner";
+import bg from "../../assets/images/destination-bg.jpg";
+import TourListDetailsTab from "@/components/TourListDetails/TourListDetailsTab";
+import TourListDetailsDescription from "@/components/TourListDetails/TourListDetailsDescription";
+import TourListDetailsReview from "@/components/TourListDetails/TourListDetailsReview";
+import TourListDetailsDatesPrices from "@/components/TourListDetails/TourListDetailsDatesPrices";
+import TourListDetailsSuggestions from "@/components/TourListDetails/TourListDetailsSuggestions";
+import TourListDetailsVideoGallery from "@/components/TourListDetails/TourListDetailsVideoGallery";
+import ItenaryIdeaDetails from "@/components/TourListDetails/ItenaryIdeaDetails";
 const TouristListDetails = () => {
   const sectionTabs = [
     {
-      label: 'Description',
-      link: 'description',
+      label: "Description",
+      link: "description",
     },
     {
-      label: 'Itinerary Plan',
-      link: 'itinerary-plan',
+      label: "Itinerary Plan",
+      link: "itinerary-plan",
     },
     {
-      label: 'Dates and Price',
-      link: 'dates-and-price',
+      label: "Dates and Price",
+      link: "dates-and-price",
     },
     {
-      label: 'Brochure Download',
-      link: 'brochure-download',
+      label: "Brochure Download",
+      link: "brochure-download",
     },
     {
-      label: 'Video',
-      link: 'Video',
+      label: "Video",
+      link: "Video",
     },
   ];
 
@@ -50,7 +50,7 @@ const TouristListDetails = () => {
         <TourListDetailsDescription />
 
         {/* itinerary */}
-        <TourListDetailsItinerary />
+        <ItenaryIdeaDetails />
 
         {/* Testimonials */}
         <TourListDetailsReview />

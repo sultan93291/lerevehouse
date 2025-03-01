@@ -154,7 +154,7 @@ const TopNavbar = () => {
           <AnimatePresence>
             {isSideBarOpen && (
               <motion.div
-                className="fixed inset-0 w-screen  h-screen bg-black bg-opacity-50 backdrop-blur-md flex z-50"
+                className="fixed inset-0 w-screen  h-screen bg-black bg-opacity-50 backdrop-blur-md flex !z-[999]"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -167,7 +167,7 @@ const TopNavbar = () => {
                   animate={{ x: 0 }}
                   exit={{ x: "-100%" }}
                   transition={{ type: "spring", stiffness: 200, damping: 25 }}
-                  className="w-[280px] py-8 bg-white z-[999] border-r-[1px] border-solid border-gray-200 top-0 left-0 flex flex-col items-start justify-start h-full  gap-y-8 "
+                  className="w-[280px] !z-[999] py-8 bg-white border-r-[1px] border-solid border-gray-200 top-0 left-0 flex flex-col items-start justify-start h-full  gap-y-8 "
                 >
                   <img
                     className="h-[70px] w-[220px]  object-contain "
@@ -184,10 +184,9 @@ const TopNavbar = () => {
                             setisSideBarOpen(false);
                           }}
                           className={({ isActive }) =>
-                            ` ${
-                              isActive
-                                ? "text-prmiary-blue opacity-100"
-                                : "text-text-black opacity-65"
+                            ` ${isActive
+                              ? "text-prmiary-blue opacity-100"
+                              : "text-text-black opacity-65"
                             } font-inter uppercase font-semibold text-sm hover:opacity-100 transition-all duration-300`
                           }
                         >
@@ -196,7 +195,7 @@ const TopNavbar = () => {
                       ))}
                     </div>
                     <div className="flex flex-col gap-y-5">
-                      
+
                       <ul className="flex items-center gap-4 px-5 ">
                         {topNavLinks?.map(item => (
                           <li key={item?.title}>

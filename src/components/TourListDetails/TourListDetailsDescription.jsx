@@ -1,20 +1,20 @@
 const TourListDetailsDescription = () => {
   return (
-    <div id="description" className="my-10">
+    <div id="description" className=" my-10 px-4 lg:px-8 2xl:px-16 3xl:px-32 ">
       {/* title */}
       <div className="space-y-2">
-        <h2 className="text-4xl font-editorsNoteNormal text-primary">
-          Travel to{' '}
+        <h2 className=" text-3xl lg:text-4xl font-editorsNoteNormal text-primary">
+          Travel to{" "}
           <span className="font-editorsNoteItalic">Canada and Alaska</span>
         </h2>
-        <p className="font-interTight font-medium text-xl text-primary">
+        <p className="font-interTight font-medium text-lg lg:text-xl text-primary">
           A wide range of excursions available.
         </p>
       </div>
 
       {/* description */}
-      <div className="mt-4">
-        <p className="text-text-gray font-interTight text-lg">
+      <div className="mt-4 flex gap-1 ">
+        <p className="text-text-gray font-interTight text-base lg:text-lg">
           The
           <span className="font-bold text-primary">
             Canada and Alaska Journey
@@ -25,7 +25,7 @@ const TourListDetailsDescription = () => {
           unique cultures. Traversing these immense territories will give you
           the opportunity to explore the beautiful coastline, forests and
           mountains of a territory that, during the summer, is an enchanting
-          wonder. The Pacific coast between{' '}
+          wonder. The Pacific coast between{" "}
           <span className="font-bold text-primary">
             British Columbia and Alaska
           </span>
@@ -42,7 +42,7 @@ const TourListDetailsDescription = () => {
           on our planet, the blue whale ), killer whales , seals , sea lions and
           sea otters. In addition, the region is known to be an important
           transit point for many species of migratory birds. During your trip to
-          Canada and Alaska you can also , in the various{' '}
+          Canada and Alaska you can also , in the various{" "}
           <span className="font-bold text-primary underline">
             whale watching
           </span>
@@ -56,7 +56,7 @@ const TourListDetailsDescription = () => {
           the jewels of Canadian conservation, inaugurated by the WWF in 2004.
           It is known for being one of the largest and most intact in the world
           and its extension covers approximately 6.4 million hectares, including
-          islands, fjords, mountains and a rich biological diversity.{' '}
+          islands, fjords, mountains and a rich biological diversity.{" "}
           <span className="text-primary">...... Read More</span>
         </p>
       </div>
