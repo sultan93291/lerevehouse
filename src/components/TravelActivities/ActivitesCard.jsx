@@ -1,14 +1,22 @@
 /* eslint-disable react/prop-types */
 
-const ActivitesCard = ({item}) => {
+const ActivitesCard = ({ item }) => {
   return (
     <div className="activites--card">
-      <div className="h-[482px] overflow-hidden">
-        <img className='w-full h-full object-cover duration-200 ease-in-out' src={item?.image} alt="" />
+      <div className="md:h-[482px] overflow-hidden">
+        <img
+          className="md:w-full md:h-full object-cover duration-200 ease-in-out"
+          src={item?.image}
+          alt=""
+        />
       </div>
       <div>
-        <h4 className="text-[24px] font-editorsNoteNormal text-[#004265] mt-3">{item?.place}</h4>
-        <p className="text-[18px] leading-8 font-interTight mt-2 text-[#65656]">{item?.description}</p>
+        <h4 className="text-[24px] font-editorsNoteNormal text-[#004265] mt-3">
+          {item?.place}
+        </h4>
+        <p className="text-[18px] leading-8 font-interTight mt-2 text-[#65656]">
+          {item?.description}
+        </p>
       </div>
     </div>
   );

@@ -20,7 +20,7 @@ const TourListDetailsVideoGallery = () => {
   return (
     <div
       id="Video"
-      className=" my-10 xl:my-16 px-4 lg:px-8 2xl:px-16 3xl:px-32 "
+      className=" my-10 xl:my-16  "
     >
       {/* title */}
       <div>

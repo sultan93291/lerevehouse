@@ -123,7 +123,7 @@ const TourList = () => {
       <CommonHeroBanner bg={bg} title="Travel to" italic={title} />
 
       {/* Tour Lists */}
-      <section className=" my-10 xl:my-20 container mx-auto px-4 lg:px-8 2xl:px-16 3xl:px-32 ">
+      <section className=" my-10 xl:my-20 container mx-auto  ">
         {/* title */}
         <div>
           <h2 className="text-center text-3xl xl:text-4xl font-editorsNoteNormal text-primary">

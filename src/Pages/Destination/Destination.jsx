@@ -1,13 +1,13 @@
-import CommonHeroBanner from '@/components/common/HeroBanner/CommonHeroBanner';
-import bg from '../../assets/images/destination-bg.jpg';
-import destinationBg1 from '@/assets/images/all-destination/1.jpg';
-import destinationBg2 from '@/assets/images/all-destination/2.jpg';
-import destinationBg3 from '@/assets/images/all-destination/3.jpg';
-import destinationBg4 from '@/assets/images/all-destination/4.jpg';
-import destinationBg5 from '@/assets/images/all-destination/5.jpg';
-import destinationBg6 from '@/assets/images/all-destination/6.jpg';
-import destinationBg7 from '@/assets/images/all-destination/7.jpg';
-import SingleDestinationCard from '@/components/common/Cards/SingleDestinationCard';
+import CommonHeroBanner from "@/components/common/HeroBanner/CommonHeroBanner";
+import bg from "../../assets/images/destination-bg.jpg";
+import destinationBg1 from "@/assets/images/all-destination/1.jpg";
+import destinationBg2 from "@/assets/images/all-destination/2.jpg";
+import destinationBg3 from "@/assets/images/all-destination/3.jpg";
+import destinationBg4 from "@/assets/images/all-destination/4.jpg";
+import destinationBg5 from "@/assets/images/all-destination/5.jpg";
+import destinationBg6 from "@/assets/images/all-destination/6.jpg";
+import destinationBg7 from "@/assets/images/all-destination/7.jpg";
+import SingleDestinationCard from "@/components/common/Cards/SingleDestinationCard";
 
 const Destination = () => {
   return (
@@ -16,7 +16,7 @@ const Destination = () => {
       <CommonHeroBanner bg={bg} title="Explore" italic="Luxury Vacations" />
 
       {/* destination wrapper */}
-      <section className=" my-10 3xl:my-20 container px-4 lg:px-8 2xl:px-16   mx-auto">
+      <section className=" my-10 3xl:my-20 container   mx-auto">
         <div>
           {/* title */}
           <h2 className=" text-3xl lg:text-4xl 3xl:text-5xl font-editorsNoteNormal text-primary">
@@ -24,7 +24,7 @@ const Destination = () => {
           </h2>
 
           {/*all destination  */}
-          <div className=" mt-8 3xl:mt-16 flex flex-col gap-4 3xl:gap-7">
+          <div className="mt-7 xs:mt-8 xl:mt-10 3xl:mt-16 flex flex-col gap-4 3xl:gap-7">
             <div className="flex items-center flex-wrap md:flex-nowrap gap-4 3xl:gap-7">
               <SingleDestinationCard
                 bg={destinationBg1}

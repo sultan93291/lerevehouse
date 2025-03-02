@@ -59,7 +59,7 @@ const travelData = [
 
 const FeaturedTravels = () => {
   return (
-    <section className="py-10 lg:py-20 2xl:py-[120px]">
+    <section className="py-10 lg:py-20 2xl:py-[120px] xl:px-5 2xl:px-14">
       <div className="container">
         <div className="text-center mb-10 lg:mb-20 2xl:mb-[113px]">
           <h3 className="title--xxl">Featured Adventures Observations</h3>

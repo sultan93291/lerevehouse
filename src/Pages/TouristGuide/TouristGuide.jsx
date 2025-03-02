@@ -12,13 +12,10 @@ const TouristGuide = () => {
       <CommonHeroBanner bg={bg} title="Tourist" italic="Guide" />
 
       {/* all tourist guide */}
-      <section className="container mx-auto my-10 xs:my-12 xl:my-20">
+      <section className="container mx-auto my-10 lg:my-12 xl:my-20">
         {/* title */}
 
-        <div
-          className="text-center space-y-4
-        "
-        >
+        <div className="text-center space-y-4 xl:px-5 2xl:px-14" >
           <h2 className="font-editorsNoteNormal text-3xl sm:text-4xl xl:text-5xl text-primary ">
             Our <span className="font-editorsNoteItalic">Featured Guide</span>
           </h2>
@@ -32,7 +29,7 @@ const TouristGuide = () => {
         </div>
 
         {/* featured tours */}
-        <div className="mt-16 flex flex-col gap-5 xl:gap-6">
+        <div className="mt-10 lg:mt-16 flex flex-col gap-5 xl:gap-6 xl:px-5 2xl:px-14">
           <div className="flex flex-col lg:flex-row gap-5 xl:gap-6">
             <div className="lg:w-3/5">
               <TouristGuideFeatureCard bg={bg1} title="ALASKA" />

@@ -6,6 +6,7 @@ import AllTouristGuideDetails from "@/Pages/AllTouristGuideDetails/AllTouristGui
 import Contact from "@/Pages/Contact/Contact";
 import Destination from "@/Pages/Destination/Destination";
 import DestinationDetails from "@/Pages/DestinationDetails/DestinationDetails";
+import EatAndDrink from "@/Pages/EatAndDrink/EatAndDrink";
 import Homepage from "@/Pages/Homepage/Homepage";
 import TestMap from "@/Pages/TestMap/TestMap";
 import TourGuide from "@/Pages/TourGuide/TourGuide";
@@ -16,6 +17,7 @@ import TravelActivitiesPage from "@/Pages/TravelActivites/TravelActivitiesPage";
 import TravelStylePage from "@/Pages/TravelStyle/TravelStylePage";
 import TravelStyleDetailsPage from "@/Pages/TravelStyleDetails/TravelStyleDetailsPage";
 import { createBrowserRouter } from "react-router-dom";
+
 
 const router = createBrowserRouter([
   {
@@ -99,6 +101,10 @@ const router = createBrowserRouter([
       {
         path: "/tour-guide",
         element: <TourGuide />,
+      },
+      {
+        path: "/eat&-drink",
+        element: <EatAndDrink />,
       },
     ],
   },

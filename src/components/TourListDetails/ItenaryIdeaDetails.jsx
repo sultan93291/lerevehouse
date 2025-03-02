@@ -42,7 +42,7 @@ const ItenaryIdeaDetails = () => {
   };
 
   return (
-    <section className="flex flex-col my-14 gap-y-5 lg:gap-y-10 px-4 lg:px-8 2xl:px-16 3xl:px-32  ">
+    <section className="flex flex-col my-14 gap-y-5 lg:gap-y-10   ">
       <div className="flex flex-col gap-y-6  ">
         <div className="flex flex-col gap-y-4 xl:flex-row justify-between items-center ">
           <h3 className="text-primary text-[34px]  xl:text-[48px] font-normal leading-[120%] font-editorsNoteNormal  ">
