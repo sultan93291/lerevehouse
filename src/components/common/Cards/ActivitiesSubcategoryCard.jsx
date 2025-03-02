@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-import { Link } from 'react-router-dom';
-import { ActivitiesClockSvg } from '../SvgContainer/SvgContainer';
+import { Link } from "react-router-dom";
+import { ActivitiesClockSvg } from "../SvgContainer/SvgContainer";
 
 const ActivitiesSubcategoryCard = ({ item }) => {
   return (
