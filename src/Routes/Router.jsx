@@ -10,6 +10,7 @@ import EatAndDrink from "@/Pages/EatAndDrink/EatAndDrink";
 import Homepage from "@/Pages/Homepage/Homepage";
 import TestMap from "@/Pages/TestMap/TestMap";
 import TourGuide from "@/Pages/TourGuide/TourGuide";
+import TourGuide22 from "@/Pages/TourGuide22";
 import TouristGuide from "@/Pages/TouristGuide/TouristGuide";
 import TouristListDetails from "@/Pages/TouristListDetails/TouristListDetails";
 import TourList from "@/Pages/TourList/TourList";
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
         element: <DestinationDetails />,
       },
       {
-        path: "/travel-styles",
+      path: "/travel-styles",
         element: <TravelStylePage />,
       },
       {
@@ -109,6 +110,11 @@ const router = createBrowserRouter([
       {
         path: "/wild-side",
         element: <WildSide />
+      }
+        {
+        path: "/tour-guide-22",
+        element: <TourGuide22 />,
+
       },
     ],
   },

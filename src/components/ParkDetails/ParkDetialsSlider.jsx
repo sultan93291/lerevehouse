@@ -12,7 +12,7 @@ const ParkDetailsSlider = ({ data }) => {
   const [swiperRef, setSwiperRef] = useState(null);
 
   return (
-    <div>
+    <div className="w-full">
       {/* Slider */}
       <div className="w-[1600px] flex items-center relative">
         <Swiper
@@ -44,13 +44,13 @@ const ParkDetailsSlider = ({ data }) => {
         {/* Slider Navigation */}
         <button
           onClick={() => swiperRef.slidePrev()}
-          className="size-10 bg-[#E6ECF0] shadow-md rounded-full flex items-center justify-center absolute top-1/2 -left-8 z-20"
+          className="md:size-10 size-8 bg-[#E6ECF0] shadow-md rounded-full flex items-center justify-center absolute top-[47%] md:-left-6 -left-4 z-20"
         >
           <PrevSlideSvg />
         </button>
         <button
           onClick={() => swiperRef.slideNext()}
-          className="size-10 bg-[#E6ECF0] shadow-md rounded-full flex items-center justify-center absolute top-1/2 -right-8 z-20"
+          className="md:size-10 size-8 bg-[#E6ECF0] shadow-md rounded-full flex items-center justify-center absolute top-[48%] md:-right-6 -right-4 z-20"
         >
           <NextSlideSvg />
         </button>

@@ -17,8 +17,9 @@ const CommonHeroBannerVideo = ({ heroBg, title, italic, capitalize }) => {
       {/* Content */}
       <div className="relative z-20 flex items-center justify-center flex-col text-center space-y-8">
         <h1
-          className={`text-2xl xs:text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl text-center xl:text-left font-editorsNoteNormal space-y-2 ${capitalize ? "capitalize" : "normal-case"
-            }`}
+          className={`text-2xl xs:text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl text-center xl:text-left font-editorsNoteNormal space-y-2 ${
+            capitalize ? "capitalize" : "normal-case"
+          }`}
         >
           {title}
           {italic && (

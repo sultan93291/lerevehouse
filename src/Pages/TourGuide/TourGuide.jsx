@@ -4,8 +4,8 @@ import mountain from "../../assets/images/tourist-guide/mountain_sea.png";
 import MapSection from "./Sections/MapSection";
 import TourTab from "./Sections/TourTab";
 import ParkDetails from "@/components/ParkDetails/ParkDetails";
-import { parkDetailsData, TourTabData } from "@/components/DummyData/TourGuidData";
 
+import { parkDetailsData, TourTabData } from "@/components/DummyData/TourGuidData";
 
 const TourGuide = () => {
   return (
@@ -23,30 +23,29 @@ const TourGuide = () => {
           Find your best possible tour guide
         </div>
       </div>
-        <div className=" flex flex-col">
-          {parkDetailsData.map((details, index) => (
-            <div
-              key={details?.id}
-              style={{
-                backgroundColor: index % 2 === 0 ? "#1686c743" : "#fff",
-              }}
-            >
-              <ParkDetails
-                Heading={details?.Heading}
-                SubHeading={details?.SubHeading}
-                ParaOne={details?.ParaOne}
-                ParaTwo={details?.ParaTwo}
-                ParaThree={details?.ParaThree}
-                BtnTxt={details?.BtnTxt}
-                Images={details?.images}
-                isHover={details?.isHover}
-                isDouble={details?.isDouble}
-              />
-            </div>
-          ))}
+      <div className=" flex flex-col">
+        {parkDetailsData.map((details, index) => (
+          <div
+            key={details?.id}
+            style={{
+              backgroundColor: index % 2 === 0 ? "#1686c743" : "#fff",
+            }}
+          >
+            <ParkDetails
+              Heading={details?.Heading}
+              SubHeading={details?.SubHeading}
+              ParaOne={details?.ParaOne}
+              ParaTwo={details?.ParaTwo}
+              ParaThree={details?.ParaThree}
+              BtnTxt={details?.BtnTxt}
+              Images={details?.images}
+              isHover={details?.isHover}
+              isDouble={details?.isDouble}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
 };
-
 export default TourGuide;

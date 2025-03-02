@@ -618,6 +618,7 @@ export function ContactLocationSvg() {
       height="24"
       viewBox="0 0 25 24"
       fill="none"
+      className="xl:w-[25px] w-14 lg:h-6"
     >
       <g clipPath="url(#clip0_16676_8171)">
         <mask

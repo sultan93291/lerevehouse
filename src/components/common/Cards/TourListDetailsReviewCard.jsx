@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import ReviewStarYellowButton from '../Stars/ReviewStarYellowButton';
+import ReviewStarYellowButton from "../Stars/ReviewStarYellowButton";
 
 const TourListDetailsReviewCard = ({ item }) => {
   return (
@@ -14,7 +14,9 @@ const TourListDetailsReviewCard = ({ item }) => {
       {/* info */}
       <div className="mt-4">
         <h5 className="font-medium lg:text-xl text-primary">{item?.title}</h5>
-        <p className="text-text-gray text-sm lg:text-base pt-1">{item?.description}</p>
+        <p className="text-text-gray text-sm lg:text-base pt-1">
+          {item?.description}
+        </p>
         {/* Reviewer Name */}
         <h4 className=" font-medium text-primary mt-2">{item?.name}</h4>
       </div>

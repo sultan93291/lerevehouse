@@ -2,7 +2,10 @@ import CommonHeroBanner from "@/components/common/HeroBanner/CommonHeroBanner";
 import TourTab from "../TourGuide/Sections/TourTab";
 import ParkDetails from "@/components/ParkDetails/ParkDetails";
 import crab from "../../assets/images/eat-and-drink/crab.jpg";
-import { EatAndDrink, EatAndDrinkTabData } from "@/components/DummyData/EatAndDrinkDummyData";
+import {
+  EatAndDrink,
+  EatAndDrinkTabData,
+} from "@/components/DummyData/EatAndDrinkDummyData";
 import Delights from "./Sections/Delights";
 
 const TourGuide = () => {
