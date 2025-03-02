@@ -6,7 +6,7 @@ import { Link } from "react-scroll";
 const TouristGuideDetailsTabs = ({ sectionTabs }) => {
   const [activeTab, setActiveTab] = useState(sectionTabs[0]);
   return (
-    <div className="py-6 sticky  top-[90px] 2xl:top-[152px] left-0 font-interTight w-full bg-[#f4f4f4] flex items-center justify-center flex-wrap gap-y-3 gap-x-3 md:gap-x-4 xl:gap-x-7 3xl:gap-x-10">
+    <div className="py-6 lg:sticky  top-[90px] 2xl:top-[152px] left-0 font-interTight w-full bg-[#f4f4f4] flex items-center justify-center flex-wrap gap-y-3 gap-x-3 md:gap-x-4 xl:gap-x-7 3xl:gap-x-10">
       {sectionTabs?.map((tab) => (
         <Link
           offset={-250}

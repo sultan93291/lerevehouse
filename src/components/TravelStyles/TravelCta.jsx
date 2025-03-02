@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const TravelCta = ({ title, description, btnText }) => {
   return (
-    <section className="2xl:pb-[100px] pb-16 md:pb-20">
+    <section className="2xl:pb-[100px] pb-10 sm:pb-16 md:pb-20 xl:px-5 2xl:px-14">
       <div className="container">
         <div
           className="max-w-[1330px] travel-cta relative z-[1] 2xl:py-[82px] py-14 lg:py-[70px] 2xl:px-[300px] mx-auto bg-cover bg-no-repeat text-center rounded-[18px] overflow-hidden px-5 mt-16 xl:mt-0"
@@ -19,7 +19,7 @@ const TravelCta = ({ title, description, btnText }) => {
           </p>
           <Link
             to={"/"}
-            className="font-inter border-[2px] border-secondary 2xl:py-[19px] py-3 lg:py-[14px] 2xl:px-[62px] px-3 lg:px-10 bg-secondary inline-block rounded-[5px] text-sm text-white xl:mt-[68px] mt-5 lg:mt-8 duration-200 ease-in-out hover:bg-white hover:border-white hover:text-secondary"
+            className="font-inter border-[2px] border-secondary 2xl:py-[19px] py-3 lg:py-[14px] 2xl:px-[62px] px-5 lg:px-10 bg-secondary inline-block rounded-[5px] text-sm text-white xl:mt-[68px] mt-5 lg:mt-8 duration-200 ease-in-out hover:bg-white hover:border-white hover:text-secondary"
           >
             {btnText}
           </Link>

@@ -96,7 +96,7 @@ const AllTouristGuide = () => {
         </div>
 
         {/* cards */}
-        <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-5 2xl:gap-8 mt-10 lg:mt-16 pb-5 xl:pb-10">
+        <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-5 2xl:gap-8 mt-10 lg:mt-16 pb-5 xl:pb-10 xl:px-5 2xl:px-14">
           {allTours?.map((tour, idx) => (
             <AllTouristGuideCard key={idx} tour={tour} />
           ))}
