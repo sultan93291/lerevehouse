@@ -4,7 +4,9 @@ import mountain from "../../assets/images/tourist-guide/mountain_sea.png";
 import MapSection from "./Sections/MapSection";
 import TourTab from "./Sections/TourTab";
 import ParkDetails from "@/components/ParkDetails/ParkDetails";
+
 import { parkDetailsData, TourTabData } from "@/components/DummyData/TourGuidData";
+
 const TourGuide = () => {
   return (
     <div>

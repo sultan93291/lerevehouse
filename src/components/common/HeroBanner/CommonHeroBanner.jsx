@@ -12,7 +12,7 @@ const CommonHeroBanner = ({
 }) => {
   return (
     <section
-      className="h-[350px] sm:h-[400px] px-8 xl:px-0 xl:h-[600px] mt-12 xl:mt-24 bg-cover bg-center flex flex-col gap-5 lg:gap-10 items-center justify-center"
+      className="h-[350px] sm:h-[400px] px-8 xl:px-0 xl:h-[600px] mt-20 xl:mt-24 bg-cover bg-center flex flex-col gap-5 lg:gap-10 items-center justify-center"
       style={{
         backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${bg})`,
         backgroundColor: "lightgray",
@@ -21,9 +21,13 @@ const CommonHeroBanner = ({
         backgroundSize: "cover",
       }}
     >
-      <div className="flex flex-col max-w-[932px] items-center justify-center  gap-y-2">
-        <h1 className="text-3xl sm:text-4xl lg:text-6xl text-center xl:text-left font-editorsNoteNormal font-light text-white ">
-          <span className={`${uppercaseTitle ? "uppercase" : "capitalize"} text-center `}>
+      <div className="flex flex-col max-w-[932px] items-center justify-center gap-y-2">
+        <h1 className="text-4xl xl:text-6xl text-center xl:text-left font-editorsNoteNormal font-light text-white ">
+          <span
+            className={`${
+              uppercaseTitle ? "uppercase" : "capitalize"
+            } text-center `}
+          >
             {title && title.toLowerCase()}
           </span>
           {italic && (
@@ -37,8 +41,8 @@ const CommonHeroBanner = ({
           )}
         </h1>
         {subTittle && (
-          <span className=" text-[#fff] text-center text-2xl font-medium leading-[150%] " >
-           {subTittle}
+          <span className="text-[#fff] text-center text-base xl:text-2xl font-medium md:leading-[150%] ">
+            {subTittle}
           </span>
         )}
       </div>
@@ -46,7 +50,7 @@ const CommonHeroBanner = ({
       {duration && (
         <div className="bg-white px-2 lg:px-5 py-2 text-sm lg:text-base text-primary font-interTight font-semibold flex items-center gap-3">
           <TourListDetailsClockSvg />
-          <span> {duration} </span>
+          <span>{duration} </span>
         </div>
       )}
     </section>
