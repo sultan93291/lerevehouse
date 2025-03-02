@@ -6,7 +6,7 @@ const TravelCta = ({ title, description, btnText }) => {
     <section className="2xl:pb-[100px] pb-16 md:pb-20">
       <div className="container">
         <div
-          className="max-w-[1330px] travel-cta relative z-[1] 2xl:py-[82px] py-14 lg:py-[70px] 2xl:px-[300px] mx-auto bg-cover bg-no-repeat text-center rounded-[18px] overflow-hidden px-5 "
+          className="max-w-[1330px] travel-cta relative z-[1] 2xl:py-[82px] py-14 lg:py-[70px] 2xl:px-[300px] mx-auto bg-cover bg-no-repeat text-center rounded-[18px] overflow-hidden px-5 mt-16 xl:mt-0"
           style={{
             backgroundImage: `url(${TravelCtaBg})`,
           }}
@@ -23,7 +23,6 @@ const TravelCta = ({ title, description, btnText }) => {
           >
             {btnText}
           </Link>
-
         </div>
       </div>
     </section>

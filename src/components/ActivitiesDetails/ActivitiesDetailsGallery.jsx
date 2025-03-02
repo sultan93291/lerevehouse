@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import { useState } from 'react';
-import ActivitiesDetailsGalleryCard from '../common/Cards/ActivitiesDetailsGalleryCard';
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { useState } from "react";
+import ActivitiesDetailsGalleryCard from "../common/Cards/ActivitiesDetailsGalleryCard";
 import {
   NextSlideSvg,
   PrevSlideSvg,
-} from '@/components/common/SvgContainer/SvgContainer';
+} from "@/components/common/SvgContainer/SvgContainer";
 const ActivitiesDetailsGallery = ({ activitiesDetailsGalleryItems }) => {
   const [swiperRef, setSwiperRef] = useState(null);
   return (
@@ -31,13 +31,13 @@ const ActivitiesDetailsGallery = ({ activitiesDetailsGalleryItems }) => {
       {/* left */}
       <button
         onClick={() => swiperRef.slidePrev()}
-        className="size-10 bg-white shadow-md rounded-full flex items-center justify-center absolute top-1/2 -left-8 z-20 -translate-y-1/2"
+        className="md:size-10 size-8 bg-white shadow-md rounded-full flex items-center justify-center absolute top-1/2 md:-left-6 -left-4 z-20 -translate-y-1/2"
       >
         <PrevSlideSvg />
       </button>
       <button
         onClick={() => swiperRef.slideNext()}
-        className="size-10 bg-white shadow-md rounded-full flex items-center justify-center absolute top-1/2 -right-8 z-20 -translate-y-1/2"
+        className="md:size-10 size-8 bg-white shadow-md rounded-full flex items-center justify-center absolute top-1/2 md:-right-6 -right-4 z-20 -translate-y-1/2"
       >
         <NextSlideSvg />
       </button>
