@@ -1,8 +1,7 @@
-import CommonHeroBanner from '@/components/common/HeroBanner/CommonHeroBanner';
-import ExploreJourney from '@/components/TravelStylesDetails/ExploreJourney';
+import CommonHeroBanner from "@/components/common/HeroBanner/CommonHeroBanner";
+import ExploreJourney from "@/components/TravelStylesDetails/ExploreJourney";
 import bg from "../../assets/images/travelstyle-detailsbg.png";
-import FeaturedTravels from '@/components/TravelStylesDetails/FeaturedTravels';
-
+import FeaturedTravels from "@/components/TravelStylesDetails/FeaturedTravels";
 
 const TravelStyleDetailsPage = () => {
   return (

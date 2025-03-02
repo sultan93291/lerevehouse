@@ -74,7 +74,6 @@ const TourListDetailsReview = () => {
       </div>
 
       {/* sliders */}
-
       <div className="mt-10 relative">
         <Swiper
           breakpoints={{
@@ -93,7 +92,7 @@ const TourListDetailsReview = () => {
           onSwiper={setSwiperRef}
           className="mySwiper"
         >
-          {allReviews?.map(review => (
+          {allReviews?.map((review) => (
             <SwiperSlide key={review?.title}>
               <TourListDetailsReviewCard item={review} />
             </SwiperSlide>

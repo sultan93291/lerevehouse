@@ -36,7 +36,7 @@ const router = createBrowserRouter([
         element: <DestinationDetails />,
       },
       {
-        path: "/travel-styles",
+      path: "/travel-styles",
         element: <TravelStylePage />,
       },
       {
