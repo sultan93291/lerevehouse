@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom';
-import ReviewStarYellowButton from '../common/Stars/ReviewStarYellowButton';
+import { Link } from "react-router-dom";
+import ReviewStarYellowButton from "../common/Stars/ReviewStarYellowButton";
 
 const ActivitiesSubcategoryRightDescription = () => {
   return (
-    <div className="w-1/2">
-      <div className="bg-[#f4f4f4] p-16 flex flex-col gap-10 items-center justify-center font-interTight">
+    <div className="md:w-1/2">
+      <div className="bg-[#f4f4f4] md:p-16 p-8 flex flex-col gap-10 items-center justify-center font-interTight">
         <div className="text-center space-y-2">
           <h3 className="font-medium text-xl">
             Creating tailor-made tours for over 20 years
@@ -44,7 +44,7 @@ const ActivitiesSubcategoryRightDescription = () => {
           <h5 className="text-3xl font-editorsNoteNormal font-light text-primary tracking-wide">
             Trips Related to Water
           </h5>
-          <p className="font-interTight text-lg text-text-gray">
+          <p className="font-interTight md:text-lg text-text-gray">
             Water adventures are an exciting aspect of travel, offering a mix of
             thrill, exploration, and tranquility that appeals to a wide range of
             travelers. These experiences connect adventurers with the beauty and
@@ -54,7 +54,7 @@ const ActivitiesSubcategoryRightDescription = () => {
             unveil a vibrant world of coral reefs, and shipwrecks, making them
             unforgettable experiences.
           </p>
-          <p className="font-interTight text-lg text-text-gray">
+          <p className="font-interTight md:text-lg text-text-gray">
             Above the surface, kayaking and stand-up paddleboarding provide a
             peaceful way to explore coastlines, mangroves, or picturesque bays,
             blending adventure with a chance to soak in the natural

@@ -13,23 +13,23 @@ const ActivitiesSubcategoryCard = ({ item }) => {
         />
       </div>
       {/* description */}
-      <div className="bg-[#efefef] px-5 py-6">
+      <div className="bg-[#efefef] xl:px-5 xl:py-6 px-[10px] py-4">
         <div>
-          <h5 className="text-xl font-medium h-16">{item?.title}</h5>
+          <h5 className="xl:text-xl font-medium h-16">{item?.title}</h5>
         </div>
 
         {/* duration */}
-        <div className="w-full flex items-center justify-between mt-4">
+        <div className="w-full flex items-center justify-between 2xl:mt-4 xl:mt-10 ">
           {/* left side */}
           <div className="flex items-center gap-2">
             <ActivitiesClockSvg />
-            <span className="text-lg">{item?.duration}</span>
+            <span className="text-sm xl:text-lg">{item?.duration}</span>
           </div>
           {/* right side */}
           <div>
             <Link
               to={`/activities-details/${item?.id}`}
-              className="uppercase px-6 py-2 bg-primary border border-primary text-white hover:bg-transparent transition-all duration-300 hover:text-primary"
+              className="uppercase 2xl:px-6 xl:px-2 px-[10px] 2xl:py-2 xl:py-1 py-1 bg-primary border border-primary text-white hover:bg-transparent transition-all duration-300 hover:text-primary text-xs xl:text-base"
             >
               View All
             </Link>
