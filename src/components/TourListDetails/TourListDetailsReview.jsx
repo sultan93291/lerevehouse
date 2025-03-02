@@ -64,7 +64,7 @@ const TourListDetailsReview = () => {
   ];
 
   return (
-    <div className=" my-10 xl:my-20 px-4 lg:px-8 2xl:px-16 3xl:px-32 ">
+    <div className=" my-10 xl:my-20  ">
       {/* title */}
       <div>
         <h3 className=" text-2xl xl:text-4xl font-editorsNoteNormal text-primary text-center">

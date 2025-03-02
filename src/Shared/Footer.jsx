@@ -35,7 +35,7 @@ const Footer = () => {
   return (
     <footer className=" pt-10 lg:pt-16 bg-[#002B4D] text-white font-interTight">
       {/* footer top contents */}
-      <section className="container mx-auto px-4 lg:px-8 2xl:px-16 ">
+      <section className="container mx-auto  ">
         {/* logo */}
         <div className="pb-10">
           <img src={footerLogo} alt="" />

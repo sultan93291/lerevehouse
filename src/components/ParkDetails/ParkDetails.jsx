@@ -51,7 +51,7 @@ const ParkDetails = ({
               )}
             </p>
           </div>
-          {BtnTxt && (
+          {/* {BtnTxt && (
             <div className="w-full items-start">
               <button
                 className={`px-[56.5px] py-[13px] bg-light-blue border-[1px] border-solid border-transparent text-white text-base tracking-[-0.16px] leading-[19.2px] font-medium font-interTight ease-in-out duration-500 ${
@@ -63,7 +63,7 @@ const ParkDetails = ({
                 {BtnTxt}
               </button>
             </div>
-          )}
+          )} */}
         </div>
       </div>
       <div className="flex flex-row container  ">

@@ -193,7 +193,7 @@ const DestinationDetails = () => {
         sectionTabs={sectionTabs}
       />
 
-      <section className="container  mx-auto my-10 xl:my-20  px-4 lg:px-8 2xl:px-16 3xl:px-32  ">
+      <section className="container  mx-auto my-10 xl:my-20    ">
         {/* description container*/}
         <DestinationDetailsDescription id={`${title}-holiday`} />
 
