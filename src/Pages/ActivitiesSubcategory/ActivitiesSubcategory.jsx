@@ -144,7 +144,7 @@ const ActivitiesSubcategory = () => {
         </div>
 
         {/* details */}
-        <div className="w-full flex flex-col md:flex-row md:gap-12 gap-[450px] md:mt-14 mt-8 items-stretch">
+        <div className="w-full flex flex-col md:flex-row md:gap-12 gap-[410px] xs:gap-[475px] sm:gap-[0px] md:mt-14 mt-8 items-stretch">
           {/* image */}
           <ActivitiesSubcategoryLeftDescription />
           {/* right side */}
