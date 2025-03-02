@@ -6,7 +6,6 @@ import {
   TrafficLayer,
   useLoadScript,
 } from "@react-google-maps/api";
-
 // Map container style
 const containerStyle = {
   width: "100%",

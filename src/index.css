@@ -20,14 +20,16 @@
 @font-face {
   font-family: "FontSpring";
   src: url("./assets/fonts/Fontspring-DEMO-argentcf-light.otf") format("truetype");
-  font-weight: 300; /* Light */
+  font-weight: 300;
+  /* Light */
   font-style: normal;
 }
 
 @font-face {
   font-family: "FontSpring";
   src: url("./assets/fonts/Fontspring-DEMO-argentcf-lightitalic.otf") format("opentype");
-  font-weight: 400; /* Regular */
+  font-weight: 400;
+  /* Regular */
   font-style: normal;
 }
 
@@ -197,3 +199,29 @@
     @apply scale-[1.1];
   }
 }
+
+
+
+/* react tabs */
+/* .react-tabs .react-tabs__tab-list {
+  border-bottom: 2px solid rgba(128, 128, 128, 0.101);
+  padding-bottom: 5px;
+  margin-bottom: 30px;
+}
+
+.react-tabs .react-tabs__tab-list .react-tabs__tab {
+  padding: 10px 25px;
+  color: #141414;
+  font-weight: 500;
+
+} */
+
+/* .react-tabs .react-tabs__tab-list .react-tabs__tab:first-child {
+  padding-left: 0;
+} */
+
+/* .react-tabs .react-tabs__tab-list .react-tabs__tab--selected {
+  color: #01CC92;
+  background: transparent !important;
+  border: none !important;
+} */
