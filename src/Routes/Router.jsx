@@ -18,7 +18,6 @@ import TravelStylePage from "@/Pages/TravelStyle/TravelStylePage";
 import TravelStyleDetailsPage from "@/Pages/TravelStyleDetails/TravelStyleDetailsPage";
 import { createBrowserRouter } from "react-router-dom";
 
-
 const router = createBrowserRouter([
   {
     path: "/",

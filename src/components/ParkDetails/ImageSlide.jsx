@@ -13,7 +13,7 @@ const ImageSlide = ({ images }) => {
       {images.map((image, idx) => (
         <div
           key={idx}
-          className={`h-full  shadow-md transition-all duration-300 ${
+          className={`h-full shadow-md transition-all duration-300 ${
             idx === 1 ? "w-[866px]" : "w-[363px]"
           }`}
           style={{
@@ -28,5 +28,4 @@ const ImageSlide = ({ images }) => {
   );
 };
 
-
-export default ImageSlide
+export default ImageSlide;
