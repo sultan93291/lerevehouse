@@ -1,8 +1,8 @@
-import g1 from "../../assets/images/tour-guide/g1.png";
-import g2 from "../../assets/images/tour-guide/g2.png";
-import g3 from "../../assets/images/tour-guide/g3.png";
-import g4 from "../../assets/images/tour-guide/g4.png";
-import g5 from "../../assets/images/tour-guide/g5.png";
+import g1 from "../assets/images/tour-guide/g1.png";
+import g2 from "../assets/images/tour-guide/g2.png";
+import g3 from "../assets/images/tour-guide/g3.png";
+import g4 from "../assets/images/tour-guide/g4.png";
+import g5 from "../assets/images/tour-guide/g5.png";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import WhatToDo from "@/components/TourGuide/WhatToDo";
