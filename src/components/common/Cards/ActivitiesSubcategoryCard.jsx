@@ -19,7 +19,7 @@ const ActivitiesSubcategoryCard = ({ item }) => {
         </div>
 
         {/* duration */}
-        <div className="w-full flex items-center justify-between 2xl:mt-4 xl:mt-10 ">
+        <div className="w-full flex items-center justify-between 2xl:mt-4 xl:mt-10 lg:mt-5">
           {/* left side */}
           <div className="flex items-center gap-2">
             <ActivitiesClockSvg />

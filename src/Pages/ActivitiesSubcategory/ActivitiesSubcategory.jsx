@@ -144,7 +144,7 @@ const ActivitiesSubcategory = () => {
         </div>
 
         {/* details */}
-        <div className="w-full flex flex-col md:flex-row md:gap-12 gap-[490px] xs:gap-[540px] md:mt-14 mt-8 items-stretch">
+        <div className="w-full flex flex-col md:flex-row md:gap-12 gap-[450px] md:mt-14 mt-8 items-stretch">
           {/* image */}
           <ActivitiesSubcategoryLeftDescription />
           {/* right side */}
@@ -176,7 +176,7 @@ const ActivitiesSubcategory = () => {
             </div>
 
             {/* contents */}
-            <div className="grid md:grid-cols-3 md:gap-2 gap-5 col-span-6">
+            <div className="grid md:grid-cols-3 md:gap-2 gap-5 col-span-6 my-8 md:my-0">
               {activeTab?.contents?.map((item) => (
                 <ActivitiesSubcategoryCard item={item} key={item?.id} />
               ))}
