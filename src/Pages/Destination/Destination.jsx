@@ -1,13 +1,13 @@
-import CommonHeroBanner from '@/components/common/HeroBanner/CommonHeroBanner';
-import bg from '../../assets/images/destination-bg.jpg';
-import destinationBg1 from '@/assets/images/all-destination/1.jpg';
-import destinationBg2 from '@/assets/images/all-destination/2.jpg';
-import destinationBg3 from '@/assets/images/all-destination/3.jpg';
-import destinationBg4 from '@/assets/images/all-destination/4.jpg';
-import destinationBg5 from '@/assets/images/all-destination/5.jpg';
-import destinationBg6 from '@/assets/images/all-destination/6.jpg';
-import destinationBg7 from '@/assets/images/all-destination/7.jpg';
-import SingleDestinationCard from '@/components/common/Cards/SingleDestinationCard';
+import CommonHeroBanner from "@/components/common/HeroBanner/CommonHeroBanner";
+import bg from "../../assets/images/destination-bg.jpg";
+import destinationBg1 from "@/assets/images/all-destination/1.jpg";
+import destinationBg2 from "@/assets/images/all-destination/2.jpg";
+import destinationBg3 from "@/assets/images/all-destination/3.jpg";
+import destinationBg4 from "@/assets/images/all-destination/4.jpg";
+import destinationBg5 from "@/assets/images/all-destination/5.jpg";
+import destinationBg6 from "@/assets/images/all-destination/6.jpg";
+import destinationBg7 from "@/assets/images/all-destination/7.jpg";
+import SingleDestinationCard from "@/components/common/Cards/SingleDestinationCard";
 
 const Destination = () => {
   return (
