@@ -29,7 +29,7 @@ const TourListDetailsDatesPrices = () => {
   return (
     <div
       id="brochure-download"
-      className="flex flex-col gap-y-[30px] xl:gap-y-[60px] px-4 lg:px-8 2xl:px-16 3xl:px-32 "
+      className="flex flex-col gap-y-[30px] xl:gap-y-[60px]  "
     >
       {/* title */}
       <div>

@@ -1,13 +1,12 @@
-import { TourTabData } from "@/components/DummyData/TourGuidData";
 import React, { useState } from "react";
 
-const TourTab = () => {
+const TourTab = ({data}) => {
   const [SelectedTab, setSelectedTab] = useState("Alaska");
 
   return (
     <div className="h-auto py-5 w-full bg-prmiary-blue">
       <div className="container flex flex-row flex-wrap gap-5 items-center justify-center">
-        {TourTabData.map((tab, index) => {
+        {data.map((tab, index) => {
           return (
             <button
               onClick={() => {

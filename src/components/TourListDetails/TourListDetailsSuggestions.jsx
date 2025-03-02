@@ -56,7 +56,7 @@ const destinationSuggestions = [
 
 const TourListDetailsSuggestions = () => {
   return (
-    <div className=" my-12 xl:my-20 px-4 lg:px-8 2xl:px-16 3xl:px-32 ">
+    <div className=" my-12 xl:my-20  ">
       {/* title */}
       <div>
         <CommonTitle title="Other tours you may be" italic="Interested In" />

@@ -184,9 +184,10 @@ const TopNavbar = () => {
                             setisSideBarOpen(false);
                           }}
                           className={({ isActive }) =>
-                            ` ${isActive
-                              ? "text-prmiary-blue opacity-100"
-                              : "text-text-black opacity-65"
+                            ` ${
+                              isActive
+                                ? "text-[#7BD1FF] opacity-100"
+                                : "text-text-black opacity-65"
                             } font-inter uppercase font-semibold text-sm hover:opacity-100 transition-all duration-300`
                           }
                         >
@@ -195,7 +196,6 @@ const TopNavbar = () => {
                       ))}
                     </div>
                     <div className="flex flex-col gap-y-5">
-
                       <ul className="flex items-center gap-4 px-5 ">
                         {topNavLinks?.map(item => (
                           <li key={item?.title}>
