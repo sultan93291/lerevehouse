@@ -38,7 +38,7 @@ const router = createBrowserRouter([
         element: <DestinationDetails />,
       },
       {
-      path: "/travel-styles",
+        path: "/travel-styles",
         element: <TravelStylePage />,
       },
       {
@@ -109,12 +109,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/wild-side",
-        element: <WildSide />
-      }
-        {
+        element: <WildSide />,
+      },
+      {
         path: "/tour-guide-22",
         element: <TourGuide22 />,
-
       },
     ],
   },
