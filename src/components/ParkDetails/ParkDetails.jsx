@@ -25,7 +25,7 @@ const ParkDetails = ({
           </h5>
         </div>
         <div className="flex flex-col gap-y-5  ">
-          <div className="flex flex-row w-full gap-x-3   ">
+          <div className="flex flex-row w-full gap-x-6   ">
             <p className="text-text-gray text-[18px]   font-normal font-interTight leading-[160%] ">
               {ParaOne}{" "}
               {isDouble && (
