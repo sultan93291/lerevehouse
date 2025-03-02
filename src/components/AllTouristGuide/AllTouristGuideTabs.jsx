@@ -4,7 +4,7 @@ import { useState } from "react";
 const AllTouristGuideTabs = ({ sectionTabs }) => {
   const [activeTab, setActiveTab] = useState(sectionTabs[0]);
   return (
-    <div className="py-6 sticky z-[600] top-[90px] 2xl:top-[152px] left-0 font-interTight w-full bg-[#f4f4f4] flex items-center justify-center flex-wrap gap-y-3 gap-x-3 md:gap-x-4 xl:gap-x-7 3xl:gap-x-10">
+    <div className="py-6 lg:sticky z-[600] top-[90px] 2xl:top-[152px] left-0 font-interTight w-full bg-[#f4f4f4] flex items-center justify-center flex-wrap gap-y-3 gap-x-3 md:gap-x-4 xl:gap-x-7 3xl:gap-x-10">
       {sectionTabs?.map((tab) => (
         <div
           onClick={() => setActiveTab(tab)}

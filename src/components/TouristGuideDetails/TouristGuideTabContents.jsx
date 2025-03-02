@@ -3,7 +3,7 @@ const TouristGuideTabContents = ({ content }) => {
   return (
     <div
       id={content?.id}
-      className={`flex flex-col xl:flex-row gap-5 md:gap-8 2xl:gap-12 items-stretch ${content?.align == 'right' ? 'flex-row-reverse' : 'flex-row'
+      className={`flex xl:px-5 2xl:px-14 flex-col xl:flex-row gap-5 md:gap-8 2xl:gap-12 items-stretch ${content?.align == 'right' ? 'flex-row-reverse' : 'flex-row'
         }`}
     >
       <div className="xl:w-1/2">

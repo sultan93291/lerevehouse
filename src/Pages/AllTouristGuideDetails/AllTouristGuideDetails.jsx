@@ -136,7 +136,7 @@ const AllTouristGuideDetails = () => {
       {/* Tour Guide Tabs */}
       <TouristGuideDetailsTabs sectionTabs={sectionTabs} />
 
-      <section className="container mx-auto my-10 md:my-16 flex flex-col gap-10 md:gap-16 2xl:gap-28">
+      <section className="container mx-auto my-10 md:my-16 flex flex-col gap-10 md:gap-16 2xl:gap-28 ">
         {/* Highlights */}
         {touristTabContents?.map((item) =>
           item?.id == 'things-to-do' ? (
@@ -147,31 +147,31 @@ const AllTouristGuideDetails = () => {
         )}
       </section>
       {/* featured guide */}
-      <section className="my-16">
+      <section className="container xl:px-5 2xl:px-14 my-10 lg:my-16">
         {/* title */}
-        {/* <div className="text-center space-y-4">
-          <h2 className="font-editorsNoteNormal text-3xl font-semibold text-center">
+        <div className="text-center space-y-4">
+          <h2 className="font-editorsNoteNormal text-2xl lg:text-3xl font-semibold text-center">
             Featured Guide
           </h2>
-          <p className="font-interTight text-lg w-4/5 text-text-gray mx-auto">
+          <p className="font-interTight lg:text-lg lg:w-4/5 text-text-gray mx-auto">
             Curated by our team of luxury travel specialists, these guides are
             packed with insider knowledge and inspiration to help you discover
             the world&lsquo;s most exquisite destinations. From hidden gems to
             iconic landmarks, we provide tailored recommendations, ensuring your
             journey is nothing short of extraordinary.
           </p>
-        </div> */}
+        </div>
 
         {/* marquee */}
-        {/* <Marquee pauseOnHover={true} autoFill={true} className="my-10">
+        <Marquee pauseOnHover={true} autoFill={true} className="my-10 -z-50">
           {allTours?.map((tour, idx) => (
             <AllTouristGuideCard
               key={idx}
               tour={tour}
-              className="w-96 aspect-[52/67] mr-6"
+              className="w-96 aspect-[52/67] mr-4 lg:mr-6"
             />
           ))}
-        </Marquee> */}
+        </Marquee>
       </section>
     </div>
   );

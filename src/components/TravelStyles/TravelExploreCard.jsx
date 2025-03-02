@@ -19,12 +19,12 @@ const TravelExploreCard = ({ item, link }) => {
         <h3 className="text-[24px] sm:text-[32px] 2xl:text-[40px] font-semibold font-editorsNoteNormal text-white mx-auto text-center">
           {item?.title}
         </h3>
-        <p className="text-sm xs:text-base text-white leading-normal mt-4 font-inter">
+        <p className="text-sm xs:text-base text-white leading-normal mt-3 sm:mt-4 font-inter">
           Every A&K private journey is unique. Whether you want to personalize
           one of our expert-designed Tailormade Journeys
         </p>
         <Link
-          className="mt-9 inline-block py-[19px] text-white px-[62px] text-sm font-medium font-inter bg-secondary rounded-[5px]"
+          className="sm:mt-9 mt-5 inline-block px-7 py-3 sm:px-[62px] sm:py-[19px] text-white text-sm font-medium font-inter bg-secondary rounded-[5px]"
           to={
             link
               ? `/activities/subcategory/${item?.id}`

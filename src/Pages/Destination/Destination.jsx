@@ -24,7 +24,7 @@ const Destination = () => {
           </h2>
 
           {/*all destination  */}
-          <div className=" mt-8 3xl:mt-16 flex flex-col gap-4 3xl:gap-7">
+          <div className="mt-7 xs:mt-8 xl:mt-10 3xl:mt-16 flex flex-col gap-4 3xl:gap-7">
             <div className="flex items-center flex-wrap md:flex-nowrap gap-4 3xl:gap-7">
               <SingleDestinationCard
                 bg={destinationBg1}

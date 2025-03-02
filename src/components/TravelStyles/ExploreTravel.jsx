@@ -60,7 +60,7 @@ const travelData = [
 const ExploreTravel = () => {
 
     return (
-        <section className="pb-10 sm:pb-16 xl:pb-[120px]">
+        <section className="pb-10 sm:pb-16 xl:pb-[120px] xl:px-5 2xl:px-14">
             <div className="container">
                 {/* section title  */}
                 <div className="section-title">
