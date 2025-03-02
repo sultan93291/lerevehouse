@@ -14,7 +14,7 @@ const ParkDetailsSlider = ({ data }) => {
   return (
     <div className="w-full">
       {/* Slider */}
-      <div className="flex flex-grow items-center relative">
+      <div className="w-[1600px] flex items-center relative">
         <Swiper
           loop={true}
           slidesPerView={1}

@@ -17,6 +17,7 @@ import TourList from "@/Pages/TourList/TourList";
 import TravelActivitiesPage from "@/Pages/TravelActivites/TravelActivitiesPage";
 import TravelStylePage from "@/Pages/TravelStyle/TravelStylePage";
 import TravelStyleDetailsPage from "@/Pages/TravelStyleDetails/TravelStyleDetailsPage";
+import WildSide from "@/Pages/WildSide/WildSide";
 import { createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -107,8 +108,13 @@ const router = createBrowserRouter([
         element: <EatAndDrink />,
       },
       {
+        path: "/wild-side",
+        element: <WildSide />
+      }
+        {
         path: "/tour-guide-22",
         element: <TourGuide22 />,
+
       },
     ],
   },
