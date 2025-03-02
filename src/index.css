@@ -168,15 +168,13 @@
   }
 
   .title--xxl {
-    @apply text-[25px] xs:text-[28px] sm:text-[32px] lg:text-[38px] 2xl:text-[54px] font-medium text-[#004265] font-editorsNoteNormal leading-normal;
+    @apply text-[25px] xs:text-[28px] sm:text-[32px] lg:text-[40px] 2xl:text-[54px] font-medium text-[#004265] font-editorsNoteNormal leading-normal;
   }
-
   .btn-common {
-    @apply inline-block px-6 xs:px-[30px] py-[10px] xs:py-3 lg:py-[19px] lg:px-[62px] bg-secondary rounded-[5px] text-sm font-medium text-white border-[2px] border-secondary duration-200 ease-in-out hover:bg-white hover:text-secondary hover:border-white font-inter;
+    @apply inline-block py-[19px] px-[62px] bg-secondary rounded-[5px] text-sm font-medium text-white border-[2px] border-secondary duration-200 ease-in-out hover:bg-white hover:text-secondary hover:border-white font-inter;
   }
-
   .activites--card:hover img {
-    @apply scale-[1.1]
+    @apply scale-[1.1];
   }
-
 }
+

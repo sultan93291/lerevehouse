@@ -1,10 +1,10 @@
-import imageOne from "../../assets/images/explore-travel1.png"
-import imageTwo from "../../assets/images/explore-travel2.png"
-import imageThree from "../../assets/images/explore-travel3.png"
-import imageFour from "../../assets/images/explore-travel4.png"
-import imageFive from "../../assets/images/explore-travel5.png"
-import imageSix from "../../assets/images/explore-travel6.png"
-import TravelExploreCard from "./TravelExploreCard"
+import imageOne from "../../assets/images/explore-travel1.png";
+import imageTwo from "../../assets/images/explore-travel2.png";
+import imageThree from "../../assets/images/explore-travel3.png";
+import imageFour from "../../assets/images/explore-travel4.png";
+import imageFive from "../../assets/images/explore-travel5.png";
+import imageSix from "../../assets/images/explore-travel6.png";
+import TravelExploreCard from "./TravelExploreCard";
 
 const travelData = [
     {
@@ -58,26 +58,26 @@ const travelData = [
 ]
 
 const ExploreTravel = () => {
-
-    return (
-        <section className="pb-10 sm:pb-16 xl:pb-[120px]">
-            <div className="container">
-                {/* section title  */}
-                <div className="section-title">
-                    <h1 className="text-[24px] sm:text-[35px] lg:text-[48px] 2xl:text-[54px] max-w-[1050px] mx-auto text-center font-medium font-editorsNoteNormal leading-normal mb-8 sm:mb-12 lg:mb-20 xl:mb-[100px]">Explore our <span className="font-editorsNoteItalic text-secondary">travel styles below</span> to begin your journey</h1>
-                </div>
-                <div>
-                    <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5">
-                        {
-                            travelData?.map((item) => (
-                                <TravelExploreCard key={item.id} item={item} />
-                            ))
-                        }
-                    </div>
-                </div>
+    
+  return (
+    <section className="pb-[120px]">
+      <div className="container">
+        {/* section title  */}
+        <div className="section-title">
+            <h1 className="text-[54px] w-[1050px] mx-auto text-center font-medium font-editorsNoteNormal leading-normal mb-[100px]">Explore our <span className="font-editorsNoteItalic text-secondary">travel styles below</span> to begin your journey</h1>
+        </div>
+        <div>
+            <div className="grid grid-cols-3 gap-5">
+                {
+                    travelData?.map((item) => (
+                        <TravelExploreCard key={item.id} item={item} />
+                    ))
+                }
             </div>
-        </section>
-    );
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default ExploreTravel;
