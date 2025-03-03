@@ -26,7 +26,7 @@ const ParkDetails = ({
         </div>
         <div className="flex flex-col gap-y-5">
           <div className="flex md:flex-row flex-col md:w-full gap-x-3">
-            <p className="text-text-gray text-base xl:text-[18px] font-normal font-interTight leading-[160%] ">
+            <p className="text-text-gray text-sm xl:text-[18px] font-normal font-interTight leading-[160%] ">
               {ParaOne}{" "}
               {isDouble && (
                 <>
@@ -42,7 +42,7 @@ const ParkDetails = ({
                 </>
               )}
             </p>
-            <p className="text-text-gray text-base xl:text-[18px] font-normal font-interTight leading-[160%] ">
+            <p className="text-text-gray text-sm xl:text-[18px] font-normal font-interTight leading-[160%] ">
               {ParaThree}{" "}
               {isDouble && (
                 <>
