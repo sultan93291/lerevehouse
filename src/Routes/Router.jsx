@@ -9,6 +9,7 @@ import Destination from "@/Pages/Destination/Destination";
 import DestinationDetails from "@/Pages/DestinationDetails/DestinationDetails";
 import EatAndDrink from "@/Pages/EatAndDrink/EatAndDrink";
 import Homepage from "@/Pages/Homepage/Homepage";
+import SingleCanadaTour from "@/Pages/SingleCanadaTour/SingleCanadaTour";
 import TestMap from "@/Pages/TestMap/TestMap";
 import TourCanada from "@/Pages/TourCanda/TourCanada";
 import TourGuide from "@/Pages/TourGuide/TourGuide";
@@ -125,6 +126,10 @@ const router = createBrowserRouter([
         path: "/customize/tour-canda",
         element: <CustomizeTripCanada />,
       },
+      {
+        path: "/tour-canada/single",
+        element:<SingleCanadaTour/>
+      }
     ],
   },
 ]);
