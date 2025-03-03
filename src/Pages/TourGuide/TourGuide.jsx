@@ -52,8 +52,8 @@ import g2 from "../../assets/images/tour-guide/g2.png";
 import g3 from "../../assets/images/tour-guide/g3.png";
 import g4 from "../../assets/images/tour-guide/g4.png";
 import g5 from "../../assets/images/tour-guide/g5.png";
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
 import WhatToDo from "@/components/TourGuide/WhatToDo";
 import WhatToEat from "@/components/TourGuide/WhatToEat";
 import FestivalsCalendar from "@/components/TourGuide/FestivalsCalendar";
@@ -87,22 +87,42 @@ const TourGuide = () => {
       {/* Tour Guide Tabs */}
       <div className="mb-10">
         <Tabs>
-          <TabList className='flex items-center gap-6 justify-between pb-12'>
-            <Tab className="px-4 pb-1 outline-none border-b-2 border-transparent 
+          <TabList className="flex md:flex-row flex-col items-center gap-6 justify-between pb-12">
+            <Tab
+              className="px-4 pb-1 outline-none border-b-2 border-transparent 
                hover:border-light-blue focus:outline-none cursor-pointer  text-lg font-medium duration-300"
-              selectedClassName="!border-light-blue text-prmiary-blue !border-b-2">What to do</Tab>
-            <Tab className="px-4 pb-1 outline-none border-b-2 border-transparent 
+              selectedClassName="!border-light-blue text-prmiary-blue !border-b-2"
+            >
+              What to do
+            </Tab>
+            <Tab
+              className="px-4 pb-1 outline-none border-b-2 border-transparent 
                hover:border-light-blue focus:outline-none cursor-pointer  text-lg font-medium duration-300"
-              selectedClassName="!border-light-blue text-prmiary-blue !border-b-2">What to eat</Tab>
-            <Tab className="px-4 pb-1 outline-none border-b-2 border-transparent 
+              selectedClassName="!border-light-blue text-prmiary-blue !border-b-2"
+            >
+              What to eat
+            </Tab>
+            <Tab
+              className="px-4 pb-1 outline-none border-b-2 border-transparent 
                hover:border-light-blue focus:outline-none cursor-pointer  text-lg font-medium duration-300"
-              selectedClassName="!border-light-blue text-prmiary-blue !border-b-2">Festivals calendar</Tab>
-            <Tab className="px-4 pb-1 outline-none border-b-2 border-transparent 
+              selectedClassName="!border-light-blue text-prmiary-blue !border-b-2"
+            >
+              Festivals calendar
+            </Tab>
+            <Tab
+              className="px-4 pb-1 outline-none border-b-2 border-transparent 
                hover:border-light-blue focus:outline-none cursor-pointer  text-lg font-medium duration-300"
-              selectedClassName="!border-light-blue text-prmiary-blue !border-b-2">MAP</Tab>
-            <Tab className="px-4 pb-1 outline-none border-b-2 border-transparent 
+              selectedClassName="!border-light-blue text-prmiary-blue !border-b-2"
+            >
+              MAP
+            </Tab>
+            <Tab
+              className="px-4 pb-1 outline-none border-b-2 border-transparent 
                hover:border-light-blue focus:outline-none cursor-pointer  text-lg font-medium duration-300"
-              selectedClassName="!border-light-blue text-prmiary-blue !border-b-2">Where to stay</Tab>
+              selectedClassName="!border-light-blue text-prmiary-blue !border-b-2"
+            >
+              Where to stay
+            </Tab>
           </TabList>
 
           <TabPanel>
