@@ -95,16 +95,16 @@ const TourCanada = () => {
               }}
             >
               {/* Content inside should only be visible on hover */}
-              <div className="h-full w-full flex flex-col items-center justify-center gap-y-[38px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out transform scale-95 group-hover:scale-100">
-                <div className="flex flex-col items-center justify-center gap-y-[22px]">
-                  <h2 className="text-white text-[32px] font-semibold leading-[150%] tracking-[1px] font-interTight">
+              <div className="h-full w-full flex flex-col items-center justify-center md:gap-y-[38px] gap-y-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out transform scale-95 group-hover:scale-100 px-5 md:px-0">
+                <div className="flex flex-col items-center text-center justify-center gap-y-[22px]">
+                  <h2 className="text-white text-[28px] md:text-[32px] font-semibold leading-[150%] tracking-[1px] font-interTight">
                     {item.heading}
                   </h2>
-                  <span className="max-w-[629px] text-white md:text-base font-normal leading-[150%] tracking-[1px] font-interTight">
+                  <span className="max-w-[629px] text-white text-sm md:text-base font-normal leading-[150%] tracking-[1px] font-interTight">
                     {item.subHeading}
                   </span>
                 </div>
-                <button className="bg-[#1687C7] px-4 py-3 text-lg font-semibold leading-[150%] tracking-[1px] text-white font-interTight rounded-[8px]">
+                <button className="bg-[#1687C7] px-4 md:py-3 py-2 text-sm md:text-lg font-semibold leading-[150%] tracking-[1px] text-white font-interTight rounded-[8px]">
                   {item.btnTxt}
                 </button>
               </div>
@@ -132,7 +132,7 @@ const TourCanada = () => {
                 }}
               ></div>
               <div className="flex flex-col xl:gap-y-6 md:max-w-[698px] w-full my-8 xl:mt-0">
-                <h4 className="text-[#000] font-interTight text-[25px] md:text-[32px] font-semibold leading-[150%] tracking-[1px] ">
+                <h4 className="text-[#000] font-interTight text-[25px] md:text-[32px] font-semibold leading-[150%] tracking-[1px]">
                   {item.heading}
                 </h4>
                 <div className="flex flex-col gap-y-6 font-interTight mt-6 xl:mt-0">
