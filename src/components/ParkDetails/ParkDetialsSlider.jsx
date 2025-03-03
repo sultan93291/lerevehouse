@@ -1,20 +1,17 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import {
-  NextSlideSvg,
-  PrevSlideSvg,
-} from "../common/SvgContainer/SvgContainer";
+import { NextSlideSvg, PrevSlideSvg } from "../common/SvgContainer/SvgContainer";
 import ImageSlide from "./ImageSlide";
 
 const ParkDetailsSlider = ({ data }) => {
   const [swiperRef, setSwiperRef] = useState(null);
 
   return (
-    <div className="w-full">
+    <div className="!w-full border border-red-500">
       {/* Slider */}
-      <div className="w-[1600px] flex items-center relative">
+      <div className="w-full flex flex-grow items-center relative">
         <Swiper
           loop={true}
           slidesPerView={1}
@@ -27,14 +24,13 @@ const ParkDetailsSlider = ({ data }) => {
           }}
         >
           {data.map((_, idx) => {
-            // Get the previous, current, and next images for each slide
             const images = [
               data[(idx - 1 + data.length) % data.length], // Left image
               data[idx], // Center image
               data[(idx + 1) % data.length], // Right image
             ];
             return (
-              <SwiperSlide key={idx} className="flex justify-center">
+              <SwiperSlide key={idx} className="flex !w-full justify-center">
                 <ImageSlide images={images} />
               </SwiperSlide>
             );
@@ -42,7 +38,7 @@ const ParkDetailsSlider = ({ data }) => {
         </Swiper>
 
         {/* Slider Navigation */}
-        <button
+        {/* <button
           onClick={() => swiperRef.slidePrev()}
           className="md:size-10 size-8 bg-[#E6ECF0] shadow-md rounded-full flex items-center justify-center absolute top-[47%] md:-left-6 -left-4 z-20"
         >
@@ -53,7 +49,7 @@ const ParkDetailsSlider = ({ data }) => {
           className="md:size-10 size-8 bg-[#E6ECF0] shadow-md rounded-full flex items-center justify-center absolute top-[48%] md:-right-6 -right-4 z-20"
         >
           <NextSlideSvg />
-        </button>
+        </button> */}
       </div>
     </div>
   );
