@@ -7,7 +7,7 @@ import {
 
 const MapSection = () => {
   return (
-    <div className="flex flex-col gap-y-[64px] ">
+    <div className="flex flex-col gap-y-[64px] container ">
       <div className="flex flex-row gap-x-6 ">
         <img
           src={map}
@@ -47,12 +47,50 @@ const MapSection = () => {
         </div>
       </div>
       <div className="flex flex-row gap-x-10 ">
-        <p>
-          <span>Adventure </span>. The <span>Great Canadian North</span> is
+        <p className="text-text-gray text-[18px] font-normal leading-[150%] tracking-[1px] font-interTight max-w-[523px] ">
+          <span className="text-[#000]">Adventure </span>. The 
+          <span className="text-[#000]">Great Canadian North</span> is
           synonymous with this, adventure! The vast territory divided between
-          the <span>Canadian territories</span> of Yukon, Northwest Territories
-          and Nunavut is a land of wild landscapes, moose, lakes, forests and
-          majestic ice. Here everything evokes legendary adventures,
+          the <span className="text-[#D40000]">Canadian territories</span> of
+          Yukon, Northwest Territories and Nunavut is a land of wild landscapes,
+          moose, lakes, forests and majestic ice. Here everything evokes
+          legendary adventures,
+        </p>
+        <p className="text-text-gray text-[18px] font-normal leading-[150%] tracking-[1px] font-interTight max-w-[523px] ">
+          even the names of the streets, and the further north you go the more
+          you will feel like an explorer of virgin lands. In{" "}
+          <span className="text-[#000]">Yukon</span>  you can relive the period
+          of the gold rush in the Klondike , you can go trekking in the
+          beautiful Kluane National Park , go canoeing along the Yukon River or
+          enjoy the lively
+        </p>
+        <p className="text-text-gray text-[18px] font-normal leading-[150%] tracking-[1px] font-interTight max-w-[523px] ">
+          atmosphere of Whitehorse. Outdoor activities (in summer) are also the
+          best to do in the 
+          <span className="text-[#000]">Northwest Territories</span> , a
+          sparsely populated province with beautiful nature and legendary
+          trekking or cycling routes.
+        </p>
+      </div>
+      <div className="flex flex-row gap-x-10 ">
+        <p className="text-text-gray text-[18px] font-normal leading-[150%] tracking-[1px] font-interTight max-w-[523px] ">
+          Moose, bears, caribou will keep you company in these boundless
+          territories.  <span className="text-[#000]">Nunavut</span>is truly the
+          last frontier of your trip to Canada, the North Pole , the Arctic
+          endless mountains, polar bears and icebergs, an almost non-existent
+          but native
+        </p>
+        <p className="text-text-gray text-[18px] font-normal leading-[150%] tracking-[1px] font-interTight max-w-[523px] ">
+          population (the Inuit ) and master of its imposing territory. The
+          costs of traveling here are high and the climate can upset any trip
+          but if you are lucky and you manage to get to the Auyuttuq National
+          Park you will be left speechless in front of the
+        </p>
+        <p className="text-text-gray text-[18px] font-normal leading-[150%] tracking-[1px] font-interTight max-w-[523px] ">
+          highest rock walls on the planet. Nunavut is a  
+          <span className="text-[#000]" >unique place in the world</span> , getting there and visiting it
+          involves considerable costs, but if you have the opportunity you will
+          not regret it!
         </p>
       </div>
     </div>
