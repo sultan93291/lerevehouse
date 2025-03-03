@@ -64,7 +64,7 @@ const TourGuide = () => {
   return (
     <section className="container">
       {/* Tour Gallery */}
-      <div className="mt-44 mb-10">
+      <div className="2xl:mt-44 mt-32 mb-10">
         <figure>
           <img src={g1} alt="g1" />
         </figure>
@@ -85,40 +85,40 @@ const TourGuide = () => {
       </div>
 
       {/* Tour Guide Tabs */}
-      <div className="mb-10">
+      <div className="md:mb-10 mb-16">
         <Tabs>
-          <TabList className="flex md:flex-row flex-col items-center gap-6 justify-between pb-12">
+          <TabList className="flex md:flex-row flex-col items-center md:gap-6 gap-3 justify-between md:pb-12 pb-6">
             <Tab
               className="px-4 pb-1 outline-none border-b-2 border-transparent 
-               hover:border-light-blue focus:outline-none cursor-pointer  text-lg font-medium duration-300"
+               hover:border-light-blue focus:outline-none cursor-pointer text-base xl:text-lg font-medium duration-300"
               selectedClassName="!border-light-blue text-prmiary-blue !border-b-2"
             >
               What to do
             </Tab>
             <Tab
               className="px-4 pb-1 outline-none border-b-2 border-transparent 
-               hover:border-light-blue focus:outline-none cursor-pointer  text-lg font-medium duration-300"
+               hover:border-light-blue focus:outline-none cursor-pointer text-base xl:text-lg font-medium duration-300"
               selectedClassName="!border-light-blue text-prmiary-blue !border-b-2"
             >
               What to eat
             </Tab>
             <Tab
               className="px-4 pb-1 outline-none border-b-2 border-transparent 
-               hover:border-light-blue focus:outline-none cursor-pointer  text-lg font-medium duration-300"
+               hover:border-light-blue focus:outline-none cursor-pointer text-base xl:text-lg font-medium duration-300"
               selectedClassName="!border-light-blue text-prmiary-blue !border-b-2"
             >
               Festivals calendar
             </Tab>
             <Tab
               className="px-4 pb-1 outline-none border-b-2 border-transparent 
-               hover:border-light-blue focus:outline-none cursor-pointer  text-lg font-medium duration-300"
+               hover:border-light-blue focus:outline-none cursor-pointer text-base xl:text-lg font-medium duration-300"
               selectedClassName="!border-light-blue text-prmiary-blue !border-b-2"
             >
               MAP
             </Tab>
             <Tab
               className="px-4 pb-1 outline-none border-b-2 border-transparent 
-               hover:border-light-blue focus:outline-none cursor-pointer  text-lg font-medium duration-300"
+               hover:border-light-blue focus:outline-none cursor-pointer text-base xl:text-lg font-medium duration-300"
               selectedClassName="!border-light-blue text-prmiary-blue !border-b-2"
             >
               Where to stay
