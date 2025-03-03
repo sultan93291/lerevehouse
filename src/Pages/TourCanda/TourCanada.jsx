@@ -59,13 +59,13 @@ const tripCanda = [
 
 const TourCanada = () => {
   return (
-    <section className="xl:my-[156px] mt-16 py-[72px] container flex flex-col gap-y-10 xl:gap-y-[148px]">
+    <section className="2xl:my-[156px] mt-16 md:py-[72px] py-9 container flex flex-col md:gap-y-10 gap-y-5 2xl:gap-y-[148px]">
       <div className="flex flex-col gap-y-[148px]">
         <div className="flex flex-col gap-y-4 items-center ">
           <h2 className="text-[#1687C7] font-interTight text-[40px] 2xl:text-[56px] font-semibold leading-[160%] ">
             Canada Tour
           </h2>
-          <p className="text-text-gray max-w-[966px] font-interTight text-sm md:text-xl xl:text-2xl font-normal md:leading-[140%]">
+          <p className="text-text-gray max-w-[966px] font-interTight text-sm md:text-xl 2xl:text-2xl font-normal md:leading-[140%]">
             Set off to discover this wonderful country, choose the type
             of Canada tour that is best for you! Total freedom and desire to
             drive? Choose from the  Canada car tours  that we offer. If instead
@@ -83,7 +83,9 @@ const TourCanada = () => {
             <div
               key={index}
               className={`group ${
-                index == 2 ? "h-[570px] w-full" : "h-[521px] w-[49.4%]"
+                index == 2
+                  ? "md:h-[570px] h-[300px] w-full"
+                  : "md:h-[521px] h-[300px] 3xl:w-[49.4%] md:w-full"
               } flex flex-col items-center justify-center relative overflow-hidden`}
               style={{
                 backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url(${item.src})`,
