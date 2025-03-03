@@ -1,4 +1,5 @@
-import { useState } from "react";
+import React, { useState } from "react";
+
 const TourTab = ({ data }) => {
   const [SelectedTab, setSelectedTab] = useState("Alaska");
 
@@ -12,10 +13,11 @@ const TourTab = ({ data }) => {
                 setSelectedTab(tab);
               }}
               key={index}
-              className={`py-2 px-4 md:py-3 md:px-6 ${SelectedTab === tab
-                ? "bg-light-blue border-transparent"
-                : "bg-transparent border-solid border-[rgba(255,255,255,0.2)]"
-                } border-[1px] md:text-[18px] leading-[160%] font-medium ease-in-out duration-300 group-hover:underline font-inter text-white`}
+              className={`md:py-3 py-[6px] md:px-6 px-3 ${
+                SelectedTab === tab
+                  ? "bg-light-blue border-transparent"
+                  : "bg-transparent border-solid border-[rgba(255,255,255,0.2)]"
+              } border-[1px] text-base md:text-[18px] leading-[160%] font-medium ease-in-out duration-300 group-hover:underline font-inter text-white`}
             >
               {tab}
             </button>
