@@ -59,7 +59,7 @@ const tripCanda = [
 
 const TourCanada = () => {
   return (
-    <section className="md:my-[156px] my-20 md:py-[72px] container flex flex-col gap-y-10 xl:gap-y-[148px]">
+    <section className="xl:my-[156px] mt-16 py-[72px] container flex flex-col gap-y-10 xl:gap-y-[148px]">
       <div className="flex flex-col gap-y-[148px]">
         <div className="flex flex-col gap-y-4 items-center ">
           <h2 className="text-[#1687C7] font-interTight text-[40px] 2xl:text-[56px] font-semibold leading-[160%] ">
@@ -75,14 +75,49 @@ const TourCanada = () => {
           </p>
         </div>
       </div>
-      <div className="flex flex-col gap-y-[72px] ">
+      <div className="flex flex-col md:flex-row md:flex-wrap gap-y-4  gap-x-4  md:items-center">
+        {selfDriventours.map((item, index) => {
+          console.log(item);
+
+          return (
+            <div
+              key={index}
+              className={`group ${
+                index == 2 ? "h-[570px] w-full" : "h-[521px] w-[49.4%]"
+              } flex flex-col items-center justify-center relative overflow-hidden`}
+              style={{
+                backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url(${item.src})`,
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+              }}
+            >
+              {/* Content inside should only be visible on hover */}
+              <div className="h-full w-full flex flex-col items-center justify-center gap-y-[38px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out transform scale-95 group-hover:scale-100">
+                <div className="flex flex-col items-center justify-center gap-y-[22px]">
+                  <h2 className="text-white text-[32px] font-semibold leading-[150%] tracking-[1px] font-interTight">
+                    {item.heading}
+                  </h2>
+                  <span className="max-w-[629px] text-white md:text-base font-normal leading-[150%] tracking-[1px] font-interTight">
+                    {item.subHeading}
+                  </span>
+                </div>
+                <button className="bg-[#1687C7] px-4 py-3 text-lg font-semibold leading-[150%] tracking-[1px] text-white font-interTight rounded-[8px]">
+                  {item.btnTxt}
+                </button>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <div className="flex flex-col xl:gap-y-[72px] ">
         {tripCanda.map((item, idx) => {
           return (
             <div
               className={`${
                 idx == 1
-                  ? "flex flex-col-reverse xl:flex-row-reverse gap-x-8 "
-                  : "flex xl:flex-row flex-col items-center gap-x-8"
+                  ? "flex flex-col-reverse xl:flex-row-reverse items-center gap-x-8 "
+                  : "flex xl:flex-row flex-col-reverse items-center gap-x-8"
               }`}
             >
               <div
@@ -95,17 +130,17 @@ const TourCanada = () => {
                 }}
               ></div>
               <div className="flex flex-col xl:gap-y-6 md:max-w-[698px] w-full my-8 xl:mt-0">
-                <h4 className="text-[#000] font-interTight text-[32px] font-semibold leading-[150%] tracking-[1px] ">
+                <h4 className="text-[#000] font-interTight text-[25px] md:text-[32px] font-semibold leading-[150%] tracking-[1px] ">
                   {item.heading}
                 </h4>
-                <div className="flex flex-col gap-y-6 font-interTight">
-                  <span className="text-[#000] text-[16px] font-normal leading-[150%] tracking-[1px] ">
+                <div className="flex flex-col gap-y-6 font-interTight mt-6 xl:mt-0">
+                  <span className="text-[#000] text-sm md:text-base font-normal leading-[150%] tracking-[1px] ">
                     {item.paraOne}
                   </span>
-                  <span className="text-[#000] text-[16px] font-normal leading-[150%] tracking-[1px] ">
+                  <span className="text-[#000] text-sm md:text-base font-normal leading-[150%] tracking-[1px] ">
                     {item.paraTwo}
                   </span>
-                  <span className="text-[#000] text-[16px] font-normal leading-[150%] tracking-[1px] ">
+                  <span className="text-[#000] text-sm md:text-base font-normal leading-[150%] tracking-[1px]">
                     {item.paraThree}
                   </span>
                 </div>
