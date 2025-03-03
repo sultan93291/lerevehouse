@@ -59,13 +59,13 @@ const tripCanda = [
 
 const TourCanada = () => {
   return (
-    <section className=" my-[156px] py-[72px]  container flex flex-col gap-y-[148px] ">
-      <div className="flex flex-col gap-y-[148px] ">
+    <section className="md:my-[156px] my-20 md:py-[72px] container flex flex-col gap-y-10 xl:gap-y-[148px]">
+      <div className="flex flex-col gap-y-[148px]">
         <div className="flex flex-col gap-y-4 items-center ">
-          <h2 className="text-[#1687C7] font-interTight text-[56px] font-semibold leading-[160%] ">
+          <h2 className="text-[#1687C7] font-interTight text-[40px] 2xl:text-[56px] font-semibold leading-[160%] ">
             Canada Tour
           </h2>
-          <p className="text-text-gray max-w-[966px] font-interTight text-2xl font-normal leading-[140%] ">
+          <p className="text-text-gray max-w-[966px] font-interTight text-sm md:text-xl xl:text-2xl font-normal md:leading-[140%]">
             Set off to discover this wonderful country, choose the type
             of Canada tour that is best for you! Total freedom and desire to
             drive? Choose from the  Canada car tours  that we offer. If instead
@@ -74,41 +74,6 @@ const TourCanada = () => {
             combine train routes with bus routes....or ferry!
           </p>
         </div>
-        <div className="flex flex-row flex-wrap gap-y-4  gap-x-4  items-center   ">
-          {selfDriventours.map((item, index) => {
-            console.log(item);
-
-            return (
-              <div
-                key={index}
-                className={`group ${
-                  index == 2 ? "h-[570px] w-full " : "h-[521px] w-[49.4%]"
-                } flex flex-col items-center justify-center relative overflow-hidden`}
-                style={{
-                  backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url(${item.src})`,
-                  backgroundSize: "cover",
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "center",
-                }}
-              >
-                {/* Content inside should only be visible on hover */}
-                <div className="h-full w-full flex flex-col items-center justify-center gap-y-[38px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out transform scale-95 group-hover:scale-100">
-                  <div className="flex flex-col items-center justify-center gap-y-[22px]">
-                    <h2 className="text-white text-[32px] font-semibold leading-[150%] tracking-[1px] font-interTight">
-                      {item.heading}
-                    </h2>
-                    <span className="max-w-[629px] text-white text-[16px] font-normal leading-[150%] tracking-[1px] font-interTight">
-                      {item.subHeading}
-                    </span>
-                  </div>
-                  <button className="bg-[#1687C7] px-4 py-3 text-lg font-semibold leading-[150%] tracking-[1px] text-white font-interTight rounded-[8px]">
-                    {item.btnTxt}
-                  </button>
-                </div>
-              </div>
-            );
-          })}
-        </div>
       </div>
       <div className="flex flex-col gap-y-[72px] ">
         {tripCanda.map((item, idx) => {
@@ -116,12 +81,12 @@ const TourCanada = () => {
             <div
               className={`${
                 idx == 1
-                  ? "flex flex-row-reverse gap-x-8 "
-                  : "flex  flex-row gap-x-8"
+                  ? "flex flex-col-reverse xl:flex-row-reverse gap-x-8 "
+                  : "flex xl:flex-row flex-col items-center gap-x-8"
               }`}
             >
               <div
-                className="w-[868px] h-[434px] "
+                className="2xl:w-[868px] w-full md:h-[434px] h-[300px]"
                 style={{
                   backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url(${item.src})`,
                   backgroundSize: "cover",
@@ -129,11 +94,11 @@ const TourCanada = () => {
                   backgroundPosition: "center",
                 }}
               ></div>
-              <div className="flex flex-col gap-y-6 max-w-[698px] ">
+              <div className="flex flex-col xl:gap-y-6 md:max-w-[698px] w-full my-8 xl:mt-0">
                 <h4 className="text-[#000] font-interTight text-[32px] font-semibold leading-[150%] tracking-[1px] ">
                   {item.heading}
                 </h4>
-                <div className="flex flex-col gap-y-6 font-interTight ">
+                <div className="flex flex-col gap-y-6 font-interTight">
                   <span className="text-[#000] text-[16px] font-normal leading-[150%] tracking-[1px] ">
                     {item.paraOne}
                   </span>

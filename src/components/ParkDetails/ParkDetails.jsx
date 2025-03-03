@@ -24,16 +24,9 @@ const ParkDetails = ({
             {SubHeading}
           </h5>
         </div>
-<<<<<<< HEAD
         <div className="flex flex-col gap-y-5">
           <div className="flex md:flex-row flex-col md:w-full gap-x-3">
             <p className="text-text-gray text-sm xl:text-[18px] font-normal font-interTight leading-[160%] ">
-=======
-        <div className="flex flex-col gap-y-5  ">
-          <div className="flex flex-row w-full gap-x-6   ">
-            <p className="text-text-gray text-[18px]   font-normal font-interTight leading-[160%] ">
-
->>>>>>> b0d8d098d475892d9201a54ca2a3edc007d18a2b
               {ParaOne}{" "}
               {isDouble && (
                 <>
