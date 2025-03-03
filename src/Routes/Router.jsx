@@ -128,8 +128,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/tour-canada/single",
-        element:<SingleCanadaTour/>
-      }
+        element: <SingleCanadaTour />,
+      },
     ],
   },
 ]);
