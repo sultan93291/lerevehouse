@@ -9,7 +9,7 @@ import {
 } from "../common/SvgContainer/SvgContainer";
 import TourListDetailsReviewCard from "../common/Cards/TourListDetailsReviewCard";
 
-const TourListDetailsReview = () => {
+const TourListDetailsReview = ({ isHeading }) => {
   const [swiperRef, setSwiperRef] = useState(null);
   const allReviews = [
     {
@@ -66,12 +66,16 @@ const TourListDetailsReview = () => {
   return (
     <div className=" my-10 xl:my-20  ">
       {/* title */}
-      <div>
-        <h3 className=" text-2xl xl:text-4xl font-editorsNoteNormal text-primary text-center">
-          What our clients say about
-          <span className="font-editorsNoteItalic">Canada And Alaska Tour</span>
-        </h3>
-      </div>
+      {isHeading && (
+        <div>
+          <h3 className=" text-2xl xl:text-4xl font-editorsNoteNormal text-primary text-center">
+            What our clients say about
+            <span className="font-editorsNoteItalic">
+              Canada And Alaska Tour
+            </span>
+          </h3>
+        </div>
+      )}
 
       {/* sliders */}
       <div className="mt-10 relative">
@@ -92,7 +96,7 @@ const TourListDetailsReview = () => {
           onSwiper={setSwiperRef}
           className="mySwiper"
         >
-          {allReviews?.map((review) => (
+          {allReviews?.map(review => (
             <SwiperSlide key={review?.title}>
               <TourListDetailsReviewCard item={review} />
             </SwiperSlide>
