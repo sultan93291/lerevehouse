@@ -6,7 +6,7 @@ const Delights = () => {
       <h2 className="text-[#004265] font-fontSpring  font-light leading-[132%] text-3xl sm:text-4xl xl:text-[48px]  ">
         DELIGHTS FOR THE PALATE
       </h2>
-      <p className=" text-text-gray flex flex-col gap-y-4 text-center text-base xl:font-lg font-interTight font-normal leading-[180%] ">
+      <p className=" text-text-gray flex flex-col gap-y-4 text-center text-sm xl:font-lg font-interTight font-normal leading-[180%] ">
         In the Atlantic Provinces, lobster is the star, as are the cod cheeks
         from Nova Scotia and New Brunswick. Quebec, in addition to having many
         French influences, is the world's leading producer of delicious maple
