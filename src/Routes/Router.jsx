@@ -9,6 +9,7 @@ import DestinationDetails from "@/Pages/DestinationDetails/DestinationDetails";
 import EatAndDrink from "@/Pages/EatAndDrink/EatAndDrink";
 import Homepage from "@/Pages/Homepage/Homepage";
 import TestMap from "@/Pages/TestMap/TestMap";
+import TourCanada from "@/Pages/TourCanda/TourCanada";
 import TourGuide from "@/Pages/TourGuide/TourGuide";
 import TourGuide22 from "@/Pages/TourGuide22";
 import TouristGuide from "@/Pages/TouristGuide/TouristGuide";
@@ -114,6 +115,10 @@ const router = createBrowserRouter([
       {
         path: "/tour-guide-22",
         element: <TourGuide22 />,
+      },
+      {
+        path: "/tour-canda",
+        element: <TourCanada />,
       },
     ],
   },
