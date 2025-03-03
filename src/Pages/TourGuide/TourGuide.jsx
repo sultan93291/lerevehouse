@@ -1,67 +1,15 @@
-// import CommonHeroBanner from "@/components/common/HeroBanner/CommonHeroBanner";
-// import React from "react";
-// import mountain from "../../assets/images/tourist-guide/mountain_sea.png";
-// import MapSection from "./Sections/MapSection";
-// import TourTab from "./Sections/TourTab";
-// import ParkDetails from "@/components/ParkDetails/ParkDetails";
-// import { parkDetailsData, TourTabData } from "@/components/DummyData/TourGuidData";
-// const TourGuide = () => {
-//   return (
-//     <div>
-//       <CommonHeroBanner
-//         title={"Where the world ends, the adventure begins"}
-//         bg={mountain}
-//         italic={true}
-//         uppercaseItalic={false}
-//       />
-//       <MapSection />
-//       <TourTab data={TourTabData} />
-//       <div className=" py-5 bg-chocolate">
-//         <div className="container flex items-center text-white justify-center font-editorsNoteItalic text-[40px] font-light leading-[160%] ">
-//           Find your best possible tour guide
-//         </div>
-//       </div>
-//         <div className=" flex flex-col">
-//           {parkDetailsData.map((details, index) => (
-//             <div
-//               key={details?.id}
-//               style={{
-//                 backgroundColor: index % 2 === 0 ? "#1686c743" : "#fff",
-//               }}
-//             >
-//               <ParkDetails
-//                 Heading={details?.Heading}
-//                 SubHeading={details?.SubHeading}
-//                 ParaOne={details?.ParaOne}
-//                 ParaTwo={details?.ParaTwo}
-//                 ParaThree={details?.ParaThree}
-//                 BtnTxt={details?.BtnTxt}
-//                 Images={details?.images}
-//                 isHover={details?.isHover}
-//                 isDouble={details?.isDouble}
-//               />
-//             </div>
-//           ))}
-//       </div>
-//     </div>
-//   );
-// };
-// export default TourGuide;
-import g1 from "../../assets/images/tour-guide/g1.png";
-import g2 from "../../assets/images/tour-guide/g2.png";
-import g3 from "../../assets/images/tour-guide/g3.png";
-import g4 from "../../assets/images/tour-guide/g4.png";
-import g5 from "../../assets/images/tour-guide/g5.png";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import "react-tabs/style/react-tabs.css";
-import WhatToDo from "@/components/TourGuide/WhatToDo";
-import WhatToEat from "@/components/TourGuide/WhatToEat";
-import FestivalsCalendar from "@/components/TourGuide/FestivalsCalendar";
-import Map from "@/components/TourGuide/Map";
-import WhereToStay from "@/components/TourGuide/WhereToStay";
+import CommonHeroBanner from "@/components/common/HeroBanner/CommonHeroBanner";
+import React from "react";
+import mountain from "../../assets/images/tourist-guide/mountain_sea.png";
+import MapSection from "./Sections/MapSection";
+import TourTab from "./Sections/TourTab";
+import ParkDetails from "@/components/ParkDetails/ParkDetails";
+
+import { parkDetailsData, TourTabData } from "@/components/DummyData/TourGuidData";
 
 const TourGuide = () => {
   return (
+<<<<<<< HEAD
     <section className="container">
       {/* Tour Gallery */}
       <div className="2xl:mt-44 mt-32 mb-10">
@@ -141,9 +89,45 @@ const TourGuide = () => {
             <WhereToStay />
           </TabPanel>
         </Tabs>
+=======
+    <div>
+      <CommonHeroBanner
+        title={"Where the world ends, the adventure begins"}
+        bg={mountain}
+        italic={true}
+        uppercaseItalic={false}
+      />
+      <MapSection />
+      <TourTab data={TourTabData} />
+      <div className=" py-5 bg-chocolate">
+        <div className="container flex items-center text-white justify-center font-editorsNoteItalic text-[40px] font-light leading-[160%] ">
+          Find your best possible tour guide
+        </div>
       </div>
-    </section>
+      <div className=" flex flex-col">
+        {parkDetailsData.map((details, index) => (
+          <div
+            key={details?.id}
+            style={{
+              backgroundColor: index % 2 === 0 ? "#1686c743" : "#fff",
+            }}
+          >
+            <ParkDetails
+              Heading={details?.Heading}
+              SubHeading={details?.SubHeading}
+              ParaOne={details?.ParaOne}
+              ParaTwo={details?.ParaTwo}
+              ParaThree={details?.ParaThree}
+              BtnTxt={details?.BtnTxt}
+              Images={details?.images}
+              isHover={details?.isHover}
+              isDouble={details?.isDouble}
+            />
+          </div>
+        ))}
+>>>>>>> b0d8d098d475892d9201a54ca2a3edc007d18a2b
+      </div>
+    </div>
   );
 };
-
 export default TourGuide;

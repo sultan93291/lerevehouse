@@ -9,13 +9,16 @@ import DestinationDetails from "@/Pages/DestinationDetails/DestinationDetails";
 import EatAndDrink from "@/Pages/EatAndDrink/EatAndDrink";
 import Homepage from "@/Pages/Homepage/Homepage";
 import TestMap from "@/Pages/TestMap/TestMap";
+import TourCanada from "@/Pages/TourCanda/TourCanada";
 import TourGuide from "@/Pages/TourGuide/TourGuide";
+import TourGuide22 from "@/Pages/TourGuide22";
 import TouristGuide from "@/Pages/TouristGuide/TouristGuide";
 import TouristListDetails from "@/Pages/TouristListDetails/TouristListDetails";
 import TourList from "@/Pages/TourList/TourList";
 import TravelActivitiesPage from "@/Pages/TravelActivites/TravelActivitiesPage";
 import TravelStylePage from "@/Pages/TravelStyle/TravelStylePage";
 import TravelStyleDetailsPage from "@/Pages/TravelStyleDetails/TravelStyleDetailsPage";
+import WildSide from "@/Pages/WildSide/WildSide";
 import { createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -104,6 +107,18 @@ const router = createBrowserRouter([
       {
         path: "/eat&-drink",
         element: <EatAndDrink />,
+      },
+      {
+        path: "/wild-side",
+        element: <WildSide />,
+      },
+      {
+        path: "/tour-guide-22",
+        element: <TourGuide22 />,
+      },
+      {
+        path: "/tour-canda",
+        element: <TourCanada />,
       },
     ],
   },
