@@ -4,6 +4,7 @@ import ActivitiesSubcategory from "@/Pages/ActivitiesSubcategory/ActivitiesSubca
 import AllTouristGuide from "@/Pages/AllTouristGuide/AllTouristGuide";
 import AllTouristGuideDetails from "@/Pages/AllTouristGuideDetails/AllTouristGuideDetails";
 import Contact from "@/Pages/Contact/Contact";
+import CustomizeTripCanada from "@/Pages/CustomizeTripCanada/CustomizeTripCanada";
 import Destination from "@/Pages/Destination/Destination";
 import DestinationDetails from "@/Pages/DestinationDetails/DestinationDetails";
 import EatAndDrink from "@/Pages/EatAndDrink/EatAndDrink";
@@ -119,6 +120,10 @@ const router = createBrowserRouter([
       {
         path: "/tour-canda",
         element: <TourCanada />,
+      },
+      {
+        path: "/customize/tour-canda",
+        element: <CustomizeTripCanada />,
       },
     ],
   },
