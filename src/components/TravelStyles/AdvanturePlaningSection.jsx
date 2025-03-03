@@ -20,13 +20,13 @@ const holidaysData = [
     },
     {
         id: 3,
-        title: "Active",
-        description: "From leisurely walking and cycling to push-your-limits expeditions.",
+        title: "Worldwide",
+        description: "15 Guided Group and Self-Guided adventures in 100 countries.",
         image: WorldWideImage,
     },
     {
         id: 4,
-        title: "Active",
+        title: "Sustainable",
         description: "100% carbon absorption. Caring for the environment and local communities.",
         image: SustainableImage,
     },

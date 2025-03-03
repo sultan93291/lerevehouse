@@ -5,7 +5,7 @@ const TourTab = ({ data }) => {
 
   return (
     <div className="h-auto py-5 w-full bg-prmiary-blue">
-      <div className="container flex flex-row flex-wrap gap-5 items-center justify-center">
+      <div className="container flex flex-row flex-wrap gap-3 md:gap-5 items-center justify-center">
         {data.map((tab, index) => {
           return (
             <button

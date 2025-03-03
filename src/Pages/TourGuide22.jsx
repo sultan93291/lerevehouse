@@ -44,7 +44,7 @@ const TourGuide22 = () => {
                             selectedClassName="!border-light-blue text-prmiary-blue !border-b-2">What to do</Tab>
                         <Tab className="px-4 pb-1 outline-none border-b-2 border-transparent 
                hover:border-light-blue focus:outline-none cursor-pointer  text-lg font-medium duration-300"
-                            selectedClassName="!border-light-blue text-prmiary-blue !border-b-2">What to eat</Tab>
+                            selectedClassName="!border-light-blue text-prmiary-blue !border-b-2">Where to eat</Tab>
                         <Tab className="px-4 pb-1 outline-none border-b-2 border-transparent 
                hover:border-light-blue focus:outline-none cursor-pointer  text-lg font-medium duration-300"
                             selectedClassName="!border-light-blue text-prmiary-blue !border-b-2">Festivals calendar</Tab>
