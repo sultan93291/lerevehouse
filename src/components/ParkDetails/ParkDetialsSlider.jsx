@@ -9,7 +9,7 @@ const ParkDetailsSlider = ({ data }) => {
   const [swiperRef, setSwiperRef] = useState(null);
 
   return (
-    <div className="!w-full border border-red-500">
+    <div className="!w-full">
       {/* Slider */}
       <div className="w-full flex flex-grow items-center relative">
         <Swiper
@@ -38,7 +38,7 @@ const ParkDetailsSlider = ({ data }) => {
         </Swiper>
 
         {/* Slider Navigation */}
-        {/* <button
+        <button
           onClick={() => swiperRef.slidePrev()}
           className="md:size-10 size-8 bg-[#E6ECF0] shadow-md rounded-full flex items-center justify-center absolute top-[47%] md:-left-6 -left-4 z-20"
         >
@@ -49,7 +49,7 @@ const ParkDetailsSlider = ({ data }) => {
           className="md:size-10 size-8 bg-[#E6ECF0] shadow-md rounded-full flex items-center justify-center absolute top-[48%] md:-right-6 -right-4 z-20"
         >
           <NextSlideSvg />
-        </button> */}
+        </button>
       </div>
     </div>
   );
