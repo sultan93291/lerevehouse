@@ -35,7 +35,7 @@ const ParkDetails = ({
                 </>
               )}
             </p>
-            <p className="text-text-gray text-base xl:text-[18px] font-normal font-interTight leading-[160%] ">
+            <p className="text-text-gray text-sm xl:text-[18px] font-normal font-interTight leading-[160%] ">
               {ParaTwo}{" "}
               {isDouble && (
                 <>
@@ -75,3 +75,5 @@ const ParkDetails = ({
 };
 
 export default ParkDetails;
+
+//ok responsive
