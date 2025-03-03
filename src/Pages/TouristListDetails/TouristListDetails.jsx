@@ -57,7 +57,7 @@ const TouristListDetails = () => {
         <WaterActivity />
 
         {/* Testimonials */}
-        <TourListDetailsReview />
+        <TourListDetailsReview isHeading={true} />
 
         {/* Dates and Prices */}
         <TourListDetailsDatesPrices />
