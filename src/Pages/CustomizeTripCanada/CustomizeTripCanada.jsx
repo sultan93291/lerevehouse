@@ -1,4 +1,3 @@
-import React from "react";
 import { SpecialStar } from "@/components/common/SvgContainer/SvgContainer";
 import { HolidayData } from "@/components/DummyData/CustomizeTripData";
 import mountainer from "../../assets/images/customize-trip/mountainer.jpg"
