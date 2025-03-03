@@ -74,3 +74,5 @@ const ParkDetails = ({
 };
 
 export default ParkDetails;
+
+//ok responsive
