@@ -1,5 +1,3 @@
-import CommonHeroBanner from "@/components/common/HeroBanner/CommonHeroBanner";
-import bg from "../../assets/images/destination-bg.jpg";
 import TourListDetailsTab from "@/components/TourListDetails/TourListDetailsTab";
 import TourListDetailsDescription from "@/components/TourListDetails/TourListDetailsDescription";
 import TourListDetailsReview from "@/components/TourListDetails/TourListDetailsReview";
@@ -7,6 +5,8 @@ import TourListDetailsDatesPrices from "@/components/TourListDetails/TourListDet
 import TourListDetailsSuggestions from "@/components/TourListDetails/TourListDetailsSuggestions";
 import TourListDetailsVideoGallery from "@/components/TourListDetails/TourListDetailsVideoGallery";
 import ItenaryIdeaDetails from "@/components/TourListDetails/ItenaryIdeaDetails";
+import TourListDetailsBanner from "@/components/TourListDetails/TourListDetailsBanner";
+import WaterActivity from "@/components/TourListDetails/WaterActivity";
 const TouristListDetails = () => {
   const sectionTabs = [
     {
@@ -34,12 +34,13 @@ const TouristListDetails = () => {
   return (
     <div>
       {/* Hero section */}
-      <CommonHeroBanner
+      {/* <CommonHeroBanner
         bg={bg}
         title="Canada & Alaska"
         italic="Travel"
         duration=" 15 Days From  €3,850.00 "
-      />
+      /> */}
+      <TourListDetailsBanner />
 
       {/* tabs */}
       <TourListDetailsTab sectionTabs={sectionTabs} />
@@ -51,6 +52,9 @@ const TouristListDetails = () => {
 
         {/* itinerary */}
         <ItenaryIdeaDetails />
+
+        {/* Water Activity */}
+        <WaterActivity />
 
         {/* Testimonials */}
         <TourListDetailsReview />

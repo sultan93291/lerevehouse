@@ -75,7 +75,6 @@ const TourGuide22 = () => {
               Where to stay
             </Tab>
           </TabList>
-
           <TabPanel>
             <WhatToDo />
           </TabPanel>

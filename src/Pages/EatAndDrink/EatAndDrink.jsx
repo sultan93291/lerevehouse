@@ -24,7 +24,7 @@ const TourGuide = () => {
       <TourTab data={EatAndDrinkTabData} />
       <div className=" py-5 bg-chocolate">
         <div className="container flex items-center text-white justify-center font-editorsNoteItalic text-[40px] font-light leading-[160%] ">
-          We've added a seat at the table, yours!
+          We&apos;ve added a seat at the table, yours!
         </div>
       </div>
       <div className=" flex flex-col">

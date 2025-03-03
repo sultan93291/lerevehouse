@@ -1,17 +1,16 @@
-import React from "react";
 import map from "../../../assets/images/tourist-guide/map.png";
 import { BestPark } from "@/components/DummyData/TourGuidData";
 import { Arrow } from "@/components/common/SvgContainer/SvgContainer";
 
 const MapSection = () => {
   return (
-    <div className="py-20 container items-center flex flex-row gap-x-[155px] ">
+    <div className="py-20 container grid xl:grid-cols-2 gap-10 2xl:gap-20">
       <img src={map} alt="not found" />
       <div className="flex flex-col gap-y-5 ">
-        <h2 className="text-[32px] font-inter font-bold leading-[160%] text-prmiary-blue ">
+        <h2 className="text-2xl md:text-[32px] font-inter font-bold leading-[160%] text-prmiary-blue ">
           Best Parks In Canada
         </h2>
-        <p className="leading-[160%] font-normal text-base w-[655px] font-inter text-text-gray ">
+        <p className="leading-[160%] font-normal text-[15px] xs:text-base max-w-[655px] font-inter text-text-gray ">
           in the heart of central Alaska we find Denali National Park, which Le
           Reve House Adventure with the Alaska Adventure Trip makes us magically
           discover. Denali Park offers incredible landscapes and wildlife in
@@ -31,11 +30,11 @@ const MapSection = () => {
                 className="flex cursor-pointer flex-row gap-x-[8px] group  ease-in-out duration-300 "
               >
                 <div
-                  className={` h-[24px] w-[24px] flex items-center justify-center ease-out duration-300 group-hover:bg-light-blue  rounded-full bg-primary `}
+                  className={` w-5 h-5 md:h-[24px] md:w-[24px] flex items-center justify-center ease-out duration-300 group-hover:bg-light-blue  rounded-full bg-primary `}
                 >
                   <Arrow />
                 </div>
-                <p className="text-[16px] leading-[160%] font-medium ease-in-out duration-300 group-hover:underline font-inter text-text-black ">
+                <p className="text-sm md:text-[16px] leading-[160%] font-medium ease-in-out duration-300 group-hover:underline font-inter text-text-black ">
                   {item}
                 </p>
               </li>
