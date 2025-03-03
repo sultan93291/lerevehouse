@@ -1,4 +1,3 @@
-import React from "react";
 import ParkDetialsSlider from "./ParkDetialsSlider";
 
 const ParkDetails = ({
@@ -24,9 +23,9 @@ const ParkDetails = ({
             {SubHeading}
           </h5>
         </div>
-        <div className="flex flex-col gap-y-5  ">
-          <div className="flex flex-row w-full gap-x-6   ">
-            <p className="text-text-gray text-[18px]   font-normal font-interTight leading-[160%] ">
+        <div className="flex flex-col gap-y-5 ">
+          <div className="flex flex-col xl:flex-row w-full gap-5   ">
+            <p className="text-text-gray xl:text-[18px]  font-normal font-interTight leading-[160%] ">
 
               {ParaOne}{" "}
               {isDouble && (
@@ -35,7 +34,7 @@ const ParkDetails = ({
                 </>
               )}
             </p>
-            <p className="text-text-gray text-sm xl:text-[18px] font-normal font-interTight leading-[160%] ">
+            <p className="text-text-gray xl:text-[18px] font-normal font-interTight leading-[160%] ">
               {ParaTwo}{" "}
               {isDouble && (
                 <>
@@ -43,7 +42,7 @@ const ParkDetails = ({
                 </>
               )}
             </p>
-            <p className="text-text-gray text-base xl:text-[18px] font-normal font-interTight leading-[160%] ">
+            <p className="text-text-gray xl:text-[18px] font-normal font-interTight leading-[160%] ">
               {ParaThree}{" "}
               {isDouble && (
                 <>
@@ -67,7 +66,7 @@ const ParkDetails = ({
           )} */}
         </div>
       </div>
-      <div className="flex container">
+      <div className="flex">
         <ParkDetialsSlider data={Images} />
       </div>
     </div>

@@ -1,11 +1,13 @@
 import CommonHeroBanner from "@/components/common/HeroBanner/CommonHeroBanner";
-import React from "react";
 import mountain from "../../assets/images/tourist-guide/mountain_sea.png";
 import MapSection from "./Sections/MapSection";
 import TourTab from "./Sections/TourTab";
 import ParkDetails from "@/components/ParkDetails/ParkDetails";
 
-import { parkDetailsData, TourTabData } from "@/components/DummyData/TourGuidData";
+import {
+  parkDetailsData,
+  TourTabData,
+} from "@/components/DummyData/TourGuidData";
 
 const TourGuide = () => {
   return (
@@ -19,7 +21,7 @@ const TourGuide = () => {
       <MapSection />
       <TourTab data={TourTabData} />
       <div className=" py-5 bg-chocolate">
-        <div className="container flex items-center text-white justify-center font-editorsNoteItalic text-[40px] font-light leading-[160%] ">
+        <div className="container flex items-center text-white justify-center font-editorsNoteItalic text-2xl md:text-[40px] font-light leading-[160%] ">
           Find your best possible tour guide
         </div>
       </div>

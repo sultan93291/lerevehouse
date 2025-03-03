@@ -4,7 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@radix-ui/react-accordion";
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   ArrowLeft,
   DropDown,
@@ -45,10 +45,10 @@ const ItenaryIdeaDetails = () => {
     <section className="flex flex-col my-14 gap-y-5 lg:gap-y-10   ">
       <div className="flex flex-col gap-y-6  ">
         <div className="flex flex-col gap-y-4 xl:flex-row justify-between items-center ">
-          <h3 className="text-primary text-[34px]  xl:text-[48px] font-normal leading-[120%] font-editorsNoteNormal  ">
+          <h3 className="text-primary text-[34px] flex-shrink-0 font-normal leading-[120%] font-editorsNoteNormal  ">
             Itinerary idea in details{" "}
           </h3>
-          <div className="flex flex-row w-full justify-center  gap-x-4 ">
+          <div className="flex flex-row w-full justify-end  gap-x-4 ">
             <span
               onClick={() => {
                 closeAll();
