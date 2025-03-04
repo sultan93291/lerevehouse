@@ -17,7 +17,7 @@ const SingleCanadaTour = () => {
         }
         bg={polarBear}
       />
-      <div className="flex  flex-col pt-[110px]   gap-y-[108px]  ">
+      <div className="flex flex-col 2xl:pt-[110px] pt-12 2xl:gap-y-[108px] gap-y-14">
         <MapSection />
         <div className="flex flex-col">
           <div>
@@ -26,7 +26,7 @@ const SingleCanadaTour = () => {
                 Consult by State
               </span>
             </div>
-            <div className=" cursor-pointer flex flex-row items-center h-[75px] gap-x-3 bg-[#1687C7] px-[180px] ">
+            <div className="cursor-pointer flex flex-row items-center justify-evenly md:justify-start h-[75px] gap-x-3 bg-[#1687C7] md:px-[180px] px-2">
               {Tabs.map((item, index) => {
                 return (
                   <div
@@ -36,7 +36,7 @@ const SingleCanadaTour = () => {
                     }}
                     className={` ${
                       activeTab == item && "bg-[#56C2FF] "
-                    }  px-3  py-4 h-[59px]  text-white `}
+                    }  md:px-3 px-1 md:py-4 py-2 md:h-[59px] text-white`}
                   >
                     {item}
                   </div>
