@@ -103,7 +103,7 @@ const ConsultCard = () => {
           </p>
         </div>
       </div>
-      <div className="flex flex-row gap-x-4  ">
+      <div className="flex flex-row gap-x-4 ">
         {[0, 1, 3].map((item, index) => {
           return (
             <img

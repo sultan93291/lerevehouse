@@ -11,6 +11,7 @@ import EatAndDrink from "@/Pages/EatAndDrink/EatAndDrink";
 import Homepage from "@/Pages/Homepage/Homepage";
 import SingleCanadaTour from "@/Pages/SingleCanadaTour/SingleCanadaTour";
 import TestMap from "@/Pages/TestMap/TestMap";
+import TourAutoCanada from "@/Pages/TourAutoCanada/TourAutoCanada";
 import TourCanada from "@/Pages/TourCanda/TourCanada";
 import TourGuide from "@/Pages/TourGuide/TourGuide";
 import TourGuide22 from "@/Pages/TourGuide22";
@@ -129,6 +130,10 @@ const router = createBrowserRouter([
       {
         path: "/tour-canada/single",
         element: <SingleCanadaTour />,
+      },
+      {
+        path: "/tour-auto",
+        element: <TourAutoCanada />,
       },
     ],
   },
