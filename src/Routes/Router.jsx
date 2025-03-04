@@ -18,11 +18,13 @@ import TourGuide22 from "@/Pages/TourGuide22";
 import TouristGuide from "@/Pages/TouristGuide/TouristGuide";
 import TouristListDetails from "@/Pages/TouristListDetails/TouristListDetails";
 import TourList from "@/Pages/TourList/TourList";
+import TourWithCar from "@/Pages/TourWithCar/TourWithCar";
 import TravelActivitiesPage from "@/Pages/TravelActivites/TravelActivitiesPage";
 import TravelStylePage from "@/Pages/TravelStyle/TravelStylePage";
 import TravelStyleDetailsPage from "@/Pages/TravelStyleDetails/TravelStyleDetailsPage";
 import WildSide from "@/Pages/WildSide/WildSide";
 import { createBrowserRouter } from "react-router-dom";
+
 
 const router = createBrowserRouter([
   {
@@ -134,6 +136,10 @@ const router = createBrowserRouter([
       {
         path: "/tour-auto",
         element: <TourAutoCanada />,
+      },
+      {
+        path: "/tour-with-car",
+        element: <TourWithCar />,
       },
     ],
   },
