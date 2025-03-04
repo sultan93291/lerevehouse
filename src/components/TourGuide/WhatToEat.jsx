@@ -1,11 +1,11 @@
 const WhatToEat = () => {
   return (
-    <div className="space-y-10">
+    <div className="md:space-y-10 space-y-5">
       <div className="pb-6 border-b border-gray-200">
-        <h3 className="font-fontSpring md:text-3xl text-[28px] mb-3 text-[#004265]">
+        <h3 className="font-fontSpring md:text-3xl text-2xl mb-3 text-[#004265]">
           Maenam
         </h3>
-        <p className="text-[#565656] 2xl:text-xl xl:text-lg text-base">
+        <p className="text-[#565656] 2xl:text-xl lg:text-lg md:text-base text-sm">
           Maenam is one of Vancouvers best Thai restaurants, offering refined,
           beautifully-presented, authentic cuisine prepared using the best
           seasonal and local ingredients. The menu includes familiar classics
@@ -14,10 +14,10 @@ const WhatToEat = () => {
         </p>
       </div>
       <div className="pb-6 border-b border-gray-200">
-        <h3 className="font-fontSpring md:text-3xl text-[28px] mb-3 text-[#004265]">
+        <h3 className="font-fontSpring md:text-3xl text-2xl mb-3 text-[#004265]">
           Salmon N’Bannock{" "}
         </h3>
-        <p className="text-[#565656] 2xl:text-xl xl:text-lg text-base">
+        <p className="text-[#565656] 2xl:text-xl lg:text-lg md:text-base text-sm">
           Maenam is one of Vancouvers best Thai restaurants, offering refined,
           beautifully-presented, authentic cuisine prepared using the best
           seasonal and local ingredients. The menu includes familiar classics
@@ -26,10 +26,10 @@ const WhatToEat = () => {
         </p>
       </div>
       <div className="pb-6 border-b border-gray-200">
-        <h3 className="font-fontSpring md:text-3xl text-[28px] mb-3 text-[#004265]">
+        <h3 className="font-fontSpring md:text-3xl text-2xl mb-3 text-[#004265]">
           Bao Bei
         </h3>
-        <p className="text-[#565656] 2xl:text-xl xl:text-lg text-base">
+        <p className="text-[#565656] 2xl:text-xl lg:text-lg md:text-base text-sm">
           This cozy, modern Chinese brasserie is a far cry from the Chinese
           restaurants of old. You will be charmed by the fresh ingredients,
           friendly staff, trendy atmosphere and the impeccable presentation. In
@@ -38,10 +38,10 @@ const WhatToEat = () => {
         </p>
       </div>
       <div className="pb-6 border-b border-gray-200">
-        <h3 className="font-fontSpring md:text-3xl text-[28px] mb-3 text-[#004265]">
+        <h3 className="font-fontSpring md:text-3xl text-2xl mb-3 text-[#004265]">
           L’Abattoir Restaurant
         </h3>
-        <p className="text-[#565656] 2xl:text-xl xl:text-lg text-base">
+        <p className="text-[#565656] 2xl:text-xl lg:text-lg md:text-base text-sm">
           The restaurant was built in the 19th century on the site of
           Vancouver’s first jail. The French influenced West Coast fare is
           prepared and served with flare for a unique dining experience. A
@@ -49,10 +49,10 @@ const WhatToEat = () => {
         </p>
       </div>
       <div className="pb-6 border-gray-200">
-        <h3 className="font-fontSpring md:text-3xl text-[28px] mb-3 text-[#004265]">
+        <h3 className="font-fontSpring md:text-3xl text-2xl mb-3 text-[#004265]">
           Blue Water Cafe Raw Bar
         </h3>
-        <p className="text-[#565656] 2xl:text-xl xl:text-lg text-base">
+        <p className="text-[#565656] 2xl:text-xl lg:text-lg md:text-base text-sm">
           Blue Water Cafe is the ultimate fine dining experience for lovers of
           fresh seafood. This warm and inviting restaurant offers impeccable
           service and an abundance of the freshest seafood, prepared in a
