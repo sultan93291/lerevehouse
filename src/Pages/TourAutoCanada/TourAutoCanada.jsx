@@ -3,7 +3,8 @@ import React from "react";
 import mountain from "../../assets/images/tour-auto/mountain.png";
 import TourListDetailsReview from "@/components/TourListDetails/TourListDetailsReview";
 import Map from "../../assets/images/tour-auto/map.png";
-import HomeFaqSection from "../Homepage/Sections/HomeFaqSection";
+import TourAutoFAqSections from "./Sections/TourAutoFAqSections";
+import TourAutoTabSection from "./Sections/TourAutoTabSection/TourAutoTabSection";
 
 const TourAutoCanada = () => {
   return (
@@ -29,7 +30,8 @@ const TourAutoCanada = () => {
                 Contattaci, dicci in quanti siete e cosa vorresti vedere...ti
                 aiuteremo ad organizzare il tuo viaggio perfetto!
               </p>
-              {/* <HomeFaqSection /> */}
+              {/* faq section */}
+              <TourAutoFAqSections />
             </div>
             <img
               className="w-[790px] h-[576px] object-cover "
@@ -39,7 +41,7 @@ const TourAutoCanada = () => {
           </div>
           <TourListDetailsReview isHeading={false} />
         </div>
-        <div></div>
+        <TourAutoTabSection />
       </div>
     </section>
   );
