@@ -64,7 +64,7 @@ const TourListDetailsReview = ({ isHeading }) => {
   ];
 
   return (
-    <div className=" my-10 xl:my-20  ">
+    <div className="my-10 xl:my-20">
       {/* title */}
       {isHeading && (
         <div>
@@ -96,7 +96,7 @@ const TourListDetailsReview = ({ isHeading }) => {
           onSwiper={setSwiperRef}
           className="mySwiper"
         >
-          {allReviews?.map(review => (
+          {allReviews?.map((review) => (
             <SwiperSlide key={review?.title}>
               <TourListDetailsReviewCard item={review} />
             </SwiperSlide>
@@ -115,7 +115,7 @@ const TourListDetailsReview = ({ isHeading }) => {
 
         <button
           onClick={() => swiperRef.slideNext()}
-          className="size-8 bg-transparent shadow-md rounded-full  flex items-center justify-center absolute top-1/2 -right-4 2xl:-right-10 z-20 group hover:bg-primary transition-all duration-300 -translate-y-1/2 border border-[#9C9EA1]"
+          className="size-8 bg-transparent shadow-md rounded-full  flex items-center justify-center absolute top-1/2 -right-4  2xl:-right-3 4xl:-right-10 z-20 group hover:bg-primary transition-all duration-300 -translate-y-1/2 border border-[#9C9EA1]"
         >
           <NextArrowTourListDetailsSvg />
         </button>
