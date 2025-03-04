@@ -13,13 +13,11 @@ const TourAutoTabSection = () => {
   ];
 
   const [ActiveTab, setActiveTab] = useState("Increasing price");
-  const [isMap, setIsMap] = useState(false);
   const [AcitveImg, setAcitveImg] = useState(washington); // Default image
 
   const handleImgShow = () => {
-    // Toggle the map/image
-    setIsMap(!isMap);
-    setAcitveImg(isMap ? bike : washington); // Toggle image based on current state
+    // Toggle image between washington and bike
+    setAcitveImg(AcitveImg === washington ? bike : washington);
   };
 
   return (
@@ -50,7 +48,9 @@ const TourAutoTabSection = () => {
             onClick={handleImgShow}
             className="md:px-8 md:py-4 py-2 bg-[#1687C7] text-sm md:text-base 2xl:text-lg font-medium leading-[120%] font-interTight text-white border-[1px] border-transparent ease-in-out duration-500 hover:bg-transparent hover:border-solid hover:border-[#1687C7] hover:text-[#1687C7]"
           >
-            {isMap ? "Show all as image" : "Show all as maps"}
+            {AcitveImg === washington
+              ? "Show all as image"
+              : "Show all as maps"}
           </button>
         </div>
       </div>

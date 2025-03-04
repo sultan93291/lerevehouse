@@ -35,7 +35,7 @@ const TestModal = ({ setOpen }) => {
     setOpen(false);
   };
   return (
-    <DialogContent className=" w-[300px] sm:w-[400px] md:w-[500px] lg:w-[700px] xl:w-[900px]  3xl:min-w-[1200px] px-5 lg:px-10 py-6 text-center font-nunito">
+    <DialogContent className=" w-[300px] sm:w-[400px] md:w-[500px] lg:w-[700px] xl:w-[900px]  3xl:min-w-[1200px]  py-6 text-center font-nunito">
       {/* Wrap everything in a container that can scroll and hide scrollbar */}
       <div className="max-h-[80vh] overflow-y-auto scrollbar-hide">
         <DialogHeader>
