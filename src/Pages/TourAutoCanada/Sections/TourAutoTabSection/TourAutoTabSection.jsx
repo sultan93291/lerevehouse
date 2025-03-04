@@ -23,7 +23,7 @@ const TourAutoTabSection = () => {
   };
 
   return (
-    <section className="2xl:py-20 flex flex-col w-full relative items-center justify-center gap-y-5 container">
+    <section className="2xl:py-20 flex flex-col w-full relative items-center justify-center gap-y-5 container pb-10 2xl:pb-0">
       <div className="flex flex-col gap-y-[45px] w-full relative">
         <div className="flex flex-col xl:flex-row md:justify-between justify-center w-full relative gap-y-5 2xl:gap-y-0">
           {Tabs.map((item, index) => {
@@ -42,13 +42,13 @@ const TourAutoTabSection = () => {
           })}
         </div>
 
-        <div className="flex flex-row w-full relative justify-between items-center gap-3 md:gap-0">
-          <span className="text-lg font-medium leading-[120%] font-interTight text-[#004265]">
+        <div className="flex flex-row relative justify-between items-center gap-3 md:gap-0">
+          <span className="text-lg w-[45%] font-medium leading-[120%] font-interTight text-[#004265]">
             With this selection there are 3 tours.
           </span>
           <button
             onClick={handleImgShow}
-            className="md:px-8 md:py-4 py-2 bg-[#1687C7] text-sm md:text-base 2xl:text-lg font-medium leading-[120%] font-interTight text-white border-[1px] border-transparent ease-in-out duration-500 hover:bg-transparent hover:border-solid hover:border-[#1687C7] hover:text-[#1687C7]"
+            className="md:px-8 px-2 md:py-4 py-[10px] bg-[#1687C7] text-sm md:text-base 2xl:text-lg font-medium leading-[120%] font-interTight text-white border-[1px] border-transparent ease-in-out duration-500 hover:bg-transparent hover:border-solid hover:border-[#1687C7] hover:text-[#1687C7]"
           >
             {isMap ? "Show all as image" : "Show all as maps"}
           </button>
