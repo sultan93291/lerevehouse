@@ -1,8 +1,13 @@
 import { SpecialStar } from "@/components/common/SvgContainer/SvgContainer";
 import { HolidayData } from "@/components/DummyData/CustomizeTripData";
 import mountainer from "../../assets/images/customize-trip/mountainer.jpg";
+import { useNavigate } from "react-router-dom";
 
 const CustomizeTripCanada = () => {
+  const navigate = useNavigate();
+  const handleSingleTour = () => {
+    navigate("/")
+  };
   return (
     <section className=" mt-16 md:mt-20 mb-0 xl:my-[156px] py-14 md:py-[72px] relative  w-full overflow-hidden  flex flex-col gap-y-10 md:gap-y-16 xl:gap-y-[144px]">
       <div className="flex flex-col relative w-full gap-y-10 md:gap-y-16 xl:gap-y-[120px] ">
@@ -23,7 +28,7 @@ const CustomizeTripCanada = () => {
           {HolidayData.map((item, index) => (
             <div
               key={index}
-              className="w-full md:w-[480px] relative h-[345px] shrink-0"
+              className="w-full group md:w-[480px]  relative h-[345px] shrink-0"
               style={{
                 backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url(${item.src})`,
                 backgroundSize: "cover",
@@ -31,12 +36,28 @@ const CustomizeTripCanada = () => {
                 backgroundPosition: "center",
               }}
             >
-              <div className="h-full w-full flex flex-col gap-y-2 items-center justify-end pb-[18.42px]  ">
+              <div className="h-full group-hover:hidden transition-all ease-in-out duration-500 group-hover:transform group-hover:scale-110  w-full flex flex-col gap-y-2 items-center justify-end pb-[18.42px]  ">
                 <span className="text-white text-xl font-semibold leading-[150%] font-interTight tracking-[1px] ">
                   {" "}
                   {item.tittle}{" "}
                 </span>
                 <SpecialStar />
+              </div>
+              <div className="h-[190px] px-[13.5px] gap-y-2 flex flex-col items-center justify-center  group-hover:opacity-100 ease-in-out duration-500  opacity-0 w-[480px] absolute left-0 bottom-0 bg-blackRgba ">
+                <p className="text-white text-xl font-semibold leading-[150%] font-interTight tracking-[1px] ">
+                  {item.tittle}
+                </p>
+                <p className="text-white text-sm text-center font-semibold leading-[150%] font-interTight tracking-[1px] ">
+                  Non puoi andare in Canada senza un tour che ti porti a vedere
+                  le balene, le orche, gli orsi (bruni e polari), le volpi, i
+                  lupi e molti altri esemplari di questo magnifico paese!
+                </p>
+                <button
+                  onClick={() => handleSingleTour()}
+                  className="px-6 py-3 rounded-[5px] bg-[#1687C7] text-sm font-medium leading-[120%] font-interTight text-white  "
+                >
+                  Scopri di più
+                </button>
               </div>
             </div>
           ))}

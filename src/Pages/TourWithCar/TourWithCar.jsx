@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import CommonHeroBanner from "@/components/common/HeroBanner/CommonHeroBanner";
 import mountain from "../../assets/images/tour-auto/mountain.png";
 import TourAutoTabSection from "../TourAutoCanada/Sections/TourAutoTabSection/TourAutoTabSection";
 import ford from "../../assets/images/tour-auto/ford.jpg";
 import suv from "../../assets/images/tour-auto/suv.png";
 import minivan from "../../assets/images/tour-auto/minivan.jpg";
+import TestModal from "@/components/Modals/TestModal";
+
 
 const vechicles = [
   {
@@ -31,8 +33,14 @@ const vechicles = [
 ];
 
 const TourWithCar = () => {
+
+  const [open, setOpen] = useState(false);
   return (
-    <section className=" mt-10">
+    <>
+      <Modal open={open} setOpen={setOpen}>
+        <TestModal setOpen={setOpen} />
+      </Modal>
+ <section className=" mt-10">
       <CommonHeroBanner bg={mountain} title={"Tour in auto in Canada"} />
       <div className="flex flex-col md:gap-y-[112px] gap-y-14 py-4 container">
         <div className="flex flex-col gap-y-4 ">
@@ -249,6 +257,8 @@ const TourWithCar = () => {
         <TourAutoTabSection />
       </div>
     </section>
+      
+    </>
   );
 };
 
