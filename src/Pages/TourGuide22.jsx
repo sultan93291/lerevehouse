@@ -16,29 +16,29 @@ const TourGuide22 = () => {
     <section className="container">
       {/* Tour Gallery */}
       <div className="2xl:mt-44 mt-32 mb-10">
-        <figure>
-          <img src={g1} alt="g1" />
+        <figure className="h-[250px] sm:h-[300px] lg:h-auto">
+          <img src={g1} alt="g1" className="w-full h-full object-cover" />
         </figure>
-        <div className="grid mt-5 lg:grid-cols-2 xl:grid-cols-4 gap-5">
-          <div className="">
+        <div className="grid mt-3 lg:mt-5 lg:grid-cols-2 xl:grid-cols-4 gap-3 lg:gap-5">
+          <div className="h-[250px] sm:h-[300px] lg:h-auto">
             <img src={g2} alt="g2" className="w-full h-full object-cover" />
           </div>
-          <div className="">
+          <div className="h-[250px] sm:h-[300px] lg:h-auto">
             <img src={g3} alt="g2" className="w-full h-full object-cover" />
           </div>
-          <div className="">
+          <div className="h-[250px] sm:h-[300px] lg:h-auto">
             <img src={g4} alt="g2" className="w-full h-full object-cover" />
           </div>
-          <div className="">
+          <div className="h-[250px] sm:h-[300px] lg:h-auto">
             <img src={g5} alt="g2" className="w-full h-full object-cover" />
           </div>
         </div>
       </div>
 
       {/* Tour Guide Tabs */}
-      <div className="md:mb-10 mb-16">
+      <div className="mb-10">
         <Tabs>
-          <TabList className="flex md:flex-row flex-col items-center md:gap-6 gap-3 justify-between md:pb-12 pb-6">
+          <TabList className="flex flex-wrap md:flex-row flex-col items-center md:gap-6 gap-3 justify-between md:pb-12 pb-6">
             <Tab
               className="px-4 pb-1 outline-none border-b-2 border-transparent 
                hover:border-light-blue focus:outline-none cursor-pointer text-base xl:text-lg font-medium duration-300"
