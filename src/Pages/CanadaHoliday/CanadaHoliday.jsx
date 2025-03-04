@@ -115,8 +115,22 @@ const CanadaHoliday = () => {
             );
           })}
         </div>
-        <div className="flex flex-row gap-8  " >
-
+        <div className="flex flex-row gap-8 items-center  ">
+          <div className="flex flex-col gap-y-6 ">
+            <div className="flex flex-col  gap-y-2 ">
+              <h4>OUTDOOR LIFE</h4>
+              <span>
+                Contattaci per sapere quali attività possiamo proporti durante
+                il tuo soggiorno. Tuffati nella natura e rendi ancora più unico
+                il tuo viaggio in Canada!
+              </span>
+            </div>
+          </div>
+          <img
+            src={waterPlane}
+            className="w-[784px] h-[663px] object-cover "
+            alt="not found"
+          />
         </div>
       </div>
     </section>
