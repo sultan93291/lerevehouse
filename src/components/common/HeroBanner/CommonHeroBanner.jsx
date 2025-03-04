@@ -9,6 +9,7 @@ const CommonHeroBanner = ({
   uppercaseTitle,
   uppercaseItalic,
   subTittle,
+  subSubTittle,
 }) => {
   return (
     <section
@@ -22,17 +23,20 @@ const CommonHeroBanner = ({
       }}
     >
       <div className="flex flex-col max-w-[932px] items-center justify-center gap-y-2">
+        {subSubTittle && <span className="text-[24px] text-white font-medium leading-[150%] tracking-[1px] " >{subSubTittle}</span>}
         <h1 className="text-2xl xs:text-3xl md:text-4xl xl:text-6xl text-center xl:text-left font-editorsNoteNormal font-light text-white ">
           <span
-            className={`${uppercaseTitle ? "uppercase" : "capitalize"
-              } text-center `}
+            className={`${
+              uppercaseTitle ? "uppercase" : "capitalize"
+            } text-center `}
           >
             {title && title.toLowerCase()}
           </span>
           {italic && (
             <span
-              className={`font-editorsNoteItalic ml-4 ${uppercaseItalic ? "uppercase" : "capitalize"
-                }`}
+              className={`font-editorsNoteItalic ml-4 ${
+                uppercaseItalic ? "uppercase" : "capitalize"
+              }`}
             >
               {italic}
             </span>

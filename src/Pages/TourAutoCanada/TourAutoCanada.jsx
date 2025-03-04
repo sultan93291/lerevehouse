@@ -10,11 +10,11 @@ const TourAutoCanada = () => {
   return (
     <section className=" mt-10">
       <CommonHeroBanner bg={mountain} title={"Tour in auto in Canada"} />
-      <div className="flex flex-col gap-y-[112px] py-20 container  ">
-        <div className="flex flex-col gap-y-[180px]">
-          <div className="flex flex-row items-center gap-x-[62px] ">
+      <div className="flex flex-col 2xl:py-20 py-10 container  ">
+        <div className="flex flex-col ">
+          <div className="flex flex-col 2xl:flex-row items-center gap-x-[62px]">
             <div className="flex flex-col gap-y-5 ">
-              <p className="text-[#565656] font-interTight text-base font-normal leading-[160%]  ">
+              <p className="text-[#565656] font-interTight text-sm md:text-base font-normal leading-[160%]  ">
                 <span className="text-[#252525] font-bold ">
                   Viaggiare in Canada{" "}
                 </span>{" "}
@@ -34,7 +34,7 @@ const TourAutoCanada = () => {
               <TourAutoFAqSections />
             </div>
             <img
-              className="w-[790px] h-[576px] object-cover "
+              className="2xl:max-w-[790px] md:h-[576px] h-[250px] object-cover"
               src={Map}
               alt="not found"
             />
