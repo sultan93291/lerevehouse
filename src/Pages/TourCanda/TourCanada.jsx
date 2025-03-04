@@ -59,7 +59,7 @@ const tripCanda = [
 
 const TourCanada = () => {
   return (
-    <section className="2xl:my-[156px] mt-16 md:py-[72px] py-9 container flex flex-col md:gap-y-10 gap-y-5 2xl:gap-y-[148px]">
+    <section className="2xl:my-[156px] mt-14 xl:py-[72px] py-9 container flex flex-col md:gap-y-10 gap-y-5 2xl:gap-y-[148px]">
       <div className="flex flex-col gap-y-[148px]">
         <div className="flex flex-col gap-y-4 items-center ">
           <h2 className="text-[#1687C7] font-interTight text-[40px] 2xl:text-[56px] font-semibold leading-[160%] ">
@@ -84,8 +84,8 @@ const TourCanada = () => {
               key={index}
               className={`group ${
                 index == 2
-                  ? "sm:h-[500px] lg:h-[380px] xl:h-[570px] h-[200px] w-full"
-                  : "sm:h-[500px] lg:h-[380px] xl:h-[521px] h-[200px] 3xl:w-[49.4%] md:w-full"
+                  ? "sm:h-[500px] lg:h-[380px] xl:h-[570px] h-[250px] w-full"
+                  : "sm:h-[500px] lg:h-[380px] xl:h-[521px] h-[250px] 3xl:w-[49.4%] md:w-full"
               } flex flex-col items-center justify-center relative overflow-hidden`}
               style={{
                 backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url(${item.src})`,
@@ -97,10 +97,10 @@ const TourCanada = () => {
               {/* Content inside should only be visible on hover */}
               <div className="md:h-full h-[300px] w-full flex flex-col items-center justify-center md:gap-y-[38px] gap-y-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out transform scale-95 group-hover:scale-100 px-5 md:px-0">
                 <div className="flex flex-col items-center text-center justify-center md:gap-y-[22px]">
-                  <h2 className="text-white text-[28px] md:text-[32px] font-semibold leading-[150%] tracking-[1px] font-interTight">
+                  <h2 className="text-white text-2xl md:text-[32px] font-semibold leading-[150%] tracking-[1px] font-interTight">
                     {item.heading}
                   </h2>
-                  <span className="max-w-[629px] text-white text-sm md:text-base font-normal leading-[150%] tracking-[1px] font-interTight">
+                  <span className="max-w-[629px] text-white text-xs md:text-base font-normal md:leading-[150%] leading-5 tracking-[1px] font-interTight">
                     {item.subHeading}
                   </span>
                 </div>
@@ -123,7 +123,7 @@ const TourCanada = () => {
               }`}
             >
               <div
-                className="2xl:w-[868px] w-full md:h-[434px] h-[300px]"
+                className="2xl:w-[868px] w-full lg:h-[380px] xl:h-[434px] h-[250px]"
                 style={{
                   backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url(${item.src})`,
                   backgroundSize: "cover",

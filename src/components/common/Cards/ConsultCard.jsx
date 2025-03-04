@@ -3,7 +3,7 @@ import Mountain from "../../../assets/images/canada-tour/lake.jpg";
 
 const ConsultCard = () => {
   return (
-    <div className="flex flex-col  h-auto w-[1600px]  bg-white p-[64px] gap-y-12  ">
+    <div className="flex flex-col h-auto max-w-[1600px] bg-white p-4 md:p-8 2xl:p-[64px] gap-y-12">
       <div className="flex flex-col gap-y-[22px] ">
         <div className="flex flex-col gap-y-8">
           <h2 className="text-[#1687C7] text-[40px] font-bold leading-[150%] font-interTight tracking-[1px]  ">
@@ -14,7 +14,7 @@ const ConsultCard = () => {
           </span>
         </div>
         <div className="flex flex-col gap-y-[22px] ">
-          <p className="text-[#787878] text-[16px] font-normal leading-[150%] font-interTight tracking-[1px]  ">
+          <p className="text-[#787878] text-sm md:text-[16px] font-normal leading-[150%] font-interTight tracking-[1px]  ">
             Adventure, far north, moose and wild landscapes. An unspoiled
             province, vast and fascinating for the expeditions and memories it
             evokes, above all the gold rush in the Klondike. A trip to the Yukon
@@ -38,7 +38,7 @@ const ConsultCard = () => {
               to Whitehorse stop in quaint towns like Carmacks (along the Yukon
             River) and discover the rich local culture and language.
           </p>
-          <p className="text-[#787878] text-[16px] font-normal leading-[150%] font-interTight tracking-[1px]  ">
+          <p className="text-[#787878] text-sm md:text-[16px] font-normal leading-[150%] font-interTight tracking-[1px]  ">
             Green rivers through rock canyons, eagles soaring over the beautiful
             landscapes below, and you walking through purple hills just minutes
             from Whitehorse ,  the Wild City . Nature thrives everywhere and the
@@ -89,7 +89,7 @@ const ConsultCard = () => {
             including a small town that features whaling-era buildings as well
             as archaeological remains of early cultures.
           </p>
-          <p className="text-[#787878] text-[16px] font-normal leading-[150%] font-interTight tracking-[1px]  ">
+          <p className="text-[#787878] text-sm md:text-[16px] font-normal leading-[150%] font-interTight tracking-[1px]  ">
             The 
             <span className="text-[#404040] font-bold ">
               long days of daylight
@@ -103,11 +103,11 @@ const ConsultCard = () => {
           </p>
         </div>
       </div>
-      <div className="flex flex-row gap-x-4 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 2xl:h-[383px] h-full">
         {[0, 1, 3].map((item, index) => {
           return (
             <img
-              className="w-[480px] h-[383px] object-cover "
+              className="xl:w-[480px] w-full 2xl:h-[383px] h-full object-cover"
               src={Mountain}
               alt="not found"
             />

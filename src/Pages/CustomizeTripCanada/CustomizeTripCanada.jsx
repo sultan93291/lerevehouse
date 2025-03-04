@@ -1,12 +1,12 @@
 import { SpecialStar } from "@/components/common/SvgContainer/SvgContainer";
 import { HolidayData } from "@/components/DummyData/CustomizeTripData";
-import mountainer from "../../assets/images/customize-trip/mountainer.jpg"
+import mountainer from "../../assets/images/customize-trip/mountainer.jpg";
 
 const CustomizeTripCanada = () => {
   return (
-    <section className=" mt-16 md:mt-20 mb-0 xl:my-[156px] py-14 md:py-[72px] relative  w-full overflow-hidden  flex flex-col gap-y-10 md:gap-y-16 xl:gap-y-[144px] ">
+    <section className=" mt-16 md:mt-20 mb-0 xl:my-[156px] py-14 md:py-[72px] relative  w-full overflow-hidden  flex flex-col gap-y-10 md:gap-y-16 xl:gap-y-[144px]">
       <div className="flex flex-col relative w-full gap-y-10 md:gap-y-16 xl:gap-y-[120px] ">
-        <div className="flex flex-col justify-center text-center gap-y-4 items-center ">
+        <div className="flex flex-col justify-center text-center gap-y-4 items-center px-1 md:px-0">
           <h2 className="text-[#1687C7] font-interTight text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-[56px] font-semibold leading-[160%] ">
             TRAVEL IDEAS FOR YOUR CANADA HOLIDAYS
           </h2>
@@ -120,7 +120,7 @@ const CustomizeTripCanada = () => {
               backgroundPosition: "center",
             }}
           >
-            <div className="h-full w-full flex flex-col justify-end py-8   " >
+            <div className="h-full w-full flex flex-col justify-end py-8   ">
               <span className="text-white text-[18px] font-interTight ml-[10px]  max-w-[988px] font-light leading-[150%] tracking-[1px]">
                 Rocky Mountaineer One of the most beautiful train journeys in
                 the world, are you ready to get on board?
