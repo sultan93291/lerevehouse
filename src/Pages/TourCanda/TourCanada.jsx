@@ -84,8 +84,8 @@ const TourCanada = () => {
               key={index}
               className={`group ${
                 index == 2
-                  ? "md:h-[570px] h-[300px] w-full"
-                  : "md:h-[521px] h-[300px] 3xl:w-[49.4%] md:w-full"
+                  ? "sm:h-[500px] lg:h-[380px] xl:h-[570px] h-[200px] w-full"
+                  : "sm:h-[500px] lg:h-[380px] xl:h-[521px] h-[200px] 3xl:w-[49.4%] md:w-full"
               } flex flex-col items-center justify-center relative overflow-hidden`}
               style={{
                 backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url(${item.src})`,
@@ -95,8 +95,8 @@ const TourCanada = () => {
               }}
             >
               {/* Content inside should only be visible on hover */}
-              <div className="h-full w-full flex flex-col items-center justify-center md:gap-y-[38px] gap-y-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out transform scale-95 group-hover:scale-100 px-5 md:px-0">
-                <div className="flex flex-col items-center text-center justify-center gap-y-[22px]">
+              <div className="md:h-full h-[300px] w-full flex flex-col items-center justify-center md:gap-y-[38px] gap-y-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out transform scale-95 group-hover:scale-100 px-5 md:px-0">
+                <div className="flex flex-col items-center text-center justify-center md:gap-y-[22px]">
                   <h2 className="text-white text-[28px] md:text-[32px] font-semibold leading-[150%] tracking-[1px] font-interTight">
                     {item.heading}
                   </h2>
@@ -131,11 +131,11 @@ const TourCanada = () => {
                   backgroundPosition: "center",
                 }}
               ></div>
-              <div className="flex flex-col xl:gap-y-6 md:max-w-[698px] w-full my-8 xl:mt-0">
+              <div className="flex flex-col xl:gap-y-6 md:max-w-[698px] w-full mt-5 mb-8 xl:mt-0">
                 <h4 className="text-[#000] font-interTight text-[25px] md:text-[32px] font-semibold leading-[150%] tracking-[1px]">
                   {item.heading}
                 </h4>
-                <div className="flex flex-col gap-y-6 font-interTight mt-6 xl:mt-0">
+                <div className="flex flex-col gap-y-6 font-interTight mt-1 xl:mt-0">
                   <span className="text-[#000] text-sm md:text-base font-normal leading-[150%] tracking-[1px] ">
                     {item.paraOne}
                   </span>
