@@ -17,7 +17,7 @@ const TourGuide22 = () => {
       {/* Tour Gallery */}
       <div className="2xl:mt-44 mt-32 mb-10">
         <figure>
-          <img src={g1} alt="g1" />
+          <img className="w-full h-full object-cover" src={g1} alt="g1" />
         </figure>
         <div className="grid mt-5 lg:grid-cols-2 xl:grid-cols-4 gap-5">
           <div className="">
