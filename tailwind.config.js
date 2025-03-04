@@ -45,6 +45,7 @@ export default {
         "text-gray": "#565656",
         "prmiary-blue": "#004265",
         "light-blue": "#1687C7",
+        RgbaBlue: "rgba(22, 135, 199, 0.10)",
         offWhite: "rgba(0, 66, 101, 0.10)",
         chocolate: "#643500",
         "black-transparent": "rgba(0, 0, 0, 0.3)",
