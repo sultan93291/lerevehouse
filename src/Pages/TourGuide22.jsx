@@ -17,20 +17,40 @@ const TourGuide22 = () => {
       {/* Tour Gallery */}
       <div className="2xl:mt-44 mt-32 mb-10">
         <figure>
-          <img className="w-full h-full object-cover" src={g1} alt="g1" />
+          <img
+            className="w-full md:h-full h-[240px] object-cover"
+            src={g1}
+            alt="g1"
+          />
         </figure>
         <div className="grid mt-5 lg:grid-cols-2 xl:grid-cols-4 gap-5">
           <div className="">
-            <img src={g2} alt="g2" className="w-full h-full object-cover" />
+            <img
+              src={g2}
+              alt="g2"
+              className="w-full md:h-full h-[240px] object-cover"
+            />
           </div>
           <div className="">
-            <img src={g3} alt="g2" className="w-full h-full object-cover" />
+            <img
+              src={g3}
+              alt="g2"
+              className="w-full md:h-full h-[240px] object-cover"
+            />
           </div>
           <div className="">
-            <img src={g4} alt="g2" className="w-full h-full object-cover" />
+            <img
+              src={g4}
+              alt="g2"
+              className="w-full md:h-full h-[240px] object-cover"
+            />
           </div>
           <div className="">
-            <img src={g5} alt="g2" className="w-full h-full object-cover" />
+            <img
+              src={g5}
+              alt="g2"
+              className="w-full md:h-full h-[240px] object-cover"
+            />
           </div>
         </div>
       </div>
