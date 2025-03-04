@@ -3,6 +3,7 @@ import ActivitiesDetails from "@/Pages/ActivitiesDetails/ActivitiesDetails";
 import ActivitiesSubcategory from "@/Pages/ActivitiesSubcategory/ActivitiesSubcategory";
 import AllTouristGuide from "@/Pages/AllTouristGuide/AllTouristGuide";
 import AllTouristGuideDetails from "@/Pages/AllTouristGuideDetails/AllTouristGuideDetails";
+import CanadaHoliday from "@/Pages/CanadaHoliday/CanadaHoliday";
 import Contact from "@/Pages/Contact/Contact";
 import CustomizeTripCanada from "@/Pages/CustomizeTripCanada/CustomizeTripCanada";
 import Destination from "@/Pages/Destination/Destination";
@@ -24,7 +25,6 @@ import TravelStylePage from "@/Pages/TravelStyle/TravelStylePage";
 import TravelStyleDetailsPage from "@/Pages/TravelStyleDetails/TravelStyleDetailsPage";
 import WildSide from "@/Pages/WildSide/WildSide";
 import { createBrowserRouter } from "react-router-dom";
-
 
 const router = createBrowserRouter([
   {
@@ -139,7 +139,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/tour-with-car",
-        element: < TourWithCar/>,
+        element: <TourWithCar />,
+      },
+      {
+        path: "/canada-holiday",
+        element: <CanadaHoliday />,
       },
     ],
   },
