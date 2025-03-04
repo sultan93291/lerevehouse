@@ -34,11 +34,11 @@ const TourWithCar = () => {
   return (
     <section className=" mt-10">
       <CommonHeroBanner bg={mountain} title={"Tour in auto in Canada"} />
-      <div className="flex flex-col gap-y-[112px] py-4 container  ">
+      <div className="flex flex-col md:gap-y-[112px] gap-y-14 py-4 container">
         <div className="flex flex-col gap-y-4 ">
-          <div className="flex flex-col gap-y-[60px] ">
-            <div className="flex flex-row justify-between  ">
-              <div className="flex flex-row gap-x-[197.1px] items-center ">
+          <div className="flex flex-col gap-y-[60px]">
+            <div className="flex flex-col md:flex-row xl:justify-between justify-center gap-10 md:gap-0">
+              <div className="flex flex-row 2xl:gap-x-[197.1px] items-center ">
                 <div className="flex flex-col gap-y-3 items-center">
                   <h4 className="text-[#004265] font-interTight text-base leading-[160%] font-semibold ">
                     Length{" "}
@@ -47,9 +47,9 @@ const TourWithCar = () => {
                     2.942 km{" "}
                   </span>
                 </div>
-                <span className="w-[1px] h-[64px] bg-[#0000001F] "></span>
+                <span className="hidden xl:block w-[1px] h-[64px] bg-[#0000001F]"></span>
               </div>
-              <div className="flex flex-row gap-x-[197.1px] items-center ">
+              <div className="flex flex-row 2xl:gap-x-[197.1px] items-center ">
                 <div className="flex flex-col gap-y-3 items-center">
                   <h4 className="text-[#004265] font-interTight text-base leading-[160%] font-semibold ">
                     Duration{" "}
@@ -58,9 +58,9 @@ const TourWithCar = () => {
                     16 days / 15 nights{" "}
                   </span>
                 </div>
-                <span className="w-[1px] h-[64px] bg-[#0000001F] "></span>
+                <span className="hidden xl:block w-[1px] h-[64px] bg-[#0000001F] "></span>
               </div>
-              <div className="flex flex-row gap-x-[197.1px] items-center ">
+              <div className="flex flex-row 2xl:gap-x-[197.1px] items-center ">
                 <div className="flex flex-col gap-y-3 items-center">
                   <h4 className="text-[#004265] font-interTight text-base leading-[160%] font-semibold ">
                     Starting from
@@ -69,7 +69,7 @@ const TourWithCar = () => {
                     € 1835 per person
                   </span>
                 </div>
-                <span className="w-[1px] h-[64px] bg-[#0000001F] "></span>
+                <span className="hidden xl:block w-[1px] h-[64px] bg-[#0000001F] "></span>
               </div>
               <button className="px-[61px] py-5 rounded-[5px] bg-[#1687C7] text-xs font-medium leading-[120%] font-interTight text-white border-[1px] border-transparent ease-in-out duration-500 hover:bg-transparent hover:border-solid hover:border-[#1687C7] hover:text-[#1687C7]">
                 Make An Enquiry
@@ -124,7 +124,7 @@ const TourWithCar = () => {
                     )}
                   </div>
                 </div>
-                <div className=" border-[2px] borde-solid border-RgbaBlue w-full py-3 flex flex-row gap-x-[24px]   ">
+                <div className="border-[2px] border-solid border-RgbaBlue w-full py-3 flex md:flex-row flex-col gap-x-[24px]">
                   <div className="w-[428px]  flex items-center justify-center ">
                     <h4 className="text-[#004265] font-interTight text-[32px] leading-[120%] font-medium ">
                       Prices starting from
@@ -151,16 +151,16 @@ const TourWithCar = () => {
                 and perhaps the best fresh fish in the world including lobsters,
                 shellfish and salmon of incredible quality.
               </span>
-              <div className="flex flex-row gap-x-5  ">
+              <div className="flex flex-col xl:flex-row gap-x-5">
                 {vechicles.map((item, index) => {
                   return (
                     <div
                       key={index}
-                      className="flex flex-col w-[500px] items-center gap-y-6 "
+                      className="flex flex-col 3xl:w-[500px] w-full items-center gap-y-6"
                     >
                       <img
                         src={item.imgSrc}
-                        className="w-[332px] h-[192px]"
+                        className="3xl:w-[332px] w-full h-[192px]"
                         alt="not found"
                       />
                       <div className="flex flex-col gap-y-3 items-center ">
@@ -188,7 +188,7 @@ const TourWithCar = () => {
                   Other car models are also available at the quote stage
                 </span>
               </div>
-              <div className="flex flex-row w-full  gap-x-12 bg-RgbaBlue   ">
+              <div className="flex flex-col md:flex-row w-full gap-x-12 bg-RgbaBlue">
                 <div className="flex flex-col gap-y-3 p-6">
                   <h4 className="text-[#004265] text-[16px] leading-[150%] items-center font-bold  font-interTight text-normal">
                     What's included
@@ -231,14 +231,14 @@ const TourWithCar = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-row w-full justify-between ">
+              <div className="flex flex-col md:flex-row w-full justify-between gap-5 md:gap-0">
                 <p className="text-[#565656] text-[16px] max-w-[1194px] leading-[150%] items-center  font-interTight text-normal">
                   The overnight stay rates during the tour may vary during the
                   quote depending on the season and the hotels chosen. You can
                   decide to book the tour as is or ask us to customize the
                   itinerary to your liking.
                 </p>
-                <button className="px-[61px] py-5 rounded-[5px] bg-[#1687C7] text-xs font-medium leading-[120%] font-interTight text-white border-[1px] border-transparent ease-in-out duration-500 hover:bg-transparent hover:border-solid hover:border-[#1687C7] hover:text-[#1687C7]">
+                <button className="md:px-[61px] py-5 rounded-[5px] bg-[#1687C7] text-xs font-medium leading-[120%] font-interTight text-white border-[1px] border-transparent ease-in-out duration-500 hover:bg-transparent hover:border-solid hover:border-[#1687C7] hover:text-[#1687C7]">
                   Make An Enquiry
                 </button>
               </div>

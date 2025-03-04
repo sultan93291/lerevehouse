@@ -33,7 +33,7 @@ const TourAutoTabSection = () => {
                 onClick={() => setActiveTab(item)}
                 className={`text-[#004265] cursor-pointer ease-in-out duration-300 flex relative font-interTight text-base 2xl:text-lg font-medium leading-[120%]${
                   item === ActiveTab &&
-                  "after:content-[''] after:absolute after:bottom-0 after:mb-[-8px] 2xl:after:left-1/2 after:left-[20%] md:after:left-[65px] 2xl:after:w-[247px] after:w-[150px]  after:h-[3px] after:bg-[#004265] after:transform after:-translate-x-1/2 after:rounded-t-[12px]"
+                  "after:content-[''] after:absolute after:bottom-0 after:mb-[-8px] 2xl:after:left-1/2 after:left-[20%] md:after:left-[65px] 2xl:after:w-[150px] 3xl:after:w-[247px] after:w-[150px]  after:h-[3px] after:bg-[#004265] after:transform after:-translate-x-1/2 after:rounded-t-[12px]"
                 }`}
               >
                 {item}

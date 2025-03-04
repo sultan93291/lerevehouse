@@ -25,7 +25,6 @@ import TravelStyleDetailsPage from "@/Pages/TravelStyleDetails/TravelStyleDetail
 import WildSide from "@/Pages/WildSide/WildSide";
 import { createBrowserRouter } from "react-router-dom";
 
-
 const router = createBrowserRouter([
   {
     path: "/",
