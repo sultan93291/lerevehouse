@@ -7,18 +7,19 @@ import { SpecialStar } from "@/components/common/SvgContainer/SvgContainer";
 
 const TravelImageSlider = ({ images }) => {
   return (
-    <div className="">
+    <div className="relative w-full">
       <Swiper
-        slidesPerView={4}
-        spaceBetween={10} // Space between images
-        pagination={{ clickable: true }} // Pagination is still enabled
-        loop
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-center justify-center"
+        slidesPerView={4} // Change to 1 so only one slide moves at a time
+        slidesPerGroup={1} // Moves only 1 image per click
+        spaceBetween={10}
+        pagination={{ clickable: true }}
+        loop={false} // Set loop to false to prevent auto-skipping extra slides
+        className="flex items-center justify-center"
       >
         {images.map((image, idx) => (
           <SwiperSlide key={idx}>
             <div
-              className={`h-[345px] max-w-[400px] relative shadow-md transition-all duration-300`}
+              className="h-[345px] w-[400px] relative shadow-md transition-all duration-300"
               style={{
                 backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.32) 0%, rgba(0, 0, 0, 0.32) 100%), url(${image?.src})`,
                 backgroundSize: "cover",
@@ -26,11 +27,10 @@ const TravelImageSlider = ({ images }) => {
                 backgroundPosition: "center",
               }}
             >
-              <div className="absolute w-full cursor-pointer  h-5 bottom-0 left-0 flex items-center mb-10 justify-center ">
-                <div className="flex flex-col gap-y-2 items-center  ">
-                  <h1 className="text-white text-xl font-semibold leading-[150%] font-interTight ">
-                    {" "}
-                    {image.txt}{" "}
+              <div className="absolute w-full cursor-pointer h-5 bottom-0 left-0 flex items-center mb-10 justify-center">
+                <div className="flex flex-col gap-y-2 items-center">
+                  <h1 className="text-white text-xl font-semibold leading-[150%] font-interTight">
+                    {image.txt}
                   </h1>
                   <SpecialStar />
                 </div>
@@ -42,5 +42,4 @@ const TravelImageSlider = ({ images }) => {
     </div>
   );
 };
-
 export default TravelImageSlider;
