@@ -16,7 +16,7 @@ const TravelDetailsSlider = ({ data }) => {
   return (
     <div>
       {/* Slider */}
-      <div className="w-[1600px] flex items-center relative">
+      <div className="lg:w-[1600px] flex items-center relative">
         <Swiper
           loop={true}
           slidesPerView={1}
@@ -38,7 +38,7 @@ const TravelDetailsSlider = ({ data }) => {
         </Swiper>
 
         {/* Slider Navigation */}
-        <div className="absolute top-1/2 z-[5] left-0 right-0 flex justify-between items-center px-4 transform -translate-y-1/2 md:w-full">
+        <div className="absolute top-1/2 z-[5] left-0 right-0 flex justify-between items-center px-4 transform -translate-y-1/2 w-full">
           <button
             onClick={() => swiperRef.slidePrev()}
             className="w-12 h-12 bg-[#000000] shadow-md rounded-full flex items-center justify-center z-20"

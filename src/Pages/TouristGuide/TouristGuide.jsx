@@ -126,10 +126,10 @@ const imagesData = [
 
 const TouristGuide = () => {
   return (
-    <section className=" mt-[128px] py-[96px] container flex flex-col gap-y-[153px] ">
-      <div className="flex flex-col gap-y-[96px]">
-        <div className="flex flex-col gap-y-8  items-center justify-center ">
-          <h3 className="text-[#1687C7] text-[64px] font-interTight font-bold leading-[160%]  ">
+    <section className="md:mt-[128px] mt-28 2xl:py-[96px] container flex flex-col 2xl:gap-y-[153px] gap-y-10">
+      <div className="flex flex-col 2xl:gap-y-[96px] gap-y-9">
+        <div className="flex flex-col 2xl:gap-y-8 items-center justify-center">
+          <h3 className="text-[#1687C7] text-3xl md:text-[50px] 2xl:text-[64px] font-interTight font-bold leading-[160%]  ">
             Canada Travel Guide
           </h3>
           <div className="flex items-center flex-col 2xl:flex-row gap-x-[155px]">
@@ -139,7 +139,7 @@ const TouristGuide = () => {
               alt="not foun"
             />
             <div className="flex flex-col gap-y-4 ">
-              <p className="text-text-gray text-base leading-[180%] font-normal tracking-[1px]  ">
+              <p className="text-text-gray text-sm md:text-base leading-[180%] font-normal tracking-[1px]  ">
                 Welcome to our little tourist guide to Canada , designed to give
                 you more and more useful information for your trip to Canada!
                 Here you will find all the information divided by geographical
@@ -162,7 +162,7 @@ const TouristGuide = () => {
                       <div className="h-[18px] flex items-center cursor-pointer justify-center w-[18px] rounded-full bg-[#1687C7]  ">
                         <ArrowSignSvg className="bg-red-500" />
                       </div>
-                      <p className=" text-[#000000] font-interTight text-base font-normal leading-[180%]  ">
+                      <p className=" text-[#000000] font-interTight text-sm md:text-base font-normal leading-[180%]  ">
                         {item.txt}
                       </p>
                     </div>
@@ -172,7 +172,7 @@ const TouristGuide = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-row gap-x-2 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5 gap-4">
           {RedirectData.map((item, index) => {
             return (
               <div
@@ -182,10 +182,13 @@ const TouristGuide = () => {
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center",
                 }}
-                className="md:h-[404px] md:w-[312px] relative"
+                className="2xl:h-[404px] h-[300px] 2xl:w-[312px] w-full relative"
               >
                 <div className="h-full w-full flex items-center  justify-center ">
-                  <span className="text-white max-w-[238px] text-center cursor-pointer font-interTight text-2xl font-bold leading-[160%] ">
+                  <span
+                    className="text-white md:max-w-[238px] text-center cursor-pointer font-interTight 
+                  md:text-2xl font-bold leading-[160%]"
+                  >
                     {item.txt}
                   </span>
                 </div>
@@ -195,13 +198,13 @@ const TouristGuide = () => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-y-[96px] items-center ">
+      <div className="flex flex-col 2xl:gap-y-[96px] items-center">
         <div className="flex flex-col gap-y-6 items-center ">
           <div className="flex flex-col items-center ">
-            <h3 className="text-[#000000] font-fontSpring text-[56px] font-light leading-[160%]  ">
+            <h3 className="text-[#000000] font-fontSpring text-4xl xl:text-[40px] 2xl:text-[56px] font-light 2xl:leading-[160%]">
               Travel to Canada with the specialists
             </h3>
-            <span className="max-w-[1001px] leading-[160%] text-xl font-interTight text-[#000] text-center ">
+            <span className="md:max-w-[1001px] leading-[160%] text-base mt-4 2xl:mt-0 md:text-xl font-interTight text-[#000] text-center">
               Discover the charm of a spectacular country of many contrasts: the
               great metropolises, the spectacle of the Canadian national parks
               but also the variety of food and wine, outdoor activities and some
@@ -209,8 +212,8 @@ const TouristGuide = () => {
             </span>
           </div>
           <div className="flex flex-col gap-y-[48px] ">
-            <div className="flex flex-row gap-x-6 ">
-              <span className="text-[#787878] max-w-[517.3px] font-interTight text-xl font-normal leading-[180%] tracking-[1px]  ">
+            <div className="flex flex-col md:flex-row gap-x-6">
+              <span className="text-[#787878] md:max-w-[517.3px] font-interTight text-base 2xl:text-xl font-normal 2xl:leading-[180%] leading-[160%] tracking-[1px]">
                 Go beyond the classic trip to Canada , take inspiration from our
                 insights and get advice from the Xplore staff to create an
                 itinerary that allows you to discover lesser-known areas and
@@ -218,7 +221,7 @@ const TouristGuide = () => {
                 prospectors between Yukon and nearby Alaska or let yourself be
                 transported by food and wine or music itineraries,
               </span>
-              <span className="text-[#787878] max-w-[517.3px]  font-interTight text-xl font-normal leading-[180%] tracking-[1px]  ">
+              <span className="text-[#787878] max-w-[517.3px] font-interTight text-base 2xl:text-xl font-normal   2xl:leading-[180%] leading-[160%] tracking-[1px]">
                 choose with us the Canadian national parks that are best for you
                 or the cities that most intrigue you. Traveling with Xplore does
                 not only mean planning your tour of Canada together by choosing
@@ -226,30 +229,31 @@ const TouristGuide = () => {
                 being able to count on Canadian specialists who will try to make
                 you fall in love with this country full of
               </span>
-              <span className="text-[#787878] font-interTight max-w-[517.3px]  text-xl font-normal leading-[180%] tracking-[1px]  ">
+              <span className="text-[#787878] font-interTight max-w-[517.3px] text-base 2xl:text-xl font-normal 2xl:leading-[180%] leading-[160%] tracking-[1px]">
                 beauties waiting to be discovered! Start browsing our tourist
                 guides on the main Canadian cities, the fabulous national parks
                 and the Canadian experiences that we can offer you to make
                 your tour of Canada unique !
               </span>
             </div>
-            <div className="flex flex-row w-full items-center justify-center gap-y-8 flex-wrap gap-x-12">
+            <div className="flex flex-col sm:flex-row w-full items-center justify-center md:gap-y-8 gap-y-4 sm:flex-wrap md:gap-x-12">
               {canadaFeatures.map((item, idx) => {
                 return (
-                  <div
-                    key={idx}
-                    className="flex flex-row items-center  gap-x-3 "
-                  >
-                    <img src={item.icon} alt="not found" />
-                    <p className="2xl:w-[300px] text-[#000000] text-xl font-semibold leading-[180%] tracking-[1px]  ">
+                  <div key={idx} className="flex flex-row items-center gap-x-3">
+                    <img
+                      className="2xl:w-[89px] w-14 md:w-16 2xl:h-[88px] h-14 md:h-16"
+                      src={item.icon}
+                      alt="not found"
+                    />
+                    <p className="2xl:w-[300px] text-[#000000] md:text-xl font-semibold 2xl:leading-[180%] tracking-[1px]  ">
                       {item.text}
                     </p>
                   </div>
                 );
               })}
             </div>
-            <div className="flex flex-row gap-x-6 ">
-              <span className="text-[#787878] max-w-[517.3px] font-interTight text-xl font-normal leading-[180%] tracking-[1px]  ">
+            <div className="flex flex-col md:flex-row gap-x-6">
+              <span className="text-[#787878] font-interTight max-w-[517.3px] text-base 2xl:text-xl font-normal 2xl:leading-[180%] leading-[160%] tracking-[1px]">
                 If you need help planning your next trip to Canada, you can take
                 inspiration from our guide and decide to visit an area or two
                 depending on the time you have available. If you love
@@ -257,14 +261,14 @@ const TouristGuide = () => {
                 forests, trekking and refuges in the Rocky Mountains , in
                 addition to exploring the
               </span>
-              <span className="text-[#787878] max-w-[517.3px]  font-interTight text-xl font-normal leading-[180%] tracking-[1px]  ">
+              <span className="text-[#787878] font-interTight max-w-[517.3px] text-base 2xl:text-xl font-normal 2xl:leading-[180%] leading-[160%] tracking-[1px]">
                 Great North. Areas like Nunavut are difficult to reach but will
                 leave you speechless.Car tours or bus tours, just cities or a
                 mix between metropolises and the vastness of Canadian nature...
                 between a craft beer, an ice hockey game , a stretch with a
                 panoramic train and tours to observe moose
               </span>
-              <span className="text-[#787878] font-interTight max-w-[517.3px]  text-xl font-normal leading-[180%] tracking-[1px]  ">
+              <span className="text-[#787878] font-interTight max-w-[517.3px] text-base 2xl:text-xl font-normal 2xl:leading-[180%] leading-[160%] tracking-[1px]">
                 and bears in their natural habitat. In short, this large
                 country, which encompasses six time zones, is truly unique,
                 populated by hospitable people and with scenery of unparalleled
@@ -273,41 +277,41 @@ const TouristGuide = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-y-6 ">
-          <div className="flex flex-col items-center ">
-            <h3 className="text-[#000000] font-fontSpring text-[56px] font-light leading-[160%]  ">
+        <div className="flex flex-col gap-y-6 mt-10 2xl:mt-0">
+          <div className="flex flex-col items-center">
+            <h3 className="text-[#000000] font-fontSpring text-4xl xl:text-[40px] 2xl:text-[56px] font-light 2xl:leading-[160%]">
               Our travel ideas in Canada
             </h3>
-            <span className="max-w-[1001px] leading-[160%] text-xl font-interTight text-[#000] text-center ">
+            <span className="md:max-w-[1001px] leading-[160%] text-base mt-4 2xl:mt-0 md:text-xl font-interTight text-[#000] text-center">
               Discover the tourist services available to you, make your holiday
               in Canada unique and customize your trip with Xplore. For tours,
               excursions, services and special requests for your trip to Canada,
               do not hesitate to contact us!
             </span>
           </div>
-          <div className="flex flex-row gap-x-6 ">
-            <span className="text-[#787878] max-w-[517.3px] font-interTight text-xl font-normal leading-[180%] tracking-[1px]  ">
+          <div className="flex flex-col md:flex-row gap-x-6">
+            <span className="text-[#787878] font-interTight max-w-[517.3px] text-base 2xl:text-xl font-normal 2xl:leading-[180%] leading-[160%] tracking-[1px]">
               Choosing Xplore for your trip to Canada doesn't just mean
               receiving free quotes in 24 hours and having great prices on
               flights, hotels, rentals and excursions, but also being able to
               count on a staff of travel agents who are passionate about Canada
               and the United States . This means receiving suggestions and
             </span>
-            <span className="text-[#787878] max-w-[517.3px]  font-interTight text-xl font-normal leading-[180%] tracking-[1px]  ">
+            <span className="text-[#787878] font-interTight max-w-[517.3px] text-base 2xl:text-xl font-normal 2xl:leading-[180%] leading-[160%] tracking-[1px]">
               valuable advice in creating the itinerary, discovering curiosities
               that are worth a detour along your tour of Canada and all the
               experience of those who have always dealt with trips to Canada
               (and the United States)! Whether you have clear ideas about the
               travel itinerary or you don't know exactly where you want to
             </span>
-            <span className="text-[#787878] font-interTight max-w-[517.3px]  text-xl font-normal leading-[180%] tracking-[1px]  ">
+            <span className="text-[#787878] font-interTight max-w-[517.3px] text-base 2xl:text-xl font-normal 2xl:leading-[180%] leading-[160%] tracking-[1px]">
               beauties waiting to be discovered! Start browsing our tourist
               guides on the main Canadian cities, the fabulous national parks
               and the Canadian experiences that we can offer you to make
               your tour of Canada unique !
             </span>
           </div>
-          <div className="">
+          <div className="w-full h-[345px] flex flex-col items-center justify-center ">
             <TravelDetailsSlider data={imagesData} />
           </div>
         </div>
