@@ -75,7 +75,7 @@ const SmartOffersSection = () => {
       </div>
 
       {/* sliders */}
-      <div className="  relative">
+      <div className="relative">
         <Swiper
           breakpoints={{
             320: { slidesPerView: 1 }, // Mobile
@@ -87,7 +87,7 @@ const SmartOffersSection = () => {
           onSwiper={setSwiperRef}
           className="mySwiper"
         >
-          {offerContents?.map(item => (
+          {offerContents?.map((item) => (
             <SwiperSlide key={item?.destinationTitle}>
               <DestinationCard item={item} />
             </SwiperSlide>
