@@ -118,13 +118,78 @@ const CanadaHoliday = () => {
         <div className="flex flex-row gap-8 items-center  ">
           <div className="flex flex-col gap-y-6 ">
             <div className="flex flex-col  gap-y-2 ">
-              <h4>OUTDOOR LIFE</h4>
-              <span>
+              <h4 className="text-[#000] text-[32px] font-semibold leading-[150%] tracking-[1px]  font-interTight ">
+                OUTDOOR LIFE
+              </h4>
+              <span className="text-[#000] max-w-[784px] text-[16px] font-semibold leading-[150%] tracking-[1px]  font-interTight ">
                 Contattaci per sapere quali attività possiamo proporti durante
                 il tuo soggiorno. Tuffati nella natura e rendi ancora più unico
                 il tuo viaggio in Canada!
               </span>
             </div>
+            <form className="flex flex-col gap-6" action="">
+              <div className="flex flex-row gap-x-7">
+                <div className="flex flex-col gap-y-[2px] ">
+                  <h4 className="text-[#000] flex items-center max-w-[784px] text-[16px] font-semibold leading-[150%] tracking-[1px]  font-interTight ">
+                    Nome{" "}
+                    <span className="text-[#E80032] max-w-[784px] text-[16px] font-semibold leading-[150%] tracking-[1px]  font-interTight ">
+                      *
+                    </span>
+                  </h4>
+                  <input
+                    type="name"
+                    className="h-[41px] rounded-[8px] w-[378px] border-[1px] border-solid border-[#A5A5A5]  "
+                  />
+                </div>
+                <div className="flex flex-col gap-y-[2px] ">
+                  <h4 className="text-[#000] flex items-center max-w-[784px] text-[16px] font-semibold leading-[150%] tracking-[1px]  font-interTight ">
+                    Cognome*{" "}
+                    <span className="text-[#E80032] max-w-[784px] text-[16px] font-semibold leading-[150%] tracking-[1px]  font-interTight ">
+                      *
+                    </span>
+                  </h4>
+                  <input
+                    type="name"
+                    className="h-[41px] rounded-[8px] w-[378px] border-[1px] border-solid border-[#A5A5A5]  "
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col gap-y-[2px] ">
+                <h4 className="text-[#000] flex items-center max-w-[784px] text-[16px] font-semibold leading-[150%] tracking-[1px]  font-interTight ">
+                  Nome{" "}
+                  <span className="text-[#E80032] max-w-[784px] text-[16px] font-semibold leading-[150%] tracking-[1px]  font-interTight ">
+                    *
+                  </span>
+                </h4>
+                <input
+                  type="name"
+                  className="h-[41px] rounded-[8px] w-full border-[1px] border-solid border-[#A5A5A5]  "
+                />
+              </div>
+              <div className="flex flex-col gap-y-[2px] ">
+                <h4 className="text-[#000] flex items-center max-w-[784px] text-[16px] font-semibold leading-[150%] tracking-[1px]  font-interTight ">
+                  Nome{" "}
+                  <span className="text-[#E80032] max-w-[784px] text-[16px] font-semibold leading-[150%] tracking-[1px]  font-interTight ">
+                    *
+                  </span>
+                </h4>
+                <textarea
+                  name=""
+                  className="h-[163px] rounded-[8px] w-full border-[1px] border-solid border-[#A5A5A5]  "
+                  id=""
+                ></textarea>
+              </div>
+              <div className="flex flex-col gap-y-4 ">
+                <p className="text-[#787878] text-sm  font-normal leading-[180%] tracking-[1px] font-interTight  ">
+                  Cliccando ci autorizzi al trattamento dei dati inseriti
+                  secondo le finalità indicate nella nuova 
+                  <span className="underline"> Informativa sulla Privacy</span>
+                </p>
+                <button className="px-6 py-3 rounded-[5px] w-[255px] bg-[#1687C7] text-sm md:text-xs font-medium leading-[120%] font-interTight text-white border-[1px] border-transparent ease-in-out duration-500 hover:bg-transparent hover:border-solid hover:border-[#1687C7] hover:text-[#1687C7]">
+                  Richiedi maggiori informazioni
+                </button>
+              </div>
+            </form>
           </div>
           <img
             src={waterPlane}
