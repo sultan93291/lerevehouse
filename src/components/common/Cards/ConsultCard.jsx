@@ -5,11 +5,11 @@ const ConsultCard = () => {
   return (
     <div className="flex flex-col h-auto max-w-[1600px] bg-white p-4 md:p-8 2xl:p-[64px] gap-y-12">
       <div className="flex flex-col gap-y-[22px] ">
-        <div className="flex flex-col gap-y-8">
-          <h2 className="text-[#1687C7] text-[40px] font-bold leading-[150%] font-interTight tracking-[1px]  ">
+        <div className="flex flex-col md:gap-y-8 gap-y-4">
+          <h2 className="text-[#1687C7] text-[32px] md:text-[40px] font-bold leading-[150%] font-interTight tracking-[1px]  ">
             Yukon
           </h2>
-          <span className="text-[#484848] text-[24px] font-bold leading-[150%] font-interTight tracking-[1px]  ">
+          <span className="text-[#484848] text-lg md:text-[24px] font-bold leading-[150%] font-interTight tracking-[1px]  ">
             On the trail of gold and spectacular nature
           </span>
         </div>

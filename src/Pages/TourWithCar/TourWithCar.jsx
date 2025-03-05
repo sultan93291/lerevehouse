@@ -79,7 +79,12 @@ const TourWithCar = () => {
                   </div>
                   <span className="hidden 2xl:block w-[1px] h-[64px] bg-[#0000001F] "></span>
                 </div>
-                <button className="md:px-[61px] px-8 md:py-5 py-3 rounded-[5px] bg-[#1687C7] text-sm md:text-xs font-medium leading-[120%] font-interTight text-white border-[1px] border-transparent ease-in-out duration-500 hover:bg-transparent hover:border-solid hover:border-[#1687C7] hover:text-[#1687C7]">
+                <button
+                  onClick={() => {
+                    setOpen(true);
+                  }}
+                  className="md:px-[61px] px-8 md:py-5 py-3 rounded-[5px] bg-[#1687C7] text-sm md:text-xs font-medium leading-[120%] font-interTight text-white border-[1px] border-transparent ease-in-out duration-500 hover:bg-transparent hover:border-solid hover:border-[#1687C7] hover:text-[#1687C7]"
+                >
                   Make An Enquiry
                 </button>
               </div>

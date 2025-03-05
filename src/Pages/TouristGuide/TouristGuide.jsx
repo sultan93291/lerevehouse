@@ -16,30 +16,31 @@ import tent from "../../assets/images/guida-turistica/tent.jpg";
 import dolphin from "../../assets/images/guida-turistica/dolphin.jpg";
 import helicopter from "../../assets/images/guida-turistica/helicopter.jpg";
 import lakeMountain from "../../assets/images/guida-turistica/lakeMountain.jpg";
+import { NavLink } from "react-router-dom";
 
 const RedirectData = [
   {
     id: 1,
     src: mountain,
-    redirectLink: "/",
+    redirectLink: "/boundless-north",
     txt: "The Great West Western Canada",
   },
   {
     id: 2,
     src: quebec,
-    redirectLink: "/",
+    redirectLink: "/ontario-quebec",
     txt: "Ontario & Quebec",
   },
   {
     id: 3,
     src: parises,
-    redirectLink: "/",
+    redirectLink: "/Prairies",
     txt: "Prairies",
   },
   {
     id: 4,
     src: seaHouse,
-    redirectLink: "/",
+    redirectLink: "/atlantics-provinces",
     txt: "Atlantic Provinces",
   },
   {
@@ -53,15 +54,15 @@ const RedirectData = [
 const FeaturedLinks = [
   {
     txt: "View the map of Canada",
-    redirect: "/",
+    redirect: "/canada-map",
   },
   {
     txt: "Natural Wonders: National Parks Special",
-    redirect: "/",
+    redirect: "/tour-guide",
   },
   {
     txt: "Eating and drinking in Canada, discover our tips",
-    redirect: "/",
+    redirect: "/eat&-drink",
   },
   {
     txt: "Discover one of our tours in Canada",
@@ -69,7 +70,7 @@ const FeaturedLinks = [
   },
   {
     txt: "Customize your trip to Canada",
-    redirect: "/",
+    redirect: "/customize/tour-canda",
   },
 ];
 
@@ -136,16 +137,16 @@ const imagesData = [
 
 const TouristGuide = () => {
   return (
-    <section className="md:mt-[128px] mt-28 2xl:py-[96px] container flex flex-col 2xl:gap-y-[153px] gap-y-10">
+    <section className="md:mt-[128px] mt-28 2xl:py-[96px] pt-12 pb-0 container flex flex-col 2xl:gap-y-[153px] gap-y-10">
       <div className="flex flex-col 2xl:gap-y-[96px] gap-y-9">
         <div className="flex flex-col 2xl:gap-y-8 items-center justify-center">
           <h3 className="text-[#1687C7] text-3xl md:text-[50px] 2xl:text-[64px] font-interTight font-bold leading-[160%]  ">
             Canada Travel Guide
           </h3>
-          <div className="flex items-center flex-col 2xl:flex-row gap-x-[155px]">
+          <div className="flex items-center flex-col 2xl:flex-row 2xl:gap-x-[155px] gap-12">
             <img
               src={canadaMap}
-              className=" w-[750px] h-[471px] "
+              className="md:w-[750px] md:h-[471px]"
               alt="not foun"
             />
             <div className="flex flex-col gap-y-4 ">
@@ -172,9 +173,13 @@ const TouristGuide = () => {
                       <div className="h-[18px] flex items-center cursor-pointer justify-center w-[18px] rounded-full bg-[#1687C7]  ">
                         <ArrowSignSvg className="bg-red-500" />
                       </div>
-                      <p className=" text-[#000000] cursor-pointer font-interTight text-sm md:text-base font-normal leading-[180%]  ">
-                        {item.txt}
-                      </p>
+                      <NavLink
+                        to={item?.redirect}
+                        className=" text-[#000000] cursor-pointer font-interTight text-sm md:text-base font-normal leading-[180%]  "
+                      >
+                        {" "}
+                        {item?.txt}{" "}
+                      </NavLink>
                     </div>
                   );
                 })}
@@ -192,15 +197,17 @@ const TouristGuide = () => {
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center",
                 }}
-                className="2xl:h-[404px] h-[300px] 2xl:w-[312px] w-full relative"
+                className="2xl:h-[404px] h-[220px] 2xl:w-[312px] w-full relative"
               >
                 <div className="h-full w-full flex items-center  justify-center ">
-                  <span
+                  <NavLink
                     className="text-white md:max-w-[238px] text-center cursor-pointer font-interTight 
                   md:text-2xl font-bold leading-[160%]"
+                    to={item.redirectLink}
                   >
-                    {item.txt}
-                  </span>
+                    {" "}
+                    {item.txt}{" "}
+                  </NavLink>
                 </div>
               </div>
             );
@@ -221,7 +228,7 @@ const TouristGuide = () => {
               of the coolest festivals in the world!
             </span>
           </div>
-          <div className="flex flex-col gap-y-[48px] ">
+          <div className="flex flex-col md:gap-y-[48px] gap-6">
             <div className="flex flex-col md:flex-row gap-x-6">
               <span className="text-[#787878] md:max-w-[517.3px] font-interTight text-base 2xl:text-xl font-normal 2xl:leading-[180%] leading-[160%] tracking-[1px]">
                 Go beyond the classic trip to Canada , take inspiration from our
@@ -287,7 +294,7 @@ const TouristGuide = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-y-6 mt-10 2xl:mt-0">
+        <div className="flex flex-col gap-y-6 mt-10 2xl:mt-0 mb-10 md:mb-0">
           <div className="flex flex-col items-center">
             <h3 className="text-[#000000] font-fontSpring text-4xl xl:text-[40px] 2xl:text-[56px] font-light 2xl:leading-[160%]">
               Our travel ideas in Canada
@@ -321,7 +328,7 @@ const TouristGuide = () => {
               your tour of Canada unique !
             </span>
           </div>
-          <div className="w-full h-[345px] flex flex-col items-center justify-center ">
+          <div className="w-full h-[345px] flex flex-col items-center justify-center">
             <TravelDetailsSlider data={imagesData} />
           </div>
         </div>

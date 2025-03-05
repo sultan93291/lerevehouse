@@ -9,7 +9,7 @@ const MapSection = ({ BgImg }) => {
   return (
     <div className="flex flex-col md:gap-y-[64px] gap-y-8 container">
       <div className="flex flex-col md:flex-row items-center gap-x-6">
-        <div className="h-[460px] w-[641px] flex items-center justify-center">
+        <div className="md:h-[460px] md:w-[641px] flex items-center justify-center">
           <img
             src={BgImg}
             alt="SVG Image"
