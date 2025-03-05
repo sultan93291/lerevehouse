@@ -145,7 +145,6 @@ const router = createBrowserRouter([
         path: "/canada-holiday",
         element: <CanadaHoliday />,
       },
-
     ],
   },
 ]);

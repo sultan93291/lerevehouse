@@ -132,7 +132,7 @@ const TouristGuide = () => {
           <h3 className="text-[#1687C7] text-[64px] font-interTight font-bold leading-[160%]  ">
             Canada Travel Guide
           </h3>
-          <div className="flex items-center flex-row gap-x-[155px]">
+          <div className="flex items-center flex-col 2xl:flex-row gap-x-[155px]">
             <img
               src={canadaMap}
               className=" w-[750px] h-[471px] "
@@ -182,7 +182,7 @@ const TouristGuide = () => {
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center",
                 }}
-                className="h-[404px] w-[312px] relative  "
+                className="md:h-[404px] md:w-[312px] relative"
               >
                 <div className="h-full w-full flex items-center  justify-center ">
                   <span className="text-white max-w-[238px] text-center cursor-pointer font-interTight text-2xl font-bold leading-[160%] ">
@@ -307,7 +307,7 @@ const TouristGuide = () => {
               your tour of Canada unique !
             </span>
           </div>
-          <div className=" w-full h-[345px] flex flex-col items-center  justify-center  ">
+          <div className="">
             <TravelDetailsSlider data={imagesData} />
           </div>
         </div>
