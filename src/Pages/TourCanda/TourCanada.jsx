@@ -75,7 +75,7 @@ const TourCanada = () => {
           </p>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row md:flex-wrap gap-y-4  gap-x-4  md:items-center">
+      <div className="flex flex-col md:flex-row md:flex-wrap gap-y-4 gap-x-4  md:items-center">
         {selfDriventours.map((item, index) => {
           console.log(item);
 
