@@ -1,27 +1,27 @@
-import BookCard from '@/components/common/Cards/BookCard';
-import image1 from '@/assets/images/11.jpg';
-import image2 from '@/assets/images/22.jpg';
-import image3 from '@/assets/images/33.jpg';
-import { forwardRef } from 'react';
+import BookCard from "@/components/common/Cards/BookCard";
+import image1 from "@/assets/images/11.jpg";
+import image2 from "@/assets/images/22.jpg";
+import image3 from "@/assets/images/33.jpg";
+import { forwardRef } from "react";
 const WhyBookSection = forwardRef(({ ...props }, ref) => {
   const cardInfo = [
     {
       image: image1,
-      title: 'Personalized Adventures',
+      title: "Personalized Adventures",
       description:
-        'We create custom itineraries, aligning with your preferences for unforgettable trips, backed by expert destination knowledge.',
+        "We create custom itineraries, aligning with your preferences for unforgettable trips, backed by expert destination knowledge.",
     },
     {
       image: image2,
-      title: 'Exclusive Destinations',
+      title: "Exclusive Destinations",
       description:
-        'Explore unique destinations with charm, featuring top-tier accommodations and activities tailored for travelers craving extraordinary adventures.',
+        "Explore unique destinations with charm, featuring top-tier accommodations and activities tailored for travelers craving extraordinary adventures.",
     },
     {
       image: image3,
-      title: ' Sustainable Luxury Travel',
+      title: " Sustainable Luxury Travel",
       description:
-        'We ensure luxurious, eco-friendly travel, letting you explore responsibly while supporting communities and preserving natural habitats.',
+        "We ensure luxurious, eco-friendly travel, letting you explore responsibly while supporting communities and preserving natural habitats.",
     },
   ];
 
@@ -30,7 +30,7 @@ const WhyBookSection = forwardRef(({ ...props }, ref) => {
       ref={ref}
       {...props}
       id="tour"
-      className=" py-14 lg:py-14 2xl:py-28 container mx-auto    "
+      className="lg:py-14 2xl:py-28 container mx-auto"
     >
       <div>
         <h2 className=" text-3xl md:text-4xl xl:text-5xl font-editorsNoteNormal text-center text-primary">
@@ -40,13 +40,13 @@ const WhyBookSection = forwardRef(({ ...props }, ref) => {
 
       {/* cards */}
       <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-12 my-16">
-        {cardInfo?.map(info => (
+        {cardInfo?.map((info) => (
           <BookCard key={info?.title} info={info} />
         ))}
       </div>
     </section>
   );
 });
-WhyBookSection.displayName = 'WhyBookSection';
+WhyBookSection.displayName = "WhyBookSection";
 
 export default WhyBookSection;
