@@ -5,6 +5,7 @@ import AllTouristGuide from "@/Pages/AllTouristGuide/AllTouristGuide";
 import AllTouristGuideDetails from "@/Pages/AllTouristGuideDetails/AllTouristGuideDetails";
 import AtlanticProvinces from "@/Pages/AtlanticProvinces/AtlanticProvinces";
 import CanadaHoliday from "@/Pages/CanadaHoliday/CanadaHoliday";
+import CanadaMap from "@/Pages/CanadaMap/CanadaMap";
 import Contact from "@/Pages/Contact/Contact";
 import CustomizeTripCanada from "@/Pages/CustomizeTripCanada/CustomizeTripCanada";
 import Destination from "@/Pages/Destination/Destination";
@@ -159,6 +160,10 @@ const router = createBrowserRouter([
       {
         path: "/canada-holiday",
         element: <CanadaHoliday />,
+      },
+      {
+        path: "/canada-map",
+        element: <CanadaMap />,
       },
     ],
   },

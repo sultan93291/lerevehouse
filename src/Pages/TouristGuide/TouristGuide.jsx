@@ -16,30 +16,31 @@ import tent from "../../assets/images/guida-turistica/tent.jpg";
 import dolphin from "../../assets/images/guida-turistica/dolphin.jpg";
 import helicopter from "../../assets/images/guida-turistica/helicopter.jpg";
 import lakeMountain from "../../assets/images/guida-turistica/lakeMountain.jpg";
+import { NavLink } from "react-router-dom";
 
 const RedirectData = [
   {
     id: 1,
     src: mountain,
-    redirectLink: "/",
+    redirectLink: "/boundless-north",
     txt: "The Great West Western Canada",
   },
   {
     id: 2,
     src: quebec,
-    redirectLink: "/",
+    redirectLink: "/ontario-quebec",
     txt: "Ontario & Quebec",
   },
   {
     id: 3,
     src: parises,
-    redirectLink: "/",
+    redirectLink: "/Prairies",
     txt: "Prairies",
   },
   {
     id: 4,
     src: seaHouse,
-    redirectLink: "/",
+    redirectLink: "/atlantics-provinces",
     txt: "Atlantic Provinces",
   },
   {
@@ -53,15 +54,15 @@ const RedirectData = [
 const FeaturedLinks = [
   {
     txt: "View the map of Canada",
-    redirect: "/",
+    redirect: "/canada-map",
   },
   {
     txt: "Natural Wonders: National Parks Special",
-    redirect: "/",
+    redirect: "/tour-guide",
   },
   {
     txt: "Eating and drinking in Canada, discover our tips",
-    redirect: "/",
+    redirect: "/eat&-drink",
   },
   {
     txt: "Discover one of our tours in Canada",
@@ -69,7 +70,7 @@ const FeaturedLinks = [
   },
   {
     txt: "Customize your trip to Canada",
-    redirect: "/",
+    redirect: "/customize/tour-canda",
   },
 ];
 
@@ -172,9 +173,13 @@ const TouristGuide = () => {
                       <div className="h-[18px] flex items-center cursor-pointer justify-center w-[18px] rounded-full bg-[#1687C7]  ">
                         <ArrowSignSvg className="bg-red-500" />
                       </div>
-                      <p className=" text-[#000000] cursor-pointer font-interTight text-sm md:text-base font-normal leading-[180%]  ">
-                        {item.txt}
-                      </p>
+                      <NavLink
+                        to={item?.redirect}
+                        className=" text-[#000000] cursor-pointer font-interTight text-sm md:text-base font-normal leading-[180%]  "
+                      >
+                        {" "}
+                        {item?.txt}{" "}
+                      </NavLink>
                     </div>
                   );
                 })}
@@ -195,12 +200,14 @@ const TouristGuide = () => {
                 className="2xl:h-[404px] h-[300px] 2xl:w-[312px] w-full relative"
               >
                 <div className="h-full w-full flex items-center  justify-center ">
-                  <span
+                  <NavLink
                     className="text-white md:max-w-[238px] text-center cursor-pointer font-interTight 
                   md:text-2xl font-bold leading-[160%]"
+                    to={item.redirectLink}
                   >
-                    {item.txt}
-                  </span>
+                    {" "}
+                    {item.txt}{" "}
+                  </NavLink>
                 </div>
               </div>
             );
