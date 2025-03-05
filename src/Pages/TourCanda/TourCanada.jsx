@@ -4,6 +4,8 @@ import redLight from "../../assets/images/canada-tour/redLight.jpg";
 import ship from "../../assets/images/canada-tour/ship.jpg";
 import uk from "../../assets/images/canada-tour/uk.jpg";
 import farming from "../../assets/images/canada-tour/farming.jpg";
+import { useNavigate } from "react-router-dom";
+
 
 const selfDriventours = [
   {
@@ -13,6 +15,7 @@ const selfDriventours = [
     subHeading:
       "Choosing a self-drive tour in Canada means having no constraints: you can modify them as you wish by adding or removing nights from the route and you can also choose the category of hotels used for overnight stays along the way.   ",
     btnTxt: "Choose a car tour",
+    link: "/tour-with-car",
   },
   {
     id: 2,
@@ -58,6 +61,7 @@ const tripCanda = [
 ];
 
 const TourCanada = () => {
+  const navigate = useNavigate()
   return (
     <section className="2xl:my-[156px] mt-14 xl:py-[72px] py-9 container flex flex-col md:gap-y-10 gap-y-5 2xl:gap-y-[148px]">
       <div className="flex flex-col gap-y-[148px]">
@@ -77,8 +81,6 @@ const TourCanada = () => {
       </div>
       <div className="flex flex-col md:flex-row md:flex-wrap gap-y-4 gap-x-4  md:items-center">
         {selfDriventours.map((item, index) => {
-          console.log(item);
-
           return (
             <div
               key={index}
@@ -95,7 +97,7 @@ const TourCanada = () => {
               }}
             >
               {/* Content inside should only be visible on hover */}
-              <div className="md:h-full h-[300px] w-full flex flex-col items-center justify-center md:gap-y-[38px] gap-y-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out transform scale-95 group-hover:scale-100 px-5 md:px-0">
+              <div className="md:h-full h-[300px] w-full flex flex-col items-center justify-center md:gap-y-[38px] gap-y-4 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-out transform scale-95 group-hover:scale-100 px-5 md:px-0">
                 <div className="flex flex-col items-center text-center justify-center md:gap-y-[22px]">
                   <h2 className="text-white text-2xl md:text-[32px] font-semibold leading-[150%] tracking-[1px] font-interTight">
                     {item.heading}
@@ -104,7 +106,9 @@ const TourCanada = () => {
                     {item.subHeading}
                   </span>
                 </div>
-                <button className="bg-[#1687C7] px-4 md:py-3 py-2 text-sm md:text-lg font-semibold leading-[150%] tracking-[1px] text-white font-interTight rounded-[8px]">
+                <button onClick={() => {
+                  navigate(item.link)
+                }} className="bg-[#1687C7] px-4 md:py-3 py-2 text-sm md:text-lg font-semibold leading-[150%] tracking-[1px] text-white font-interTight rounded-[8px]">
                   {item.btnTxt}
                 </button>
               </div>
