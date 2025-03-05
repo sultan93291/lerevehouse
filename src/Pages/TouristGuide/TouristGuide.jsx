@@ -118,6 +118,16 @@ const imagesData = [
     link: "/",
   },
   {
+    src: helicopter,
+    txt: "City excursions",
+    link: "/",
+  },
+  {
+    src: tent,
+    txt: "Glamping... in a tent with class",
+    link: "/",
+  },
+  {
     src: dolphin,
     txt: "Bears, whales and more!",
     link: "/",
@@ -162,7 +172,7 @@ const TouristGuide = () => {
                       <div className="h-[18px] flex items-center cursor-pointer justify-center w-[18px] rounded-full bg-[#1687C7]  ">
                         <ArrowSignSvg className="bg-red-500" />
                       </div>
-                      <p className=" text-[#000000] font-interTight text-sm md:text-base font-normal leading-[180%]  ">
+                      <p className=" text-[#000000] cursor-pointer font-interTight text-sm md:text-base font-normal leading-[180%]  ">
                         {item.txt}
                       </p>
                     </div>
