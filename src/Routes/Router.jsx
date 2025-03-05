@@ -3,6 +3,7 @@ import ActivitiesDetails from "@/Pages/ActivitiesDetails/ActivitiesDetails";
 import ActivitiesSubcategory from "@/Pages/ActivitiesSubcategory/ActivitiesSubcategory";
 import AllTouristGuide from "@/Pages/AllTouristGuide/AllTouristGuide";
 import AllTouristGuideDetails from "@/Pages/AllTouristGuideDetails/AllTouristGuideDetails";
+import AtlanticProvinces from "@/Pages/AtlanticProvinces/AtlanticProvinces";
 import CanadaHoliday from "@/Pages/CanadaHoliday/CanadaHoliday";
 import Contact from "@/Pages/Contact/Contact";
 import CustomizeTripCanada from "@/Pages/CustomizeTripCanada/CustomizeTripCanada";
@@ -10,6 +11,8 @@ import Destination from "@/Pages/Destination/Destination";
 import DestinationDetails from "@/Pages/DestinationDetails/DestinationDetails";
 import EatAndDrink from "@/Pages/EatAndDrink/EatAndDrink";
 import Homepage from "@/Pages/Homepage/Homepage";
+import OntarionQuebec from "@/Pages/OntarioQuebec/OntarionQuebec";
+import Prairies from "@/Pages/Praises/Prairies";
 import SingleCanadaTour from "@/Pages/SingleCanadaTour/SingleCanadaTour";
 import TestMap from "@/Pages/TestMap/TestMap";
 import TourAutoCanada from "@/Pages/TourAutoCanada/TourAutoCanada";
@@ -130,8 +133,20 @@ const router = createBrowserRouter([
         element: <CustomizeTripCanada />,
       },
       {
-        path: "/tour-canada/single",
+        path: "/boundless-north",
         element: <SingleCanadaTour />,
+      },
+      {
+        path: "/atlantics-provinces",
+        element: <AtlanticProvinces />,
+      },
+      {
+        path: "/ontario-quebec",
+        element: <OntarionQuebec />,
+      },
+      {
+        path: "/Prairies",
+        element: <Prairies />,
       },
       {
         path: "/tour-auto",
@@ -145,7 +160,6 @@ const router = createBrowserRouter([
         path: "/canada-holiday",
         element: <CanadaHoliday />,
       },
-
     ],
   },
 ]);

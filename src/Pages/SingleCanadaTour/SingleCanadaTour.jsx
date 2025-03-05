@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import polarBear from "../../assets/images/canada-tour/polarBear.jpg";
 import MapSection from "./Sections/MapSection";
 import ConsultCard from "@/components/common/Cards/ConsultCard";
+import Alaska from "../../assets/images/all-provinces-map/Alaska.svg";
 
 const Tabs = ["Yukon", "Northwest Territories", "Nunavut"];
 const SingleCanadaTour = () => {
@@ -18,7 +19,7 @@ const SingleCanadaTour = () => {
         bg={polarBear}
       />
       <div className="flex flex-col 2xl:pt-[110px] pt-12 2xl:gap-y-[108px] gap-y-14">
-        <MapSection />
+        <MapSection BgImg={Alaska} />
         <div className="flex flex-col">
           <div>
             <div className="flex items-center border-t shadow-lg shadow-[rgba(0,0,0,0.7)] bg-white border-solid  h-[75px] justify-center">
