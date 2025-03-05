@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import polarBear from "../../assets/images/canada-tour/polarBear.jpg";
-import MapSection from "../SingleCanadaTour/Sections/MapSection"; 
-import CommonHeroBanner from "@/components/common/HeroBanner/CommonHeroBanner"; 
+import MapSection from "../SingleCanadaTour/Sections/MapSection";
+import CommonHeroBanner from "@/components/common/HeroBanner/CommonHeroBanner";
 import ConsultCard from "@/components/common/Cards/ConsultCard";
-import praises from "../../assets/images/all-provinces-map/praises.svg"
-import praisesIMg from "../../assets/images/all-provinces-map/praises.jpg"
-
+import praises from "../../assets/images/all-provinces-map/praises.svg";
+import praisesIMg from "../../assets/images/all-provinces-map/praises.jpg";
 
 const Tabs = ["Yukon", "Northwest Territories", "Nunavut"];
 const Prairies = () => {
@@ -18,7 +17,7 @@ const Prairies = () => {
         subTittle={"Vast, flat, endless and beautiful"}
         bg={praisesIMg}
       />
-      <div className="flex flex-col 2xl:pt-[110px] pt-12 2xl:gap-y-[108px] gap-y-14">
+      <div className="flex flex-col 2xl:pt-[110px] pt-12 2xl:gap-y-[108px] md:gap-y-14 gap-y-7">
         <MapSection BgImg={praises} />
         <div className="flex flex-col">
           <div>
@@ -44,8 +43,8 @@ const Prairies = () => {
                 );
               })}
             </div>
-            <div className="flex flex-col    py-[64px] bg-[#78787836]  ">
-              <div className="container flex flex-col gap-y-[64px] ">
+            <div className="flex flex-col md:py-[64px] py-12 bg-[#78787836]">
+              <div className="container flex flex-col md:gap-y-[64px] gap-y-8">
                 {[0, 1, 2].map((item, index) => {
                   return <ConsultCard key={index} />;
                 })}
