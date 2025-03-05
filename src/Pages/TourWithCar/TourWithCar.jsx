@@ -6,6 +6,7 @@ import ford from "../../assets/images/tour-auto/ford.jpg";
 import suv from "../../assets/images/tour-auto/suv.png";
 import minivan from "../../assets/images/tour-auto/minivan.jpg";
 import TestModal from "@/components/Modals/TestModal";
+import { Modal } from "@/components/Modals/Modal";
 
 const vechicles = [
   {
@@ -77,16 +78,16 @@ const TourWithCar = () => {
                   </div>
                   <span className="hidden 2xl:block w-[1px] h-[64px] bg-[#0000001F] "></span>
                 </div>
-                <button className="px-[61px] py-5 rounded-[5px] bg-[#1687C7] text-sm md:text-xs font-medium leading-[120%] font-interTight text-white border-[1px] border-transparent ease-in-out duration-500 hover:bg-transparent hover:border-solid hover:border-[#1687C7] hover:text-[#1687C7]">
+                <button className="md:px-[61px] px-8 md:py-5 py-3 rounded-[5px] bg-[#1687C7] text-sm md:text-xs font-medium leading-[120%] font-interTight text-white border-[1px] border-transparent ease-in-out duration-500 hover:bg-transparent hover:border-solid hover:border-[#1687C7] hover:text-[#1687C7]">
                   Make An Enquiry
                 </button>
               </div>
-              <div className="flex flex-col gap-y-6 ">
+              <div className="flex flex-col md:gap-y-6 gap-y-3">
                 <div className="flex flex-col gap-y-2">
-                  <h2 className="text-[#004265] font-fontSpring text-4xl 2xl:text-[48px] leading-[120%] font-light">
+                  <h2 className="text-[#004265] font-fontSpring text-3xl 2xl:text-[48px] leading-[120%] font-light">
                     Book your road trip in Canada.
                   </h2>
-                  <span className="text-[#004265] font-interTight text-[24px] leading-[150%] font-medium ">
+                  <span className="text-[#004265] font-interTight text-xl leading-[150%] font-medium mt-5 md:mt-0">
                     {" "}
                     A wide range of excursions available.
                   </span>
