@@ -34,6 +34,7 @@ const vechicles = [
 
 const TourWithCar = () => {
   const [open, setOpen] = useState(false);
+  const [selectedVehice, setselectedVehice] = useState(vechicles[0].id);
   return (
     <>
       <Modal open={open} setOpen={setOpen}>
@@ -162,8 +163,14 @@ const TourWithCar = () => {
                   {vechicles.map((item, index) => {
                     return (
                       <div
+                        onClick={() => {
+                          setselectedVehice(item.id);
+                        }}
                         key={index}
-                        className="flex flex-col 3xl:w-[500px] w-full items-center gap-y-6"
+                        className={`flex py-2 ${
+                          item.id == selectedVehice &&
+                          "border-[1px] border-solid border-[#1687C7]"
+                        } cursor-pointer ease-in duration-500 flex-col 3xl:w-[500px] w-full items-center gap-y-6`}
                       >
                         <img
                           src={item.imgSrc}

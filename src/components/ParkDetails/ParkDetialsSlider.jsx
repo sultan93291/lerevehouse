@@ -2,7 +2,10 @@ import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { NextSlideSvg, PrevSlideSvg } from "../common/SvgContainer/SvgContainer";
+import {
+  NextSlideSvg,
+  PrevSlideSvg,
+} from "../common/SvgContainer/SvgContainer";
 import ImageSlide from "./ImageSlide";
 
 const ParkDetailsSlider = ({ data }) => {

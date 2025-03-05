@@ -5,15 +5,18 @@ import {
   UnknownCreature,
 } from "@/components/common/SvgContainer/SvgContainer";
 
-const MapSection = () => {
+const MapSection = ({ BgImg }) => {
   return (
     <div className="flex flex-col md:gap-y-[64px] gap-y-8 container">
       <div className="flex flex-col md:flex-row items-center gap-x-6">
-        <img
-          src={map}
-          className="2xl:w-[620px] w-full sm:w-[400px] xl:w-[490px] h-[394px] object-cover"
-          alt="not found"
-        />
+        <div className="h-[460px] w-[641px] flex items-center justify-center">
+          <img
+            src={BgImg}
+            alt="SVG Image"
+            className="h-full w-full object-contain"
+          />
+        </div>
+
         <div className="flex flex-col gap-y-[30px] mt-8 md:mt-0">
           <div className="flex flex-row gap-x-4 items-center ">
             <div className="flex flex-col items-center md:h-12 lg:w-14 xl:w-12 w-12 h-12 border-[3px] border-solid border-[#BFBFBF] rounded-full justify-center">
