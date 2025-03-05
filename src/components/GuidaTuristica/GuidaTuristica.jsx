@@ -16,7 +16,7 @@ const TravelDetailsSlider = ({ data }) => {
   return (
     <div>
       {/* Slider */}
-      <div className="lg:w-[1600px] flex items-center relative">
+      <div className="w-[1600px] flex items-center relative">
         <Swiper
           loop={true}
           slidesPerView={1}

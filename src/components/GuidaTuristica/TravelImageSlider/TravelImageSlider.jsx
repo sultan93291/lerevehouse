@@ -7,18 +7,18 @@ import { SpecialStar } from "@/components/common/SvgContainer/SvgContainer";
 
 const TravelImageSlider = ({ images }) => {
   return (
-    <div className="">
+    <div className="relative  w-full">
       <Swiper
         slidesPerView={4}
         spaceBetween={10} // Space between images
         pagination={{ clickable: true }} // Pagination is still enabled
         loop
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-center justify-center"
+        className="flex items-center justify-center"
       >
         {images.map((image, idx) => (
           <SwiperSlide key={idx}>
             <div
-              className={`h-[345px] max-w-[400px] relative shadow-md transition-all duration-300`}
+              className={`h-[345px] w-[400px]  relative  shadow-md transition-all duration-300`} // Set width to 400px
               style={{
                 backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.32) 0%, rgba(0, 0, 0, 0.32) 100%), url(${image?.src})`,
                 backgroundSize: "cover",

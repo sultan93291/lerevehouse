@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 const DestinationDetailsSlider = ({ destinationSuggestions, title }) => {
   const [swiperRef, setSwiperRef] = useState(null);
   return (
-    <div id="suggestions" className=" my-16 xl:yt-20">
+    <div id="suggestions" className="md:my-16 my-10 xl:yt-20">
       {/* title */}
       <div>
         <h3 className="text-center text-3xl xl:text-4xl font-editorsNoteNormal text-primary">
@@ -24,10 +24,10 @@ const DestinationDetailsSlider = ({ destinationSuggestions, title }) => {
       </div>
 
       {/* slider */}
-      <div className="mt-16 relative">
+      <div className="md:mt-16 mt-6 relative">
         <Swiper
           breakpoints={{
-            360: { slidesPerView: 1, spaceBetween: 10 }, 
+            360: { slidesPerView: 1, spaceBetween: 10 },
             768: { slidesPerView: 2, spaceBetween: 15 }, // Mobile landscape
             1280: { slidesPerView: 3, spaceBetween: 24 }, // Larger screens
           }}
