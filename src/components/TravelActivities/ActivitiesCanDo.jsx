@@ -37,9 +37,9 @@ const activities = [
 
 const ActivitiesCanDo = () => {
   return (
-    <section className="2xl:py-20 pt-16">
+    <section className="2xl:py-20 pt-10 pb-10">
       <div className="container">
-        <div className="text-left mb-10">
+        <div className="text-left md:mb-10 mb-5">
           <h3 className="title--xxl">See what are the activates you can do</h3>
         </div>
         <div className="grid md:grid-cols-4 md:gap-5 gap-8">

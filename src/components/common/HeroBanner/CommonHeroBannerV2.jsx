@@ -20,10 +20,10 @@ const CommonHeroBannerV2 = ({ item, bgImg }) => {
           <h1 className="text-[25px] xs:text-[28px] sm:text-[32px] lg:text-[40px] 2xl:text-[56px] font-editorsNoteNormal capitalize text-white leading-normal mt-3">
             {item?.title}
           </h1>
-          <p className="text-[18px] font-interTight mt-4 text-white">
+          <p className="text-[15px] lg:text-[18px] font-interTight mt-4 text-white">
             {item?.subtitle}
           </p>
-          <p className="lg:mt-8 text-base lg:text-[18px] text-white font-interTight lg:leading-9 leading-7 px-0 md:px-5">
+          <p className="lg:mt-8 text-[15px] lg:text-[18px] text-white font-interTight lg:leading-9 leading-6 px-0 md:px-5">
             {item?.description}
           </p>
           <div className="sm:mt-8 mt-4 flex items-center justify-center gap-4 sm:gap-8">
