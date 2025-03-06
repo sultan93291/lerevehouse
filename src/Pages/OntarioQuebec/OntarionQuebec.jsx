@@ -3,7 +3,7 @@ import polarBear from "../../assets/images/canada-tour/polarBear.jpg";
 import MapSection from "../SingleCanadaTour/Sections/MapSection";
 import CommonHeroBanner from "@/components/common/HeroBanner/CommonHeroBanner";
 import ConsultCard from "@/components/common/Cards/ConsultCard";
-import Rainbow from "../../assets/images/all-provinces-map/rainbow.jpg"
+import Rainbow from "../../assets/images/all-provinces-map/rainbow.jpg";
 import ontarion from "../../assets/images/all-provinces-map/ontarion.svg";
 
 const Tabs = ["Yukon", "Northwest Territories", "Nunavut"];
@@ -19,7 +19,7 @@ const OntarionQuebec = () => {
         }
         bg={Rainbow}
       />
-      <div className="flex flex-col 2xl:pt-[110px] pt-12 2xl:gap-y-[108px] gap-y-14">
+      <div className="flex flex-col 2xl:pt-[110px] md:pt-12 2xl:gap-y-[108px] gap-y-14">
         <MapSection BgImg={ontarion} />
         <div className="flex flex-col">
           <div>
