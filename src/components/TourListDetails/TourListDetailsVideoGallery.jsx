@@ -18,16 +18,13 @@ const TourListDetailsVideoGallery = () => {
 
   const [active, setActive] = useState(videoGallery[0]);
   return (
-    <div
-      id="Video"
-      className=" my-10 xl:my-16  "
-    >
+    <div id="Video" className="mt-8 sm:my-10 xl:my-16">
       {/* title */}
       <div>
         <CommonTitle title="Explore our" italic="Video Gallery" />
       </div>
       {/* video gallery */}
-      <div className="w-full flex gap-2 xl:gap-6 mt-10 items-stretch">
+      <div className="w-full flex gap-2 xl:gap-6 mt-5 sm:mt-10 items-stretch">
         {/* preview */}
         <div className="w-3/4 flex">
           <video

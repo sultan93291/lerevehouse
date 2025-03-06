@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 const CommonTitle = ({ title, italic }) => {
   return (
-    <h3 className=" text-3xl xl:text-4xl font-editorsNoteNormal text-primary text-center">
+    <h3 className="text-2xl md:text-3xl xl:text-4xl font-editorsNoteNormal text-primary text-center">
       {title}
       <span className="font-editorsNoteItalic">{italic}</span>
     </h3>

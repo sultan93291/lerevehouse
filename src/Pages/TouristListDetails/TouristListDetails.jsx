@@ -6,7 +6,9 @@ import TourListDetailsSuggestions from "@/components/TourListDetails/TourListDet
 import TourListDetailsVideoGallery from "@/components/TourListDetails/TourListDetailsVideoGallery";
 import ItenaryIdeaDetails from "@/components/TourListDetails/ItenaryIdeaDetails";
 import TourListDetailsBanner from "@/components/TourListDetails/TourListDetailsBanner";
+import bg from "../../assets/images/destination-bg.jpg"
 import WaterActivity from "@/components/TourListDetails/WaterActivity";
+import CommonHeroBanner from "@/components/common/HeroBanner/CommonHeroBanner";
 const TouristListDetails = () => {
   const sectionTabs = [
     {

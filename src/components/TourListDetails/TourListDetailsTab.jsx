@@ -15,11 +15,10 @@ const TourListDetailsTab = ({ sectionTabs }) => {
           to={tab?.link}
           onClick={() => setActiveTab(tab)}
           key={tab?.label}
-          className={`${
-            activeTab.label == tab?.label
-              ? "bg-primary text-white"
-              : "bg-transparent"
-          } text-base xl:text-lg cursor-pointer py-2 font-medium px-3 lg:px-6 `}
+          className={`${activeTab.label == tab?.label
+            ? "bg-primary text-white"
+            : "bg-transparent"
+            } text-base xl:text-lg cursor-pointer py-1 sm:py-2 font-medium px-3 lg:px-6 `}
         >
           {tab?.label}
         </Link>

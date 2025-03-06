@@ -1,13 +1,13 @@
 const TourListDetailsDescription = () => {
   return (
-    <div id="description" className=" my-10   ">
+    <div id="description" className="my-7 sm:my-10">
       {/* title */}
       <div className="space-y-2">
-        <h2 className=" text-3xl lg:text-4xl font-editorsNoteNormal text-primary">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-editorsNoteNormal text-primary">
           Travel to{" "}
           <span className="font-editorsNoteItalic">Canada and Alaska</span>
         </h2>
-        <p className="font-interTight font-medium text-lg lg:text-xl text-primary">
+        <p className="font-interTight font-medium sm:text-lg lg:text-xl text-primary">
           A wide range of excursions available.
         </p>
       </div>

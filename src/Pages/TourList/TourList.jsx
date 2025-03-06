@@ -12,7 +12,7 @@ const TourList = () => {
       id: 1,
       image: destinationSuggestionBg,
       duration: 11,
-      title: 'Vancouver to Denali Park with 8 Day Cruise',
+      title: 'Vancouver to Denali Park with 7 Day Cruise',
       description:
         'Our “ Canada and Alaska Trip - from Vancouver to Denali Park ” is dedicated to those who want to get to know Alaska Our “ Canada and Alaska Trip - from Vancouver to Denali Park ” is dedicated to those who want to get to know Alaska',
       price: 3550,
