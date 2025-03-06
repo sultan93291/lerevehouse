@@ -5,7 +5,7 @@ import w4 from "../../assets/images/tour-guide/w4.png";
 
 const WhatToDo = () => {
   return (
-    <div className="space-y-10">
+    <div className="space-y-5 md:space-y-10">
       {/* Card 1 */}
       <div className="flex xl:flex-row flex-col 2xl:gap-24 gap-6 items-center">
         <div className="2xl:w-[655px] xl:w-[500px] flex-shrink-0">
@@ -33,7 +33,7 @@ const WhatToDo = () => {
       {/* Card 2 */}
       <div className="flex flex-col-reverse xl:flex-row 2xl:gap-24 gap-6 items-center">
         <div>
-          <h3 className="md:text-3xl text-2xl mb-4 text-[#004265]">
+          <h3 className="text-2xl md:text-3xl mb-2 md:mb-4 text-[#004265]">
             Stanley Park{" "}
           </h3>
           <p className="text-[#565656] 2xl:text-xl lg:text-lg md:text-base text-sm">
@@ -44,8 +44,8 @@ const WhatToDo = () => {
             for kids, including pony rides, water games and a miniature train.
             Older visitors will want to tour the spectacular flower gardens.
           </p>
-          <br />
-          <p className="text-[#565656] 2xl:text-xl lg:text-lg md:text-base text-sm">
+
+          <p className="text-[#565656] 2xl:text-xl xl:text-lg text-base">
             Stanley Park teems with an amazing variety of wildlife. At least 500
             species are known to live in the park. Some of the must-see
             landmarks: Lost Lagoon,Hollow Tree and siwash Rock..
@@ -61,8 +61,10 @@ const WhatToDo = () => {
           <img src={w3} alt="w-full h-full object-cover" />
         </div>
         <div>
-          <h3 className="md:text-3xl text-2xl mb-4 text-[#004265]">Gastown</h3>
-          <p className="text-[#565656] 2xl:text-xl lg:text-lg md:text-base text-sm">
+          <h3 className="text-2xl md:text-3xl mb-2 md:mb-4 text-[#004265]">
+            Gastown
+          </h3>
+          <p className="text-[#565656] 2xl:text-xl xl:text-lg text-base">
             This is the birthplace of Vancouver, with historic cobblestone
             streets and Victorian buildings. The epicenter of independent
             design, culture, food and fashion, Gastown delivers one-of-a-kind
@@ -70,6 +72,7 @@ const WhatToDo = () => {
           </p>
           <br />
           <p className="text-[#565656] 2xl:text-xl lg:text-lg md:text-base text-sm">
+
             In other words, Gastown is the trendiest neighbourhood in Vancouver!
             A must-see for art and culture lovers.
           </p>
@@ -78,7 +81,8 @@ const WhatToDo = () => {
       {/* Card 4 */}
       <div className="flex flex-col xl:flex-row 2xl:gap-24 gap-6 items-center">
         <div>
-          <h3 className="md:text-3xl text-2xl mb-4 text-[#004265]">
+
+          <h3 className="text-2xl md:text-3xl mb-2 md:mb-4 text-[#004265]">
             Vancouver Aquarium{" "}
           </h3>
           <p className="text-[#565656] 2xl:text-xl lg:text-lg md:text-base text-sm">
@@ -101,7 +105,8 @@ const WhatToDo = () => {
           <img src={w3} alt="w-full h-full object-cover" />
         </div>
         <div className="">
-          <h3 className="md:text-3xl text-2xl mb-4 text-[#004265]">
+
+          <h3 className="text-2xl md:text-3xl mb-2 md:mb-4 text-[#004265]">
             Museum of Anthropology{" "}
           </h3>
           <p className="text-[#565656] 2xl:text-xl lg:text-lg md:text-base text-sm">
@@ -113,6 +118,7 @@ const WhatToDo = () => {
           </p>
           <br />
           <p className="text-[#565656] 2xl:text-xl lg:text-lg md:text-base text-sm">
+
             The cutting-edge temporary exhibitions focus on arts and culture
             from around the world. Allow at least two hours for a good look at
             everything on offer!
@@ -122,7 +128,8 @@ const WhatToDo = () => {
       {/* Card 6 */}
       <div className="flex flex-col xl:flex-row 2xl:gap-24 gap-6 items-center">
         <div>
-          <h3 className="md:text-3xl text-2xl mb-4 text-[#004265]">
+          <h3 className="text-2xl md:text-3xl mb-2 md:mb-4 text-[#004265]">
+
             Granville Island{" "}
           </h3>
           <p className="text-[#565656] 2xl:text-xl lg:text-lg md:text-base text-sm">
@@ -135,6 +142,7 @@ const WhatToDo = () => {
           </p>
           <br />
           <p className="text-[#565656] 2xl:text-xl lg:text-lg md:text-base text-sm">
+
             The island boasts many restaurants, bars, theatres, artists studios
             and craft boutiques. With its wide range of local produce and
             products, the Granville Island Public Market is the perfect place to
