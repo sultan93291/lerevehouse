@@ -13,7 +13,7 @@ const CommonHeroBanner = ({
 }) => {
   return (
     <section
-      className="h-[300px] sm:h-[400px] px-8 xl:px-0 xl:h-[600px] mt-20 xl:mt-24 bg-cover bg-center flex flex-col gap-5 lg:gap-10 items-center justify-center"
+      className="h-[350px] sm:h-[400px] px-8 xl:px-0 xl:h-[600px] mt-20 xl:mt-24 bg-cover bg-center flex flex-col gap-5 lg:gap-10 items-center justify-center"
       style={{
         backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${bg})`,
         backgroundColor: "lightgray",
@@ -28,7 +28,7 @@ const CommonHeroBanner = ({
             {subSubTittle}
           </span>
         )}
-        <h1 className="text-2xl xs:text-3xl md:text-4xl xl:text-6xl text-center xl:text-left font-editorsNoteNormal font-light text-white ">
+        <h1 className="text-2xl md:text-2xl xl:text-6xl text-center xl:text-left font-editorsNoteNormal font-light text-white">
           <span
             className={`${
               uppercaseTitle ? "uppercase" : "capitalize"
@@ -47,7 +47,7 @@ const CommonHeroBanner = ({
           )}
         </h1>
         {subTittle && (
-          <span className="text-[#fff] text-center text-sm md:text-base xl:text-2xl font-medium md:leading-[150%] leading-[20px]">
+          <span className="text-[#fff] text-center text-base xl:text-2xl font-medium md:leading-[150%] ">
             {subTittle}
           </span>
         )}
