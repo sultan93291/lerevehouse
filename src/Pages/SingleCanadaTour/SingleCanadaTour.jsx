@@ -18,7 +18,7 @@ const SingleCanadaTour = () => {
         }
         bg={polarBear}
       />
-      <div className="flex flex-col 2xl:pt-[110px] pt-12 2xl:gap-y-[108px] gap-y-14">
+      <div className="flex flex-col 2xl:pt-[110px] md:pt-12 2xl:gap-y-[108px] gap-y-14">
         <MapSection BgImg={Alaska} />
         <div className="flex flex-col">
           <div>

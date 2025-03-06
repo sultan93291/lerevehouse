@@ -22,8 +22,8 @@ const TourGuide = () => {
       />
       <Delights />
       <TourTab data={EatAndDrinkTabData} />
-      <div className=" py-5 bg-chocolate">
-        <div className="container flex items-center text-white justify-center font-editorsNoteItalic text-[40px] font-light leading-[160%] ">
+      <div className="md:py-5 py-2 bg-chocolate">
+        <div className="container flex items-center text-white justify-center font-editorsNoteItalic text-[28px] md:text-[40px] font-light leading-[160%] ">
           We&apos;ve added a seat at the table, yours!
         </div>
       </div>

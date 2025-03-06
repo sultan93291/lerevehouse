@@ -6,14 +6,14 @@ const ConsultCard = () => {
     <div className="flex flex-col h-auto max-w-[1600px] bg-white p-4 md:p-8 2xl:p-[64px] gap-y-12">
       <div className="flex flex-col gap-y-[22px] ">
         <div className="flex flex-col md:gap-y-8 gap-y-4">
-          <h2 className="text-[#1687C7] text-[32px] md:text-[40px] font-bold leading-[150%] font-interTight tracking-[1px]  ">
+          <h2 className="text-[#1687C7] text-[32px] md:text-[40px] font-bold leading-[150%] font-interTight tracking-[1px]">
             Yukon
           </h2>
           <span className="text-[#484848] text-lg md:text-[24px] font-bold leading-[150%] font-interTight tracking-[1px]  ">
             On the trail of gold and spectacular nature
           </span>
         </div>
-        <div className="flex flex-col gap-y-[22px] ">
+        <div className="flex flex-col gap-y-[22px]">
           <p className="text-[#787878] text-sm md:text-[16px] font-normal leading-[150%] font-interTight tracking-[1px]  ">
             Adventure, far north, moose and wild landscapes. An unspoiled
             province, vast and fascinating for the expeditions and memories it

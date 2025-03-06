@@ -102,17 +102,17 @@ const ActivitiesDetails = () => {
         italic="Diving sports"
       />
 
-      <section className="container my-20">
+      <section className="container md:my-20 mt-10 mb-10">
         {/* gallery */}
         <ActivitiesDetailsGallery
           activitiesDetailsGalleryItems={activitiesDetailsGalleryItems}
         />
 
         {/* description */}
-        <div className="mt-16">
+        <div className="md:mt-16 mt-8">
           {/* title */}
           <div className="space-y-2">
-            <h2 className="text-3xl font-editorsNoteNormal text-primary">
+            <h2 className="text-[28px] md:text-3xl font-editorsNoteNormal text-primary">
               Scuba{" "}
               <span className="text-secondary font-editorsNoteItalic">
                 Boat Dive
@@ -129,7 +129,7 @@ const ActivitiesDetails = () => {
             <h4 className="text-2xl font-editorsNoteNormal text-text-black font-medium">
               Overview
             </h4>
-            <p className="font-interTight text-lg text-text-gray leading-[180%]">
+            <p className="font-interTight text-base md:text-lg text-text-gray md:leading-[180%]">
               See Vancouver the way it is best seen - by water - during this
               3-hour tour in a Zodiac inflatable boat. Beginning at Granville
               Island, you&lsquo;ll cross False Creek and follow the coastline
@@ -144,18 +144,18 @@ const ActivitiesDetails = () => {
         </div>
 
         {/* map section */}
-        <div className="mt-16 flex md:gap-10 gap-6 md:h-[700px] items-stretch">
+        <div className="md:mt-16 mt-8 flex flex-col md:flex-row md:gap-10 gap-6 md:h-[700px] items-stretch">
           {/* left side */}
-          <div className="w-2/3">
+          <div className="md:w-2/3">
             <img
               src={plane}
-              className="w-full h-[665px] object-cover"
+              className="w-full h-[280px] md:h-[665px] object-cover"
               alt="not found"
             />
           </div>
 
           {/* right side */}
-          <div className="flex flex-col gap-6 justify-center w-1/3">
+          <div className="flex flex-col gap-6 justify-center md:w-1/3">
             <div className="space-y-3">
               <h4 className="text-2xl font-editorsNoteNormal text-text-black font-medium leading-[140%]">
                 Where are the activities?
@@ -193,7 +193,7 @@ const ActivitiesDetails = () => {
         </div>
 
         {/* includes and excludes */}
-        <div className="mt-16 p-10 bg-[#efefef] flex flex-row gap-[60px] flex-wrap ">
+        <div className="md:mt-16 mt-8 md:p-10 p-5 bg-[#efefef] flex flex-row gap-[60px] flex-wrap ">
           <div className="flex flex-col gap-y-[36px] max-w-[736px] ">
             <div className="flex flex-col flex-wrap gap-y-4  ">
               <h4 className="text-[#252525] text-lg lg:text-2xl font-fontSpring font-medium leading-[150%]  ">
@@ -252,14 +252,14 @@ const ActivitiesDetails = () => {
             </div>
           </div>
           <span className="  max-w-[817px] text-[#000000] text-base lg:text-lg font-normal leading-[150%] font-interTight ">
-            <span className="font-semibold" >PRECAUTION:</span> Verify that you meet the required
-            certification level (e.g., PADI Advanced Open Water Diver or
-            equivalent) for the dive site and type of dive.
+            <span className="font-semibold">PRECAUTION:</span> Verify that you
+            meet the required certification level (e.g., PADI Advanced Open
+            Water Diver or equivalent) for the dive site and type of dive.
           </span>
         </div>
 
         {/* recommendation */}
-        <div className="mt-16">
+        <div className="md:mt-16 mt-8">
           {/* title */}
           <div>
             <h4 className="font-editorsNoteNormal text-3xl font-medium leading-[132%]">
@@ -268,8 +268,8 @@ const ActivitiesDetails = () => {
           </div>
 
           {/* cards */}
-          <div className="md:mt-16 mt-12 grid md:grid-cols-3 3xl:grid-cols-4 md:gap-2 gap-5 col-span-6">
-            {recommendedActivities?.map(item => (
+          <div className="md:mt-16 mt-4 grid md:grid-cols-3 3xl:grid-cols-4 md:gap-2 gap-5 col-span-6">
+            {recommendedActivities?.map((item) => (
               <ActivitiesSubcategoryCard item={item} key={item?.id} />
             ))}
           </div>

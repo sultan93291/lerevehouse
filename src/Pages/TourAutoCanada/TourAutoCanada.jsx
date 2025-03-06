@@ -34,7 +34,7 @@ const TourAutoCanada = () => {
               <TourAutoFAqSections />
             </div>
             <img
-              className="2xl:max-w-[790px] md:h-[576px] h-[250px] object-cover"
+              className="hidden xl:block 2xl:max-w-[790px] md:h-[576px] h-[250px] object-cover"
               src={Map}
               alt="not found"
             />
