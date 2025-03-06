@@ -13,7 +13,7 @@ const CommonHeroBanner = ({
 }) => {
   return (
     <section
-      className="h-[250px] sm:h-[400px] px-8 xl:px-0 xl:h-[600px] mt-20 xl:mt-24 bg-cover bg-center flex flex-col gap-5 lg:gap-10 items-center justify-center"
+      className="h-[300px] sm:h-[400px] px-8 xl:px-0 xl:h-[600px] mt-20 xl:mt-24 bg-cover bg-center flex flex-col gap-5 lg:gap-10 items-center justify-center"
       style={{
         backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${bg})`,
         backgroundColor: "lightgray",
@@ -47,7 +47,7 @@ const CommonHeroBanner = ({
           )}
         </h1>
         {subTittle && (
-          <span className="text-[#fff] text-center text-base xl:text-2xl font-medium md:leading-[150%] ">
+          <span className="text-[#fff] text-center text-sm md:text-base xl:text-2xl font-medium md:leading-[150%] leading-[20px]">
             {subTittle}
           </span>
         )}

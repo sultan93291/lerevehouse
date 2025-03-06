@@ -1174,7 +1174,6 @@ export const AccordionMinus = () => {
   );
 };
 
-
 export const AccrodionPlus = () => {
   return (
     <svg
@@ -1193,4 +1192,4 @@ export const AccrodionPlus = () => {
       />
     </svg>
   );
-}
+};

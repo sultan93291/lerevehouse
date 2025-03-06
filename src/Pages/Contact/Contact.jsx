@@ -40,7 +40,7 @@ const Contact = () => {
               </h3>
 
               {/* canada information */}
-              <div className="space-y-5 mt-5 pl-12 md:pl-0">
+              <div className="space-y-5 mt-5 ">
                 <div
                   onClick={() => {
                     handleDestinationMap(
@@ -88,7 +88,7 @@ const Contact = () => {
               </h3>
 
               {/* canada information */}
-              <div className="space-y-5 mt-5 ml-10 md:ml-0">
+              <div className="space-y-5 mt-5">
                 <div
                   onClick={() => {
                     handleDestinationMap("Via Nomentana, 160 Rome 00162 Italy");
