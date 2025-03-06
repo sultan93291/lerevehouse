@@ -9,7 +9,7 @@ const MapSection = ({ BgImg }) => {
   return (
     <div className="flex flex-col md:gap-y-[64px] gap-y-8 container">
       <div className="flex flex-col md:flex-row items-center gap-x-6">
-        <div className="md:h-[460px] md:w-[641px] flex items-center justify-center">
+        <div className="hidden xl:block md:h-[460px] md:w-[641px] 2xl:flex items-center justify-center">
           <img
             src={BgImg}
             alt="SVG Image"
@@ -32,7 +32,7 @@ const MapSection = ({ BgImg }) => {
             </div>
           </div>
           <div className="flex flex-row gap-x-4 items-center">
-            <div className="flex flex-col items-center md:h-12 lg:w-24 xl:w-16 2xl:w-12 w-20 h-12 border-[3px] border-solid border-[#BFBFBF] rounded-full justify-center">
+            <div className="flex flex-col items-center md:h-12 lg:w-16 2xl:w-12 w-20 h-12 border-[3px] border-solid border-[#BFBFBF] rounded-full justify-center">
               <Temperature />
             </div>
             <div className="flex flex-col gap-y-2  ">
