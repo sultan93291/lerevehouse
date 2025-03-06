@@ -101,6 +101,7 @@ const RecomendedAttractionModal = ({ setOpen }) => {
 
     formState: { errors },
   } = useForm();
+  
   const onSubmit = (data) => {
     console.log(data);
     toast.success("Form Submitted Successfully");
@@ -137,10 +138,10 @@ const RecomendedAttractionModal = ({ setOpen }) => {
           <DialogTitle className="py-3 w-full flex items-center justify-between">
             {/* title */}
             <div className="flex flex-col gap-y-[6px] ">
-              <h2 className="font-fontSpring font-light leading-[150%] text-primary text-xl md:text-2xl tracking-wide">
+              <h2 className=" font-fontSpring font-light leading-[150%]  text-primary  text-2xl tracking-wide">
                 Dinner cruise in Vancouver
               </h2>
-              <span className="flex flex-row items-center gap-x-1 font-interTight font-normal leading-[150%] md:text-lg text-sm">
+              <span className="flex flex-row items-center gap-x-1 font-interTight font-normal leading-[150%]  ">
                 <Star /> 4.3 (243 reviews)
               </span>
             </div>
@@ -154,16 +155,18 @@ const RecomendedAttractionModal = ({ setOpen }) => {
             </div>
           </DialogTitle>
           <DialogDescription>
-            <hr className="w-full h-[1px] bg-[#EBEBEB]" />
-            <div className="flex flex-col md:gap-y-10 gap-y-0">
+            <hr className="w-full h-[1px] bg-[#EBEBEB] " />
+            <div className="flex flex-col gap-y-10   ">
               <div className="flex flex-row flex-wrap gap-4">
                 {RecomendedAttracton.map((item, index) => {
                   return (
                     <img
                       className={`${
                         index === 0
+
                           ? "md:w-full md:h-[421px] h-[220px]"
                           : "3xl:w-[275px] w-full md:h-[237px] h-[220px]"
+
                       } object-cover `}
                       src={item.imgSrc}
                       alt="not found"
@@ -226,7 +229,7 @@ const RecomendedAttractionModal = ({ setOpen }) => {
                         <div className="flex flex-col gap-y-6 ">
                           {features.map((item, index) => {
                             return (
-                              <div className="flex flex-row items-center gap-x-1 ">
+
                                 <span className="text-sm md:text-xl font-inter leadin-[150%] font-medium text-[#004265]">
                                   {item.tittle}
                                 </span>
@@ -257,7 +260,7 @@ const RecomendedAttractionModal = ({ setOpen }) => {
                     )}
                     {activeTab === "Location" && (
                       <div className="w-full md:mt-10">
-                        <GoogleMap
+           <GoogleMap
                           mapContainerStyle={containerStyle}
                           center={waypoints}
                           zoom={11} // Adjusted to show the whole country
@@ -288,6 +291,7 @@ const RecomendedAttractionModal = ({ setOpen }) => {
                                     3 to 12 yrs old
                                   </th>
                                   <th style={{ width: "130px" }}>
+
                                     0 to 2 yrs old
                                   </th>
                                 </tr>
@@ -319,6 +323,7 @@ const RecomendedAttractionModal = ({ setOpen }) => {
                             </table>
                           </div>
                         </div>
+
                         <span className="md:text-xl font-inter leadin-[150%] font-normal text-[#565656]">
                           * Price includes the buffet-style dinner cruise, live
                           music entertainment, a tip and applicable taxes.
