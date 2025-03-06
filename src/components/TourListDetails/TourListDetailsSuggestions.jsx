@@ -56,14 +56,14 @@ const destinationSuggestions = [
 
 const TourListDetailsSuggestions = () => {
   return (
-    <div className=" my-12 xl:my-20  ">
+    <div className="my-8 sm:my-12 xl:my-20  ">
       {/* title */}
       <div>
         <CommonTitle title="Other tours you may be" italic="Interested In" />
       </div>
 
       {/* sliders */}
-      <div className="mt-10">
+      <div className="mt-5 sm:mt-10">
         <Swiper
           //   pagination={{
           //     dynamicBullets: true,
