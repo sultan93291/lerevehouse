@@ -137,7 +137,7 @@ const imagesData = [
 
 const TouristGuide = () => {
   return (
-    <section className="md:mt-[128px] mt-28 2xl:py-[96px] pt-12 pb-0 container flex flex-col 2xl:gap-y-[153px] gap-y-10">
+    <section className="md:mt-[128px] mt-28 2xl:py-[96px] container flex flex-col 2xl:gap-y-[153px] gap-y-10">
       <div className="flex flex-col 2xl:gap-y-[96px] gap-y-9">
         <div className="flex flex-col 2xl:gap-y-8 items-center justify-center">
           <h3 className="text-[#1687C7] text-3xl md:text-[50px] 2xl:text-[64px] font-interTight font-bold leading-[160%]  ">
@@ -146,10 +146,10 @@ const TouristGuide = () => {
           <div className="flex items-center flex-col 2xl:flex-row 2xl:gap-x-[155px] gap-12">
             <img
               src={canadaMap}
-              className="md:w-[750px] md:h-[471px]"
+              className="hidden xl:block md:w-[750px] md:h-[471px]"
               alt="not foun"
             />
-            <div className="flex flex-col gap-y-4 ">
+            <div className="flex flex-col gap-y-4 mt-5 md:mt-0">
               <p className="text-text-gray text-sm md:text-base leading-[180%] font-normal tracking-[1px]  ">
                 Welcome to our little tourist guide to Canada , designed to give
                 you more and more useful information for your trip to Canada!
