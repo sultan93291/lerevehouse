@@ -1,12 +1,10 @@
-
 import React, { useState } from "react";
 import polarBear from "../../assets/images/canada-tour/polarBear.jpg";
-import MapSection from "../SingleCanadaTour/Sections/MapSection"; 
-import CommonHeroBanner from "@/components/common/HeroBanner/CommonHeroBanner"; 
+import MapSection from "../SingleCanadaTour/Sections/MapSection";
+import CommonHeroBanner from "@/components/common/HeroBanner/CommonHeroBanner";
 import ConsultCard from "@/components/common/Cards/ConsultCard";
-import atlantic from "../../assets/images/all-provinces-map/atlantic.jpg"
+import atlantic from "../../assets/images/all-provinces-map/atlantic.jpg";
 import Atlanticmap from "../../assets/images/all-provinces-map/atlantic.svg";
-
 
 const Tabs = ["Yukon", "Northwest Territories", "Nunavut"];
 const AtlanticProvinces = () => {
@@ -21,7 +19,7 @@ const AtlanticProvinces = () => {
         }
         bg={atlantic}
       />
-      <div className="flex flex-col 2xl:pt-[110px] pt-12 2xl:gap-y-[108px] gap-y-14">
+      <div className="flex flex-col 2xl:pt-[110px] pt-0 md:pt-12 2xl:gap-y-[108px] gap-y-14">
         <MapSection BgImg={Atlanticmap} />
         <div className="flex flex-col">
           <div>

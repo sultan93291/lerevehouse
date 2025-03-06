@@ -4,7 +4,7 @@ import { Arrow } from "@/components/common/SvgContainer/SvgContainer";
 
 const MapSection = () => {
   return (
-    <div className="py-20 container grid xl:grid-cols-2 gap-10 2xl:gap-20">
+    <div className="container py-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-10 2xl:gap-20 hidden xl:grid">
       <img src={map} alt="not found" />
       <div className="flex flex-col gap-y-5 ">
         <h2 className="text-2xl md:text-[32px] font-inter font-bold leading-[160%] text-prmiary-blue ">

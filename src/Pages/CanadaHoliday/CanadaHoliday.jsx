@@ -42,11 +42,11 @@ const CanadaHoliday = () => {
       />
       <div className="flex flex-col md:py-[72px] py-8 xl:gap-y-[120px] gap-y-[30px] container">
         <div className="flex flex-col md:gap-y-6 gap-y-3 items-center">
-          <h4 className="text-[#000000] font-interTight text-[28px] sm:text-[32px] lg:text-[40px] 2xl:text-[56px] leading-[150%] font-light">
+          <h4 className="text-[#000000] font-interTight text-[28px] sm:text-[32px] lg:text-[40px] 2xl:text-[56px] leading-[150%] font-light italic">
             Spazi e attività sconfinate
           </h4>
           <div className="flex flex-col md:flex-row xl:gap-x-6 gap-x-3">
-            <p className="text-text-gray font-interTight text-lg 2xl:text-xl 2xl:max-w-[517px] lg:leading-7 2xl:leading-9 font-normal">
+            <p className="text-text-gray font-interTight text-base xl:text-lg 2xl:text-xl 2xl:max-w-[517px] 2xl:leading-9 font-normal leading-7">
               Se vuoi un consiglio da chi il Canada lo conosce e ne è innamorato
               è proprio quello di arricchire il tuo viaggio in Canada con
               qualche escursione outdoor o attività all'aria aperta! Sei in un
@@ -55,7 +55,7 @@ const CanadaHoliday = () => {
               approfittarne. Quindi via...lasciati andare! Dicci dove andrai e
               lasciati
             </p>
-            <p className="text-text-gray font-interTight text-lg 2xl:text-xl 2xl:max-w-[517px] lg:leading-7 2xl:leading-9 font-normal">
+            <p className="text-text-gray font-interTight text-base xl:text-lg 2xl:text-xl 2xl:max-w-[517px] 2xl:leading-9 font-normal leading-7">
               suggerire da Xplore come goderti appieno quest'anima wild del
               Canada, sia che il tuo viaggio sia nella parte orientale che
               occidentale. Possiamo proporti una mezza giornata di rafting, il
@@ -64,7 +64,7 @@ const CanadaHoliday = () => {
               idrovolante per osservare dall'alto i magnifici paesaggi che solo
               il Canada ti
             </p>
-            <p className="text-text-gray font-interTight text-lg 2xl:text-xl 2xl:max-w-[517px] lg:leading-7 2xl:leading-9 font-normal">
+            <p className="text-text-gray font-interTight text-base xl:text-lg 2xl:text-xl 2xl:max-w-[517px] 2xl:leading-9 font-normal leading-7">
               sa offrire...senza contare il divertimento di decollare e
               atterrare a pelo d'acqua! Tanto divertimento, totale sicurezza
               delle escursioni, scenari fantastici ed emozioni che rimarranno
@@ -73,7 +73,7 @@ const CanadaHoliday = () => {
             </p>
           </div>
         </div>
-        <div className="flex flex-col xl:gap-y-[96px] gap-y-10">
+        <div className="flex flex-col xl:gap-y-[96px] md:gap-y-10 gap-y-5">
           {canadaHolidayData.map((item, index) => {
             return (
               <div
@@ -99,7 +99,7 @@ const CanadaHoliday = () => {
                     return (
                       <p
                         key={index}
-                        className="text-[#000] font-interTight text-sm md:text-[16px] font-normal leading-[24px] md:leading-[150%] tracking-[1px] my-5 xl:my-0"
+                        className="text-[#000] font-interTight text-sm md:text-[16px] font-normal leading-[24px] md:leading-[150%] tracking-[1px] mt-5 mb-2 xl:my-0"
                       >
                         {item}
                       </p>
@@ -142,48 +142,48 @@ const CanadaHoliday = () => {
                   </h4>
                   <input
                     type="name"
-                    className="h-[41px] rounded-[8px] 3xl:w-[378px] w-full lg:w-full xl:w-[230px] 2xl:w-[312px] border-[1px] border-solid border-[#A5A5A5]"
+                    className="h-[41px] rounded-[8px] 3xl:w-[378px] w-full lg:w-full xl:w-[230px] 2xl:w-[312px] border-[1px] border-solid border-[#A5A5A5] pl-2"
                   />
                 </div>
                 <div className="flex flex-col gap-y-[2px] ">
                   <h4 className="text-[#000] flex items-center 2xl:max-w-[784px] w-full text-[16px] font-semibold leading-[150%] tracking-[1px] font-interTight ">
-                    Cognome*{" "}
+                    Cognome{" "}
                     <span className="text-[#E80032] 2xl:max-w-[784px] w-full text-[16px] font-semibold leading-[150%] tracking-[1px]  font-interTight ">
                       *
                     </span>
                   </h4>
                   <input
                     type="name"
-                    className="h-[41px] rounded-[8px] 3xl:w-[378px] w-full lg:w-full xl:w-[230px] 2xl:w-[312px] border-[1px] border-solid border-[#A5A5A5]"
+                    className="h-[41px] rounded-[8px] 3xl:w-[378px] w-full lg:w-full xl:w-[230px] 2xl:w-[312px] border-[1px] border-solid border-[#A5A5A5] pl-2"
                   />
                 </div>
               </div>
               <div className="flex flex-col gap-y-[2px] ">
                 <h4 className="text-[#000] flex items-center 2xl:max-w-[784px] w-full text-[16px] font-semibold leading-[150%] tracking-[1px]  font-interTight ">
-                  Nome{" "}
+                  Email{" "}
                   <span className="text-[#E80032] 2xl:max-w-[784px] w-full text-[16px] font-semibold leading-[150%] tracking-[1px]  font-interTight ">
                     *
                   </span>
                 </h4>
                 <input
                   type="name"
-                  className="h-[41px] rounded-[8px] w-full border-[1px] border-solid border-[#A5A5A5]  "
+                  className="h-[41px] rounded-[8px] w-full border-[1px] border-solid border-[#A5A5A5] pl-2"
                 />
               </div>
               <div className="flex flex-col gap-y-[2px] ">
                 <h4 className="text-[#000] flex items-center 2xl:max-w-[784px] w-full text-[16px] font-semibold leading-[150%] tracking-[1px] font-interTight ">
-                  Nome{" "}
+                  Messaggio{" "}
                   <span className="text-[#E80032] 2xl:max-w-[784px] w-full text-[16px] font-semibold leading-[150%] tracking-[1px] font-interTight ">
                     *
                   </span>
                 </h4>
                 <textarea
                   name=""
-                  className="h-[163px] rounded-[8px] w-full border-[1px] border-solid border-[#A5A5A5]  "
+                  className="h-[163px] rounded-[8px] w-full border-[1px] border-solid border-[#A5A5A5] pl-2"
                   id=""
                 ></textarea>
               </div>
-              <div className="flex flex-col gap-y-4 ">
+              <div className="flex flex-col gap-y-4">
                 <p className="text-[#787878] text-sm font-normal leading-[180%] tracking-[1px] font-interTight  ">
                   Cliccando ci autorizzi al trattamento dei dati inseriti
                   secondo le finalità indicate nella nuova 

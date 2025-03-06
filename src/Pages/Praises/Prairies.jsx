@@ -17,7 +17,7 @@ const Prairies = () => {
         subTittle={"Vast, flat, endless and beautiful"}
         bg={praisesIMg}
       />
-      <div className="flex flex-col 2xl:pt-[110px] pt-12 2xl:gap-y-[108px] md:gap-y-14 gap-y-7">
+      <div className="flex flex-col 2xl:pt-[110px] pt-0 md:pt-12 2xl:gap-y-[108px] md:gap-y-14 gap-y-7">
         <MapSection BgImg={praises} />
         <div className="flex flex-col">
           <div>
@@ -43,7 +43,7 @@ const Prairies = () => {
                 );
               })}
             </div>
-            <div className="flex flex-col md:py-[64px] py-12 bg-[#78787836]">
+            <div className="flex flex-col xl:py-[64px] py-10 bg-[#78787836]">
               <div className="container flex flex-col md:gap-y-[64px] gap-y-8">
                 {[0, 1, 2].map((item, index) => {
                   return <ConsultCard key={index} />;

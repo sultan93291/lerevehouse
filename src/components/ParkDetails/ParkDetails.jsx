@@ -12,10 +12,10 @@ const ParkDetails = ({
   isDouble,
 }) => {
   return (
-    <div className="flex container flex-col md:my-20 my-10 md:gap-y-[51px] gap-y-8">
+    <div className="flex container flex-col xl:my-20 md:my-10 mt-5 mb-0 pb-3 md:gap-y-[51px]">
       <div className="flex flex-col gap-y-4">
         <div className="flex flex-col gap-y-1">
-          <h2 className="text-prmiary-blue text-3xl xl:text-[32px] font-semibold font-interTight leading-[160%] ">
+          <h2 className="text-prmiary-blue text-[28px] xl:text-[32px] font-semibold font-interTight leading-[160%]">
             {" "}
             {Heading}{" "}
           </h2>
@@ -26,7 +26,6 @@ const ParkDetails = ({
         <div className="flex flex-col gap-y-5 ">
           <div className="flex flex-col xl:flex-row w-full gap-5   ">
             <p className="text-text-gray xl:text-[18px]  font-normal font-interTight leading-[160%] ">
-
               {ParaOne}{" "}
               {isDouble && (
                 <>

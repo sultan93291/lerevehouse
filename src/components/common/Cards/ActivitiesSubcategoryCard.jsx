@@ -5,7 +5,7 @@ import { ActivitiesClockSvg } from "../SvgContainer/SvgContainer";
 const ActivitiesSubcategoryCard = ({ item }) => {
   return (
     <div className="font-interTight group">
-      <div className="h-72 w-full overflow-hidden">
+      <div className="md:h-72 h-[200px] w-full overflow-hidden">
         <img
           className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
           src={item?.image}
@@ -13,9 +13,9 @@ const ActivitiesSubcategoryCard = ({ item }) => {
         />
       </div>
       {/* description */}
-      <div className="bg-[#efefef] xl:px-5 xl:py-6 px-[10px] py-4">
+      <div className="bg-[#efefef] xl:px-5 xl:py-6 px-[6px] py-4">
         <div>
-          <h5 className="xl:text-xl font-medium h-16">{item?.title}</h5>
+          <h5 className="xl:text-xl font-medium md:h-16 h-14">{item?.title}</h5>
         </div>
 
         {/* duration */}

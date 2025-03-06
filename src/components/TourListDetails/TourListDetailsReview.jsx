@@ -64,7 +64,7 @@ const TourListDetailsReview = ({ isHeading }) => {
   ];
 
   return (
-    <div className="mb-5 mt-3 sm:my-10 2xl:my-20">
+    <div className="my-5 2xl:my-20">
       {/* title */}
       {isHeading && (
         <div>
@@ -78,7 +78,7 @@ const TourListDetailsReview = ({ isHeading }) => {
       )}
 
       {/* sliders */}
-      <div className="mt-10 relative">
+      <div className="md:mt-10 mt-5 relative">
         <Swiper
           breakpoints={{
             360: {

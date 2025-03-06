@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const CustomizeTripCanada = () => {
   const navigate = useNavigate();
   const handleSingleTour = () => {
-    navigate("/")
+    navigate("/");
   };
   return (
     <section className=" mt-16 md:mt-20 mb-0 xl:my-[156px] py-14 md:py-[72px] relative  w-full overflow-hidden  flex flex-col gap-y-10 md:gap-y-16 xl:gap-y-[144px]">
@@ -15,7 +15,7 @@ const CustomizeTripCanada = () => {
           <h2 className="text-[#1687C7] font-interTight text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-[56px] font-semibold leading-[160%] ">
             TRAVEL IDEAS FOR YOUR CANADA HOLIDAYS
           </h2>
-          <p className="text-text-gray w-full px-5 xl:max-w-[966px] font-interTight text-lg 2xl:text-xl text-center 3xl:text-2xl font-normal leading-[140%] ">
+          <p className="text-text-gray w-full px-5 xl:max-w-[966px] font-interTight text-[15px] md:text-lg 2xl:text-xl text-center 3xl:text-2xl font-normal leading-[140%]">
             Set off to discover this wonderful country, choose the type
             of Canada tour that is best for you! Total freedom and desire to
             drive? Choose from the  Canada car tours  that we offer. If instead
@@ -28,7 +28,7 @@ const CustomizeTripCanada = () => {
           {HolidayData.map((item, index) => (
             <div
               key={index}
-              className="w-full group md:w-[480px]  relative h-[345px] shrink-0"
+              className="w-full group md:w-[480px] relative h-[250px] shrink-0"
               style={{
                 backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url(${item.src})`,
                 backgroundSize: "cover",
@@ -133,7 +133,7 @@ const CustomizeTripCanada = () => {
             </span>
           </div>
           <div
-            className="w-full xl:w-[700px] 2xl:max-w-[1063px] h-[400px] lg:h-[574px]  relative "
+            className="w-full xl:w-[700px] 2xl:max-w-[1063px] h-[250px] lg:h-[574px]  relative "
             style={{
               backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url(${mountainer})`,
               backgroundSize: "cover",
@@ -141,7 +141,7 @@ const CustomizeTripCanada = () => {
               backgroundPosition: "center",
             }}
           >
-            <div className="h-full w-full flex flex-col justify-end py-8   ">
+            <div className="md:h-full md:w-full flex flex-col justify-end py-8">
               <span className="text-white text-[18px] font-interTight ml-[10px]  max-w-[988px] font-light leading-[150%] tracking-[1px]">
                 Rocky Mountaineer One of the most beautiful train journeys in
                 the world, are you ready to get on board?
