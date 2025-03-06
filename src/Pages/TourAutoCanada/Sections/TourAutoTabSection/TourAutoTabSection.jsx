@@ -62,7 +62,7 @@ const TourAutoTabSection = () => {
               key={index}
               className="flex flex-col md:flex-row gap-x-5 items-center 2xl:items-start 2xl:h-[456px] h-full w-full border-[1px] border-solid border-[#0000001F]"
             >
-              <div className="md:p-10 p-5 mt-[27px] flex flex-col 2xl:gap-y-[60px] gap-y-6">
+              <div className="md:p-10 p-5 md:mt-[27px] mt-[10px] flex flex-col 2xl:gap-y-[60px] gap-y-6">
                 <div className="flex flex-col gap-y-3">
                   <div className="flex flex-col gap-y-3">
                     <span className="w-full h-[1px] bg-[#0000001F]"></span>
