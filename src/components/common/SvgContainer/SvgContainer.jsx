@@ -1210,4 +1210,3 @@ export const Star = () => {
     </svg>
   );
 };
-
