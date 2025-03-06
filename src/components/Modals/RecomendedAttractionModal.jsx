@@ -291,7 +291,6 @@ const RecomendedAttractionModal = ({ setOpen }) => {
                                     3 to 12 yrs old
                                   </th>
                                   <th style={{ width: "130px" }}>
-
                                     0 to 2 yrs old
                                   </th>
                                 </tr>
