@@ -104,7 +104,7 @@ const ItenaryIdeaDetails = () => {
                         {faq?.tittle}
                       </span>
                     </div>
-                    <div className="flex items-center justify-center">
+                    <div className="flex items-center cursor-pointer justify-center">
                       <DropDown />
                     </div>
                   </div>
@@ -176,7 +176,7 @@ const ItenaryIdeaDetails = () => {
                                 backgroundRepeat: "no-repeat",
                                 backgroundPosition: "center",
                               }}
-                              className=" w-full xl:w-[270px] 2xl:w-[350px] 3xl:w-[450px] 4xl:w-[474px] h-[200px] 2xl:h-[243px]"
+                              className=" w-full xl:w-[270px] cursor-pointer 2xl:w-[350px] 3xl:w-[450px] 4xl:w-[474px] h-[200px] 2xl:h-[243px]"
                             ></div>
                             <div className="flex flex-col items-center justify-center h-[30px]">
                               <span className=" text-base lg:text-xl text-primary leading-[150%]">
