@@ -149,8 +149,8 @@ const TouristGuide = () => {
               className="hidden xl:block md:w-[750px] md:h-[471px]"
               alt="not foun"
             />
-            <div className="flex flex-col gap-y-4 mt-5 md:mt-0">
-              <p className="text-text-gray text-sm md:text-base leading-[180%] font-normal tracking-[1px] mt-5 xl:mt-0">
+            <div className="flex flex-col gap-y-4 md:mt-0">
+              <p className="text-text-gray text-sm md:text-base leading-[180%] font-normal tracking-[1px] mt-3 md:mt-0">
                 Welcome to our little tourist guide to Canada , designed to give
                 you more and more useful information for your trip to Canada!
                 Here you will find all the information divided by geographical
