@@ -42,18 +42,18 @@ const ItenaryIdeaDetails = () => {
   };
 
   return (
-    <section className="flex flex-col my-14 gap-y-5 lg:gap-y-10   ">
-      <div className="flex flex-col gap-y-6  ">
-        <div className="flex flex-col gap-y-4 xl:flex-row justify-between items-center ">
-          <h3 className="text-primary text-[34px] flex-shrink-0 font-normal leading-[120%] font-editorsNoteNormal  ">
+    <section className="flex flex-col xl:my-5  2xl:my-14 gap-y-5 lg:gap-y-10   ">
+      <div className="flex flex-col gap-y-3 sm:gap-y-6  ">
+        <div className="flex gap-y-3 sm:gap-y-4 flex-col lg:flex-row items-start justify-start lg:justify-between lg:items-center ">
+          <h3 className="text-primary text-2xl md:text-[34px] flex-shrink-0 font-normal leading-[120%] font-editorsNoteNormal  ">
             Itinerary idea in details{" "}
           </h3>
-          <div className="flex flex-row w-full justify-end  gap-x-4 ">
+          <div className="flex flex-row w-full lg:justify-end  gap-x-4 ">
             <span
               onClick={() => {
                 closeAll();
               }}
-              className="text-2xl font-normal text-[#004265] leading-[120%] font-editorsNoteNormal cursor-pointer   "
+              className="text-lg md:text-2xl font-normal text-[#004265] leading-[120%] font-editorsNoteNormal cursor-pointer   "
             >
               Close All
             </span>
@@ -61,7 +61,7 @@ const ItenaryIdeaDetails = () => {
               onClick={() => {
                 expandAll();
               }}
-              className="text-2xl font-normal text-[#004265] leading-[120%] font-editorsNoteNormal cursor-pointer  "
+              className="text-lg md:text-2xl font-normal text-[#004265] leading-[120%] font-editorsNoteNormal cursor-pointer  "
             >
               {" "}
               Expand All{" "}
@@ -77,7 +77,7 @@ const ItenaryIdeaDetails = () => {
       <div className="w-full font-interTight">
         <Accordion
           type="multiple" // Allows multiple open items
-          className="w-full  flex flex-col gap-y-4 lg:gap-y-8"
+          className="w-full  flex flex-col gap-y-4 xl:gap-y-8"
           value={openItems}
           onValueChange={values => setOpenItems(values)} // Updates state
         >

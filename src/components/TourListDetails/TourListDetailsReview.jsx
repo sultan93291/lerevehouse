@@ -64,7 +64,7 @@ const TourListDetailsReview = ({ isHeading }) => {
   ];
 
   return (
-    <div className="my-10 xl:my-20">
+    <div className="mb-5 mt-3 sm:my-10 2xl:my-20">
       {/* title */}
       {isHeading && (
         <div>

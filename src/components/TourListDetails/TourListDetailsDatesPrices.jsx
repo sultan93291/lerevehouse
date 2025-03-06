@@ -27,13 +27,10 @@ const TourListDetailsDatesPrices = () => {
     },
   ];
   return (
-    <div
-      id="brochure-download"
-      className="flex flex-col gap-y-[30px] xl:gap-y-[60px]  "
-    >
+    <div id="brochure-download" className="flex flex-col gap-y-[30px] xl:gap-y-[60px]">
       {/* title */}
       <div>
-        <h3 className=" text-3xl lg:text-4xl text-center text-primary font-editorsNoteNormal">
+        <h3 className="text-2xl md:text-3xl xl:text-4xl text-center text-primary font-editorsNoteNormal">
           Prices for basic and
           <span className="font-editorsNoteItalic">
             Full Inclusive packages
@@ -122,7 +119,7 @@ const TourListDetailsDatesPrices = () => {
             </div>
 
             {/* cta buttons */}
-            <div className="w-full font-interTight space-y-6">
+            <div className="w-full font-interTight space-y-3 md:space-y-6">
               <Link className="block text-white text-center py-2 text-sm lg:text-base lg:py-4 border border-primary hover:bg-transparent hover:text-primary transition-all duration-300 w-full bg-primary">
                 Make An Enquiry
               </Link>
