@@ -21,7 +21,7 @@ const TourAutoTabSection = () => {
   };
 
   return (
-    <section className="2xl:py-20 flex flex-col w-full relative items-center justify-center gap-y-5 container pb-10 2xl:pb-0">
+    <section className="2xl:py-20 flex flex-col w-full relative items-center justify-center md:gap-y-5 gap-y-8 container">
       <div className="flex flex-col gap-y-[45px] w-full relative">
         <div className="flex flex-col xl:flex-row md:justify-between justify-center w-full relative gap-y-5 2xl:gap-y-0">
           {Tabs.map((item, index) => {
