@@ -93,7 +93,7 @@ const ItenaryIdeaDetails = () => {
                     <div className=" text-sm xl:text-xl font-normal leading-[123%] whitespace-nowrap  px-4 py-2 text-primary bg-[#F4F4F4]">
                       Day {faq?.dayCount}
                     </div>
-                    <span className=" text-sm xl:text-lg text-primary font-medium leading-[150%]">
+                    <span className="text-sm lg:text-base xl:text-lg text-primary font-medium leading-[150%]">
                       {faq?.tittle}
                     </span>
                   </div>
