@@ -279,29 +279,15 @@ const RecomendedAttractionModal = ({ setOpen }) => {
                             >
                               <thead>
                                 <tr className="text-xl font-inter leading-[120%] font-normal text-[#004265]">
-                                  <th
-                                    style={{ width: "325px",  }}
-                                  >
-                                    Season
-                                  </th>
-                                  <th
-                                    style={{ width: "130px",  }}
-                                  >
-                                    Adult
-                                  </th>
-                                  <th
-                                    style={{ width: "130px",  }}
-                                  >
+                                  <th style={{ width: "325px" }}>Season</th>
+                                  <th style={{ width: "130px" }}>Adult</th>
+                                  <th style={{ width: "130px" }}>
                                     13 to 17 yrs old
                                   </th>
-                                  <th
-                                    style={{ width: "130px",  }}
-                                  >
+                                  <th style={{ width: "130px" }}>
                                     3 to 12 yrs old
                                   </th>
-                                  <th
-                                    style={{ width: "130px", }}
-                                  >
+                                  <th style={{ width: "130px" }}>
                                     0 to 2 yrs old
                                   </th>
                                 </tr>
@@ -321,31 +307,13 @@ const RecomendedAttractionModal = ({ setOpen }) => {
                                 </tr>
 
                                 <tr className="text-xl font-inter leading-[120%] font-normal text-[#004265]">
-                                  <td
-                                    style={{ width: "325px",  }}
-                                  >
+                                  <td style={{ width: "325px" }}>
                                     Friday & Saturday (2025)
                                   </td>
-                                  <td
-                                    style={{ width: "130px", }}
-                                  >
-                                    £121
-                                  </td>
-                                  <td
-                                    style={{ width: "130px",  }}
-                                  >
-                                    £114
-                                  </td>
-                                  <td
-                                    style={{ width: "130px",  }}
-                                  >
-                                    £72
-                                  </td>
-                                  <td
-                                    style={{ width: "130px", }}
-                                  >
-                                    £0
-                                  </td>
+                                  <td style={{ width: "130px" }}>£121</td>
+                                  <td style={{ width: "130px" }}>£114</td>
+                                  <td style={{ width: "130px" }}>£72</td>
+                                  <td style={{ width: "130px" }}>£0</td>
                                 </tr>
                               </tbody>
                             </table>
