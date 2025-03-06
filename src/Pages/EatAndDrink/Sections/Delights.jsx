@@ -2,8 +2,8 @@ import React from "react";
 
 const Delights = () => {
   return (
-    <section className="py-20 container items-center flex flex-col gap-y-4 ">
-      <h2 className="text-[#004265] font-fontSpring  font-light leading-[132%] text-3xl sm:text-4xl xl:text-[48px]  ">
+    <section className="xl:py-20 py-10 container items-center flex flex-col md:gap-y-4 gap-y-1">
+      <h2 className="text-[#004265] font-fontSpring  font-light leading-[132%] text-[28px] sm:text-4xl xl:text-[48px]">
         DELIGHTS FOR THE PALATE
       </h2>
       <p className=" text-text-gray flex flex-col gap-y-4 text-center text-sm xl:font-lg font-interTight font-normal leading-[180%] ">

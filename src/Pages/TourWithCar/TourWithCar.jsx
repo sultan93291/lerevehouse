@@ -42,7 +42,7 @@ const TourWithCar = () => {
       </Modal>
       <section className=" mt-10">
         <CommonHeroBanner bg={mountain} title={"Tour in auto in Canada"} />
-        <div className="flex flex-col md:gap-y-[112px] gap-y-14 py-4 container">
+        <div className="flex flex-col md:gap-y-[112px] gap-y-10 py-4 container">
           <div className="flex flex-col gap-y-4 ">
             <div className="flex flex-col md:gap-y-[60px] gap-y-8">
               <div className="flex flex-col md:flex-row md:justify-between justify-center items-center gap-5 md:gap-0">
@@ -93,7 +93,7 @@ const TourWithCar = () => {
                   <h2 className="text-[#004265] font-fontSpring text-3xl 2xl:text-[48px] leading-[120%] font-light">
                     Book your road trip in Canada.
                   </h2>
-                  <span className="text-[#004265] font-interTight text-xl leading-[150%] font-medium mt-5 md:mt-0">
+                  <span className="text-[#004265] font-interTight text-xl leading-[150%] font-medium">
                     {" "}
                     A wide range of excursions available.
                   </span>
@@ -164,7 +164,7 @@ const TourWithCar = () => {
                   beers and perhaps the best fresh fish in the world including
                   lobsters, shellfish and salmon of incredible quality.
                 </span>
-                <div className="flex flex-col xl:flex-row gap-x-5">
+                <div className="flex flex-col xl:flex-row md:gap-x-5 gap-y-3">
                   {vechicles.map((item, index) => {
                     return (
                       <div
@@ -226,7 +226,7 @@ const TourWithCar = () => {
                       </p>
                     </div>
                   </div>
-                  <div className="flex flex-col gap-y-3 p-6">
+                  <div className="flex flex-col gap-y-3 px-6">
                     <h4 className="text-[#004265] text-[16px] leading-[150%] items-center font-bold  font-interTight text-normal">
                       What's not included
                     </h4>
@@ -259,7 +259,7 @@ const TourWithCar = () => {
                     decide to book the tour as is or ask us to customize the
                     itinerary to your liking.
                   </p>
-                  <button className="2xl:px-[61px] md:w-1/2 w-full xl:w-[215px] py-5 rounded-[5px] bg-[#1687C7] text-xs font-medium leading-[120%] font-interTight text-white border-[1px] border-transparent ease-in-out duration-500 hover:bg-transparent hover:border-solid hover:border-[#1687C7] hover:text-[#1687C7]">
+                  <button className="2xl:px-[61px] md:w-1/2 w-full xl:w-[215px] py-4 rounded-[5px] bg-[#1687C7] text-xs font-medium leading-[120%] font-interTight text-white border-[1px] border-transparent ease-in-out duration-500 hover:bg-transparent hover:border-solid hover:border-[#1687C7] hover:text-[#1687C7]">
                     Make An Enquiry
                   </button>
                 </div>

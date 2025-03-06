@@ -14,7 +14,7 @@ const TravelDetailsSlider = ({ data }) => {
   const [swiperRef, setSwiperRef] = useState(null);
 
   return (
-    <div className="w-[350px] md:w-[700px] lg:w-[800px] 2xl:w-[1200px] 3xl:w-[1600px]">
+    <div className="w-[350px] md:w-[700px] lg:w-[700px] 2xl:w-[1200px] 3xl:w-[1600px]">
       {/* Slider */}
       <div className="w-full flex items-center relative">
         <Swiper
@@ -74,13 +74,13 @@ const TravelDetailsSlider = ({ data }) => {
         <div className="absolute top-1/2 z-[5] left-0 right-0 flex justify-between items-center md:px-6 px-3 transform -translate-y-1/2 w-full">
           <button
             onClick={() => swiperRef && swiperRef.slidePrev()}
-            className="md:w-12 w-8 md:h-12 h-8 bg-[#000000] shadow-md rounded-full flex items-center justify-center z-20"
+            className="xl:w-12 w-8 md:w-10 xl:h-12 h-8 md:h-10 bg-[#000000] shadow-md rounded-full flex items-center justify-center z-20"
           >
             <WhiteArroleft />
           </button>
           <button
             onClick={() => swiperRef && swiperRef.slideNext()}
-            className="md:w-12 w-8 md:h-12 h-8 bg-[#000000] shadow-md rounded-full flex items-center justify-center z-20"
+            className="xl:w-12 w-8 md:w-10 xl:h-12 h-8 md:h-10 bg-[#000000] shadow-md rounded-full flex items-center justify-center z-20"
           >
             <WhiteArrowRight />
           </button>
