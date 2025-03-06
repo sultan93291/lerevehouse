@@ -14,7 +14,7 @@ const WaterActivity = () => {
                 <div className="bg-[#F1F1F1] rounded">
                     <img src={a1} alt="" className="h-[250px] w-full object-cover" />
                     <h3 className="p-5 pb-0 text-lg font-medium">The Best Diving Spots in Vancouver </h3>
-                    <div className="flex p-5 pt-1 sm:pt-5 items-center justify-between">
+                    <div className="flex p-5 pt-3 sm:pt-5 items-center justify-between">
                         <div className="flex items-center gap-3">
                             <img src={watch} alt="" />
                             <p className="sm:text-lg">2h 30m+</p>
@@ -25,7 +25,7 @@ const WaterActivity = () => {
                 <div className="bg-[#F1F1F1] rounded">
                     <img src={a2} alt="" className="h-[250px] w-full object-cover" />
                     <h3 className="p-5 pb-0 text-lg font-medium">Indian Arm and Granite Falls Zodiac Boat Tour</h3>
-                    <div className="flex p-5 pt-1 sm:pt-5 items-center justify-between">
+                    <div className="flex p-5 pt-3 sm:pt-5 items-center justify-between">
                         <div className="flex items-center gap-3">
                             <img src={watch} alt="" />
                             <p className="sm:text-lg">2h 30m+</p>
@@ -36,7 +36,7 @@ const WaterActivity = () => {
                 <div className="bg-[#F1F1F1] rounded">
                     <img src={a3} alt="" className="h-[250px] w-full object-cover" />
                     <h3 className="p-5 pb-0 text-lg font-medium">Scuba Boat Dive in Horseshoe Bay</h3>
-                    <div className="flex p-5 pt-1 sm:pt-5 items-center justify-between">
+                    <div className="flex p-5 pt-3 sm:pt-5 items-center justify-between">
                         <div className="flex items-center gap-3">
                             <img src={watch} alt="" />
                             <p className="sm:text-lg">2h 30m+</p>
@@ -47,7 +47,7 @@ const WaterActivity = () => {
                 <div className="bg-[#F1F1F1] rounded">
                     <img src={a4} alt="" className="h-[250px] w-full object-cover" />
                     <h3 className="p-5 pb-0 text-lg font-medium">The Best Diving Spots in Vancouver </h3>
-                    <div className="flex p-5 pt-1 sm:pt-5 items-center justify-between">
+                    <div className="flex p-5 pt-3 sm:pt-5 items-center justify-between">
                         <div className="flex items-center gap-3">
                             <img src={watch} alt="" />
                             <p className="sm:text-lg">2h 30m+</p>

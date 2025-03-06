@@ -15,7 +15,7 @@ const TourListDetailsBanner = () => {
                 Tuscany and Umbria Italy Rural Heartland
             </h1>
             <p className="text-white text-xl">Private journey designed by you</p>
-            <p className="text-white text-lg lg:text-xl max-w-[1124px] text-center mx-auto">This illuminating adventure through Umbria and Tuscany takes in some of Italy’s most spectacular landscapes, visiting exquisite wineries, Renaissance hilltop towns and the traditional workshops of master artisans.</p>
+            <p className="text-white text-lg leading-[1.5rem] md:leading-normal lg:text-xl max-w-[1124px] text-center mx-auto">This illuminating adventure through Umbria and Tuscany takes in some of Italy’s most spectacular landscapes, visiting exquisite wineries, Renaissance hilltop towns and the traditional workshops of master artisans.</p>
             <div className="flex items-center flex-wrap justify-center gap-5 md:gap-10 lg:gap-14">
                 <div className="text-center">
                     <p className="text-white mb-1 font-editorsNoteNormal text-xl lg:text-2xl">10 Days</p>
