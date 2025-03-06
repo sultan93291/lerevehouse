@@ -135,7 +135,7 @@ const ActivitiesSubcategory = () => {
 
       {/* description */}
 
-      <section className="md:my-20 my-10 container">
+      <section className="md:my-20 mt-10 mb-0 container">
         {/* title */}
         <div>
           <h2 className="text-4xl md:text-5xl font-editorsNoteNormal text-center text-primary">

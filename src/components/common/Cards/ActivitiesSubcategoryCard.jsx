@@ -13,9 +13,9 @@ const ActivitiesSubcategoryCard = ({ item }) => {
         />
       </div>
       {/* description */}
-      <div className="bg-[#efefef] xl:px-5 xl:py-6 px-[10px] py-4">
+      <div className="bg-[#efefef] xl:px-5 xl:py-6 px-[6px] py-4">
         <div>
-          <h5 className="xl:text-xl font-medium md:h-16 h-10">{item?.title}</h5>
+          <h5 className="xl:text-xl font-medium md:h-16 h-14">{item?.title}</h5>
         </div>
 
         {/* duration */}
