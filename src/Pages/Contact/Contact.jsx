@@ -93,10 +93,14 @@ const Contact = () => {
                   onClick={() => {
                     handleDestinationMap("Via Nomentana, 160 Rome 00162 Italy");
                   }}
-                  className="flex cursor-pointer items-center justify-start gap-2 text-text-black xl:text-base text-sm"
+                  className="flex cursor-pointer items-center gap-2 text-text-black xl:text-base text-sm"
                 >
-                  <ContactLocationSvg />
-                  <p>Via Nomentana, 160 Rome 00162 Italy</p>
+                  <span className="p-0 m-0 flex items-center justify-center leading-none">
+                    <ContactLocationSvg className="p-0 m-0 block" />
+                  </span>
+                  <p className="leading-none m-0 p-0">
+                    Via Nomentana, 160 Rome 00162 Italy
+                  </p>
                 </div>
                 <div className="flex items-center gap-2 text-text-black xl:text-base text-sm">
                   <ContactPhoneSvg />
