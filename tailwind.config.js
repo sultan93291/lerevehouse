@@ -21,6 +21,7 @@ export default {
       },
       boxShadow: {
         primaryShadow: "0px 6px 30px 0px rgba(0, 0, 0, 0.08)",
+        cardShadow: "0px 6px 30px 0px rgba(0, 0, 0, 0.08)",
       },
       screens: {
         xs: "360px",
@@ -45,8 +46,9 @@ export default {
         "text-gray": "#565656",
         "prmiary-blue": "#004265",
         "light-blue": "#1687C7",
+        "offGray":"rgba(0, 66, 101, 0.10)",
         RgbaBlue: "rgba(22, 135, 199, 0.10)",
-        blackRgba:"rgba(0, 0, 0, 0.64)",
+        blackRgba: "rgba(0, 0, 0, 0.64)",
         offWhite: "rgba(0, 66, 101, 0.10)",
         chocolate: "#643500",
         "black-transparent": "rgba(0, 0, 0, 0.3)",

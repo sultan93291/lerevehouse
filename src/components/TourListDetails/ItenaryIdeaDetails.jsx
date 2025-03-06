@@ -19,11 +19,13 @@ import {
 import ship from "../../assets/images/tour-details/ship.png";
 import RecomendedAttractionModal from "../Modals/RecomendedAttractionModal";
 import { Modal } from "../Modals/Modal";
+import WishListModal from "../Modals/WishListModal";
 
 const ItenaryIdeaDetails = () => {
   const [currentValue, setcurrentValue] = useState(0);
   const [openItems, setOpenItems] = useState(["item-0"]);
   const [open, setOpen] = useState(false);
+  const [wishListOpen, setwishListOpen] = useState(false);
 
   const expandAll = () => {
     const allItems = AllItenaryData.map((_, index) => `item-${index}`);
@@ -48,6 +50,9 @@ const ItenaryIdeaDetails = () => {
     <>
       <Modal open={open} setOpen={setOpen}>
         <RecomendedAttractionModal setOpen={setOpen} />
+      </Modal>
+      <Modal open={wishListOpen} setOpen={setwishListOpen}>
+        <WishListModal setOpen={setOpen} />
       </Modal>
       <section className="flex flex-col my-14 gap-y-5 lg:gap-y-10   ">
         <div className="flex flex-col gap-y-6  ">
@@ -124,7 +129,9 @@ const ItenaryIdeaDetails = () => {
                         <div className="w-full flex justify-end">
                           <div className=" h-10 lg:h-[56px] w-[168px] flex flex-row bg-white border-[1px] border-solid">
                             <div
-                              onClick={handleValuePlus}
+                              onClick={() => {
+                                handleValuePlus(), setwishListOpen(true);
+                              }}
                               className="h-full w-[56px] bg-offWhite flex items-center justify-center cursor-pointer"
                             >
                               <Plus />
