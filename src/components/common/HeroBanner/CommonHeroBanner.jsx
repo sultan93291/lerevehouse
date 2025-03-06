@@ -28,7 +28,7 @@ const CommonHeroBanner = ({
             {subSubTittle}
           </span>
         )}
-        <h1 className="text-2xl md:text-2xl xl:text-6xl text-center xl:text-left font-editorsNoteNormal font-light text-white">
+        <h1 className="text-2xl md:text-2xl xl:text-6xl text-center xl:text-left font-editorsNoteNormal font-light text-white xl:leading-[102.4px]">
           <span
             className={`${
               uppercaseTitle ? "uppercase" : "capitalize"

@@ -42,7 +42,7 @@ const CanadaHoliday = () => {
       />
       <div className="flex flex-col md:py-[72px] py-8 xl:gap-y-[120px] gap-y-[30px] container">
         <div className="flex flex-col md:gap-y-6 gap-y-3 items-center">
-          <h4 className="text-[#000000] font-interTight text-[28px] sm:text-[32px] lg:text-[40px] 2xl:text-[56px] leading-[150%] font-light">
+          <h4 className="text-[#000000] font-interTight text-[28px] sm:text-[32px] lg:text-[40px] 2xl:text-[56px] leading-[150%] font-light italic">
             Spazi e attività sconfinate
           </h4>
           <div className="flex flex-col md:flex-row xl:gap-x-6 gap-x-3">
