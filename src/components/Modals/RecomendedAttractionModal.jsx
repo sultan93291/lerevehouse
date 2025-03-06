@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useForm } from "react-hook-form";
 import {
   CrossModalSvg,
@@ -101,7 +100,6 @@ const RecomendedAttractionModal = ({ setOpen }) => {
 
     formState: { errors },
   } = useForm();
-  
   const onSubmit = (data) => {
     console.log(data);
     toast.success("Form Submitted Successfully");
@@ -132,21 +130,21 @@ const RecomendedAttractionModal = ({ setOpen }) => {
 
   return (
     <DialogContent className=" w-[300px] sm:w-[400px] md:w-[500px] lg:w-[700px] xl:w-[900px] z-[9999]  3xl:min-w-[1200px]  py-6 text-center font-nunito">
-      {/* Wrap everything in a container that can scroll and hide scrollbar */}
+      {/ Wrap everything in a container that can scroll and hide scrollbar /}
       <div className="max-h-[80vh] overflow-y-auto scrollbar-hide">
         <DialogHeader>
           <DialogTitle className="py-3 w-full flex items-center justify-between">
-            {/* title */}
+            {/ title /}
             <div className="flex flex-col gap-y-[6px] ">
-              <h2 className=" font-fontSpring font-light leading-[150%]  text-primary  text-2xl tracking-wide">
+              <h2 className="font-fontSpring font-light leading-[150%] text-primary text-xl md:text-2xl tracking-wide">
                 Dinner cruise in Vancouver
               </h2>
-              <span className="flex flex-row items-center gap-x-1 font-interTight font-normal leading-[150%]  ">
+              <span className="flex flex-row items-center gap-x-1 font-interTight font-normal leading-[150%] md:text-lg text-sm">
                 <Star /> 4.3 (243 reviews)
               </span>
             </div>
 
-            {/* close Btn */}
+            {/ close Btn /}
             <div
               onClick={() => setOpen(false)}
               className="size-7 cursor-pointer group hover:bg-primary transition-all duration-300 border border-primary rounded-full flex items-center justify-center"
@@ -155,18 +153,16 @@ const RecomendedAttractionModal = ({ setOpen }) => {
             </div>
           </DialogTitle>
           <DialogDescription>
-            <hr className="w-full h-[1px] bg-[#EBEBEB] " />
-            <div className="flex flex-col gap-y-10   ">
+            <hr className="w-full h-[1px] bg-[#EBEBEB]" />
+            <div className="flex flex-col md:gap-y-10 gap-y-0">
               <div className="flex flex-row flex-wrap gap-4">
                 {RecomendedAttracton.map((item, index) => {
                   return (
                     <img
                       className={`${
                         index === 0
-
                           ? "md:w-full md:h-[421px] h-[220px]"
                           : "3xl:w-[275px] w-full md:h-[237px] h-[220px]"
-
                       } object-cover `}
                       src={item.imgSrc}
                       alt="not found"
@@ -229,7 +225,7 @@ const RecomendedAttractionModal = ({ setOpen }) => {
                         <div className="flex flex-col gap-y-6 ">
                           {features.map((item, index) => {
                             return (
-
+                              <div className="flex flex-row items-center gap-x-1 ">
                                 <span className="text-sm md:text-xl font-inter leadin-[150%] font-medium text-[#004265]">
                                   {item.tittle}
                                 </span>
@@ -260,7 +256,7 @@ const RecomendedAttractionModal = ({ setOpen }) => {
                     )}
                     {activeTab === "Location" && (
                       <div className="w-full md:mt-10">
-           <GoogleMap
+                        <GoogleMap
                           mapContainerStyle={containerStyle}
                           center={waypoints}
                           zoom={11} // Adjusted to show the whole country
@@ -296,7 +292,7 @@ const RecomendedAttractionModal = ({ setOpen }) => {
                                 </tr>
                               </thead>
 
-                              {/* Horizontal Line */}
+                              {/ Horizontal Line /}
                               <tbody>
                                 <tr>
                                   <td colSpan="5">
@@ -322,7 +318,6 @@ const RecomendedAttractionModal = ({ setOpen }) => {
                             </table>
                           </div>
                         </div>
-
                         <span className="md:text-xl font-inter leadin-[150%] font-normal text-[#565656]">
                           * Price includes the buffet-style dinner cruise, live
                           music entertainment, a tip and applicable taxes.
