@@ -34,19 +34,19 @@ const StartYourJourney = ({ setOpen }) => {
             {/* Modal Content */}
             <div className="flex flex-col md:flex-row gap-6">
               {/* Left Side: Image */}
-              <div className="w-full md:w-1/2 relative">
+              <div className="w-full  relative">
                 <img
                   src={img}
                   alt="Modal Image"
                   className="w-full h-full object-cover rounded-lg "
                 />
                 {/* Wish list Card */}
-                <div className="absolute top-32 left-8">
-                  <WishListCard />
+                <div className="absolute top-32 left-8 hidden 2xl:block">
+                  <WishListCard width="422px" />
                 </div>
               </div>
               {/* Right Side: Input Field */}
-              <div className="w-full md:w-1/2 flex flex-col justify-center">
+              <div className="w-full  flex flex-col justify-center">
                 {/* This is the Name */}
                 <div className="">
                   <label className="text-lg text-primary font-inter font-medium">

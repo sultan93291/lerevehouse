@@ -44,7 +44,7 @@ const WishListModal = ({ open, setOpen, onSpeakToExpertClick }) => {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="w-[570px] z-[9999] text-center font-nunito">
+      <DialogContent className="md:max-w-[570px] w-full z-[9999] text-center font-nunito">
         {/* Wrap everything in a container that can scroll and hide scrollbar */}
         <div className="max-h-[80vh] overflow-y-auto scrollbar-hide">
           <DialogHeader>
