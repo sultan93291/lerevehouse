@@ -15,7 +15,6 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
-  //   SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
@@ -42,7 +41,7 @@ const containerStyle = {
   height: "600px",
 };
 
-const waypoints = { lat: 49.2827, lng: -123.1207 }; // Vancouver center
+const waypoints = [{ lat: 49.2827, lng: -123.1207 }]; // Vancouver center
 
 const RecomendedAttracton = [
   {
@@ -97,7 +96,6 @@ const RecomendedAttractionModal = ({ setOpen }) => {
   const {
     register,
     handleSubmit,
-
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
@@ -129,12 +127,10 @@ const RecomendedAttractionModal = ({ setOpen }) => {
   }, [isLoaded]);
 
   return (
-    <DialogContent className=" w-[300px] sm:w-[400px] md:w-[500px] lg:w-[700px] xl:w-[900px] z-[9999]  3xl:min-w-[1200px]  py-6 text-center font-nunito">
-      {/ Wrap everything in a container that can scroll and hide scrollbar /}
+    <DialogContent className="w-[300px] sm:w-[400px] md:w-[500px] lg:w-[700px] xl:w-[900px] z-[9999]  3xl:min-w-[1200px]  py-6 text-center font-nunito">
       <div className="max-h-[80vh] overflow-y-auto scrollbar-hide">
         <DialogHeader>
           <DialogTitle className="py-3 w-full flex items-center justify-between">
-            {/ title /}
             <div className="flex flex-col gap-y-[6px] ">
               <h2 className="font-fontSpring font-light leading-[150%] text-primary text-xl md:text-2xl tracking-wide">
                 Dinner cruise in Vancouver
@@ -143,8 +139,6 @@ const RecomendedAttractionModal = ({ setOpen }) => {
                 <Star /> 4.3 (243 reviews)
               </span>
             </div>
-
-            {/ close Btn /}
             <div
               onClick={() => setOpen(false)}
               className="size-7 cursor-pointer group hover:bg-primary transition-all duration-300 border border-primary rounded-full flex items-center justify-center"
@@ -156,19 +150,18 @@ const RecomendedAttractionModal = ({ setOpen }) => {
             <hr className="w-full h-[1px] bg-[#EBEBEB]" />
             <div className="flex flex-col md:gap-y-10 gap-y-0">
               <div className="flex flex-row flex-wrap gap-4">
-                {RecomendedAttracton.map((item, index) => {
-                  return (
-                    <img
-                      className={`${
-                        index === 0
-                          ? "md:w-full md:h-[421px] h-[220px]"
-                          : "3xl:w-[275px] w-full md:h-[237px] h-[220px]"
-                      } object-cover `}
-                      src={item.imgSrc}
-                      alt="not found"
-                    />
-                  );
-                })}
+                {RecomendedAttracton.map((item, index) => (
+                  <img
+                    key={item.id}
+                    className={
+                      index === 0
+                        ? "md:w-full md:h-[421px] h-[220px]"
+                        : "3xl:w-[275px] w-full md:h-[237px] h-[220px]"
+                    }
+                    src={item.imgSrc}
+                    alt={`Attraction ${item.id}`}
+                  />
+                ))}
               </div>
               <div className=" py-6">
                 <div className="flex flex-col gap-y-6">
@@ -185,10 +178,10 @@ const RecomendedAttractionModal = ({ setOpen }) => {
                       <div
                         className={`w-full bg-[#004265] h-[3px] rounded-[3px] ${
                           activeTab === "Details" ? "block" : "hidden"
-                        } `}
+                        }`}
                       ></div>
                     </div>
-                    <div className="w-1/3 text-[#004265] text-sm md:text-lg font-medium leading-[120%] font-interTight flex flex-col gap-y-2 items-center   ">
+                    <div className="w-1/3 text-[#004265] text-sm md:text-lg font-medium leading-[120%] font-interTight flex flex-col gap-y-2 items-center">
                       <span
                         onClick={() => {
                           setactiveTab("Location");
@@ -200,7 +193,7 @@ const RecomendedAttractionModal = ({ setOpen }) => {
                       <div
                         className={`w-full bg-[#004265] h-[3px] rounded-[3px] ${
                           activeTab === "Location" ? "block" : "hidden"
-                        } `}
+                        }`}
                       ></div>
                     </div>
                     <div className="w-1/3 text-[#004265] text-sm md:text-lg font-medium leading-[120%] font-interTight flex flex-col gap-y-2 items-center">
@@ -215,7 +208,7 @@ const RecomendedAttractionModal = ({ setOpen }) => {
                       <div
                         className={`w-full bg-[#004265] h-[3px] rounded-[3px] ${
                           activeTab === "Rates" ? "block" : "hidden"
-                        } `}
+                        }`}
                       ></div>
                     </div>
                   </div>
@@ -223,34 +216,31 @@ const RecomendedAttractionModal = ({ setOpen }) => {
                     {activeTab === "Details" && (
                       <div className="flex flex-col gap-y-6 ">
                         <div className="flex flex-col gap-y-6 ">
-                          {features.map((item, index) => {
-                            return (
-                              <div className="flex flex-row items-center gap-x-1 ">
-                                <span className="text-sm md:text-xl font-inter leadin-[150%] font-medium text-[#004265]">
-                                  {item.tittle}
-                                </span>
-                                <p className="text-sm md:text-xl font-inter leadin-[150%] font-medium text-[#9C9EA1] ">
-                                  {item.content}
-                                </p>
-                              </div>
-                            );
-                          })}
+                          {features.map((item, index) => (
+                            <div
+                              key={index}
+                              className="flex flex-row items-center gap-x-1 "
+                            >
+                              <span className="text-sm md:text-xl font-inter leading-[150%] font-medium text-[#004265]">
+                                {item.tittle}
+                              </span>
+                              <p className="text-sm md:text-xl font-inter leading-[150%] font-medium text-[#9C9EA1] ">
+                                {item.content}
+                              </p>
+                            </div>
+                          ))}
                         </div>
                         <div className="flex flex-col md:gap-y-6 gap-y-3">
-                          {points.map((item, index) => {
-                            return (
-                              <p
-                                className={`text-sm md:text-xl font-inter leadin-[150%] font-normal text-[#565656] ${
-                                  index == 3
-                                    ? "max-w-[700px]"
-                                    : "max-w-[1184px]"
-                                } `}
-                                key={index}
-                              >
-                                {item}
-                              </p>
-                            );
-                          })}
+                          {points.map((item, index) => (
+                            <p
+                              key={index}
+                              className={`text-sm md:text-xl font-inter leading-[150%] font-normal text-[#565656] ${
+                                index === 3 ? "max-w-[700px]" : "max-w-[1184px]"
+                              }`}
+                            >
+                              {item}
+                            </p>
+                          ))}
                         </div>
                       </div>
                     )}
@@ -258,11 +248,18 @@ const RecomendedAttractionModal = ({ setOpen }) => {
                       <div className="w-full md:mt-10">
                         <GoogleMap
                           mapContainerStyle={containerStyle}
-                          center={waypoints}
-                          zoom={11} // Adjusted to show the whole country
+                          center={waypoints[0]}
+                          zoom={11}
                           onLoad={(map) => (mapRef.current = map)}
                           tilt={45}
-                        ></GoogleMap>
+                        >
+                          {directionsResponse && (
+                            <DirectionsRenderer
+                              directions={directionsResponse}
+                            />
+                          )}
+                          {showTraffic && <TrafficLayer />}
+                        </GoogleMap>
                       </div>
                     )}
                     {activeTab === "Rates" && (
@@ -278,21 +275,53 @@ const RecomendedAttractionModal = ({ setOpen }) => {
                             >
                               <thead>
                                 <tr className="md:text-xl font-inter leading-[120%] font-normal text-[#004265]">
-                                  <th style={{ width: "325px" }}>Season</th>
-                                  <th style={{ width: "130px" }}>Adult</th>
-                                  <th style={{ width: "130px" }}>
+                                  <th
+                                    style={{
+                                      width: "325px",
+                                      padding: "8px",
+                                      textAlign: "left",
+                                    }}
+                                  >
+                                    Season
+                                  </th>
+                                  <th
+                                    style={{
+                                      width: "130px",
+                                      padding: "8px",
+                                      textAlign: "left",
+                                    }}
+                                  >
+                                    Adult
+                                  </th>
+                                  <th
+                                    style={{
+                                      width: "130px",
+                                      padding: "8px",
+                                      textAlign: "left",
+                                    }}
+                                  >
                                     13 to 17 yrs old
                                   </th>
-                                  <th style={{ width: "130px" }}>
+                                  <th
+                                    style={{
+                                      width: "130px",
+                                      padding: "8px",
+                                      textAlign: "left",
+                                    }}
+                                  >
                                     3 to 12 yrs old
                                   </th>
-                                  <th style={{ width: "130px" }}>
+                                  <th
+                                    style={{
+                                      width: "130px",
+                                      padding: "8px",
+                                      textAlign: "left",
+                                    }}
+                                  >
                                     0 to 2 yrs old
                                   </th>
                                 </tr>
                               </thead>
-
-                              {/ Horizontal Line /}
                               <tbody>
                                 <tr>
                                   <td colSpan="5">
@@ -304,21 +333,58 @@ const RecomendedAttractionModal = ({ setOpen }) => {
                                     />
                                   </td>
                                 </tr>
-
                                 <tr className="md:text-xl font-inter leading-[120%] font-normal text-[#004265]">
-                                  <td style={{ width: "325px" }}>
+                                  <td
+                                    style={{
+                                      width: "325px",
+                                      padding: "8px",
+                                      textAlign: "left",
+                                    }}
+                                  >
                                     Friday & Saturday (2025)
                                   </td>
-                                  <td style={{ width: "130px" }}>£121</td>
-                                  <td style={{ width: "130px" }}>£114</td>
-                                  <td style={{ width: "130px" }}>£72</td>
-                                  <td style={{ width: "130px" }}>£0</td>
+                                  <td
+                                    style={{
+                                      width: "130px",
+                                      padding: "8px",
+                                      textAlign: "left",
+                                    }}
+                                  >
+                                    £121
+                                  </td>
+                                  <td
+                                    style={{
+                                      width: "130px",
+                                      padding: "8px",
+                                      textAlign: "left",
+                                    }}
+                                  >
+                                    £114
+                                  </td>
+                                  <td
+                                    style={{
+                                      width: "130px",
+                                      padding: "8px",
+                                      textAlign: "left",
+                                    }}
+                                  >
+                                    £72
+                                  </td>
+                                  <td
+                                    style={{
+                                      width: "130px",
+                                      padding: "8px",
+                                      textAlign: "left",
+                                    }}
+                                  >
+                                    £0
+                                  </td>
                                 </tr>
                               </tbody>
                             </table>
                           </div>
                         </div>
-                        <span className="md:text-xl font-inter leadin-[150%] font-normal text-[#565656]">
+                        <span className="md:text-xl font-inter leading-[150%] font-normal text-[#565656]">
                           * Price includes the buffet-style dinner cruise, live
                           music entertainment, a tip and applicable taxes.
                         </span>

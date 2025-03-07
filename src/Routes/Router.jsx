@@ -1,3 +1,4 @@
+import WishListCard from "@/components/Cards/WishListCard";
 import MainLayout from "@/Layout/MainLayout";
 import ActivitiesDetails from "@/Pages/ActivitiesDetails/ActivitiesDetails";
 import ActivitiesSubcategory from "@/Pages/ActivitiesSubcategory/ActivitiesSubcategory";
@@ -12,6 +13,7 @@ import Destination from "@/Pages/Destination/Destination";
 import DestinationDetails from "@/Pages/DestinationDetails/DestinationDetails";
 import EatAndDrink from "@/Pages/EatAndDrink/EatAndDrink";
 import Homepage from "@/Pages/Homepage/Homepage";
+import Modal from "@/Pages/Modal/ModalTest";
 import OntarionQuebec from "@/Pages/OntarioQuebec/OntarionQuebec";
 import Prairies from "@/Pages/Praises/Prairies";
 import SingleCanadaTour from "@/Pages/SingleCanadaTour/SingleCanadaTour";
@@ -164,6 +166,10 @@ const router = createBrowserRouter([
       {
         path: "/canada-map",
         element: <CanadaMap />,
+      },
+      {
+        path: "/modal",
+        element: <Modal />,
       },
     ],
   },
