@@ -127,8 +127,8 @@ const RecomendedAttractionModal = ({ setOpen }) => {
   }, [isLoaded]);
 
   return (
-    <DialogContent className="w-[300px] sm:w-[400px] md:w-[500px] lg:w-[700px] xl:w-[900px] z-[9999]  3xl:min-w-[1200px]  py-6 text-center font-nunito">
-      <div className="max-h-[80vh] overflow-y-auto scrollbar-hide">
+    <DialogContent className="w-[300px] sm:w-[400px] md:w-[500px] lg:w-[700px] xl:w-[900px] z-[9999]  3xl:min-w-[1200px] py-6 text-center font-nunito">
+      <div className="max-h-[80vh] overflow-y-auto scrollbar-hide px-4 md:px-0">
         <DialogHeader>
           <DialogTitle className="py-3 w-full flex items-center justify-between">
             <div className="flex flex-col gap-y-[6px] ">
@@ -155,7 +155,7 @@ const RecomendedAttractionModal = ({ setOpen }) => {
                     key={item.id}
                     className={
                       index === 0
-                        ? "md:w-full md:h-[421px] h-[220px]"
+                        ? "md:w-full xl:h-[421px] h-[220px]"
                         : "3xl:w-[275px] w-full md:h-[237px] h-[220px]"
                     }
                     src={item.imgSrc}
@@ -214,12 +214,12 @@ const RecomendedAttractionModal = ({ setOpen }) => {
                   </div>
                   <div>
                     {activeTab === "Details" && (
-                      <div className="flex flex-col gap-y-6 ">
+                      <div className="flex flex-col gap-y-6 mx-2 md:mx-0">
                         <div className="flex flex-col gap-y-6 ">
                           {features.map((item, index) => (
                             <div
                               key={index}
-                              className="flex flex-row items-center gap-x-1 "
+                              className="flex flex-row md:items-center items-baseline gap-x-1"
                             >
                               <span className="text-sm md:text-xl font-inter leading-[150%] font-medium text-[#004265]">
                                 {item.tittle}

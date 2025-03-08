@@ -19,7 +19,7 @@ const MapSection = ({ BgImg }) => {
 
         <div className="flex flex-col gap-y-[30px] mt-8 md:mt-0">
           <div className="flex flex-row gap-x-4 items-center ">
-            <div className="flex flex-col items-center md:h-12 lg:w-14 xl:w-12 w-12 h-12 border-[3px] border-solid border-[#BFBFBF] rounded-full justify-center">
+            <div className="flex flex-col items-center md:h-12 lg:w-[50px] xl:w-12 w-12 h-12 border-[3px] border-solid border-[#BFBFBF] rounded-full justify-center">
               <UnknownCreature />
             </div>
             <div className="flex flex-col gap-y-2  ">
@@ -32,7 +32,7 @@ const MapSection = ({ BgImg }) => {
             </div>
           </div>
           <div className="flex flex-row gap-x-4 items-center">
-            <div className="flex flex-col items-center md:h-12 lg:w-16 2xl:w-12 w-20 h-12 border-[3px] border-solid border-[#BFBFBF] rounded-full justify-center">
+            <div className="flex flex-col items-center md:h-12 lg:w-[50px] 2xl:w-12 w-[85px] h-12 border-[3px] border-solid border-[#BFBFBF] rounded-full justify-center">
               <Temperature />
             </div>
             <div className="flex flex-col gap-y-2  ">

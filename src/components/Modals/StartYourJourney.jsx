@@ -12,11 +12,11 @@ import WishListCard from "../Cards/WishListCard";
 
 const StartYourJourney = ({ setOpen }) => {
   return (
-    <DialogContent className="w-[300px] sm:w-[400px] md:w-[500px] lg:w-[700px] xl:w-[900px] z-[9999] 3xl:min-w-[1200px] py-6 text-center font-nunito">
+    <DialogContent className="w-full xl:w-[900px] z-[9999] 3xl:min-w-[1200px] py-6 text-center font-nunito">
       <div className="max-h-[80vh] overflow-y-auto scrollbar-hide">
         <DialogHeader>
           {/* Updated DialogTitle with Left Text and Right Close Button */}
-          <DialogTitle className="py-3 w-full flex items-center justify-between">
+          <DialogTitle className="py-3 w-full flex items-center justify-between px-4">
             {/* Left Side: Text */}
             <h1 className="font-fontSpring font-light leading-[150%] text-primary text-xl md:text-2xl tracking-wide">
               Start your journey today
@@ -30,9 +30,9 @@ const StartYourJourney = ({ setOpen }) => {
             </div>
           </DialogTitle>
 
-          <DialogDescription className="w-full relative  ">
+          <DialogDescription className="w-full relative">
             {/* Modal Content */}
-            <div className="flex flex-col w-full md:flex-row  gap-x-6  ">
+            <div className="flex flex-col w-full xl:flex-row gap-x-6">
               {/* Left Side: Image */}
               <div
                 style={{
@@ -41,7 +41,7 @@ const StartYourJourney = ({ setOpen }) => {
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center",
                 }}
-                className="!w-[600px] !h-[600px] pt-[128px]  bg-red-500  px-8 "
+                className="xl:!w-[600px] w-full xl:!h-[600px] xl:pt-[128px] pt-16 bg-red-500 px-8"
               >
                 <div className=" flex flex-col h-[472px] overflow-y-scroll gap-y-5  ">
                   {[1, 2, 3, 4].map((item, index) => {
@@ -50,29 +50,29 @@ const StartYourJourney = ({ setOpen }) => {
                 </div>
               </div>
               {/* Right Side: Input Field */}
-              <div className=" w-1/2  flex flex-col justify-center">
+              <div className="xl:w-1/2 flex flex-col justify-center mx-4 md:mx-0 mt-5 xl:mt-0">
                 {/* This is the Name */}
                 <div className="">
-                  <label className="text-lg text-primary font-inter font-medium">
+                  <label className="md:text-lg text-base text-primary font-inter font-medium">
                     Your name*
                   </label>
                   {/* This is the input Field */}
-                  <div className="flex flex-col md:flex-row gap-3 mt-3">
+                  <div className="flex flex-col xl:flex-row gap-3 mt-3">
                     <input
                       type="text"
                       placeholder="First Name"
-                      className="w-full p-4 border text-base"
+                      className="w-full md:p-4 p-2 border md:text-base"
                     />
                     <input
                       type="text"
                       placeholder="Last Name"
-                      className="w-full p-4 border text-base"
+                      className="w-full md:p-4 p-2 border md:text-base"
                     />
                   </div>
                 </div>
                 {/* This is the Email */}
                 <div className="mt-6">
-                  <label className="text-lg text-primary font-inter font-medium">
+                  <label className="md:text-lg text-base text-primary font-inter font-medium">
                     Email address*
                   </label>
                   {/* This is the input Field */}
@@ -80,7 +80,7 @@ const StartYourJourney = ({ setOpen }) => {
                     <input
                       type="text"
                       placeholder="example@gmail.com"
-                      className="w-full p-4 border text-base"
+                      className="w-full md:p-4 p-2 border md:text-base"
                     />
                   </div>
                 </div>
@@ -94,18 +94,18 @@ const StartYourJourney = ({ setOpen }) => {
                     <input
                       type="number"
                       placeholder="Bangladesh (+880)"
-                      className="w-[50%] p-4 border text-base"
+                      className="md:w-[50%] w-full md:p-4 p-2 border md:text-base"
                     />
                     <input
                       type="number"
                       placeholder="Phone Number"
-                      className="w-full p-4 border text-base"
+                      className="w-full md:p-4 p-2  border md:text-base"
                     />
                   </div>
                 </div>
                 {/* This is the Notes */}
                 <div className="mt-6">
-                  <label className="text-lg text-primary font-inter font-medium">
+                  <label className="md:text-lg text-base text-primary font-inter font-medium">
                     Notess
                   </label>
                   {/* This is the input Field */}
@@ -113,7 +113,7 @@ const StartYourJourney = ({ setOpen }) => {
                     <textarea
                       type="text"
                       placeholder="Select as many option you want"
-                      className="w-full p-3 border text-base md:h-[203px]"
+                      className="w-full md:p-3 p-2 border md:text-base text-sm md:h-[203px]"
                     />
                   </div>
                 </div>
@@ -126,17 +126,17 @@ const StartYourJourney = ({ setOpen }) => {
               </div>
             </div>
             {/* This is the check box */}
-            <div className="flex mt-5 gap-3 items-baseline">
+            <div className="flex mt-5 gap-3 items-baseline mx-4 md:mx-0">
               <input type="checkbox" />
-              <p className="text-base leading-6">
+              <p className="md:text-base text-sm leading-6">
                 I consent to the processing of personal data in compliance with
                 the provisions of Legislative Decree 196/03 and subsequent
                 amendments on the protection of the same.
               </p>
             </div>
             {/* This is the Button section */}
-            <div className="mt-11 flex justify-end">
-              <button className="text-[#FFF] text-base bg-[#004265] font-semibold py-4 px-8 md:w-[205px] w-[90%]">
+            <div className="md:mt-11 mt-5 flex md:justify-end justify-center">
+              <button className="text-[#FFF] md:text-base text-sm bg-[#004265] font-semibold md:py-4 py-2 px-8 md:w-[205px] w-[90%]">
                 Speak To An Expert
               </button>
             </div>

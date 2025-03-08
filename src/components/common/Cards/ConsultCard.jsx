@@ -107,7 +107,7 @@ const ConsultCard = () => {
         {[0, 1, 3].map((item, index) => {
           return (
             <img
-              className="xl:w-[480px] w-full 2xl:h-[383px] h-full object-cover"
+              className="xl:w-[480px] w-full 2xl:h-[383px] h-[180px] object-cover"
               src={Mountain}
               alt="not found"
             />
