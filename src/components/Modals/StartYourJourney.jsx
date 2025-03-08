@@ -7,7 +7,7 @@ import {
 } from "../ui/dialog";
 import { CrossModalSvg } from "../common/SvgContainer/SvgContainer"; // Import the close button icon
 
-import img from "../../assets/images/start-journey/startJourneyPic.png";
+import mountain from "../../assets/images/tourist-guide/mountain.png";
 import WishListCard from "../Cards/WishListCard";
 
 const StartYourJourney = ({ setOpen }) => {
@@ -30,23 +30,27 @@ const StartYourJourney = ({ setOpen }) => {
             </div>
           </DialogTitle>
 
-          <DialogDescription>
+          <DialogDescription className="w-full relative  ">
             {/* Modal Content */}
-            <div className="flex flex-col md:flex-row gap-6">
+            <div className="flex flex-col w-full md:flex-row  gap-x-6  ">
               {/* Left Side: Image */}
-              <div className="w-full  relative">
-                <img
-                  src={img}
-                  alt="Modal Image"
-                  className="w-full h-full object-cover rounded-lg "
-                />
-                {/* Wish list Card */}
-                <div className="absolute top-32 left-8 hidden 2xl:block">
-                  <WishListCard width="422px" />
+              <div
+                style={{
+                  background: `linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url(${mountain})`,
+                  backgroundSize: "cover",
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "center",
+                }}
+                className="!w-[600px] !h-[600px] pt-[128px]  bg-red-500  px-8 "
+              >
+                <div className=" flex flex-col h-[472px] overflow-y-scroll gap-y-5  ">
+                  {[1, 2, 3, 4].map((item, index) => {
+                    return <WishListCard key={index} count={item} />;
+                  })}
                 </div>
               </div>
               {/* Right Side: Input Field */}
-              <div className="w-full  flex flex-col justify-center">
+              <div className=" w-1/2  flex flex-col justify-center">
                 {/* This is the Name */}
                 <div className="">
                   <label className="text-lg text-primary font-inter font-medium">
@@ -109,7 +113,7 @@ const StartYourJourney = ({ setOpen }) => {
                     <textarea
                       type="text"
                       placeholder="Select as many option you want"
-                      className="w-full p-3 border text-base md:h-[242px]"
+                      className="w-full p-3 border text-base md:h-[203px]"
                     />
                   </div>
                 </div>

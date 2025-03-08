@@ -268,7 +268,7 @@ const ActivitiesDetails = () => {
           </div>
 
           {/* cards */}
-          <div className="md:mt-16 mt-4 grid md:grid-cols-3 3xl:grid-cols-4 md:gap-2 gap-5 col-span-6">
+          <div className="md:mt-16 mt-4 grid lg:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 md:gap-2 gap-5 col-span-6">
             {recommendedActivities?.map((item) => (
               <ActivitiesSubcategoryCard item={item} key={item?.id} />
             ))}
