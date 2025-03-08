@@ -85,7 +85,7 @@ const CanadaHoliday = () => {
               >
                 <div className="flex flex-col md:gap-y-6">
                   {item.heading && item.subHeading && (
-                    <div className=" flex flex-col gap-y-2">
+                    <div className=" flex flex-col gap-y-2 mt-10 xl:mt-0">
                       <h3 className="text-[#000] font-interTight text-[28px] md:text-[32px] font-semibold leading-[150%] tracking-[1px]">
                         {item.heading}
                       </h3>

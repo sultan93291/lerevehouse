@@ -44,8 +44,8 @@ const SingleCanadaTour = () => {
                 );
               })}
             </div>
-            <div className="flex flex-col    py-[64px] bg-[#78787836]  ">
-              <div className="container flex flex-col gap-y-[64px] ">
+            <div className="flex flex-col md:py-[64px] py-9 bg-[#78787836]  ">
+              <div className="container flex flex-col xl:gap-y-[64px] gap-y-9">
                 {[0, 1, 2].map((item, index) => {
                   return <ConsultCard key={index} />;
                 })}

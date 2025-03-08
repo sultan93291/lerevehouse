@@ -42,7 +42,7 @@ const TourWithCar = () => {
       </Modal>
       <section className=" mt-10">
         <CommonHeroBanner bg={mountain} title={"Tour in auto in Canada"} />
-        <div className="flex flex-col md:gap-y-[112px] gap-y-10 py-4 container">
+        <div className="flex flex-col xl:gap-y-[112px] gap-y-10 py-4 container">
           <div className="flex flex-col gap-y-4 ">
             <div className="flex flex-col md:gap-y-[60px] gap-y-8">
               <div className="flex flex-col md:flex-row md:justify-between justify-center items-center gap-5 md:gap-0">
@@ -139,7 +139,7 @@ const TourWithCar = () => {
                   </div>
                   <div className="border-[2px] border-solid border-RgbaBlue w-full py-3 flex md:flex-row flex-col gap-x-[24px] gap-3 md:gap-0 px-2 md:px-0">
                     <div className="md:w-[428px] w-full flex items-center md:justify-center">
-                      <h4 className="text-[#004265] font-interTight text-base md:text-[22px] 2xl:text-[32px] leading-[120%] font-medium ">
+                      <h4 className="text-[#004265] font-interTight text-base md:text-[22px] 2xl:text-[32px] leading-[120%] font-medium hidden md:block">
                         Prices starting from
                       </h4>
                     </div>
@@ -183,7 +183,7 @@ const TourWithCar = () => {
                           alt="not found"
                         />
                         <div className="flex flex-col gap-y-3 items-center ">
-                          <h2 className="text-[#1687C7] text-[28px] md:text-[32px] leading-[120%] font-interTight text-normal">
+                          <h2 className="text-[#1687C7] text-[24px] md:text-[32px] leading-[120%] font-interTight text-normal">
                             {item.heading}
                           </h2>
                           <span className="text-[#565656] text-[16px] leading-[120%] font-interTight text-normal  ">
@@ -198,7 +198,7 @@ const TourWithCar = () => {
                     );
                   })}
                 </div>
-                <div className=" flex flex-col text-[#565656] text-sm md:text-[16px] leading-[150%] items-center font-interTight text-normal">
+                <div className=" flex flex-col text-[#565656] text-sm md:text-[16px] leading-[150%] items-start md:items-center font-interTight text-normal">
                   <span>
                     Car prices are total per vehicle, in euros, to be added to
                     the tour fee.
@@ -226,7 +226,7 @@ const TourWithCar = () => {
                       </p>
                     </div>
                   </div>
-                  <div className="flex flex-col gap-y-3 px-6">
+                  <div className="flex flex-col gap-y-3 px-6 p-6">
                     <h4 className="text-[#004265] text-[16px] leading-[150%] items-center font-bold  font-interTight text-normal">
                       What's not included
                     </h4>

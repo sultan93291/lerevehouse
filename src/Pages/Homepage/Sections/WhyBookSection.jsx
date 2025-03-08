@@ -30,16 +30,16 @@ const WhyBookSection = forwardRef(({ ...props }, ref) => {
       ref={ref}
       {...props}
       id="tour"
-      className="lg:py-14 2xl:py-28 container mx-auto"
+      className="lg:py-14 2xl:py-28 container mx-auto mt-10 md:mt-0"
     >
       <div>
-        <h2 className=" text-3xl md:text-4xl xl:text-5xl font-editorsNoteNormal text-center text-primary">
+        <h2 className=" text-[28px] md:text-4xl xl:text-5xl font-editorsNoteNormal text-center text-primary">
           Why book with Lerevehouse?
         </h2>
       </div>
 
       {/* cards */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-12 my-16">
+      <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-12 mb-16 mt-10">
         {cardInfo?.map((info) => (
           <BookCard key={info?.title} info={info} />
         ))}

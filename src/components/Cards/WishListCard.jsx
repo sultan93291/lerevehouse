@@ -2,11 +2,10 @@ import classicCity from "../../assets/images/tour-details/classicCity.png";
 import trash from "../../assets/images/tour-details/trash.svg";
 
 const WishListCard = ({ count }) => {
-
   return (
     <section className="">
       <div
-        className={ ` w-full h-auto p-4 bg-white shadow-cardShadow flex flex-col gap-y-10`}
+        className={`h-auto md:p-4 p-2 bg-white shadow-cardShadow flex flex-col md:gap-y-10 gap-y-5`}
       >
         <div className="flex flex-row items-center justify-between ">
           <div className="flex flex-row gap-x-6 ">
@@ -23,6 +22,7 @@ const WishListCard = ({ count }) => {
         </div>
         <div className="flex flex-row justify-between w-full">
           <div className="flex items-center md:items-baseline flex-row gap-x-4 ">
+            {/*  */}
             <img
               src={classicCity}
               className="md:w-20 w-10 md:h-20 h-10 object-cover"
