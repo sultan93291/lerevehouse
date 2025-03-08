@@ -24,6 +24,7 @@ const WishListCard = ({ count, width = "full" }) => {
         </div>
         <div className="flex flex-row justify-between w-full">
           <div className="flex items-center md:items-baseline flex-row gap-x-4 ">
+            {/*  */}
             <img
               src={classicCity}
               className="md:w-20 w-10 md:h-20 h-10 object-cover"
