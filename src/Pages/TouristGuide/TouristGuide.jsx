@@ -218,7 +218,7 @@ const TouristGuide = () => {
       <div className="flex flex-col 2xl:gap-y-[96px] items-center">
         <div className="flex flex-col gap-y-6 items-center ">
           <div className="flex flex-col items-center ">
-            <h3 className="text-[#000000] font-fontSpring text-4xl xl:text-[40px] 2xl:text-[56px] font-light 2xl:leading-[160%]">
+            <h3 className="text-[#000000] font-fontSpring text-[30px] xl:text-[40px] 2xl:text-[56px] font-light 2xl:leading-[160%]">
               Travel to Canada with the specialists
             </h3>
             <span className="md:max-w-[1001px] leading-[160%] text-base mt-4 2xl:mt-0 md:text-xl font-interTight text-[#000] text-center">
@@ -294,9 +294,9 @@ const TouristGuide = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-y-6 mt-10 2xl:mt-0 mb-10 md:mb-10 2xl:mb-0 container">
+        <div className="flex flex-col gap-y-6 mt-10 2xl:mt-0 mb-10 md:mb-10 2xl:mb-0 ">
           <div className="flex flex-col items-center">
-            <h3 className="text-[#000000] font-fontSpring text-4xl xl:text-[40px] 2xl:text-[56px] font-light 2xl:leading-[160%]">
+            <h3 className="text-[#000000] font-fontSpring text-[30px] xl:text-[40px] 2xl:text-[56px] font-light 2xl:leading-[160%]">
               Our travel ideas in Canada
             </h3>
             <span className="md:max-w-[1001px] leading-[160%] text-base mt-4 2xl:mt-0 md:text-xl font-interTight text-[#000] text-center">

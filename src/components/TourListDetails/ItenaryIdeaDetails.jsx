@@ -104,7 +104,7 @@ const ItenaryIdeaDetails = () => {
             type="multiple" // Allows multiple open items
             className="w-full  flex flex-col gap-y-4 lg:gap-y-8"
             value={openItems}
-            onValueChange={values => setOpenItems(values)} // Updates state
+            onValueChange={(values) => setOpenItems(values)} // Updates state
           >
             {AllItenaryData.map((faq, index) => (
               <AccordionItem

@@ -24,7 +24,7 @@ const CustomizeTripCanada = () => {
             combine train routes with bus routes....or ferry!
           </p>
         </div>
-        <div className="flex px-3 w-full items-center justify-center gap-3 xl:gap-0 relative flex-wrap ">
+        <div className="flex px-3 w-full items-center justify-center gap-3 xl:gap-0 relative flex-wrap">
           {HolidayData.map((item, index) => (
             <div
               key={index}
@@ -36,14 +36,14 @@ const CustomizeTripCanada = () => {
                 backgroundPosition: "center",
               }}
             >
-              <div className="h-full group-hover:hidden transition-all ease-in-out duration-500 group-hover:transform group-hover:scale-110  w-full flex flex-col gap-y-2 items-center justify-end pb-[18.42px]  ">
-                <span className="text-white text-xl font-semibold leading-[150%] font-interTight tracking-[1px] ">
+              <div className="h-full group-hover:hidden transition-all ease-in-out duration-500 group-hover:transform group-hover:scale-110 w-full flex flex-col gap-y-2 items-center justify-end xl:pb-[18.42px]">
+                <span className="text-white xl:text-xl font-semibold leading-[150%] font-interTight tracking-[1px] ">
                   {" "}
                   {item.tittle}{" "}
                 </span>
                 <SpecialStar />
               </div>
-              <div className="h-[190px] px-[13.5px] gap-y-2 flex flex-col items-center justify-center  group-hover:opacity-100 ease-in-out duration-500  opacity-0 w-[480px] absolute left-0 bottom-0 bg-blackRgba ">
+              <div className="h-[190px] px-[13.5px] gap-y-2 flex flex-col items-center justify-center  group-hover:opacity-100 ease-in-out duration-500  opacity-0 xl:w-[480px] absolute left-0 xl:bottom-0 bottom-8 bg-blackRgba">
                 <p className="text-white text-xl font-semibold leading-[150%] font-interTight tracking-[1px] ">
                   {item.tittle}
                 </p>
