@@ -20,12 +20,14 @@ import ship from "../../assets/images/tour-details/ship.png";
 import RecomendedAttractionModal from "../Modals/RecomendedAttractionModal";
 import { Modal } from "../Modals/Modal";
 import WishListModal from "../Modals/WishListModal";
+import StartYourJourney from "../Modals/StartYourJourney";
 
 const ItenaryIdeaDetails = () => {
   const [currentValue, setcurrentValue] = useState(0);
   const [openItems, setOpenItems] = useState(["item-0"]);
   const [open, setOpen] = useState(false);
-  const [wishListOpen, setwishListOpen] = useState(false);
+  const [wishListOpen, setWishListOpen] = useState(false);
+  const [recommendedOpen, setRecommendedOpen] = useState(false);
 
   const expandAll = () => {
     const allItems = AllItenaryData.map((_, index) => `item-${index}`);
@@ -51,9 +53,20 @@ const ItenaryIdeaDetails = () => {
       <Modal open={open} setOpen={setOpen}>
         <RecomendedAttractionModal setOpen={setOpen} />
       </Modal>
-      <Modal open={wishListOpen} setOpen={setwishListOpen}>
-        <WishListModal setOpen={setOpen} />
+      <WishListModal
+        open={wishListOpen}
+        setOpen={setWishListOpen}
+        onSpeakToExpertClick={() => {
+          setWishListOpen(false);
+          setRecommendedOpen(true);
+        }}
+      />
+
+      {/* RecomendedAttractionModal */}
+      <Modal open={recommendedOpen} setOpen={setRecommendedOpen}>
+        <StartYourJourney setOpen={setRecommendedOpen} />
       </Modal>
+
       <section className="flex flex-col my-14 gap-y-5 lg:gap-y-10">
         <div className="flex flex-col gap-y-6  ">
           <div className="flex flex-col gap-y-4 xl:flex-row justify-between items-center ">
@@ -91,7 +104,7 @@ const ItenaryIdeaDetails = () => {
             type="multiple" // Allows multiple open items
             className="w-full  flex flex-col gap-y-4 lg:gap-y-8"
             value={openItems}
-            onValueChange={(values) => setOpenItems(values)} // Updates state
+            onValueChange={values => setOpenItems(values)} // Updates state
           >
             {AllItenaryData.map((faq, index) => (
               <AccordionItem
@@ -127,23 +140,33 @@ const ItenaryIdeaDetails = () => {
                     >
                       <div className="absolute top-0 left-0 h-full w-full flex flex-col justify-between">
                         <div className="w-full flex justify-end">
-                          <div className=" h-10 lg:h-[56px] w-[168px] flex flex-row bg-white border-[1px] border-solid">
+                          <div className="flex flex-col gap-y-2 ">
+                            <div className=" h-10 lg:h-[56px] w-[168px] flex flex-row bg-white border-[1px] border-solid">
+                              <div
+                                onClick={() => {
+                                  handleValuePlus();
+                                }}
+                                className="h-full w-[56px] bg-offWhite flex items-center justify-center cursor-pointer"
+                              >
+                                <Plus />
+                              </div>
+                              <div className="h-full w-[56px] bg-white flex items-center justify-center text-text-gray text-base font-normal leading-[150%]">
+                                {currentValue}
+                              </div>
+                              <div
+                                onClick={handleValueMinus}
+                                className="h-full w-[56px] bg-offWhite flex items-center justify-center cursor-pointer"
+                              >
+                                <Minus />
+                              </div>
+                            </div>
                             <div
                               onClick={() => {
-                                handleValuePlus(), setwishListOpen(true);
+                                setWishListOpen(true);
                               }}
-                              className="h-full w-[56px] bg-offWhite flex items-center justify-center cursor-pointer"
+                              className="h-10 lg:h-[56px] w-[168px] flex flex-row items-center justify-center bg-white border-[1px] border-solid cursor-pointer text-[#004265] font-interTight  text-base xl:text-xl font-normal leading-[150%] "
                             >
-                              <Plus />
-                            </div>
-                            <div className="h-full w-[56px] bg-white flex items-center justify-center text-text-gray text-base font-normal leading-[150%]">
-                              {currentValue}
-                            </div>
-                            <div
-                              onClick={handleValueMinus}
-                              className="h-full w-[56px] bg-offWhite flex items-center justify-center cursor-pointer"
-                            >
-                              <Minus />
+                              See the wishlist
                             </div>
                           </div>
                         </div>

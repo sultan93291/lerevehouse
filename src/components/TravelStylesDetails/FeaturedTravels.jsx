@@ -10,52 +10,58 @@ const travelData = [
   {
     id: 1,
     title: "Honeymoon",
-    description: "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys",
+    description:
+      "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys",
     image: imageOne,
     btnText: "view All",
-    btnLInk: "/"
+    btnLInk: "canada-holiday",
   },
   {
     id: 2,
     title: "Adventures Observations",
-    description: "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys",
+    description:
+      "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys",
     image: imageTwo,
     btnText: "view All",
-    btnLInk: "/"
+    btnLInk: "canada-holiday",
   },
   {
     id: 3,
     title: "Family Trip",
-    description: "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys",
+    description:
+      "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys",
     image: imageThree,
     btnText: "view All",
-    btnLInk: "/"
+    btnLInk: "canada- holiday",
   },
   {
     id: 4,
     title: "Adventure",
-    description: "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys",
+    description:
+      "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys",
     image: imageFour,
     btnText: "view All",
-    btnLInk: "/"
+    btnLInk: "canada-holiday",
   },
   {
     id: 5,
     title: "Night Time",
-    description: "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys",
+    description:
+      "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys",
     image: imageFive,
     btnText: "view All",
-    btnLInk: "/"
+    btnLInk: "canada-holiday",
   },
   {
     id: 6,
     title: "Skiing",
-    description: "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys",
+    description:
+      "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys",
     image: imageSix,
     btnText: "view All",
-    btnLInk: "/"
+    btnLInk: "canada-holiday",
   },
-]
+];
 
 const FeaturedTravels = () => {
   return (

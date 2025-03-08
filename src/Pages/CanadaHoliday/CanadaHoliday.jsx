@@ -79,8 +79,8 @@ const CanadaHoliday = () => {
               <div
                 className={`flex ${
                   item.isReverse
-                    ? "xl:flex-row-reverse flex-col"
-                    : "xl:flex-row flex-col"
+                    ? "xl:flex-row-reverse flex-col-reverse"
+                    : "xl:flex-row flex-col-reverse"
                 } gap-x-8  items-center`}
               >
                 <div className="flex flex-col md:gap-y-6">
@@ -197,7 +197,7 @@ const CanadaHoliday = () => {
           </div>
           <img
             src={waterPlane}
-            className="3xl:w-[784px] 2xl:w-[580px] w-[400px] md:w-[784px] xl:w-[490px] md:h-[663px] lg:h-[600px] h-[320px] object-cover"
+            className="3xl:w-[784px] hidden xl:block 2xl:w-[580px] w-[400px] md:w-[784px] xl:w-[490px] md:h-[663px] lg:h-[600px] h-[320px] object-cover"
             alt="not found"
           />
         </div>

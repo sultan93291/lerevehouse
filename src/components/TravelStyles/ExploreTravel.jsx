@@ -7,55 +7,61 @@ import imageSix from "../../assets/images/explore-travel6.png"
 import TravelExploreCard from "./TravelExploreCard"
 
 const travelData = [
-    {
-        id: 1,
-        title: "Honeymoon",
-        description: "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys",
-        image: imageOne,
-        btnText: "view All",
-        btnLInk: "/"
-    },
-    {
-        id: 2,
-        title: "Adventures Observations",
-        description: "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys",
-        image: imageTwo,
-        btnText: "view All",
-        btnLInk: "/"
-    },
-    {
-        id: 3,
-        title: "Family Trip",
-        description: "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys",
-        image: imageThree,
-        btnText: "view All",
-        btnLInk: "/"
-    },
-    {
-        id: 4,
-        title: "Adventure",
-        description: "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys",
-        image: imageFour,
-        btnText: "view All",
-        btnLInk: "/"
-    },
-    {
-        id: 5,
-        title: "Night Time",
-        description: "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys",
-        image: imageFive,
-        btnText: "view All",
-        btnLInk: "/"
-    },
-    {
-        id: 6,
-        title: "Skiing",
-        description: "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys",
-        image: imageSix,
-        btnText: "view All",
-        btnLInk: "/"
-    },
-]
+  {
+    id: 1,
+    title: "Honeymoon",
+    description:
+      "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys",
+    image: imageOne,
+    btnText: "view All",
+    btnLInk: "/canada-holiday",
+  },
+  {
+    id: 2,
+    title: "Adventures Observations",
+    description:
+      "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys",
+    image: imageTwo,
+    btnText: "view All",
+    btnLInk: "/canada-holiday",
+  },
+  {
+    id: 3,
+    title: "Family Trip",
+    description:
+      "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys",
+    image: imageThree,
+    btnText: "view All",
+    btnLInk: "/canada-holiday",
+  },
+  {
+    id: 4,
+    title: "Adventure",
+    description:
+      "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys",
+    image: imageFour,
+    btnText: "view All",
+    btnLInk: "/canada-holiday",
+  },
+  {
+    id: 5,
+    title: "Night Time",
+    description:
+      "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys",
+    image: imageFive,
+    btnText: "view All",
+    btnLInk: "/canada-holiday",
+  },
+  {
+    id: 6,
+    title: "Skiing",
+    description:
+      "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys",
+    image: imageSix,
+    btnText: "view All",
+    btnLInk: "/canada-holiday",
+  },
+];
 
 const ExploreTravel = () => {
 
