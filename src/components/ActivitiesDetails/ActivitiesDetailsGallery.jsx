@@ -13,7 +13,20 @@ const ActivitiesDetailsGallery = ({ activitiesDetailsGalleryItems }) => {
   return (
     <div className="mt-16 relative">
       <Swiper
-        slidesPerView={4}
+        breakpoints={{
+          360: {
+            slidesPerView: 1,
+          },
+          576: {
+            slidesPerView: 2,
+          },
+          1200: {
+            slidesPerView: 3,
+          },
+          1500: {
+            slidesPerView: 4,
+          },
+        }}
         loop={true}
         spaceBetween={20}
         onSwiper={setSwiperRef}

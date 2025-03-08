@@ -1,7 +1,10 @@
 /* eslint-disable react/prop-types */
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-const TravelExploreCard = ({ item, link }) => {
+const TravelExploreCard = ({ item }) => {
+  const navigate = useNavigate();
+  console.log(item);
+  
   return (
     <div
       className="TravelExploreCard flex flex-col h-[240px] sm:h-[400px] 2xl:h-[520px] overflow-hidden items-center justify-cente relative bg-cover bg-no-repeat z-[1]"
@@ -24,11 +27,9 @@ const TravelExploreCard = ({ item, link }) => {
         </p>
         <Link
           className="sm:mt-9 mt-2 inline-block px-7 md:py-3 py-[6px] sm:px-[62px] sm:py-[19px] text-white text-sm font-medium font-inter bg-secondary rounded-[5px]"
-          to={
-            link
-              ? `/activities/subcategory/${item?.id}`
-              : `/travel-styles-details/${item?.id}`
-          }
+          onClick={() => {
+            navigate(item?.btnLInk);
+          }}
         >
           View
         </Link>
