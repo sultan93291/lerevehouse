@@ -26,7 +26,7 @@ const ContactForm = () => {
               <label htmlFor="name">Name</label>
               <input
                 placeholder="Enter Your Name"
-                className="py-3 focus:outline-none text-black px-5 placeholder:text-[#9C9EA166]"
+                className="md:py-3 py-2 focus:outline-none text-black px-5 placeholder:text-[#9C9EA166]"
                 type="text"
                 name="name"
                 id="name"
@@ -36,7 +36,7 @@ const ContactForm = () => {
               <label htmlFor="email">Email</label>
               <input
                 placeholder="Enter Your Email"
-                className="py-3 focus:outline-none text-black px-5 placeholder:text-[#9C9EA166]"
+                className="md:py-3 py-2 focus:outline-none text-black px-5 placeholder:text-[#9C9EA166]"
                 type="email"
                 name="email"
                 id="email"

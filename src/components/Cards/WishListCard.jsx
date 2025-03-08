@@ -1,13 +1,12 @@
 import classicCity from "../../assets/images/tour-details/classicCity.png";
 import trash from "../../assets/images/tour-details/trash.svg";
 
-const WishListCard = ({ count, width = "full" }) => {
-  const widthClass = width === "full" ? "w-full" : `w-[${width}]`;
+const WishListCard = ({ count }) => {
 
   return (
     <section className="">
       <div
-        className={`${widthClass} h-auto p-4 bg-white shadow-cardShadow flex flex-col gap-y-10`}
+        className={ ` w-full h-auto p-4 bg-white shadow-cardShadow flex flex-col gap-y-10`}
       >
         <div className="flex flex-row items-center justify-between ">
           <div className="flex flex-row gap-x-6 ">

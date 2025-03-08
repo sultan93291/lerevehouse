@@ -74,7 +74,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col 2xl:flex-row gap-4 md:items-center xl:items-start 2xl:items-center">
+          <div className="flex flex-col 2xl:flex-row gap-4 md:items-start 2xl:items-center">
             {/* img */}
             <img
               className="md:h-[300px] lg:w-full xl:w-full 2xl:w-[276px] 3xl:w-[300px] md:w-full object-cover"
@@ -95,9 +95,9 @@ const Contact = () => {
                   }}
                   className="flex cursor-pointer items-center gap-2 text-text-black xl:text-base text-sm"
                 >
-                  <span className="p-0 m-0 flex items-center justify-center leading-none">
-                    <ContactLocationSvg className="p-0 m-0 block" />
-                  </span>
+                  <div className="items-center justify-start  xl:items-start xl:justify-start ">
+                    <ContactLocationSvg />
+                  </div>
                   <p className="leading-none m-0 p-0">
                     Via Nomentana, 160 Rome 00162 Italy
                   </p>

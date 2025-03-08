@@ -44,13 +44,13 @@ const WishListModal = ({ open, setOpen, onSpeakToExpertClick }) => {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="md:max-w-[570px] w-full z-[9999] text-center font-nunito">
+      <DialogContent className="w-full z-[9999] text-center font-nunito">
         {/* Wrap everything in a container that can scroll and hide scrollbar */}
         <div className="max-h-[80vh] overflow-y-auto scrollbar-hide">
           <DialogHeader>
             <DialogTitle className="py-3 w-full flex items-center justify-between">
               {/* title */}
-              <div className="flex flex-col items-center gap-y-6">
+              <div className="flex flex-col w-full items-center justify-center  gap-y-6">
                 <h2 className="font-fontSpring text-[#004265] text-2xl font-light leading-[120%]">
                   Your Wishlist
                 </h2>
