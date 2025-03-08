@@ -54,7 +54,7 @@ const ItenaryIdeaDetails = () => {
       <Modal open={wishListOpen} setOpen={setwishListOpen}>
         <WishListModal setOpen={setOpen} />
       </Modal>
-      <section className="flex flex-col my-14 gap-y-5 lg:gap-y-10   ">
+      <section className="flex flex-col my-14 gap-y-5 lg:gap-y-10">
         <div className="flex flex-col gap-y-6  ">
           <div className="flex flex-col gap-y-4 xl:flex-row justify-between items-center ">
             <h3 className="text-primary text-[34px] flex-shrink-0 font-normal leading-[120%] font-editorsNoteNormal  ">
@@ -91,7 +91,7 @@ const ItenaryIdeaDetails = () => {
             type="multiple" // Allows multiple open items
             className="w-full  flex flex-col gap-y-4 lg:gap-y-8"
             value={openItems}
-            onValueChange={values => setOpenItems(values)} // Updates state
+            onValueChange={(values) => setOpenItems(values)} // Updates state
           >
             {AllItenaryData.map((faq, index) => (
               <AccordionItem
