@@ -52,12 +52,14 @@ const StartYourJourney = ({ setOpen }) => {
               {/* Right Side: Input Field */}
               <div className="xl:w-1/2 flex flex-col justify-center mx-4 md:mx-0 mt-5 xl:mt-0">
                 {/* This is the Name */}
-                <div className="">
-                  <label className="md:text-lg text-base text-primary font-inter font-medium">
-                    Your name*
-                  </label>
+                <div className=" w-full relative">
+                  <div className="w-full flex items-start ">
+                    <label className="md:text-lg text-base text-primary font-inter  font-medium">
+                      Your name*
+                    </label>
+                  </div>
                   {/* This is the input Field */}
-                  <div className="flex flex-col xl:flex-row gap-3 mt-3">
+                  <div className="flex w-full flex-row xl:flex-row gap-3 mt-3">
                     <input
                       type="text"
                       placeholder="First Name"
@@ -71,10 +73,12 @@ const StartYourJourney = ({ setOpen }) => {
                   </div>
                 </div>
                 {/* This is the Email */}
-                <div className="mt-6">
-                  <label className="md:text-lg text-base text-primary font-inter font-medium">
-                    Email address*
-                  </label>
+                <div className=" mt-4 lg:mt-6">
+                  <div className="w-full flex items-start">
+                    <label className="md:text-lg text-base text-primary font-inter font-medium">
+                      Email address*
+                    </label>
+                  </div>
                   {/* This is the input Field */}
                   <div className="flex flex-col md:flex-row gap-3 mt-3">
                     <input
@@ -85,12 +89,14 @@ const StartYourJourney = ({ setOpen }) => {
                   </div>
                 </div>
                 {/* This is the Telephone */}
-                <div className="mt-6">
-                  <label className="text-lg text-primary font-inter font-medium">
-                    Telephone*
-                  </label>
+                <div className=" mt-4 lg:mt-6">
+                  <div className="w-full flex items-start">
+                    <label className="text-lg text-primary font-inter font-medium">
+                      Telephone*
+                    </label>
+                  </div>
                   {/* This is the input Field */}
-                  <div className="flex flex-col md:flex-row gap-3 mt-3">
+                  <div className="flex flex-row gap-3 mt-3">
                     <input
                       type="number"
                       placeholder="Bangladesh (+880)"
@@ -104,10 +110,12 @@ const StartYourJourney = ({ setOpen }) => {
                   </div>
                 </div>
                 {/* This is the Notes */}
-                <div className="mt-6">
-                  <label className="md:text-lg text-base text-primary font-inter font-medium">
-                    Notess
-                  </label>
+                <div className=" mt-4 lg:mt-6">
+                  <div className="w-full flex items-start">
+                    <label className="md:text-lg text-base text-primary font-inter font-medium">
+                      Notes
+                    </label>
+                  </div>
                   {/* This is the input Field */}
                   <div className="flex flex-col md:flex-row gap-3 mt-3">
                     <textarea
@@ -126,9 +134,9 @@ const StartYourJourney = ({ setOpen }) => {
               </div>
             </div>
             {/* This is the check box */}
-            <div className="flex mt-5 gap-3 items-baseline mx-4 md:mx-0">
+            <div className="flex mt mt-5 gap-2 sm:gap-3 items-baseline mx-4 md:mx-0">
               <input type="checkbox" />
-              <p className="md:text-base text-sm leading-6">
+              <p className=" md:text-base text-sm leading-5 md:leading-6">
                 I consent to the processing of personal data in compliance with
                 the provisions of Legislative Decree 196/03 and subsequent
                 amendments on the protection of the same.
