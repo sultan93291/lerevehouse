@@ -16,12 +16,12 @@ const ContactForm = () => {
 
         {/* form start */}
 
-        <div className="mt-8 font-interTight">
-          <div className="pb-5">
+        <div className=" mt-4 lg:mt-8 font-interTight">
+          <div className=" pb-3 lg:pb-5">
             <h5 className="font-interTight text-xl">Send us a message</h5>
           </div>
 
-          <form className="space-y-5">
+          <form className=" space-y-3 lg:space-y-5">
             <div className="w-full flex flex-col gap-3">
               <label htmlFor="name">Name</label>
               <input
@@ -46,8 +46,7 @@ const ContactForm = () => {
               <label htmlFor="comments">Comments / Questions</label>
               <textarea
                 placeholder="Enter your comment"
-                className="resize-none w-full focus:outline-none px-6 py-4 text-black placeholder:text-[#9C9EA166]"
-                rows={4}
+                className="resize-none w-full focus:outline-none px-6 py-4 text-black placeholder:text-[#9C9EA166] h-[80px] xl:h-[118px] "
                 name="comments"
                 id="comments"
               ></textarea>
@@ -56,7 +55,7 @@ const ContactForm = () => {
             <div>
               <button
                 type="submit"
-                className="bg-secondary px-20 py-3 font-interTight text-white font-semibold transition-all duration-300 hover:bg-white border border-secondary hover:text-secondary"
+                className="bg-secondary px-10 2xl:px-20 py-2 lg:py-3 font-interTight text-white font-semibold transition-all duration-300 hover:bg-white border border-secondary hover:text-secondary"
               >
                 Submit
               </button>

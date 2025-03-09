@@ -3,7 +3,7 @@ import Mountain from "../../../assets/images/canada-tour/lake.jpg";
 
 const ConsultCard = () => {
   return (
-    <div className="flex flex-col h-auto max-w-[1600px] bg-white p-4 md:p-8 2xl:p-[64px] gap-y-12">
+    <div className="flex flex-col h-auto max-w-[1600px] bg-white p-4 md:p-8 2xl:p-[64px] gap-y-6 lg:gap-y-12">
       <div className="flex flex-col gap-y-[22px] ">
         <div className="flex flex-col md:gap-y-8 gap-y-4">
           <h2 className="text-[#1687C7] text-[32px] md:text-[40px] font-bold leading-[150%] font-interTight tracking-[1px]">
