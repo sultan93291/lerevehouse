@@ -120,10 +120,6 @@ const router = createBrowserRouter([
         element: <EatAndDrink />,
       },
       {
-        path: "/wild-side",
-        element: <WildSide />,
-      },
-      {
         path: "/tour-guide-22",
         element: <TourGuide22 />,
       },
