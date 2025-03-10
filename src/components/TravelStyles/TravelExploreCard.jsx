@@ -7,7 +7,7 @@ const TravelExploreCard = ({ item }) => {
   
   return (
     <div
-      className="TravelExploreCard flex flex-col h-[240px] sm:h-[400px] 2xl:h-[520px] overflow-hidden items-center justify-cente relative bg-cover bg-no-repeat z-[1]"
+      className="TravelExploreCard flex flex-col h-[240px] lg:h-[400px] 2xl:h-[520px] overflow-hidden items-center justify-cente relative bg-cover bg-no-repeat z-[1]"
       style={{
         backgroundImage: `url(${item?.image})`,
       }}

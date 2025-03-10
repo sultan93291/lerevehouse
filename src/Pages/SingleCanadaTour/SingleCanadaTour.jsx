@@ -18,7 +18,7 @@ const SingleCanadaTour = () => {
         }
         bg={polarBear}
       />
-      <div className="flex flex-col 2xl:pt-[110px] md:pt-12 2xl:gap-y-[108px] gap-y-14">
+      <div className="flex flex-col 4xl:pt-[110px] xl:pt-12 lg:pt-8 2xl:gap-y-[108px] gap-y-14">
         <MapSection BgImg={Alaska} />
         <div className="flex flex-col">
           <div>
@@ -44,8 +44,8 @@ const SingleCanadaTour = () => {
                 );
               })}
             </div>
-            <div className="flex flex-col py-[40px] xl:py-[64px] bg-[#78787836]  ">
-              <div className="container flex flex-col  gap-y-[20px] xl:gap-y-[64px] ">
+            <div className="flex flex-col py-[30px] md:py-[40px] xl:py-[64px] bg-[#78787836]  ">
+              <div className="container flex flex-col  gap-y-[20px] 2xl:gap-y-[64px] ">
                 {[0, 1, 2].map((item, index) => {
                   return <ConsultCard key={index} />;
                 })}

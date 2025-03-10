@@ -43,7 +43,7 @@ const Prairies = () => {
                 );
               })}
             </div>
-            <div className="flex flex-col xl:py-[64px] py-10 bg-[#78787836]">
+            <div className="flex flex-col py-[30px] md:py-[40px] xl:py-[64px] bg-[#78787836]">
               <div className="container flex flex-col md:gap-y-[64px] gap-y-8">
                 {[0, 1, 2].map((item, index) => {
                   return <ConsultCard key={index} />;

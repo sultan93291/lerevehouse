@@ -45,7 +45,7 @@ const AtlanticProvinces = () => {
                 );
               })}
             </div>
-            <div className="flex flex-col    py-[40px] xl:py-[64px] bg-[#78787836]  ">
+            <div className="flex flex-col py-[30px] md:py-[40px] xl:py-[64px] bg-[#78787836]  ">
               <div className="container flex flex-col gap-y-[20px] xl:gap-y-[64px] ">
                 {[0, 1, 2].map((item, index) => {
                   return <ConsultCard key={index} />;
