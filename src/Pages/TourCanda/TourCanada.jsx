@@ -63,7 +63,7 @@ const tripCanda = [
 const TourCanada = () => {
   const navigate = useNavigate()
   return (
-    <section className="2xl:my-[156px] mt-14 xl:py-[72px] py-9 container flex flex-col md:gap-y-10 gap-y-5 2xl:gap-y-[148px]">
+    <section className="2xl:mt-[156px] mb-10 2xl:mb-20 mt-14 xl:py-[72px] pt-9 2xl:py-9 container flex flex-col md:gap-y-10 gap-y-5 2xl:gap-y-[148px]">
       <div className="flex flex-col gap-y-[148px]">
         <div className="flex flex-col gap-y-4 items-center ">
           <h2 className="text-[#1687C7] font-interTight text-[40px] 2xl:text-[56px] font-semibold leading-[160%] ">
@@ -86,8 +86,8 @@ const TourCanada = () => {
               key={index}
               className={`group ${
                 index == 2
-                  ? "sm:h-[500px] lg:h-[380px] xl:h-[570px] h-[250px] w-full"
-                  : "sm:h-[500px] lg:h-[380px] xl:h-[521px] h-[250px] 3xl:w-[49.4%] md:w-full"
+                  ? " lg:h-[380px] 2xl:h-[570px] h-[250px] w-full"
+                  : " lg:h-[380px] 2xl:h-[521px] h-[250px] xl:w-[49%] 3xl:w-[49.4%] md:w-full"
               } flex flex-col items-center justify-center relative overflow-hidden`}
               style={{
                 backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url(${item.src})`,

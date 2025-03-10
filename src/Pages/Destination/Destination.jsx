@@ -16,7 +16,7 @@ const Destination = () => {
       <CommonHeroBanner bg={bg} title="Explore" italic="Luxury Vacations" />
 
       {/* destination wrapper */}
-      <section className=" my-10 3xl:my-20 container   mx-auto">
+      <section className=" my-8 md:my-10 3xl:my-20 container   mx-auto">
         <div>
           {/* title */}
           <h2 className=" text-3xl lg:text-4xl 3xl:text-5xl font-editorsNoteNormal text-primary">

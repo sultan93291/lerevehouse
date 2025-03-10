@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ExploreJourney = () => {
   return (
-    <section className="py-8 sm:py-20 2xl:py-[135px] bg-[#F5F3F4] xl:px-5 2xl:px-14">
+    <section className="py-8 xl:py-20 2xl:py-[135px] bg-[#F5F3F4] xl:px-5 2xl:px-14">
       <div className="container">
         <div className="text-center mb-5 sm:mb-10 2xl:mb-20">
           <h2 className="title--xxl font-editorsNoteNormal max-w-[1050px] mx-auto">Explore our <span className="text-secondary font-editorsNoteItalic">travel styles below</span> to begin your journey </h2>
