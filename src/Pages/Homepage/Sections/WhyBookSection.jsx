@@ -30,7 +30,7 @@ const WhyBookSection = forwardRef(({ ...props }, ref) => {
       ref={ref}
       {...props}
       id="tour"
-      className="lg:py-14 2xl:py-28 container mx-auto mt-10 md:mt-0"
+      className="lg:py-14 2xl:py-28 container mx-auto mt-10 xl:mt-0"
     >
       <div>
         <h2 className=" text-[28px] md:text-4xl xl:text-5xl font-editorsNoteNormal text-center text-primary">

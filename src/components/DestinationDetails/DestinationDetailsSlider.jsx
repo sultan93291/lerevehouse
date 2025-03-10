@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 const DestinationDetailsSlider = ({ destinationSuggestions, title }) => {
   const [swiperRef, setSwiperRef] = useState(null);
   return (
-    <div id="suggestions" className="md:my-16 my-10 xl:yt-20">
+    <div id="suggestions" className="md:mt-16 mb-0 my-10 xl:yt-20">
       {/* title */}
       <div>
         <h3 className="text-center text-3xl xl:text-4xl font-editorsNoteNormal text-primary">

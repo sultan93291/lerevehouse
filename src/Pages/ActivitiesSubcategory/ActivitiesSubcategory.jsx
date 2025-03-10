@@ -135,16 +135,16 @@ const ActivitiesSubcategory = () => {
 
       {/* description */}
 
-      <section className="md:my-20 mt-10 mb-0 container">
+      <section className="2xl:my-20 md:my-10 mt-10 container">
         {/* title */}
         <div>
-          <h2 className="text-4xl md:text-5xl font-editorsNoteNormal text-center text-primary">
+          <h2 className="text-3xl md:text-4xl xl:text-5xl font-editorsNoteNormal text-center text-primary">
             Water <span className="font-editorsNoteItalic">Activities</span>
           </h2>
         </div>
 
         {/* details */}
-        <div className="w-full flex flex-col md:flex-row md:gap-12 gap-[410px] xs:gap-[475px] sm:gap-[0px] md:mt-14 mt-8 items-stretch">
+        <div className="w-full flex flex-col md:flex-col lg:flex-col xl:flex-row md:gap-[400px] gap-[340px] xs:gap-[350px] sm:gap-[350px] lg:gap-[450px] xl:gap-[35px] 2xl:gap-[56px] lg:mt-[60px] md:mt-6 mt-4 items-stretch">
           {/* image */}
           <ActivitiesSubcategoryLeftDescription />
           {/* right side */}
@@ -153,7 +153,7 @@ const ActivitiesSubcategory = () => {
         </div>
 
         {/* Water activities tab section */}
-        <div className="md:my-20 my-10">
+        <div className="xl:my-20 mt-5 md:mt-8 lg:mt-8">
           {/* title */}
           <div>
             <h2 className="text-3xl text-primary font-editorsNoteNormal">
@@ -162,7 +162,7 @@ const ActivitiesSubcategory = () => {
           </div>
 
           {/* tabs and contents*/}
-          <div className=" xl:grid xl:grid-cols-8 gap-8 mt-10">
+          <div className=" xl:grid xl:grid-cols-8 gap-8 mt-4 md:mt-5 xl:mt-10">
             {/* tabs */}
             <div className="flex flex-col gap-5 col-span-2">
               {activitiesSubcategoryTabs?.map((tab) => (
@@ -176,7 +176,7 @@ const ActivitiesSubcategory = () => {
             </div>
 
             {/* contents */}
-            <div className="grid md:grid-cols-2 md:gap-2 gap-5 col-span-6 my-8 md:my-0">
+            <div className="grid md:grid-cols-2 md:gap-2 gap-5 col-span-6 my-8 xl:my-0">
               {activeTab?.contents?.map((item) => (
                 <ActivitiesSubcategoryCard item={item} key={item?.id} />
               ))}

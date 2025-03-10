@@ -3,8 +3,8 @@ import ReviewStarYellowButton from "../common/Stars/ReviewStarYellowButton";
 
 const ActivitiesSubcategoryRightDescription = () => {
   return (
-    <div className="md:w-1/2">
-      <div className="bg-[#f4f4f4] md:p-16 p-8 flex flex-col gap-10 items-center justify-center font-interTight">
+    <div className="xl:w-1/2 w-full">
+      <div className="bg-[#f4f4f4] lg:p-16 p-8 flex flex-col gap-10 items-center justify-center font-interTight">
         <div className="text-center space-y-2">
           <h3 className="font-medium text-xl">
             Creating tailor-made tours for over 20 years
@@ -29,10 +29,10 @@ const ActivitiesSubcategoryRightDescription = () => {
 
         {/* cta buttons */}
         <div className="w-full font-interTight space-y-6">
-          <Link className="block text-white text-center py-4 border border-primary hover:bg-transparent hover:text-primary transition-all duration-300 w-full bg-primary">
+          <Link className="block text-white text-center py-2 xl:py-4 border border-primary hover:bg-transparent hover:text-primary transition-all duration-300 w-full bg-primary">
             Make An Enquiry
           </Link>
-          <Link className="block text-center bg-transparent text-primary py-4 border border-primary hover:bg-primary hover:text-white transition-all duration-300 w-full bg-primary">
+          <Link className="block text-center bg-transparent text-primary py-2 xl:py-4 border border-primary hover:bg-primary hover:text-white transition-all duration-300 w-full bg-primary">
             Request A Brouchre
           </Link>
         </div>

@@ -221,7 +221,7 @@ const TouristGuide = () => {
             <h3 className="text-[#000000] font-fontSpring text-[30px] xl:text-[40px] 2xl:text-[56px] font-light 2xl:leading-[160%]">
               Travel to Canada with the specialists
             </h3>
-            <span className="md:max-w-[1001px] leading-[160%] text-base mt-4 2xl:mt-0 md:text-xl font-interTight text-[#000] text-center">
+            <span className="md:max-w-[1001px] w-full leading-[160%] text-base mt-4 2xl:mt-0 md:text-xl font-interTight text-[#000] text-center">
               Discover the charm of a spectacular country of many contrasts: the
               great metropolises, the spectacle of the Canadian national parks
               but also the variety of food and wine, outdoor activities and some
@@ -229,8 +229,8 @@ const TouristGuide = () => {
             </span>
           </div>
           <div className="flex flex-col md:gap-y-[48px] gap-6">
-            <div className="flex flex-col md:flex-row gap-x-6">
-              <span className="text-[#787878] md:max-w-[517.3px] font-interTight text-base 2xl:text-xl font-normal 2xl:leading-[180%] leading-[160%] tracking-[1px]">
+            <div className="flex flex-col lg:flex-row gap-6">
+              <span className="text-[#787878] lg:max-w-[517.3px] font-interTight text-base 2xl:text-xl font-normal 2xl:leading-[180%] leading-[160%] tracking-[1px]">
                 Go beyond the classic trip to Canada , take inspiration from our
                 insights and get advice from the Xplore staff to create an
                 itinerary that allows you to discover lesser-known areas and
@@ -238,7 +238,7 @@ const TouristGuide = () => {
                 prospectors between Yukon and nearby Alaska or let yourself be
                 transported by food and wine or music itineraries,
               </span>
-              <span className="text-[#787878] max-w-[517.3px] font-interTight text-base 2xl:text-xl font-normal   2xl:leading-[180%] leading-[160%] tracking-[1px]">
+              <span className="text-[#787878] lg:max-w-[517.3px] font-interTight text-base 2xl:text-xl font-normal   2xl:leading-[180%] leading-[160%] tracking-[1px]">
                 choose with us the Canadian national parks that are best for you
                 or the cities that most intrigue you. Traveling with Xplore does
                 not only mean planning your tour of Canada together by choosing
@@ -246,7 +246,7 @@ const TouristGuide = () => {
                 being able to count on Canadian specialists who will try to make
                 you fall in love with this country full of
               </span>
-              <span className="text-[#787878] font-interTight max-w-[517.3px] text-base 2xl:text-xl font-normal 2xl:leading-[180%] leading-[160%] tracking-[1px]">
+              <span className="text-[#787878] font-interTight lg:max-w-[517.3px] text-base 2xl:text-xl font-normal 2xl:leading-[180%] leading-[160%] tracking-[1px]">
                 beauties waiting to be discovered! Start browsing our tourist
                 guides on the main Canadian cities, the fabulous national parks
                 and the Canadian experiences that we can offer you to make
@@ -269,8 +269,8 @@ const TouristGuide = () => {
                 );
               })}
             </div>
-            <div className="flex flex-col md:flex-row gap-x-6">
-              <span className="text-[#787878] font-interTight max-w-[517.3px] text-base 2xl:text-xl font-normal 2xl:leading-[180%] leading-[160%] tracking-[1px]">
+            <div className="flex flex-col lg:flex-row gap-6">
+              <span className="text-[#787878] font-interTight w-full lg:max-w-[517.3px] text-base 2xl:text-xl font-normal 2xl:leading-[180%] leading-[160%] tracking-[1px]">
                 If you need help planning your next trip to Canada, you can take
                 inspiration from our guide and decide to visit an area or two
                 depending on the time you have available. If you love
@@ -278,14 +278,14 @@ const TouristGuide = () => {
                 forests, trekking and refuges in the Rocky Mountains , in
                 addition to exploring the
               </span>
-              <span className="text-[#787878] font-interTight max-w-[517.3px] text-base 2xl:text-xl font-normal 2xl:leading-[180%] leading-[160%] tracking-[1px]">
+              <span className="text-[#787878] font-interTight w-full lg:max-w-[517.3px] text-base 2xl:text-xl font-normal 2xl:leading-[180%] leading-[160%] tracking-[1px]">
                 Great North. Areas like Nunavut are difficult to reach but will
                 leave you speechless.Car tours or bus tours, just cities or a
                 mix between metropolises and the vastness of Canadian nature...
                 between a craft beer, an ice hockey game , a stretch with a
                 panoramic train and tours to observe moose
               </span>
-              <span className="text-[#787878] font-interTight max-w-[517.3px] text-base 2xl:text-xl font-normal 2xl:leading-[180%] leading-[160%] tracking-[1px]">
+              <span className="text-[#787878] font-interTight w-full lg:max-w-[517.3px] text-base 2xl:text-xl font-normal 2xl:leading-[180%] leading-[160%] tracking-[1px]">
                 and bears in their natural habitat. In short, this large
                 country, which encompasses six time zones, is truly unique,
                 populated by hospitable people and with scenery of unparalleled
@@ -294,34 +294,34 @@ const TouristGuide = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-y-6 mt-10 2xl:mt-0 mb-10 md:mb-10 2xl:mb-0 ">
+        <div className="flex flex-col gap-y-6 mt-10 2xl:mt-0 mb-10 md:mb-10 2xl:mb-0">
           <div className="flex flex-col items-center">
             <h3 className="text-[#000000] font-fontSpring text-[30px] xl:text-[40px] 2xl:text-[56px] font-light 2xl:leading-[160%]">
               Our travel ideas in Canada
             </h3>
-            <span className="md:max-w-[1001px] leading-[160%] text-base mt-4 2xl:mt-0 md:text-xl font-interTight text-[#000] text-center">
+            <span className="md:max-w-[1001px] w-full leading-[160%] text-base mt-4 2xl:mt-0 md:text-xl font-interTight text-[#000] text-center">
               Discover the tourist services available to you, make your holiday
               in Canada unique and customize your trip with Xplore. For tours,
               excursions, services and special requests for your trip to Canada,
               do not hesitate to contact us!
             </span>
           </div>
-          <div className="flex flex-col md:flex-row gap-x-6">
-            <span className="text-[#787878] font-interTight max-w-[517.3px] text-base 2xl:text-xl font-normal 2xl:leading-[180%] leading-[160%] tracking-[1px]">
+          <div className="flex flex-col lg:flex-row gap-6">
+            <span className="text-[#787878] font-interTight lg:max-w-[517.3px] text-base 2xl:text-xl font-normal 2xl:leading-[180%] leading-[160%] tracking-[1px]">
               Choosing Xplore for your trip to Canada doesn't just mean
               receiving free quotes in 24 hours and having great prices on
               flights, hotels, rentals and excursions, but also being able to
               count on a staff of travel agents who are passionate about Canada
               and the United States . This means receiving suggestions and
             </span>
-            <span className="text-[#787878] font-interTight max-w-[517.3px] text-base 2xl:text-xl font-normal 2xl:leading-[180%] leading-[160%] tracking-[1px]">
+            <span className="text-[#787878] font-interTight lg:max-w-[517.3px] text-base 2xl:text-xl font-normal 2xl:leading-[180%] leading-[160%] tracking-[1px]">
               valuable advice in creating the itinerary, discovering curiosities
               that are worth a detour along your tour of Canada and all the
               experience of those who have always dealt with trips to Canada
               (and the United States)! Whether you have clear ideas about the
               travel itinerary or you don't know exactly where you want to
             </span>
-            <span className="text-[#787878] font-interTight max-w-[517.3px] text-base 2xl:text-xl font-normal 2xl:leading-[180%] leading-[160%] tracking-[1px]">
+            <span className="text-[#787878] font-interTight lg:max-w-[517.3px] text-base 2xl:text-xl font-normal 2xl:leading-[180%] leading-[160%] tracking-[1px]">
               beauties waiting to be discovered! Start browsing our tourist
               guides on the main Canadian cities, the fabulous national parks
               and the Canadian experiences that we can offer you to make
