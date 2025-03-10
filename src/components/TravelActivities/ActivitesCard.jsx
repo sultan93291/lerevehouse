@@ -3,9 +3,9 @@
 const ActivitesCard = ({ item }) => {
   return (
     <div className="activites--card">
-      <div className="md:h-[250px] h-[230px] overflow-hidden">
+      <div className="md:h-[250px] h-[230px] xl:h-[482px] overflow-hidden">
         <img
-          className="md:w-full w-full md:h-[250px] h-[230px] xl:h-[280px] object-cover duration-200 ease-in-out"
+          className="md:w-full w-full md:h-[250px] h-[230px] xl:h-[280px] 2xl:h-[482px] object-cover duration-200 ease-in-out"
           src={item?.image}
           alt=""
         />
