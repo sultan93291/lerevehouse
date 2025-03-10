@@ -42,10 +42,10 @@ const CanadaHoliday = () => {
       />
       <div className="flex flex-col md:py-[72px] py-8 xl:gap-y-[120px] gap-y-[30px] container">
         <div className="flex flex-col md:gap-y-6 gap-y-3 items-center">
-          <h4 className="text-[#000000] font-interTight text-[28px] sm:text-[32px] lg:text-[40px] 2xl:text-[56px] leading-[150%] font-light italic">
+          <h4 className="text-[#000000] font-interTight text-[22px] sm:text-[32px] lg:text-[40px] 2xl:text-[56px] leading-[150%] font-light italic">
             Spazi e attività sconfinate
           </h4>
-          <div className="flex flex-col md:flex-row xl:gap-x-6 gap-x-3">
+          <div className="flex flex-col xl:flex-row xl:gap-6 gap-3">
             <p className="text-text-gray font-interTight text-base xl:text-lg 2xl:text-xl 2xl:max-w-[517px] 2xl:leading-9 font-normal leading-7">
               Se vuoi un consiglio da chi il Canada lo conosce e ne è innamorato
               è proprio quello di arricchire il tuo viaggio in Canada con
@@ -86,7 +86,7 @@ const CanadaHoliday = () => {
                 <div className="flex flex-col md:gap-y-6">
                   {item.heading && item.subHeading && (
                     <div className=" flex flex-col gap-y-2 mt-10 xl:mt-0">
-                      <h3 className="text-[#000] font-interTight text-[28px] md:text-[32px] font-semibold leading-[150%] tracking-[1px]">
+                      <h3 className="text-[#000] font-interTight text-[24px] md:text-[32px] font-semibold leading-[150%] tracking-[1px]">
                         {item.heading}
                       </h3>
                       <span className="text-[#000] font-interTight text-lg md:text-[20px] font-semibold leading-[150%] tracking-[1px] ">
@@ -110,8 +110,8 @@ const CanadaHoliday = () => {
                   src={item.imgSrc}
                   className={`3xl:w-[784px] w-[400px] md:w-[784px] xl:w-[450px] 2xl:w-[580px] ${
                     index === 1
-                      ? "md:!h-[512px] h-[320px]"
-                      : "md:h-[512px] h-[320px]"
+                      ? "xl:!h-[512px] h-[220px] md:h-[320px]"
+                      : "xl:h-[512px] h-[220px] md:h-[320px]"
                   } object-cover`}
                   alt="not found"
                 />
@@ -197,7 +197,7 @@ const CanadaHoliday = () => {
           </div>
           <img
             src={waterPlane}
-            className="3xl:w-[784px] hidden xl:block 2xl:w-[580px] w-[400px] md:w-[784px] xl:w-[490px] md:h-[663px] lg:h-[600px] h-[320px] object-cover"
+            className="3xl:w-[784px] hidden 2xl:block 2xl:w-[580px] w-[400px] md:w-[784px] xl:w-[490px] md:h-[663px] lg:h-[600px] h-[320px] object-cover"
             alt="not found"
           />
         </div>

@@ -20,12 +20,12 @@ const Contact = () => {
       <CommonHeroBannerVideo heroBg={heroBg} title="Contact" italic=" Us" />
 
       {/* main section */}
-      <section className="flex flex-col lg:flex-row items-stretch md:gap-0 gap-16">
+      <section className="flex flex-col lg:flex-row items-stretch md:gap-0 2xl:gap-16">
         {/* left side */}
         <ContactForm />
 
         {/* right side */}
-        <div className="flex flex-col gap-10 md:gap-16 justify-center lg:w-1/2 lg:pl-12 md:py-10 lg:py-0  lg:my-6 my-0 lg:mr-6 mr-0">
+        <div className="flex flex-col gap-10 md:gap-16  justify-center lg:w-1/2 lg:pl-12 md:py-10 lg:py-0  lg:my-6 my-0 lg:mr-6 mr-0">
           <div className="flex flex-col 2xl:flex-row items-center gap-4">
             {/* img */}
             <img
@@ -82,7 +82,7 @@ const Contact = () => {
               alt=""
             />
             {/* contents */}
-            <div className="font-interTight mb-16 md:mb-0 ml-4 md:ml-0">
+            <div className="font-interTight  mb-16 md:mb-0 ml-4 md:ml-0">
               <h3 className="font-interTight xl:text-xl text-lg">
                 Le Reve House Italia:
               </h3>

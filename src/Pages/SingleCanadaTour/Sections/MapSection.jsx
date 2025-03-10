@@ -7,7 +7,7 @@ import {
 
 const MapSection = ({ BgImg }) => {
   return (
-    <div className="flex flex-col xl:gap-y-[64px] gap-y-8 container">
+    <div className="flex flex-col 2xl:gap-y-[64px] gap-y-10 container">
       <div className="flex flex-col md:flex-row items-center gap-x-6">
         <div className="hidden xl:block md:h-[460px] md:w-[641px] 2xl:flex items-center justify-center">
           <img
@@ -17,9 +17,9 @@ const MapSection = ({ BgImg }) => {
           />
         </div>
 
-        <div className="flex flex-col gap-y-[30px] mt-8 md:mt-0">
-          <div className="flex flex-row gap-x-4 items-center ">
-            <div className="flex flex-col items-center md:h-12 lg:w-[50px] xl:w-12 w-12 h-12 border-[3px] border-solid border-[#BFBFBF] rounded-full justify-center">
+        <div className="flex flex-col gap-y-[30px] mt-8 xl:mt-0">
+          <div className="flex flex-col  xl:flex-row gap-4 items-start xl:items-center ">
+            <div className="flex flex-col items-center h-12 w-12 border-[3px] border-solid border-[#BFBFBF] rounded-full justify-center">
               <UnknownCreature />
             </div>
             <div className="flex flex-col gap-y-2  ">
@@ -31,8 +31,8 @@ const MapSection = ({ BgImg }) => {
               </span>
             </div>
           </div>
-          <div className="flex flex-row gap-x-4 items-center">
-            <div className="flex flex-col items-center md:h-12 lg:w-[50px] 2xl:w-12 w-[85px] h-12 border-[3px] border-solid border-[#BFBFBF] rounded-full justify-center">
+          <div className="flex flex-col  xl:flex-row gap-4 items-start xl:items-center">
+            <div className="flex flex-col items-center  w-12  h-12 border-[3px] border-solid border-[#BFBFBF] rounded-full justify-center">
               <Temperature />
             </div>
             <div className="flex flex-col gap-y-2  ">

@@ -45,7 +45,7 @@ const TourWithCar = () => {
         <div className="flex flex-col xl:gap-y-[112px] gap-y-10 py-4 container">
           <div className="flex flex-col gap-y-4 ">
             <div className="flex flex-col md:gap-y-[60px] gap-y-8">
-              <div className="flex flex-col md:flex-row md:justify-between justify-center items-center gap-5 md:gap-0">
+              <div className="flex flex-col xl:flex-row md:justify-between justify-center items-center gap-5 xl:gap-0">
                 <div className="flex flex-row 2xl:gap-x-[197.1px] items-center ">
                   <div className="flex flex-col 2xl:gap-y-3 items-center">
                     <h4 className="text-[#004265] font-interTight text-base leading-[160%] font-semibold ">
@@ -83,7 +83,7 @@ const TourWithCar = () => {
                   onClick={() => {
                     setOpen(true);
                   }}
-                  className="md:px-[61px] px-8 md:py-5 py-3 rounded-[5px] bg-[#1687C7] text-sm md:text-xs font-medium leading-[120%] font-interTight text-white border-[1px] border-transparent ease-in-out duration-500 hover:bg-transparent hover:border-solid hover:border-[#1687C7] hover:text-[#1687C7]"
+                  className="xl:px-[61px] px-8 xl:py-5 py-3 rounded-[5px] bg-[#1687C7] text-sm md:text-xs font-medium leading-[120%] font-interTight text-white border-[1px] border-transparent ease-in-out duration-500 hover:bg-transparent hover:border-solid hover:border-[#1687C7] hover:text-[#1687C7]"
                 >
                   Make An Enquiry
                 </button>
@@ -120,7 +120,7 @@ const TourWithCar = () => {
                 </h5>
                 <div className="flex flex-col  w-full relative items-center ">
                   <div className="bg-RgbaBlue w-full py-3 flex flex-row gap-x-6 ">
-                    <div className="md:w-[438px]"></div>
+                    <div className="lg:w-[438px] will-auto  "></div>
                     <div className="flex flex-row justify-around w-full">
                       {["single", "double", "Triple", "Quadruple"].map(
                         (item, index) => {
@@ -138,8 +138,8 @@ const TourWithCar = () => {
                     </div>
                   </div>
                   <div className="border-[2px] border-solid border-RgbaBlue w-full py-3 flex md:flex-row flex-col gap-x-[24px] gap-3 md:gap-0 px-2 md:px-0">
-                    <div className="md:w-[428px] w-full flex items-center md:justify-center">
-                      <h4 className="text-[#004265] font-interTight text-base md:text-[22px] 2xl:text-[32px] leading-[120%] font-medium hidden md:block">
+                    <div className="lg:w-[428px] md:w-[80%]    flex items-center lg:justify-center">
+                      <h4 className="text-[#004265] font-interTight text-base md:text-[22px] 2xl:text-[32px] leading-[120%] font-medium hidden lg:block">
                         Prices starting from
                       </h4>
                     </div>
@@ -164,7 +164,7 @@ const TourWithCar = () => {
                   beers and perhaps the best fresh fish in the world including
                   lobsters, shellfish and salmon of incredible quality.
                 </span>
-                <div className="flex flex-col xl:flex-row md:gap-x-5 gap-y-3">
+                <div className="flex flex-col 2xl:flex-row md:gap-x-5 gap-y-3">
                   {vechicles.map((item, index) => {
                     return (
                       <div
@@ -175,7 +175,7 @@ const TourWithCar = () => {
                         className={`flex py-2 ${
                           item.id == selectedVehice &&
                           "border-[1px] border-solid border-[#1687C7]"
-                        } cursor-pointer ease-in duration-500 flex-col 3xl:w-[500px] w-full items-center gap-y-6`}
+                        } cursor-pointer ease-in duration-500 flex-col 4xl:w-[500px] w-full items-center gap-y-6`}
                       >
                         <img
                           src={item.imgSrc}
@@ -207,7 +207,7 @@ const TourWithCar = () => {
                     Other car models are also available at the quote stage
                   </span>
                 </div>
-                <div className="flex flex-col md:flex-row w-full gap-x-12 bg-RgbaBlue">
+                <div className="flex flex-col xl:flex-row w-full gap-x-12 bg-RgbaBlue">
                   <div className="flex flex-col gap-y-3 p-6">
                     <h4 className="text-[#004265] text-[16px] leading-[150%] items-center font-bold  font-interTight text-normal">
                       What's included
@@ -252,8 +252,8 @@ const TourWithCar = () => {
                     </div>
                   </div>
                 </div>
-                <div className="flex flex-col md:flex-row w-full justify-between gap-5 md:gap-8 2xl:gap-0 items-center">
-                  <p className="text-[#565656] text-sm md:text-[16px] xl:max-w-[1194px] w-full md:w-[1020px] leading-[150%] items-center  font-interTight text-normal">
+                <div className="flex flex-col md:flex-row w-full justify-between gap-5 md:gap-8 3xl:gap-0 items-center">
+                  <p className="text-[#565656] text-sm md:text-[16px] max-w-auto 3xl:max-w-[1194px] w-full 2xl:w-[1020px] leading-[150%] items-center  font-interTight text-normal">
                     The overnight stay rates during the tour may vary during the
                     quote depending on the season and the hotels chosen. You can
                     decide to book the tour as is or ask us to customize the

@@ -9,7 +9,7 @@ const CustomizeTripCanada = () => {
     navigate("/");
   };
   return (
-    <section className=" mt-16 md:mt-20 mb-0 xl:my-[156px] py-14 md:py-[72px] relative  w-full overflow-hidden  flex flex-col gap-y-10 md:gap-y-16 xl:gap-y-[144px]">
+    <section className=" mt-16 xl:mt-20 mb-0 2xl:my-[156px] py-14 md:py-[72px] relative  w-full overflow-hidden  flex flex-col gap-y-10 md:gap-y-16 xl:gap-y-[144px]">
       <div className="flex flex-col relative w-full gap-y-10 md:gap-y-16 xl:gap-y-[120px] ">
         <div className="flex flex-col justify-center text-center gap-y-4 items-center px-1 md:px-0">
           <h2 className="text-[#1687C7] font-interTight text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-[56px] font-semibold leading-[160%] ">
@@ -133,7 +133,7 @@ const CustomizeTripCanada = () => {
             </span>
           </div>
           <div
-            className="w-full xl:w-[700px] 2xl:max-w-[1063px] h-[250px] lg:h-[574px]  relative "
+            className="w-full xl:w-[700px] 2xl:max-w-[1063px] h-[250px] md:h-[400px] xl:h-[574px]  relative "
             style={{
               backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url(${mountainer})`,
               backgroundSize: "cover",

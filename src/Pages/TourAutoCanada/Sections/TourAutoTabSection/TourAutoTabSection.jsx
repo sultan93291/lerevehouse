@@ -46,7 +46,7 @@ const TourAutoTabSection = () => {
           </span>
           <button
             onClick={handleImgShow}
-            className="md:px-8 px-2 md:py-4 py-[10px] bg-[#1687C7] text-sm md:text-base 2xl:text-lg font-medium leading-[120%] font-interTight text-white border-[1px] border-transparent ease-in-out duration-500 hover:bg-transparent hover:border-solid hover:border-[#1687C7] hover:text-[#1687C7]"
+            className="xl:px-8 px-2 xl:py-4 py-[10px] bg-[#1687C7] text-sm md:text-base 2xl:text-lg font-medium leading-[120%] font-interTight text-white border-[1px] border-transparent ease-in-out duration-500 hover:bg-transparent hover:border-solid hover:border-[#1687C7] hover:text-[#1687C7]"
           >
             {AcitveImg === washington
               ? "Show all as image"
@@ -60,9 +60,9 @@ const TourAutoTabSection = () => {
           return (
             <div
               key={index}
-              className="flex flex-col md:flex-row gap-x-5 items-center 2xl:items-start 2xl:h-[456px] h-full w-full border-[1px] border-solid border-[#0000001F]"
+              className="flex flex-col xl:flex-row gap-x-5 items-center 2xl:items-start 2xl:h-[456px] h-full w-full border-[1px] border-solid border-[#0000001F]"
             >
-              <div className="md:p-10 p-5 md:mt-[27px] mt-[10px] flex flex-col 2xl:gap-y-[60px] gap-y-6">
+              <div className="md:p-10 p-5 xl:mt-[27px] mt-[10px] flex flex-col 2xl:gap-y-[60px] gap-y-6">
                 <div className="flex flex-col gap-y-3">
                   <div className="flex flex-col gap-y-3">
                     <span className="w-full h-[1px] bg-[#0000001F]"></span>
@@ -100,7 +100,7 @@ const TourAutoTabSection = () => {
                 <img
                   src={AcitveImg}
                   alt="tour image"
-                  className="2xl:w-[655px] 2xl:h-[456px] h-full sm:h-[600px]"
+                  className="2xl:w-[655px] 2xl:h-[456px]   object-cover  "
                 />
               </div>
             </div>

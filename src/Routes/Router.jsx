@@ -62,10 +62,6 @@ const router = createBrowserRouter([
         element: <AllTouristGuide />,
       },
       {
-        path: "/all-tourist-guide-details/:title",
-        element: <AllTouristGuideDetails />,
-      },
-      {
         path: "/activities/subcategory/:id",
         element: <ActivitiesSubcategory />,
       },
@@ -76,14 +72,6 @@ const router = createBrowserRouter([
       {
         path: "/activities",
         element: <TravelActivitiesPage />,
-      },
-      {
-        path: "/tours",
-        element: <Destination />,
-      },
-      {
-        path: "/luxury-travel",
-        element: <Destination />,
       },
       {
         path: "/contact",
@@ -162,10 +150,6 @@ const router = createBrowserRouter([
       {
         path: "/canada-map",
         element: <CanadaMap />,
-      },
-      {
-        path: "/modal",
-        element: <Modal />,
       },
     ],
   },

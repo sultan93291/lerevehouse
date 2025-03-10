@@ -25,7 +25,7 @@ const TravelActivitiesPage = () => {
       <TripAttraction />
       <BrowseThings />
       <ActivitiesCanDo />
-      <div className="xl:pt-20">
+      <div className="2xl:pt-20">
         <TravelCta
           title="Worldwide Adventure planing Holidays"
           description="we are an experienced tour operator for West Canada and West Usa, Alaska, the Caribbean, Mexico and Polynesia destinations, with 24 hour assistance"
