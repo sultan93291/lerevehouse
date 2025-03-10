@@ -29,14 +29,6 @@ const NavLinks = [
     path: "/activities",
   },
   {
-    title: "TOURS (MEZZI)",
-    path: "/tours",
-  },
-  {
-    title: "VIAGGI NOZZE",
-    path: "/luxury-travel",
-  },
-  {
     title: "CONTATTI",
     path: "/contact",
   },
