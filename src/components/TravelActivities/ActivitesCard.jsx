@@ -3,7 +3,7 @@
 const ActivitesCard = ({ item }) => {
   return (
     <div className="activites--card">
-      <div className="md:h-[250px] h-[230px] xl:h-[482px] overflow-hidden">
+      <div className="md:h-[250px] h-[230px] xl:h-[280px] 2xl:h-[482px] overflow-hidden">
         <img
           className="md:w-full w-full md:h-[250px] h-[230px] xl:h-[280px] 2xl:h-[482px] object-cover duration-200 ease-in-out"
           src={item?.image}
@@ -14,7 +14,7 @@ const ActivitesCard = ({ item }) => {
         <h4 className="text-[24px] font-editorsNoteNormal text-[#004265] md:mt-3 mt-6">
           {item?.place}
         </h4>
-        <p className="text-base md:text-[18px] 2xl:leading-8 font-interTight mt-2 text-[#65656]">
+        <p className="text-base xl:text-[18px] 2xl:leading-8 font-interTight mt-2 text-[#65656]">
           {item?.description}
         </p>
       </div>
