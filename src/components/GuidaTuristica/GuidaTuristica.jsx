@@ -14,7 +14,7 @@ const TravelDetailsSlider = ({ data }) => {
   const [swiperRef, setSwiperRef] = useState(null);
 
   return (
-    <div className="w-[350px] md:w-[700px] lg:w-[700px] 2xl:w-[1200px] 3xl:w-[1600px]">
+    <div className="w-[350px] md:w-[400px] lg:w-[700px] 2xl:w-[1200px] 3xl:w-[1600px]">
       {/* Slider */}
       <div className="w-full flex items-center relative">
         <Swiper

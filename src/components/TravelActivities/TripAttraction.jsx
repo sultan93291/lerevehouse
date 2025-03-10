@@ -2,7 +2,7 @@ import React from "react";
 
 const TripAttraction = () => {
   return (
-    <section className="xl:py-20 pt-12 pb-7">
+    <section className="2xl:py-20 pt-16 pb-7">
       <div className="container">
         <div className="text-center xl:mb-[45px] mb-6">
           <h3 className="title--xxl">
