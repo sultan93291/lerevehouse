@@ -21,6 +21,7 @@ import RecomendedAttractionModal from "../Modals/RecomendedAttractionModal";
 import { Modal } from "../Modals/Modal";
 import WishListModal from "../Modals/WishListModal";
 import StartYourJourney from "../Modals/StartYourJourney";
+import { useNavigate } from "react-router-dom";
 
 const ItenaryIdeaDetails = () => {
   const [currentValue, setcurrentValue] = useState(0);
@@ -47,6 +48,8 @@ const ItenaryIdeaDetails = () => {
       setcurrentValue(currentValue - 1);
     }
   };
+
+  const navigate = useNavigate();
 
   return (
     <>
@@ -104,7 +107,7 @@ const ItenaryIdeaDetails = () => {
             type="multiple" // Allows multiple open items
             className="w-full  flex flex-col gap-y-4 lg:gap-y-8"
             value={openItems}
-            onValueChange={(values) => setOpenItems(values)} // Updates state
+            onValueChange={values => setOpenItems(values)} // Updates state
           >
             {AllItenaryData.map((faq, index) => (
               <AccordionItem
@@ -179,7 +182,12 @@ const ItenaryIdeaDetails = () => {
                               Gothic glory in the Umbrian hills
                             </span>
                           </div>
-                          <div className="bg-white py-2 lg:py-4 px-2 whitespace-nowrap  lg:px-8 border-[1px] flex flex-row items-center cursor-pointer gap-x-1 border-solid h-10 lg:h-[59px] text-primary leading-[150%] font-normal text-sm lg:text-lg">
+                          <div
+                            onClick={() => {
+                              navigate(`/tour-guide-22`);
+                            }}
+                            className="bg-white py-2 lg:py-4 px-2 whitespace-nowrap  lg:px-8 border-[1px] flex flex-row items-center cursor-pointer gap-x-1 border-solid h-10 lg:h-[59px] text-primary leading-[150%] font-normal text-sm lg:text-lg"
+                          >
                             Travel Guide
                             <ArrowLeft />
                           </div>
