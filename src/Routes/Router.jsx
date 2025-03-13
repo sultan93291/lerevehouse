@@ -29,7 +29,7 @@ import TourWithCar from "@/Pages/TourWithCar/TourWithCar";
 import TravelActivitiesPage from "@/Pages/TravelActivites/TravelActivitiesPage";
 import TravelStylePage from "@/Pages/TravelStyle/TravelStylePage";
 import TravelStyleDetailsPage from "@/Pages/TravelStyleDetails/TravelStyleDetailsPage";
-import WildSide from "@/Pages/WildSide/WildSide";
+import ViagaNozi from "@/Pages/ViagaNozi/ViagaNozi";
 import { createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -112,8 +112,12 @@ const router = createBrowserRouter([
         element: <TourGuide22 />,
       },
       {
-        path: "/tour-canda",
+        path: "/tour-mezi",
         element: <TourCanada />,
+      },
+      {
+        path: "/viaggi-noze",
+        element: <ViagaNozi />,
       },
       {
         path: "/customize/tour-canda",
