@@ -16,7 +16,7 @@ import tent from "../../assets/images/guida-turistica/tent.jpg";
 import dolphin from "../../assets/images/guida-turistica/dolphin.jpg";
 import helicopter from "../../assets/images/guida-turistica/helicopter.jpg";
 import lakeMountain from "../../assets/images/guida-turistica/lakeMountain.jpg";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const RedirectData = [
   {
@@ -66,34 +66,11 @@ const FeaturedLinks = [
   },
   {
     txt: "Discover one of our tours in Canada",
-    redirect: "/",
+    redirect: "/destination-details/Canada%20Ovest",
   },
   {
     txt: "Customize your trip to Canada",
-    redirect: "/customize/tour-canda",
-  },
-];
-
-const canadaFeatures = [
-  {
-    icon: beast,
-    text: "Eating & Drinking in Canada",
-  },
-  {
-    icon: industry,
-    text: "Eating & Drinking in Canada",
-  },
-  {
-    icon: boat,
-    text: "Eating & Drinking in Canada",
-  },
-  {
-    icon: piano,
-    text: "Eating & Drinking in Canada",
-  },
-  {
-    icon: bear,
-    text: "Eating & Drinking in Canada",
+    redirect: "/tour-mezi",
   },
 ];
 
@@ -136,6 +113,7 @@ const imagesData = [
 ];
 
 const TouristGuide = () => {
+  const navigate = useNavigate();
   return (
     <section className="md:mt-[128px] mt-28 2xl:py-[96px] container flex flex-col 2xl:gap-y-[153px] gap-y-10">
       <div className="flex flex-col 2xl:gap-y-[96px] gap-y-9">
@@ -191,13 +169,16 @@ const TouristGuide = () => {
           {RedirectData.map((item, index) => {
             return (
               <div
+                onClick={() => {
+                  navigate(item?.redirectLink);
+                }}
                 style={{
                   backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url(${item.src})`,
                   backgroundSize: "cover",
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center",
                 }}
-                className="2xl:h-[404px] h-[220px] 2xl:w-[312px] w-full relative"
+                className="2xl:h-[404px] cursor-pointer h-[220px] 2xl:w-[312px] w-full relative"
               >
                 <div className="h-full w-full flex items-center  justify-center ">
                   <NavLink
@@ -252,22 +233,6 @@ const TouristGuide = () => {
                 and the Canadian experiences that we can offer you to make
                 your tour of Canada unique !
               </span>
-            </div>
-            <div className="flex flex-col sm:flex-row w-full items-center justify-center md:gap-y-8 gap-y-4 sm:flex-wrap md:gap-x-12">
-              {canadaFeatures.map((item, idx) => {
-                return (
-                  <div key={idx} className="flex flex-row items-center gap-x-3">
-                    <img
-                      className="2xl:w-[89px] w-14 md:w-16 2xl:h-[88px] h-14 md:h-16"
-                      src={item.icon}
-                      alt="not found"
-                    />
-                    <p className="2xl:w-[300px] text-[#000000] md:text-xl font-semibold 2xl:leading-[180%] tracking-[1px]  ">
-                      {item.text}
-                    </p>
-                  </div>
-                );
-              })}
             </div>
             <div className="flex flex-col lg:flex-row gap-6">
               <span className="text-[#787878] font-interTight w-full lg:max-w-[517.3px] text-base 2xl:text-xl font-normal 2xl:leading-[180%] leading-[160%] tracking-[1px]">

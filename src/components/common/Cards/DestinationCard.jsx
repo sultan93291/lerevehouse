@@ -1,17 +1,21 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { DurationSvg, LinkSvg } from "../SvgContainer/SvgContainer";
 import map from "../../../assets/images/card-map.png";
 
 const DestinationCard = ({ item }) => {
   const [showExplore, setShowExplore] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div
+      onClick={() => {
+        navigate(`/tour-list-details/${item?.id}`);
+      }}
       onMouseEnter={() => setShowExplore(true)}
       onMouseLeave={() => setShowExplore(false)}
-      className="h-[300px] xl:h-[350px] 3xl:h-[550px] group font-interTight text-white px-5 flex items-end relative"
+      className="h-[300px] xl:h-[350px] 3xl:h-[550px] group font-interTight cursor-pointer text-white px-5 flex items-end relative"
       style={{
         background: `linear-gradient(180deg, rgba(30, 48, 63, 0.00) 41.29%, rgba(0, 0, 0, 0.52) 77.46%), url(${item?.image})`,
         backgroundSize: "cover",

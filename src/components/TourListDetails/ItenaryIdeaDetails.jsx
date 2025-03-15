@@ -184,7 +184,7 @@ const ItenaryIdeaDetails = () => {
                           </div>
                           <div
                             onClick={() => {
-                              navigate(`/tour-guide-22`);
+                              navigate(`/tour-guide-deatils/:slug`);
                             }}
                             className="bg-white py-2 lg:py-4 px-2 whitespace-nowrap  lg:px-8 border-[1px] flex flex-row items-center cursor-pointer gap-x-1 border-solid h-10 lg:h-[59px] text-primary leading-[150%] font-normal text-sm lg:text-lg"
                           >

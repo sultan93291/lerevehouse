@@ -10,6 +10,8 @@ import img3 from "@/assets/images/activities/3.jfif";
 import img4 from "@/assets/images/activities/4.jfif";
 import img5 from "@/assets/images/activities/5.jfif";
 import ActivitiesSubcategoryCard from "@/components/common/Cards/ActivitiesSubcategoryCard";
+import { useParams } from "react-router-dom";
+
 const ActivitiesSubcategory = () => {
   const activitiesSubcategoryTabs = [
     {
@@ -128,10 +130,12 @@ const ActivitiesSubcategory = () => {
     },
   ];
   const [activeTab, setActiveTab] = useState(activitiesSubcategoryTabs[0]);
+  const { id } = useParams();
+  console.log(id);
 
   return (
     <div>
-      <CommonHeroBanner bg={bg} title="Water" italic="Activities" />
+      <CommonHeroBanner bg={bg} title={id} italic="Activities" />
 
       {/* description */}
 
@@ -165,7 +169,7 @@ const ActivitiesSubcategory = () => {
           <div className=" xl:grid xl:grid-cols-8 gap-8 mt-4 md:mt-5 xl:mt-10">
             {/* tabs */}
             <div className="flex flex-col gap-5 col-span-2">
-              {activitiesSubcategoryTabs?.map((tab) => (
+              {activitiesSubcategoryTabs?.map(tab => (
                 <ActivitiesSubcategoryTab
                   key={tab?.title}
                   tab={tab}
@@ -177,7 +181,7 @@ const ActivitiesSubcategory = () => {
 
             {/* contents */}
             <div className="grid md:grid-cols-2 md:gap-2 gap-5 col-span-6 my-8 xl:my-0">
-              {activeTab?.contents?.map((item) => (
+              {activeTab?.contents?.map(item => (
                 <ActivitiesSubcategoryCard item={item} key={item?.id} />
               ))}
             </div>

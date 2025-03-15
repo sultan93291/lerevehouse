@@ -17,7 +17,7 @@ const TravelStylePage = () => {
         italic="STYLES"
       />
       <Description />
-      <ExploreTravel />
+      <ExploreTravel travelMode={"styles"} />
       <AdvanturePlaningSection />
       <TravelCta
         title="Travel Questions? We're Here to Help!"

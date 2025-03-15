@@ -1,6 +1,6 @@
 import { AiOutlineInfoCircle } from "react-icons/ai";
 
-const CommonHeroBannerV2 = ({ item, bgImg }) => {
+const CommonHeroBannerV2 = ({ item, bgImg, isAcitivity }) => {
   return (
     <section
       className="mt-24 bg-cover bg-center 2xl:pt-[130px] md:pt-[90px] pt-14 pb-[70px]"
@@ -26,35 +26,37 @@ const CommonHeroBannerV2 = ({ item, bgImg }) => {
           <p className="lg:mt-8 text-[15px] lg:text-[18px] text-white font-interTight lg:leading-9 leading-6 px-0 md:px-5">
             {item?.description}
           </p>
-          <div className="sm:mt-8 mt-4 flex items-center justify-center gap-4 sm:gap-8">
-            <div className="text-center">
-              <p className="font-interTight text-[20px] lg:text-[24px] leading-9 text-white">
-                {item?.details?.suggestedLength}
-              </p>
-              <p className="uppercase font-interTight text-white text-[12px]">
-                suggested length
-              </p>
+          {!isAcitivity && (
+            <div className="sm:mt-8 mt-4 flex items-center justify-center gap-4 sm:gap-8">
+              <div className="text-center">
+                <p className="font-interTight text-[20px] lg:text-[24px] leading-9 text-white">
+                  {item?.details?.suggestedLength}
+                </p>
+                <p className="uppercase font-interTight text-white text-[12px]">
+                  suggested length
+                </p>
+              </div>
+              <div className="text-center">
+                <p className="font-interTight text-[20px] lg:text-[24px] leading-9 text-white">
+                  {item?.details?.bestTimeToGo}
+                </p>
+                <p className="uppercase font-interTight text-white text-[12px]">
+                  best time to go
+                </p>
+              </div>
+              <div className="text-center">
+                <p className="font-interTight text-[20px] lg:text-[24px] leading-9 text-white">
+                  ${item?.details?.priceFrom}
+                </p>
+                <p className="uppercase font-interTight text-white text-[12px] flex items-center gap-2">
+                  price from{" "}
+                  <span className="text-[16px]">
+                    <AiOutlineInfoCircle />
+                  </span>
+                </p>
+              </div>
             </div>
-            <div className="text-center">
-              <p className="font-interTight text-[20px] lg:text-[24px] leading-9 text-white">
-                {item?.details?.bestTimeToGo}
-              </p>
-              <p className="uppercase font-interTight text-white text-[12px]">
-                best time to go
-              </p>
-            </div>
-            <div className="text-center">
-              <p className="font-interTight text-[20px] lg:text-[24px] leading-9 text-white">
-                ${item?.details?.priceFrom}
-              </p>
-              <p className="uppercase font-interTight text-white text-[12px] flex items-center gap-2">
-                price from{" "}
-                <span className="text-[16px]">
-                  <AiOutlineInfoCircle />
-                </span>
-              </p>
-            </div>
-          </div>
+          )}
         </div>
       </div>
     </section>

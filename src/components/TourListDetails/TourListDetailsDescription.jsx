@@ -1,4 +1,11 @@
+import { useState } from "react";
+
 const TourListDetailsDescription = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const handleToggle = () => {
+    setIsExpanded(!isExpanded);
+  };
   return (
     <div id="description" className="my-7 sm:my-10">
       {/* title */}
@@ -13,7 +20,7 @@ const TourListDetailsDescription = () => {
       </div>
 
       {/* description */}
-      <div className="mt-4 flex gap-1 ">
+      <div className="mt-4 flex gap-1">
         <p className="text-text-gray font-interTight text-base lg:text-lg">
           The
           <span className="font-bold text-primary">
@@ -57,7 +64,30 @@ const TourListDetailsDescription = () => {
           It is known for being one of the largest and most intact in the world
           and its extension covers approximately 6.4 million hectares, including
           islands, fjords, mountains and a rich biological diversity.{" "}
-          <span className="text-primary">...... Read More</span>
+          {isExpanded && (
+            <>
+              <span>
+                The Great Bear Rainforest is home to a number of species, some
+                of which are rare and endangered. This pristine wilderness
+                provides a critical habitat for the endangered spirit bear, a
+                rare subspecies of the black bear with a white or cream-colored
+                coat, and it also supports other iconic wildlife such as the
+                wolves, cougars, and the mighty grizzly bear. This remarkable
+                ecosystem is a vital part of the natural heritage of the region,
+                and a symbol of the power of preservation efforts in the modern
+                era.
+              </span>
+              <span className="text-primary">
+                ... Truly a once-in-a-lifetime experience.
+              </span>
+            </>
+          )}
+          <span
+            onClick={handleToggle}
+            className="text-primary font-semibold cursor-pointer"
+          >
+            {isExpanded ? " Read Less" : " Read More"}
+          </span>
         </p>
       </div>
     </div>
