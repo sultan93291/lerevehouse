@@ -44,7 +44,7 @@ const BottomNavbar = () => {
       options: [
         {
           title: "Hiking & Trekking",
-          redirectLink: "/destination-details/hiking-and-trekking",
+          redirectLink: `/activities/subcategory/Hiking & Trekking`,
         },
         {
           title: "Water Activities",
@@ -52,28 +52,27 @@ const BottomNavbar = () => {
         },
         {
           title: "Wildlife & Safari",
-          redirectLink: "/destination-details/wildlife-and-safari",
+          redirectLink: `/activities/subcategory/Wildlife & Safari`,
         },
         {
           title: "Cultural Discovery",
-          redirectLink: "/destination-details/cultural-discovery",
+          redirectLink: `/activities/subcategory/Cultural Discovery`,
         },
         {
           title: "Adventure Cruising",
-          redirectLink: "/destination-details/adventure-cruising",
+          redirectLink: `/activities/subcategory/Adventure Cruising`,
         },
         {
           title: "Cultural Discovery Adventure & Outdoor",
-          redirectLink:
-            "/destination-details/cultural-discovery-adventure-and-outdoor",
+          redirectLink: `/activities/subcategory/Cultural Discovery Adventure & Outdoor`,
         },
         {
           title: "Food, Drink & Nightlife",
-          redirectLink: "/destination-details/food-drink-and-nightlife",
+          redirectLink: `/activities/subcategory/Food, Drink & Nightlife`,
         },
         {
           title: "Custom & Private",
-          redirectLink: "/destination-details/custom-and-private",
+          redirectLink: `/activities/subcategory/Custom & Private`,
         },
       ],
     },

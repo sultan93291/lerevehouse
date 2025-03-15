@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Link, useNavigate } from "react-router-dom";
 
-const TravelExploreCard = ({ item }) => {
+const TravelExploreCard = ({ item, travelMode }) => {
   const navigate = useNavigate();
   console.log(item);
 
@@ -25,14 +25,20 @@ const TravelExploreCard = ({ item }) => {
           Every A&K private journey is unique. Whether you want to personalize
           one of our expert-designed Tailormade Journeys
         </p>
-        <Link
+        <button
           className="2xl:mt-9 mt-2 md:mt-3 inline-block px-7 md:py-2 xl:py-3 py-[6px] sm:px-[62px] sm:py-2 text-white text-sm font-medium font-inter bg-secondary rounded-[5px]"
           onClick={() => {
-            navigate(item?.btnLInk);
+            navigate(
+              travelMode === "styles"
+                ? `/travel-styles-details/${item.title}`
+                : travelMode === "travel_details"
+                ? `/tour-list-details/1`
+                : `/activities/subcategory/${item?.title}`
+            );
           }}
         >
-          View
-        </Link>
+          {travelMode === "travel_details" ? "Discover the trip" : " View"}
+        </button>
       </div>
     </div>
   );
