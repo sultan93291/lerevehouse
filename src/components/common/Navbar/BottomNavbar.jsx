@@ -81,20 +81,20 @@ const BottomNavbar = () => {
       options: [
         {
           title: "The Great West",
-          redirectLink: "/destination-details/the-great-west",
+          redirectLink: "/boundless-north",
         },
         {
           title: "Western Canada",
-          redirectLink: "/destination-details/western-canada",
+          redirectLink: "/boundless-north",
         },
         {
           title: "Ontario & Quebec",
-          redirectLink: "/destination-details/ontario-and-quebec",
+          redirectLink: "/ontario-quebec",
         },
-        { title: "Prairies", redirectLink: "/destination-details/prairies" },
+        { title: "Prairies", redirectLink: "/Prairies" },
         {
           title: "Atlantic Provinces",
-          redirectLink: "/destination-details/atlantic-provinces",
+          redirectLink: "/atlantics-provinces",
         },
       ],
     },
