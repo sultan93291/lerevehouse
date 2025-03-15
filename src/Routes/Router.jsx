@@ -32,6 +32,7 @@ import TravelStyleDetailsPage from "@/Pages/TravelStyleDetails/TravelStyleDetail
 import ViagaNozi from "@/Pages/ViagaNozi/ViagaNozi";
 import { createBrowserRouter } from "react-router-dom";
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -54,12 +55,12 @@ const router = createBrowserRouter([
         element: <TravelStylePage />,
       },
       {
-        path: "/tourist-guide",
-        element: <TouristGuide />,
+        path: "/travel-styles-details/:slug",
+        element: <TravelStyleDetailsPage />,
       },
       {
-        path: "/all-tourist-guide/:title",
-        element: <AllTouristGuide />,
+        path: "/tourist-guide",
+        element: <TouristGuide />,
       },
       {
         path: "/activities/subcategory/:id",
@@ -108,7 +109,7 @@ const router = createBrowserRouter([
         element: <EatAndDrink />,
       },
       {
-        path: "/tour-guide-22",
+        path: "/tour-guide-deatils/:slug",
         element: <TourGuide22 />,
       },
       {

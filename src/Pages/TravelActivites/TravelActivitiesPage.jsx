@@ -11,20 +11,15 @@ const travelPackage = {
   subtitle: "Private journey designed by you",
   description:
     "This illuminating adventure through Umbria and Tuscany takes in some of Italy’s most spectacular landscapes, visiting exquisite wineries, Renaissance hilltop towns, and the traditional workshops of master artisans.",
-  details: {
-    suggestedLength: "10 Days",
-    bestTimeToGo: "May-Oct",
-    priceFrom: "17,995",
-  },
 };
 
 const TravelActivitiesPage = () => {
   return (
     <div>
-      <CommonHeroBannerV2 item={travelPackage} bgImg={TravelActivitiesImg} />
+      <CommonHeroBannerV2 isAcitivity={true} item={travelPackage} bgImg={TravelActivitiesImg} />
       <TripAttraction />
       <BrowseThings />
-      <ActivitiesCanDo />
+      {/* <ActivitiesCanDo /> */}
       <div className="2xl:pt-20">
         <TravelCta
           title="Worldwide Adventure planing Holidays"

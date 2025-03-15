@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const ExploreJourney = ({ btnTxt }) => {
+  const { slug } = useParams();
   return (
     <section className="py-8 xl:py-20 2xl:py-[135px] bg-[#F5F3F4] xl:px-5 2xl:px-14">
       <div className="container">
@@ -27,7 +28,7 @@ const ExploreJourney = ({ btnTxt }) => {
           </p>
           <div className="text-center">
             <Link
-              to={`/tour-lists/Ovest`}
+              to={`/tour-lists/${slug}`}
               className="btn-common mt-7 sm:mt-10"
             >
               {btnTxt ? btnTxt : "All WILD LIFE SAFARI"}

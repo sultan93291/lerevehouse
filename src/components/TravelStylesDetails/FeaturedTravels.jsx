@@ -136,7 +136,9 @@ const FeaturedTravels = ({ isHoneyMoon }) => {
         <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5">
           {isHoneyMoon
             ? honeyMoonData?.map(item => <TravelExploreCard item={item} />)
-            : travelData?.map(item => <TravelExploreCard item={item} />)}
+            : travelData?.map(item => (
+                <TravelExploreCard  travelMode={"travel_details"} item={item} />
+              ))}
         </div>
       </div>
     </section>

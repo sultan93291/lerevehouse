@@ -18,7 +18,7 @@ const TravelCta = ({ title, description, btnText }) => {
             {description}
           </p>
           <Link
-            to={"/"}
+            to={"/contact"}
             className="font-inter border-[2px] border-secondary 2xl:py-[19px] py-2 lg:py-[14px] 2xl:px-[62px] px-5 lg:px-10 bg-secondary inline-block rounded-[5px] text-sm text-white xl:mt-[68px] mt-5 lg:mt-8 duration-200 ease-in-out hover:bg-white hover:border-white hover:text-secondary"
           >
             {btnText}

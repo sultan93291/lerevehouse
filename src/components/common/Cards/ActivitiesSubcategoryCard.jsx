@@ -31,7 +31,7 @@ const ActivitiesSubcategoryCard = ({ item }) => {
               to={`/activities-details/${item?.id}`}
               className="uppercase 2xl:px-6 xl:px-2 px-[10px] 2xl:py-2 xl:py-1 py-1 bg-primary border border-primary text-white hover:bg-transparent transition-all duration-300 hover:text-primary text-xs xl:text-base"
             >
-              View All
+              View
             </Link>
           </div>
         </div>
