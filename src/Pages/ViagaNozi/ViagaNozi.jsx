@@ -8,7 +8,7 @@ const ViagaNozi = () => {
   return (
     <div>
       <CommonHeroBanner bg={HoneyMoon} title="VIAGGI NOZZE" />
-      <ExploreJourney btnTxt={"All honeymoon Trips "} />
+      <ExploreJourney isBtn={false} btnTxt={"All honeymoon Trips "} />
       <FeaturedTravels isHoneyMoon={true} />
     </div>
   );
