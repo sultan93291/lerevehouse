@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 const BottomNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,8 +19,131 @@ const BottomNavbar = () => {
     };
   }, []);
 
- const navigate = useNavigate();
+  const navigate = useNavigate();
 
+  const TOURS = [
+    {
+      category: "TOURS (MEZZI)",
+      options: [
+        {
+          title: "Self Drive Tour in Canada",
+          redirectLink: "/tour-with-car",
+        },
+        {
+          title: "Canada Coach Tours",
+          redirectLink: "/tour-with-car",
+        },
+        {
+          title: "Canada Train Tours",
+          redirectLink: "/tour-with-car",
+        },
+      ],
+    },
+    {
+      category: "ATTIVITA",
+      options: [
+        {
+          title: "Hiking & Trekking",
+          redirectLink: "/destination-details/hiking-and-trekking",
+        },
+        {
+          title: "Water Activities",
+          redirectLink: "/destination-details/water-activities",
+        },
+        {
+          title: "Wildlife & Safari",
+          redirectLink: "/destination-details/wildlife-and-safari",
+        },
+        {
+          title: "Cultural Discovery",
+          redirectLink: "/destination-details/cultural-discovery",
+        },
+        {
+          title: "Adventure Cruising",
+          redirectLink: "/destination-details/adventure-cruising",
+        },
+        {
+          title: "Cultural Discovery Adventure & Outdoor",
+          redirectLink:
+            "/destination-details/cultural-discovery-adventure-and-outdoor",
+        },
+        {
+          title: "Food, Drink & Nightlife",
+          redirectLink: "/destination-details/food-drink-and-nightlife",
+        },
+        {
+          title: "Custom & Private",
+          redirectLink: "/destination-details/custom-and-private",
+        },
+      ],
+    },
+    {
+      category: "GUIDA TURISTICA",
+      options: [
+        {
+          title: "The Great West",
+          redirectLink: "/destination-details/the-great-west",
+        },
+        {
+          title: "Western Canada",
+          redirectLink: "/destination-details/western-canada",
+        },
+        {
+          title: "Ontario & Quebec",
+          redirectLink: "/destination-details/ontario-and-quebec",
+        },
+        { title: "Prairies", redirectLink: "/destination-details/prairies" },
+        {
+          title: "Atlantic Provinces",
+          redirectLink: "/destination-details/atlantic-provinces",
+        },
+      ],
+    },
+    {
+      category: "DESTINAZIONI",
+      options: [
+        { title: "Alaska", redirectLink: "/destination-details/alaska" },
+        {
+          title: "Canada West",
+          redirectLink: "/destination-details/canada-west",
+        },
+        { title: "West USA", redirectLink: "/destination-details/west-usa" },
+        {
+          title: "Canada East",
+          redirectLink: "/destination-details/canada-east",
+        },
+        { title: "Caribian", redirectLink: "/destination-details/caribian" },
+        {
+          title: "Yukatan and Baja California",
+          redirectLink: "/destination-details/yukatan-and-baja-california",
+        },
+        {
+          title: "Travel with Extension",
+          redirectLink: "/destination-details/travel-with-extension",
+        },
+      ],
+    },
+    {
+      category: "TRAVEL STYLES",
+      options: [
+        { title: "Honeymoon", redirectLink: "/destination-details/honeymoon" },
+        {
+          title: "Adventures Observations",
+          redirectLink: "/destination-details/adventures-observations",
+        },
+        {
+          title: "Family Trip",
+          redirectLink: "/destination-details/family-trip",
+        },
+        { title: "Adventure", redirectLink: "/destination-details/adventure" },
+        {
+          title: "Night Time",
+          redirectLink: "/destination-details/night-time",
+        },
+        { title: "Skiing", redirectLink: "/destination-details/skiing" },
+      ],
+    },
+  ];
 
   const tabs = [
     {
@@ -53,16 +176,6 @@ const BottomNavbar = () => {
     },
   ];
 
-  const allTabs = [
-    "Alaska",
-    "Canada West",
-    "West USA",
-    "Canada East",
-    "Caribian",
-    "Yukatan and Baja California",
-    "Travel with Extension",
-  ];
-
   return (
     <div
       className={`fixed w-full hidden 2xl:block z-10 transition-all duration-300 ${
@@ -77,9 +190,13 @@ const BottomNavbar = () => {
             to={tab?.path}
             key={tab?.title}
             onMouseEnter={() => setHoveredTab(tab?.title)}
-            onMouseLeave={() => setHoveredTab(null)}
+            onMouseLeave={() =>
+              setTimeout(() => {
+                if (!isHovered) setHoveredTab(null); // Ensure dropdown is not hovering
+              }, 700)
+            }
             className={({ isActive }) =>
-              ` ${
+              `${
                 isActive
                   ? "text-[#7BD1FF] opacity-100"
                   : "text-white opacity-65"
@@ -87,37 +204,38 @@ const BottomNavbar = () => {
             }
           >
             {tab?.title}
-            {hoveredTab === tab?.title && (
-              <div className="absolute left-1/2  max-w-[600px] max-h-[336px] transform -translate-x-1/2 bg-white text-white text-sm p-2 rounded mt-2 whitespace-nowrap flex flex-col ease-in-out duration-300 shadow-md  ">
-                {allTabs.map((item, index) => {
-                  return (
+            {hoveredTab === tab?.title &&
+              TOURS.find(tour => tour.category === hoveredTab)?.options
+                ?.length > 0 && (
+                <div
+                  className="absolute left-1/2 max-w-[600px] h-auto transform -translate-x-1/2 z-[99999999] bg-white text-black text-sm p-2 rounded mt-2 whitespace-nowrap flex flex-col ease-in-out duration-300 shadow-md"
+                  onMouseEnter={() => setHoveredTab(tab?.title)} // Keep dropdown visible when hovering over it
+                  onMouseLeave={() => setHoveredTab(null)} // Remove hover effect when leaving dropdown
+                >
+                  {TOURS.find(
+                    tour => tour.category === hoveredTab
+                  )?.options.map((item, index) => (
                     <div key={index}>
-                      <span
-                        onClick={() => {
-                          console.log(
-                            "Navigating to:",
-                            `/destination-details:/${encodeURIComponent(item)}`
-                          );
-                          navigate(
-                            `/destination-details:/${encodeURIComponent(item)}`
-                          );
-                        }}
-                        className=" m-3  text-text-gray text-base font-inter font-normal leading-[150%] hover:text-black ease-in-out duration-300  "
+                      <Link
+                        to={item?.redirectLink}
+                        className="m-3 text-text-gray text-base font-inter font-normal leading-[150%] hover:text-black ease-in-out duration-300"
                       >
-                        {item}
-                      </span>
+                        {item?.title}
+                      </Link>
                       <hr
                         className={`${
-                          index === allTabs.length - 1
+                          index ===
+                          TOURS.find(tour => tour.category === hoveredTab)
+                            ?.options.length -
+                            1
                             ? "opacity-0"
                             : "opacity-100"
-                        } bg-[#00000014] my-3 `}
+                        } bg-[#00000014] my-3`}
                       />
                     </div>
-                  );
-                })}
-              </div>
-            )}
+                  ))}
+                </div>
+              )}
           </NavLink>
         ))}
       </div>

@@ -108,7 +108,7 @@ const router = createBrowserRouter([
         element: <EatAndDrink />,
       },
       {
-        path: "/tour-guide-22",
+        path: "/tour-guide-deatils/:slug",
         element: <TourGuide22 />,
       },
       {
