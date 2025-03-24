@@ -122,6 +122,7 @@ const BottomNavbar = () => {
         },
       ],
     },
+
     {
       category: "TRAVEL STYLES",
       options: [
