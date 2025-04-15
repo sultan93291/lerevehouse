@@ -193,7 +193,7 @@ const BottomNavbar = () => {
             onMouseLeave={() =>
               setTimeout(() => {
                 if (!isHovered) setHoveredTab(null); // Ensure dropdown is not hovering
-              }, 700)
+              }, 400)
             }
             className={({ isActive }) =>
               `${
