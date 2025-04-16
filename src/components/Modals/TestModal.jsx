@@ -35,7 +35,7 @@ const TestModal = ({ setOpen }) => {
     setOpen(false);
   };
   return (
-    <DialogContent className=" w-[350px] sm:w-[400px] md:w-[500px] lg:w-[700px] xl:w-[900px]  3xl:min-w-[1200px] z-[9999999] px-2 py-3  lg:py-6 text-center font-nunito">
+    <DialogContent className=" w-[350px] sm:w-[400px] md:w-[500px] lg:w-[700px] xl:w-[900px]  3xl:min-w-[1200px]  px-2 py-3  lg:py-6 text-center font-nunito">
       {/* Wrap everything in a container that can scroll and hide scrollbar */}
       <div className="max-h-[80vh] overflow-y-auto scrollbar-hide">
         <DialogHeader>
@@ -194,7 +194,7 @@ const TestModal = ({ setOpen }) => {
                     <div className="w-full">
                       {/* Days */}
                       <Select>
-                        <SelectTrigger className="w-full h-12 px-2 lg:px-4 text-sm lg:text-base">
+                        <SelectTrigger className="w-full  z-[99] h-12 px-2 lg:px-4 text-sm lg:text-base">
                           <SelectValue placeholder="Select the Total Number of People" />
                         </SelectTrigger>
                         <SelectContent>
