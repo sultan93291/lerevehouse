@@ -8,6 +8,10 @@ const DestinationCard = ({ item }) => {
   const [showExplore, setShowExplore] = useState(false);
   const navigate = useNavigate();
 
+  const imgBaseUrl = import.meta.env.VITE_SERVER_URL;
+
+  console.log(item, "this is a single item");
+
   return (
     <div
       onClick={() => {
@@ -17,15 +21,16 @@ const DestinationCard = ({ item }) => {
       onMouseLeave={() => setShowExplore(false)}
       className="h-[300px] xl:h-[350px] 3xl:h-[550px] group font-interTight cursor-pointer text-white px-5 flex items-end relative"
       style={{
-        background: `linear-gradient(180deg, rgba(30, 48, 63, 0.00) 41.29%, rgba(0, 0, 0, 0.52) 77.46%), url(${item?.image})`,
+        background: `linear-gradient(180deg, rgba(30, 48, 63, 0.00) 41.29%, rgba(0, 0, 0, 0.52) 77.46%), url(${imgBaseUrl}/${item?.trip_package_image})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
+        backgroundRepeat:"no-repeat"
       }}
     >
       <div className="pb-8 space-y-2">
         <div className="space-y-1">
-          <h3 className="text-xl 3xl:text-2xl">{item?.destinationTitle}</h3>
-          <h4 className="text-xl 3xl:text-2xl">€{item?.price}</h4>
+          <h3 className="text-xl 3xl:text-2xl">{item?.trip_package_title}</h3>
+          <h4 className="text-xl 3xl:text-2xl">€{item?.package_price}</h4>
         </div>
 
         <div className="flex items-center gap-2 text-sm">
