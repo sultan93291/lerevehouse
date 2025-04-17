@@ -1,22 +1,26 @@
 /* eslint-disable react/prop-types */
 
 const HeroDestinationTab = ({ tabs, activeTab, setActiveTab }) => {
+  console.log(tabs, 'this is a single tab');
+  
   return (
     <div className="flex flex-row flex-wrap items-center gap-3 sm:gap-4 2xl:gap-8 w-full  justify-evenly">
-      {tabs?.map(tab => (
-        <div
-          onClick={() => setActiveTab(tab)}
-          key={tab?.id}
-          className={`font-editorsNoteNormal text-lg lg:text-xl cursor-pointer border-b-2 pb-1 text-center text-nowrap
+      {tabs?.map(tab => {
+        return (
+          <div
+            onClick={() => setActiveTab(tab)}
+            key={tab?.id}
+            className={`font-editorsNoteNormal text-lg lg:text-xl cursor-pointer border-b-2 pb-1 text-center text-nowrap
       ${
-        activeTab?.id == tab.id
+        activeTab?.id == tab?.id
           ? "text-secondary border-secondary"
           : " border-none"
       }`}
-        >
-          {tab?.title}
-        </div>
-      ))}
+          >
+            {tab?.name}
+          </div>
+        );
+      })}
     </div>
   );
 };
