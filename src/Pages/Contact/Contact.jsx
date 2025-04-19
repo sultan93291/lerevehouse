@@ -9,11 +9,14 @@ import {
   ContactTelephoneSvg,
 } from "@/components/common/SvgContainer/SvgContainer";
 import { Link } from "react-router-dom";
+
 const Contact = () => {
   const handleDestinationMap = (address) => {
     const location = `https://www.google.com/maps?q=${address}`;
     window.open(location, "_blank");
   };
+
+
   return (
     <div>
       {/* Hero section */}
