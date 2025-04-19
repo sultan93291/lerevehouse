@@ -29,6 +29,29 @@ export const apiSlice = createApi({
         method: `GET`,
       }),
     }),
+
+    getHomePageFaqData: builder.query({
+      query: () => ({
+        url: `/faq/all`,
+        method: `GET`,
+      }),
+    }),
+
+    sendQuery: builder.mutation({
+      query: data => ({
+        url: `/send-query`,
+        method: "POST",
+        data: data,
+      }),
+    }),
+
+    planYourTrip: builder.mutation({
+      query: data => ({
+        url: `/plan-trip`,
+        method: `POST`,
+        data: data,
+      }),
+    }),
   }),
 });
 
@@ -36,4 +59,6 @@ export const {
   usePlanTripRequestMutation,
   useTripPackagesQuery,
   useAllPackagesQuery,
+  useGetHomePageFaqDataQuery,
+  useSendQueryMutation,
 } = apiSlice;
