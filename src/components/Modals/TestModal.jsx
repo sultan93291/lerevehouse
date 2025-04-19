@@ -1,15 +1,15 @@
 /* eslint-disable react/prop-types */
-import { useForm } from 'react-hook-form';
+import { useForm } from "react-hook-form";
 import {
   CrossModalSvg,
   ResetButtonSvg,
-} from '../common/SvgContainer/SvgContainer';
+} from "../common/SvgContainer/SvgContainer";
 import {
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from '../ui/dialog';
+} from "../ui/dialog";
 import {
   Select,
   SelectContent,
@@ -18,20 +18,34 @@ import {
   //   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
-import toast from 'react-hot-toast';
-import RangeSlider from 'react-range-slider-input';
-import 'react-range-slider-input/dist/style.css';
+} from "@/components/ui/select";
+import toast from "react-hot-toast";
+import RangeSlider from "react-range-slider-input";
+import "react-range-slider-input/dist/style.css";
+import { useState } from "react";
 const TestModal = ({ setOpen }) => {
+  const [range, setRange] = useState([10000, 20000]);
+  const [country, setcountry] = useState();
+  const [month, setmonth] = useState();
+  const [year, setyear] = useState();
+  const [duration, setduration] = useState();
+  const [totalPeople, settotalPeople] = useState();
+  
+
+  const handleRangeChange = value => {
+    console.log("Selected range:", value);
+    setRange(value);
+  };
+
   const {
     register,
     handleSubmit,
-
+    reset,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {
+  const onSubmit = data => {
     console.log(data);
-    toast.success('Form Submitted Successfully');
+    toast.success("Form Submitted Successfully");
     setOpen(false);
   };
   return (
@@ -73,7 +87,11 @@ const TestModal = ({ setOpen }) => {
                       Where would you like to go?*
                     </label>
                     <div className="w-full">
-                      <Select>
+                      <Select
+                        onValueChange={value => {
+                          setcountry(value);
+                        }}
+                      >
                         <SelectTrigger className="w-full h-12 px-2 lg:px-4 text-sm lg:text-base">
                           <SelectValue placeholder="Select a Destination" />
                         </SelectTrigger>
@@ -109,7 +127,11 @@ const TestModal = ({ setOpen }) => {
                     </label>
                     <div className="w-full  flex lg:flex-row flex-col items-center gap-3">
                       {/* Month */}
-                      <Select>
+                      <Select
+                        onValueChange={value => {
+                          setmonth(value);
+                        }}
+                      >
                         <SelectTrigger className="w-full h-12  px-2 lg:px-4 text-sm lg:text-base">
                           <SelectValue placeholder="Select a Month" />
                         </SelectTrigger>
@@ -219,12 +241,22 @@ const TestModal = ({ setOpen }) => {
                     >
                       How much would you like to spend per person?
                     </label>
-                    <div className="w-full flex flex-col-reverse gap-y-4 lg:flex-col ">
+
+                    <div className="w-full flex flex-col-reverse gap-y-4 lg:flex-col">
                       <h5 className="font-semibold text-base lg:text-xl">
-                        £10,000 - £20,000
+                        £{range[0].toLocaleString()} - £
+                        {range[1].toLocaleString()}
                       </h5>
+
                       <div className="mt-5">
-                        <RangeSlider />
+                        <RangeSlider
+                          min={0}
+                          max={50000}
+                          step={1000}
+                          defaultValue={range}
+                          onInput={setRange}
+                          className="w-full"
+                        />
                       </div>
                     </div>
                   </div>

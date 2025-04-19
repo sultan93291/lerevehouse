@@ -3,9 +3,16 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/components/ui/accordion';
+} from "@/components/ui/accordion";
+import { useGetHomePageFaqDataQuery } from "@/Redux/features/api/apiSlice";
 
 const HomeFaqSection = () => {
+  const { data, error, isLoading } = useGetHomePageFaqDataQuery(undefined, {
+    refetchOnFocus: true,
+    refetchOnReconnect: true,
+  });
+
+
   return (
     <section className="container  flex-col mx-auto px-4 lg:px-8 2xl:px-16 3xl:px-32 xl:flex-row gap-14 2xl:gap-16 py-10 2xl:py-20">
       {/* title */}
@@ -21,56 +28,18 @@ const HomeFaqSection = () => {
       {/* Faq */}
       <div className="w-full font-interTight">
         <Accordion type="single" collapsible className="w-full">
-          <AccordionItem value="item-1">
-            <AccordionTrigger className=" text-lg lg:text-xl text-[#3E3E3E] hover:no-underline">
-              What makes Le Rêve House Adventure unique?
-            </AccordionTrigger>
-            <AccordionContent className=" text-base lg:text-lg text-[#3E3E3E]">
-              We are the only Italian tour operator based in Vancouver,
-              specializing in organizing and managing exploration and adventure
-              trips in the American Northwest without intermediaries.
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-2">
-            <AccordionTrigger className="text-lg lg:text-xl text-[#3E3E3E] hover:no-underline">
-              Where are your main destinations?
-            </AccordionTrigger>
-            <AccordionContent className="text-base lg:text-lg text-[#3E3E3E]">
-              We are the only Italian tour operator based in Vancouver,
-              specializing in organizing and managing exploration and adventure
-              trips in the American Northwest without intermediaries.
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-3">
-            <AccordionTrigger className="text-lg lg:text-xl text-[#3E3E3E] hover:no-underline">
-              Can I customize my trip?
-            </AccordionTrigger>
-            <AccordionContent className="text-base lg:text-lg text-[#3E3E3E]">
-              We are the only Italian tour operator based in Vancouver,
-              specializing in organizing and managing exploration and adventure
-              trips in the American Northwest without intermediaries.
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-4">
-            <AccordionTrigger className="text-lg lg:text-xl text-[#3E3E3E] hover:no-underline">
-              What support do you provide during the trip?
-            </AccordionTrigger>
-            <AccordionContent className=" text-base lg:text-lg text-[#3E3E3E]">
-              We are the only Italian tour operator based in Vancouver,
-              specializing in organizing and managing exploration and adventure
-              trips in the American Northwest without intermediaries.
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-5">
-            <AccordionTrigger className=" text-lg lg:text-xl text-[#3E3E3E] hover:no-underline">
-              What type of trips do you organize?
-            </AccordionTrigger>
-            <AccordionContent className=" text-base lg:text-lg text-[#3E3E3E]">
-              We are the only Italian tour operator based in Vancouver,
-              specializing in organizing and managing exploration and adventure
-              trips in the American Northwest without intermediaries.
-            </AccordionContent>
-          </AccordionItem>
+          {data?.data.map((item, index) => {
+            return (
+              <AccordionItem key={item?.id} value={`item-${item.id}`}>
+                <AccordionTrigger className=" text-lg lg:text-xl text-[#3E3E3E] hover:no-underline">
+                  {item?.question}
+                </AccordionTrigger>
+                <AccordionContent className=" text-base lg:text-lg text-[#3E3E3E]">
+                  {item?.answer}
+                </AccordionContent>
+              </AccordionItem>
+            );
+          })}
         </Accordion>
       </div>
     </section>
