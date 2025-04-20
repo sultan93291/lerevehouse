@@ -10,7 +10,6 @@ const DestinationCard = ({ item }) => {
 
   const imgBaseUrl = import.meta.env.VITE_SERVER_URL;
 
-  console.log(item, "this is a single item");
 
   return (
     <div

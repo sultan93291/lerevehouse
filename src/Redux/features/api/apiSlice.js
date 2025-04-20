@@ -52,6 +52,15 @@ export const apiSlice = createApi({
         data: data,
       }),
     }),
+
+    tripPackageDetails: builder.query({
+      query: id => ({
+        url: `/trip-package-details/${id}`,
+        method: `GET`,
+      }),
+    }),
+
+
   }),
 });
 
@@ -61,4 +70,5 @@ export const {
   useAllPackagesQuery,
   useGetHomePageFaqDataQuery,
   useSendQueryMutation,
+  useTripPackageDetailsQuery
 } = apiSlice;

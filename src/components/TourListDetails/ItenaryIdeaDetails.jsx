@@ -23,7 +23,7 @@ import WishListModal from "../Modals/WishListModal";
 import StartYourJourney from "../Modals/StartYourJourney";
 import { useNavigate } from "react-router-dom";
 
-const ItenaryIdeaDetails = () => {
+const ItenaryIdeaDetails = itenariesData => {
   const [currentValue, setcurrentValue] = useState(0);
   const [openItems, setOpenItems] = useState(["item-0"]);
   const [open, setOpen] = useState(false);
@@ -34,6 +34,8 @@ const ItenaryIdeaDetails = () => {
     const allItems = AllItenaryData.map((_, index) => `item-${index}`);
     setOpenItems(allItems);
   };
+
+  console.log(itenariesData);
 
   const closeAll = () => {
     setOpenItems([]);

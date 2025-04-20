@@ -23,6 +23,8 @@ import toast from "react-hot-toast";
 import RangeSlider from "react-range-slider-input";
 import "react-range-slider-input/dist/style.css";
 import { useState } from "react";
+import { usePlanTripRequestMutation } from "@/Redux/features/api/apiSlice";
+
 const TestModal = ({ setOpen }) => {
   const [range, setRange] = useState([10000, 20000]);
   const [country, setcountry] = useState();
@@ -30,23 +32,56 @@ const TestModal = ({ setOpen }) => {
   const [year, setyear] = useState();
   const [duration, setduration] = useState();
   const [totalPeople, settotalPeople] = useState();
-  
-
-  const handleRangeChange = value => {
-    console.log("Selected range:", value);
-    setRange(value);
-  };
+  const [planYourTrip, { data, error: mutationError, isLoading }] =
+    usePlanTripRequestMutation();
 
   const {
     register,
     handleSubmit,
     reset,
+    getValues,
+    watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = data => {
-    console.log(data);
-    toast.success("Form Submitted Successfully");
-    setOpen(false);
+  const onSubmit = async data => {
+    const allSelectData = {
+      destination: country,
+      month: month,
+      year: year,
+      duration: duration,
+      number_of_member: parseInt(totalPeople),
+      spent_per_person: range.join("-"),
+    };
+
+    const payloadData = {
+      ...data,
+      ...allSelectData,
+    };
+
+    console.log(payloadData);
+
+    try {
+      const response = await planYourTrip(payloadData).unwrap();
+      console.log("Query submitted successfully:", response);
+      if (response) {
+        toast.success(response.message);
+      }
+    } catch (error) {
+      const errorMessage =
+        error.data?.message || error.error || error.status || error.message;
+      toast.error(errorMessage);
+    } finally {
+      settotalPeople("");
+      setduration("");
+      setyear("");
+      setmonth("");
+      setcountry("");
+      setRange([10000, 20000]);
+      reset();
+      setTimeout(() => {
+        setOpen(false);
+      }, 3000);
+    }
   };
   return (
     <DialogContent className=" w-[350px] sm:w-[400px] md:w-[500px] lg:w-[700px] xl:w-[900px]  3xl:min-w-[1200px]  px-2 py-3  lg:py-6 text-center font-nunito">
@@ -91,6 +126,7 @@ const TestModal = ({ setOpen }) => {
                         onValueChange={value => {
                           setcountry(value);
                         }}
+                        value={country}
                       >
                         <SelectTrigger className="w-full h-12 px-2 lg:px-4 text-sm lg:text-base">
                           <SelectValue placeholder="Select a Destination" />
@@ -131,6 +167,7 @@ const TestModal = ({ setOpen }) => {
                         onValueChange={value => {
                           setmonth(value);
                         }}
+                        value={month}
                       >
                         <SelectTrigger className="w-full h-12  px-2 lg:px-4 text-sm lg:text-base">
                           <SelectValue placeholder="Select a Month" />
@@ -155,7 +192,12 @@ const TestModal = ({ setOpen }) => {
                       </Select>
 
                       {/* Year */}
-                      <Select>
+                      <Select
+                        onValueChange={value => {
+                          setyear(value);
+                        }}
+                        value={year}
+                      >
                         <SelectTrigger className="w-full h-12 px-2 lg:px-4 text-sm lg:text-base">
                           <SelectValue placeholder="Select a Year" />
                         </SelectTrigger>
@@ -185,7 +227,12 @@ const TestModal = ({ setOpen }) => {
                     </label>
                     <div className="w-full">
                       {/* Days */}
-                      <Select>
+                      <Select
+                        onValueChange={value => {
+                          setduration(value);
+                        }}
+                        value={duration}
+                      >
                         <SelectTrigger className="w-full h-12 px-2 lg:px-4 text-sm lg:text-base">
                           <SelectValue placeholder="Select a Duration" />
                         </SelectTrigger>
@@ -215,7 +262,12 @@ const TestModal = ({ setOpen }) => {
                     </label>
                     <div className="w-full">
                       {/* Days */}
-                      <Select>
+                      <Select
+                        onValueChange={value => {
+                          settotalPeople(value);
+                        }}
+                        value={totalPeople}
+                      >
                         <SelectTrigger className="w-full  z-[99] h-12 px-2 lg:px-4 text-sm lg:text-base">
                           <SelectValue placeholder="Select the Total Number of People" />
                         </SelectTrigger>
@@ -244,8 +296,8 @@ const TestModal = ({ setOpen }) => {
 
                     <div className="w-full flex flex-col-reverse gap-y-4 lg:flex-col">
                       <h5 className="font-semibold text-base lg:text-xl">
-                        £{range[0].toLocaleString()} - £
-                        {range[1].toLocaleString()}
+                        £{range?.[0].toLocaleString()} - £
+                        {range?.[1].toLocaleString()}
                       </h5>
 
                       <div className="mt-5">
@@ -279,7 +331,14 @@ const TestModal = ({ setOpen }) => {
                             className="px-4  font-inter text-[#565656] h-12 focus:outline-none border border-black/10 w-full"
                             type="text"
                             name=""
-                            id="firstName"
+                            id="first_name"
+                            {...register("first_name", {
+                              required: "First Name is required",
+                              minLength: {
+                                value: 2,
+                                message: "Name must be at least 2 characters",
+                              },
+                            })}
                           />
                           <input
                             required
@@ -287,7 +346,15 @@ const TestModal = ({ setOpen }) => {
                             className="px-4 py-2 font-inter text-[#565656] h-12 focus:outline-none border border-black/10 w-full"
                             type="text"
                             name=""
-                            id="lastName"
+                            id="last_name"
+                            {...register("last_name", {
+                              required: "Last Name is required",
+                              minLength: {
+                                value: 2,
+                                message:
+                                  "Last Name must be at least 2 characters",
+                              },
+                            })}
                           />
                         </div>
                       </div>
@@ -309,17 +376,25 @@ const TestModal = ({ setOpen }) => {
                           type="email"
                           name=""
                           id="email"
+                          {...register("email", {
+                            required: "Email is required",
+                            pattern: {
+                              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                              message: "Invalid email address",
+                            },
+                          })}
                         />
                       </div>
                     </div>
                   </div>
+
                   <div className="space-y-2 w-full">
-                    <div className="space-y-2 flex flex-col gap-y-1 items-start">
+                    <div className="space-y-2 flex flex-col gap-y-1 items-start ">
                       <label
-                        htmlFor="confirmEmail"
-                        className="text-base lg:text-lg font-medium text"
+                        htmlFor="email"
+                        className=" text-base lg:text-lg font-medium text"
                       >
-                        Confirm email address*
+                        Confirm Email address*
                       </label>
                       <div className="w-full">
                         <input
@@ -327,12 +402,23 @@ const TestModal = ({ setOpen }) => {
                           placeholder="example@gmail.com"
                           className="px-4 py-2 font-inter text-[#565656] h-12 focus:outline-none border border-black/10 w-full"
                           type="email"
-                          name=""
-                          id="confirmEmail"
+                          name="confirm_email"
+                          id="confirm_email"
+                          {...register("confirm_email", {
+                            required: "Confirm Email is required",
+                            pattern: {
+                              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                              message: "Invalid email address",
+                            },
+                            validate: value =>
+                              value === getValues("email") ||
+                              "Emails do not match",
+                          })}
                         />
                       </div>
                     </div>
                   </div>
+
                   <div className="space-y-2 w-full">
                     <div className="space-y-2 flex flex-col gap-y-1 items-start ">
                       <label
@@ -347,7 +433,7 @@ const TestModal = ({ setOpen }) => {
                             required
                             placeholder="Bangladesh (+880)"
                             className="px-4 py-2 font-inter text-[#565656] h-12 focus:outline-none border border-black/10 w-3/5 read-only"
-                            type="email"
+                            type="text"
                             name=""
                             readOnly
                             id="numberCode"
@@ -359,6 +445,9 @@ const TestModal = ({ setOpen }) => {
                             type="number"
                             name=""
                             id="telephone"
+                            {...register("telephone", {
+                              required: "Telephone number is required",
+                            })}
                           />
                         </div>
                       </div>
@@ -367,7 +456,7 @@ const TestModal = ({ setOpen }) => {
                   <div className="space-y-2 w-full">
                     <div className="space-y-2 flex flex-col gap-y-1 items-start">
                       <label
-                        htmlFor="message"
+                        htmlFor="heard_about_us"
                         className=" text-base lg:text-lg font-medium text"
                       >
                         How did you hear about us?
@@ -379,7 +468,10 @@ const TestModal = ({ setOpen }) => {
                           className="px-4 py-2 font-inter text-[#565656] h-12 focus:outline-none border border-black/10 w-full"
                           type="text"
                           name=""
-                          id="message"
+                          id="heard_about_us"
+                          {...register("heard_about_us", {
+                            required: "This filed is required",
+                          })}
                         />
                       </div>
                     </div>
@@ -389,7 +481,16 @@ const TestModal = ({ setOpen }) => {
                   <div className="flex items-end  w-full justify-end">
                     <div className="flex   md:justify-normal  items-end justify-end gap-4">
                       <button
-                        onClick={() => handleSubmit}
+                        // onClick={() => handleSubmit}
+                        onClick={() => {
+                          settotalPeople("");
+                          setduration("");
+                          setyear("");
+                          setmonth("");
+                          setcountry("");
+                          setRange([10000, 20000]);
+                          reset();
+                        }}
                         className="flex shadow-md items-center text-sm lg:text-base px-3 lg:px-6 py-3 border border-primary gap-2"
                       >
                         <span>
@@ -398,7 +499,7 @@ const TestModal = ({ setOpen }) => {
                         Clean all
                       </button>
                       <button
-                        onClick={() => handleSubmit}
+                        type="submit"
                         className="flex items-center bg-primary text-sm lg:text-base text-white px-6 py-3 border border-primary  gap-2"
                       >
                         Submit
