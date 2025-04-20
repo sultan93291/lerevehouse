@@ -19,7 +19,8 @@
 
 @font-face {
   font-family: "FontSpring";
-  src: url("./assets/fonts/Fontspring-DEMO-argentcf-light.otf") format("truetype");
+  src: url("./assets/fonts/Fontspring-DEMO-argentcf-light.otf")
+    format("truetype");
   font-weight: 300;
   /* Light */
   font-style: normal;
@@ -27,15 +28,12 @@
 
 @font-face {
   font-family: "FontSpring";
-  src: url("./assets/fonts/Fontspring-DEMO-argentcf-lightitalic.otf") format("opentype");
+  src: url("./assets/fonts/Fontspring-DEMO-argentcf-lightitalic.otf")
+    format("opentype");
   font-weight: 400;
   /* Regular */
   font-style: normal;
 }
-
-
-
-
 
 @layer base {
   :root {
@@ -143,7 +141,6 @@
   }
 
   @keyframes rotating90 {
-
     /* Fixed from @keyframe to @keyframes */
     0% {
       transform: rotate(0deg);
@@ -160,7 +157,6 @@
 }
 
 @layer components {
-
   .TravelExploreCard:before,
   .travel-cta:before {
     content: "";
@@ -199,9 +195,47 @@
   .activites--card:hover img {
     @apply scale-[1.1];
   }
+  /* {all dangerous html design started here } */
+
+  /* tour page banner setcion dangerous html */
+
+  .tour-desc-hero {
+    @apply flex flex-col gap-y-6 items-center justify-center;
+  }
+  .tour-desc-hero p {
+    @apply text-white text-xl;
+  }
+  .tour-desc-hero p :nth-child(2) {
+    @apply text-white text-lg lg:text-xl max-w-[1124px] text-center mx-auto;
+  }
+
+  /* tour descreption data */
+
+  .tour-desc {
+    @apply flex flex-col gap-y-3;
+  }
+  .tour-desc h2 {
+    @apply text-2xl sm:text-3xl lg:text-4xl font-editorsNoteNormal text-primary;
+  }
+
+  .tour-desc h2 > p span {
+    @apply font-editorsNoteItalic;
+  }
+
+  .tour-desc p {
+    @apply text-text-gray font-interTight text-base lg:text-lg;
+  }
+
+  .tour-desc p  {
+    @apply font-interTight font-medium sm:text-lg lg:text-xl text-primary;
+  }
+
+  .tour-desc p > span strong p {
+    @apply font-bold text-primary underline;
+  }
+
+  /* {all dangerous html design ended here} */
 }
-
-
 
 /* react tabs */
 /* .react-tabs .react-tabs__tab-list {
@@ -227,8 +261,8 @@
   border: none !important;
 } */
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   height: 0;
   width: 0px;
-scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }

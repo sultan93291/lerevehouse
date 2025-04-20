@@ -7,6 +7,7 @@ import { Modal } from "../Modals/Modal";
 import TestModal from "../Modals/TestModal";
 
 const TourListDetailsDatesPrices = () => {
+  
   const priceDetailsItems = [
     {
       description:
