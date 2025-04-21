@@ -226,13 +226,51 @@
     @apply text-text-gray font-interTight text-base lg:text-lg;
   }
 
-  .tour-desc p  {
+  .tour-desc p {
     @apply font-interTight font-medium sm:text-lg lg:text-xl text-primary;
   }
 
   .tour-desc p > span strong p {
     @apply font-bold text-primary underline;
   }
+
+  /* recomended attraction modal */
+
+  .details p span {
+    @apply text-sm md:text-xl font-inter leading-[150%] font-medium;
+  }
+
+  /* rates dangerous html */
+
+  .rates {
+    @apply flex flex-col gap-y-6;
+  }
+
+  /* styles.css or within Tailwind config via @layer utilities */
+  .rates table {
+    @apply w-full border-collapse;
+  }
+
+  .rates th,
+  .rates td {
+    @apply text-left px-3 py-2 text-[#004265] font-inter text-base md:text-xl font-normal leading-[120%];
+  }
+
+  .rates thead {
+    @apply border-b border-black mt-[125px]  ;
+  }
+
+  .rates figure.table {
+    @apply w-full;
+  }
+
+  .rates p {
+    @apply text-sm text-[#9C9EA1] mt-3;
+  }
+
+  .rates :last-child p {
+    @apply md:text-xl font-inter leading-[150%] font-normal text-[#565656]
+  };
 
   /* {all dangerous html design ended here} */
 }

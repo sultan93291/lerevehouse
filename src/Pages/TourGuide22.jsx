@@ -10,8 +10,45 @@ import WhatToEat from "@/components/TourGuide/WhatToEat";
 import FestivalsCalendar from "@/components/TourGuide/FestivalsCalendar";
 import Map from "@/components/TourGuide/Map";
 import WhereToStay from "@/components/TourGuide/WhereToStay";
+import { useParams } from "react-router-dom";
+import { useTourGuideDataQuery } from "@/Redux/features/api/apiSlice";
+import { InfinitySpin } from "react-loader-spinner";
 
 const TourGuide22 = () => {
+  const { slug } = useParams();
+  console.log(slug);
+  const sanitizedSlug = Number(slug.replace(":", ""));
+
+  const { data, error, isLoading } = useTourGuideDataQuery(sanitizedSlug, {
+    refetchOnFocus: true,
+    refetchOnReconnect: true,
+  });
+
+  if (isLoading) {
+    return (
+      <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center z-50 bg-white">
+        <InfinitySpin
+          visible={true}
+          width="200"
+          color="#004265"
+          ariaLabel="infinity-spin-loading"
+        />
+      </div>
+    );
+  }
+
+  if (error) {
+    const errorMessage =
+      error.data?.message || error.error || error.status || error.message;
+    if (errorMessage) {
+      toast.error(errorMessage);
+    }
+  }
+
+  console.log(data?.data);
+  
+
+
   return (
     <section className="container">
       {/* Tour Gallery */}

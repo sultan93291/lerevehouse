@@ -68,8 +68,7 @@ const TouristListDetails = () => {
   };
 
   const itenariesData = {
-    itenariesTittle: "",
-    itenareiesSubTittle: "",
+    itenareiesSubTittle: data?.data?.trip_detail?.itinerary_sub_title,
     allItenareies: data?.data?.itineraries,
   };
 
@@ -118,7 +117,7 @@ const TouristListDetails = () => {
         />
 
         {/* itinerary */}
-        <ItenaryIdeaDetails itenariesData={data?.data?.itineraries} />
+        <ItenaryIdeaDetails itenariesData={itenariesData} />
 
         {/* Water Activity */}
         <WaterActivity />
