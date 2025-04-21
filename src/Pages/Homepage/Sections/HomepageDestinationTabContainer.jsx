@@ -33,7 +33,6 @@ const HomepageDestinationTabContainer = () => {
     }
   }, [TabData]);
 
-console.log(data?.data , 'this is the single tab data');
 
 
   return (

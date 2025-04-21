@@ -60,7 +60,33 @@ export const apiSlice = createApi({
       }),
     }),
 
+    tourGuideData: builder.query({
+      query: id => ({
+        url: `/trip-guides/${id}`,
+        method: "GET",
+      }),
+    }),
 
+    getFooterLinkData: builder.query({
+      query: () => ({
+        url: `/social-links`,
+        method: `GET`,
+      }),
+    }),
+
+    getPrivacyPageData: builder.query({
+      query: () => ({
+        url: `/dynamic-pages/single/privacy-and-policy`,
+        method: `GET`,
+      }),
+    }),
+
+    getSiteSettingData: builder.query({
+      query: () => ({
+        url: `/site-settings`,
+        method: `GET`,
+      }),
+    }),
   }),
 });
 
@@ -70,5 +96,9 @@ export const {
   useAllPackagesQuery,
   useGetHomePageFaqDataQuery,
   useSendQueryMutation,
-  useTripPackageDetailsQuery
+  useTripPackageDetailsQuery,
+  useTourGuideDataQuery,
+  useGetFooterLinkDataQuery,
+  useGetPrivacyPageDataQuery, 
+  useGetSiteSettingDataQuery
 } = apiSlice;
