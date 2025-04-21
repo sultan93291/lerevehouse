@@ -25,6 +25,7 @@ import city from "../../assets/images/recomended-attraction/city.png";
 import evening from "../../assets/images/recomended-attraction/evening.png";
 import hangingBridge from "../../assets/images/recomended-attraction/hangingBride.png";
 import sea from "../../assets/images/recomended-attraction/sea.png";
+import parse from "html-react-parser";
 
 import React, { useState, useEffect, useRef } from "react";
 import {
@@ -41,68 +42,23 @@ const containerStyle = {
   height: "600px",
 };
 
-const waypoints = [{ lat: 49.2827, lng: -123.1207 }]; // Vancouver center
+const waypoints = [{ lat: 49.2827, lng: -123.1207 }];
 
-const RecomendedAttracton = [
-  {
-    id: 1,
-    imgSrc: city,
-  },
-  {
-    id: 2,
-    imgSrc: sea,
-  },
-  {
-    id: 3,
-    imgSrc: hangingBridge,
-  },
-  {
-    id: 4,
-    imgSrc: evening,
-  },
-  {
-    id: 5,
-    imgSrc: city,
-  },
-];
-
-const features = [
-  {
-    tittle: "Duration:",
-    content: "2h30",
-  },
-  {
-    tittle: "Time:",
-    content: "Boarding at 6:30 PM (Cruise from 7:00 PM to 9:30 PM)",
-  },
-  {
-    tittle: "Season:",
-    content: "May to mid-October, Fridays and Saturdays only",
-  },
-  {
-    tittle: "Departure from:",
-    content: "Marina near Stanley Park, 501 Denman St, downtown Vancouver",
-  },
-];
-
-const points = [
-  "Combine the useful with the pleasant! That's what this dinner cruise at sunset in the beautiful Vancouver Bay offers you.",
-  "It's like dining in a restaurant with a view of all the most beautiful sights of Vancouver!",
-  "You will taste the famous Pacific salmon and Western beef, whose reputations are well established.",
-  "And to enhance your dinner, a music band will play their best songs for you. A moment that will undoubtedly be among the most pleasant of your trip.",
-];
-
-const RecomendedAttractionModal = ({ setOpen }) => {
+const RecomendedAttractionModal = ({ setOpen, modalData }) => {
+  console.log(modalData);
+  const containerRef = useRef(null);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {
+  const onSubmit = data => {
     console.log(data);
     toast.success("Form Submitted Successfully");
     setOpen(false);
   };
+
+  const imgBaseurl = import.meta.env.VITE_SERVER_URL;
 
   const [directionsResponse, setDirectionsResponse] = useState(null);
   const [showTraffic, setShowTraffic] = useState(true);
@@ -118,13 +74,54 @@ const RecomendedAttractionModal = ({ setOpen }) => {
   });
 
   useEffect(() => {
-    if (isLoaded && mapRef.current) {
-      // Fit the map to show all waypoints
-      const bounds = new window.google.maps.LatLngBounds();
-      waypoints.forEach((waypoint) => bounds.extend(waypoint));
-      mapRef.current.fitBounds(bounds);
-    }
-  }, [isLoaded]);
+    const timer = setTimeout(() => {
+      const container = containerRef.current;
+      if (!container) return;
+
+      const paragraphs = Array.from(container.querySelectorAll("p"));
+      const elements = container.querySelectorAll("p, span, strong, h2");
+
+      // Apply font styles & responsive handling
+      elements.forEach(el => {
+        el.style.fontSize = "1rem";
+        el.style.lineHeight = "1.5";
+        el.style.fontFamily = "Inter, sans-serif";
+        el.style.fontWeight = "500";
+        el.style.color = "#004265";
+      });
+
+      // Responsive resizing for text-xl
+      const resizeHandler = () => {
+        elements.forEach(el => {
+          el.style.fontSize = window.innerWidth >= 768 ? "1.25rem" : "1rem";
+        });
+      };
+
+      resizeHandler();
+      window.addEventListener("resize", resizeHandler);
+
+      // Special color styling for label vs value
+      paragraphs.forEach(p => {
+        const text = p.innerText.trim();
+        const match = text.match(/^\w+:/);
+
+        if (match) {
+          p.style.color = "#004265";
+          p.style.fontWeight = "600";
+        } else {
+          p.style.color = "#9C9EA1";
+          p.style.fontWeight = "400";
+        }
+      });
+
+      // Cleanup
+      return () => {
+        window.removeEventListener("resize", resizeHandler);
+      };
+    }, 0); // Use 0 to apply right after render
+
+    return () => clearTimeout(timer);
+  }, [modalData?.details, activeTab]);
 
   return (
     <DialogContent className="w-[340px] sm:w-[400px] md:w-[500px] lg:w-[700px] xl:w-[900px] z-[9999]  3xl:min-w-[1200px] py-6 text-center font-nunito">
@@ -133,7 +130,7 @@ const RecomendedAttractionModal = ({ setOpen }) => {
           <DialogTitle className="py-3 w-full flex items-center justify-between">
             <div className="flex flex-col gap-y-[6px] ">
               <h2 className="font-fontSpring font-light leading-[150%] text-primary text-xl md:text-2xl tracking-wide">
-                Dinner cruise in Vancouver
+                {modalData?.place_name}
               </h2>
               <span className="flex flex-row items-center gap-x-1 font-interTight font-normal leading-[150%] md:text-lg text-sm">
                 <Star /> 4.3 (243 reviews)
@@ -150,16 +147,16 @@ const RecomendedAttractionModal = ({ setOpen }) => {
             <hr className="w-full h-[1px] bg-[#EBEBEB]" />
             <div className="flex flex-col md:gap-y-10 gap-y-0">
               <div className="flex flex-row flex-wrap gap-4">
-                {RecomendedAttracton.map((item, index) => (
+                {modalData?.images?.map((item, index) => (
                   <img
-                    key={item.id}
+                    key={item?.id}
                     className={
                       index === 0
                         ? "md:w-full xl:h-[421px] h-[220px] object-cover "
                         : "3xl:w-[275px] w-full md:h-[237px] h-[220px] object-cover "
                     }
-                    src={item.imgSrc}
-                    alt={`Attraction ${item.id}`}
+                    src={`${imgBaseurl}/${item?.image}`}
+                    alt={`Attraction ${item?.id}`}
                   />
                 ))}
               </div>
@@ -214,35 +211,11 @@ const RecomendedAttractionModal = ({ setOpen }) => {
                   </div>
                   <div>
                     {activeTab === "Details" && (
-                      <div className="flex flex-col gap-y-6 mx-2 md:mx-0">
-                        <div className="flex flex-col gap-y-6 ">
-                          {features.map((item, index) => (
-                            <div
-                              key={index}
-                              className="flex flex-row md:items-center text-left items-baseline gap-x-1"
-                            >
-                              <span className="text-sm md:text-xl font-inter leading-[150%] font-medium text-[#004265]">
-                                {item.tittle}
-                              </span>
-                              <p className="text-sm md:text-xl font-inter leading-[150%] font-medium text-[#9C9EA1] ">
-                                {item.content}
-                              </p>
-                            </div>
-                          ))}
-                        </div>
-                        <div className="flex flex-col text-left 3xl:text-center md:gap-y-6 gap-y-3">
-                          {points.map((item, index) => (
-                            <p
-                              key={index}
-                              className={`text-sm md:text-xl font-inter leading-[150%] font-normal text-[#565656] ${
-                                index === 3 ? "max-w-[700px]" : "max-w-[1184px]"
-                              }`}
-                            >
-                              {item}
-                            </p>
-                          ))}
-                        </div>
-                      </div>
+                      <div
+                        ref={containerRef}
+                        className="details flex flex-col gap-y-6 mx-2 md:mx-0"
+                        dangerouslySetInnerHTML={{ __html: modalData?.details }}
+                      />
                     )}
                     {activeTab === "Location" && (
                       <div className="w-full md:mt-10">
@@ -250,7 +223,7 @@ const RecomendedAttractionModal = ({ setOpen }) => {
                           mapContainerStyle={containerStyle}
                           center={waypoints[0]}
                           zoom={11}
-                          onLoad={(map) => (mapRef.current = map)}
+                          onLoad={map => (mapRef.current = map)}
                           tilt={45}
                         >
                           {directionsResponse && (
@@ -263,131 +236,14 @@ const RecomendedAttractionModal = ({ setOpen }) => {
                       </div>
                     )}
                     {activeTab === "Rates" && (
-                      <div className="flex flex-col gap-y-3 ">
-                        <div className="flex flex-col">
-                          <div className="flex md:flex-row flex-col">
-                            <table
-                              border="1"
-                              style={{
-                                borderCollapse: "collapse",
-                                width: "100%",
-                              }}
-                            >
-                              <thead>
-                                <tr className="md:text-xl font-inter leading-[120%] font-normal text-[#004265]">
-                                  <th
-                                    style={{
-                                      width: "325px",
-                                      padding: "8px",
-                                      textAlign: "left",
-                                    }}
-                                  >
-                                    Season
-                                  </th>
-                                  <th
-                                    style={{
-                                      width: "130px",
-                                      padding: "8px",
-                                      textAlign: "left",
-                                    }}
-                                  >
-                                    Adult
-                                  </th>
-                                  <th
-                                    style={{
-                                      width: "130px",
-                                      
-                                      textAlign: "left",
-                                    }}
-                                  >
-                                    13-17 
-                                  </th>
-                                  <th
-                                    style={{
-                                      width: "130px",
-                                     
-                                      textAlign: "left",
-                                    }}
-                                  >
-                                    3-12 
-                                  </th>
-                                  <th
-                                    style={{
-                                      width: "130px",
-                                      padding: "8px",
-                                      textAlign: "left",
-                                    }}
-                                  >
-                                    0-2
-                                  </th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td colSpan="5">
-                                    <hr
-                                      style={{
-                                        border: "1px solid black",
-                                        margin: "12px 0",
-                                      }}
-                                    />
-                                  </td>
-                                </tr>
-                                <tr className="md:text-xl font-inter leading-[120%] font-normal text-[#004265]">
-                                  <td
-                                    style={{
-                                      width: "325px",
-                                      padding: "8px",
-                                      textAlign: "left",
-                                    }}
-                                  >
-                                    Friday & Saturday (2025)
-                                  </td>
-                                  <td
-                                    style={{
-                                      width: "130px",
-                                      padding: "8px",
-                                      textAlign: "left",
-                                    }}
-                                  >
-                                    £121
-                                  </td>
-                                  <td
-                                    style={{
-                                      width: "130px",
-                                      padding: "8px",
-                                      textAlign: "left",
-                                    }}
-                                  >
-                                    £114
-                                  </td>
-                                  <td
-                                    style={{
-                                      width: "130px",
-                                      padding: "8px",
-                                      textAlign: "left",
-                                    }}
-                                  >
-                                    £72
-                                  </td>
-                                  <td
-                                    style={{
-                                      width: "130px",
-                                      padding: "8px",
-                                      textAlign: "left",
-                                    }}
-                                  >
-                                    £0
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
+                      <div className="flex md:flex-row flex-col">
+                        <div className="w-full rates ">
+                          <div
+                            dangerouslySetInnerHTML={{
+                              __html: modalData?.rates,
+                            }}
+                          />
                         </div>
-                        <span className="md:text-xl font-inter leading-[150%] font-normal text-[#565656]">
-                          * Price includes the buffet-style dinner cruise, live
-                          music entertainment, a tip and applicable taxes.
-                        </span>
                       </div>
                     )}
                   </div>
@@ -402,3 +258,7 @@ const RecomendedAttractionModal = ({ setOpen }) => {
 };
 
 export default RecomendedAttractionModal;
+
+
+
+

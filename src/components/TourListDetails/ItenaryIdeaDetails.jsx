@@ -23,19 +23,21 @@ import WishListModal from "../Modals/WishListModal";
 import StartYourJourney from "../Modals/StartYourJourney";
 import { useNavigate } from "react-router-dom";
 
+const imgBaseurl = import.meta.env.VITE_SERVER_URL;
+
 const ItenaryIdeaDetails = itenariesData => {
   const [currentValue, setcurrentValue] = useState(0);
   const [openItems, setOpenItems] = useState(["item-0"]);
   const [open, setOpen] = useState(false);
   const [wishListOpen, setWishListOpen] = useState(false);
   const [recommendedOpen, setRecommendedOpen] = useState(false);
+  const [recomendedAttractionData, setrecomendedAttractionData] = useState()
 
   const expandAll = () => {
     const allItems = AllItenaryData.map((_, index) => `item-${index}`);
     setOpenItems(allItems);
   };
 
-  console.log(itenariesData);
 
   const closeAll = () => {
     setOpenItems([]);
@@ -56,7 +58,10 @@ const ItenaryIdeaDetails = itenariesData => {
   return (
     <>
       <Modal open={open} setOpen={setOpen}>
-        <RecomendedAttractionModal setOpen={setOpen} />
+        <RecomendedAttractionModal
+          setOpen={setOpen}
+          modalData={recomendedAttractionData}
+        />
       </Modal>
       <WishListModal
         open={wishListOpen}
@@ -99,8 +104,7 @@ const ItenaryIdeaDetails = itenariesData => {
             </div>
           </div>
           <span className="text-text-gray text-base lg:text-xl leading-[150%] font-medium  ">
-            Includes international flights from a choice of Itali airports,
-            including Room, and others places{" "}
+            {itenariesData?.itenariesData?.itenareiesSubTittle}
           </span>
         </div>
         {/* {accordion section started here} */}
@@ -109,9 +113,9 @@ const ItenaryIdeaDetails = itenariesData => {
             type="multiple" // Allows multiple open items
             className="w-full  flex flex-col gap-y-4 lg:gap-y-8"
             value={openItems}
-            onValueChange={values => setOpenItems(values)} // Updates state
+            onValueChange={values => setOpenItems(values)}
           >
-            {AllItenaryData.map((faq, index) => (
+            {itenariesData?.itenariesData?.allItenareies?.map((faq, index) => (
               <AccordionItem
                 className="border-[1px] border-solid border-[#0000001F]"
                 key={index}
@@ -121,10 +125,10 @@ const ItenaryIdeaDetails = itenariesData => {
                   <div className="flex flex-row w-full justify-between p-3">
                     <div className="flex flex-row gap-x-2 items-center">
                       <div className=" text-sm xl:text-xl font-normal leading-[123%] whitespace-nowrap  px-4 py-2 text-primary bg-[#F4F4F4]">
-                        Day {faq?.dayCount}
+                        {faq?.day}
                       </div>
                       <span className=" text-sm xl:text-lg text-primary font-medium leading-[150%]">
-                        {faq?.tittle}
+                        {faq?.title}
                       </span>
                     </div>
                     <div className="flex items-center cursor-pointer justify-center">
@@ -136,7 +140,7 @@ const ItenaryIdeaDetails = itenariesData => {
                   <div className="flex p-3 lg:p-6 flex-col gap-y-6">
                     <div
                       style={{
-                        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${ship})`,
+                        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${imgBaseurl}/${faq?.image})`,
                         backgroundSize: "cover",
                         backgroundRepeat: "no-repeat",
                         backgroundPosition: "center",
@@ -178,15 +182,15 @@ const ItenaryIdeaDetails = itenariesData => {
                         <div className="w-full flex flex-row items-end justify-between">
                           <div className="p-4 xl:p-8 flex flex-col gap-y-3">
                             <h3 className=" text-[24px] xl:text-[32px] leading-[120%] text-white font-interTight font-light">
-                              Orvieto, Italy
+                              {faq?.place_name}
                             </h3>
                             <span className="leading-[120%] text-base xl:text-lg font-light text-white font-interTight">
-                              Gothic glory in the Umbrian hills
+                              {faq?.sub_title}
                             </span>
                           </div>
                           <div
                             onClick={() => {
-                              navigate(`/tour-guide-deatils/:slug`);
+                              navigate(`/tour-guide-deatils/:${faq?.id}`);
                             }}
                             className="bg-white py-2 lg:py-4 px-2 whitespace-nowrap  lg:px-8 border-[1px] flex flex-row items-center cursor-pointer gap-x-1 border-solid h-10 lg:h-[59px] text-primary leading-[150%] font-normal text-sm lg:text-lg"
                           >
@@ -200,27 +204,28 @@ const ItenaryIdeaDetails = itenariesData => {
                       <span className="flex flex-row items-center gap-x-2 text-primary font-medium text-base lg:text-lg">
                         Recommended attraction <Location />
                       </span>
-                      <div className="flex flex-col cursor-pointer  xl:flex-row gap-y-3 xl:justify-between 3xl:gap-x-4">
-                        {recomendedAttraction.map((item, index) => (
+                      <div className="flex flex-col flex-wrap cursor-pointer  xl:flex-row gap-y-3 3xl:gap-y-4 xl:justify-between 3xl:gap-x-4">
+                        {faq?.recommended_attractions?.map((item, index) => (
                           <div
                             key={index}
                             className="p-3 flex flex-col gap-y-3 bg-white shadow-primaryShadow"
                             onClick={() => {
                               setOpen(true);
+                              setrecomendedAttractionData(item);
                             }}
                           >
                             <div
                               style={{
-                                backgroundImage: `url(${item.img})`,
+                                backgroundImage: `url(${imgBaseurl}/${item.image})`,
                                 backgroundSize: "cover",
                                 backgroundRepeat: "no-repeat",
                                 backgroundPosition: "center",
                               }}
-                              className=" w-full xl:w-[270px] cursor-pointer 2xl:w-[350px] 3xl:w-[450px] 4xl:w-[474px] h-[200px] 2xl:h-[243px]"
+                              className=" w-full xl:w-[270px] cursor-pointer 2xl:w-[350px] 3xl:w-[450px] 4xl:w-[464px] h-[200px] 2xl:h-[243px]"
                             ></div>
                             <div className="flex flex-col items-center justify-center h-[30px]">
                               <span className=" text-base lg:text-xl text-primary leading-[150%]">
-                                Dinner cruise in Vancouver
+                                {item?.place_name}
                               </span>
                             </div>
                           </div>

@@ -7,23 +7,80 @@ import {
 } from "@/components/common/SvgContainer/SvgContainer";
 import footerLogo from "../assets/images/logo-light.png";
 import { Link } from "react-router-dom";
+import {
+  useGetFooterLinkDataQuery,
+  useGetSiteSettingDataQuery,
+} from "@/Redux/features/api/apiSlice";
+import toast from "react-hot-toast";
+import { InfinitySpin } from "react-loader-spinner";
+
 const Footer = () => {
+  const { data, error, isLoading } = useGetFooterLinkDataQuery(undefined, {
+    refetchOnFocus: true,
+    refetchOnReconnect: true,
+  });
+
+  const {
+    data: siteSettingData,
+    error: siteSettingError,
+    isLoading: isSiteSettingLoading,
+  } = useGetSiteSettingDataQuery(undefined, {
+    refetchOnFocus: true,
+    refetchOnReconnect: true,
+  });
+
+  console.log(siteSettingData?.data);
+
+  if (isLoading || isSiteSettingLoading) {
+    return (
+      <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center z-50 bg-white">
+        <InfinitySpin
+          visible={true}
+          width="200"
+          color="#004265"
+          ariaLabel="infinity-spin-loading"
+        />
+      </div>
+    );
+  }
+
+  if (error || siteSettingError) {
+    let errorMessage;
+    if (errorMessage) {
+      errorMessage =
+        error.data?.message || error.error || error.status || error.message;
+    } else if (siteSettingError)
+      errorMessage =
+        siteSettingError.data?.message ||
+        siteSettingError.error ||
+        siteSettingError.status ||
+        siteSettingError.message;
+
+    if (errorMessage) {
+      toast.error(errorMessage);
+    }
+  }
+
   const social = [
     {
       icon: <FooterTwitterSvg />,
       link: "www.twitter.com",
+      identifier: "",
     },
     {
       icon: <FooterYoutubeSvg />,
       link: "www.youtube.com",
+      identifier: "youtube",
     },
     {
       icon: <FooterInstagramSvg />,
       link: "www.instagram.com",
+      identifier: "instagram",
     },
     {
       icon: <FooterFacebookSvg />,
       link: "www.facebook.com",
+      identifier: "facebook",
     },
   ];
 
@@ -128,23 +185,30 @@ const Footer = () => {
       <section className="border-t border-white/10 pt-10">
         <div className="container mx-auto lg:px-8 2xl:px-16 3xl:px-32 pb-7 w-full flex flex-col lg:flex-row gap-y-4 items-center justify-between">
           <div className="flex items-center text-[13px] sm:text-sm lg:text-base gap-2 lg:gap-5">
-            <p>© 2024 .</p>
-            <p>Le Reve House</p>
+            <p>{siteSettingData?.data?.copyright_text}</p>
+            <p> {siteSettingData?.data?.title} </p>
             <p>Terms of service</p>
-            <p>Privacy Policy</p>
+            <Link to={`/pages/privacy-policy`}>Privacy Policy</Link>
           </div>
           {/* social icons */}
           <div className="flex justify-between items-center gap-5">
-            {social?.map(item => (
-              <Link
-                target="_blank"
-                to={item?.link}
-                key={item?.link}
-                className="block"
-              >
-                {item?.icon}
-              </Link>
-            ))}
+            {social?.map(item =>
+              data?.data.map((link, idx) => {
+                if (item.identifier === link?.social_media) {
+                  return (
+                    <Link
+                      onClick={() => {
+                        window.location.href = link?.profile_link;
+                      }}
+                      key={item?.link}
+                      className="block"
+                    >
+                      {item?.icon}
+                    </Link>
+                  );
+                }
+              })
+            )}
           </div>
         </div>
       </section>

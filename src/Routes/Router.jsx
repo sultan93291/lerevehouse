@@ -11,6 +11,7 @@ import Contact from "@/Pages/Contact/Contact";
 import CustomizeTripCanada from "@/Pages/CustomizeTripCanada/CustomizeTripCanada";
 import Destination from "@/Pages/Destination/Destination";
 import DestinationDetails from "@/Pages/DestinationDetails/DestinationDetails";
+import DynamicPage from "@/Pages/DynamicPage/DynamicPage";
 import EatAndDrink from "@/Pages/EatAndDrink/EatAndDrink";
 import Homepage from "@/Pages/Homepage/Homepage";
 import Modal from "@/Pages/Modal/ModalTest";
@@ -155,6 +156,10 @@ const router = createBrowserRouter([
       {
         path: "/canada-map",
         element: <CanadaMap />,
+      },
+      {
+        path: "/pages/privacy-policy",
+        element: <DynamicPage />,
       },
     ],
   },
