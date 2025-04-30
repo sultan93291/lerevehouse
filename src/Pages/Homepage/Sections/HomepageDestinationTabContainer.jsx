@@ -7,9 +7,7 @@ import {
 } from "@/Redux/features/api/apiSlice";
 
 const HomepageDestinationTabContainer = () => {
-  const [activeTab, setActiveTab] = useState(1);
-;
-  
+  const [activeTab, setActiveTab] = useState(1);  
 
   const { data, error, isLoading } = useTripPackagesQuery(activeTab?.id, {
     refetchOnFocus: true,

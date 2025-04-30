@@ -1,3 +1,4 @@
+import { useGetAllTravelStylesDataQuery } from "@/Redux/features/api/apiSlice";
 import imageOne from "../../assets/images/explore-travel1.png";
 import imageTwo from "../../assets/images/explore-travel2.png";
 import imageThree from "../../assets/images/explore-travel3.png";
@@ -64,6 +65,13 @@ const travelData = [
 ];
 
 const ExploreTravel = ({ travelMode }) => {
+  const { data, error, isLoading } = useGetAllTravelStylesDataQuery(undefined, {
+    refetchOnFocus: true,
+    refetchOnReconnect: true,
+  });
+
+  console.log(data);
+
   return (
     <section className="pb-10 sm:pb-16 xl:pb-[120px] xl:px-5 2xl:px-14">
       <div className="container">
@@ -79,7 +87,7 @@ const ExploreTravel = ({ travelMode }) => {
         </div>
         <div>
           <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5">
-            {travelData?.map(item => (
+            {data?.data?.map(item => (
               <TravelExploreCard
                 travelMode={travelMode}
                 key={item.id}

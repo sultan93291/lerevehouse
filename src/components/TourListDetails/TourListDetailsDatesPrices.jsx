@@ -5,9 +5,9 @@ import { tickPriceLeft, tickPriceRight } from "../DummyData/priceDummyData";
 import { useState } from "react";
 import { Modal } from "../Modals/Modal";
 import TestModal from "../Modals/TestModal";
+import BookThisModal from "../Modals/BookThisModal";
 
 const TourListDetailsDatesPrices = () => {
-  
   const priceDetailsItems = [
     {
       description:
@@ -119,8 +119,7 @@ const TourListDetailsDatesPrices = () => {
             <div className=" w-full xl:w-1/3 bg-[#f4f4f4] p-8 xl:p-16 flex flex-col gap-10 items-center justify-center font-interTight">
               <div className="text-center space-y-2">
                 <h3 className="font-medium text-text-black font-editorsNoteNormal text-xl lg:text-2xl">
-                  Speak to a Alaska specialist to start planning your
-                  tailor-made tour.
+                  Request information about this tour
                 </h3>
                 <p className="font-editorsNoteNormal font-semibold text-primary text-2xl lg:text-3xl">
                   +39 351 776 7276{" "}
@@ -135,7 +134,7 @@ const TourListDetailsDatesPrices = () => {
                   }}
                   className="block text-white text-center py-2 text-sm lg:text-base lg:py-4 border border-primary hover:bg-transparent hover:text-primary transition-all duration-300 w-full bg-primary"
                 >
-                  Make An Enquiry
+                  Book this tour
                 </button>
                 <Link className="block text-center bg-transparent text-primary py-2 text-sm lg:text-base lg:py-4 border border-primary hover:bg-primary hover:text-white transition-all duration-300 w-full bg-primary">
                   Request A Brouchre
@@ -146,7 +145,7 @@ const TourListDetailsDatesPrices = () => {
         </div>
       </div>
       <Modal open={open} setOpen={setOpen}>
-        <TestModal setOpen={setOpen} />
+        <BookThisModal setOpen={setOpen} />
       </Modal>
     </>
   );

@@ -1,14 +1,23 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
-import { Autoplay, Pagination } from 'swiper/modules';
-import HeroSlide from '@/components/Homepage/HeroSlide';
+import { Autoplay, Pagination } from "swiper/modules";
+import HeroSlide from "@/components/Homepage/HeroSlide";
+import { useGetHomePageHeroSectionDataQuery } from "@/Redux/features/api/apiSlice";
+
 const HomepageHero = () => {
-   
+  const { data, error, isLoading } = useGetHomePageHeroSectionDataQuery(
+    undefined,
+    {
+      refetchOnFocus: true,
+      refetchOnReconnect: true,
+    }
+  );
+
   return (
     <div className="-mt-[56px] 2xl:mt-0 4xl:-mt-[56px]">
       <Swiper
@@ -22,18 +31,18 @@ const HomepageHero = () => {
         modules={[Autoplay, Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <HeroSlide />
-        </SwiperSlide>
-        <SwiperSlide>
-          <HeroSlide />
-        </SwiperSlide>
-        <SwiperSlide>
-          <HeroSlide />
-        </SwiperSlide>
-        <SwiperSlide>
-          <HeroSlide />
-        </SwiperSlide>
+        {data?.data?.map((item, idx) => {
+          return (
+            <SwiperSlide>
+              <HeroSlide
+                key={idx}
+                vidoeUrl={item?.file_url}
+                title={item?.title}
+                subTitle={item.short_description}
+              />
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
     </div>
   );

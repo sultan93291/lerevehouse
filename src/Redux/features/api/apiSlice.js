@@ -1,4 +1,4 @@
-import { createApi } from "@reduxjs/toolkit/query/react";
+import { createApi, QueryStatus } from "@reduxjs/toolkit/query/react";
 import axiosBaseQuery from "./axiosBaseQuery";
 
 const SiteURl = import.meta.env.VITE_SERVER_BASE_URL;
@@ -25,7 +25,7 @@ export const apiSlice = createApi({
 
     allPackages: builder.query({
       query: () => ({
-        url: `/countries`,
+        url: `/destinations`,
         method: `GET`,
       }),
     }),
@@ -87,6 +87,76 @@ export const apiSlice = createApi({
         method: `GET`,
       }),
     }),
+
+    getHomePageHeroSectionData: builder.query({
+      query: () => ({
+        url: `/cms/home-page-hero-section`,
+        method: `GET`,
+      }),
+    }),
+
+    getWhyBookWithLereveHouse: builder.query({
+      query: () => ({
+        url: `/cms/why-lerevehouse`,
+        method: `GET`,
+      }),
+    }),
+
+    getRequestedTrips: builder.query({
+      query: () => ({
+        url: `/most-requested-trips`,
+        method: `GET`,
+      }),
+    }),
+
+    getSmartOfferData: builder.query({
+      query: () => ({
+        url: `/smart-offers`,
+        method: `GET`,
+      }),
+    }),
+
+    getDestinationOvreviewDetails: builder.query({
+      query: () => ({
+        url: `/destinations`,
+        method: `GET`,
+      }),
+    }),
+
+    getDestinationsHeroSectionData: builder.query({
+      query: () => ({
+        url: `/cms/destinations`,
+        method: "GET",
+      }),
+    }),
+
+    getTravelStylesHeroSectionData: builder.query({
+      query: () => ({
+        url: `/cms/travel-styles`,
+        method: "GET",
+      }),
+    }),
+
+    getAllTravelStylesData: builder.query({
+      query: () => ({
+        url: `/travel-styles`,
+        method: `GET`,
+      }),
+    }),
+
+    getStylesAdventureData: builder.query({
+      query: () => ({
+        url: `/cms/waph`,
+        method: `GET`,
+      }),
+    }),
+
+    getTravelStylesDescreptionData: builder.query({
+      query: () => ({
+        url: `/cms/waph-details`,
+        method: `GET`,
+      }),
+    }),
   }),
 });
 
@@ -99,6 +169,16 @@ export const {
   useTripPackageDetailsQuery,
   useTourGuideDataQuery,
   useGetFooterLinkDataQuery,
-  useGetPrivacyPageDataQuery, 
-  useGetSiteSettingDataQuery
+  useGetPrivacyPageDataQuery,
+  useGetSiteSettingDataQuery,
+  useGetHomePageHeroSectionDataQuery,
+  useGetWhyBookWithLereveHouseQuery,
+  useGetRequestedTripsQuery,
+  useGetSmartOfferDataQuery,
+  useGetDestinationOvreviewDetailsQuery,
+  useGetDestinationsHeroSectionDataQuery,
+  useGetTravelStylesHeroSectionDataQuery,
+  useGetAllTravelStylesDataQuery,
+  useGetStylesAdventureDataQuery,
+  useGetTravelStylesDescreptionDataQuery,
 } = apiSlice;
