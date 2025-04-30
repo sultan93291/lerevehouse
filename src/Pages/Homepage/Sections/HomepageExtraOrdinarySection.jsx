@@ -1,54 +1,30 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
-import { EffectCoverflow, Pagination } from 'swiper/modules';
-import bg1 from '@/assets/images/extraordinary/1.jpg';
-import bg2 from '@/assets/images/extraordinary/2.png';
-import bg3 from '@/assets/images/extraordinary/3.jpg';
-import bg4 from '@/assets/images/extraordinary/4.jpg';
-import bg5 from '@/assets/images/extraordinary/5.jpg';
-import bg6 from '@/assets/images/extraordinary/6.jpg';
-import bg7 from '@/assets/images/all-destination/7.jpg';
-import ExtraOrdinaryHomepageSlider from '@/components/common/Slider/ExtraOrdinaryHomepageSlider';
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import { EffectCoverflow, Pagination } from "swiper/modules";
+import bg1 from "@/assets/images/extraordinary/1.jpg";
+import bg2 from "@/assets/images/extraordinary/2.png";
+import bg3 from "@/assets/images/extraordinary/3.jpg";
+import bg4 from "@/assets/images/extraordinary/4.jpg";
+import bg5 from "@/assets/images/extraordinary/5.jpg";
+import bg6 from "@/assets/images/extraordinary/6.jpg";
+import bg7 from "@/assets/images/all-destination/7.jpg";
+import ExtraOrdinaryHomepageSlider from "@/components/common/Slider/ExtraOrdinaryHomepageSlider";
 import {
   NextSlideSvg,
   PrevSlideSvg,
-} from '@/components/common/SvgContainer/SvgContainer';
-import { useState } from 'react';
-import TransparentButton from '@/components/common/Buttons/TransparentButton';
+} from "@/components/common/SvgContainer/SvgContainer";
+import { useState } from "react";
+import TransparentButton from "@/components/common/Buttons/TransparentButton";
+import { useGetDestinationOvreviewDetailsQuery } from "@/Redux/features/api/apiSlice";
 
 const HomepageExtraOrdinarySection = () => {
-  const extraordinaryDestinations = [
-    {
-      image: bg1,
-      title: 'ALASKA',
-    },
-    {
-      image: bg2,
-      title: 'Canada Ovest',
-    },
-    {
-      image: bg3,
-      title: 'Canada East',
-    },
-    {
-      image: bg4,
-      title: 'Caraibi',
-    },
-    {
-      image: bg5,
-      title: 'Messico - Baja California',
-    },
-    {
-      image: bg6,
-      title: 'Ovest USA',
-    },
-    {
-      image: bg7,
-      title: 'Isolepecifico',
-    },
-  ];
+  const { data, error, isLoading } = useGetDestinationOvreviewDetailsQuery(undefined, {
+    refetchOnFocus: true,
+    refetchOnReconnect: true,
+  });
+
   const [swiperRef, setSwiperRef] = useState(null);
   return (
     <section className="container mx-auto px-4 lg:px-8 2xl:px-16 3xl:px-32 mb-10 lg:mb-20">
@@ -81,8 +57,8 @@ const HomepageExtraOrdinarySection = () => {
           modules={[EffectCoverflow, Pagination]}
           className="mySwiper"
         >
-          {extraordinaryDestinations?.map(destination => (
-            <SwiperSlide key={destination?.title}>
+          {data?.data?.map(destination => (
+            <SwiperSlide key={destination?.name}>
               <ExtraOrdinaryHomepageSlider destination={destination} />
             </SwiperSlide>
           ))}
@@ -114,4 +90,4 @@ const HomepageExtraOrdinarySection = () => {
 };
 
 export default HomepageExtraOrdinarySection;
-// 
+//

@@ -15,55 +15,17 @@ import {
   PrevSlideSvg,
 } from "@/components/common/SvgContainer/SvgContainer";
 import { useState } from "react";
+import { useGetSmartOfferDataQuery } from "@/Redux/features/api/apiSlice";
 const SmartOffersSection = () => {
-  const offerContents = [
+  const { data, error, isLoading } = useGetSmartOfferDataQuery(
+    undefined,
     {
-      id: "offer-west-canada-classic",
-      destinationTitle: "Classic Tour Of West Canada",
-      price: "4,680.00",
-      duration: 11,
-      image: image1,
-      mapBg: true,
-    },
-    {
-      id: "offer-grizzly-orcas-safari",
-      destinationTitle: "Safari Trip To Grizzly And Orcas",
-      price: "1,670.00",
-      duration: 9,
-      image: image2,
-      mapBg: true,
-    },
-    {
-      id: "offer-alaska-deluxe",
-      destinationTitle: "Deluxe Guided Tour In Alaska",
-      price: "2.750.00",
-      duration: 16,
-      image: image3,
-    },
-    {
-      id: "offer-charlotte-islands",
-      destinationTitle: "West Canada & Charlotte Islands",
-      price: "2,775.00",
-      duration: 17,
-      image: image4,
-    },
-    {
-      id: "offer-giants-canada-usa",
-      destinationTitle: "Kingdom Of Giants Canada & USA",
-      price: "2.750,00",
-      duration: 17,
-      image: image5,
-      mapBg: true,
-    },
-    {
-      id: "offer-denali-cruise",
-      destinationTitle: "All-Inclusive Cruise To Denali",
-      price: "2.750.00 ",
-      duration: 9,
-      image: image6,
-      mapBg: true,
-    },
-  ];
+      refetchOnFocus: true,
+      refetchOnReconnect: true,
+    }
+  );
+
+  
   const [swiperRef, setSwiperRef] = useState(null);
   return (
     <section className="container flex flex-col gap-y-[40px] lg:gap-y-[60px] mx-auto px-4 lg:px-8 2xl:px-16 3xl:px-32 py-10 2xl:py-20">
@@ -78,16 +40,16 @@ const SmartOffersSection = () => {
       <div className="relative">
         <Swiper
           breakpoints={{
-            320: { slidesPerView: 1 }, // Mobile
-            768: { slidesPerView: 2 }, // Tablets
-            1024: { slidesPerView: 3 }, // Desktops
+            320: { slidesPerView: 1 }, 
+            768: { slidesPerView: 2 }, 
+            1024: { slidesPerView: 3 }, 
           }}
           loop={true}
           spaceBetween={20}
           onSwiper={setSwiperRef}
           className="mySwiper"
         >
-          {offerContents?.map((item) => (
+          {data?.data?.map(item => (
             <SwiperSlide key={item?.destinationTitle}>
               <DestinationCard item={item} />
             </SwiperSlide>
