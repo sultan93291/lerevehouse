@@ -4,13 +4,20 @@ import { Link } from "react-router-dom";
 import bg from "@/assets/images/bg.png";
 
 const RequestedTripCard = ({ item, idx }) => {
+  const imgBaseurl = import.meta.env.VITE_SERVER_URL;
   return (
     <div
       className={` h-[350px] xl:h-[450px] 2xl:h-[750px] flex ${
         item?.type == "horizontal" ? "items-center justify-end" : "items-end"
-      }  ${idx == 1 ? "col-span-6 lg:col-span-2" : idx == 2 ? "col-span-6 lg:col-span-4" : "col-span-6"}`}
+      }  ${
+        idx == 1
+          ? "col-span-6 lg:col-span-2"
+          : idx == 2
+          ? "col-span-6 lg:col-span-4"
+          : "col-span-6"
+      }`}
       style={{
-        background: `url(${item?.image})`,
+        background: `url(${imgBaseurl}/${item.image})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -27,7 +34,10 @@ const RequestedTripCard = ({ item, idx }) => {
       >
         <div className="px-4 lg:px-8 relative z-10 space-y-1 md:space-y-3">
           <h3 className="text-lg xl:text-xl">{item?.title}</h3>
-          <p className="text-sm xl:text-base">{item?.description}</p>
+          <div
+            dangerouslySetInnerHTML={{ __html: item?.description }}
+            className="text-sm xl:text-base"
+          ></div>
 
           <Link
             to={`/tour-list-details/${item?.id}`}
