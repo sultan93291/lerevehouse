@@ -11,7 +11,7 @@ const TourListDetailsTab = ({ sectionTabs }) => {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <div className="py-4 2xl:sticky z-[0] top-[152px] left-0 font-interTight w-full bg-[#f4f4f4] flex flex-row flex-wrap items-center lg:justify-center gap-3 3xl:gap-12  ">
+      <div className="py-4 2xl:sticky z-[10] top-[152px] left-0 font-interTight w-full bg-[#f4f4f4] flex flex-row flex-wrap items-center lg:justify-center gap-3 3xl:gap-12  ">
         <div className="font-editorsNoteItalic text-primary text-3xl lg:text-3xl border-b-[3px] pb-2 px-4 lg:px-8 border-[#f4f4f4]">
           Trip Details
         </div>

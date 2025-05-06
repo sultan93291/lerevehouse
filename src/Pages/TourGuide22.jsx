@@ -13,6 +13,7 @@ import WhereToStay from "@/components/TourGuide/WhereToStay";
 import { useParams } from "react-router-dom";
 import { useTourGuideDataQuery } from "@/Redux/features/api/apiSlice";
 import { InfinitySpin } from "react-loader-spinner";
+import toast from "react-hot-toast";
 
 const TourGuide22 = () => {
   const { slug } = useParams();
@@ -44,10 +45,6 @@ const TourGuide22 = () => {
       toast.error(errorMessage);
     }
   }
-
-  console.log(data?.data);
-  
-
 
   return (
     <section className="container">

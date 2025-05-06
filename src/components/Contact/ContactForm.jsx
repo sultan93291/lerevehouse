@@ -17,7 +17,6 @@ const ContactForm = () => {
   const onSubmit = async formData => {
     try {
       const response = await sendQuery(formData).unwrap();
-      console.log("Query submitted successfully:", response);
       if (response) {
         toast.success(response.message);
       }

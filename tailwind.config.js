@@ -46,7 +46,7 @@ export default {
         "text-gray": "#565656",
         "prmiary-blue": "#004265",
         "light-blue": "#1687C7",
-        "offGray":"rgba(0, 66, 101, 0.10)",
+        offGray: "rgba(0, 66, 101, 0.10)",
         RgbaBlue: "rgba(22, 135, 199, 0.10)",
         blackRgba: "rgba(0, 0, 0, 0.64)",
         offWhite: "rgba(0, 66, 101, 0.10)",
@@ -116,4 +116,5 @@ export default {
     },
   },
   plugins: [require("tailwindcss-animate")],
+  plugins: [require("@tailwindcss/typography")],
 };

@@ -4,27 +4,103 @@ import CommonHeroBannerV2 from "@/components/common/HeroBanner/CommonHeroBannerV
 import BrowseThings from "@/components/TravelActivities/BrowseThings";
 import ActivitiesCanDo from "@/components/TravelActivities/ActivitiesCanDo";
 import TravelCta from "@/components/TravelStyles/TravelCta";
+import {
+  useGetAcitivityHeroSectionQuery,
+  useGetActivityDetailsQuery,
+  useGetAcitivitySloganDataQuery,
+} from "@/Redux/features/api/apiSlice";
+import { InfinitySpin } from "react-loader-spinner";
+import toast from "react-hot-toast";
 
-const travelPackage = {
-  category: "Tailor-Made Journeys",
-  title: "Tuscany And Umbria: Italy’s Rural Heartland",
-  subtitle: "Private journey designed by you",
-  description:
-    "This illuminating adventure through Umbria and Tuscany takes in some of Italy’s most spectacular landscapes, visiting exquisite wineries, Renaissance hilltop towns, and the traditional workshops of master artisans.",
-};
+
 
 const TravelActivitiesPage = () => {
+  const { data, error, isLoading } = useGetAcitivityHeroSectionQuery(
+    undefined,
+    {
+      refetchOnFocus: true,
+      refetchOnReconnect: true,
+    }
+  );
+  const {
+    data: activityDetails,
+    error: activityDetailsError,
+    isLoading: activityDetailsLoading,
+  } = useGetActivityDetailsQuery(undefined, {
+    refetchOnFocus: true,
+    refetchOnReconnect: true,
+  });
+
+  const {
+    data: activitySloganData,
+    error: activitySloganError,
+    isLoading: isAcitvitySloganLoading,
+  } = useGetAcitivitySloganDataQuery(undefined, {
+    refetchOnFocus: true,
+    refetchOnReconnect: true,
+  });
+
+  if (isLoading || activityDetailsLoading || isAcitvitySloganLoading) {
+    return (
+      <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center z-50 bg-white">
+        <InfinitySpin
+          visible={true}
+          width="200"
+          color="#004265"
+          ariaLabel="infinity-spin-loading"
+        />
+      </div>
+    );
+  }
+
+  if (activitySloganError) {
+    const errorMessage =
+      activitySloganError.data?.message ||
+      activitySloganError.error ||
+      activitySloganError.status ||
+      activitySloganError.message;
+    if (errorMessage) {
+      toast.error(errorMessage);
+    }
+  }
+
+  if (error) {
+    const errorMessage =
+      error.data?.message || error.error || error.status || error.message;
+    if (errorMessage) {
+      toast.error(errorMessage);
+    }
+  }
+
+  if (activityDetailsError) {
+    const errorMessage =
+      activityDetailsError.data?.message ||
+      activityDetailsError.error ||
+      activityDetailsError.status ||
+      activityDetailsError.message;
+    if (errorMessage) {
+      toast.error(errorMessage);
+    }
+  }
+
+  const imgBaseurl = import.meta.env.VITE_SERVER_URL;
+
   return (
     <div>
-      <CommonHeroBannerV2 isAcitivity={true} item={travelPackage} bgImg={TravelActivitiesImg} />
-      <TripAttraction />
+      <CommonHeroBannerV2
+        isAcitivity={true}
+        item={data?.data[0]}
+        bgImg={`${imgBaseurl}/${data?.data[0]?.background_image}`}
+      />
+      <TripAttraction data={activityDetails?.data[0]} />
       <BrowseThings />
       {/* <ActivitiesCanDo /> */}
       <div className="2xl:pt-20">
         <TravelCta
-          title="Worldwide Adventure planing Holidays"
-          description="we are an experienced tour operator for West Canada and West Usa, Alaska, the Caribbean, Mexico and Polynesia destinations, with 24 hour assistance"
+          title={activitySloganData?.data?.title}
+          description={activitySloganData?.data?.short_description}
           btnText="Contact Us"
+          imgUrl={`${imgBaseurl}/${activitySloganData?.data?.background_image}`}
         />
       </div>
     </div>
