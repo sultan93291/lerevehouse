@@ -29,7 +29,7 @@ const Footer = () => {
     refetchOnReconnect: true,
   });
 
-  console.log(siteSettingData?.data);
+  console.log(data?.data);
 
   if (isLoading || isSiteSettingLoading) {
     return (

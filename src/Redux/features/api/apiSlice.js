@@ -157,6 +157,55 @@ export const apiSlice = createApi({
         method: `GET`,
       }),
     }),
+
+    getContactHeroSectionData: builder.query({
+      query: () => ({
+        url: `/cms/contact-us-hero-section`,
+        method: "GET",
+      }),
+    }),
+
+    getOfficeData: builder.query({
+      query: () => ({
+        url: `/cms/office-addresses`,
+        method: `GET`,
+      }),
+    }),
+
+    getTripPackageDetails: builder.query({
+      query: id => ({
+        url: `/trip-packages?travel_style_id=${id}`,
+        method: `GET`,
+      }),
+    }),
+
+    getAcitivityHeroSection: builder.query({
+      query: () => ({
+        url: `/cms/activity-hero-section`,
+        method: `GET`,
+      }),
+    }),
+
+    getActivityDetails: builder.query({
+      query: () => ({
+        url: `/cms/activity-details-section`,
+        method: `GET`,
+      }),
+    }),
+
+    getAllActivity: builder.query({
+      query: () => ({
+        url: `/activities`,
+        method: `GET`,
+      }),
+    }),
+
+    getAcitivitySloganData: builder.query({
+      query: () => ({
+        url: `/cms/activity-slogan-section`,
+        method: `GET`,
+      }),
+    }),
   }),
 });
 
@@ -181,4 +230,10 @@ export const {
   useGetAllTravelStylesDataQuery,
   useGetStylesAdventureDataQuery,
   useGetTravelStylesDescreptionDataQuery,
+  useGetContactHeroSectionDataQuery,
+  useGetOfficeDataQuery,
+  useGetTripPackageDetailsQuery,
+  useGetAcitivityHeroSectionQuery,
+  useGetActivityDetailsQuery,
+  useGetAcitivitySloganDataQuery
 } = apiSlice;

@@ -72,6 +72,7 @@ const TouristListDetails = () => {
     allItenareies: data?.data?.itineraries,
   };
 
+
   const sectionTabs = [
     {
       label: "Description",
@@ -110,7 +111,7 @@ const TouristListDetails = () => {
       <TourListDetailsTab sectionTabs={sectionTabs} />
 
       {/* tab contents */}
-      <section className="container mx-auto">
+      <section className="container z-[0] mx-auto">
         {/* description */}
         <TourListDetailsDescription
           descreptionData={data?.data?.trip_detail?.description}
@@ -120,7 +121,7 @@ const TouristListDetails = () => {
         <ItenaryIdeaDetails itenariesData={itenariesData} />
 
         {/* Water Activity */}
-        <WaterActivity />
+        {/* <WaterActivity /> */}
 
         {/* Testimonials */}
         <TourListDetailsReview isHeading={true} />
@@ -129,7 +130,7 @@ const TouristListDetails = () => {
         <TourListDetailsDatesPrices />
 
         {/* video gallery section */}
-        <TourListDetailsVideoGallery />
+        <TourListDetailsVideoGallery videos={data?.data?.videos} />
 
         {/* suggestions */}
         <TourListDetailsSuggestions />

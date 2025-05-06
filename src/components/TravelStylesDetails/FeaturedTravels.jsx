@@ -1,3 +1,4 @@
+import { Slice } from "lucide-react";
 import imageOne from "../../assets/images/explore-travel1.png";
 import imageTwo from "../../assets/images/explore-travel2.png";
 import imageThree from "../../assets/images/explore-travel3.png";
@@ -63,7 +64,6 @@ const travelData = [
   },
 ];
 
-
 const honeyMoonData = [
   {
     id: 1,
@@ -121,7 +121,7 @@ const honeyMoonData = [
   },
 ];
 
-const FeaturedTravels = ({ isHoneyMoon }) => {
+const FeaturedTravels = ({ isHoneyMoon, data }) => {
   return (
     <section className="py-10 lg:py-20 2xl:py-[120px] xl:px-5 2xl:px-14">
       <div className="container">
@@ -135,10 +135,18 @@ const FeaturedTravels = ({ isHoneyMoon }) => {
         </div>
         <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5">
           {isHoneyMoon
-            ? honeyMoonData?.map(item => <TravelExploreCard item={item} />)
-            : travelData?.map(item => (
-                <TravelExploreCard  travelMode={"travel_details"} item={item} />
-              ))}
+            ? data?.map(item => (
+                <TravelExploreCard key={item.id} item={item} />
+              ))
+            : data
+                ?.slice(0, 9)
+                ?.map(item => (
+                  <TravelExploreCard
+                    key={item.id}
+                    travelMode={"travel_details"}
+                    item={item}
+                  />
+                ))}
         </div>
       </div>
     </section>
