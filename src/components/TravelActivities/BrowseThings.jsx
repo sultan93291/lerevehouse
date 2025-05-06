@@ -1,3 +1,4 @@
+import { useGetAllTravelStylesDataQuery } from "@/Redux/features/api/apiSlice";
 import imageOne from "../../assets/images/thingstodo1.png";
 import imageTwo from "../../assets/images/thingstodo2.png";
 import imageThree from "../../assets/images/thingstodo3.png";
@@ -8,92 +9,42 @@ import imageSeven from "../../assets/images/thingstodo7.png";
 import imageEight from "../../assets/images/thingstodo8.png";
 import imageNine from "../../assets/images/thingstodo9.png";
 import TravelExploreCard from "../TravelStyles/TravelExploreCard";
+import { InfinitySpin } from "react-loader-spinner";
+import toast from "react-hot-toast";
 
-const travelData = [
-  {
-    id: 1,
-    title: "Hiking & Trekking",
-    description:
-      "Rafting and kayaking offer unforgettable ways to connect with nature and enjoy the great outdoors.",
-    image: imageOne,
-    btnText: "view All",
-    btnLInk: "/",
-  },
-  {
-    id: 2,
-    title: "Water Activities",
-    description:
-      "Rafting and kayaking offer unforgettable ways to connect with nature and enjoy the great outdoors.",
-    image: imageTwo,
-    btnText: "view All",
-    btnLInk: "/",
-  },
-  {
-    id: 3,
-    title: "Wildlife & Safari",
-    description:
-      "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys",
-    image: imageThree,
-    btnText: "view All",
-    btnLInk: "/",
-  },
-  {
-    id: 4,
-    title: "Cultural Discovery",
-    description:
-      "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys",
-    image: imageFour,
-    btnText: "view All",
-    btnLInk: "/",
-  },
-  {
-    id: 5,
-    title: "Adventure Cruising",
-    description:
-      "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys",
-    image: imageFive,
-    btnText: "view All",
-    btnLInk: "/",
-  },
-  {
-    id: 6,
-    title: "Cultural Discovery",
-    description:
-      "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys",
-    image: imageSix,
-    btnText: "view All",
-    btnLInk: "/",
-  },
-  {
-    id: 7,
-    title: " Adventure & Outdoor",
-    description:
-      "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys",
-    image: imageSeven,
-    btnText: "view All",
-    btnLInk: "/",
-  },
-  {
-    id: 8,
-    title: "Food, Drink & Nightlife",
-    description:
-      "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys",
-    image: imageEight,
-    btnText: "view All",
-    btnLInk: "/",
-  },
-  {
-    id: 9,
-    title: "Custom & Private",
-    description:
-      "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys",
-    image: imageNine,
-    btnText: "view All",
-    btnLInk: "/",
-  },
-];
 
 const BrowseThings = () => {
+  const { data, error, isLoading } = useGetAllTravelStylesDataQuery(
+    undefined,
+    {
+      refetchOnFocus: true,
+      refetchOnReconnect: true,
+    }
+  );
+  
+
+  if (isLoading ) {
+    return (
+      <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center z-50 bg-white">
+        <InfinitySpin
+          visible={true}
+          width="200"
+          color="#004265"
+          ariaLabel="infinity-spin-loading"
+        />
+      </div>
+    );
+  }
+  
+
+  if (error) {
+    const errorMessage =
+      error.data?.message || error.error || error.status || error.message;
+    if (errorMessage) {
+      toast.error(errorMessage);
+    }
+  }
+
   return (
     <section className="2xl:py-20 md:py-0 py-1">
       <div className="container">
@@ -108,7 +59,7 @@ const BrowseThings = () => {
         </div>
         <div>
           <div className="grid lg:grid-cols-3 gap-5">
-            {travelData?.map((item) => (
+            {data?.data?.map(item => (
               <TravelExploreCard
                 link={"/activities/subcategory/"}
                 key={item.id}

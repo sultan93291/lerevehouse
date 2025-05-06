@@ -30,10 +30,6 @@ const DestinationDetails = () => {
       link: `${title}-holiday`,
     },
     {
-      label: "Suggested",
-      link: "suggestions",
-    },
-    {
       label: "Tour",
       link: "suggestions",
     },

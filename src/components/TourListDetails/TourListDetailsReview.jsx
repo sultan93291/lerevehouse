@@ -64,7 +64,7 @@ const TourListDetailsReview = ({ isHeading }) => {
   ];
 
   return (
-    <div className="my-5 2xl:my-20">
+    <div className="my-5 z-[0] 2xl:my-20">
       {/* title */}
       {isHeading && (
         <div>
@@ -108,14 +108,14 @@ const TourListDetailsReview = ({ isHeading }) => {
         {/* left */}
         <button
           onClick={() => swiperRef.slidePrev()}
-          className="size-8 bg-transparent shadow-md  rounded-full flex items-center justify-center absolute top-1/2 ml-[-16px] 4xl:-left-10 z-[999] group hover:bg-primary transition-all duration-300 -translate-y-1/2 border border-[#9C9EA1] bg-red-500"
+          className="size-8 bg-transparent shadow-md  z-[0] rounded-full flex items-center justify-center absolute top-1/2 ml-[-16px] 4xl:-left-10  group hover:bg-primary transition-all duration-300 -translate-y-1/2 border border-[#9C9EA1] bg-red-500"
         >
           <PrevArrowTourListDetailsSvg />
         </button>
 
         <button
           onClick={() => swiperRef.slideNext()}
-          className="size-8 bg-transparent shadow-md rounded-full  flex items-center justify-center absolute top-1/2 -right-4  2xl:-right-3 4xl:-right-10 z-20 group hover:bg-primary transition-all duration-300 -translate-y-1/2 border border-[#9C9EA1]"
+          className="size-8 bg-transparent shadow-md rounded-full  flex items-center justify-center absolute top-1/2 -right-4  2xl:-right-3 4xl:-right-10 z-[0] group hover:bg-primary transition-all duration-300 -translate-y-1/2 border border-[#9C9EA1]"
         >
           <NextArrowTourListDetailsSvg />
         </button>

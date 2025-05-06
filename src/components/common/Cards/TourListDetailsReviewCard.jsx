@@ -3,7 +3,7 @@ import ReviewStarYellowButton from "../Stars/ReviewStarYellowButton";
 
 const TourListDetailsReviewCard = ({ item }) => {
   return (
-    <div className="p-6 bg-[#f4f4f4] font-interTight">
+    <div className="p-6 z-[0] bg-[#f4f4f4] font-interTight">
       {/* stars */}
       <div className="flex items-center gap-1">
         {Array.from({ length: item?.review }).map((_, idx) => (

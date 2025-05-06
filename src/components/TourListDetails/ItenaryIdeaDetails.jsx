@@ -77,7 +77,7 @@ const ItenaryIdeaDetails = itenariesData => {
         <StartYourJourney setOpen={setRecommendedOpen} />
       </Modal>
 
-      <section className="flex flex-col my-14 gap-y-5 lg:gap-y-10">
+      <section className="flex flex-col z-[0] my-14 gap-y-5 lg:gap-y-10">
         <div className="flex flex-col gap-y-6  ">
           <div className="flex flex-col gap-y-4 xl:flex-row justify-between items-center ">
             <h3 className="text-primary text-[34px] flex-shrink-0 font-normal leading-[120%] font-editorsNoteNormal  ">
@@ -108,7 +108,7 @@ const ItenaryIdeaDetails = itenariesData => {
           </span>
         </div>
         {/* {accordion section started here} */}
-        <div className="w-full font-interTight">
+        <div className="w-full z-[0] font-interTight">
           <Accordion
             type="multiple" // Allows multiple open items
             className="w-full  flex flex-col gap-y-4 lg:gap-y-8"
