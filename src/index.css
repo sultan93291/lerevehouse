@@ -257,7 +257,7 @@
   }
 
   .rates thead {
-    @apply border-b border-black mt-[125px]  ;
+    @apply border-b border-black mt-[125px];
   }
 
   .rates figure.table {
@@ -269,8 +269,19 @@
   }
 
   .rates :last-child p {
-    @apply md:text-xl font-inter leading-[150%] font-normal text-[#565656]
-  };
+    @apply md:text-xl font-inter leading-[150%] font-normal text-[#565656];
+  }
+
+  .destination-style {
+    @apply space-y-2;
+  }
+  .destination-style strong {
+    @apply text-2xl font-editorsNoteNormal font-light text-primary tracking-wide;
+  }
+
+  .destination-style p {
+    @apply font-interTight text-base lg:text-lg text-primary;
+  }
 
   /* {all dangerous html design ended here} */
 }

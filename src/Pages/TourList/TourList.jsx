@@ -1,21 +1,36 @@
 import CommonHeroBanner from "@/components/common/HeroBanner/CommonHeroBanner";
 import bg from "@/assets/images/tourtlist-bg.jpg";
 import TravelListCard from "@/components/common/Cards/TravelListCard";
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import destinationSuggestionBg from "@/assets/images/tourtlist-bg.jpg";
 import { InfinitySpin } from "react-loader-spinner";
 import toast from "react-hot-toast";
-import { useGetTripPackageDetailsQuery } from "@/Redux/features/api/apiSlice";
+import {
+  useGetDestinationDetailsPackageQuery,
+  useGetTripPackageDetailsQuery,
+} from "@/Redux/features/api/apiSlice";
+import { useEffect, useState } from "react";
 
 const TourList = () => {
   const { title } = useParams();
+  const [searchParams] = useSearchParams();
+  const isDestination = searchParams.get("isdestination");
 
   const { data, error, isLoading } = useGetTripPackageDetailsQuery(title, {
     refetchOnFocus: true,
     refetchOnReconnect: true,
   });
 
-  if (isLoading) {
+  const {
+    data: destinationSuggestionData,
+    error: destinationSuggestionError,
+    isLoading: isdestinationLoading,
+  } = useGetDestinationDetailsPackageQuery(title, {
+    refetchOnFocus: true,
+    refetchOnReconnect: true,
+  });
+
+  if (isLoading || isdestinationLoading) {
     return (
       <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center z-50 bg-white">
         <InfinitySpin
@@ -36,7 +51,19 @@ const TourList = () => {
     }
   }
 
+  if (destinationSuggestionError) {
+    const errorMessage =
+      destinationSuggestionError.data?.message ||
+      destinationSuggestionError.error ||
+      destinationSuggestionError.status ||
+      destinationSuggestionError.message;
+    if (errorMessage) {
+      toast.error(errorMessage);
+    }
+  }
+
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
+  
 
   return (
     <div>
@@ -58,9 +85,13 @@ const TourList = () => {
 
         {/* cards */}
         <div className=" grid grid-cols-1 lg:grid-cols-2 3xl:grid-cols-3  gap-4 xl:gap-6 mt-10">
-          {data?.data?.map(item => (
-            <TravelListCard key={item?.id} item={item} />
-          ))}
+          {isDestination
+            ? destinationSuggestionData?.data?.map(item => (
+                <TravelListCard key={item?.id} item={item} />
+              ))
+            : data?.data?.map(item => (
+                <TravelListCard key={item?.id} item={item} />
+              ))}
         </div>
       </section>
     </div>

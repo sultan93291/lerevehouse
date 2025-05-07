@@ -206,6 +206,20 @@ export const apiSlice = createApi({
         method: `GET`,
       }),
     }),
+
+    getDestinationDetails: builder.query({
+      query: id => ({
+        url: `/destiantion-details/${id}`,
+        method: `GET`,
+      }),
+    }),
+
+    getDestinationDetailsPackage: builder.query({
+      query: (id) => ({
+        url: `/trip-packages?destination_id=${id}`,
+        method: `GET`,
+      }),
+    }),
   }),
 });
 
@@ -235,5 +249,7 @@ export const {
   useGetTripPackageDetailsQuery,
   useGetAcitivityHeroSectionQuery,
   useGetActivityDetailsQuery,
-  useGetAcitivitySloganDataQuery
+  useGetAcitivitySloganDataQuery,
+  useGetDestinationDetailsQuery,
+  useGetDestinationDetailsPackageQuery
 } = apiSlice;
