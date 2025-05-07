@@ -6,55 +6,8 @@ import destinationSuggestionBg from "@/assets/images/tourtlist-bg.jpg";
 import TravelListCard from "../common/Cards/TravelListCard";
 // import { Pagination } from 'swiper/modules';
 
-const destinationSuggestions = [
-  {
-    id: 1,
-    image: destinationSuggestionBg,
-    duration: 11,
-    title: "Vancouver to Denali Park with 8 Day Cruise",
-    description:
-      "Our “ Canada and Alaska Trip - from Vancouver to Denali Park ” is dedicated to those who want to get to know Alaska Our “ Canada and Alaska Trip - from Vancouver to Denali Park ” is dedicated to those who want to get to know Alaska",
-    price: 3550,
-  },
-  {
-    id: 2,
-    image: destinationSuggestionBg,
-    duration: 11,
-    title: "Vancouver to Denali Park with 8 Day Cruise",
-    description:
-      "Our “ Canada and Alaska Trip - from Vancouver to Denali Park ” is dedicated to those who want to get to know Alaska Our “ Canada and Alaska Trip - from Vancouver to Denali Park ” is dedicated to those who want to get to know Alaska",
-    price: 3550,
-  },
-  {
-    id: 3,
-    image: destinationSuggestionBg,
-    duration: 11,
-    title: "Vancouver to Denali Park with 8 Day Cruise",
-    description:
-      "Our “ Canada and Alaska Trip - from Vancouver to Denali Park ” is dedicated to those who want to get to know Alaska Our “ Canada and Alaska Trip - from Vancouver to Denali Park ” is dedicated to those who want to get to know Alaska",
-    price: 3550,
-  },
-  {
-    id: 4,
-    image: destinationSuggestionBg,
-    duration: 11,
-    title: "Vancouver to Denali Park with 8 Day Cruise",
-    description:
-      "Our “ Canada and Alaska Trip - from Vancouver to Denali Park ” is dedicated to those who want to get to know Alaska Our “ Canada and Alaska Trip - from Vancouver to Denali Park ” is dedicated to those who want to get to know Alaska",
-    price: 3550,
-  },
-  {
-    id: 5,
-    image: destinationSuggestionBg,
-    duration: 11,
-    title: "Vancouver to Denali Park with 8 Day Cruise",
-    description:
-      "Our “ Canada and Alaska Trip - from Vancouver to Denali Park ” is dedicated to those who want to get to know Alaska Our “ Canada and Alaska Trip - from Vancouver to Denali Park ” is dedicated to those who want to get to know Alaska",
-    price: 3550,
-  },
-];
 
-const TourListDetailsSuggestions = () => {
+const TourListDetailsSuggestions = ({data}) => {
   return (
     <div className="my-8 sm:my-12 xl:my-20  ">
       {/* title */}
@@ -85,7 +38,7 @@ const TourListDetailsSuggestions = () => {
           // onSwiper={setSwiperRef}
           className="mySwiper"
         >
-          {destinationSuggestions?.map((item, idx) => (
+          {data?.map((item, idx) => (
             <SwiperSlide key={idx}>
               <TravelListCard item={item} />
             </SwiperSlide>

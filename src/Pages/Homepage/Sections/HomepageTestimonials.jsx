@@ -1,7 +1,6 @@
 import leftBg from "../../../assets/images/testimonials-left-bg.png";
 import rightBg from "../../../assets/images/testimonials-bg.png";
 import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
@@ -10,13 +9,44 @@ import {
   TestimonialNextSlide,
   TestimonialPrevSlide,
 } from "@/components/common/SvgContainer/SvgContainer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useGetAllReviewsQuery } from "@/Redux/features/api/apiSlice";
+import { InfinitySpin } from "react-loader-spinner";
+import toast from "react-hot-toast";
 
 const HomepageTestimonials = () => {
+  const { data, error, isLoading } = useGetAllReviewsQuery(undefined, {
+    refetchOnFocus: true,
+    refetchOnReconnect: true,
+  });
+
+  useEffect(() => {
+    if (error) {
+      const errorMessage =
+        error.data?.message || error.error || error.status || error.message;
+      if (errorMessage) {
+        setTimeout(() => toast.error(errorMessage), 0); // safe rendering
+      }
+    }
+  }, [error]);
+
   const [swiperRef, setSwiperRef] = useState(null);
+
+  if (isLoading) {
+    return (
+      <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center z-50 bg-white">
+        <InfinitySpin
+          visible={true}
+          width="200"
+          color="#004265"
+          ariaLabel="infinity-spin-loading"
+        />
+      </div>
+    );
+  }
+
   return (
-    <section className="bg-primary relative px-4 lg:px-8 2xl:px-16 3xl:px-32 mx-auto w-full  2xl:min-h-[750px]  ">
-      {/* main section */}
+    <section className="bg-primary relative px-4 lg:px-8 2xl:px-16 3xl:px-32 mx-auto w-full 2xl:min-h-[750px]">
       <div className="flex flex-col gap-y-[30px] 2xl:gap-y-[60px]">
         {/* title */}
         <div className="py-10">
@@ -33,37 +63,28 @@ const HomepageTestimonials = () => {
             spaceBetween={30}
             onSwiper={setSwiperRef}
             loop={true}
-            pagination={{
-              clickable: true,
-            }}
+            pagination={{ clickable: true }}
             modules={[Pagination]}
             className="mySwiper"
           >
-            <SwiperSlide>
-              <TestimonialSliderHomepage />
-            </SwiperSlide>
-            <SwiperSlide>
-              <TestimonialSliderHomepage />
-            </SwiperSlide>
-            <SwiperSlide>
-              <TestimonialSliderHomepage />
-            </SwiperSlide>
-            <SwiperSlide>
-              <TestimonialSliderHomepage />
-            </SwiperSlide>
+            {data?.data?.map((item, idx) =>
+              item ? (
+                <SwiperSlide key={idx}>
+                  <TestimonialSliderHomepage data={item} />
+                </SwiperSlide>
+              ) : null
+            )}
           </Swiper>
 
           {/* slider navigation */}
-
-          {/* left */}
           <button
-            onClick={() => swiperRef.slidePrev()}
-            className="size-10 hidden mb-[500px]  bg-transparent border border-white shadow-md rounded-full 2xl:flex items-center justify-center absolute top-1/2 left-36 z-20 -translate-y-1/2"
+            onClick={() => swiperRef?.slidePrev()}
+            className="size-10 hidden mb-[500px] bg-transparent border border-white shadow-md rounded-full 2xl:flex items-center justify-center absolute top-1/2 left-36 z-20 -translate-y-1/2"
           >
             <TestimonialPrevSlide />
           </button>
           <button
-            onClick={() => swiperRef.slideNext()}
+            onClick={() => swiperRef?.slideNext()}
             className="size-10 bg-transparent border border-white shadow-md rounded-full hidden 2xl:flex items-center justify-center absolute top-1/2 right-20 z-20 -translate-y-1/2"
           >
             <TestimonialNextSlide />
@@ -71,12 +92,12 @@ const HomepageTestimonials = () => {
         </div>
       </div>
 
-      {/* bg */}
+      {/* bg decorations */}
       <div className="absolute top-10 left-0">
-        <img className="" src={leftBg} alt="" />
+        <img src={leftBg} alt="Left Background" />
       </div>
       <div className="absolute top-10 right-0">
-        <img className="" src={rightBg} alt="" />
+        <img src={rightBg} alt="Right Background" />
       </div>
     </section>
   );

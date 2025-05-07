@@ -34,8 +34,9 @@ const TravelExploreCard = ({ item, travelMode }) => {
                 ? `/travel-styles-details/${item?.id}`
                 : travelMode === "travel_details"
                 ? `/tour-list-details/${item?.id}`
-                : `/tour-list-details/${item?.id}`
+                : `/activities/subcategory/${item?.name}`
             );
+            //need to relsolve
           }}
         >
           {travelMode === "travel_details" ? "Discover the trip" : " View"}

@@ -20,7 +20,7 @@ const DestinationDetailsSlider = ({ destinationSuggestions, title }) => {
       <div>
         <h3 className="text-center text-3xl xl:text-4xl font-editorsNoteNormal text-primary">
           Suggested <span className="font-editorsNoteItalic">tours</span> for
-          Alaska
+          <span> {title}</span>
         </h3>
       </div>
 
@@ -49,13 +49,13 @@ const DestinationDetailsSlider = ({ destinationSuggestions, title }) => {
         {/* left */}
         <button
           onClick={() => swiperRef.slidePrev()}
-          className="size-10 bg-[#E6ECF0] shadow-md rounded-full flex items-center justify-center absolute top-1/2 -left-4 lg:-left-8 z-20"
+          className="size-10 bg-[#E6ECF0] shadow-md rounded-full flex items-center justify-center absolute top-1/2 -left-4 lg:-left-8 z-10"
         >
           <PrevSlideSvg />
         </button>
         <button
           onClick={() => swiperRef.slideNext()}
-          className="size-10 bg-[#E6ECF0] shadow-md rounded-full flex items-center justify-center absolute top-1/2 -right-4 lg:-right-8 z-20"
+          className="size-10 bg-[#E6ECF0] shadow-md rounded-full flex items-center justify-center absolute top-1/2 -right-4 lg:-right-8 z-10"
         >
           <NextSlideSvg />
         </button>

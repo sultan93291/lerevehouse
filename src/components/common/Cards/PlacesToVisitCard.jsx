@@ -1,7 +1,6 @@
 const PlacesToVisitCard = ({ item }) => {
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
 
-  console.log(item);
 
   return (
     <div className=" p-4 lg:p-6 cursor-pointer ease-in-out duration-300 hover:bg-[#f4f4f4] border-[1px] border-solid border-[#9C9EA166]  flex flex-col-reverse lg:flex-col gap-5  hover:border-transparent ">

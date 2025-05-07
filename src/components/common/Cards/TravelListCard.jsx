@@ -32,9 +32,11 @@ const TravelListCard = ({ item }) => {
           <h4 className="text-lg lg:text-xl font-semibold">
             {item?.trip_package_title}
           </h4>
-          <p className="text-[#565656] h-12 text-sm lg:text-base  lg:h-20">
-            {item?.travel_style?.description}
-          </p>
+          {item?.travel_style?.description && (
+            <p className="text-[#565656] h-12 text-sm lg:text-base  lg:h-20">
+              {item?.travel_style?.description}
+            </p>
+          )}
         </div>
         <div className="w-full flex items-center justify-between pt-3">
           <span className="text-primary text-sm lg:text-base font-semibold">

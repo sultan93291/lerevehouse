@@ -101,89 +101,6 @@ const DestinationDetails = () => {
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
   const DescreptionData = data?.data?.destination_details;
 
-  console.log(data?.data?.destination_details);
-  
-
-  const placesToVisitInfo = [
-    {
-      image: place1,
-      title: "Alaska Travel Denali National Park",
-      description:
-        "Denali National Park, located in Alaska's interior, is a stunning wilderness area that spans over six million acres, offering some of the most breathtaking landscapes in the world. The park is home to Denali (Mount McKinley), the tallest peak in North America",
-    },
-    {
-      image: place2,
-      title: "Alaska Cruise Trip Vancouver Island, Denail",
-      description:
-        "Denali National Park, located in Alaska's interior, is a stunning wilderness area that spans over six million acres, offering some of the most breathtaking landscapes in the world. The park is home to Denali (Mount McKinley), the tallest peak in North America",
-    },
-    {
-      image: place3,
-      title: "Guided Tour In Alaska ",
-      description:
-        "Denali National Park, located in Alaska's interior, is a stunning wilderness area that spans over six million acres, offering some of the most breathtaking landscapes in the world. The park is home to Denali (Mount McKinley), the tallest peak in North America",
-    },
-  ];
-
-  const luxuryPlacesInfo = [
-    {
-      image: lux1,
-      title: "Kananaskis Mountain Lodge",
-      location: "Canadian Rockies",
-      description:
-        "Nestled in the heart of the Canadian Rockies, Kananaskis Mountain Lodge offers a luxurious",
-    },
-    {
-      image: lux2,
-      title: "Kananaskis Mountain Lodge",
-      location: "Canadian Rockies",
-      description:
-        "Nestled in the heart of the Canadian Rockies, Kananaskis Mountain Lodge offers a luxurious",
-    },
-    {
-      image: lux3,
-      title: "Kananaskis Mountain Lodge",
-      location: "Canadian Rockies",
-      description:
-        "Nestled in the heart of the Canadian Rockies, Kananaskis Mountain Lodge offers a luxurious",
-    },
-    {
-      image: lux4,
-      title: "Kananaskis Mountain Lodge",
-      location: "Canadian Rockies",
-      description:
-        "Nestled in the heart of the Canadian Rockies, Kananaskis Mountain Lodge offers a luxurious",
-    },
-    {
-      image: lux5,
-      title: "Kananaskis Mountain Lodge",
-      location: "Canadian Rockies",
-      description:
-        "Nestled in the heart of the Canadian Rockies, Kananaskis Mountain Lodge offers a luxurious",
-    },
-    {
-      image: lux6,
-      title: "Kananaskis Mountain Lodge",
-      location: "Canadian Rockies",
-      description:
-        "Nestled in the heart of the Canadian Rockies, Kananaskis Mountain Lodge offers a luxurious",
-    },
-    {
-      image: lux7,
-      title: "Kananaskis Mountain Lodge",
-      location: "Canadian Rockies",
-      description:
-        "Nestled in the heart of the Canadian Rockies, Kananaskis Mountain Lodge offers a luxurious",
-    },
-    {
-      image: lux8,
-      title: "Kananaskis Mountain Lodge",
-      location: "Canadian Rockies",
-      description:
-        "Nestled in the heart of the Canadian Rockies, Kananaskis Mountain Lodge offers a luxurious",
-    },
-  ];
-
   return (
     <div className="relative ">
       {/* hero */}
@@ -217,10 +134,10 @@ const DestinationDetails = () => {
         <WhyBookSection />
 
         {/* places to visit section */}
-        <DestinationPlacesToVisit placesToVisitInfo={data.data} />
+        <DestinationPlacesToVisit placesToVisitInfo={data?.data} />
 
         {/* Luxury Section */}
-        <DestinationLuxurySection luxuryPlacesInfo={luxuryPlacesInfo} />
+        <DestinationLuxurySection luxuryPlacesInfo={destinationSuggestionData?.data} />
       </section>
     </div>
   );
