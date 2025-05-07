@@ -5,7 +5,7 @@ const DestinationDetailsTabs = ({ sectionTabs,activeTab,setActiveTab }) => {
 
 
   return (
-    <div className="py-6 2xl:sticky z-[6]  lg:px-8 2xl:px-16 3xl:px-32  top-[152px] left-0 font-interTight w-full bg-[#f4f4f4] flex items-center flex-wrap xl:justify-center gap-2 xl:gap-12">
+    <div className="py-6 2xl:sticky z-[15]  lg:px-8 2xl:px-16 3xl:px-32  top-[152px] left-0 font-interTight w-full bg-[#f4f4f4] flex items-center flex-wrap xl:justify-center gap-2 xl:gap-12">
       {sectionTabs?.map(tab => (
         <Link
           offset={-250}

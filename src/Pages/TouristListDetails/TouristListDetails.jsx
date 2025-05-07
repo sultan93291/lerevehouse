@@ -9,7 +9,11 @@ import TourListDetailsBanner from "@/components/TourListDetails/TourListDetailsB
 import bg from "../../assets/images/destination-bg.jpg";
 import WaterActivity from "@/components/TourListDetails/WaterActivity";
 import CommonHeroBanner from "@/components/common/HeroBanner/CommonHeroBanner";
-import { useTripPackageDetailsQuery } from "@/Redux/features/api/apiSlice";
+import {
+  useGetAllPackagesQuery,
+  useGetAllReviewsQuery,
+  useTripPackageDetailsQuery,
+} from "@/Redux/features/api/apiSlice";
 import { useParams } from "react-router-dom";
 import { InfinitySpin } from "react-loader-spinner";
 import toast from "react-hot-toast";
@@ -22,7 +26,25 @@ const TouristListDetails = () => {
     refetchOnReconnect: true,
   });
 
-  if (isLoading) {
+  const {
+    data: allPackaageData,
+    error: allpackageError,
+    isLoading: ispackageLoading,
+  } = useGetAllPackagesQuery(id, {
+    refetchOnFocus: true,
+    refetchOnReconnect: true,
+  });
+
+  const {
+    data: reviewData,
+    error: allReviewError,
+    isLoading: isReviewLoading,
+  } = useGetAllReviewsQuery(undefined, {
+    refetchOnFocus: true,
+    refetchOnReconnect: true,
+  });
+
+  if (isLoading || ispackageLoading || isReviewLoading) {
     return (
       <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center z-50 bg-white">
         <InfinitySpin
@@ -38,6 +60,28 @@ const TouristListDetails = () => {
   if (error) {
     const errorMessage =
       error.data?.message || error.error || error.status || error.message;
+    if (errorMessage) {
+      toast.error(errorMessage);
+    }
+  }
+
+  if (allpackageError) {
+    const errorMessage =
+      allpackageError.data?.message ||
+      allpackageError.error ||
+      allpackageError.status ||
+      allpackageError.message;
+    if (errorMessage) {
+      toast.error(errorMessage);
+    }
+  }
+
+  if (allReviewError) {
+    const errorMessage =
+      allReviewError.data?.message ||
+      allReviewError.error ||
+      allReviewError.status ||
+      allReviewError.message;
     if (errorMessage) {
       toast.error(errorMessage);
     }
@@ -72,6 +116,13 @@ const TouristListDetails = () => {
     allItenareies: data?.data?.itineraries,
   };
 
+  const priceData = {
+    priceInclusiveData:
+      data?.data.trip_detail?.prices_for_basic_and_full_inclusive_packages,
+    basic_package_price_with_details:
+      data?.data.trip_detail?.basic_package_price_with_details,
+    brouchure: data?.data?.trip_detail?.brochure_pdf,
+  };
 
   const sectionTabs = [
     {
@@ -124,16 +175,16 @@ const TouristListDetails = () => {
         {/* <WaterActivity /> */}
 
         {/* Testimonials */}
-        <TourListDetailsReview isHeading={true} />
+        <TourListDetailsReview data={reviewData?.data} isHeading={true} />
 
         {/* Dates and Prices */}
-        <TourListDetailsDatesPrices />
+        <TourListDetailsDatesPrices data={priceData} />
 
         {/* video gallery section */}
         <TourListDetailsVideoGallery videos={data?.data?.videos} />
 
         {/* suggestions */}
-        <TourListDetailsSuggestions />
+        <TourListDetailsSuggestions data={allPackaageData?.data} />
       </section>
     </div>
   );
