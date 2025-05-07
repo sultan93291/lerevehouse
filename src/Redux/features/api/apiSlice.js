@@ -215,9 +215,23 @@ export const apiSlice = createApi({
     }),
 
     getDestinationDetailsPackage: builder.query({
-      query: (id) => ({
+      query: id => ({
         url: `/trip-packages?destination_id=${id}`,
         method: `GET`,
+      }),
+    }),
+
+    getAllPackages: builder.query({
+      query: () => ({
+        url: `/trip-packages`,
+        method: `GET`,
+      }),
+    }),
+
+    getAllReviews: builder.query({
+      query: () => ({
+        url: `/reviews`,
+        method:`GET`
       }),
     }),
   }),
@@ -251,5 +265,7 @@ export const {
   useGetActivityDetailsQuery,
   useGetAcitivitySloganDataQuery,
   useGetDestinationDetailsQuery,
-  useGetDestinationDetailsPackageQuery
+  useGetDestinationDetailsPackageQuery,
+  useGetAllPackagesQuery,
+  useGetAllReviewsQuery
 } = apiSlice;

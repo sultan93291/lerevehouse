@@ -1,12 +1,8 @@
 /* eslint-disable react/prop-types */
 import PlacesToVisitCard from "../common/Cards/PlacesToVisitCard";
-import green_map from "../../assets/images/tourist-guide/green_map.png";
-import { Slice } from "lucide-react";
 
 const DestinationPlacesToVisit = ({ placesToVisitInfo }) => {
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
-
-  console.log(placesToVisitInfo);
   
 
   return (

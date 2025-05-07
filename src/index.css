@@ -282,6 +282,17 @@
   .destination-style p {
     @apply font-interTight text-base lg:text-lg text-primary;
   }
+  .price-inclusive ul {
+    @apply flex flex-col gap-4; /* Tailwind classes */
+  }
+
+  .price-inclusive li {
+    @apply list-disc ml-5; /* Optional: bullet points */
+  }
+
+  .price-inclusive h2 {
+    @apply mt-4 font-bold text-primary;
+  }
 
   /* {all dangerous html design ended here} */
 }

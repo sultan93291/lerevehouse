@@ -1,56 +1,43 @@
 import person from "@/assets/images/person.png";
 import { TestimonialStarSvg } from "../SvgContainer/SvgContainer";
 
-const TestimonialSliderHomepage = () => {
+const TestimonialSliderHomepage = ({ data }) => {
+
+  const imgBaseurl = import.meta.env.VITE_SERVER_URL;
+
+
   return (
     <div className=" xl:max-w-[760px] 4xl:max-w-[1060px] mx-auto text-white pb-10 2xl:pb-20">
       <div className="w-full flex items-center justify-center">
         <div className="size-24">
           <img
             className="w-full h-full object-cover rounded-full"
-            src={person}
+            src={`${imgBaseurl}/${data?.image}`}
             alt=""
           />
         </div>
       </div>
       {/* description */}
       <p className="font-editorsNoteNormal text-lg lg:text-xl tracking-wider font-light mt-6 text-center leading-[1.6]">
-        This is the second time we have used Le Re House. They are an
-        exceptional company that goes above and beyond to make their clients
-        happy. Every detail is taken care of. From the properties they recommend
-        to the experiences they curate, they are second to none. They anticipate
-        your needs and arrange surprises that enhance your vacation. I have
-        and...
+        {data?.comment}
       </p>
-
       {/* star */}
-      <div className="mt-5 w-full flex items-center justify-center gap-1">
-        <div className="bg-white size-6 flex items-center justify-center rounded-md">
-          <TestimonialStarSvg />
-        </div>
-        <div className="bg-white size-6 flex items-center justify-center rounded-md">
-          <TestimonialStarSvg />
-        </div>
-        <div className="bg-white size-6 flex items-center justify-center rounded-md">
-          <TestimonialStarSvg />
-        </div>
-        <div className="bg-white size-6 flex items-center justify-center rounded-md">
-          <TestimonialStarSvg />
-        </div>
-        <div className="bg-white size-6 flex items-center justify-center rounded-md">
-          <TestimonialStarSvg />
-        </div>
-      </div>
 
-      {/* user info */}
-      <div className="mt-5 space-y-1">
-        <h4 className="font-inter text-lg text-center">Name Surname</h4>
-        <p className="font-inter text-lg text-center">
-          Published 05th December 2024 on Trustpilot{" "}
-        </p>
+      <div className="mt-5 w-full flex items-center justify-center gap-1">
+        {Array.from({ length: 5 }, (_, i) => (
+          <div
+            key={i}
+            className="bg-white size-6 flex items-center justify-center rounded-md"
+          >
+            <TestimonialStarSvg
+              className={i < data?.rating ? "text-yellow-400" : "text-gray-300"}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
 };
 
 export default TestimonialSliderHomepage;
+// ok
