@@ -18,78 +18,91 @@ import lux6 from "@/assets/images/luxury/6.jpg";
 import lux7 from "@/assets/images/luxury/7.jpg";
 import lux8 from "@/assets/images/luxury/8.jpg";
 import DestinationLuxurySection from "@/components/DestinationDetails/DestinationLuxurySection";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import {
+  useGetDestinationDetailsPackageQuery,
+  useGetDestinationDetailsQuery,
+} from "@/Redux/features/api/apiSlice";
+import toast from "react-hot-toast";
+import { InfinitySpin } from "react-loader-spinner";
 
 const DestinationDetails = () => {
-  const { title } = useParams();
-  console.log(title);
+  const { id } = useParams();
+
+  const { data, error, isLoading } = useGetDestinationDetailsQuery(id, {
+    refetchOnFocus: true,
+    refetchOnReconnect: true,
+  });
+
+  const {
+    data: destinationSuggestionData,
+    error: destinationSuggestionError,
+    isLoading: isdestinationLoading,
+  } = useGetDestinationDetailsPackageQuery(id, {
+    refetchOnFocus: true,
+    refetchOnReconnect: true,
+  });
+
+
+  const title = data?.data?.name || "";
   const sectionTabs = [
-    {
-      label: `${title} Holiday`,
-      link: `${title}-holiday`,
-    },
-    {
-      label: "Tour",
-      link: "suggestions",
-    },
-    {
-      label: "Place to visit",
-      link: "places-to-visit",
-    },
-    {
-      label: "Where to stay",
-      link: "where-to-stay",
-    },
+    { label: `${title} Holiday`, link: `${title}-holiday` },
+    { label: "Tour", link: "suggestions" },
+    { label: "Place to visit", link: "places-to-visit" },
+    { label: "Where to stay", link: "where-to-stay" },
   ];
 
-  const destinationSuggestions = [
-    {
-      id: 1,
-      image: destinationSuggestionBg,
-      duration: 11,
-      title: "Vancouver to Denali Park with 8 Day Cruise",
-      description:
-        "Our “ Canada and Alaska Trip - from Vancouver to Denali Park ” is dedicated to those who want to get to know Alaska Our “ Canada and Alaska Trip - from Vancouver to Denali Park ” is dedicated to those who want to get to know Alaska",
-      price: 3550,
-    },
-    {
-      id: 2,
-      image: destinationSuggestionBg,
-      duration: 11,
-      title: "Vancouver to Denali Park with 8 Day Cruise",
-      description:
-        "Our “ Canada and Alaska Trip - from Vancouver to Denali Park ” is dedicated to those who want to get to know Alaska Our “ Canada and Alaska Trip - from Vancouver to Denali Park ” is dedicated to those who want to get to know Alaska",
-      price: 3550,
-    },
-    {
-      id: 3,
-      image: destinationSuggestionBg,
-      duration: 11,
-      title: "Vancouver to Denali Park with 8 Day Cruise",
-      description:
-        "Our “ Canada and Alaska Trip - from Vancouver to Denali Park ” is dedicated to those who want to get to know Alaska Our “ Canada and Alaska Trip - from Vancouver to Denali Park ” is dedicated to those who want to get to know Alaska",
-      price: 3550,
-    },
-    {
-      id: 4,
-      image: destinationSuggestionBg,
-      duration: 11,
-      title: "Vancouver to Denali Park with 8 Day Cruise",
-      description:
-        "Our “ Canada and Alaska Trip - from Vancouver to Denali Park ” is dedicated to those who want to get to know Alaska Our “ Canada and Alaska Trip - from Vancouver to Denali Park ” is dedicated to those who want to get to know Alaska",
-      price: 3550,
-    },
-    {
-      id: 5,
-      image: destinationSuggestionBg,
-      duration: 11,
-      title: "Vancouver to Denali Park with 8 Day Cruise",
-      description:
-        "Our “ Canada and Alaska Trip - from Vancouver to Denali Park ” is dedicated to those who want to get to know Alaska Our “ Canada and Alaska Trip - from Vancouver to Denali Park ” is dedicated to those who want to get to know Alaska",
-      price: 3550,
-    },
-  ];
+  const [activeTab, setActiveTab] = useState(null);
+
+  useEffect(() => {
+    if (title) {
+      setActiveTab(sectionTabs[0]);
+    }
+  }, [title]);
+
+  // Loading state
+  if (isLoading || isdestinationLoading) {
+    return (
+      <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center z-50 bg-white">
+        <InfinitySpin
+          visible={true}
+          width="200"
+          color="#004265"
+          ariaLabel="infinity-spin-loading"
+        />
+      </div>
+    );
+  }
+
+  // Error state
+  if (error) {
+    const errorMessage =
+      error.data?.message || error.error || error.status || error.message;
+    if (errorMessage) {
+      toast.error(errorMessage);
+    }
+  }
+
+  if (destinationSuggestionError) {
+    const errorMessage =
+      destinationSuggestionError.data?.message ||
+      destinationSuggestionError.error ||
+      destinationSuggestionError.status ||
+      destinationSuggestionError.message;
+    if (errorMessage) {
+      toast.error(errorMessage);
+    }
+  }
+
+  // Wait for title and tab setup
+  if (!title || !activeTab) return null;
+
+  const imgBaseurl = import.meta.env.VITE_SERVER_URL;
+  const DescreptionData = data?.data?.destination_details;
+
+  console.log(data?.data?.destination_details);
+  
 
   const placesToVisitInfo = [
     {
@@ -171,13 +184,11 @@ const DestinationDetails = () => {
     },
   ];
 
-  const [activeTab, setActiveTab] = useState(sectionTabs[0]);
-
   return (
     <div className="relative ">
       {/* hero */}
       <CommonHeroBannerVideo
-        heroBg={heroBg}
+        heroBg={`${imgBaseurl}/${data?.data?.destination_details?.video}`}
         title={title.toLowerCase()}
         capitalize={true}
       />
@@ -191,11 +202,14 @@ const DestinationDetails = () => {
 
       <section className="container  mx-auto my-10 xl:my-20    ">
         {/* description container*/}
-        <DestinationDetailsDescription id={`${title}-holiday`} />
+        <DestinationDetailsDescription
+          data={DescreptionData}
+          id={`${title}-holiday`}
+        />
 
         {/* Suggestions container */}
         <DestinationDetailsSlider
-          destinationSuggestions={destinationSuggestions}
+          destinationSuggestions={destinationSuggestionData?.data}
           title={title}
         />
 
@@ -203,7 +217,7 @@ const DestinationDetails = () => {
         <WhyBookSection />
 
         {/* places to visit section */}
-        <DestinationPlacesToVisit placesToVisitInfo={placesToVisitInfo} />
+        <DestinationPlacesToVisit placesToVisitInfo={data.data} />
 
         {/* Luxury Section */}
         <DestinationLuxurySection luxuryPlacesInfo={luxuryPlacesInfo} />

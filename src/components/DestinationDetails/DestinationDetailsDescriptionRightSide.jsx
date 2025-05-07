@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Modal } from "../Modals/Modal";
 import TestModal from "../Modals/TestModal";
 
-const DestinationDetailsDescriptionRightSide = () => {
+const DestinationDetailsDescriptionRightSide = ({ data }) => {
   const [open, setOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -47,58 +47,18 @@ const DestinationDetailsDescriptionRightSide = () => {
             >
               Make An Enquiry
             </div>
-            <Link className="block text-center bg-transparent text-sm lg:text-base text-primary py-3 lg:py-4 border border-primary hover:bg-primary hover:text-white transition-all duration-300 w-full bg-primary">
+            {/* <Link className="block text-center bg-transparent text-sm lg:text-base text-primary py-3 lg:py-4 border border-primary hover:bg-primary hover:text-white transition-all duration-300 w-full bg-primary">
               Request A Brouchre
-            </Link>
+            </Link> */}
           </div>
         </div>
 
         {/* details */}
         <div className="mt-10">
-          <div className="space-y-2">
-            <h5 className="text-2xl font-editorsNoteNormal font-light text-primary tracking-wide">
-              Destination Alaska
-            </h5>
-            <p className="font-interTight text-base lg:text-lg text-primary">
-              Alaska is the largest state in the USA and one of the least
-              populated (with a population greater than Vermont and Wyoming). It
-              is the land of adventure, a land that allows you to experience
-              exciting excursions and a variety of outdoor activities, such as
-              driving a dog sled on a glacier or heli-hiking in Denali National
-              Park , in central Alaska, a state that is also home to the highest
-              peak in North America,
-            </p>
-            <p className="font-interTight text-primary">
-              Mount McKinley ( Denali means &ldquo;the largest&ldquo; in the
-              Athabaska language ). Or go kayaking along the winding banks of
-              the waterways or admire the large cetaceans of Glacier Bay, which
-              has been a UNESCO &ldquo;World Heritage&ldquo; site since 1979 .
-              Destination Alaska : imagine an encounter with the grizzly bear ,
-              a creature that has now become mythical in our eyes, as well as
-              the giant moose , whose size reminds us of prehistoric animals,
-              the gentle but very resistant caribou , the wolves that remind us
-              of White Fang ... and the Moby Dick whales, and the enormous
-              Stellar, the ......
-            </p>
-
-            {isExpanded && (
-              <p className="font-interTight text-primary">
-                {` ... Finally, the towering glaciers of the Kenai Peninsula, and the
-          vast tundras that stretch for miles. You can spot more wildlife in the
-          Alaskan wilderness, such as the elusive lynx or the playful sea otter.
-          It's a paradise for those who seek the beauty of untouched nature and
-          the thrill of adventure. Alaska is truly a destination that offers
-          something for everyone, from quiet reflection to heart-pounding
-          activities.`}
-              </p>
-            )}
-
-            <button
-              className="underline font-medium cursor-pointer"
-              onClick={handleToggle}
-            >
-              {isExpanded ? "Read Less" : "Read More"}
-            </button>
+          <div
+            dangerouslySetInnerHTML={{ __html: data?.description }}
+            className="destination-style"
+          >
           </div>
         </div>
       </div>
