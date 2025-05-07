@@ -1,14 +1,18 @@
 /* eslint-disable react/prop-types */
-import destinationBg from '@/assets/images/destination-details/destination-details-img.jpg';
-import DestinationDetailsDescriptionLeftSide from './DestinationDetailsDescriptionLeftSide';
-import DestinationDetailsDescriptionRightSide from './DestinationDetailsDescriptionRightSide';
-const DestinationDetailsDescription = ({ id }) => {
+import destinationBg from "@/assets/images/destination-details/destination-details-img.jpg";
+import DestinationDetailsDescriptionLeftSide from "./DestinationDetailsDescriptionLeftSide";
+import DestinationDetailsDescriptionRightSide from "./DestinationDetailsDescriptionRightSide";
+const DestinationDetailsDescription = ({ id, data }) => {
+  console.log(data);
+
+  const imgBaseurl = import.meta.env.VITE_SERVER_URL;
+
   return (
     <div id={id} className="w-full flex xl:flex-row flex-col gap-6 xl:gap-12">
       {/* image */}
-      <DestinationDetailsDescriptionLeftSide destinationBg={destinationBg} />
+      <DestinationDetailsDescriptionLeftSide destinationBg={`${imgBaseurl}/${data?.image}`} />
       {/* right side */}
-      <DestinationDetailsDescriptionRightSide />
+      <DestinationDetailsDescriptionRightSide data={data} />
     </div>
   );
 };

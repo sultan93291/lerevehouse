@@ -9,9 +9,10 @@ import {
   NextSlideSvg,
   PrevSlideSvg,
 } from "../common/SvgContainer/SvgContainer";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const DestinationDetailsSlider = ({ destinationSuggestions, title }) => {
+  const { id } = useParams();
   const [swiperRef, setSwiperRef] = useState(null);
   return (
     <div id="suggestions" className="md:mt-16 mb-0 my-10 xl:yt-20">
@@ -63,7 +64,7 @@ const DestinationDetailsSlider = ({ destinationSuggestions, title }) => {
       {/* view all tour btn */}
       <div className="w-full flex items-center justify-center mt-10">
         <Link
-          to={`/tour-lists/${title}`}
+          to={`/tour-lists/${id}?isdestination=true`}
           className="block px-8 xl:px-12 2xl:px-24 py-3 text-sm lg:text-base bg-primary text-white font-interTight font-medium border border-primary hover:bg-transparent hover:text-primary transition-all duration-300"
         >
           View All {title} Tour

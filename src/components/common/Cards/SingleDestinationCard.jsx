@@ -1,7 +1,9 @@
 /* eslint-disable react/prop-types */
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
-const SingleDestinationCard = ({ bg, title, height }) => {
+
+const SingleDestinationCard = ({ bg, title, height , id }) => {
+  
   return (
     <div
       className={`${
@@ -16,7 +18,7 @@ const SingleDestinationCard = ({ bg, title, height }) => {
       }}
     >
       <Link
-        to={`/destination-details/${title}`}
+        to={`/destination-details/${id}`}
         className=" text-2xl 3xl:text-4xl font-semibold font-editorsNoteNormal text-center xl:text-left group-hover:scale-105 transition-all duration-500"
       >
         {title}

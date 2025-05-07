@@ -104,10 +104,11 @@ const Destination = () => {
               >
                 {row.map((destination, cardIndex) => (
                   <SingleDestinationCard
-                    key={destination.id}
-                    bg={`${imgBaseurl}/${destination.image}`}
-                    title={destination.name.trim()}
+                    key={destination?.id}
+                    bg={`${imgBaseurl}/${destination?.image}`}
+                    title={destination?.name.trim()}
                     height={getCardHeight(rowIndex, cardIndex)}
+                    id={destination?.id}
                   />
                 ))}
               </div>
