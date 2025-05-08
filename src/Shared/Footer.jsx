@@ -29,7 +29,6 @@ const Footer = () => {
     refetchOnReconnect: true,
   });
 
-
   if (isLoading || isSiteSettingLoading) {
     return (
       <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center z-50 bg-white">
@@ -60,28 +59,7 @@ const Footer = () => {
     }
   }
 
-  const social = [
-    {
-      icon: <FooterTwitterSvg />,
-      link: "www.twitter.com",
-      identifier: "",
-    },
-    {
-      icon: <FooterYoutubeSvg />,
-      link: "www.youtube.com",
-      identifier: "youtube",
-    },
-    {
-      icon: <FooterInstagramSvg />,
-      link: "www.instagram.com",
-      identifier: "instagram",
-    },
-    {
-      icon: <FooterFacebookSvg />,
-      link: "www.facebook.com",
-      identifier: "facebook",
-    },
-  ];
+const imgBaseurl = import.meta.env.VITE_SERVER_URL;
 
   const handleDestinationMap = address => {
     const location = `https://www.google.com/maps?q=${address}`;
@@ -191,23 +169,19 @@ const Footer = () => {
           </div>
           {/* social icons */}
           <div className="flex justify-between items-center gap-5">
-            {social?.map(item =>
-              data?.data.map((link, idx) => {
-                if (item.identifier === link?.social_media) {
-                  return (
-                    <Link
-                      onClick={() => {
-                        window.location.href = link?.profile_link;
-                      }}
-                      key={item?.link}
-                      className="block"
-                    >
-                      {item?.icon}
-                    </Link>
-                  );
-                }
-              })
-            )}
+            {data?.data.map((item, idx) => {
+              return (
+                <Link
+                  onClick={() => {
+                    window.location.href = item?.profile_link;
+                  }}
+                  key={item?.link}
+                  className="block"
+                >
+                  <img className="h-[25px] w-[25px] object-cover " src={`${imgBaseurl}/${item?.icon}`} alt="not found" />
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
