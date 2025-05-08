@@ -32,11 +32,10 @@ const TravelExploreCard = ({ item, travelMode }) => {
             navigate(
               travelMode === "styles"
                 ? `/travel-styles-details/${item?.id}`
-                : travelMode === "travel_details"
+                : travelMode === "travel_details" || travelMode === "honey_moon"
                 ? `/tour-list-details/${item?.id}`
                 : `/activities/subcategory/${item?.name}`
             );
-            //need to relsolve
           }}
         >
           {travelMode === "travel_details" ? "Discover the trip" : " View"}

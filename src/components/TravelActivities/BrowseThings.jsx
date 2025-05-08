@@ -12,18 +12,13 @@ import TravelExploreCard from "../TravelStyles/TravelExploreCard";
 import { InfinitySpin } from "react-loader-spinner";
 import toast from "react-hot-toast";
 
-
 const BrowseThings = () => {
-  const { data, error, isLoading } = useGetAllTravelStylesDataQuery(
-    undefined,
-    {
-      refetchOnFocus: true,
-      refetchOnReconnect: true,
-    }
-  );
-  
+  const { data, error, isLoading } = useGetAllTravelStylesDataQuery(undefined, {
+    refetchOnFocus: true,
+    refetchOnReconnect: true,
+  });
 
-  if (isLoading ) {
+  if (isLoading) {
     return (
       <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center z-50 bg-white">
         <InfinitySpin
@@ -35,7 +30,6 @@ const BrowseThings = () => {
       </div>
     );
   }
-  
 
   if (error) {
     const errorMessage =
@@ -64,6 +58,7 @@ const BrowseThings = () => {
                 link={"/activities/subcategory/"}
                 key={item.id}
                 item={item}
+                travelMode={"activity"}
               />
             ))}
           </div>
