@@ -136,14 +136,18 @@ const FeaturedTravels = ({ isHoneyMoon, data }) => {
         <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5">
           {isHoneyMoon
             ? data?.map(item => (
-                <TravelExploreCard key={item.id} item={item} />
+                <TravelExploreCard
+                  travelMode={isHoneyMoon ? "honey_moon" : "travel_details"}
+                  key={item.id}
+                  item={item}
+                />
               ))
             : data
                 ?.slice(0, 9)
                 ?.map(item => (
                   <TravelExploreCard
                     key={item.id}
-                    travelMode={"travel_details"}
+                    travelMode={isHoneyMoon ? "honey_moon" : "travel_details"}
                     item={item}
                   />
                 ))}
