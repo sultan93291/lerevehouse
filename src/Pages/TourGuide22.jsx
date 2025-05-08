@@ -17,7 +17,6 @@ import toast from "react-hot-toast";
 
 const TourGuide22 = () => {
   const { slug } = useParams();
-  console.log(slug);
   const sanitizedSlug = Number(slug.replace(":", ""));
 
   const { data, error, isLoading } = useTourGuideDataQuery(sanitizedSlug, {
@@ -46,26 +45,37 @@ const TourGuide22 = () => {
     }
   }
 
+  console.log(data);
+  
+
+  const whereToStayAllData = {
+    whereToStayData: data?.data?.where_to_stay_description,
+    whereToStaImage: data?.data?.where_to_stay_image,
+  };
+
+  const imgBaseUrl = import.meta.env.VITE_SERVER_URL;
+
   return (
     <section className="container">
       {/* Tour Gallery */}
       <div className="2xl:mt-44 mt-32 mb-10">
         <figure className="h-[250px] sm:h-[300px] lg:h-auto">
-          <img src={g1} alt="g1" className="w-full h-full object-cover" />
+          <img
+            src={`${imgBaseUrl}/${data?.data?.trip_guide_images[0].image}`}
+            alt="g1"
+            className="w-full h-full object-cover"
+          />
         </figure>
         <div className="grid mt-3 lg:mt-5 lg:grid-cols-2 xl:grid-cols-4 gap-3 lg:gap-5">
-          <div className="h-[250px] sm:h-[300px] lg:h-auto">
-            <img src={g2} alt="g2" className="w-full h-full object-cover" />
-          </div>
-          <div className="h-[250px] sm:h-[300px] lg:h-auto">
-            <img src={g3} alt="g2" className="w-full h-full object-cover" />
-          </div>
-          <div className="h-[250px] sm:h-[300px] lg:h-auto">
-            <img src={g4} alt="g2" className="w-full h-full object-cover" />
-          </div>
-          <div className="h-[250px] sm:h-[300px] lg:h-auto">
-            <img src={g5} alt="g2" className="w-full h-full object-cover" />
-          </div>
+          {data?.data?.trip_guide_images?.slice(1, 5).map((img, index) => (
+            <div key={index} className="h-[250px] sm:h-[300px] lg:h-[350px]">
+              <img
+                src={`${imgBaseUrl}/${img.image}`}
+                alt={`g${index + 2}`}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
         </div>
       </div>
 
@@ -110,19 +120,21 @@ const TourGuide22 = () => {
             </Tab>
           </TabList>
           <TabPanel>
-            <WhatToDo />
+            <WhatToDo data={data?.data?.what_to_do} />
           </TabPanel>
           <TabPanel>
-            <WhatToEat />
+            <WhatToEat data={data?.data?.what_to_eat_description} />
           </TabPanel>
           <TabPanel>
-            <FestivalsCalendar />
+            <FestivalsCalendar
+              data={data?.data?.festivals_calender_description}
+            />
           </TabPanel>
           <TabPanel>
-            <Map />
+            <Map data={data?.data?.map_url} />
           </TabPanel>
           <TabPanel>
-            <WhereToStay />
+            <WhereToStay data={whereToStayAllData} />
           </TabPanel>
         </Tabs>
       </div>

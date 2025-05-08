@@ -45,7 +45,8 @@ const containerStyle = {
 const waypoints = [{ lat: 49.2827, lng: -123.1207 }];
 
 const RecomendedAttractionModal = ({ setOpen, modalData }) => {
-  console.log(modalData);
+  console.log(modalData?.details);
+
   const containerRef = useRef(null);
   const {
     register,
@@ -258,7 +259,3 @@ const RecomendedAttractionModal = ({ setOpen, modalData }) => {
 };
 
 export default RecomendedAttractionModal;
-
-
-
-

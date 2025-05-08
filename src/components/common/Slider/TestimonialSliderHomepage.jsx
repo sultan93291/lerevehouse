@@ -40,4 +40,3 @@ const TestimonialSliderHomepage = ({ data }) => {
 };
 
 export default TestimonialSliderHomepage;
-// ok

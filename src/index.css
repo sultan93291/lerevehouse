@@ -235,6 +235,11 @@
   }
 
   /* recomended attraction modal */
+  /* styles.css or Tailwind-compatible file */
+  .details p {
+    @apply flex flex-col gap-y-2 mb-4;
+  }
+
 
   .details p span {
     @apply text-sm md:text-xl font-inter leading-[150%] font-medium;
@@ -292,6 +297,18 @@
 
   .price-inclusive h2 {
     @apply mt-4 font-bold text-primary;
+  }
+
+  .what-to-eat h1,
+  .what-to-eat h3,
+  .what-to-eat h4,
+  .what-to-eat h5 {
+    @apply font-fontSpring md:text-3xl text-2xl mb-1 md:mb-3 text-[#004265];
+  }
+
+  .what-to-eat p,
+  .what-to-eat span {
+    @apply text-[#565656] 2xl:text-xl xl:text-lg text-[15px] xs:text-base;
   }
 
   /* {all dangerous html design ended here} */
