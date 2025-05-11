@@ -10,6 +10,7 @@ import {
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useGetOfficeDataQuery } from "@/Redux/features/api/apiSlice";
 
 const NavLinks = [
   {
@@ -37,6 +38,43 @@ const NavLinks = [
 const TopNavbar = () => {
   const [isSideBarOpen, setisSideBarOpen] = useState(false);
   const sideBarRef = useRef(null);
+
+  const {
+    data: officeData,
+    error: officeError,
+    isLoading: isofficeLoading,
+  } = useGetOfficeDataQuery(undefined, {
+    refetchOnFocus: true,
+    refetchOnReconnect: true,
+  });
+
+  if (isofficeLoading) {
+    return (
+      <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center z-50 bg-white">
+        <InfinitySpin
+          visible={true}
+          width="200"
+          color="#004265"
+          ariaLabel="infinity-spin-loading"
+        />
+      </div>
+    );
+  }
+
+  if (officeError) {
+    const errorMessage =
+      officeError.data?.message ||
+      officeError.error ||
+      officeError.status ||
+      officeError.message;
+    if (errorMessage) {
+      toast.error(errorMessage);
+    }
+  }
+
+  const baseImgUrl = import.meta.env.VITE_SERVER_URL;
+
+  console.log(officeData?.data);
 
   useEffect(() => {
     const handleClickOutside = event => {
@@ -66,8 +104,7 @@ const TopNavbar = () => {
 
   const handlMapOpen = () => {
     // Coordinates for the exact location
-    const location =
-      "https://www.google.com/maps?q=3130 West 6th avenue - V6K 1X6 Vancouver British Columbia Canada";
+    const location = `https://www.google.com/maps?q=${officeData?.data[0]?.address}`;
 
     window.open(location, "_blank");
   };
@@ -89,7 +126,7 @@ const TopNavbar = () => {
               >
                 <PhoneSvgNavbar />
                 <span className="font-bold min-w-[109px] text-sm font-interTight">
-                  1-778 987 1796
+                  {officeData.data[0]?.telephone}
                 </span>
               </Link>
               <Link
@@ -100,8 +137,7 @@ const TopNavbar = () => {
               >
                 <LocationSvgNavbar />
                 <span className="text-sm break-words font-interTight">
-                  3130 West 6th avenue - V6K 1X6 Vancouver British Columbia
-                  Canada
+                  {officeData?.data[0]?.address}
                 </span>
               </Link>
             </div>
