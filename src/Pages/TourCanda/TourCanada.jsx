@@ -5,111 +5,133 @@ import ship from "../../assets/images/canada-tour/ship.jpg";
 import uk from "../../assets/images/canada-tour/uk.jpg";
 import farming from "../../assets/images/canada-tour/farming.jpg";
 import { useNavigate } from "react-router-dom";
-
-
-const selfDriventours = [
-  {
-    id: 1,
-    src: ship,
-    heading: "Self Drive Tour in Canada",
-    subHeading:
-      "Choosing a self-drive tour in Canada means having no constraints: you can modify them as you wish by adding or removing nights from the route and you can also choose the category of hotels used for overnight stays along the way.   ",
-    btnTxt: "Choose a car tour",
-    link: "/tour-with-car",
-  },
-  {
-    id: 2,
-    src: lake,
-    heading: "Canada Coach Tours",
-    subHeading:
-      "This type of trip in Canada is perfect if you prefer not to drive and not to worry about accommodations, just relax and look out the window, our guides will take care of the rest.",
-    btnTxt: "Choose a coach tour in Canada",
-  },
-  {
-    id: 3,
-    src: redLight,
-    heading: "Canada Train Tours",
-    subHeading:
-      "Your trip to Canada in total freedom but without having to drive, look at the tours that combine train routes with bus or ferry parts to make your tour of Canada unique!  ",
-    btnTxt: "Choose a train tour in Canada",
-  },
-];
-
-const tripCanda = [
-  {
-    id: 1,
-    src: uk,
-    heading: "Your trip to Canada",
-    paraOne:
-      "Ready to discover the wonders of Canada while enjoying the road and the magnificent landscapes that only Canada can offer you? Wonderful scenery, uncontaminated nature, eco-sustainable cities, wild nature and above all superlative roads: Canada is the perfect country for your road trip! Choose a car tour to have maximum freedom but the hotels and lodges booked stage by stage.",
-    paraTwo:
-      "Coach tours are instead suitable for those who already drive too much during the year or for those who prefer to travel in a group and with an Italian guide . You will travel on  luxury coaches , with air conditioning and bathrooms. Our Italian-speaking guides will be at your disposal, both during the trip and during the numerous stops. Choose with us the type of hotel and board, with  dinners and breakfasts of your choice .",
-    paraThree:
-      "Car tours in Canada can also be done...on a motorbike! Yes, you read that right, we can rent a Harley Davidson and create an ad hoc route to make your trip to Canada on two wheels unique!",
-  },
-  {
-    id: 1,
-    src: farming,
-    heading: "Do it yourself or accompanied?",
-    paraOne:
-      "Everyone has their own way of travelling, whether it is a group trip to Canada or an individual tour, the important thing is to enjoy the landscape and the stories that flow before you, whether they are thousand-year-old glaciers in Alberta or a coastal road that leads to the lighthouse on a cliff in Quebec .",
-    paraTwo:
-      "A trip to Canada by car is more  flexible , it gives you the freedom to decide the route, the duration and the stops. You can combine it with a stay in a large Canadian city at the beginning or at the end and we assure you that you will not have any difficulty.  The roads are always very well signposted  and with the help of the navigator in Italian you really will not have to  worry about anything .",
-    paraThree:
-      "Coach tours in Canada are for those who want to be accompanied and followed daily so as not to miss any travel details, without the worries of having to drive. Comfortable coaches, wonderful roads, driver and guide in Italian... ready to enjoy Canada in complete relaxation ?",
-  },
-];
+import {
+  useGetAllTransportationDataQuery,
+  useGetTransportationHeroSectionDataQuery,
+  useGetTransportationPageDetailsQuery,
+} from "@/Redux/features/api/apiSlice";
+import { InfinitySpin } from "react-loader-spinner";
 
 const TourCanada = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+
+  const { data, error, isLoading } = useGetTransportationHeroSectionDataQuery(
+    undefined,
+    {
+      refetchOnFocus: true,
+      refetchOnReconnect: true,
+    }
+  );
+
+  const {
+    data: transportationData,
+    error: transportationError,
+    isLoading: isTransportationLoading,
+  } = useGetAllTransportationDataQuery(undefined, {
+    refetchOnFocus: true,
+    refetchOnReconnect: true,
+  });
+
+  const {
+    data: transportationDetailsData,
+    error: transportationDetailsError,
+    isLoading: isTransportationDetailsLoading,
+  } = useGetTransportationPageDetailsQuery(undefined, {
+    refetchOnFocus: true,
+    refetchOnReconnect: true,
+  });
+
+  if (isLoading || isTransportationLoading || isTransportationDetailsLoading) {
+    return (
+      <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center z-50 bg-white">
+        <InfinitySpin
+          visible={true}
+          width="200"
+          color="#004265"
+          ariaLabel="infinity-spin-loading"
+        />
+      </div>
+    );
+  }
+
+  if (error) {
+    const errorMessage =
+      error.data?.message || error.error || error.status || error.message;
+
+    const transPorterrorMessage =
+      transportationError.data?.message ||
+      transportationError.error ||
+      transportationError.status ||
+      transportationError.message;
+
+    const transPortDetialserrorMessage =
+      transportationDetailsError.data?.message ||
+      transportationDetailsError.error ||
+      transportationDetailsError.status ||
+      transportationDetailsError.message;
+
+    if (errorMessage) {
+      toast.error(errorMessage);
+    } else if (transPorterrorMessage) {
+      toast.error(transPorterrorMessage);
+    } else if (transPortDetialserrorMessage) {
+      toast.error(transPortDetialserrorMessage);
+    }
+  }
+
+  const imgBaseurl = import.meta.env.VITE_SERVER_URL;
+
+  console.log(transportationDetailsData?.data);
+
   return (
     <section className="2xl:mt-[156px] mb-10 2xl:mb-20 mt-14 xl:py-[72px] pt-9 2xl:py-9 container flex flex-col md:gap-y-10 gap-y-5 2xl:gap-y-[148px]">
       <div className="flex flex-col gap-y-[148px]">
         <div className="flex flex-col gap-y-4 items-center ">
-          <h2 className="text-[#1687C7] font-interTight text-[40px] 2xl:text-[56px] font-semibold leading-[160%] ">
-            Canada Tour
-          </h2>
-          <p className="text-text-gray max-w-[966px] font-interTight text-sm md:text-xl 2xl:text-2xl font-normal md:leading-[140%]">
-            Set off to discover this wonderful country, choose the type
-            of Canada tour that is best for you! Total freedom and desire to
-            drive? Choose from the  Canada car tours  that we offer. If instead
-            you prefer not to drive and rely on an organized trip then look at
-            the  bus tours in Canada . Finally, the  train tours in Canada  that
-            combine train routes with bus routes....or ferry!
-          </p>
+          <div
+            dangerouslySetInnerHTML={{ __html: data?.data?.title }}
+            className="text-[#1687C7] font-interTight text-[40px] 2xl:text-[56px] font-semibold leading-[160%] "
+          ></div>
+          <div
+            dangerouslySetInnerHTML={{ __html: data?.data?.description }}
+            className="text-text-gray max-w-[966px] font-interTight text-sm md:text-xl 2xl:text-2xl font-normal md:leading-[140%]"
+          ></div>
         </div>
       </div>
       <div className="flex flex-col md:flex-row md:flex-wrap gap-y-4 gap-x-4  md:items-center">
-        {selfDriventours.map((item, index) => {
+        {transportationData?.data?.map((item, index) => {
           return (
             <div
               key={index}
               className={`group ${
-                index == 2
+                index % 3 === 2
                   ? " lg:h-[380px] 2xl:h-[570px] h-[250px] w-full"
                   : " lg:h-[380px] 2xl:h-[521px] h-[250px] xl:w-[49%] 3xl:w-[49.4%] md:w-full"
               } flex flex-col items-center justify-center relative overflow-hidden`}
               style={{
-                backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url(${item.src})`,
+                backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url(${imgBaseurl}/${item?.image})`,
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center",
               }}
             >
               {/* Content inside should only be visible on hover */}
-              <div className="md:h-full h-[300px] w-full flex flex-col items-center justify-center md:gap-y-[38px] gap-y-4 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-out transform scale-95 group-hover:scale-100 px-5 md:px-0">
+              <div className="md:h-full h-[300px] w-full flex flex-col items-center justify-center md:gap-y-[38px] gap-y-4 px-5 md:px-0 transition-all duration-500 ease-in-out transform group-hover:scale-100 group-hover:opacity-100 opacity-0 scale-95">
                 <div className="flex flex-col items-center text-center justify-center md:gap-y-[22px]">
                   <h2 className="text-white text-2xl md:text-[32px] font-semibold leading-[150%] tracking-[1px] font-interTight">
-                    {item.heading}
+                    {item?.title}
                   </h2>
-                  <span className="max-w-[629px] text-white text-xs md:text-base font-normal md:leading-[150%] leading-5 tracking-[1px] font-interTight">
-                    {item.subHeading}
-                  </span>
+                  <div
+                    dangerouslySetInnerHTML={{ __html: item?.subtitle }}
+                    className="max-w-[629px] text-white text-xs md:text-base font-normal md:leading-[150%] leading-5 tracking-[1px] font-interTight"
+                  ></div>
                 </div>
-                <button onClick={() => {
-                  navigate(item.link)
-                }} className="bg-[#1687C7] px-4 md:py-3 py-2 text-sm md:text-lg font-semibold leading-[150%] tracking-[1px] text-white font-interTight rounded-[8px]">
-                  {item.btnTxt}
+                <button
+                  onClick={() => {
+                    navigate(item.link);
+                  }}
+                  className="bg-[#1687C7] px-4 md:py-3 py-2 text-sm md:text-lg font-semibold leading-[150%] tracking-[1px] text-white font-interTight rounded-[8px] transition-all duration-300 ease-in-out"
+                >
+                  {`Choose a ${item?.title} `}
                 </button>
               </div>
             </div>
@@ -117,11 +139,11 @@ const TourCanada = () => {
         })}
       </div>
       <div className="flex flex-col xl:gap-y-[72px] ">
-        {tripCanda.map((item, idx) => {
+        {transportationDetailsData?.data?.map((item, idx) => {
           return (
             <div
               className={`${
-                idx == 1
+                idx % 2 === 1
                   ? "flex flex-col-reverse xl:flex-row-reverse items-center gap-x-8 "
                   : "flex xl:flex-row flex-col-reverse items-center gap-x-8"
               }`}
@@ -129,7 +151,7 @@ const TourCanada = () => {
               <div
                 className="2xl:w-[868px] w-full lg:h-[380px] xl:h-[434px] h-[250px]"
                 style={{
-                  backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url(${item.src})`,
+                  backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url(${imgBaseurl}/${item.background_image})`,
                   backgroundSize: "cover",
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center",
@@ -137,19 +159,12 @@ const TourCanada = () => {
               ></div>
               <div className="flex flex-col xl:gap-y-6 md:max-w-[698px] w-full mt-5 mb-8 xl:mt-0">
                 <h4 className="text-[#000] font-interTight text-[25px] md:text-[32px] font-semibold leading-[150%] tracking-[1px]">
-                  {item.heading}
+                  {item.title}
                 </h4>
-                <div className="flex flex-col gap-y-6 font-interTight mt-1 xl:mt-0">
-                  <span className="text-[#000] text-sm md:text-base font-normal leading-[150%] tracking-[1px] ">
-                    {item.paraOne}
-                  </span>
-                  <span className="text-[#000] text-sm md:text-base font-normal leading-[150%] tracking-[1px] ">
-                    {item.paraTwo}
-                  </span>
-                  <span className="text-[#000] text-sm md:text-base font-normal leading-[150%] tracking-[1px]">
-                    {item.paraThree}
-                  </span>
-                </div>
+                <div
+                  dangerouslySetInnerHTML={{ __html: item?.description }}
+                  className="flex flex-col gap-y-6 font-interTight mt-1 xl:mt-0 text-[#000] text-sm md:text-base font-normal leading-[150%] tracking-[1px] "
+                ></div>
               </div>
             </div>
           );

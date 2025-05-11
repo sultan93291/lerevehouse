@@ -231,7 +231,35 @@ export const apiSlice = createApi({
     getAllReviews: builder.query({
       query: () => ({
         url: `/reviews`,
-        method:`GET`
+        method: `GET`,
+      }),
+    }),
+
+    getHoneyMoonHeroSectionData: builder.query({
+      query: () => ({
+        url: `/cms/honeymoon-hero-section`,
+        method: `GET`,
+      }),
+    }),
+
+    getTransportationHeroSectionData: builder.query({
+      query: () => ({
+        url: `/cms/transportation-hero-section`,
+        method: `GET`,
+      }),
+    }),
+
+    getAllTransportationData: builder.query({
+      query: () => ({
+        url: `/tours`,
+        method: `GET`,
+      }),
+    }),
+
+    getTransportationPageDetails: builder.query({
+      query: () => ({
+        url: `/cms/transportation-details-section`,
+        method: `GET`,
       }),
     }),
   }),
@@ -267,5 +295,9 @@ export const {
   useGetDestinationDetailsQuery,
   useGetDestinationDetailsPackageQuery,
   useGetAllPackagesQuery,
-  useGetAllReviewsQuery
+  useGetAllReviewsQuery,
+  useGetHoneyMoonHeroSectionDataQuery,
+  useGetTransportationHeroSectionDataQuery,
+  useGetAllTransportationDataQuery,
+  useGetTransportationPageDetailsQuery
 } = apiSlice;
