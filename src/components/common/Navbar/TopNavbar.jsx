@@ -11,6 +11,9 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useGetOfficeDataQuery } from "@/Redux/features/api/apiSlice";
+import { InfinitySpin } from "react-loader-spinner";
+import toast from "react-hot-toast";
+
 
 const NavLinks = [
   {
@@ -48,6 +51,21 @@ const TopNavbar = () => {
     refetchOnReconnect: true,
   });
 
+  // Move useEffect above early returns
+  useEffect(() => {
+    const handleClickOutside = event => {
+      if (sideBarRef.current && !sideBarRef.current.contains(event.target)) {
+        setisSideBarOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  // Handle loading state
   if (isofficeLoading) {
     return (
       <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center z-50 bg-white">
@@ -61,6 +79,7 @@ const TopNavbar = () => {
     );
   }
 
+  // Handle error state
   if (officeError) {
     const errorMessage =
       officeError.data?.message ||
@@ -73,21 +92,6 @@ const TopNavbar = () => {
   }
 
   const baseImgUrl = import.meta.env.VITE_SERVER_URL;
-
-  console.log(officeData?.data);
-
-  useEffect(() => {
-    const handleClickOutside = event => {
-      if (sideBarRef.current && !sideBarRef.current.contains(event.target)) {
-        setisSideBarOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
 
   const topNavLinks = [
     {
@@ -103,38 +107,30 @@ const TopNavbar = () => {
   ];
 
   const handlMapOpen = () => {
-    // Coordinates for the exact location
     const location = `https://www.google.com/maps?q=${officeData?.data[0]?.address}`;
-
     window.open(location, "_blank");
   };
 
   return (
     <div className="bg-white">
-      <div className="container mx-auto  flex px-2  2xl:my-0 2xl:px-0 w-full  items-center justify-between h-24 xl:gap-40">
+      <div className="container mx-auto flex px-2 2xl:my-0 2xl:px-0 w-full items-center justify-between h-24 xl:gap-40">
         <Link to="/" className="h-20 w-56 inline-block flex-shrink-0">
-          <img className=" h-full w-full object-contain" src={logo} alt="" />
+          <img className="h-full w-full object-contain" src={logo} alt="" />
         </Link>
-        {/* desktop info */}
-        {/* contact info */}
-        <div className=" hidden 2xl:flex   items-center h-full w-full gap-10">
+        {/* Desktop info */}
+        <div className="hidden 2xl:flex items-center h-full w-full gap-10">
           <div className="border-x border-primary h-full px-8 flex items-center justify-center w-full">
-            <div className=" flex items-center justify-between  gap-7 text-text-black w-full">
+            <div className="flex items-center justify-between gap-7 text-text-black w-full">
               <Link
-                to={"tel:1-778 987 179"}
+                to={`tel:${officeData?.data[0]?.telephone}`}
                 className="flex items-center gap-2"
               >
                 <PhoneSvgNavbar />
                 <span className="font-bold min-w-[109px] text-sm font-interTight">
-                  {officeData.data[0]?.telephone}
+                  {officeData?.data[0]?.telephone}
                 </span>
               </Link>
-              <Link
-                onClick={() => {
-                  handlMapOpen();
-                }}
-                className="flex items-center gap-2"
-              >
+              <Link onClick={handlMapOpen} className="flex items-center gap-2">
                 <LocationSvgNavbar />
                 <span className="text-sm break-words font-interTight">
                   {officeData?.data[0]?.address}
@@ -142,10 +138,9 @@ const TopNavbar = () => {
               </Link>
             </div>
           </div>
-
-          {/* navLinks */}
+          {/* NavLinks */}
           <div className="pr-8 border-r border-primary h-full flex items-center justify-center">
-            <ul className="flex items-center gap-8 ">
+            <ul className="flex items-center gap-8">
               {topNavLinks?.map(item => (
                 <li key={item?.title}>
                   <Link className="flex items-center gap-2">
@@ -169,7 +164,7 @@ const TopNavbar = () => {
             </ul>
           </div>
         </div>
-        {/* mobile info */}
+        {/* Mobile info */}
         <div className="flex px-2 2xl:hidden flex-col">
           {!isSideBarOpen && (
             <RxHamburgerMenu
@@ -177,42 +172,37 @@ const TopNavbar = () => {
               className="w-8 h-8 cursor-pointer"
             />
           )}
-
-          {/* Animate Presence ensures smooth enter/exit animation */}
           <AnimatePresence>
             {isSideBarOpen && (
               <motion.div
-                className="fixed inset-0 w-screen  h-screen bg-black bg-opacity-50 backdrop-blur-md flex !z-[999]"
+                className="fixed inset-0 w-screen h-screen bg-black bg-opacity-50 backdrop-blur-md flex !z-[999]"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3 }}
               >
-                {/* Sidebar Motion */}
                 <motion.div
                   ref={sideBarRef}
                   initial={{ x: "-100%" }}
                   animate={{ x: 0 }}
                   exit={{ x: "-100%" }}
                   transition={{ type: "spring", stiffness: 200, damping: 25 }}
-                  className="w-[280px] !z-[999] py-8 bg-white border-r-[1px] border-solid border-gray-200 top-0 left-0 flex flex-col items-start justify-start h-full  gap-y-8 "
+                  className="w-[280px] !z-[999] py-8 bg-white border-r-[1px] border-solid border-gray-200 top-0 left-0 flex flex-col items-start justify-start h-full gap-y-8"
                 >
                   <img
-                    className="h-[70px] w-[220px]  object-contain "
+                    className="h-[70px] w-[220px] object-contain"
                     src={logo}
                     alt="Logo"
                   />
                   <div className="flex flex-col gap-y-8">
                     <div className="flex flex-col px-5 gap-y-5 w-full">
-                      {NavLinks.map((tab, index) => (
+                      {NavLinks.map(tab => (
                         <NavLink
                           to={tab?.path}
                           key={tab?.title}
-                          onClick={() => {
-                            setisSideBarOpen(false);
-                          }}
+                          onClick={() => setisSideBarOpen(false)}
                           className={({ isActive }) =>
-                            ` ${
+                            `${
                               isActive
                                 ? "text-[#7BD1FF] opacity-100"
                                 : "text-text-black opacity-65"
@@ -224,7 +214,7 @@ const TopNavbar = () => {
                       ))}
                     </div>
                     <div className="flex flex-col gap-y-5">
-                      <ul className="flex items-center gap-4 px-5 ">
+                      <ul className="flex items-center gap-4 px-5">
                         {topNavLinks?.map(item => (
                           <li key={item?.title}>
                             <Link className="flex items-center gap-2">
