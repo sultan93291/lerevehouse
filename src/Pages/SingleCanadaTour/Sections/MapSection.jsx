@@ -5,13 +5,16 @@ import {
   UnknownCreature,
 } from "@/components/common/SvgContainer/SvgContainer";
 
-const MapSection = ({ BgImg }) => {
+const MapSection = ({ data }) => {
+
+  const imgBaseurl = import.meta.env.VITE_SERVER_URL;
+
   return (
     <div className="flex flex-col 2xl:gap-y-[64px] gap-y-10 container">
       <div className="flex flex-col md:flex-row items-center gap-x-6">
         <div className="hidden xl:block md:h-[460px] md:w-[641px] 2xl:flex items-center justify-center">
           <img
-            src={BgImg}
+            src={`${imgBaseurl}/${data[0]?.map_image}`}
             alt="SVG Image"
             className="h-full w-full object-contain"
           />
@@ -24,10 +27,10 @@ const MapSection = ({ BgImg }) => {
             </div>
             <div className="flex flex-col gap-y-2  ">
               <h4 className="text-[#000] text-[18px] font-semibold leading-[150%] tracking-[1px] font-interTight">
-                Which provinces does it include?
+                {data[0]?.first_question}
               </h4>
               <span className="text-text-gray text-sm md:text-[16px] font-normal max-w-[577px] leading-[150%] tracking-[1px] font-interTight">
-                YukonNorthwest TerritoriesNunavut
+                {data[0].first_answer}
               </span>
             </div>
           </div>
@@ -37,64 +40,20 @@ const MapSection = ({ BgImg }) => {
             </div>
             <div className="flex flex-col gap-y-2  ">
               <h4 className="text-[#000] text-[18px] font-semibold leading-[150%] tracking-[1px] font-interTight">
-                When to go?
+                {data[0]?.second_question}
               </h4>
               <span className="text-text-gray text-sm md:text-[16px] max-w-[577px] font-normal leading-[150%] tracking-[1px] font-interTight">
-                Traveling in these territories is only possible in the summer
-                months and even then there is no guarantee that the weather will
-                be stable. During the rest of the year, freezing temperatures
-                prevent travelers from venturing into the northern regions.
+                {data[0]?.second_answer}
               </span>
             </div>
           </div>
         </div>
       </div>
       <div className="flex flex-col md:flex-row gap-x-10 ">
-        <p className="text-text-gray text-sm md:text-base 2xl:text-[18px] font-normal leading-[150%] tracking-[1px] font-interTight max-w-[523px]">
-          <span className="text-[#000]">Adventure </span>. The 
-          <span className="text-[#000]">Great Canadian North</span> is
-          synonymous with this, adventure! The vast territory divided between
-          the <span className="text-[#D40000]">Canadian territories</span> of
-          Yukon, Northwest Territories and Nunavut is a land of wild landscapes,
-          moose, lakes, forests and majestic ice. Here everything evokes
-          legendary adventures,
-        </p>
-        <p className="text-text-gray text-sm md:text-base 2xl:text-[18px] font-normal leading-[150%] tracking-[1px] font-interTight max-w-[523px] ">
-          even the names of the streets, and the further north you go the more
-          you will feel like an explorer of virgin lands. In{" "}
-          <span className="text-[#000]">Yukon</span>  you can relive the period
-          of the gold rush in the Klondike , you can go trekking in the
-          beautiful Kluane National Park , go canoeing along the Yukon River or
-          enjoy the lively
-        </p>
-        <p className="text-text-gray text-sm md:text-base 2xl:text-[18px] font-normal leading-[150%] tracking-[1px] font-interTight max-w-[523px] ">
-          atmosphere of Whitehorse. Outdoor activities (in summer) are also the
-          best to do in the 
-          <span className="text-[#000]">Northwest Territories</span> , a
-          sparsely populated province with beautiful nature and legendary
-          trekking or cycling routes.
-        </p>
-      </div>
-      <div className="flex flex-col md:flex-row gap-x-10">
-        <p className="text-text-gray text-sm md:text-base 2xl:text-[18px] font-normal leading-[150%] tracking-[1px] font-interTight max-w-[523px] ">
-          Moose, bears, caribou will keep you company in these boundless
-          territories.  <span className="text-[#000]">Nunavut</span>is truly the
-          last frontier of your trip to Canada, the North Pole , the Arctic
-          endless mountains, polar bears and icebergs, an almost non-existent
-          but native
-        </p>
-        <p className="text-text-gray text-sm md:text-base 2xl:text-[18px] font-normal leading-[150%] tracking-[1px] font-interTight max-w-[523px] ">
-          population (the Inuit ) and master of its imposing territory. The
-          costs of traveling here are high and the climate can upset any trip
-          but if you are lucky and you manage to get to the Auyuttuq National
-          Park you will be left speechless in front of the
-        </p>
-        <p className="text-text-gray text-sm md:text-base 2xl:text-[18px] font-normal leading-[150%] tracking-[1px] font-interTight max-w-[523px] ">
-          highest rock walls on the planet. Nunavut is a  
-          <span className="text-[#000]">unique place in the world</span> ,
-          getting there and visiting it involves considerable costs, but if you
-          have the opportunity you will not regret it!
-        </p>
+        <div
+          dangerouslySetInnerHTML={{ __html: data[0]?.description }}
+          className="text-text-gray text-sm md:text-base 2xl:text-[18px] font-normal leading-[150%] tracking-[1px] font-interTight flex flex-col gap-y-2 "
+        ></div>
       </div>
     </div>
   );

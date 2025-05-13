@@ -6,6 +6,8 @@ import {
   TrafficLayer,
   useLoadScript,
 } from "@react-google-maps/api";
+import { useGetTouristGuideHeroSectionDataQuery } from "@/Redux/features/api/apiSlice";
+import { InfinitySpin } from "react-loader-spinner";
 
 // Map container style
 const containerStyle = {
@@ -22,11 +24,6 @@ const waypoints = [
 ];
 
 const CanadaMap = () => {
-  const [directionsResponse, setDirectionsResponse] = useState(null);
-  const [showTraffic, setShowTraffic] = useState(true);
-  const mapRef = useRef(null);
-
-  // Load Google Maps API
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: "AIzaSyA_G_EhWhTWpRYaE6_kR8txUKUkmZkvNiQ",
     libraries: ["places", "directions"],
@@ -41,13 +38,68 @@ const CanadaMap = () => {
     }
   }, [isLoaded]);
 
-  if (!isLoaded) return <div>Loading...</div>;
+  const [directionsResponse, setDirectionsResponse] = useState(null);
+  const [showTraffic, setShowTraffic] = useState(true);
+  const mapRef = useRef(null);
+  const { data, error, isLoading } = useGetTouristGuideHeroSectionDataQuery(
+    undefined,
+    {
+      refetchOnFocus: true,
+      refetchOnReconnect: true,
+    }
+  );
+
+  useEffect(() => {
+    if (error) {
+      const errorMessage =
+        error.data?.message || error.error || error.status || error.message;
+      if (errorMessage) toast.error(errorMessage);
+    }
+  }, [error]);
+
+  if (isLoading) {
+    return (
+      <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center z-50 bg-white">
+        <InfinitySpin
+          visible={true}
+          width="200"
+          color="#004265"
+          ariaLabel="infinity-spin-loading"
+        />
+      </div>
+    );
+  }
+
+  console.log(data?.data[0].map_link);
+
+  // Load Google Maps API
+
+
+  const extractLatLng = url => {
+    if (typeof url !== "string") return null;
+
+    const match = url.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/);
+    if (match) {
+      const [, lat, lng] = match;
+      return { latitude: parseFloat(lat), longitude: parseFloat(lng) };
+    }
+    return null;
+  };
+
+  const GoogleApiKey = import.meta.env.VITE_GOOGLE_API_KEY;
+
+  const coordinates = extractLatLng(data.data[0]?.url);
+
+ console.log(coordinates);
+ 
+
+
 
   return (
     <div className="w-full mt-10">
       <GoogleMap
         mapContainerStyle={containerStyle}
-        center={{ lat: 56.1304, lng: -106.3468 }} 
+        center={{ lat: coordinates?.latitude, lng: coordinates.longitude }}
         zoom={4} // Adjusted to show the whole country
         onLoad={map => (mapRef.current = map)}
       >
