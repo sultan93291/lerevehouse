@@ -1,9 +1,4 @@
 import React from "react";
-import lake from "../../assets/images/canada-tour/lake.jpg";
-import redLight from "../../assets/images/canada-tour/redLight.jpg";
-import ship from "../../assets/images/canada-tour/ship.jpg";
-import uk from "../../assets/images/canada-tour/uk.jpg";
-import farming from "../../assets/images/canada-tour/farming.jpg";
 import { useNavigate } from "react-router-dom";
 import {
   useGetAllTransportationDataQuery,

@@ -126,7 +126,7 @@ const router = createBrowserRouter([
         element: <CustomizeTripCanada />,
       },
       {
-        path: "/boundless-north",
+        path: "/tour-guides",
         element: <SingleCanadaTour />,
       },
       {
@@ -161,6 +161,11 @@ const router = createBrowserRouter([
         path: "/pages/privacy-policy",
         element: <DynamicPage />,
       },
+
+      {
+        path: "/demo"
+        
+      }
     ],
   },
 ]);

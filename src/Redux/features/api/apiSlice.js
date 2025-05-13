@@ -262,6 +262,41 @@ export const apiSlice = createApi({
         method: `GET`,
       }),
     }),
+
+    getTouristGuideHeroSectionData: builder.query({
+      query: () => ({
+        url: `/cms/guide-tourist-first-section`,
+        method: `GET`,
+      }),
+    }),
+
+    getTouristGuideSpecailistsSectionData: builder.query({
+      query: () => ({
+        url: `/cms/guide-tourist-second-section`,
+        method: `GET`,
+      }),
+    }),
+
+    getCanadaTravelData: builder.query({
+      query: () => ({
+        url: `/cms/guide-tourist-third-section`,
+        method: `GET`,
+      }),
+    }),
+
+    getTouristGuidePlaces: builder.query({
+      query: () => ({
+        url: `/tourist-guides`,
+        method: `GET`,
+      }),
+    }),
+
+    getSingleTourDetails: builder.query({
+      query: id => ({
+        url: `/tourist-guide-details/${id}`,
+        method: `GET`,
+      }),
+    }),
   }),
 });
 
@@ -299,5 +334,10 @@ export const {
   useGetHoneyMoonHeroSectionDataQuery,
   useGetTransportationHeroSectionDataQuery,
   useGetAllTransportationDataQuery,
-  useGetTransportationPageDetailsQuery
+  useGetTransportationPageDetailsQuery,
+  useGetTouristGuideHeroSectionDataQuery,
+  useGetTouristGuideSpecailistsSectionDataQuery,
+  useGetCanadaTravelDataQuery,
+  useGetTouristGuidePlacesQuery,
+  useGetSingleTourDetailsQuery
 } = apiSlice;
