@@ -2,27 +2,25 @@ import map from "../../../assets/images/tourist-guide/map.png";
 import { BestPark } from "@/components/DummyData/TourGuidData";
 import { Arrow } from "@/components/common/SvgContainer/SvgContainer";
 
-const MapSection = () => {
+const MapSection = ({ data }) => {
+  console.log(data);
+
+  const imgBaseurl = import.meta.env.VITE_SERVER_URL;
+
   return (
     <div className="container py-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-10 2xl:gap-20 hidden xl:grid">
-      <img src={map} alt="not found" />
+      <img src={`${imgBaseurl}/${data?.background_image}`} alt="not found" />
       <div className="flex flex-col gap-y-5 ">
         <h2 className="text-2xl md:text-[32px] font-inter font-bold leading-[160%] text-prmiary-blue ">
-          Best Parks In Canada
+          {data?.sub_title}
         </h2>
-        <p className="leading-[160%] font-normal text-[15px] xs:text-base max-w-[655px] font-inter text-text-gray ">
-          in the heart of central Alaska we find Denali National Park, which Le
-          Reve House Adventure with the Alaska Adventure Trip makes us magically
-          discover. Denali Park offers incredible landscapes and wildlife in
-          abundance. Going south, Kenai Fjords National Park awaits us with its
-          imposing glaciers and rich marine life. Then, the crystalline waters
-          of Lake Clarke National Park, where the mountain ranges of Alaska and
-          the Aleutian Islands meet and the bears of Katmai in their natural
-          habitat, in the wild and truly remote Alaska Peninsula . In western
-          Alaska there is the Yukon Delta National Wildlife Refuge, a paradise
-          for migratory birds.
-        </p>
-        <ul className="flex flex-col gap-y-[14px] ">
+        <div
+          dangerouslySetInnerHTML={{
+            __html: data.description,
+          }}
+          className="leading-[160%] font-normal text-[15px] xs:text-base max-w-[655px] font-inter text-text-gray "
+        ></div>
+        {/* <ul className="flex flex-col gap-y-[14px] ">
           {BestPark.map((item, index) => {
             return (
               <li
@@ -40,7 +38,7 @@ const MapSection = () => {
               </li>
             );
           })}
-        </ul>
+        </ul> */}
       </div>
     </div>
   );

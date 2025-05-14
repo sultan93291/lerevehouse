@@ -3,9 +3,7 @@ import ParkDetialsSlider from "./ParkDetialsSlider";
 const ParkDetails = ({
   Heading,
   SubHeading,
-  ParaOne,
-  ParaTwo,
-  ParaThree,
+  descreption,
   BtnTxt,
   Images,
   isHover,
@@ -23,33 +21,10 @@ const ParkDetails = ({
             {SubHeading}
           </h5>
         </div>
-        <div className="flex flex-col gap-y-5 ">
-          <div className="flex flex-col xl:flex-row w-full gap-5   ">
-            <p className="text-text-gray xl:text-[18px]  font-normal font-interTight leading-[160%] ">
-              {ParaOne}{" "}
-              {isDouble && (
-                <>
-                  <p className="mt-8">{ParaOne}</p>
-                </>
-              )}
-            </p>
-            <p className="text-text-gray xl:text-[18px] font-normal font-interTight leading-[160%] ">
-              {ParaTwo}{" "}
-              {isDouble && (
-                <>
-                  <p className="mt-8">{ParaTwo}</p>
-                </>
-              )}
-            </p>
-            <p className="text-text-gray xl:text-[18px] font-normal font-interTight leading-[160%] ">
-              {ParaThree}{" "}
-              {isDouble && (
-                <>
-                  <p className="mt-8">{ParaThree}</p>
-                </>
-              )}
-            </p>
-          </div>
+        <div className="flex flex-col gap-y-3 ">
+          <div dangerouslySetInnerHTML={{
+            __html:descreption
+          }} className=" w-full flex flex-col gap-5 text-text-gray xl:text-[18px]  font-normal font-interTight leading-[160%] "></div>
           {/* {BtnTxt && (
             <div className="w-full items-start">
               <button
@@ -65,9 +40,7 @@ const ParkDetails = ({
           )} */}
         </div>
       </div>
-      <div className="flex">
-        <ParkDetialsSlider data={Images} />
-      </div>
+      <div className="flex"><ParkDetialsSlider data={Images} /></div>
     </div>
   );
 };
