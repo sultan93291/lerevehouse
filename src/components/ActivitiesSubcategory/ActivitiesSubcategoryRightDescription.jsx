@@ -32,9 +32,9 @@ const ActivitiesSubcategoryRightDescription = () => {
           <Link className="block text-white text-center py-2 xl:py-4 border border-primary hover:bg-transparent hover:text-primary transition-all duration-300 w-full bg-primary">
             Make An Enquiry
           </Link>
-          <Link className="block text-center bg-transparent text-primary py-2 xl:py-4 border border-primary hover:bg-primary hover:text-white transition-all duration-300 w-full bg-primary">
+          {/* <Link className="block text-center bg-transparent text-primary py-2 xl:py-4 border border-primary hover:bg-primary hover:text-white transition-all duration-300 w-full bg-primary">
             Request A Brouchre
-          </Link>
+          </Link> */}
         </div>
       </div>
 
