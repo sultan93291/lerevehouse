@@ -297,6 +297,20 @@ export const apiSlice = createApi({
         method: `GET`,
       }),
     }),
+
+    getNationalParkHeroSectionData: builder.query({
+      query: () => ({
+        url: `/cms/national-park-hero-section`,
+        method: `GET`,
+      }),
+    }),
+
+    getAllNationalParkData: builder.query({
+      query: () => ({
+        url: `/national-parks`,
+        method: `GET`,
+      }),
+    }),
   }),
 });
 
@@ -339,5 +353,7 @@ export const {
   useGetTouristGuideSpecailistsSectionDataQuery,
   useGetCanadaTravelDataQuery,
   useGetTouristGuidePlacesQuery,
-  useGetSingleTourDetailsQuery
+  useGetSingleTourDetailsQuery,
+  useGetNationalParkHeroSectionDataQuery,
+  useGetAllNationalParkDataQuery
 } = apiSlice;

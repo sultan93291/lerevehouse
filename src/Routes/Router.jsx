@@ -162,10 +162,6 @@ const router = createBrowserRouter([
         element: <DynamicPage />,
       },
 
-      {
-        path: "/demo"
-        
-      }
     ],
   },
 ]);

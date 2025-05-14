@@ -8,6 +8,7 @@ import { useLocation } from "react-router-dom";
 import { useGetSingleTourDetailsQuery } from "@/Redux/features/api/apiSlice";
 import { InfinitySpin } from "react-loader-spinner";
 import toast from "react-hot-toast";
+import { Link } from "react-scroll";
 
 const Tabs = ["Yukon", "Northwest Territories", "Nunavut"];
 const SingleCanadaTour = () => {
@@ -22,6 +23,14 @@ const SingleCanadaTour = () => {
     refetchOnFocus: true,
     refetchOnReconnect: true,
   });
+
+  useEffect(() => {
+    if (data?.data?.place) {
+      const placeNames = data.data.place.map(place => place.name);
+      setallTabs(placeNames);
+      setactiveTab(data?.data?.place[0]?.name);
+    }
+  }, [data?.data?.place]);
 
   useEffect(() => {
     if (error) {
@@ -46,15 +55,6 @@ const SingleCanadaTour = () => {
 
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
 
-  useEffect(() => {
-    if (data?.data?.place) {
-      const placeNames = data.data.place.map(place => place.name);
-      setallTabs(placeNames);
-    }
-  }, [data?.data?.place]);
-
-  console.log(allTabs);
-
   return (
     <section className=" mt-10 flex flex-col">
       <CommonHeroBanner
@@ -72,27 +72,29 @@ const SingleCanadaTour = () => {
                 Consult by State
               </span>
             </div>
-            <div className="cursor-pointer flex flex-row items-center justify-evenly md:justify-start h-[75px] gap-x-3 bg-[#1687C7] md:px-[180px] px-2">
+            <div className="sticky top-[145px] z-40 flex flex-row items-center justify-evenly md:justify-start h-[75px] gap-x-3 bg-[#1687C7] md:px-[180px] px-2">
               {allTabs.map((item, index) => {
                 return (
-                  <div
+                  <Link
                     key={index}
+                    offset={-250}
+                    to={item}
                     onClick={() => {
                       setactiveTab(item);
                     }}
                     className={` ${
                       activeTab == item && "bg-[#56C2FF] "
-                    }  md:px-3 px-1 md:py-4 py-2 md:h-[59px] text-white`}
+                    }  md:px-3 px-1 md:py-4 cursor-pointer py-2 md:h-[59px] text-white`}
                   >
                     {item}
-                  </div>
+                  </Link>
                 );
               })}
             </div>
             <div className="flex flex-col py-[30px] md:py-[40px] xl:py-[64px] bg-[#78787836]  ">
               <div className="container flex flex-col  gap-y-[20px] 2xl:gap-y-[64px] ">
-                {[0, 1, 2].map((item, index) => {
-                  return <ConsultCard key={index} />;
+                {data?.data?.place?.map((item, index) => {
+                  return <ConsultCard key={index} data={item} />;
                 })}
               </div>
             </div>
