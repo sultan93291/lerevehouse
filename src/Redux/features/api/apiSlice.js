@@ -311,6 +311,20 @@ export const apiSlice = createApi({
         method: `GET`,
       }),
     }),
+
+    getEatingAndDrinkingHeroSectionData: builder.query({
+      query: () => ({
+        url: `/cms/eating-and-drinking-hero-section`,
+        method: `GET`,
+      }),
+    }),
+
+    getAllEatingAndDrinkingData: builder.query({
+      query: () => ({
+        url: `/eatingdrinking`,
+        method: `GET`,
+      }),
+    }),
   }),
 });
 
@@ -355,5 +369,7 @@ export const {
   useGetTouristGuidePlacesQuery,
   useGetSingleTourDetailsQuery,
   useGetNationalParkHeroSectionDataQuery,
-  useGetAllNationalParkDataQuery
+  useGetAllNationalParkDataQuery,
+  useGetEatingAndDrinkingHeroSectionDataQuery,
+  useGetAllEatingAndDrinkingDataQuery
 } = apiSlice;

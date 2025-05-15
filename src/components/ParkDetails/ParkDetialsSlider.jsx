@@ -10,9 +10,6 @@ import ImageSlide from "./ImageSlide";
 
 const ParkDetailsSlider = ({ data }) => {
   const [swiperRef, setSwiperRef] = useState(null);
-  const imgBaseurl = import.meta.env.VITE_SERVER_URL;
-
-
   return (
     <div className="!w-full">
       {/* Slider */}
