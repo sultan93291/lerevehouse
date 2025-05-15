@@ -22,9 +22,12 @@ const ParkDetails = ({
           </h5>
         </div>
         <div className="flex flex-col gap-y-3 ">
-          <div dangerouslySetInnerHTML={{
-            __html:descreption
-          }} className=" w-full flex flex-col gap-5 text-text-gray xl:text-[18px]  font-normal font-interTight leading-[160%] "></div>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: descreption,
+            }}
+            className=" w-full flex flex-col gap-5 text-text-gray xl:text-[18px]  font-normal font-interTight leading-[160%] "
+          ></div>
           {/* {BtnTxt && (
             <div className="w-full items-start">
               <button
@@ -40,11 +43,11 @@ const ParkDetails = ({
           )} */}
         </div>
       </div>
-      <div className="flex"><ParkDetialsSlider data={Images} /></div>
+      <div className="flex">
+        <ParkDetialsSlider data={Images} />
+      </div>
     </div>
   );
 };
 
 export default ParkDetails;
-
-//ok responsive

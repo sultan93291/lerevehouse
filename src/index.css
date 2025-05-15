@@ -240,7 +240,6 @@
     @apply flex flex-col gap-y-2 mb-4;
   }
 
-
   .details p span {
     @apply text-sm md:text-xl font-inter leading-[150%] font-medium;
   }
@@ -310,7 +309,16 @@
   .what-to-eat span {
     @apply text-[#565656] 2xl:text-xl xl:text-lg text-[15px] xs:text-base;
   }
+  .eating-descreption-wrapper p,
+  .eating-descreption-wrapper span {
+    @apply text-text-gray  text-center text-sm xl:text-lg font-interTight font-normal leading-[180%];
+  }
 
+  .eating-descreption-wrapper h2,
+  .eating-descreption-wrapper h3,
+  .eating-descreption-wrapper h4 {
+    @apply text-[#004265] font-fontSpring  font-light leading-[132%] text-[28px] sm:text-4xl xl:text-[48px];
+  }
   /* {all dangerous html design ended here} */
 }
 
