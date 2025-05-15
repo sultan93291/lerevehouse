@@ -63,7 +63,6 @@ const TourGuide = () => {
     }
   }
 
-  console.log(allNationalParkData.data);
 
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
 

@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
 import { TourListDetailsClockSvg } from "../SvgContainer/SvgContainer";
+import { decode } from "he";
+
 
 const CommonHeroBanner = ({
   bg,
@@ -10,6 +12,7 @@ const CommonHeroBanner = ({
   uppercaseItalic,
   subTittle,
   subSubTittle,
+  isDangerousHtml,
 }) => {
   return (
     <section
@@ -23,11 +26,17 @@ const CommonHeroBanner = ({
       }}
     >
       <div className="flex flex-col max-w-[932px] items-center justify-center gap-y-2">
-        {subSubTittle && (
-          <span className="text-[24px] text-white font-medium leading-[150%] tracking-[1px] ">
-            {subSubTittle}
-          </span>
-        )}
+        {subSubTittle &&
+          (isDangerousHtml ? (
+            <div
+              dangerouslySetInnerHTML={{ __html: decode(subSubTittle) }}
+              className="text-[24px] text-white font-medium leading-[150%] tracking-[1px]"
+            ></div>
+          ) : (
+            <span className="!text-[24px] !text-white !font-medium !leading-[150%] !tracking-[1px]">
+              {subSubTittle}
+            </span>
+          ))}
         <h1 className="text-2xl md:text-4xl xl:text-6xl text-center xl:text-left font-editorsNoteNormal font-light text-white xl:leading-[102.4px]">
           <span
             className={`${
