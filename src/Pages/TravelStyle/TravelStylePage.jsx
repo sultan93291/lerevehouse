@@ -9,6 +9,7 @@ import {
   useGetTravelStylesHeroSectionDataQuery,
 } from "@/Redux/features/api/apiSlice";
 import { InfinitySpin } from "react-loader-spinner";
+import { useLocation } from "react-router-dom";
 
 const TravelStylePage = () => {
   const { data, error, isLoading } = useGetTravelStylesHeroSectionDataQuery(
@@ -18,6 +19,8 @@ const TravelStylePage = () => {
       refetchOnReconnect: true,
     }
   );
+
+  console.log(data);
 
   const {
     data: descreptionData,

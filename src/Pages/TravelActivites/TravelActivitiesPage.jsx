@@ -11,8 +11,7 @@ import {
 } from "@/Redux/features/api/apiSlice";
 import { InfinitySpin } from "react-loader-spinner";
 import toast from "react-hot-toast";
-
-
+import { useLocation } from "react-router-dom";
 
 const TravelActivitiesPage = () => {
   const { data, error, isLoading } = useGetAcitivityHeroSectionQuery(
@@ -52,6 +51,11 @@ const TravelActivitiesPage = () => {
       </div>
     );
   }
+
+  const location = useLocation();
+
+  console.log(location.pathname);
+
 
   if (activitySloganError) {
     const errorMessage =

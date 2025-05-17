@@ -1,22 +1,29 @@
-import { useGetAllTravelStylesDataQuery } from "@/Redux/features/api/apiSlice";
-import imageOne from "../../assets/images/thingstodo1.png";
-import imageTwo from "../../assets/images/thingstodo2.png";
-import imageThree from "../../assets/images/thingstodo3.png";
-import imageFour from "../../assets/images/thingstodo4.png";
-import imageFive from "../../assets/images/thingstodo5.png";
-import imageSix from "../../assets/images/thingstodo6.png";
-import imageSeven from "../../assets/images/thingstodo7.png";
-import imageEight from "../../assets/images/thingstodo8.png";
-import imageNine from "../../assets/images/thingstodo9.png";
+import {
+  useGetAcitivityDatasQuery,
+  useGetAllTravelStylesDataQuery,
+} from "@/Redux/features/api/apiSlice";
 import TravelExploreCard from "../TravelStyles/TravelExploreCard";
 import { InfinitySpin } from "react-loader-spinner";
 import toast from "react-hot-toast";
+import { useLocation } from "react-router-dom";
 
 const BrowseThings = () => {
   const { data, error, isLoading } = useGetAllTravelStylesDataQuery(undefined, {
     refetchOnFocus: true,
     refetchOnReconnect: true,
   });
+
+  const {
+    data: allActivityData,
+    error: allActivityError,
+    isLoading: isActivityLoading,
+  } = useGetAcitivityDatasQuery(undefined, {
+    refetchOnFocus: true,
+    refetchOnReconnect: true,
+  });
+
+
+  const location = useLocation();
 
   if (isLoading) {
     return (
@@ -53,14 +60,23 @@ const BrowseThings = () => {
         </div>
         <div>
           <div className="grid lg:grid-cols-3 gap-5">
-            {data?.data?.map(item => (
-              <TravelExploreCard
-                link={"/activities/subcategory/"}
-                key={item.id}
-                item={item}
-                travelMode={"activity"}
-              />
-            ))}
+            {location.pathname === "/activities"
+              ? allActivityData?.data?.map(item => (
+                  <TravelExploreCard
+                    link="/activities/subcategory/"
+                    key={item.id}
+                    item={item}
+                    travelMode="activity"
+                  />
+                ))
+              : data?.data?.map(item => (
+                  <TravelExploreCard
+                    link="/activities/subcategory/"
+                    key={item.id}
+                    item={item}
+                    travelMode="activity"
+                  />
+                ))}
           </div>
         </div>
       </div>

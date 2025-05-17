@@ -325,6 +325,12 @@ export const apiSlice = createApi({
         method: `GET`,
       }),
     }),
+
+    getAcitivityDatas: builder.query({
+      query: () => ({
+        url: `/activities`,
+      }),
+    }),
   }),
 });
 
@@ -371,5 +377,6 @@ export const {
   useGetNationalParkHeroSectionDataQuery,
   useGetAllNationalParkDataQuery,
   useGetEatingAndDrinkingHeroSectionDataQuery,
-  useGetAllEatingAndDrinkingDataQuery
+  useGetAllEatingAndDrinkingDataQuery,
+  useGetAcitivityDatasQuery
 } = apiSlice;
