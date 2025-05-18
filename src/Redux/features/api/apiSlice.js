@@ -251,7 +251,7 @@ export const apiSlice = createApi({
 
     getAllTransportationData: builder.query({
       query: () => ({
-        url: `/tours`,
+        url: `/transportations`,
         method: `GET`,
       }),
     }),
@@ -325,6 +325,34 @@ export const apiSlice = createApi({
         method: `GET`,
       }),
     }),
+
+    getAcitivityDatas: builder.query({
+      query: () => ({
+        url: `/activities`,
+        method: `GET`,
+      }),
+    }),
+
+    getSingleActivityDetails: builder.query({
+      query: id => ({
+        url: `/activity-details/${id}`,
+        method: `GET`,
+      }),
+    }),
+
+    getAcitivitySubCategoryDetails: builder.query({
+      query: id => ({
+        url: `/activity-sub-category-details/${id}`,
+        method: `GET`,
+      }),
+    }),
+
+    getRecomendedActivities: builder.query({
+      query: () => ({
+        url: `/recomended-activities`,
+        method: `GET`,
+      }),
+    }),
   }),
 });
 
@@ -371,5 +399,9 @@ export const {
   useGetNationalParkHeroSectionDataQuery,
   useGetAllNationalParkDataQuery,
   useGetEatingAndDrinkingHeroSectionDataQuery,
-  useGetAllEatingAndDrinkingDataQuery
+  useGetAllEatingAndDrinkingDataQuery,
+  useGetAcitivityDatasQuery,
+  useGetSingleActivityDetailsQuery,
+  useGetAcitivitySubCategoryDetailsQuery,
+  useGetRecomendedActivitiesQuery
 } = apiSlice;

@@ -9,6 +9,9 @@ import {
   PrevSlideSvg,
 } from "@/components/common/SvgContainer/SvgContainer";
 const ActivitiesDetailsGallery = ({ activitiesDetailsGalleryItems }) => {
+  console.log(activitiesDetailsGalleryItems);
+
+  
   const [swiperRef, setSwiperRef] = useState(null);
   return (
     <div className="mt-16 relative">
@@ -34,7 +37,7 @@ const ActivitiesDetailsGallery = ({ activitiesDetailsGalleryItems }) => {
       >
         {activitiesDetailsGalleryItems?.map((item, idx) => (
           <SwiperSlide key={idx}>
-            <ActivitiesDetailsGalleryCard item={item} />
+            <ActivitiesDetailsGalleryCard item={item?.image} />
           </SwiperSlide>
         ))}
       </Swiper>

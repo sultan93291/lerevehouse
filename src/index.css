@@ -319,6 +319,9 @@
   .eating-descreption-wrapper h4 {
     @apply text-[#004265] font-fontSpring  font-light leading-[132%] text-[28px] sm:text-4xl xl:text-[48px];
   }
+  .short_descreption h2{
+    @apply text-green-700
+  }
   /* {all dangerous html design ended here} */
 }
 

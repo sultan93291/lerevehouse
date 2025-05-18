@@ -3,12 +3,18 @@ import { Link } from "react-router-dom";
 import { ActivitiesClockSvg } from "../SvgContainer/SvgContainer";
 
 const ActivitiesSubcategoryCard = ({ item }) => {
+  const imgBaseurl = import.meta.env.VITE_SERVER_URL;
+
+  console.log(item);
+
+  console.log(`${imgBaseurl}/${item?.image}`);
+  
   return (
     <div className="font-interTight group">
       <div className="md:h-72 h-[200px] w-full overflow-hidden">
         <img
           className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
-          src={item?.image}
+          src={item?.image || `${imgBaseurl}/${item?.image}`}
           alt=""
         />
       </div>
@@ -23,12 +29,12 @@ const ActivitiesSubcategoryCard = ({ item }) => {
           {/* left side */}
           <div className="flex items-center gap-2">
             <ActivitiesClockSvg />
-            <span className="text-sm xl:text-lg">{item?.duration}</span>
+            <span className="text-sm xl:text-lg">{item?.duration || item?.time}</span>
           </div>
           {/* right side */}
           <div>
             <Link
-              to={`/activities-details/${item?.id}`}
+              to={`/activities-details/${item?.id}?BgImg=${item?.image}?title=${item?.title}`}
               className="uppercase 2xl:px-6 xl:px-2 px-[10px] 2xl:py-2 xl:py-1 py-1 bg-primary border border-primary text-white hover:bg-transparent transition-all duration-300 hover:text-primary text-xs xl:text-base"
             >
               View
