@@ -6,6 +6,7 @@ import imageFour from "../../assets/images/explore-travel4.png";
 import imageFive from "../../assets/images/explore-travel5.png";
 import imageSix from "../../assets/images/explore-travel6.png";
 import TravelExploreCard from "./TravelExploreCard";
+import { useLocation } from "react-router-dom";
 
 const travelData = [
   {
@@ -70,7 +71,10 @@ const ExploreTravel = ({ travelMode }) => {
     refetchOnReconnect: true,
   });
 
-  console.log(data);
+  const location = useLocation();
+
+  console.log(location.pathname);
+  
 
   return (
     <section className="pb-10 sm:pb-16 xl:pb-[120px] xl:px-5 2xl:px-14">
