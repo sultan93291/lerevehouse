@@ -13,134 +13,93 @@ import ActivitiesSubcategoryCard from "@/components/common/Cards/ActivitiesSubca
 import plane from "../../assets/images/activities-details/plane.jpg";
 import { tickPriceLeft } from "@/components/DummyData/priceDummyData";
 import { CheckMark } from "@/components/common/SvgContainer/SvgContainer";
+import { useLocation, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useGetAcitivitySubCategoryDetailsQuery ,useGetRecomendedActivitiesQuery } from "@/Redux/features/api/apiSlice";
 
 const ActivitiesDetails = () => {
-  const activitiesDetailsGalleryItems = [
-    {
-      image: image1,
-    },
-    {
-      image: image2,
-    },
-    {
-      image: image3,
-    },
-    {
-      image: image4,
-    },
-    {
-      image: image1,
-    },
-    {
-      image: image2,
-    },
-    {
-      image: image3,
-    },
-    {
-      image: image4,
-    },
-    {
-      image: image1,
-    },
-    {
-      image: image2,
-    },
-    {
-      image: image3,
-    },
-    {
-      image: image4,
-    },
-    {
-      image: image1,
-    },
-    {
-      image: image2,
-    },
-    {
-      image: image3,
-    },
-    {
-      image: image4,
-    },
-  ];
+  const location = useLocation();
+  const [bgImg, setBgImg] = useState("");
+  const [title, setTitle] = useState("");
+  const { id } = useParams();
 
-  const recommendedActivities = [
+  const { data, error, isLoading } = useGetAcitivitySubCategoryDetailsQuery(
+    id || "default",
     {
-      id: "speedboats-001",
-      image: img1,
-      title: "The Best Diving Spots in Vancouver",
-      duration: "2h 30m+",
-    },
+      skip: !id,
+      refetchOnFocus: true,
+      refetchOnReconnect: true,
+    }
+  );
+
+  const { data:RecomendedData, error:recomendedError, isLoading:isRecomendedLoading } = useGetRecomendedActivitiesQuery(
+    id || "default",
     {
-      id: "speedboats-002",
-      image: img2,
-      title: "Indian Arm and Granite Falls Zodiac Boat Tour",
-      duration: "2h 30m+",
-    },
-    {
-      id: "speedboats-003",
-      image: img3,
-      title: "Scuba Boat Dive in Horseshoe Bay",
-      duration: "2h 30m+",
-    },
-    {
-      id: "speedboats-004",
-      image: img4,
-      title: "Indian Arm and Granite Falls Zodiac Boat Tour",
-      duration: "2h 30m+",
-    },
-  ];
+      skip: !id,
+      refetchOnFocus: true,
+      refetchOnReconnect: true,
+    }
+  );
+
+  useEffect(() => {
+    if (error) {
+      const errorMessage =
+        error.data?.message || error.error || error.status || error.message;
+      toast.error(errorMessage);
+    }
+    else if (recomendedError) {
+      const errorMessage =
+        recomendedError.data?.message ||
+        recomendedError.error ||
+        recomendedError.status ||
+        recomendedError.message;
+      toast.error(errorMessage);
+    }
+  }, [error]);
+
+  const imgBaseurl = import.meta.env.VITE_SERVER_URL;
+
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    const bgImgRaw = url.searchParams.get("BgImg");
+
+    if (bgImgRaw?.includes("?title=")) {
+      const [imgPart, titlePart] = bgImgRaw.split("?title=");
+      setBgImg(imgPart);
+      setTitle(decodeURIComponent(titlePart));
+    } else {
+      setBgImg(bgImgRaw);
+      setTitle(url.searchParams.get("title") || "");
+    }
+  }, [location]);
+
   return (
     <div>
       <CommonHeroBanner
         uppercaseItalic={true}
         uppercaseTitle={true}
-        bg={bg}
-        title="VANCOUVER"
-        italic="Diving sports"
+        bg={bgImg}
+        title={title}
+        // italic="Diving sports"
       />
 
       <section className="container md:my-20 mt-10 mb-10">
         {/* gallery */}
         <ActivitiesDetailsGallery
-          activitiesDetailsGalleryItems={activitiesDetailsGalleryItems}
+          activitiesDetailsGalleryItems={
+            data?.data[0]?.activity_sub_category_details_images
+          }
         />
 
         {/* description */}
         <div className="md:mt-16 mt-8">
           {/* title */}
-          <div className="space-y-2">
-            <h2 className="text-[28px] md:text-3xl font-editorsNoteNormal text-primary">
-              Scuba{" "}
-              <span className="text-secondary font-editorsNoteItalic">
-                Boat Dive
-              </span>{" "}
-              in Horseshoe Bay
-            </h2>
-            <p className="text-[#118D57] font-interTight font-medium">
-              Free Cancellation Available
-            </p>
-          </div>
-
-          {/* overview */}
-          <div className="mt-6 space-y-2">
-            <h4 className="text-2xl font-editorsNoteNormal text-text-black font-medium">
-              Overview
-            </h4>
-            <p className="font-interTight text-base md:text-lg text-text-gray md:leading-[180%]">
-              See Vancouver the way it is best seen - by water - during this
-              3-hour tour in a Zodiac inflatable boat. Beginning at Granville
-              Island, you&lsquo;ll cross False Creek and follow the coastline
-              through Stanley Park. From your guide, learn about
-              Vancouver&lsquo;s waterfront landmarks like the Burrard Street
-              bridge and the city&lsquo;s most-photographed natural formation:
-              Siwash Rock.Travel through the Vancouver Harbour and on to Deep
-              Cove and Indian Arm, a glacial fjord with a backdrop of steep
-              granite cliffs that can only be seen by boat.
-            </p>
-          </div>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: data?.data[0]?.short_description,
+            }}
+            className="space-y-2 text-2xl font-editorsNoteNormal text-text-black font-medium short_descreption "
+          ></div>
         </div>
 
         {/* map section */}
@@ -148,7 +107,7 @@ const ActivitiesDetails = () => {
           {/* left side */}
           <div className="md:w-2/3">
             <img
-              src={plane}
+              src={`${imgBaseurl}/${data?.data[0]?.image}`}
               className="w-full h-[280px] md:h-[665px] object-cover"
               alt="not found"
             />
@@ -161,8 +120,7 @@ const ActivitiesDetails = () => {
                 Where are the activities?
               </h4>
               <div className="space-y-2 font-interTight text-text-gray">
-                <p>6373 Bruce St, West Vancouver</p>
-                <p>BC V7W 2G5, Canada</p>
+                <p> {data?.data[0]?.where}</p>
               </div>
             </div>
             <div className="space-y-3">
@@ -170,7 +128,7 @@ const ActivitiesDetails = () => {
                 When are the activities?
               </h4>
               <div className="space-y-2 font-interTight text-text-gray">
-                <p>From 12:00 pm if weather is good.</p>
+                <p> {data?.data[0]?.when}</p>
               </div>
             </div>
             <div className="space-y-3">
@@ -178,7 +136,7 @@ const ActivitiesDetails = () => {
                 Available Date
               </h4>
               <div className="space-y-2 font-interTight text-text-gray">
-                <p>From 12:00 pm if weather is good.</p>
+                <p> {data?.data[0]?.avaiable_date}</p>
               </div>
             </div>
             <div className="space-y-3">
@@ -186,7 +144,7 @@ const ActivitiesDetails = () => {
                 Number of Travelers
               </h4>
               <div className="space-y-2 font-interTight text-text-gray">
-                <p>5 Traveler</p>
+                <p> {data?.data[0]?.number_of_people}</p>
               </div>
             </div>
           </div>
@@ -194,68 +152,14 @@ const ActivitiesDetails = () => {
 
         {/* includes and excludes */}
         <div className="md:mt-16 mt-8 md:p-10 p-5 bg-[#efefef] flex flex-row gap-[60px] flex-wrap ">
-          <div className="flex flex-col gap-y-[36px] max-w-[736px] ">
-            <div className="flex flex-col flex-wrap gap-y-4  ">
-              <h4 className="text-[#252525] text-lg lg:text-2xl font-fontSpring font-medium leading-[150%]  ">
-                What’s included in this adventure?
-              </h4>
-              {tickPriceLeft.map((item, idx) => {
-                return (
-                  <div className="flex gap-x-2">
-                    <div className="w-[22px] h-[22px]">
-                      <CheckMark />
-                    </div>
-                    <span className=" text-[#000000] text-base lg:text-lg font-medium leading-[150%] font-interTight ">
-                      {item}
-                    </span>
-                  </div>
-                );
-              })}
-            </div>
+          <div className="flex flex-col gap-y-[36px]  ">
+            <div
+              dangerouslySetInnerHTML={{
+                __html: data?.data[0]?.description,
+              }}
+              className="flex flex-col flex-wrap gap-y-4 text-[#252525] text-lg lg:text-2xl font-fontSpring font-medium leading-[150%]  "
+            ></div>
           </div>
-          <div className="flex flex-col gap-y-[36px] max-w-[600px] ">
-            <div className="flex flex-col flex-wrap gap-y-4  ">
-              <h4 className="text-[#252525] text-lg lg:text-2xl font-fontSpring font-medium leading-[150%]  ">
-                What’s included in this adventure?
-              </h4>
-              {tickPriceLeft.map((item, idx) => {
-                return (
-                  <div className="flex gap-x-2">
-                    <div className="w-[22px] h-[22px]">
-                      <CheckMark />
-                    </div>
-                    <span className=" text-[#000000] text-base lg:text-lg font-medium leading-[150%] font-interTight ">
-                      {item}
-                    </span>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-          <div className="flex flex-col gap-y-[36px] max-w-[736px] ">
-            <div className="flex flex-col flex-wrap gap-y-4  ">
-              <h4 className="text-[#252525] text-lg lg:text-2xl font-fontSpring font-medium leading-[150%]  ">
-                What’s included in this adventure?
-              </h4>
-              {tickPriceLeft.map((item, idx) => {
-                return (
-                  <div className="flex gap-x-2">
-                    <div className="w-[22px] h-[22px]">
-                      <CheckMark />
-                    </div>
-                    <span className=" text-[#000000] text-base lg:text-lg font-medium leading-[150%] font-interTight ">
-                      {item}
-                    </span>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-          <span className="  max-w-[817px] text-[#000000] text-base lg:text-lg font-normal leading-[150%] font-interTight ">
-            <span className="font-semibold">PRECAUTION:</span> Verify that you
-            meet the required certification level (e.g., PADI Advanced Open
-            Water Diver or equivalent) for the dive site and type of dive.
-          </span>
         </div>
 
         {/* recommendation */}
@@ -269,7 +173,7 @@ const ActivitiesDetails = () => {
 
           {/* cards */}
           <div className="md:mt-16 mt-4 grid lg:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 md:gap-2 gap-5 col-span-6">
-            {recommendedActivities?.map((item) => (
+            {RecomendedData?.data?.slice(0,4).map(item => (
               <ActivitiesSubcategoryCard item={item} key={item?.id} />
             ))}
           </div>

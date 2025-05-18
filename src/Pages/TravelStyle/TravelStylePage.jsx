@@ -20,8 +20,6 @@ const TravelStylePage = () => {
     }
   );
 
-  console.log(data);
-
   const {
     data: descreptionData,
     error: descreptionError,

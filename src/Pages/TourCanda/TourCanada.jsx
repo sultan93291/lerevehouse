@@ -76,7 +76,8 @@ const TourCanada = () => {
 
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
 
-  console.log(transportationDetailsData?.data);
+  console.log(transportationData?.data);
+  
 
   return (
     <section className="2xl:mt-[156px] mb-10 2xl:mb-20 mt-14 xl:py-[72px] pt-9 2xl:py-9 container flex flex-col md:gap-y-10 gap-y-5 2xl:gap-y-[148px]">
@@ -106,7 +107,7 @@ const TourCanada = () => {
                 backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url(${imgBaseurl}/${item?.image})`,
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
+                backgroundPosition: "100% 100%",
               }}
             >
               {/* Content inside should only be visible on hover */}
@@ -126,7 +127,7 @@ const TourCanada = () => {
                   }}
                   className="bg-[#1687C7] px-4 md:py-3 py-2 text-sm md:text-lg font-semibold leading-[150%] tracking-[1px] text-white font-interTight rounded-[8px] transition-all duration-300 ease-in-out"
                 >
-                  {`Choose a ${item?.title} `}
+                  {`${item?.button_text} `}
                 </button>
               </div>
             </div>
