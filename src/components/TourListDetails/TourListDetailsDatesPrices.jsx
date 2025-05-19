@@ -25,7 +25,7 @@ const TourListDetailsDatesPrices = ({ data }) => {
   return (
     <>
       <div
-        id="brochure-download"
+        id="dates-and-price"
         className="flex flex-col gap-y-[30px] xl:gap-y-[60px]"
       >
         {/* title */}
@@ -50,7 +50,10 @@ const TourListDetailsDatesPrices = ({ data }) => {
             </div>
           </div>
           {/* brochure */}
-          <div className="w-full flex flex-col xl:flex-row gap-y-5 gap-x-10 3xl:gap-x-20 2xl:my-10">
+          <div
+            id="dates-and-price"
+            className="w-full flex flex-col xl:flex-row gap-y-5 gap-x-10 3xl:gap-x-20 2xl:my-10"
+          >
             {/* left side */}
             <div
               dangerouslySetInnerHTML={{
@@ -71,7 +74,10 @@ const TourListDetailsDatesPrices = ({ data }) => {
               </div>
 
               {/* cta buttons */}
-              <div className="w-full font-interTight space-y-3 md:space-y-6">
+              <div
+                id="brochure-download"
+                className="w-full font-interTight space-y-3 md:space-y-6"
+              >
                 <button
                   onClick={() => {
                     setOpen(true);
