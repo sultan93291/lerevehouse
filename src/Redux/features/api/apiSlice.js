@@ -18,7 +18,7 @@ export const apiSlice = createApi({
 
     tripPackages: builder.query({
       query: id => ({
-        url: `/trip-packages?country_id=${id}`,
+        url: `/trip-packages?destination_id=${id ? id : 1}`,
         method: "GET",
       }),
     }),
@@ -209,7 +209,7 @@ export const apiSlice = createApi({
 
     getDestinationDetails: builder.query({
       query: id => ({
-        url: `/destiantion-details/${id}`,
+        url: `/destination-details/${id}`,
         method: `GET`,
       }),
     }),

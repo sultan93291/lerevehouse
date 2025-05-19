@@ -77,7 +77,10 @@ const ItenaryIdeaDetails = itenariesData => {
         <StartYourJourney setOpen={setRecommendedOpen} />
       </Modal>
 
-      <section className="flex flex-col z-[0] my-14 gap-y-5 lg:gap-y-10">
+      <section
+        id="itinerary-plan"
+        className="flex flex-col z-[0] my-14 gap-y-5 lg:gap-y-10"
+      >
         <div className="flex flex-col gap-y-6  ">
           <div className="flex flex-col gap-y-4 xl:flex-row justify-between items-center ">
             <h3 className="text-primary text-[34px] flex-shrink-0 font-normal leading-[120%] font-editorsNoteNormal  ">

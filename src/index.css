@@ -349,8 +349,8 @@
   border: none !important;
 } */
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   height: 0;
   width: 0px;
   scroll-behavior: smooth;
-}
+} */
