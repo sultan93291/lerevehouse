@@ -75,8 +75,6 @@ const TourCanada = () => {
   }
 
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
-
-  console.log(transportationData?.data);
   
 
   return (
@@ -123,7 +121,7 @@ const TourCanada = () => {
                 </div>
                 <button
                   onClick={() => {
-                    navigate(item.link);
+                    navigate(`/road-tour-details/${item.id}`);
                   }}
                   className="bg-[#1687C7] px-4 md:py-3 py-2 text-sm md:text-lg font-semibold leading-[150%] tracking-[1px] text-white font-interTight rounded-[8px] transition-all duration-300 ease-in-out"
                 >

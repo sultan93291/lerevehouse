@@ -20,7 +20,7 @@ const CommonHeroBanner = ({
       style={{
         backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${bg})`,
         backgroundColor: "lightgray",
-        backgroundPosition: "50%",
+        backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
       }}
