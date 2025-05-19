@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import washington from "../../../../assets/images/tour-auto/washington.png";
-import bike from "../../../../assets/images/tour-auto/bike.png";
 
-const TourAutoTabSection = () => {
+
+const TourAutoTabSection = ({ data }) => {
   const Tabs = [
     "Increasing price",
     "Decreasing price",
@@ -13,12 +12,17 @@ const TourAutoTabSection = () => {
   ];
 
   const [ActiveTab, setActiveTab] = useState("Increasing price");
-  const [AcitveImg, setAcitveImg] = useState(washington); // Default image
+  const [showMap, setShowMap] = useState("map");
 
   const handleImgShow = () => {
-    // Toggle image between washington and bike
-    setAcitveImg(AcitveImg === washington ? bike : washington);
+    if (showMap === "map") {
+      setShowMap("img");
+    } else if (showMap === "img") {
+      setShowMap("map");
+    }
   };
+
+  const imgBaseUrl = import.meta.env.VITE_SERVER_URL;
 
   return (
     <section className="xl:pb-[77px] pb-9 flex flex-col w-full relative items-center justify-center md:gap-y-5 gap-y-8">
@@ -48,60 +52,62 @@ const TourAutoTabSection = () => {
             onClick={handleImgShow}
             className="xl:px-8 px-2 xl:py-4 py-[10px] bg-[#1687C7] text-sm md:text-base 2xl:text-lg font-medium leading-[120%] font-interTight text-white border-[1px] border-transparent ease-in-out duration-500 hover:bg-transparent hover:border-solid hover:border-[#1687C7] hover:text-[#1687C7]"
           >
-            {AcitveImg === washington
-              ? "Show all as image"
-              : "Show all as maps"}
+            {showMap === "map" ? "Show all as image" : "Show all as maps"}
           </button>
         </div>
       </div>
 
       <div className="flex flex-col gap-y-5 w-full relative">
-        {[0, 1, 2].map((item, index) => {
+        {data?.map((item, index) => {
           return (
             <div
               key={index}
-              className="flex flex-col xl:flex-row gap-x-5 items-center 2xl:items-start 2xl:h-[456px] h-full w-full border-[1px] border-solid border-[#0000001F]"
+              className="flex flex-col xl:flex-row justify-between  items-center 2xl:items-start 2xl:h-[456px] h-full w-full border-[1px] border-solid border-[#0000001F]"
             >
-              <div className="md:p-10 p-5 xl:mt-[27px] mt-[10px] flex flex-col 2xl:gap-y-[60px] gap-y-6">
-                <div className="flex flex-col gap-y-3">
-                  <div className="flex flex-col gap-y-3">
+              <div className="md:p-10 p-5 xl:mt-[27px] w-[75%] realtive mt-[10px] flex flex-col 2xl:gap-y-[60px] gap-y-6">
+                <div className="flex flex-col gap-y-3 relative w-full ">
+                  <div className="flex flex-col gap-y-3 relative w-full ">
                     <span className="w-full h-[1px] bg-[#0000001F]"></span>
                     <h2 className="text-[#004265] font-fontSpring text-2xl md:text-[32px] font-light leading-[150%]">
-                      Nova Scotia and PEI Canada
+                      {item?.title}
                     </h2>
                     <div className="flex flex-row w-full items-center justify-between">
                       <h4 className="text-[#004265] font-interTight text-xl font-medium leading-[120%]">
-                        14 days / 13 nights
+                        {item.duration}
                       </h4>
                       <span className="text-[#9C9EA1] font-interTight text-lg font-normal leading-[120%]">
-                        1.472 Km
+                        {item?.length}
                       </span>
                     </div>
                     <span className="w-full h-[1px] bg-[#0000001F]"></span>
                   </div>
                   <span className="text-[#565656] max-w-[845px] font-interTight text-sm md:text-base font-normal leading-[150%]">
-                    Fishing villages with colorful houses are the backdrop to
-                    wonderful landscapes, lighthouses on cliffs that you can
-                    contemplate for hours, pink sand beaches, excellent craft
-                    beers and perhaps the best fresh fish in the world including
-                    lobsters, shellfish and salmon of incredible quality.
+                    {item?.description}
                   </span>
                 </div>
                 <div className="flex flex-col gap-y-1">
                   <h5 className="text-[#004265] font-fontSpring text-2xl md:text-[32px] font-normal leading-[120%]">
-                    1.630€
+                    {item.cost}
                   </h5>
                   <p className="text-[#565656] max-w-[845px] font-interTight text-base font-normal leading-[150%]">
-                    Double room tour (per person)
+                    {item?.condition}
                   </p>
                 </div>
               </div>
               <div className="flex">
-                <img
-                  src={AcitveImg}
-                  alt="tour image"
-                  className="2xl:w-[655px] 2xl:h-[456px]   object-cover  "
-                />
+                {showMap === "map" ? (
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: item?.map_url,
+                    }}
+                  ></div>
+                ) : (
+                  <img
+                    src={`${imgBaseUrl}/${item.image}`}
+                    alt="tour image"
+                    className="2xl:w-[655px] 2xl:h-[456px] object-cover"
+                  />
+                )}
               </div>
             </div>
           );
