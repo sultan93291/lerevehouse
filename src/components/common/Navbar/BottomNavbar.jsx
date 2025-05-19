@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const BottomNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,7 +19,11 @@ const BottomNavbar = () => {
     };
   }, []);
 
-  const navigate = useNavigate();
+  const handleMouseLeave = () => {
+    setTimeout(() => {
+      setHoveredTab(null); // Close dropdown after 200ms delay
+    }, 200);
+  };
 
   const TOURS = [
     {
@@ -122,7 +126,6 @@ const BottomNavbar = () => {
         },
       ],
     },
-
     {
       category: "TRAVEL STYLES",
       options: [
@@ -190,11 +193,7 @@ const BottomNavbar = () => {
             to={tab?.path}
             key={tab?.title}
             onMouseEnter={() => setHoveredTab(tab?.title)}
-            onMouseLeave={() =>
-              setTimeout(() => {
-                if (!isHovered) setHoveredTab(null); // Ensure dropdown is not hovering
-              }, 400)
-            }
+            onMouseLeave={handleMouseLeave} // Add delay on mouse leave
             className={({ isActive }) =>
               `${
                 isActive
@@ -209,8 +208,8 @@ const BottomNavbar = () => {
                 ?.length > 0 && (
                 <div
                   className="absolute left-1/2 max-w-[600px] h-auto transform -translate-x-1/2 z-[99999999] bg-white text-black text-sm p-2 rounded mt-2 whitespace-nowrap flex flex-col ease-in-out duration-300 shadow-md"
-                  onMouseEnter={() => setHoveredTab(tab?.title)} // Keep dropdown visible when hovering over it
-                  onMouseLeave={() => setHoveredTab(null)} // Remove hover effect when leaving dropdown
+                  onMouseEnter={() => setHoveredTab(tab?.title)} // Keep dropdown visible
+                  onMouseLeave={handleMouseLeave} // Add delay on mouse leave
                 >
                   {TOURS.find(
                     tour => tour.category === hoveredTab
