@@ -7,6 +7,9 @@ import suv from "../../assets/images/tour-auto/suv.png";
 import minivan from "../../assets/images/tour-auto/minivan.jpg";
 import TestModal from "@/components/Modals/TestModal";
 import { Modal } from "@/components/Modals/Modal";
+import { useGetTransportationPageDetailsDataQuery } from "@/Redux/features/api/apiSlice";
+import { useParams } from "react-router-dom";
+import DestinationDetails from "../DestinationDetails/DestinationDetails";
 
 const vechicles = [
   {
@@ -35,13 +38,37 @@ const vechicles = [
 const TourWithCar = () => {
   const [open, setOpen] = useState(false);
   const [selectedVehice, setselectedVehice] = useState(vechicles[0].id);
+  const { id } = useParams();
+
+  const { data, error, isLoading } = useGetTransportationPageDetailsDataQuery(
+    id,
+    {
+      refetchOnFocus: true,
+      refetchOnReconnect: true,
+    }
+  );
+
+  const transPortationDetails = data?.data?.transportations_details;
+  const priceArray = [
+    data?.data?.transportation_prices?.single,
+    data?.data?.transportation_prices?.double,
+    data?.data?.transportation_prices?.triple,
+    data?.data?.transportation_prices?.quadruple,
+  ];
+
+
+  const imgBaseUrl = import.meta.env.VITE_SERVER_URL;
+
   return (
     <>
       <Modal open={open} setOpen={setOpen}>
         <TestModal setOpen={setOpen} />
       </Modal>
       <section className=" mt-10">
-        <CommonHeroBanner bg={mountain} title={"Tour in auto in Canada"} />
+        <CommonHeroBanner
+          bg={`${imgBaseUrl}/${data?.data?.image}`}
+          title={data?.data?.title}
+        />
         <div className="flex flex-col xl:gap-y-[112px] gap-y-10 py-4 container">
           <div className="flex flex-col gap-y-4 ">
             <div className="flex flex-col md:gap-y-[60px] gap-y-8">
@@ -52,7 +79,7 @@ const TourWithCar = () => {
                       Length{" "}
                     </h4>
                     <span className="text-[#565656] font-interTight text-base leading-[160%] font-semibold ">
-                      2.942 km{" "}
+                      {transPortationDetails?.length}
                     </span>
                   </div>
                   <span className="hidden 2xl:block w-[1px] h-[64px] bg-[#0000001F]"></span>
@@ -63,7 +90,7 @@ const TourWithCar = () => {
                       Duration{" "}
                     </h4>
                     <span className="text-[#565656] font-interTight text-sm md:text-base leading-[160%] font-semibold ">
-                      16 days / 15 nights{" "}
+                      {transPortationDetails?.duration}
                     </span>
                   </div>
                   <span className="hidden 2xl:block w-[1px] h-[64px] bg-[#0000001F] "></span>
@@ -74,7 +101,7 @@ const TourWithCar = () => {
                       Starting from
                     </h4>
                     <span className="text-[#565656] font-interTight text-base leading-[160%] font-semibold ">
-                      € 1835 per person
+                      {transPortationDetails?.starting_from}
                     </span>
                   </div>
                   <span className="hidden 2xl:block w-[1px] h-[64px] bg-[#0000001F] "></span>
@@ -91,22 +118,19 @@ const TourWithCar = () => {
               <div className="flex flex-col md:gap-y-6 gap-y-3">
                 <div className="flex flex-col gap-y-2">
                   <h2 className="text-[#004265] font-fontSpring text-3xl 2xl:text-[48px] leading-[120%] font-light">
-                    Book your road trip in Canada.
+                    Book your {data?.data?.title}
                   </h2>
                   <span className="text-[#004265] font-interTight text-xl leading-[150%] font-medium">
                     {" "}
-                    A wide range of excursions available.
+                    {transPortationDetails?.title}
                   </span>
                 </div>
-                <span className="text-[#565656] max-w-[1328px] font-interTight text-sm md:text-lg md:leading-[150%] leading-6 font-normal">
-                  Choosing an Xplore car tour means taking advantage of the
-                  experience and professionalism of a tour operator specialized
-                  in trips to Canada. Remember that these prices do not include
-                  flights and that children under 12 do not pay for hotels (but
-                  excursions do) if they share a room with their parents. You
-                  can choose to ask us for a quote for this tour without any
-                  changes or you can contact us to customize it to your liking.
-                </span>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: transPortationDetails?.description,
+                  }}
+                  className="text-[#565656] max-w-[1328px] font-interTight text-sm md:text-lg md:leading-[150%] leading-6 font-normal"
+                ></div>
               </div>
             </div>
             <div className="flex flex-col gap-y-6 w-full items-center ">
@@ -130,7 +154,7 @@ const TourWithCar = () => {
                               className="max-w-[267px] capitalize text-[#252525] font-interTight text-[18px] leading-[120%] font-medium  "
                             >
                               {" "}
-                              {item}{" "}
+                               {item}{" "}
                             </span>
                           );
                         }
@@ -144,28 +168,28 @@ const TourWithCar = () => {
                       </h4>
                     </div>
                     <div className="flex flow-row justify-around md:justify-center xl:justify-around gap-[55px] xl:gap-10 w-full">
-                      {["3635	", "1835	", "1335	", "1085"].map((item, index) => {
+                      {priceArray.map((item, index) => {
                         return (
                           <span
                             key={index}
                             className="text-[#252525] font-interTight text-base md:text-[22px] 2xl:text-[32px] leading-[120%] font-medium "
                           >
-                            {item}
+                            € {item}
                           </span>
                         );
                       })}
                     </div>
                   </div>
                 </div>
-                <span className="text-center max-w-[1060px] ">
+                {/* <span className="text-center max-w-[1060px] ">
                   Fishing villages with colorful houses are the backdrop to
                   wonderful landscapes, lighthouses on cliffs that you can
                   contemplate for hours, pink sand beaches, excellent craft
                   beers and perhaps the best fresh fish in the world including
                   lobsters, shellfish and salmon of incredible quality.
-                </span>
+                </span> */}
                 <div className="flex flex-col 2xl:flex-row md:gap-x-5 gap-y-3">
-                  {vechicles.map((item, index) => {
+                  {data?.data.transportation_mediums?.map((item, index) => {
                     return (
                       <div
                         onClick={() => {
@@ -178,17 +202,17 @@ const TourWithCar = () => {
                         } cursor-pointer ease-in duration-500 flex-col 4xl:w-[500px] w-full items-center gap-y-6`}
                       >
                         <img
-                          src={item.imgSrc}
+                          src={`${imgBaseUrl}/${item?.image}`}
                           className="3xl:w-[332px] w-full h-[192px]"
                           alt="not found"
                         />
                         <div className="flex flex-col gap-y-3 items-center ">
                           <h2 className="text-[#1687C7] text-[24px] md:text-[32px] leading-[120%] font-interTight text-normal">
-                            {item.heading}
+                            {item.name}
                           </h2>
-                          <span className="text-[#565656] text-[16px] leading-[120%] font-interTight text-normal  ">
+                          <span className="text-[#565656] text-center px-2 text-[16px] leading-[120%] font-interTight text-normal  ">
                             {" "}
-                            {item.subHeading}{" "}
+                            {item.description}{" "}
                           </span>
                           <h4 className="text-[#004265] text-[28px] md:text-[32px] leading-[120%] font-interTight text-normal  ">
                             {item.price}
@@ -199,67 +223,50 @@ const TourWithCar = () => {
                   })}
                 </div>
                 <div className=" flex flex-col text-[#565656] text-sm md:text-[16px] leading-[150%] items-start md:items-center font-interTight text-normal">
-                  <span>
-                    Car prices are total per vehicle, in euros, to be added to
-                    the tour fee.
-                  </span>
-                  <span>
-                    Other car models are also available at the quote stage
-                  </span>
+                  <div
+                    className="max-w-[502px] text-center "
+                    dangerouslySetInnerHTML={{
+                      __html: transPortationDetails?.subtitle,
+                    }}
+                  ></div>
                 </div>
                 <div className="flex flex-col xl:flex-row w-full gap-x-12 bg-RgbaBlue">
                   <div className="flex flex-col gap-y-3 p-6">
                     <h4 className="text-[#004265] text-[16px] leading-[150%] items-center font-bold  font-interTight text-normal">
                       What's included
                     </h4>
-                    <div className="flex flex-col gap-y-2 max-w-[746px]">
-                      <p className="text-[#565656] text-sm md:text-[16px] leading-[150%] items-center  font-interTight text-normal">
-                        Overnight stays for the entire duration of the tour in
-                        tourist category hotels, for first category hotels
-                        contact our offices
-                      </p>
-                      <p className="text-[#565656] text-sm md:text-[16px] leading-[150%] items-center  font-interTight text-normal">
-                        One-Hour Sightseeing Cruise to 1000 Islands
-                      </p>
-                      <p className="text-[#565656] text-sm md:text-[16px] leading-[150%] items-center  font-interTight text-normal">
-                        Xplore assistance and consultancy for travel preparation
-                      </p>
-                    </div>
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: transPortationDetails?.included,
+                      }}
+                      className="flex flex-col gap-y-2 max-w-[746px] text-[#565656] text-sm md:text-[16px] leading-[150%] items-center  font-interTight text-normal "
+                    ></div>
                   </div>
                   <div className="flex flex-col gap-y-3 px-6 p-6">
                     <h4 className="text-[#004265] text-[16px] leading-[150%] items-center font-bold  font-interTight text-normal">
                       What's not included
                     </h4>
-                    <div className="flex flex-col gap-y-2 max-w-[403px] ">
-                      <p className="text-[#565656] text-sm md:text-[16px] leading-[150%] items-center  font-interTight text-normal">
-                        intercontinental and internal flights, to add them to
-                        your quote contact us
-                      </p>
-                      <p className="text-[#565656] text-sm md:text-[16px] leading-[150%] items-center  font-interTight text-normal">
-                        satellite navigator in the car (quotes on request)
-                      </p>
-                      <p className="text-[#565656] text-sm md:text-[16px] leading-[150%] items-center  font-interTight text-normal">
-                        any entrance fees to the parks
-                      </p>
-                      <p className="text-[#565656] text-sm md:text-[16px] leading-[150%] items-center  font-interTight text-normal">
-                        high season supplements, meals, tips and extras in
-                        general
-                      </p>{" "}
-                      <p className="text-[#565656] text-sm md:text-[16px] leading-[150%] items-center  font-interTight text-normal">
-                        booking fees including Europ Assistance medical
-                        insurance
-                      </p>
-                    </div>
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: transPortationDetails?.not_included,
+                      }}
+                      className="flex flex-col gap-y-2 max-w-[403px] text-[#565656] text-sm md:text-[16px] leading-[150%] items-center  font-interTight text-normal "
+                    ></div>
                   </div>
                 </div>
                 <div className="flex flex-col md:flex-row w-full justify-between gap-5 md:gap-8 3xl:gap-0 items-center">
-                  <p className="text-[#565656] text-sm md:text-[16px] max-w-auto 3xl:max-w-[1194px] w-full 2xl:w-[1020px] leading-[150%] items-center  font-interTight text-normal">
-                    The overnight stay rates during the tour may vary during the
-                    quote depending on the season and the hotels chosen. You can
-                    decide to book the tour as is or ask us to customize the
-                    itinerary to your liking.
-                  </p>
-                  <button className="2xl:px-[61px] md:w-1/2 w-full xl:w-[215px] py-4 rounded-[5px] bg-[#1687C7] text-xs font-medium leading-[120%] font-interTight text-white border-[1px] border-transparent ease-in-out duration-500 hover:bg-transparent hover:border-solid hover:border-[#1687C7] hover:text-[#1687C7]">
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: transPortationDetails?.short_description,
+                    }}
+                    className="text-[#565656] text-sm md:text-[16px] max-w-auto 3xl:max-w-[1194px] w-full 2xl:w-[1020px] leading-[150%] items-center  font-interTight text-normal"
+                  ></div>
+                  <button
+                    onClick={() => {
+                      setOpen(true);
+                    }}
+                    className="2xl:px-[61px] md:w-1/2 w-full xl:w-[215px] py-4 rounded-[5px] bg-[#1687C7] text-xs font-medium leading-[120%] font-interTight text-white border-[1px] border-transparent ease-in-out duration-500 hover:bg-transparent hover:border-solid hover:border-[#1687C7] hover:text-[#1687C7]"
+                  >
                     Make An Enquiry
                   </button>
                 </div>
@@ -267,7 +274,7 @@ const TourWithCar = () => {
             </div>
           </div>
 
-          <TourAutoTabSection />
+          <TourAutoTabSection data={data?.data?.transportation_ways} />
         </div>
       </section>
     </>

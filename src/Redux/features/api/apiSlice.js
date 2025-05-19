@@ -353,6 +353,13 @@ export const apiSlice = createApi({
         method: `GET`,
       }),
     }),
+
+    getTransportationPageDetailsData: builder.query({
+      query: id => ({
+        url: `/transportation-details/${id}`,
+        method: `GET`,
+      }),
+    }),
   }),
 });
 
@@ -403,5 +410,6 @@ export const {
   useGetAcitivityDatasQuery,
   useGetSingleActivityDetailsQuery,
   useGetAcitivitySubCategoryDetailsQuery,
-  useGetRecomendedActivitiesQuery
+  useGetRecomendedActivitiesQuery,
+  useGetTransportationPageDetailsDataQuery
 } = apiSlice;

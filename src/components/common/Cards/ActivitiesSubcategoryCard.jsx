@@ -4,10 +4,6 @@ import { ActivitiesClockSvg } from "../SvgContainer/SvgContainer";
 
 const ActivitiesSubcategoryCard = ({ item }) => {
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
-
-  console.log(item);
-
-  console.log(`${imgBaseurl}/${item?.image}`);
   
   return (
     <div className="font-interTight group">

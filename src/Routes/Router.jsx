@@ -146,7 +146,7 @@ const router = createBrowserRouter([
         element: <TourAutoCanada />,
       },
       {
-        path: "/tour-with-car",
+        path: "/road-tour-details/:id",
         element: <TourWithCar />,
       },
       {
