@@ -3,7 +3,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-import "swiper/css/navigation";
 
 import { Autoplay, Pagination } from "swiper/modules";
 import HeroSlide from "@/components/Homepage/HeroSlide";
@@ -19,7 +18,9 @@ const HomepageHero = () => {
   );
 
   return (
-    <div className="-mt-[56px] 2xl:mt-0 4xl:-mt-[56px]">
+    <div className="-mt-[56px] 2xl:mt-0 4xl:-mt-[56px] relative">
+      {/* Custom Pagination Container */}
+      <div className="custom-swiper-pagination absolute top-4 left-1/2 -translate-x-1/2 z-10" />
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -27,25 +28,27 @@ const HomepageHero = () => {
           delay: 4000,
           disableOnInteraction: false,
         }}
-        loop={true}
-        modules={[Autoplay, Pagination]}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Pagination]}
         className="mySwiper"
       >
-        {data?.data?.map((item, idx) => {
-          return (
-            <SwiperSlide>
-              <HeroSlide
-                key={idx}
-                vidoeUrl={item?.file_url}
-                title={item?.title}
-                subTitle={item.short_description}
-              />
-            </SwiperSlide>
-          );
-        })}
+        {data?.data?.map((item, idx) => (
+          <SwiperSlide key={idx}>
+            <HeroSlide
+              vidoeUrl={item?.file_url}
+              title={item?.title}
+              subTitle={item?.short_description}
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );
 };
 
 export default HomepageHero;
+
+   
+
