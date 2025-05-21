@@ -360,6 +360,13 @@ export const apiSlice = createApi({
         method: `GET`,
       }),
     }),
+
+    getAllMenuSubMenuData: builder.query({
+      query: () => ({
+        url: `/all-menu-with-sub-menus`,
+        method: `GET`,
+      }),
+    }),
   }),
 });
 
@@ -411,5 +418,6 @@ export const {
   useGetSingleActivityDetailsQuery,
   useGetAcitivitySubCategoryDetailsQuery,
   useGetRecomendedActivitiesQuery,
-  useGetTransportationPageDetailsDataQuery
+  useGetTransportationPageDetailsDataQuery,
+  useGetAllMenuSubMenuDataQuery
 } = apiSlice;
