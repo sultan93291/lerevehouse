@@ -72,7 +72,7 @@ const SingleCanadaTour = () => {
                 Consult by State
               </span>
             </div>
-            <div className="sticky top-[145px] z-40 flex flex-row items-center justify-evenly md:justify-start h-[75px] gap-x-3 bg-[#1687C7] md:px-[180px] px-2">
+            <div className="sticky top-[145px] py-5 z-0 flex flex-row flex-wrap items-center justify-evenly md:justify-start h-auto gap-x-3 bg-[#1687C7] lg:px-[180px] px-2">
               {allTabs.map((item, index) => {
                 return (
                   <Link

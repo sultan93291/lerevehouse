@@ -22,7 +22,7 @@ const DestinationCard = ({ item }) => {
       style={{
         background: `linear-gradient(180deg, rgba(30, 48, 63, 0.00) 41.29%, rgba(0, 0, 0, 0.52) 77.46%), url(${imgBaseUrl}/${item?.trip_package_image})`,
         backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundPosition: "40% 60%",
         backgroundRepeat:"no-repeat"
       }}
     >

@@ -52,7 +52,7 @@ const router = createBrowserRouter([
         element: <DestinationDetails />,
       },
       {
-        path: "/travel-styles",
+        path: "/travel-style",
         element: <TravelStylePage />,
       },
       {

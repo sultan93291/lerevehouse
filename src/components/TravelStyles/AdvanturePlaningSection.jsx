@@ -72,12 +72,12 @@ const AdvanturePlaningSection = () => {
             </div>
           ))}
         </div>
-        <div className="text-center sm:pt-5 pb-10 xs:py-10 lg:py-20 2xl:py-[120px] font-interTight text-[15px] xs:text-base lg:text-lg xl:text-xl 2xl:text-[24px] leading-[180%] ">
-          <div
+        <div className="text-center sm:pt-5 pb-10 xs:py-10 lg:py-20 2xl:py-[120px] font-interTight text-[15px] xs:text-base lg:text-lg xl:text-xl 2xl:text-[24px] leading-[180%] hidden ">
+          {/* <div
             dangerouslySetInnerHTML={{
               __html: descreptionData?.data[0]?.description,
             }}
-          ></div>
+          ></div> */}
         </div>
       </div>
     </section>

@@ -9,7 +9,7 @@ console.log(luxuryPlacesInfo);
       {/* title */}
       <div>
         <h2 className=" text-3xl xl:text-4xl font-editorsNoteNormal text-primary text-center">
-          Our luxury accommodation {luxuryPlacesInfo[0]?.trip_package_title}{" "}
+          Our luxury accommodation
           {/* <span className="font-editorsNoteItalic">Alaska</span> */}
         </h2>
       </div>

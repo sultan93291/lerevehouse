@@ -277,10 +277,10 @@
   }
 
   .destination-style {
-    @apply space-y-2;
+    @apply space-y-4;
   }
   .destination-style strong {
-    @apply text-2xl font-editorsNoteNormal font-light text-primary tracking-wide;
+    @apply text-2xl  font-light text-primary tracking-wide;
   }
 
   .destination-style p {

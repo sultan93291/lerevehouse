@@ -9,6 +9,25 @@ const ActivitiesSubcategoryRightDescription = ({ data }) => {
   return (
     <>
       <div className="xl:w-1/2 w-full">
+        <div className="mb-10">
+          <div className="space-y-4">
+            <h5 className="text-3xl font-editorsNoteNormal space-y-2 font-light text-primary tracking-wide">
+              {data?.title}
+            </h5>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: data?.description,
+              }}
+              className="font-interTight md:text-lg text-text-gray"
+            ></div>
+            <p className="font-interTight md:text-lg text-text-gray">
+              Above the surface, kayaking and stand-up paddleboarding provide a
+              peaceful way to explore coastlines, mangroves, or picturesque
+              bays, blending adventure with a chance to soak in the natural
+              surroundings.
+            </p>
+          </div>
+        </div>
         <div className="bg-[#f4f4f4] lg:p-16 p-8 flex flex-col gap-10 items-center justify-center font-interTight">
           <div className="text-center space-y-2">
             <h3 className="font-medium text-xl">
@@ -49,25 +68,6 @@ const ActivitiesSubcategoryRightDescription = ({ data }) => {
         </div>
 
         {/* details */}
-        <div className="mt-10">
-          <div className="space-y-2">
-            <h5 className="text-3xl font-editorsNoteNormal font-light text-primary tracking-wide">
-              {data?.title}
-            </h5>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: data?.description,
-              }}
-              className="font-interTight md:text-lg text-text-gray"
-            ></div>
-            <p className="font-interTight md:text-lg text-text-gray">
-              Above the surface, kayaking and stand-up paddleboarding provide a
-              peaceful way to explore coastlines, mangroves, or picturesque
-              bays, blending adventure with a chance to soak in the natural
-              surroundings.
-            </p>
-          </div>
-        </div>
       </div>
       <Modal open={open} setOpen={setOpen}>
         <TestModal setOpen={setOpen} />
