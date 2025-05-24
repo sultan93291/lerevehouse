@@ -361,6 +361,13 @@ export const apiSlice = createApi({
       }),
     }),
 
+    getAccomadationsData: builder.query({
+      query: id => ({
+        url: `/accommodations/${id}`,
+        method: `GET`,
+      }),
+    }),
+
     getAllMenuSubMenuData: builder.query({
       query: () => ({
         url: `/all-menu-with-sub-menus`,
@@ -419,5 +426,6 @@ export const {
   useGetAcitivitySubCategoryDetailsQuery,
   useGetRecomendedActivitiesQuery,
   useGetTransportationPageDetailsDataQuery,
-  useGetAllMenuSubMenuDataQuery
+  useGetAllMenuSubMenuDataQuery,
+  useGetAccomadationsDataQuery,
 } = apiSlice;

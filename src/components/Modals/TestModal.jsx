@@ -296,7 +296,7 @@ const TestModal = ({ setOpen }) => {
 
                     <div className="w-full flex flex-col-reverse gap-y-4 lg:flex-col">
                       <h5 className="font-semibold text-base lg:text-xl">
-                        £{range?.[0].toLocaleString()} - £
+                        € {range?.[0].toLocaleString()} - €
                         {range?.[1].toLocaleString()}
                       </h5>
 
@@ -481,22 +481,31 @@ const TestModal = ({ setOpen }) => {
                   <div className="flex items-end  w-full justify-end">
                     <div className="flex   md:justify-normal  items-end justify-end gap-4">
                       <button
-                        // onClick={() => handleSubmit}
                         onClick={() => {
-                          settotalPeople("");
-                          setduration("");
-                          setyear("");
-                          setmonth("");
-                          setcountry("");
-                          setRange([10000, 20000]);
-                          reset();
+                            settotalPeople("");
+                            setduration("");
+                            setyear("");
+                            setmonth("");
+                            setcountry("");
+                            setRange([10000, 20000]);
+                            reset();
+                          setOpen(false);
                         }}
+                        // onClick={() => {
+                        //   settotalPeople("");
+                        //   setduration("");
+                        //   setyear("");
+                        //   setmonth("");
+                        //   setcountry("");
+                        //   setRange([10000, 20000]);
+                        //   reset();
+                        // }}
                         className="flex shadow-md items-center text-sm lg:text-base px-3 lg:px-6 py-3 border border-primary gap-2"
                       >
                         <span>
                           <ResetButtonSvg />
                         </span>
-                        Clean all
+                        Close
                       </button>
                       <button
                         type="submit"

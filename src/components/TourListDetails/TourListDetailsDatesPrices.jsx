@@ -45,7 +45,10 @@ const TourListDetailsDatesPrices = ({ data }) => {
                 dangerouslySetInnerHTML={{
                   __html: data?.priceInclusiveData,
                 }}
-                className="price-inclusive w-full flex flex-col gap-y-2 xl:w-2/3 p-6 xl:p-10 bg-[#f4f4f4] font-editorsNoteNormal font-medium  text-lg xl:text-xl leading-[150%] text-primary "
+                className="price-inclusive w-full flex flex-col gap-y-2 xl:w-2/3 p-6 xl:p-10 
+             bg-[#f4f4f4] font-editorsNoteNormal font-medium text-lg xl:text-xl 
+             leading-[150%] text-primary 
+             overflow-x-auto break-words"
               ></div>
             </div>
           </div>

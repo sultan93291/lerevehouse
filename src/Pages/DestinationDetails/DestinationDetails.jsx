@@ -1,26 +1,15 @@
 import CommonHeroBannerVideo from "@/components/common/HeroBanner/CommonHeroBannerVideo";
-import heroBg from "@/assets/video/destination-details.mp4";
 import DestinationDetailsTabs from "@/components/DestinationDetails/DestinationDetailsTabs";
 import DestinationDetailsDescription from "@/components/DestinationDetails/DestinationDetailsDescription";
-import destinationSuggestionBg from "@/assets/images/tourtlist-bg.jpg";
 import DestinationDetailsSlider from "@/components/DestinationDetails/DestinationDetailsSlider";
 import WhyBookSection from "../Homepage/Sections/WhyBookSection";
-import place1 from "@/assets/images/places-to-visit/1.jpg";
-import place2 from "@/assets/images/places-to-visit/2.jpg";
-import place3 from "@/assets/images/places-to-visit/3.jpg";
 import DestinationPlacesToVisit from "@/components/DestinationDetails/DestinationPlacesToVisit";
-import lux1 from "@/assets/images/luxury/1.jpg";
-import lux2 from "@/assets/images/luxury/2.jpg";
-import lux3 from "@/assets/images/luxury/3.jpg";
-import lux4 from "@/assets/images/luxury/4.jpg";
-import lux5 from "@/assets/images/luxury/5.jpg";
-import lux6 from "@/assets/images/luxury/6.jpg";
-import lux7 from "@/assets/images/luxury/7.jpg";
-import lux8 from "@/assets/images/luxury/8.jpg";
 import DestinationLuxurySection from "@/components/DestinationDetails/DestinationLuxurySection";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+
 import {
+  useGetAccomadationsDataQuery,
   useGetDestinationDetailsPackageQuery,
   useGetDestinationDetailsQuery,
 } from "@/Redux/features/api/apiSlice";
@@ -36,6 +25,17 @@ const DestinationDetails = () => {
   });
 
   const {
+    data: accomandationData,
+    error: accomadationError,
+    isLoading: isAccomadtion,
+  } = useGetAccomadationsDataQuery(id, {
+    refetchOnFocus: true,
+    refetchOnReconnect: true,
+  });
+
+  console.log(accomandationData);
+
+  const {
     data: destinationSuggestionData,
     error: destinationSuggestionError,
     isLoading: isdestinationLoading,
@@ -44,6 +44,10 @@ const DestinationDetails = () => {
     refetchOnReconnect: true,
   });
 
+  const handleDestinationMap = address => {
+    const location = `https://www.google.com/maps?q=${address}`;
+    window.open(location, "_blank");
+  };
 
   const title = data?.data?.name || "";
   const sectionTabs = [
@@ -137,7 +141,9 @@ const DestinationDetails = () => {
         <DestinationPlacesToVisit placesToVisitInfo={data?.data} />
 
         {/* Luxury Section */}
-        <DestinationLuxurySection luxuryPlacesInfo={destinationSuggestionData?.data} />
+        <DestinationLuxurySection
+          luxuryPlacesInfo={accomandationData?.data}
+        />
       </section>
     </div>
   );

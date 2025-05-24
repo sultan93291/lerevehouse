@@ -29,7 +29,7 @@ const HomepageAdventure = () => {
               onClick={() => setOpen(true)}
               className="block cursor-pointer font-interTight text-sm lg:text-base bg-secondary px-4 lg:px-8 py-3 rounded-md "
             >
-              Start Panning
+              Start Planning
             </div>
           </div>
         </div>
