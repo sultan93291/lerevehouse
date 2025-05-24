@@ -7,7 +7,7 @@ const MainLayout = () => {
     <>
       <ScrollRestoration />
       <Navbar />
-      <Outlet />
+      <Outlet  />
       <Footer />
     </>
   );

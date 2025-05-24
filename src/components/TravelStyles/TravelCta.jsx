@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 const TravelCta = ({ title, description, btnText , imgUrl }) => {
   return (
-    <section className="2xl:pb-[100px] pb-10 sm:pb-16 md:pb-20 xl:px-5 2xl:px-14">
+    <section className="2xl:pb-[100px] mt-10 lg:mt-20 pb-10 sm:pb-16 md:pb-20 xl:px-5 2xl:px-14">
       <div className="container">
         <div
-          className="max-w-[1330px] travel-cta relative z-[1] 2xl:py-[82px] py-14 lg:py-[70px] 2xl:px-[300px] mx-auto bg-cover bg-no-repeat text-center rounded-2xl md:rounded-[18px] overflow-hidden px-5"
+          className="max-w-[1330px] travel-cta relative z-[1] 2xl:py-[82px] py-14 lg:py-[70px] 2xl:px-[300px] mx-auto bg-cover bg-no-repeat text-center rounded-2xl md:rounded-[18px] overflow-hidden px-5 "
           style={{
             backgroundImage: `url(${imgUrl})`,
           }}

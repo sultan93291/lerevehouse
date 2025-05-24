@@ -14,6 +14,12 @@ const DestinationDetailsDescriptionRightSide = ({ data }) => {
   return (
     <>
       <div className=" w-full xl:w-1/2">
+        <div className="mb-10">
+          <div
+            dangerouslySetInnerHTML={{ __html: data?.description }}
+            className="destination-style"
+          ></div>
+        </div>
         <div className="bg-[#f4f4f4] p-4 md:p-8 xl:p-16 flex flex-col gap-10 items-center justify-center font-interTight">
           <div className="text-center space-y-2">
             <h3 className="font-medium text-xl">
@@ -54,13 +60,6 @@ const DestinationDetailsDescriptionRightSide = ({ data }) => {
         </div>
 
         {/* details */}
-        <div className="mt-10">
-          <div
-            dangerouslySetInnerHTML={{ __html: data?.description }}
-            className="destination-style"
-          >
-          </div>
-        </div>
       </div>
       <Modal open={open} setOpen={setOpen}>
         <TestModal setOpen={setOpen} />

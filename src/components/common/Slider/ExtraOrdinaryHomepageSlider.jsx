@@ -3,6 +3,8 @@ import { LinkSvgSlider } from '../SvgContainer/SvgContainer';
 import { Link } from 'react-router-dom';
 const ExtraOrdinaryHomepageSlider = ({ destination }) => {
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
+  console.log(destination);
+  
   
   return (
     <div
@@ -15,7 +17,7 @@ const ExtraOrdinaryHomepageSlider = ({ destination }) => {
       }}
     >
       <Link
-        to={`/destination-details/${destination?.name}`}
+        to={`/destination-details/${destination.id}`}
         className="flex items-center gap-2 font-interTight text-base md:text-lg px-2 lg:text-xl text-white"
       >
         <h5 className="uppercase">{destination?.name}</h5>
