@@ -11,6 +11,9 @@ import mountain from "../../assets/images/tourist-guide/mountain.png";
 import WishListCard from "../Cards/WishListCard";
 
 const StartYourJourney = ({ setOpen }) => {
+  const getItenariesData = localStorage.getItem("selectedItineraries");
+  console.log(getItenariesData);
+
   return (
     <DialogContent className="w-full xl:w-[900px] z-[9999] 3xl:min-w-[1200px] py-6 text-center font-nunito">
       <div className="max-h-[80vh] overflow-y-auto scrollbar-hide">

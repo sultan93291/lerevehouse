@@ -30,6 +30,9 @@ const HomepageTestimonials = () => {
     }
   }, [error]);
 
+  console.log(data);
+  
+
   const [swiperRef, setSwiperRef] = useState(null);
 
   if (isLoading) {
