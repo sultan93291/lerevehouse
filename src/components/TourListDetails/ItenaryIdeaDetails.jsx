@@ -4,7 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@radix-ui/react-accordion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   ArrowLeft,
   DropDown,
@@ -16,14 +16,15 @@ import {
   AllItenaryData,
   recomendedAttraction,
 } from "../DummyData/IntenaryDetailsData";
-import ship from "../../assets/images/tour-details/ship.png";
 import RecomendedAttractionModal from "../Modals/RecomendedAttractionModal";
 import { Modal } from "../Modals/Modal";
 import WishListModal from "../Modals/WishListModal";
 import StartYourJourney from "../Modals/StartYourJourney";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const imgBaseurl = import.meta.env.VITE_SERVER_URL;
+
+const LOCAL_STORAGE_KEY = "selectedItineraries";
 
 const ItenaryIdeaDetails = itenariesData => {
   const [counters, setCounters] = useState({});
@@ -31,6 +32,69 @@ const ItenaryIdeaDetails = itenariesData => {
   const [open, setOpen] = useState(false);
   const [recommendedOpen, setRecommendedOpen] = useState(false);
   const [recomendedAttractionData, setrecomendedAttractionData] = useState();
+
+  const navigate = useNavigate();
+  const { id } = useParams();
+
+useEffect(() => {
+  const storedArray = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || [];
+  const initialCounters = {};
+  storedArray.forEach(item => {
+    initialCounters[item.id] = item.day_count;
+  });
+  setCounters(initialCounters);
+}, []);
+
+
+
+  const saveToLocalStorage = faq => {
+    const stored = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || [];
+
+    const index = stored.findIndex(item => item.id === faq.id);
+    if (index !== -1) {
+      stored[index].day_count += 1;
+    } else {
+      stored.push({
+        id: faq.id,
+        day_count: 1,
+        title: faq.title,
+        place_name: faq.place_name,
+        sub_title: faq.sub_title,
+        image: faq.image,
+      });
+    }
+
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(stored));
+  };
+  
+
+  const handleValuePlus = (index, faq) => {
+    setCounters(prev => {
+      const newCount = (prev[faq.id] || 0) + 1;
+      return { ...prev, [faq.id]: newCount };
+    });
+    saveToLocalStorage(faq);
+  };
+
+  const handleValueMinus = (index, faq) => {
+    setCounters(prev => {
+      const current = prev[faq.id] || 0;
+      const newCount = Math.max(current - 1, 0);
+
+      // Optional: You can also remove from localStorage if count is 0
+      const stored = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || {};
+      if (stored[faq.id]) {
+        if (newCount === 0) {
+          delete stored[faq.id];
+        } else {
+          stored[faq.id].day_count = newCount;
+        }
+        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(stored));
+      }
+
+      return { ...prev, [faq.id]: newCount };
+    });
+  };
 
   const expandAll = () => {
     const allItems = itenariesData?.itenariesData?.allItenareies?.map(
@@ -42,22 +106,6 @@ const ItenaryIdeaDetails = itenariesData => {
   const closeAll = () => {
     setOpenItems([]);
   };
-
-  const handleValuePlus = index => {
-    setCounters(prev => ({
-      ...prev,
-      [index]: (prev[index] || 0) + 1,
-    }));
-  };
-
-  const handleValueMinus = index => {
-    setCounters(prev => ({
-      ...prev,
-      [index]: Math.max((prev[index] || 0) - 1, 0),
-    }));
-  };
-
-  const navigate = useNavigate();
 
   return (
     <>
@@ -145,16 +193,16 @@ const ItenaryIdeaDetails = itenariesData => {
                           <div className="flex flex-col gap-y-2">
                             <div className="h-10 lg:h-[56px] w-[168px] flex flex-row bg-white border-[1px] border-solid">
                               <div
-                                onClick={() => handleValuePlus(index)}
+                                onClick={() => handleValuePlus(index, faq)}
                                 className="h-full w-[56px] bg-offWhite flex items-center justify-center cursor-pointer"
                               >
                                 <Plus />
                               </div>
                               <div className="h-full w-[56px] bg-white flex items-center justify-center text-text-gray text-base font-normal leading-[150%]">
-                                {counters[index] || 0}
+                                {counters[faq.id] || 0}
                               </div>
                               <div
-                                onClick={() => handleValueMinus(index)}
+                                onClick={() => handleValueMinus(index, faq)}
                                 className="h-full w-[56px] bg-offWhite flex items-center justify-center cursor-pointer"
                               >
                                 <Minus />
