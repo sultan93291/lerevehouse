@@ -8,6 +8,7 @@ import {
 } from "@react-google-maps/api";
 import { useGetTouristGuideHeroSectionDataQuery } from "@/Redux/features/api/apiSlice";
 import { InfinitySpin } from "react-loader-spinner";
+import { toast } from "react-hot-toast"; // Make sure you have this if using toast
 
 // Map container style
 const containerStyle = {
@@ -25,22 +26,14 @@ const waypoints = [
 
 const CanadaMap = () => {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyA_G_EhWhTWpRYaE6_kR8txUKUkmZkvNiQ",
+    googleMapsApiKey: "AIzaSyA_G_EhWhTWpRYaE6_kR8txUKUkmZkvNiQ", 
     libraries: ["places", "directions"],
   });
-
-  useEffect(() => {
-    if (isLoaded && mapRef.current) {
-      // Fit the map to show all waypoints
-      const bounds = new window.google.maps.LatLngBounds();
-      waypoints.forEach(waypoint => bounds.extend(waypoint));
-      mapRef.current.fitBounds(bounds);
-    }
-  }, [isLoaded]);
 
   const [directionsResponse, setDirectionsResponse] = useState(null);
   const [showTraffic, setShowTraffic] = useState(true);
   const mapRef = useRef(null);
+
   const { data, error, isLoading } = useGetTouristGuideHeroSectionDataQuery(
     undefined,
     {
@@ -48,6 +41,14 @@ const CanadaMap = () => {
       refetchOnReconnect: true,
     }
   );
+
+  useEffect(() => {
+    if (isLoaded && mapRef.current) {
+      const bounds = new window.google.maps.LatLngBounds();
+      waypoints.forEach(waypoint => bounds.extend(waypoint));
+      mapRef.current.fitBounds(bounds);
+    }
+  }, [isLoaded]);
 
   useEffect(() => {
     if (error) {
@@ -70,14 +71,9 @@ const CanadaMap = () => {
     );
   }
 
-  console.log(data?.data[0].map_link);
-
-  // Load Google Maps API
-
-
+  // Extract coordinates from map link
   const extractLatLng = url => {
     if (typeof url !== "string") return null;
-
     const match = url.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/);
     if (match) {
       const [, lat, lng] = match;
@@ -86,34 +82,32 @@ const CanadaMap = () => {
     return null;
   };
 
-  const GoogleApiKey = import.meta.env.VITE_GOOGLE_API_KEY;
+  const coordinates = extractLatLng(data?.data[0]?.map_link);
 
-  const coordinates = extractLatLng(data.data[0]?.url);
-
- console.log(coordinates);
- 
-
-
+  if (!coordinates) {
+    return (
+      <div className="text-center text-red-600 mt-10">
+        Invalid or missing map link. Cannot load map.
+      </div>
+    );
+  }
 
   return (
     <div className="w-full mt-10">
       <GoogleMap
         mapContainerStyle={containerStyle}
-        center={{ lat: coordinates?.latitude, lng: coordinates.longitude }}
-        zoom={4} // Adjusted to show the whole country
+        center={{ lat: coordinates.latitude, lng: coordinates.longitude }}
+        zoom={4}
         onLoad={map => (mapRef.current = map)}
       >
-        {/* Place markers for each waypoint */}
         {waypoints.map((waypoint, index) => (
           <Marker key={index} position={waypoint} />
         ))}
 
-        {/* Show directions if available */}
         {directionsResponse && (
           <DirectionsRenderer directions={directionsResponse} />
         )}
 
-        {/* Show traffic layer if enabled */}
         {showTraffic && <TrafficLayer />}
       </GoogleMap>
     </div>

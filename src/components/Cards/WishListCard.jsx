@@ -55,7 +55,7 @@ const WishListCard = ({ data, count, onRemove }) => {
             className="md:h-20 h-10 md:w-20 w-10 rounded-[4px] bg-[#F4F4F4] hover:bg-red-100 transition-all duration-300 flex items-center justify-center"
             aria-label={`Remove ${title} from wishlist`}
           >
-            <Trash className="h-6 w-6 text-primary" />
+            <img src={trash} className="h-6 w-6" alt="not found" />
           </button>
         </div>
       </div>

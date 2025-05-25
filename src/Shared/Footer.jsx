@@ -186,7 +186,7 @@ const Footer = () => {
           <div className="flex items-center text-[13px] sm:text-sm lg:text-base gap-2 lg:gap-5">
             <p>{siteSettingData?.data?.copyright_text}</p>
             {/* <p> {siteSettingData?.data?.title} </p> */}
-            <p>Terms of service</p>
+            <Link to={`/pages/terms-and-conditions`}>Terms of service</Link>
             <Link to={`/pages/privacy-policy`}>Privacy Policy</Link>
           </div>
           {/* social icons */}
