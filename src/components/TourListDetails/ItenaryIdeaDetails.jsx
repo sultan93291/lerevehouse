@@ -12,97 +12,74 @@ import {
   Minus,
   Plus,
 } from "../common/SvgContainer/SvgContainer";
-import {
-  AllItenaryData,
-  recomendedAttraction,
-} from "../DummyData/IntenaryDetailsData";
+import { useNavigate, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { addItinerary, removeItinerary } from "@/Redux/features/itenariesSlice";
 import RecomendedAttractionModal from "../Modals/RecomendedAttractionModal";
 import { Modal } from "../Modals/Modal";
-import WishListModal from "../Modals/WishListModal";
 import StartYourJourney from "../Modals/StartYourJourney";
-import { useNavigate, useParams } from "react-router-dom";
 
 const imgBaseurl = import.meta.env.VITE_SERVER_URL;
 
-const LOCAL_STORAGE_KEY = "selectedItineraries";
-
-const ItenaryIdeaDetails = itenariesData => {
+const ItenaryIdeaDetails = ({ itenariesData }) => {
   const [counters, setCounters] = useState({});
   const [openItems, setOpenItems] = useState(["item-0"]);
   const [open, setOpen] = useState(false);
   const [recommendedOpen, setRecommendedOpen] = useState(false);
-  const [recomendedAttractionData, setrecomendedAttractionData] = useState();
+  const [recomendedAttractionData, setRecomendedAttractionData] =
+    useState(null);
 
   const navigate = useNavigate();
-  const { id } = useParams();
+  const { id: tripId } = useParams(); // Get trip ID from URL
+  const dispatch = useDispatch();
+  const itineraries = useSelector(state => state.itineraries); // Get itineraries from Redux store
 
-useEffect(() => {
-  const storedArray = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || [];
-  const initialCounters = {};
-  storedArray.forEach(item => {
-    initialCounters[item.id] = item.day_count;
-  });
-  setCounters(initialCounters);
-}, []);
-
-
-
-  const saveToLocalStorage = faq => {
-    const stored = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || [];
-
-    const index = stored.findIndex(item => item.id === faq.id);
-    if (index !== -1) {
-      stored[index].day_count += 1;
-    } else {
-      stored.push({
-        id: faq.id,
-        day_count: 1,
-        title: faq.title,
-        place_name: faq.place_name,
-        sub_title: faq.sub_title,
-        image: faq.image,
-      });
-    }
-
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(stored));
-  };
-  
-
-  const handleValuePlus = (index, faq) => {
-    setCounters(prev => {
-      const newCount = (prev[faq.id] || 0) + 1;
-      return { ...prev, [faq.id]: newCount };
-    });
-    saveToLocalStorage(faq);
-  };
-
-  const handleValueMinus = (index, faq) => {
-    setCounters(prev => {
-      const current = prev[faq.id] || 0;
-      const newCount = Math.max(current - 1, 0);
-
-      // Optional: You can also remove from localStorage if count is 0
-      const stored = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || {};
-      if (stored[faq.id]) {
-        if (newCount === 0) {
-          delete stored[faq.id];
-        } else {
-          stored[faq.id].day_count = newCount;
-        }
-        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(stored));
+  // Initialize counters from Redux store
+  useEffect(() => {
+    const initialCounters = {};
+    itineraries.forEach(item => {
+      if (item.tripId === tripId) {
+        initialCounters[item.id] = item.dayCount || 1;
       }
+    });
+    setCounters(initialCounters);
+  }, [itineraries, tripId]);
 
-      return { ...prev, [faq.id]: newCount };
+  // Add or update itinerary in Redux store
+  const handleAddItinerary = faq => {
+    const itinerary = {
+      id: faq.id,
+      tripId, // Associate with the current trip
+      title: faq.title,
+      place_name: faq.place_name,
+      sub_title: faq.sub_title,
+      image: faq.image,
+    };
+    dispatch(addItinerary(itinerary));
+    setCounters(prev => ({
+      ...prev,
+      [faq.id]: (prev[faq.id] || 0) + 1,
+    }));
+  };
+
+  // Remove or decrement itinerary in Redux store
+  const handleRemoveItinerary = faqId => {
+    dispatch(removeItinerary(faqId));
+    setCounters(prev => {
+      const current = prev[faqId] || 0;
+      const newCount = Math.max(current - 1, 0);
+      return { ...prev, [faqId]: newCount };
     });
   };
 
+  // Expand all accordion items
   const expandAll = () => {
-    const allItems = itenariesData?.itenariesData?.allItenareies?.map(
-      (_, index) => `item-${index}`
-    );
+    const allItems =
+      itenariesData?.allItenareies?.map((_, index) => `item-${index}`) || [];
     setOpenItems(allItems);
   };
 
+  // Collapse all accordion items
   const closeAll = () => {
     setOpenItems([]);
   };
@@ -145,7 +122,7 @@ useEffect(() => {
             </div>
           </div>
           <span className="text-text-gray text-base lg:text-xl leading-[150%] font-medium">
-            {itenariesData?.itenariesData?.itenareiesSubTittle}
+            {itenariesData?.itenareiesSubTittle}
           </span>
         </div>
 
@@ -156,10 +133,10 @@ useEffect(() => {
             value={openItems}
             onValueChange={setOpenItems}
           >
-            {itenariesData?.itenariesData?.allItenareies?.map((faq, index) => (
+            {itenariesData?.allItenareies?.map((faq, index) => (
               <AccordionItem
                 className="border-[1px] border-solid border-[#0000001F]"
-                key={index}
+                key={`${tripId}-${faq.id}`} // Unique key combining tripId and faq.id
                 value={`item-${index}`}
               >
                 <AccordionTrigger className="text-xl w-full text-[#3E3E3E] hover:no-underline">
@@ -193,7 +170,7 @@ useEffect(() => {
                           <div className="flex flex-col gap-y-2">
                             <div className="h-10 lg:h-[56px] w-[168px] flex flex-row bg-white border-[1px] border-solid">
                               <div
-                                onClick={() => handleValuePlus(index, faq)}
+                                onClick={() => handleAddItinerary(faq)}
                                 className="h-full w-[56px] bg-offWhite flex items-center justify-center cursor-pointer"
                               >
                                 <Plus />
@@ -202,7 +179,7 @@ useEffect(() => {
                                 {counters[faq.id] || 0}
                               </div>
                               <div
-                                onClick={() => handleValueMinus(index, faq)}
+                                onClick={() => handleRemoveItinerary(faq.id)}
                                 className="h-full w-[56px] bg-offWhite flex items-center justify-center cursor-pointer"
                               >
                                 <Minus />
@@ -227,7 +204,7 @@ useEffect(() => {
                           </div>
                           <div
                             onClick={() =>
-                              navigate(`/tour-guide-deatils/:${faq?.id}`)
+                              navigate(`/tour-guide-deatils/${faq.id}`)
                             }
                             className="bg-white py-2 lg:py-4 px-2 whitespace-nowrap lg:px-8 border-[1px] flex flex-row items-center cursor-pointer gap-x-1 border-solid h-10 lg:h-[59px] text-primary leading-[150%] font-normal text-sm lg:text-lg"
                           >
@@ -244,11 +221,11 @@ useEffect(() => {
                       <div className="flex flex-col flex-wrap cursor-pointer xl:flex-row gap-y-3 3xl:gap-y-4 xl:justify-between 3xl:gap-x-4">
                         {faq?.recommended_attractions?.map((item, idx) => (
                           <div
-                            key={idx}
+                            key={`${tripId}-${faq.id}-${idx}`} // Unique key for attractions
                             className="p-3 flex flex-col gap-y-3 bg-white shadow-primaryShadow"
                             onClick={() => {
                               setOpen(true);
-                              setrecomendedAttractionData(item);
+                              setRecomendedAttractionData(item);
                             }}
                           >
                             <div

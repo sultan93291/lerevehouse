@@ -1,20 +1,17 @@
 import CommonHeroBanner from "@/components/common/HeroBanner/CommonHeroBanner";
-import bg from "@/assets/images/tourtlist-bg.jpg";
 import TravelListCard from "@/components/common/Cards/TravelListCard";
 import { useParams, useSearchParams } from "react-router-dom";
-import destinationSuggestionBg from "@/assets/images/tourtlist-bg.jpg";
 import { InfinitySpin } from "react-loader-spinner";
 import toast from "react-hot-toast";
 import {
   useGetDestinationDetailsPackageQuery,
   useGetTripPackageDetailsQuery,
 } from "@/Redux/features/api/apiSlice";
-import { useEffect, useState } from "react";
 
 const TourList = () => {
   const { title } = useParams();
   const [searchParams] = useSearchParams();
-  const isDestination = searchParams.get("isdestination");
+  const isDestination = searchParams.get("isdestination") === "true"; // ✅ fix
 
   const { data, error, isLoading } = useGetTripPackageDetailsQuery(title, {
     refetchOnFocus: true,
@@ -63,35 +60,50 @@ const TourList = () => {
   }
 
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
-  
+
+  const bannerImage = isDestination
+    ? `${imgBaseurl}/${destinationSuggestionData?.data?.[0]?.trip_package_image}`
+    : `${imgBaseurl}/${data?.data?.[0]?.travel_style?.image}`;
+
+  const italicText = isDestination
+    ? destinationSuggestionData?.data?.[0]?.trip_package_title
+    : data?.data?.[0]?.travel_style?.name;
+
+  const tourData = isDestination ? destinationSuggestionData?.data : data?.data;
+
 
   return (
     <div>
       <CommonHeroBanner
         title="Travel to"
-        bg={`${imgBaseurl}/${data?.data[0]?.travel_style?.image}`}
-        italic={data?.data[0]?.travel_style?.name}
+        bg={bannerImage}
+        italic={italicText}
       />
 
       {/* Tour Lists */}
-      <section className=" my-10 xl:my-20 container mx-auto  ">
-        {/* title */}
+      <section className="my-10 xl:my-20 container mx-auto">
+        {/* Title */}
         <div>
           <h2 className="text-center text-3xl xl:text-4xl font-editorsNoteNormal text-primary">
             All <span className="font-editorsNoteItalic">tours</span> for
-            <span> {data?.data[0]?.travel_style?.name} </span>
+            <span>
+              {" "}
+              {isDestination
+                ? destinationSuggestionData?.data?.[0]?.trip_package_title
+                : data?.data?.[0]?.travel_style?.name}
+            </span>
           </h2>
         </div>
 
-        {/* cards */}
-        <div className=" grid grid-cols-1 lg:grid-cols-2 3xl:grid-cols-3  gap-4 xl:gap-6 mt-10">
-          {isDestination
-            ? destinationSuggestionData?.data?.map(item => (
-                <TravelListCard key={item?.id} item={item} />
-              ))
-            : data?.data?.map(item => (
-                <TravelListCard key={item?.id} item={item} />
-              ))}
+        {/* Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 3xl:grid-cols-3 gap-4 xl:gap-6 mt-10">
+          {tourData?.length > 0 ? (
+            tourData.map(item => <TravelListCard key={item?.id} item={item} />)
+          ) : (
+            <p className="col-span-full text-center text-gray-500">
+              No tours found.
+            </p>
+          )}
         </div>
       </section>
     </div>
