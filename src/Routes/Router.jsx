@@ -161,7 +161,10 @@ const router = createBrowserRouter([
         path: "/pages/privacy-policy",
         element: <DynamicPage />,
       },
-
+      {
+        path: "/pages/terms-and-conditions",
+        element: <DynamicPage />,
+      },
     ],
   },
 ]);
