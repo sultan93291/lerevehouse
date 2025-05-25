@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { Trash } from "../common/SvgContainer/SvgContainer"; // Assuming a Trash SVG component
+import trash from "../../assets/images/tour-details/trash.svg";
 
 const imgBaseurl = import.meta.env.VITE_SERVER_URL;
 
