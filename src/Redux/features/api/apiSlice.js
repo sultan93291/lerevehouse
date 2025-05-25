@@ -81,6 +81,13 @@ export const apiSlice = createApi({
       }),
     }),
 
+    getTermsAndConditionData: builder.query({
+      query: () => ({
+        url: `/dynamic-pages/single/terms-and-conditions`,
+        method: `GET`,
+      }),
+    }),
+
     getSiteSettingData: builder.query({
       query: () => ({
         url: `/site-settings`,
@@ -374,6 +381,14 @@ export const apiSlice = createApi({
         method: `GET`,
       }),
     }),
+
+    postExtraItenaries: builder.mutation({
+      query: data => ({
+        url: `/add-extra-itineraries`,
+        method: `POST`,
+        data: data,
+      }),
+    }),
   }),
 });
 
@@ -428,4 +443,6 @@ export const {
   useGetTransportationPageDetailsDataQuery,
   useGetAllMenuSubMenuDataQuery,
   useGetAccomadationsDataQuery,
+  usePostExtraItenariesMutation,
+  useGetTermsAndConditionDataQuery
 } = apiSlice;
