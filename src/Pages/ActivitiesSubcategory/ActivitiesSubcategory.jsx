@@ -62,9 +62,9 @@ const ActivitiesSubcategory = () => {
         items: item.activity_sub_category.length,
         contents: item.activity_sub_category.map(sub => ({
           id: `${sub.id}`,
-          image: `${imgBaseurl}/${sub?.image}`,
-          title: sub.title,
-          duration: sub.time,
+          image: `${sub?.image}`,
+          title: sub?.title,
+          duration: sub?.time,
         })),
       }));
 
@@ -72,7 +72,6 @@ const ActivitiesSubcategory = () => {
       setActiveTab(categories[0]);
     }
   }, [data]);
-
 
   return (
     <>
@@ -126,12 +125,14 @@ const ActivitiesSubcategory = () => {
                     );
                   })}
               </div>
-
               {/* contents */}
               <div className="grid md:grid-cols-2 md:gap-2 gap-5 col-span-6 my-8 xl:my-0">
-                {activeTab?.contents?.map(item => (
-                  <ActivitiesSubcategoryCard item={item} key={item?.id} />
-                ))}
+                {activeTab?.contents?.map(item => {
+                  console.log(item);
+                  return (
+                    <ActivitiesSubcategoryCard item={item} key={item?.id} />
+                  );
+                })}
               </div>
             </div>
           </div>
