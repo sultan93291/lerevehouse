@@ -4,7 +4,7 @@ import { ActivitiesClockSvg } from "../SvgContainer/SvgContainer";
 
 const ActivitiesSubcategoryCard = ({ item }) => {
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
-  
+
   return (
     <div className="font-interTight group">
       <div className="md:h-72 h-[200px] w-full overflow-hidden">
@@ -25,7 +25,9 @@ const ActivitiesSubcategoryCard = ({ item }) => {
           {/* left side */}
           <div className="flex items-center gap-2">
             <ActivitiesClockSvg />
-            <span className="text-sm xl:text-lg">{item?.duration || item?.time}</span>
+            <span className="text-sm xl:text-lg">
+              {item?.duration || item?.time}
+            </span>
           </div>
           {/* right side */}
           <div>
