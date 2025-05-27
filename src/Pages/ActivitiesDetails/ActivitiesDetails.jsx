@@ -15,7 +15,10 @@ import { tickPriceLeft } from "@/components/DummyData/priceDummyData";
 import { CheckMark } from "@/components/common/SvgContainer/SvgContainer";
 import { useLocation, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { useGetAcitivitySubCategoryDetailsQuery ,useGetRecomendedActivitiesQuery } from "@/Redux/features/api/apiSlice";
+import {
+  useGetAcitivitySubCategoryDetailsQuery,
+  useGetRecomendedActivitiesQuery,
+} from "@/Redux/features/api/apiSlice";
 
 const ActivitiesDetails = () => {
   const location = useLocation();
@@ -32,22 +35,22 @@ const ActivitiesDetails = () => {
     }
   );
 
-  const { data:RecomendedData, error:recomendedError, isLoading:isRecomendedLoading } = useGetRecomendedActivitiesQuery(
-    id || "default",
-    {
-      skip: !id,
-      refetchOnFocus: true,
-      refetchOnReconnect: true,
-    }
-  );
+  const {
+    data: RecomendedData,
+    error: recomendedError,
+    isLoading: isRecomendedLoading,
+  } = useGetRecomendedActivitiesQuery(id || "default", {
+    skip: !id,
+    refetchOnFocus: true,
+    refetchOnReconnect: true,
+  });
 
   useEffect(() => {
     if (error) {
       const errorMessage =
         error.data?.message || error.error || error.status || error.message;
       toast.error(errorMessage);
-    }
-    else if (recomendedError) {
+    } else if (recomendedError) {
       const errorMessage =
         recomendedError.data?.message ||
         recomendedError.error ||
@@ -78,9 +81,8 @@ const ActivitiesDetails = () => {
       <CommonHeroBanner
         uppercaseItalic={true}
         uppercaseTitle={true}
-        bg={bgImg}
+        bg={`${imgBaseurl}/${bgImg}`}
         title={title}
-        // italic="Diving sports"
       />
 
       <section className="container md:my-20 mt-10 mb-10">
@@ -173,7 +175,7 @@ const ActivitiesDetails = () => {
 
           {/* cards */}
           <div className="md:mt-16 mt-4 grid lg:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 md:gap-2 gap-5 col-span-6">
-            {RecomendedData?.data?.slice(0,4).map(item => (
+            {RecomendedData?.data?.slice(0, 4).map(item => (
               <ActivitiesSubcategoryCard item={item} key={item?.id} />
             ))}
           </div>
