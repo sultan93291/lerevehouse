@@ -60,12 +60,12 @@ const DynamicPage = () => {
   return (
     <div className="flex flex-col gap-y-6 py-[128px] mt-[60px] container">
       <h4 className="title--xxl">{contentData?.page_title}</h4>
-      <p
-        className="text-sm xl:text-lg font-inter font-medium leading-[160%]"
+      <div
+        className="text-sm xl:text-lg font-inter font-medium leading-[160%] [&>p]:mb-4"
         dangerouslySetInnerHTML={{
           __html: contentData?.page_content,
         }}
-      ></p>
+      ></div>
     </div>
   );
 };

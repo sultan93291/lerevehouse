@@ -324,16 +324,19 @@
   }
   /* {all dangerous html design ended here} */
   /* Global CSS */
-.custom-swiper-pagination .swiper-pagination-bullet {
-  background-color: white;
-  opacity: 0.5;
-}
+  .custom-swiper-pagination .swiper-pagination-bullet {
+    background-color: white;
+    opacity: 0.5;
+  }
 
-.custom-swiper-pagination .swiper-pagination-bullet-active {
-  opacity: 1;
-  background-color: #fff;
-}
+  .custom-swiper-pagination .swiper-pagination-bullet-active {
+    opacity: 1;
+    background-color: #fff;
+  }
 
+  /* .cls-1 {
+    fill: none;
+  } */
 }
 
 /* react tabs */

@@ -10,7 +10,7 @@ const ActivitiesSubcategoryCard = ({ item }) => {
       <div className="md:h-72 h-[200px] w-full overflow-hidden">
         <img
           className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
-          src={item?.image || `${imgBaseurl}/${item?.image}`}
+          src={`${imgBaseurl}/${item?.image}`}
           alt=""
         />
       </div>
