@@ -209,7 +209,7 @@ const TouristGuide = () => {
         <div className="flex flex-col 2xl:gap-y-8 items-center justify-center">
           <div
             dangerouslySetInnerHTML={{ __html: data?.data[0]?.title }}
-            className="text-[#1687C7] text-3xl md:text-[50px] space-y-3 leading-10 2xl:text-[64px] font-interTight font-bold leading-[160%]  "
+            className="text-[#1687C7] text-3xl md:text-[50px] space-y-3  2xl:text-[64px] font-interTight font-bold leading-[160%]  "
           ></div>
           <div className="flex items-center flex-col 2xl:flex-row 2xl:gap-x-[155px] gap-12">
             <img
