@@ -5,8 +5,9 @@ import { Link, NavLink } from "react-router-dom";
 const BottomNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [hoveredTab, setHoveredTab] = useState(null);
+  const [isHoveringDropdown, setIsHoveringDropdown] = useState(false);
   const dropdownRefs = useRef({});
-  const [activeTab, setActiveTab] = useState(null);
+  const timeoutRef = useRef(null);
 
   const { data, error, isLoading } = useGetAllMenuSubMenuDataQuery(undefined, {
     refetchOnFocus: true,
@@ -25,29 +26,37 @@ const BottomNavbar = () => {
     };
   }, []);
 
-  useEffect(() => {
-    const handleClickOutside = event => {
-      if (
-        activeTab &&
-        dropdownRefs.current[activeTab] &&
-        !dropdownRefs.current[activeTab].contains(event.target)
-      ) {
-        setActiveTab(null);
-        setHoveredTab(null); // Reset hoveredTab as well
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [activeTab]);
-
-  const handleMouseLeave = () => {
-    setTimeout(() => {
-      setHoveredTab(null);
-    }, 200);
+  const handleTabMouseEnter = category => {
+    clearTimeout(timeoutRef.current);
+    setHoveredTab(category);
+    setIsHoveringDropdown(false);
   };
+
+  const handleTabMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      if (!isHoveringDropdown) {
+        setHoveredTab(null);
+      }
+    }, 200); // 200ms delay before closing
+  };
+
+  const handleDropdownMouseEnter = () => {
+    clearTimeout(timeoutRef.current);
+    setIsHoveringDropdown(true);
+  };
+
+  const handleDropdownMouseLeave = () => {
+    setIsHoveringDropdown(false);
+    timeoutRef.current = setTimeout(() => {
+      setHoveredTab(null);
+    }, 200); // 200ms delay before closing
+  };
+
+  useEffect(() => {
+    return () => {
+      clearTimeout(timeoutRef.current);
+    };
+  }, []);
 
   return (
     <div
@@ -62,9 +71,8 @@ const BottomNavbar = () => {
           <div key={tab?.category} className="relative">
             <NavLink
               to={tab?.redirectLink}
-              onClick={() => setActiveTab(tab?.category)}
-              // onMouseEnter={() => setHoveredTab(tab?.category)}
-              // onMouseLeave={handleMouseLeave}
+              onMouseEnter={() => handleTabMouseEnter(tab?.category)}
+              onMouseLeave={handleTabMouseLeave}
               className={({ isActive }) =>
                 `${
                   isActive
@@ -75,34 +83,32 @@ const BottomNavbar = () => {
             >
               {tab?.category}
             </NavLink>
-            {(hoveredTab === tab?.category || activeTab === tab?.category) &&
-              tab?.subCatgoryArr?.length > 0 && (
-                <div
-                  ref={el => (dropdownRefs.current[tab?.category] = el)} // Assign ref to dropdown
-                  className="absolute left-1/2 max-w-[600px] h-auto transform -translate-x-1/2 z-[99999999] bg-white text-black text-sm p-2 rounded mt-2 whitespace-nowrap flex flex-col ease-in-out duration-300 shadow-md"
-                  onMouseEnter={() => setHoveredTab(tab?.category)}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  {tab?.subCatgoryArr?.map((item, index) => (
-                    <div key={item.id}>
-                      <Link
-                        to={item?.url}
-                        className="m-3 text-text-gray text-base font-inter font-normal leading-[150%] hover:text-black ease-in-out duration-300"
-                        onClick={() => setActiveTab(null)} // Close dropdown on link click
-                      >
-                        {item?.name}
-                      </Link>
-                      <hr
-                        className={`${
-                          index === tab.subCatgoryArr.length - 1
-                            ? "opacity-0"
-                            : "opacity-100"
-                        } bg-[#00000014] my-3`}
-                      />
-                    </div>
-                  ))}
-                </div>
-              )}
+            {hoveredTab === tab?.category && tab?.subCatgoryArr?.length > 0 && (
+              <div
+                ref={el => (dropdownRefs.current[tab?.category] = el)}
+                className="absolute left-1/2 max-w-[600px] h-auto transform -translate-x-1/2 z-[99999999] bg-white text-black text-sm p-2 rounded mt-2 whitespace-nowrap flex flex-col ease-in-out duration-300 shadow-md"
+                onMouseEnter={handleDropdownMouseEnter}
+                onMouseLeave={handleDropdownMouseLeave}
+              >
+                {tab?.subCatgoryArr?.map((item, index) => (
+                  <div key={item.id}>
+                    <Link
+                      to={item?.url}
+                      className="m-3 text-text-gray text-base font-inter font-normal leading-[150%] hover:text-black ease-in-out duration-300"
+                    >
+                      {item?.name}
+                    </Link>
+                    <hr
+                      className={`${
+                        index === tab.subCatgoryArr.length - 1
+                          ? "opacity-0"
+                          : "opacity-100"
+                      } bg-[#00000014] my-3`}
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         ))}
       </div>
