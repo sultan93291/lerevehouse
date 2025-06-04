@@ -31,8 +31,8 @@ import TravelActivitiesPage from "@/Pages/TravelActivites/TravelActivitiesPage";
 import TravelStylePage from "@/Pages/TravelStyle/TravelStylePage";
 import TravelStyleDetailsPage from "@/Pages/TravelStyleDetails/TravelStyleDetailsPage";
 import ViagaNozi from "@/Pages/ViagaNozi/ViagaNozi";
+import SearchPage from "@/SearchPage/SearchPage";
 import { createBrowserRouter } from "react-router-dom";
-
 
 const router = createBrowserRouter([
   {
@@ -161,9 +161,10 @@ const router = createBrowserRouter([
         path: "/pages/privacy-policy",
         element: <DynamicPage />,
       },
+
       {
-        path: "/pages/terms-and-conditions",
-        element: <DynamicPage />,
+        path: "/search",
+        element: <SearchPage />,
       },
     ],
   },
