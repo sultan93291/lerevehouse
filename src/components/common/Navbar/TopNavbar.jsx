@@ -10,17 +10,18 @@ import {
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { useGetAllMenuSubMenuDataQuery, useGetOfficeDataQuery } from "@/Redux/features/api/apiSlice";
+import {
+  useGetAllMenuSubMenuDataQuery,
+  useGetOfficeDataQuery,
+} from "@/Redux/features/api/apiSlice";
 import { InfinitySpin } from "react-loader-spinner";
 import toast from "react-hot-toast";
-
-
 
 const TopNavbar = () => {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
   const sideBarRef = useRef(null);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const {
     data: officeData,
@@ -31,13 +32,10 @@ const TopNavbar = () => {
     refetchOnReconnect: true,
   });
 
-    const { data, error, isLoading } = useGetAllMenuSubMenuDataQuery(undefined, {
-      refetchOnFocus: true,
-      refetchOnReconnect: true,
-    });
-  
-
-  
+  const { data, error, isLoading } = useGetAllMenuSubMenuDataQuery(undefined, {
+    refetchOnFocus: true,
+    refetchOnReconnect: true,
+  });
 
   useEffect(() => {
     const handleClickOutside = event => {
@@ -65,9 +63,6 @@ const TopNavbar = () => {
       </div>
     );
   }
-
-
-
 
   const handlMapOpen = () => {
     const location = `https://www.google.com/maps?q=${officeData?.data[0]?.address}`;
@@ -123,15 +118,16 @@ const TopNavbar = () => {
             <ul className="flex items-center gap-8">
               {topNavLinks.map(item => (
                 <li key={item.title}>
-                  <Link
-                    to={item.title === "Contact" ? "#" : undefined}
+                  <div
                     onClick={e => {
                       if (item.title === "Contact") {
                         e.preventDefault();
                         window.location.href = `mailto:${officeData?.data[0]?.email}`;
+                      } else if (item.title === "Search") {
+                        navigate("/search");
                       }
                     }}
-                    className="flex items-center gap-2"
+                    className="flex items-center cursor-pointer gap-2"
                   >
                     <div className="text-primary font-inter text-base font-medium">
                       {item.svg}
@@ -139,7 +135,7 @@ const TopNavbar = () => {
                     <p className="font-interTight text-sm text-text-gray">
                       {item.title}
                     </p>
-                  </Link>
+                  </div>
                 </li>
               ))}
               <li>
@@ -181,9 +177,7 @@ const TopNavbar = () => {
                   className="w-[280px] !z-[999] py-8 bg-white border-r-[1px] border-solid border-gray-200 top-0 left-0 flex flex-col items-start justify-start h-full gap-y-8"
                 >
                   <img
-                    onClick={() => {
-                      
-                    }}
+                    onClick={() => {}}
                     className="h-[70px] w-[220px] object-contain"
                     src={logo}
                     alt="Logo"

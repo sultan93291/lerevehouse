@@ -389,6 +389,13 @@ export const apiSlice = createApi({
         data: data,
       }),
     }),
+
+    globalSearch: builder.query({
+      query: (query) => ({
+        url: `/global-search?query=${query}`,
+        method: `GET`,
+      }),
+    }),
   }),
 });
 
@@ -444,5 +451,6 @@ export const {
   useGetAllMenuSubMenuDataQuery,
   useGetAccomadationsDataQuery,
   usePostExtraItenariesMutation,
-  useGetTermsAndConditionDataQuery
+  useGetTermsAndConditionDataQuery,
+  useGlobalSearchQuery
 } = apiSlice;
