@@ -1,13 +1,25 @@
 /* eslint-disable react/prop-types */
 import { Link, useNavigate, useParams } from "react-router-dom";
 
-const SingleDestinationCard = ({ bg, title, height, id }) => {
+const SingleDestinationCard = ({
+  bg,
+  title,
+  height,
+  id,
+  isTravelGuide = false,
+}) => {
   const navigate = useNavigate();
+
+  // /tourist-guide/:id
 
   return (
     <div
       onClick={() => {
-        navigate(`/destination-details/${id}`);
+        if (isTravelGuide) {
+          navigate(`/tourist-guide/${id}`);
+        } else {
+          navigate(`/destination-details/${id}`);
+        }
       }}
       className={`${
         height == "full"

@@ -5,6 +5,9 @@ import axios from "axios";
  * Axios base query function for RTK Query (no auth needed).
  * @param {Object} options - Axios options like baseUrl and default headers.
  */
+
+const lan = localStorage.getItem("lan");
+
 const axiosBaseQuery =
   ({ baseUrl, defaultHeaders = {} } = {}) =>
   async ({ url, method = "GET", data, params, headers = {} }) => {
@@ -19,7 +22,7 @@ const axiosBaseQuery =
 
       // Make the request
       const response = await axios({
-        url: `${baseUrl}${url}`,
+        url: `${baseUrl}${url}?lan=${lan}`,
         method,
         headers: finalHeaders,
         data: ["POST", "PUT", "PATCH"].includes(method.toUpperCase())

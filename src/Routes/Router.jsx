@@ -28,6 +28,7 @@ import TouristListDetails from "@/Pages/TouristListDetails/TouristListDetails";
 import TourList from "@/Pages/TourList/TourList";
 import TourWithCar from "@/Pages/TourWithCar/TourWithCar";
 import TravelActivitiesPage from "@/Pages/TravelActivites/TravelActivitiesPage";
+import TravelGuide from "@/Pages/TravelGuide/TravelGuide";
 import TravelStylePage from "@/Pages/TravelStyle/TravelStylePage";
 import TravelStyleDetailsPage from "@/Pages/TravelStyleDetails/TravelStyleDetailsPage";
 import ViagaNozi from "@/Pages/ViagaNozi/ViagaNozi";
@@ -61,6 +62,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/tourist-guide",
+        element: <TravelGuide />,
+        // element: <TouristGuide />,
+      },
+      {
+        path: "/tourist-guide/:id",
         element: <TouristGuide />,
       },
       {
