@@ -1,12 +1,17 @@
 import { createApi, QueryStatus } from "@reduxjs/toolkit/query/react";
 import axiosBaseQuery from "./axiosBaseQuery";
+import { useSelector } from "react-redux";
 
 const SiteURl = import.meta.env.VITE_SERVER_BASE_URL;
 
+const lan = localStorage.getItem("lan");
+
+console.log(lan);
+ 
 export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: axiosBaseQuery({ baseUrl: SiteURl }),
-  tagTypes: ["Trips"], // optional
+  tagTypes: ["Trips"],
   endpoints: builder => ({
     planTripRequest: builder.mutation({
       query: tripData => ({
@@ -391,8 +396,15 @@ export const apiSlice = createApi({
     }),
 
     globalSearch: builder.query({
-      query: (query) => ({
+      query: query => ({
         url: `/global-search?query=${query}`,
+        method: `GET`,
+      }),
+    }),
+
+    getTravelMainHeroSectionData: builder.query({
+      query: () => ({
+        url: `/cms/guide-tourist-hero-section`,
         method: `GET`,
       }),
     }),
@@ -452,5 +464,6 @@ export const {
   useGetAccomadationsDataQuery,
   usePostExtraItenariesMutation,
   useGetTermsAndConditionDataQuery,
-  useGlobalSearchQuery
+  useGlobalSearchQuery,
+  useGetTravelMainHeroSectionDataQuery
 } = apiSlice;

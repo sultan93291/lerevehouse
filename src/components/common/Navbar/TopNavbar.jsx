@@ -15,13 +15,19 @@ import {
   useGetOfficeDataQuery,
 } from "@/Redux/features/api/apiSlice";
 import { InfinitySpin } from "react-loader-spinner";
-import toast from "react-hot-toast";
+import { useDispatch, useSelector } from "react-redux";
+import { setLanguage } from "@/Redux/features/languageSlice";
 
 const TopNavbar = () => {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
   const sideBarRef = useRef(null);
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const language = useSelector(state => state.language.language);
+
+  console.log(language);
 
   const {
     data: officeData,
@@ -139,11 +145,18 @@ const TopNavbar = () => {
                 </li>
               ))}
               <li>
-                <button className="flex items-center gap-2">
+                <button
+                  onClick={() => {
+                    dispatch(setLanguage());
+                  }}
+                  className="flex items-center gap-2"
+                >
                   <div className="text-primary font-inter text-base font-medium">
                     <EarthSvgNavbar />
                   </div>
-                  <p className="font-interTight text-sm text-text-gray">EN</p>
+                  <p className="font-interTight text-sm text-text-gray uppercase   ">
+                    {language}
+                  </p>
                 </button>
               </li>
             </ul>
@@ -216,12 +229,17 @@ const TopNavbar = () => {
                           </li>
                         ))}
                         <li>
-                          <button className="flex items-center gap-2">
+                          <button
+                            onClick={() => {
+                              dispatch(setLanguage());
+                            }}
+                            className="flex items-center gap-2"
+                          >
                             <div className="text-primary font-inter text-base font-medium">
                               <EarthSvgNavbar />
                             </div>
-                            <p className="font-interTight text-sm text-text-gray">
-                              EN
+                            <p className="font-interTight text-sm text-text-gray uppercase  ">
+                              {language}
                             </p>
                           </button>
                         </li>
