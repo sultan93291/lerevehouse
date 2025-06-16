@@ -6,7 +6,7 @@ import tent from "../../assets/images/guida-turistica/tent.jpg";
 import dolphin from "../../assets/images/guida-turistica/dolphin.jpg";
 import helicopter from "../../assets/images/guida-turistica/helicopter.jpg";
 import lakeMountain from "../../assets/images/guida-turistica/lakeMountain.jpg";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { InfinitySpin } from "react-loader-spinner";
 import { useEffect } from "react";
 
@@ -50,11 +50,13 @@ const TouristGuide = () => {
     }
   );
 
+  const { id } = useParams();
+
   const {
     data: tourPlacesData,
     error: tourPalcesError,
     isLoading: isTouristPlaceLoading,
-  } = useGetTouristGuidePlacesQuery(undefined, {
+  } = useGetTouristGuidePlacesQuery(id, {
     refetchOnFocus: true,
     refetchOnReconnect: true,
   });
@@ -265,3 +267,5 @@ const TouristGuide = () => {
 };
 
 export default TouristGuide;
+
+// re pushing

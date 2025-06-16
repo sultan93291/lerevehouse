@@ -6,7 +6,6 @@ const SiteURl = import.meta.env.VITE_SERVER_BASE_URL;
 
 const lan = localStorage.getItem("lan");
 
-console.log(lan);
  
 export const apiSlice = createApi({
   reducerPath: "api",
@@ -297,8 +296,8 @@ export const apiSlice = createApi({
     }),
 
     getTouristGuidePlaces: builder.query({
-      query: () => ({
-        url: `/tourist-guides`,
+      query: (id) => ({
+        url: `/tourist-guides/${id}`,
         method: `GET`,
       }),
     }),
