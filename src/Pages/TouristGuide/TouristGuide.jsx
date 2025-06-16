@@ -1,8 +1,3 @@
-import mountain from "../../assets/images/guida-turistica/mountain.jpg";
-import polarBear from "../../assets/images/guida-turistica/polarBear.jpg";
-import parises from "../../assets/images/guida-turistica/praises.jpg";
-import quebec from "../../assets/images/guida-turistica/quebec.jpg";
-import seaHouse from "../../assets/images/guida-turistica/seaHouse.jpg";
 import canadaMap from "../../assets/images/guida-turistica/canadaMap.png";
 import { ArrowSignSvg } from "@/components/common/SvgContainer/SvgContainer";
 import TravelDetailsSlider from "@/components/GuidaTuristica/GuidaTuristica";
@@ -21,39 +16,7 @@ import {
   useGetCanadaTravelDataQuery,
   useGetTouristGuidePlacesQuery,
 } from "@/Redux/features/api/apiSlice";
-
-const RedirectData = [
-  {
-    id: 1,
-    src: mountain,
-    redirectLink: "/boundless-north",
-    txt: "The Great West Western Canada",
-  },
-  {
-    id: 2,
-    src: quebec,
-    redirectLink: "/ontario-quebec",
-    txt: "Ontario & Quebec",
-  },
-  {
-    id: 3,
-    src: parises,
-    redirectLink: "/Prairies",
-    txt: "Prairies",
-  },
-  {
-    id: 4,
-    src: seaHouse,
-    redirectLink: "/atlantics-provinces",
-    txt: "Atlantic Provinces",
-  },
-  {
-    id: 5,
-    src: polarBear,
-    redirectLink: "/",
-    txt: "Atlantic Provinces",
-  },
-];
+import toast from "react-hot-toast";
 
 const FeaturedLinks = [
   {
@@ -75,44 +38,6 @@ const FeaturedLinks = [
   {
     txt: "Customize your trip to Canada",
     redirect: "/tour-mezi",
-  },
-];
-
-const imagesData = [
-  {
-    src: dolphin,
-    txt: "Bears, whales and more!",
-    link: "/",
-  },
-  {
-    src: helicopter,
-    txt: "City excursions",
-    link: "/",
-  },
-  {
-    src: tent,
-    txt: "Glamping... in a tent with class",
-    link: "/",
-  },
-  {
-    src: lakeMountain,
-    txt: "Bears, whales and more!",
-    link: "/",
-  },
-  {
-    src: helicopter,
-    txt: "City excursions",
-    link: "/",
-  },
-  {
-    src: tent,
-    txt: "Glamping... in a tent with class",
-    link: "/",
-  },
-  {
-    src: dolphin,
-    txt: "Bears, whales and more!",
-    link: "/",
   },
 ];
 
@@ -153,6 +78,8 @@ const TouristGuide = () => {
   });
 
   const navigate = useNavigate();
+
+  console.log(tourPlacesData);
 
   useEffect(() => {
     if (error) {
