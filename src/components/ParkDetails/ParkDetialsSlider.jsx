@@ -25,7 +25,7 @@ const ParkDetailsSlider = ({ data }) => {
             disableOnInteraction: false, // Keeps autoplay after user interaction
           }}
         >
-          {data.map((_, idx) => {
+          {data?.map((_, idx) => {
             const images = [
               data[(idx - 1 + data.length) % data.length], // Left image
               data[idx], // Center image
