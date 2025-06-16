@@ -160,7 +160,7 @@ const router = createBrowserRouter([
         element: <CanadaHoliday />,
       },
       {
-        path: "/canada-map",
+        path: "/map/:id",
         element: <CanadaMap />,
       },
       {

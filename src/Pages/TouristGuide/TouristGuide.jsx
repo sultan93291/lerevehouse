@@ -18,39 +18,18 @@ import {
 } from "@/Redux/features/api/apiSlice";
 import toast from "react-hot-toast";
 
-const FeaturedLinks = [
-  {
-    txt: "View the map of Canada",
-    redirect: "/canada-map",
-  },
-  {
-    txt: "Natural Wonders: National Parks Special",
-    redirect: "/tour-guide",
-  },
-  {
-    txt: "Eating and drinking in Canada, discover our tips",
-    redirect: "/eat&-drink",
-  },
-  {
-    txt: "Discover one of our tours in Canada",
-    redirect: "/destination-details/Canada%20Ovest",
-  },
-  {
-    txt: "Customize your trip to Canada",
-    redirect: "/tour-mezi",
-  },
-];
+
 
 const TouristGuide = () => {
+  const { id } = useParams();
   const { data, error, isLoading } = useGetTouristGuideHeroSectionDataQuery(
-    undefined,
+    id,
     {
       refetchOnFocus: true,
       refetchOnReconnect: true,
     }
   );
 
-  const { id } = useParams();
 
   const {
     data: tourPlacesData,
@@ -65,7 +44,7 @@ const TouristGuide = () => {
     data: canadaData,
     error: canadaError,
     isLoading: isCanadaLoading,
-  } = useGetCanadaTravelDataQuery(undefined, {
+  } = useGetCanadaTravelDataQuery(id, {
     refetchOnFocus: true,
     refetchOnReconnect: true,
   });
@@ -81,7 +60,6 @@ const TouristGuide = () => {
 
   const navigate = useNavigate();
 
-  console.log(tourPlacesData);
 
   useEffect(() => {
     if (error) {
@@ -112,6 +90,29 @@ const TouristGuide = () => {
     }
   }, [error, getspcialistsError]);
 
+  const FeaturedLinks = [
+    {
+      txt: `View the map of ${data?.data?.destination?.name} `,
+      redirect: `/map/${id}`,
+    },
+    {
+      txt: "Natural Wonders: National Parks Special",
+      redirect: "/tour-guide",
+    },
+    {
+      txt: `Eating and drinking in ${data?.data?.destination?.name}, discover our tips `,
+      redirect: "/eat&-drink",
+    },
+    {
+      txt: `Discover one of our tours in ${data?.data?.destination?.name} `,
+      redirect: `/tour-list-details/${id}`,
+    },
+    {
+      txt: `Customize your trip to ${data?.data?.destination?.name}`,
+      redirect: "/tour-mezi",
+    },
+  ];
+
   if (
     isLoading ||
     isSpecaillistLoading ||
@@ -137,7 +138,7 @@ const TouristGuide = () => {
       <div className="flex flex-col 2xl:gap-y-[96px] gap-y-9">
         <div className="flex flex-col 2xl:gap-y-8 items-center justify-center">
           <div
-            dangerouslySetInnerHTML={{ __html: data?.data[0]?.title }}
+            dangerouslySetInnerHTML={{ __html: data?.data?.title }}
             className="text-[#1687C7] text-3xl md:text-[50px] space-y-3  2xl:text-[64px] font-interTight font-bold leading-[160%]  "
           ></div>
           <div className="flex items-center flex-col 2xl:flex-row 2xl:gap-x-[155px] gap-12">
@@ -148,7 +149,7 @@ const TouristGuide = () => {
             />
             <div className="flex flex-col gap-y-4 md:mt-0">
               <div
-                dangerouslySetInnerHTML={{ __html: data.data[0].description }}
+                dangerouslySetInnerHTML={{ __html: data?.data?.description }}
                 className="text-text-gray text-sm md:text-base leading-[180%] font-normal tracking-[1px] mt-3 md:mt-0"
               ></div>
               <div className="flex flex-col gap-y-[6px]">
@@ -235,7 +236,7 @@ const TouristGuide = () => {
           </div>
         </div>
         <div className="flex flex-col gap-y-6 mt-10 2xl:mt-0 mb-10 md:mb-10 2xl:mb-0">
-          <div className="flex flex-col items-center">
+          {/* <div className="flex flex-col items-center">
             <div
               dangerouslySetInnerHTML={{
                 __html: canadaData?.data[0]?.title,
@@ -248,15 +249,15 @@ const TouristGuide = () => {
               }}
               className="md:max-w-[1001px] w-full leading-[160%] text-base mt-4 2xl:mt-0 md:text-xl font-interTight text-[#000] text-center"
             ></div>
-          </div>
-          <div className="flex flex-col lg:flex-row gap-6">
+          </div> */}
+          {/* <div className="flex flex-col lg:flex-row gap-6">
             <div
               dangerouslySetInnerHTML={{
                 __html: canadaData?.data[0]?.description,
               }}
               className="text-[#787878] font-interTight flex flex-col gap-y-2  text-base 2xl:text-xl font-normal 2xl:leading-[180%] leading-[160%] tracking-[1px]"
             ></div>
-          </div>
+          </div> */}
           {/* <div className="w-full h-[345px] flex flex-col items-center justify-center">
             <TravelDetailsSlider data={imagesData} />
           </div> */}

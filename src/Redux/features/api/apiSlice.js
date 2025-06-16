@@ -275,8 +275,8 @@ export const apiSlice = createApi({
     }),
 
     getTouristGuideHeroSectionData: builder.query({
-      query: () => ({
-        url: `/cms/guide-tourist-first-section`,
+      query: id => ({
+        url: `/tourist-guide-hero-section/${id}`,
         method: `GET`,
       }),
     }),
@@ -296,7 +296,7 @@ export const apiSlice = createApi({
     }),
 
     getTouristGuidePlaces: builder.query({
-      query: (id) => ({
+      query: id => ({
         url: `/tourist-guides/${id}`,
         method: `GET`,
       }),
