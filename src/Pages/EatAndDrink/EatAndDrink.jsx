@@ -13,6 +13,7 @@ import {
 } from "@/Redux/features/api/apiSlice";
 import { InfinitySpin } from "react-loader-spinner";
 import toast from "react-hot-toast";
+import { useParams } from "react-router-dom";
 
 const TourGuide = () => {
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
@@ -22,14 +23,19 @@ const TourGuide = () => {
       refetchOnReconnect: true,
     });
 
+  const { id } = useParams();
+
   const {
     data: allEatingandDrinkingkData,
     error: allEatingandDrinkingError,
     isLoading: isEatingAndDrinkigLaoding,
-  } = useGetAllEatingAndDrinkingDataQuery(undefined, {
+  } = useGetAllEatingAndDrinkingDataQuery(id, {
     refetchOnFocus: true,
     refetchOnReconnect: true,
   });
+
+  console.log(allEatingandDrinkingkData);
+  
 
   if (isLoading || isEatingAndDrinkigLaoding) {
     return (

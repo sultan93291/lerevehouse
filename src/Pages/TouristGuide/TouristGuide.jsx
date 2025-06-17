@@ -97,11 +97,11 @@ const TouristGuide = () => {
     },
     {
       txt: "Natural Wonders: National Parks Special",
-      redirect: "/tour-guide",
+      redirect: `/national-park/${id}`,
     },
     {
       txt: `Eating and drinking in ${data?.data?.destination?.name}, discover our tips `,
-      redirect: "/eat&-drink",
+      redirect: `/eat&-drink/${id}`,
     },
     {
       txt: `Discover one of our tours in ${data?.data?.destination?.name} `,
