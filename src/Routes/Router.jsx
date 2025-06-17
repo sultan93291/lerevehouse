@@ -108,11 +108,11 @@ const router = createBrowserRouter([
         element: <TestMap />,
       },
       {
-        path: "/tour-guide",
+        path: "/national-park/:id",
         element: <TourGuide />,
       },
       {
-        path: "/eat&-drink",
+        path: "/eat&-drink/:id",
         element: <EatAndDrink />,
       },
       {
@@ -160,7 +160,7 @@ const router = createBrowserRouter([
         element: <CanadaHoliday />,
       },
       {
-        path: "/canada-map",
+        path: "/map/:id",
         element: <CanadaMap />,
       },
       {

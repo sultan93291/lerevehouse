@@ -275,8 +275,8 @@ export const apiSlice = createApi({
     }),
 
     getTouristGuideHeroSectionData: builder.query({
-      query: () => ({
-        url: `/cms/guide-tourist-first-section`,
+      query: id => ({
+        url: `/tourist-guide-hero-section/${id}`,
         method: `GET`,
       }),
     }),
@@ -296,7 +296,7 @@ export const apiSlice = createApi({
     }),
 
     getTouristGuidePlaces: builder.query({
-      query: (id) => ({
+      query: id => ({
         url: `/tourist-guides/${id}`,
         method: `GET`,
       }),
@@ -317,8 +317,8 @@ export const apiSlice = createApi({
     }),
 
     getAllNationalParkData: builder.query({
-      query: () => ({
-        url: `/national-parks`,
+      query: (id) => ({
+        url: `/national-parks/${id}`,
         method: `GET`,
       }),
     }),
@@ -331,8 +331,8 @@ export const apiSlice = createApi({
     }),
 
     getAllEatingAndDrinkingData: builder.query({
-      query: () => ({
-        url: `/eatingdrinking`,
+      query: (id) => ({
+        url: `/eatingdrinking/${id}`,
         method: `GET`,
       }),
     }),

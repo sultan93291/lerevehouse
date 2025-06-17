@@ -14,8 +14,11 @@ import {
 } from "@/Redux/features/api/apiSlice";
 import { InfinitySpin } from "react-loader-spinner";
 import toast from "react-hot-toast";
+import { useParams } from "react-router-dom";
 
 const TourGuide = () => {
+  const { id } = useParams();
+
   const { data, error, isLoading } = useGetNationalParkHeroSectionDataQuery(
     undefined,
     {
@@ -28,7 +31,7 @@ const TourGuide = () => {
     data: allNationalParkData,
     error: allNationalParkError,
     isLoading: isallnationalParkLaoding,
-  } = useGetAllNationalParkDataQuery(undefined, {
+  } = useGetAllNationalParkDataQuery(id, {
     refetchOnFocus: true,
     refetchOnReconnect: true,
   });
@@ -63,7 +66,6 @@ const TourGuide = () => {
     }
   }
 
-
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
 
   return (
@@ -75,7 +77,7 @@ const TourGuide = () => {
         uppercaseItalic={false}
       />
       <MapSection data={data?.data} />
-      <TourTab data={allNationalParkData.data} />
+      <TourTab data={allNationalParkData?.data} />
       <div className=" py-5 bg-chocolate">
         <div className="container flex items-center text-white justify-center font-editorsNoteItalic text-2xl md:text-[40px] font-light leading-[160%] ">
           Find your best possible tour
