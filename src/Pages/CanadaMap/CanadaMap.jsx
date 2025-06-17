@@ -8,7 +8,8 @@ import {
 } from "@react-google-maps/api";
 import { useGetTouristGuideHeroSectionDataQuery } from "@/Redux/features/api/apiSlice";
 import { InfinitySpin } from "react-loader-spinner";
-import { toast } from "react-hot-toast"; // Make sure you have this if using toast
+import { toast } from "react-hot-toast";
+import { useParams } from "react-router-dom";
 
 // Map container style
 const containerStyle = {
@@ -26,7 +27,7 @@ const waypoints = [
 
 const CanadaMap = () => {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyA_G_EhWhTWpRYaE6_kR8txUKUkmZkvNiQ", 
+    googleMapsApiKey: "AIzaSyA_G_EhWhTWpRYaE6_kR8txUKUkmZkvNiQ",
     libraries: ["places", "directions"],
   });
 
@@ -34,8 +35,10 @@ const CanadaMap = () => {
   const [showTraffic, setShowTraffic] = useState(true);
   const mapRef = useRef(null);
 
+  const { id } = useParams();
+
   const { data, error, isLoading } = useGetTouristGuideHeroSectionDataQuery(
-    undefined,
+    id,
     {
       refetchOnFocus: true,
       refetchOnReconnect: true,
@@ -74,15 +77,17 @@ const CanadaMap = () => {
   // Extract coordinates from map link
   const extractLatLng = url => {
     if (typeof url !== "string") return null;
-    const match = url.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/);
+    const match = url.match(/@(-?\d+\.\d+),\s*(-?\d+\.\d+)/);
     if (match) {
       const [, lat, lng] = match;
       return { latitude: parseFloat(lat), longitude: parseFloat(lng) };
     }
     return null;
   };
+  
 
-  const coordinates = extractLatLng(data?.data[0]?.map_link);
+  const coordinates = extractLatLng(data?.data?.map_url);
+
 
   if (!coordinates) {
     return (
@@ -100,9 +105,9 @@ const CanadaMap = () => {
         zoom={4}
         onLoad={map => (mapRef.current = map)}
       >
-        {waypoints.map((waypoint, index) => (
+        {/* {waypoints.map((waypoint, index) => (
           <Marker key={index} position={waypoint} />
-        ))}
+        ))} */}
 
         {directionsResponse && (
           <DirectionsRenderer directions={directionsResponse} />
