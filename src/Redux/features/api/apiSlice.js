@@ -317,8 +317,8 @@ export const apiSlice = createApi({
     }),
 
     getAllNationalParkData: builder.query({
-      query: () => ({
-        url: `/national-parks`,
+      query: (id) => ({
+        url: `/national-parks/${id}`,
         method: `GET`,
       }),
     }),
@@ -331,8 +331,8 @@ export const apiSlice = createApi({
     }),
 
     getAllEatingAndDrinkingData: builder.query({
-      query: () => ({
-        url: `/eatingdrinking`,
+      query: (id) => ({
+        url: `/eatingdrinking/${id}`,
         method: `GET`,
       }),
     }),

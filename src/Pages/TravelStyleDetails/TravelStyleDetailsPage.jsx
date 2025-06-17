@@ -5,6 +5,7 @@ import FeaturedTravels from "@/components/TravelStylesDetails/FeaturedTravels";
 import { useParams } from "react-router-dom";
 import { useGetTripPackageDetailsQuery } from "@/Redux/features/api/apiSlice";
 import { InfinitySpin } from "react-loader-spinner";
+import toast from "react-hot-toast";
 
 const TravelStyleDetailsPage = () => {
   const { id } = useParams();
