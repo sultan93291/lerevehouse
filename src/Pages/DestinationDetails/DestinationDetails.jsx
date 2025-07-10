@@ -33,7 +33,6 @@ const DestinationDetails = () => {
     refetchOnReconnect: true,
   });
 
-  console.log(accomandationData);
 
   const {
     data: destinationSuggestionData,
