@@ -7,7 +7,6 @@ import {
 import { InfinitySpin } from "react-loader-spinner";
 
 const Destination = () => {
-  // Fetch destinations data
   const {
     data: destinationsData,
     isLoading,
@@ -26,6 +25,8 @@ const Destination = () => {
     refetchOnFocus: true,
     refetchOnReconnect: true,
   });
+
+  console.log(heroSectionData);
 
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
 
@@ -84,7 +85,7 @@ const Destination = () => {
       <CommonHeroBanner
         bg={`${imgBaseurl}/${heroSectionData?.data[0]?.background_image}`}
         title={normalTxt}
-        italic={styledTxt}
+        subTittle={heroSectionData?.data[0]?.sub_title}
       />
 
       {/* Destination section */}
