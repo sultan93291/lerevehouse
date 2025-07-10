@@ -3,7 +3,10 @@ import ExploreJourney from "@/components/TravelStylesDetails/ExploreJourney";
 import bg from "../../assets/images/travelstyle-detailsbg.png";
 import FeaturedTravels from "@/components/TravelStylesDetails/FeaturedTravels";
 import { useParams } from "react-router-dom";
-import { useGetTravelStylesDetailsDataQuery, useGetTripPackageDetailsQuery } from "@/Redux/features/api/apiSlice";
+import {
+  useGetTravelStylesDetailsDataQuery,
+  useGetTripPackageDetailsQuery,
+} from "@/Redux/features/api/apiSlice";
 import { InfinitySpin } from "react-loader-spinner";
 import toast from "react-hot-toast";
 
@@ -14,12 +17,14 @@ const TravelStyleDetailsPage = () => {
     refetchOnReconnect: true,
   });
 
-  const { data:singleData, error:singleError, isLoading:isSingleLoading } = useGetTravelStylesDetailsDataQuery(id, {
+  const {
+    data: singleData,
+    error: singleError,
+    isLoading: isSingleLoading,
+  } = useGetTravelStylesDetailsDataQuery(id, {
     refetchOnFocus: true,
     refetchOnReconnect: true,
   });
-  
-  
 
   if (isLoading) {
     return (
@@ -43,12 +48,13 @@ const TravelStyleDetailsPage = () => {
   }
 
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
-  
+
+  console.log(`${imgBaseurl}/${singleData?.data[0]?.image}}`);
 
   return (
     <div>
       <CommonHeroBanner
-        bg={`${imgBaseurl}/${singleData?.data[0]?.image}}`}
+        bg={`${imgBaseurl}/${singleData?.data[0]?.image}`}
         title={singleData?.data[0]?.title}
       />
       <ExploreJourney
