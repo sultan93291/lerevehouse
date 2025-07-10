@@ -18,12 +18,7 @@ const TravelStyleDetailsPage = () => {
     refetchOnFocus: true,
     refetchOnReconnect: true,
   });
-
-  console.log(
-    singleData.data[0]
-  );
   
-
   
 
   if (isLoading) {
