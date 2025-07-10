@@ -3,7 +3,7 @@ import ExploreJourney from "@/components/TravelStylesDetails/ExploreJourney";
 import bg from "../../assets/images/travelstyle-detailsbg.png";
 import FeaturedTravels from "@/components/TravelStylesDetails/FeaturedTravels";
 import { useParams } from "react-router-dom";
-import { useGetTripPackageDetailsQuery } from "@/Redux/features/api/apiSlice";
+import { useGetTravelStylesDetailsDataQuery, useGetTripPackageDetailsQuery } from "@/Redux/features/api/apiSlice";
 import { InfinitySpin } from "react-loader-spinner";
 import toast from "react-hot-toast";
 
@@ -13,6 +13,18 @@ const TravelStyleDetailsPage = () => {
     refetchOnFocus: true,
     refetchOnReconnect: true,
   });
+
+  const { data:singleData, error:singleError, isLoading:isSingleLoading } = useGetTravelStylesDetailsDataQuery(id, {
+    refetchOnFocus: true,
+    refetchOnReconnect: true,
+  });
+
+  console.log(
+    singleData.data[0]
+  );
+  
+
+  
 
   if (isLoading) {
     return (
@@ -41,10 +53,13 @@ const TravelStyleDetailsPage = () => {
   return (
     <div>
       <CommonHeroBanner
-        bg={`${imgBaseurl}/${data?.data[0]?.travel_style?.image}`}
-        title={data?.data[0]?.travel_style?.name}
+        bg={`${imgBaseurl}/${singleData.data[0].image}}`}
+        title={singleData.data[0]?.title}
       />
-      <ExploreJourney btnTxt={"View All travel Style"} />
+      <ExploreJourney
+        data={singleData.data[0]}
+        btnTxt={"View All travel Style"}
+      />
       <FeaturedTravels data={data?.data} />
     </div>
   );

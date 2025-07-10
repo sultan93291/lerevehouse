@@ -317,7 +317,7 @@ export const apiSlice = createApi({
     }),
 
     getAllNationalParkData: builder.query({
-      query: (id) => ({
+      query: id => ({
         url: `/national-parks/${id}`,
         method: `GET`,
       }),
@@ -331,7 +331,7 @@ export const apiSlice = createApi({
     }),
 
     getAllEatingAndDrinkingData: builder.query({
-      query: (id) => ({
+      query: id => ({
         url: `/eatingdrinking/${id}`,
         method: `GET`,
       }),
@@ -407,6 +407,13 @@ export const apiSlice = createApi({
         method: `GET`,
       }),
     }),
+
+    getTravelStylesDetailsData: builder.query({
+      query: (id) => ({
+        url: `/travel-styles-details/${id}`,
+        method: `GET`,
+      }),
+    }),
   }),
 });
 
@@ -464,5 +471,6 @@ export const {
   usePostExtraItenariesMutation,
   useGetTermsAndConditionDataQuery,
   useGlobalSearchQuery,
-  useGetTravelMainHeroSectionDataQuery
+  useGetTravelMainHeroSectionDataQuery,
+  useGetTravelStylesDetailsDataQuery
 } = apiSlice;
