@@ -53,11 +53,11 @@ const TravelStyleDetailsPage = () => {
   return (
     <div>
       <CommonHeroBanner
-        bg={`${imgBaseurl}/${singleData.data[0].image}}`}
-        title={singleData.data[0]?.title}
+        bg={`${imgBaseurl}/${singleData?.data[0]?.image}}`}
+        title={singleData?.data[0]?.title}
       />
       <ExploreJourney
-        data={singleData.data[0]}
+        data={singleData?.data[0]}
         btnTxt={"View All travel Style"}
       />
       <FeaturedTravels data={data?.data} />
