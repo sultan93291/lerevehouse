@@ -17,7 +17,7 @@ const DestinationDetailsDescriptionRightSide = ({ data }) => {
         <div className="mb-10">
           <div
             dangerouslySetInnerHTML={{ __html: data?.description }}
-            className="destination-style"
+            className="prose prose-lg "
           ></div>
         </div>
         <div className="bg-[#f4f4f4] p-4 md:p-8 xl:p-16 flex flex-col gap-10 items-center justify-center font-interTight">
