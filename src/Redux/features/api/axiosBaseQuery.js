@@ -22,7 +22,7 @@ const axiosBaseQuery =
 
       // Make the request
       const response = await axios({
-        url: `${baseUrl}${url}?lan=${lan}`,
+        url: `${baseUrl}${url}?lan=${lan ? lan : "en"}`,
         method,
         headers: finalHeaders,
         data: ["POST", "PUT", "PATCH"].includes(method.toUpperCase())
