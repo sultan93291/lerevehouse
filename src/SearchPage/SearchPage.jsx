@@ -27,6 +27,10 @@ const SearchPage = () => {
     refetchOnReconnect: true,
   });
 
+
+  console.log(data);
+  
+
   // Update filtered results when data changes
   useEffect(() => {
     if (data?.success) {
