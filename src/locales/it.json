@@ -1,4 +1,45 @@
 {
-  "welcome": "Benvenuto",
-  "description": "Questo è un progetto React con i18n."
+  "homepageAdventure": {
+    "title": "La tua avventura inizia ora",
+    "description": "A Le Rêve House Adventure, creiamo tour privati di lusso completamente su misura e itinerari safari progettati esclusivamente per te.",
+    "button": "Inizia a pianificare"
+  },
+  "plan_your_trip": "Pianifica il tuo viaggio",
+  "show_more": "Mostra di più",
+  "see_less": "Mostra meno",
+  "whyBookHeading": "Perché prenotare con Lerevehouse?",
+  "requestedTrips": {
+    "sectionTitle": {
+      "part1": "Ecco una",
+      "highlight": "Lista di",
+      "part2": "I nostri",
+      "part3": "Viaggi più richiesti"
+    }
+  },
+
+  "homeFaq": {
+    "title": "Domande frequenti",
+    "subtitle": "Domande? Risposte."
+  },
+  "smartOffers": {
+    "heading": "<span class=\"text-secondary\">Offerte</span> Intelligenti"
+  },
+  "homepageTestimonials": {
+    "title": "Client Experiences That Speak for <br class=\"hidden lg:block\" /> Themselves"
+  },
+  "extraOrdinarySection": {
+    "heading": "Scopri la <span class=\"text-secondary\">Gioiello Nascosto</span> che Renderà Straordinario il Tuo <br /> <span class=\"text-secondary\">Prossimo Viaggio</span>",
+    "button": "Vedi Tutte le Destinazioni"
+  },
+  "footer": {
+    "headquarters": "Le Reve House Adventure - Sede Centrale in Canada:",
+    "italyOffice": "Le Reve House Itj Italia:",
+    "discover": "Scopri",
+    "newsletterTitle": "Newsletter",
+    "newsletterText": "Iscriviti per ricevere ispirazione, notizie, offerte e consigli di viaggio.",
+    "emailPlaceholder": "Indirizzo Email",
+    "signupBtn": "Iscriviti",
+    "terms": "Termini di servizio",
+    "privacy": "Politica sulla privacy"
+  }
 }

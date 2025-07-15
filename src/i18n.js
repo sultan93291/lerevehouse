@@ -6,24 +6,23 @@ import translationEN from "./locales/en.json";
 import translationIT from "./locales/it.json";
 
 const resources = {
-  en: {
-    translation: translationEN,
-  },
-  it: {
-    translation: translationIT,
-  },
+  en: { translation: translationEN },
+  it: { translation: translationIT },
 };
 
 i18n
-  .use(LanguageDetector) // optional: auto-detect user language
+  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources,
-    fallbackLng: "en", // fallback language
-    debug: true, // logs language events in console
-
+    fallbackLng: "en",
+    debug: true,
+    detection: {
+      order: ["localStorage", "navigator"],
+      lookupLocalStorage: "i18nextLng", 
+    },
     interpolation: {
-      escapeValue: false, // react already protects from xss
+      escapeValue: false,
     },
   });
 
