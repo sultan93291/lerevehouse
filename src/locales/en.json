@@ -20,9 +20,11 @@
     "title": "Frequently asked questions",
     "subtitle": "Questions? Answers."
   },
+
   "smartOffers": {
     "heading": "<span class=\"text-secondary\">Smart</span> Offers"
   },
+  
   "homepageTestimonials": {
     "title": "Client Experiences That Speak for <br class=\"hidden lg:block\" /> Themselves"
   },
