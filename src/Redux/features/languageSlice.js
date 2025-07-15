@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
+import i18n from "@/i18n"; 
 
 const initialState = {
-  language: localStorage.getItem("lan") || "en",
+  language: localStorage.getItem("i18nextLng") || "en",
 };
 
 const languageSlice = createSlice({
@@ -9,19 +10,16 @@ const languageSlice = createSlice({
   initialState,
   reducers: {
     setLanguage: state => {
-      if (!state.language) {
-        state.language = "en";
-      } else if (state.language === "en") {
-        state.language = "it";
-      } else if (state.language === "it") {
-        state.language = "en";
-      }
-      window.location.reload();
-      localStorage.setItem("lan", state.language);
+      state.language = state.language === "en" ? "it" : "en";
+
+      // Change language instantly without reload
+      i18n.changeLanguage(state.language);
+
+      // Sync to localStorage for persistence
+      localStorage.setItem("i18nextLng", state.language);
     },
   },
 });
 
 export const { setLanguage } = languageSlice.actions;
-
 export default languageSlice.reducer;

@@ -6,6 +6,7 @@ import router from "./Routes/Router";
 import { Toaster } from "react-hot-toast";
 import store from "./Redux/store";
 import { Provider } from "react-redux";
+import i18n from "./i18n";
 
 createRoot(document.getElementById("root")).render(
   <Provider store={store}>

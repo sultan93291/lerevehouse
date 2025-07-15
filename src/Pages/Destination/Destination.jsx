@@ -5,8 +5,10 @@ import {
   useGetDestinationsHeroSectionDataQuery,
 } from "@/Redux/features/api/apiSlice";
 import { InfinitySpin } from "react-loader-spinner";
+import { useTranslation } from "react-i18next";
 
 const Destination = () => {
+  const { t } = useTranslation();
   const {
     data: destinationsData,
     isLoading,
@@ -92,9 +94,8 @@ const Destination = () => {
       <section className="my-8 md:my-10 3xl:my-20 container mx-auto">
         <div>
           <h2 className="text-3xl lg:text-4xl 3xl:text-5xl font-editorsNoteNormal text-primary">
-            Our Destinations
+            {t("destination.ourDestinations")}
           </h2>
-
           <div className="mt-7 xs:mt-8 xl:mt-10 3xl:mt-16 flex flex-col gap-4 3xl:gap-7">
             {groupDestinations().map((row, rowIndex) => (
               <div

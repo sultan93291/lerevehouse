@@ -1,0 +1,74 @@
+{
+  "homepageAdventure": {
+    "title": "Your adventure starts now",
+    "description": "At Le Rêve House Adventure, we craft fully bespoke luxury private tours and safari itineraries tailored exclusively for you.",
+    "button": "Start Planning"
+  },
+  "plan_your_trip": "Plan your trip",
+  "show_more": "Show more",
+  "see_less": "See less",
+  "whyBookHeading": "Why book with Lerevehouse?",
+  "requestedTrips": {
+    "sectionTitle": {
+      "part1": "Here is a",
+      "highlight": "List of",
+      "part2": "Our Most",
+      "part3": "Requested Trips"
+    }
+  },
+  "homeFaq": {
+    "title": "Frequently asked questions",
+    "subtitle": "Questions? Answers."
+  },
+
+  "smartOffers": {
+    "heading": "<span class=\"text-secondary\">Smart</span> Offers"
+  },
+  
+  "homepageTestimonials": {
+    "title": "Client Experiences That Speak for <br class=\"hidden lg:block\" /> Themselves"
+  },
+  "extraOrdinarySection": {
+    "heading": "Find the <span class=\"text-secondary\">Hidden Gem</span> That Will Make Your Next <br /> <span class=\"text-secondary\">Trip Extraordinary</span>",
+    "button": "View All Destination"
+  },
+  "footer": {
+    "headquarters": "Le Reve House Adventure - Canada Headquarters:",
+    "italyOffice": "Le Reve House Itj Italia:",
+    "discover": "Discover",
+    "newsletterTitle": "Newsletter",
+    "newsletterText": "Sign up below to receive travel inspiration, news, offers and expert tips.",
+    "emailPlaceholder": "Email Address",
+    "signupBtn": "Sign Up",
+    "terms": "Terms of service",
+    "privacy": "Privacy Policy"
+  },
+  "destination": {
+    "ourDestinations": "Our Destinations"
+  },
+  "travelGuide": {
+    "ourDestinations": "Our Destinations"
+  },
+  "contact": {
+    "planYourTrip": "Plan Your Trip",
+    "getInTouch": "Get In Touch",
+    "sendMessage": "Send us a message",
+    "name": "Name",
+    "email": "Email",
+    "message": "Comments / Questions",
+    "placeholderName": "Enter Your Name",
+    "placeholderEmail": "Enter Your Email",
+    "placeholderMessage": "Enter your comment",
+    "submit": "Submit",
+    "submitting": "Submitting...",
+    "errors": {
+      "nameRequired": "Name is required",
+      "nameMin": "Name must be at least 2 characters",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Invalid email address",
+      "messageRequired": "Message is required",
+      "messageMin": "Message must be at least 10 characters"
+    },
+    "submitError": "Error submitting form:"
+  }
+}
