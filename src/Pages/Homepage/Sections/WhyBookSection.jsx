@@ -4,6 +4,7 @@ import image2 from "@/assets/images/22.jpg";
 import image3 from "@/assets/images/33.jpg";
 import { forwardRef } from "react";
 import { useGetWhyBookWithLereveHouseQuery } from "@/Redux/features/api/apiSlice";
+import { useTranslation } from "react-i18next";
 const WhyBookSection = forwardRef(({ ...props }, ref) => {
    const { data, error, isLoading } = useGetWhyBookWithLereveHouseQuery(
      undefined,
@@ -12,6 +13,8 @@ const WhyBookSection = forwardRef(({ ...props }, ref) => {
        refetchOnReconnect: true,
      }
   );
+
+  const { t } = useTranslation();
   
   return (
     <section
@@ -22,7 +25,7 @@ const WhyBookSection = forwardRef(({ ...props }, ref) => {
     >
       <div>
         <h2 className=" text-[28px] md:text-4xl xl:text-5xl font-editorsNoteNormal text-center text-primary">
-          Why book with Lerevehouse?
+          {t("whyBookHeading")}
         </h2>
       </div>
 

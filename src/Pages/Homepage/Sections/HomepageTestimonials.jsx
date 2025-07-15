@@ -13,8 +13,10 @@ import { useEffect, useState } from "react";
 import { useGetAllReviewsQuery } from "@/Redux/features/api/apiSlice";
 import { InfinitySpin } from "react-loader-spinner";
 import toast from "react-hot-toast";
+import { useTranslation } from "react-i18next";
 
 const HomepageTestimonials = () => {
+  const { t } = useTranslation();
   const { data, error, isLoading } = useGetAllReviewsQuery(undefined, {
     refetchOnFocus: true,
     refetchOnReconnect: true,
@@ -25,13 +27,10 @@ const HomepageTestimonials = () => {
       const errorMessage =
         error.data?.message || error.error || error.status || error.message;
       if (errorMessage) {
-        setTimeout(() => toast.error(errorMessage), 0); // safe rendering
+        setTimeout(() => toast.error(errorMessage), 0);
       }
     }
   }, [error]);
-
-  console.log(data);
-  
 
   const [swiperRef, setSwiperRef] = useState(null);
 
@@ -53,10 +52,10 @@ const HomepageTestimonials = () => {
       <div className="flex flex-col gap-y-[30px] 2xl:gap-y-[60px]">
         {/* title */}
         <div className="py-10">
-          <h2 className="text-center text-white font-editorsNoteNormal font-medium text-3xl xl:text-4xl 2xl:text-5xl leading-[128%] lg:leading-[1.1]">
-            Client Experiences That Speak for <br className="hidden lg:block" />{" "}
-            Themselves
-          </h2>
+          <h2
+            className="text-center text-white font-editorsNoteNormal font-medium text-3xl xl:text-4xl 2xl:text-5xl leading-[128%] lg:leading-[1.1]"
+            dangerouslySetInnerHTML={{ __html: t("homepageTestimonials.title") }}
+          />
         </div>
 
         {/* slider */}
@@ -70,12 +69,13 @@ const HomepageTestimonials = () => {
             modules={[Pagination]}
             className="mySwiper"
           >
-            {data?.data?.map((item, idx) =>
-              item ? (
-                <SwiperSlide key={idx}>
-                  <TestimonialSliderHomepage data={item} />
-                </SwiperSlide>
-              ) : null
+            {data?.data?.map(
+              (item, idx) =>
+                item && (
+                  <SwiperSlide key={idx}>
+                    <TestimonialSliderHomepage data={item} />
+                  </SwiperSlide>
+                )
             )}
           </Swiper>
 

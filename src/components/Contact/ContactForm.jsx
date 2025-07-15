@@ -2,10 +2,11 @@ import { useForm } from "react-hook-form";
 import { WhiteDotSvg } from "../common/SvgContainer/SvgContainer";
 import { useSendQueryMutation } from "@/Redux/features/api/apiSlice";
 import toast from "react-hot-toast";
+import { useTranslation } from "react-i18next";
 
 const ContactForm = () => {
-  const [sendQuery, { data, error: mutationError, isLoading }] =
-    useSendQueryMutation();
+  const { t } = useTranslation();
+  const [sendQuery, { error: mutationError }] = useSendQueryMutation();
 
   const {
     register,
@@ -35,32 +36,34 @@ const ContactForm = () => {
     >
       <div className="flex items-center gap-2 font-interTight text-lg">
         <WhiteDotSvg />
-        <span>Plan Your Trip</span>
+        <span>{t("contact.planYourTrip")}</span>
       </div>
 
       <div>
         <h2 className="font-editorsNoteNormal text-3xl lg:text-4xl 2xl:text-5xl font-medium mt-3">
-          Get In Touch
+          {t("contact.getInTouch")}
         </h2>
 
         <div className="mt-4 lg:mt-8 font-interTight">
           <div className="pb-3 lg:pb-5">
-            <h5 className="font-interTight text-xl">Send us a message</h5>
+            <h5 className="font-interTight text-xl">
+              {t("contact.sendMessage")}
+            </h5>
           </div>
 
           <div className="space-y-3 lg:space-y-5">
             <div className="w-full flex flex-col gap-3">
-              <label htmlFor="name">Name</label>
+              <label htmlFor="name">{t("contact.name")}</label>
               <input
-                placeholder="Enter Your Name"
+                placeholder={t("contact.placeholderName")}
                 className="md:py-3 py-2 focus:outline-none text-black px-5 placeholder:text-[#9C9EA166]"
                 type="text"
                 id="name"
                 {...register("name", {
-                  required: "Name is required",
+                  required: t("contact.errors.nameRequired"),
                   minLength: {
                     value: 2,
-                    message: "Name must be at least 2 characters",
+                    message: t("contact.errors.nameMin"),
                   },
                 })}
               />
@@ -70,17 +73,17 @@ const ContactForm = () => {
             </div>
 
             <div className="w-full flex flex-col gap-3">
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email">{t("contact.email")}</label>
               <input
-                placeholder="Enter Your Email"
+                placeholder={t("contact.placeholderEmail")}
                 className="md:py-3 py-2 focus:outline-none text-black px-5 placeholder:text-[#9C9EA166]"
                 type="email"
                 id="email"
                 {...register("email", {
-                  required: "Email is required",
+                  required: t("contact.errors.emailRequired"),
                   pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: "Invalid email address",
+                    message: t("contact.errors.emailInvalid"),
                   },
                 })}
               />
@@ -90,16 +93,16 @@ const ContactForm = () => {
             </div>
 
             <div className="w-full flex flex-col gap-3">
-              <label htmlFor="query">Comments / Questions</label>
+              <label htmlFor="query">{t("contact.message")}</label>
               <textarea
                 id="query"
-                placeholder="Enter your comment"
+                placeholder={t("contact.placeholderMessage")}
                 className="resize-none w-full focus:outline-none px-6 py-4 text-black placeholder:text-[#9C9EA166] h-[80px] xl:h-[118px]"
                 {...register("query", {
-                  required: "Message is required",
+                  required: t("contact.errors.messageRequired"),
                   minLength: {
                     value: 10,
-                    message: "Message must be at least 10 characters",
+                    message: t("contact.errors.messageMin"),
                   },
                 })}
               />
@@ -110,7 +113,7 @@ const ContactForm = () => {
 
             {mutationError && (
               <div className="text-red-500">
-                Error submitting form:{" "}
+                {t("contact.submitError")}{" "}
                 {mutationError.data?.message || "Please try again later"}
               </div>
             )}
@@ -119,11 +122,12 @@ const ContactForm = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`bg-secondary px-10 2xl:px-20 py-2 lg:py-3 font-interTight text-white font-semibold transition-all duration-300 hover:bg-white border border-secondary hover:text-secondary ${
-                  isSubmitting ? "opacity-50 cursor-not-allowed" : ""
-                }`}
+                className={`bg-secondary px-10 2xl:px-20 py-2 lg:py-3 font-interTight text-white font-semibold transition-all duration-300 hover:bg-white border border-secondary hover:text-secondary ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""
+                  }`}
               >
-                {isSubmitting ? "Submitting..." : "Submit"}
+                {isSubmitting
+                  ? t("contact.submitting")
+                  : t("contact.submit")}
               </button>
             </div>
           </div>
