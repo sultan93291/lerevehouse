@@ -40,5 +40,33 @@
     "signupBtn": "Sign Up",
     "terms": "Terms of service",
     "privacy": "Privacy Policy"
+  },
+  "destination": {
+    "ourDestinations": "Our Destinations"
+  },
+  "travelGuide": {
+    "ourDestinations": "Our Destinations"
+  },
+  "contact": {
+    "planYourTrip": "Plan Your Trip",
+    "getInTouch": "Get In Touch",
+    "sendMessage": "Send us a message",
+    "name": "Name",
+    "email": "Email",
+    "message": "Comments / Questions",
+    "placeholderName": "Enter Your Name",
+    "placeholderEmail": "Enter Your Email",
+    "placeholderMessage": "Enter your comment",
+    "submit": "Submit",
+    "submitting": "Submitting...",
+    "errors": {
+      "nameRequired": "Name is required",
+      "nameMin": "Name must be at least 2 characters",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Invalid email address",
+      "messageRequired": "Message is required",
+      "messageMin": "Message must be at least 10 characters"
+    },
+    "submitError": "Error submitting form:"
   }
 }

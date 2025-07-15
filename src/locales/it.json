@@ -41,5 +41,33 @@
     "signupBtn": "Iscriviti",
     "terms": "Termini di servizio",
     "privacy": "Politica sulla privacy"
+  },
+  "destination": {
+    "ourDestinations": "Le nostre destinazioni"
+  },
+  "travelGuide": {
+    "ourDestinations": "Le nostre destinazioni"
+  },
+  "contact": {
+    "planYourTrip": "Pianifica il tuo viaggio",
+    "getInTouch": "Mettiti in contatto",
+    "sendMessage": "Inviaci un messaggio",
+    "name": "Nome",
+    "email": "Email",
+    "message": "Commenti / Domande",
+    "placeholderName": "Inserisci il tuo nome",
+    "placeholderEmail": "Inserisci la tua email",
+    "placeholderMessage": "Inserisci il tuo commento",
+    "submit": "Invia",
+    "submitting": "Invio in corso...",
+    "errors": {
+      "nameRequired": "Il nome è obbligatorio",
+      "nameMin": "Il nome deve contenere almeno 2 caratteri",
+      "emailRequired": "L'email è obbligatoria",
+      "emailInvalid": "Indirizzo email non valido",
+      "messageRequired": "Il messaggio è obbligatorio",
+      "messageMin": "Il messaggio deve contenere almeno 10 caratteri"
+    },
+    "submitError": "Errore nell'invio del modulo:"
   }
 }
