@@ -30,8 +30,7 @@ const HomepageDestinationTabContainer = () => {
       setActiveTab(TabData[0]);
     }
   }, [TabData]);
-
-
+  
 
   return (
     <div className="mt-5 container mx-auto px-4 text-lg lg:text-xl lg:px-8 2xl:px-16 3xl:px-32">
