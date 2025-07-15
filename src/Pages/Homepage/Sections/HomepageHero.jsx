@@ -17,6 +17,9 @@ const HomepageHero = () => {
     }
   );
 
+  console.log(data);
+  
+
   return (
     <div className="-mt-[56px] 2xl:mt-0 4xl:-mt-[56px] relative">
       {/* Custom Pagination Container */}
