@@ -1,15 +1,17 @@
 /* eslint-disable react/prop-types */
+import { useTranslation } from "react-i18next";
 import LuxuryCard from "../common/Cards/LuxuryCard";
 
 const DestinationLuxurySection = ({ luxuryPlacesInfo }) => {
-console.log(luxuryPlacesInfo);
+  console.log(luxuryPlacesInfo);
+  const { t } = useTranslation();
 
   return (
     <div id="where-to-stay" className="xl:my-20 mt-12">
       {/* title */}
       <div>
         <h2 className=" text-3xl xl:text-4xl font-editorsNoteNormal text-primary text-center">
-          Our luxury accommodation
+          {t("ourLuxuryAccommodation")}
           {/* <span className="font-editorsNoteItalic">Alaska</span> */}
         </h2>
       </div>

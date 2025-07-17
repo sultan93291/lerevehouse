@@ -9,9 +9,11 @@ import {
   useGetTravelStylesHeroSectionDataQuery,
 } from "@/Redux/features/api/apiSlice";
 import { InfinitySpin } from "react-loader-spinner";
-import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import toast from "react-hot-toast";
 
 const TravelStylePage = () => {
+  const { t } = useTranslation();
   const { data, error, isLoading } = useGetTravelStylesHeroSectionDataQuery(
     undefined,
     {
@@ -82,7 +84,7 @@ const TravelStylePage = () => {
         imgUrl={`${imgBaseurl}/${descreptionData?.data[0]?.background_image}`}
         title={descreptionData?.data[0]?.title}
         description={descreptionData?.data[0]?.short_description}
-        btnText="Contact Us"
+        btnText={t("btnText")}
       />
     </div>
   );

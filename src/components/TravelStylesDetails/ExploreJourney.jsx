@@ -1,7 +1,9 @@
 import { Link, useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const ExploreJourney = ({ btnTxt, isBtn, data }) => {
   const { id } = useParams();
+  const { t } = useTranslation();
 
   return (
     <section className="py-8 xl:py-20 2xl:py-[135px] bg-[#F5F3F4] xl:px-5 2xl:px-14">
@@ -20,11 +22,8 @@ const ExploreJourney = ({ btnTxt, isBtn, data }) => {
           ></div>
           <div className="text-center">
             {isBtn === false ? null : (
-              <Link
-                to={`/tour-lists/${id}`}
-                className="btn-common mt-7 sm:mt-10"
-              >
-                {btnTxt ? btnTxt : "All WILD LIFE SAFARI"}
+              <Link to={`/tour-lists/${id}`} className="btn-common mt-7 sm:mt-10">
+                {btnTxt || t("exploreJourney.fallbackBtn")}
               </Link>
             )}
           </div>

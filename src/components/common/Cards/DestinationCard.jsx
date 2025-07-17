@@ -34,7 +34,7 @@ const DestinationCard = ({ item }) => {
 
         <div className="flex items-center gap-2 text-sm">
           <DurationSvg />
-          <span>{item?.duration} days</span>
+          <span>{item?.duration}</span>
         </div>
       </div>
 

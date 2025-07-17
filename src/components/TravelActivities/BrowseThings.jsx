@@ -6,8 +6,10 @@ import TravelExploreCard from "../TravelStyles/TravelExploreCard";
 import { InfinitySpin } from "react-loader-spinner";
 import toast from "react-hot-toast";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const BrowseThings = () => {
+  const { t } = useTranslation();
   const { data, error, isLoading } = useGetAllTravelStylesDataQuery(undefined, {
     refetchOnFocus: true,
     refetchOnReconnect: true,
@@ -21,7 +23,6 @@ const BrowseThings = () => {
     refetchOnFocus: true,
     refetchOnReconnect: true,
   });
-
 
   const location = useLocation();
 
@@ -51,32 +52,26 @@ const BrowseThings = () => {
       <div className="container">
         <div className="2x:mb-[60px] mb-7 md:mb-10">
           <h3 className="title--xxl text-center">
-            Browse{" "}
+            {t("browseThings.title")}{" "}
             <span className="text-secondary font-editorsNoteItalic">
-              Things to Do
+              {t("browseThings.highlight")}
             </span>{" "}
-            by Your Interest
+            {t("browseThings.subtitle")}
           </h3>
         </div>
         <div>
           <div className="grid lg:grid-cols-3 gap-5">
-            {location.pathname === "/activities"
-              ? allActivityData?.data?.map(item => (
-                  <TravelExploreCard
-                    link="/activities/subcategory/"
-                    key={item.id}
-                    item={item}
-                    travelMode="activity"
-                  />
-                ))
-              : data?.data?.map(item => (
-                  <TravelExploreCard
-                    link="/activities/subcategory/"
-                    key={item.id}
-                    item={item}
-                    travelMode="activity"
-                  />
-                ))}
+            {(location.pathname === "/activities"
+              ? allActivityData?.data
+              : data?.data
+            )?.map(item => (
+              <TravelExploreCard
+                link="/activities/subcategory/"
+                key={item.id}
+                item={item}
+                travelMode="activity"
+              />
+            ))}
           </div>
         </div>
       </div>

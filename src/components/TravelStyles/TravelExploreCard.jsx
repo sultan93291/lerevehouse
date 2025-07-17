@@ -1,17 +1,17 @@
-/* eslint-disable react/prop-types */
 import { Link, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const TravelExploreCard = ({ item, travelMode }) => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
 
   return (
     <div
-      className="TravelExploreCard  rounded-[15px] flex flex-col h-[240px] lg:h-[400px] 2xl:h-[520px] overflow-hidden items-center justify-cente relative bg-cover bg-no-repeat z-[1]"
+      className="TravelExploreCard rounded-[15px] flex flex-col h-[240px] lg:h-[400px] 2xl:h-[520px] overflow-hidden items-center justify-cente relative bg-cover bg-no-repeat z-[1]"
       style={{
-        backgroundImage: `url(${imgBaseurl}/${
-          item?.image || item?.travel_style?.image
-        })`,
+        backgroundImage: `url(${imgBaseurl}/${item?.image || item?.travel_style?.image
+          })`,
       }}
     >
       <div className="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] w-full front duration-500 ease-in-out">
@@ -33,14 +33,15 @@ const TravelExploreCard = ({ item, travelMode }) => {
               travelMode === "styles"
                 ? `/travel-styles-details/${item?.id}`
                 : travelMode === "travel_details" || travelMode === "honey_moon"
-                ? `/tour-list-details/${item?.id}`
-                : `/activities/subcategory/${item?.name}?bg=${imgBaseurl}/${
-                    item?.image || item?.travel_style?.image
+                  ? `/tour-list-details/${item?.id}`
+                  : `/activities/subcategory/${item?.name}?bg=${imgBaseurl}/${item?.image || item?.travel_style?.image
                   }?id=${item.id}`
             );
           }}
         >
-          {travelMode === "travel_details" ? "Discover the trip" : " View"}
+          {travelMode === "travel_details"
+            ? t("travelExploreCard.discoverTrip")
+            : t("travelExploreCard.view")}
         </button>
       </div>
     </div>
