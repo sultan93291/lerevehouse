@@ -1,7 +1,6 @@
 import { AiOutlineInfoCircle } from "react-icons/ai";
 
 const CommonHeroBannerV2 = ({ item, bgImg, isAcitivity }) => {
-  console.log(item);
 
   return (
     <section
