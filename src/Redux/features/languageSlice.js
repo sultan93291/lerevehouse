@@ -12,8 +12,7 @@ const languageSlice = createSlice({
     setLanguage: state => {
       state.language = state.language === "en" ? "it" : "en";
 
-      // Change language instantly without reload
-      i18n.changeLanguage(state.language);
+      i18n.changeLanguage(state.language || 'en');
 
       // Sync to localStorage for persistence
       localStorage.setItem("i18nextLng", state.language);
