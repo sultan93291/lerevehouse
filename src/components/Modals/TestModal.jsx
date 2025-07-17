@@ -440,9 +440,9 @@ const TestModal = ({ setOpen }) => {
                           />
                           <input
                             required
-                            placeholder="example@gmail.com"
+                            placeholder="123456789"
                             className="px-4 py-2 font-inter text-[#565656] h-12 focus:outline-none border border-black/10 w-full"
-                            type="number"
+                            type="text"
                             name=""
                             id="telephone"
                             {...register("telephone", {
@@ -502,9 +502,6 @@ const TestModal = ({ setOpen }) => {
                         // }}
                         className="flex shadow-md items-center text-sm lg:text-base px-3 lg:px-6 py-3 border border-primary gap-2"
                       >
-                        <span>
-                          <ResetButtonSvg />
-                        </span>
                         Close
                       </button>
                       <button
