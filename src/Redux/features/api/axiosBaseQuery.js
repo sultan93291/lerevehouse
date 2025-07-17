@@ -6,7 +6,7 @@ import axios from "axios";
  * @param {Object} options - Axios options like baseUrl and default headers.
  */
 
-const lan = localStorage.getItem("i18nextLng");
+const lan = localStorage.getItem("lan");
 
 const axiosBaseQuery =
   ({ baseUrl, defaultHeaders = {} } = {}) =>
