@@ -167,7 +167,6 @@ const router = createBrowserRouter([
         path: "/pages/privacy-policy",
         element: <DynamicPage />,
       },
-
       {
         path: "/search",
         element: <SearchPage />,
