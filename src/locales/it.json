@@ -69,5 +69,143 @@
       "messageMin": "Il messaggio deve contenere almeno 10 caratteri"
     },
     "submitError": "Errore nell'invio del modulo:"
+  },
+  "ourLuxuryAccommodation": "Our luxury accommodation",
+  "btnText": "Contattaci",
+
+  "exploreHeading": "Esplora i nostri <italic>stili di viaggio qui sotto</italic> per iniziare il tuo viaggio",
+  "viewAll": "Vedi tutto",
+  "travelCards": {
+    "honeymoon": {
+      "title": "Luna di miele",
+      "description": "Ogni viaggio privato A&K è unico. Puoi personalizzare uno dei nostri itinerari su misura creati da esperti"
+    },
+    "adventureObservations": {
+      "title": "Avventure ed osservazioni",
+      "description": "Ogni viaggio privato A&K è unico. Puoi personalizzare uno dei nostri itinerari su misura creati da esperti"
+    },
+    "familyTrip": {
+      "title": "Viaggio in famiglia",
+      "description": "Ogni viaggio privato A&K è unico. Puoi personalizzare uno dei nostri itinerari su misura creati da esperti"
+    },
+    "adventure": {
+      "title": "Avventura",
+      "description": "Ogni viaggio privato A&K è unico. Puoi personalizzare uno dei nostri itinerari su misura creati da esperti"
+    },
+    "nightTime": {
+      "title": "Di notte",
+      "description": "Ogni viaggio privato A&K è unico. Puoi personalizzare uno dei nostri itinerari su misura creati da esperti"
+    },
+    "skiing": {
+      "title": "Sci",
+      "description": "Ogni viaggio privato A&K è unico. Puoi personalizzare uno dei nostri itinerari su misura creati da esperti"
+    }
+  },
+  "adventurePlanningHeading": "Vacanze avventurose in tutto il mondo",
+  "holidayCards": {
+    "trusted": {
+      "title": "Affidabile",
+      "description": "10 anni di attività completamente garantita e i tuoi soldi sono al 100% protetti."
+    },
+    "active": {
+      "title": "Attivo",
+      "description": "Dal camminare e andare in bicicletta al limite fino a spedizioni estreme."
+    },
+    "worldwide": {
+      "title": "In tutto il mondo",
+      "description": "15 avventure guidate e autoguidate in 100 paesi."
+    },
+    "sustainable": {
+      "title": "Sostenibile",
+      "description": "100% di assorbimento del carbonio. Cura dell'ambiente e delle comunità locali."
+    }
+  },
+  "exploreJourney": {
+    "fallbackBtn": "Tutti i SAFARI DELLA FAUNA SELVATICA"
+  },
+  "featuredTravels": {
+    "honeymoonHeading": "Tutti i viaggi di nozze",
+    "featuredHeading": "Avventure in evidenza",
+    "cards": {
+      "honeymoon": {
+        "title": "Luna di miele",
+        "description": "Ogni viaggio privato A&K è unico. Personalizza uno dei nostri itinerari su misura creati da esperti"
+      },
+      "adventureObservations": {
+        "title": "Osservazioni avventurose",
+        "description": "Ogni viaggio privato A&K è unico. Personalizza uno dei nostri itinerari su misura creati da esperti"
+      },
+      "familyTrip": {
+        "title": "Viaggio in famiglia",
+        "description": "Ogni viaggio privato A&K è unico. Personalizza uno dei nostri itinerari su misura creati da esperti"
+      },
+      "adventure": {
+        "title": "Avventura",
+        "description": "Ogni viaggio privato A&K è unico. Personalizza uno dei nostri itinerari su misura creati da esperti"
+      },
+      "nightTime": {
+        "title": "Notturno",
+        "description": "Ogni viaggio privato A&K è unico. Personalizza uno dei nostri itinerari su misura creati da esperti"
+      },
+      "skiing": {
+        "title": "Sci",
+        "description": "Ogni viaggio privato A&K è unico. Personalizza uno dei nostri itinerari su misura creati da esperti"
+      }
+    },
+    "viewAll": "Vedi tutto"
+  },
+  "destinationDetails": {
+    "tailorMadeHeading": "Creazione di tour su misura da oltre 20 anni",
+    "ratingLabel": "Eccellente",
+    "reviews": "Recensioni",
+    "enquiryBtn": "Richiedi informazioni",
+    "brochureBtn": "Richiedi una brochure"
+  },
+  "destinationDetailsSlider": {
+    "suggested": "Tour suggeriti",
+    "tours": "viaggi",
+    "for": "per",
+    "viewAll": "Vedi tutti i",
+    "tour": "viaggi"
+  },
+  "travelExploreCard": {
+    "discoverTrip": "Scopri il viaggio",
+    "view": "Visualizza"
+  },
+  "tourBanner": {
+    "suggestedLength": "Durata consigliata",
+    "bestTime": "Periodo migliore",
+    "priceFrom": "Prezzo a partire da"
+  },
+  "tourTabs": {
+    "tripDetails": "Dettagli del viaggio",
+    "Itinerary": "Itinerario",
+    "Accommodation": "Alloggio",
+    "Inclusions": "Inclusioni",
+    "bookTour": "Prenota questo tour"
+  },
+  "itinerary": {
+    "title": "Idea di itinerario in dettaglio",
+    "closeAll": "Chiudi tutto",
+    "expandAll": "Espandi tutto",
+    "wishlist": "Vedi la lista dei desideri",
+    "travelGuide": "Guida turistica",
+    "recommendedAttraction": "Attrazione consigliata"
+  },
+  "tourReview": {
+    "heading": "Cosa dicono i nostri clienti su",
+    "tourName": "Tour del Canada e dell'Alaska"
+  },
+  "tourPrice": {
+    "title": "Prezzi per pacchetti base e",
+    "titleItalic": "pacchetti tutto incluso",
+    "requestInfo": "Richiedi informazioni su questo tour",
+    "bookButton": "Prenota questo tour",
+    "brochureButton": "Richiedi una brochure"
+  },
+  "browseThings": {
+    "title": "Sfoglia",
+    "highlight": "Cose da fare",
+    "subtitle": "in base ai tuoi interessi"
   }
 }
