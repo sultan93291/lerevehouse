@@ -27,7 +27,6 @@ const TopNavbar = () => {
 
   const language = useSelector(state => state.language.language);
 
-  console.log(language);
 
   const {
     data: officeData,
@@ -148,6 +147,7 @@ const TopNavbar = () => {
                 <button
                   onClick={() => {
                     dispatch(setLanguage());
+                    window.location.reload();
                   }}
                   className="flex items-center gap-2"
                 >
