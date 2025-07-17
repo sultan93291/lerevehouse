@@ -1,9 +1,6 @@
-import WishListCard from "@/components/Cards/WishListCard";
 import MainLayout from "@/Layout/MainLayout";
 import ActivitiesDetails from "@/Pages/ActivitiesDetails/ActivitiesDetails";
 import ActivitiesSubcategory from "@/Pages/ActivitiesSubcategory/ActivitiesSubcategory";
-import AllTouristGuide from "@/Pages/AllTouristGuide/AllTouristGuide";
-import AllTouristGuideDetails from "@/Pages/AllTouristGuideDetails/AllTouristGuideDetails";
 import AtlanticProvinces from "@/Pages/AtlanticProvinces/AtlanticProvinces";
 import CanadaHoliday from "@/Pages/CanadaHoliday/CanadaHoliday";
 import CanadaMap from "@/Pages/CanadaMap/CanadaMap";
@@ -14,7 +11,6 @@ import DestinationDetails from "@/Pages/DestinationDetails/DestinationDetails";
 import DynamicPage from "@/Pages/DynamicPage/DynamicPage";
 import EatAndDrink from "@/Pages/EatAndDrink/EatAndDrink";
 import Homepage from "@/Pages/Homepage/Homepage";
-import Modal from "@/Pages/Modal/ModalTest";
 import OntarionQuebec from "@/Pages/OntarioQuebec/OntarionQuebec";
 import Prairies from "@/Pages/Praises/Prairies";
 import SingleCanadaTour from "@/Pages/SingleCanadaTour/SingleCanadaTour";
