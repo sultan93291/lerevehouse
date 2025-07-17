@@ -5,15 +5,17 @@ import { Modal } from "../Modals/Modal";
 import TestModal from "../Modals/TestModal";
 import StartYourJourney from "../Modals/StartYourJourney";
 import BookThisModal from "../Modals/BookThisModal";
+import { useTranslation } from "react-i18next";
 
 const TourListDetailsTab = ({ sectionTabs }) => {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState(sectionTabs[0]);
   const [open, setOpen] = useState(false);
   return (
     <>
       <div className="py-4 2xl:sticky z-[10] top-[152px] left-0 font-interTight w-full bg-[#f4f4f4] flex flex-row flex-wrap items-center lg:justify-center gap-3 3xl:gap-12  ">
         <div className="font-editorsNoteItalic text-primary text-3xl lg:text-3xl border-b-[3px] pb-2 px-4 lg:px-8 border-[#f4f4f4]">
-          Trip Details
+          {t("tourTabs.tripDetails")}
         </div>
         {sectionTabs?.map(tab => (
           <Link
@@ -37,7 +39,7 @@ const TourListDetailsTab = ({ sectionTabs }) => {
             }}
             className="text-base xl:text-lg cursor-pointer py-1 sm:py-2 font-medium px-3 lg:px-6 bg-primary text-white "
           >
-            Book this tour
+            {t("tourTabs.bookTour")}
           </div>
         </div>
       </div>

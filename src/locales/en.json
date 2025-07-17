@@ -24,7 +24,7 @@
   "smartOffers": {
     "heading": "<span class=\"text-secondary\">Smart</span> Offers"
   },
-  
+
   "homepageTestimonials": {
     "title": "Client Experiences That Speak for <br class=\"hidden lg:block\" /> Themselves"
   },
@@ -70,5 +70,240 @@
       "messageMin": "Message must be at least 10 characters"
     },
     "submitError": "Error submitting form:"
+  },
+  "ourLuxuryAccommodation": "Our luxury accommodation",
+  "btnText": "Contact Us",
+  "exploreHeading": "Explore our <italic>travel styles below</italic> to begin your journey",
+  "viewAll": "View All",
+  "travelCards": {
+    "honeymoon": {
+      "title": "Honeymoon",
+      "description": "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys"
+    },
+    "adventureObservations": {
+      "title": "Adventures Observations",
+      "description": "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys"
+    },
+    "familyTrip": {
+      "title": "Family Trip",
+      "description": "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys"
+    },
+    "adventure": {
+      "title": "Adventure",
+      "description": "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys"
+    },
+    "nightTime": {
+      "title": "Night Time",
+      "description": "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys"
+    },
+    "skiing": {
+      "title": "Skiing",
+      "description": "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys"
+    }
+  },
+
+  "adventurePlanningHeading": "Worldwide Adventure planning Holidays",
+  "holidayCards": {
+    "trusted": {
+      "title": "Trusted",
+      "description": "10 years of operating fully bonded and your money 100% protected."
+    },
+    "active": {
+      "title": "Active",
+      "description": "From leisurely walking and cycling to push-your-limits expeditions."
+    },
+    "worldwide": {
+      "title": "Worldwide",
+      "description": "15 Guided Group and Self-Guided adventures in 100 countries."
+    },
+    "sustainable": {
+      "title": "Sustainable",
+      "description": "100% carbon absorption. Caring for the environment and local communities."
+    }
+  },
+  "exploreJourney": {
+    "fallbackBtn": "All WILD LIFE SAFARI"
+  },
+  "featuredTravels": {
+    "honeymoonHeading": "All Honeymoon trips",
+    "featuredHeading": "Featured Adventures Observations",
+    "cards": {
+      "honeymoon": {
+        "title": "Honeymoon",
+        "description": "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys"
+      },
+      "adventureObservations": {
+        "title": "Adventures Observations",
+        "description": "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys"
+      },
+      "familyTrip": {
+        "title": "Family Trip",
+        "description": "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys"
+      },
+      "adventure": {
+        "title": "Adventure",
+        "description": "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys"
+      },
+      "nightTime": {
+        "title": "Night Time",
+        "description": "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys"
+      },
+      "skiing": {
+        "title": "Skiing",
+        "description": "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys"
+      }
+    },
+    "viewAll": "View All"
+  },
+  "destinationDetails": {
+    "tailorMadeHeading": "Creating tailor-made tours for over 20 years",
+    "ratingLabel": "Excellent",
+    "reviews": "Reviews",
+    "enquiryBtn": "Make An Enquiry",
+    "brochureBtn": "Request A Brochure"
+  },
+  "destinationDetailsSlider": {
+    "suggested": "Suggested",
+    "tours": "tours",
+    "for": "for",
+    "viewAll": "View All",
+    "tour": "Tour"
+  },
+  "travelExploreCard": {
+    "discoverTrip": "Discover the trip",
+    "view": "View"
+  },
+  "tourBanner": {
+    "suggestedLength": "Suggested Length",
+    "bestTime": "Best Time to Go",
+    "priceFrom": "Price From"
+  },
+  "tourTabs": {
+    "tripDetails": "Trip Details",
+    "Itinerary": "Itinerary",
+    "Accommodation": "Accommodation",
+    "Inclusions": "Inclusions",
+    "bookTour": "Book this tour"
+  },
+  "itinerary": {
+    "title": "Itinerary idea in details",
+    "closeAll": "Close All",
+    "expandAll": "Expand All",
+    "wishlist": "See the wishlist",
+    "travelGuide": "Travel Guide",
+    "recommendedAttraction": "Recommended attraction"
+  },
+  "tourReview": {
+    "heading": "What our clients say about",
+    "tourName": "Canada And Alaska Tour"
+  },
+  "tourPrice": {
+    "title": "Prices for basic and",
+    "titleItalic": "Full Inclusive packages",
+    "requestInfo": "Request information about this tour",
+    "bookButton": "Book this tour",
+    "brochureButton": "Request A Brochure"
+  },
+  "browseThings": {
+    "title": "Browse",
+    "highlight": "Things to Do",
+    "subtitle": "by Your Interest"
+  },
+  "browseThingss": {
+    "honeymoonTitle": "Tutti i viaggi di nozze",
+    "featuredTitle": "Osservazioni delle avventure in evidenza"
+  },
+  "customizeTripCanada": {
+    "title": "TRAVEL IDEAS FOR YOUR CANADA HOLIDAYS",
+    "intro": "Set off to discover this wonderful country, choose the type of Canada tour that is best for you! Total freedom and desire to drive? Choose from the  Canada car tours  that we offer. If instead you prefer not to drive and rely on an organized trip then look at the  bus tours in Canada . Finally, the  train tours in Canada  that combine train routes with bus routes....or ferry!",
+    "cardText": "Non puoi andare in Canada senza un tour che ti porti a vedere le balene, le orche, gli orsi (bruni e polari), le volpi, i lupi e molti altri esemplari di questo magnifico paese!",
+    "discoverMore": "Scopri di più",
+    "makeUniqueTitle": "Make your trip to Canada unique",
+    "makeUniqueSubtitle": "Change your point of view and let yourself be amazed by a territory full of surprises!",
+    "para1": "Canada is an exceptional country, and we would like to help you experience it to the fullest by customizing your trip to Canada with unforgettable services and excursions. A tour of Canada cannot be complete without excursions that allow you to observe its fauna up close: from polar bears to grizzlies, from whales to moose, from killer whales to eagles. Or ask us how to combine your itinerary with a train ride; Canada is beautiful when seen from panoramic windows, and the Rocky Mountaineer can be the perfect train. If Canada is an idea for your honeymoon, no problem: we have discounts and dedicated services to offer you, both in the national parks and in the splendid cities of Montreal, Toronto, Vancouver, or Quebec City!",
+    "para2": "In Canada, you cannot miss out on trying some outdoor activities: rafting, kayaking, canoeing, a seaplane tour, a campervan rental, or navigation in the fjords. Whatever your type of trip to Canada, we recommend adding a bit of adventure and adrenaline. The provinces of Yukon, Northwest Territories, and Nunavut can give you immense joy and satisfaction if you like adventure and are not too sensitive to the cold. If you love snow and skiing, you already know that this is the best country in the world in terms of quantity and quality of snow.",
+    "para3": "In Canada, dozens and dozens of ski resorts await you in British Columbia, Alberta, and Quebec: snowboarding, alpine skiing, and the unique spectacle of heliskiing in the Rocky Mountains. Lodges in Canadian national parks, some splendid hotels that you can only reach by seaplane or boat, and that wonder called glamping: a new type of glamorous camping immersed in nature that only Canada can offer. Finally, Alaska, the great frontier land, is perfect for a trip that mixes Canada and the United States with exciting itineraries, ferries, and unique scenery. Contact us, write to us, call us... let us help you discover the wonders of Canada!",
+    "ctaTitle": "100% Canada",
+    "ctaText": "Enjoy the best of Canada, in total relaxation and surrounded by nature! On your next trip to Canada, choose to unplug, not drive and immerse yourself in Canadian nature. Discover our packages of 2 or more days in facilities far from urban centers where you can do activities and excursions every day: lodges reachable by seaplane, ranches where you can go horseback riding, kayaking adventures or in search of bears, moose, reindeer and eagles! Without forgetting the Rocky Mountaineer, one of the most beautiful and famous trains in the world",
+    "rockyMountaineerNote": "Rocky Mountaineer One of the most beautiful train journeys in the world, are you ready to get on board?"
+  },
+  "tourAutoCanada": {
+    "title": "Self-drive tour in Canada",
+    "description": "Traveling through Canada on the road is something you will remember forever: you will discover, in total freedom, the natural wonders of a country perfect for this type of travel. Xplore offers you several itineraries both in eastern and western Canada, without constraints related to departure dates, number of participants or schedules to follow. From Nova Scotia to Prince Edward Island, from Quebec to British Columbia, a self-drive tour in Canada will leave you speechless. If you want, you can take inspiration from one of these itineraries and contact us to create a tailor-made one for you! Contact us, tell us how many people are traveling and what you'd like to see... we’ll help you plan your perfect trip!"
+  },
+  "tourAutoFaq": {
+    "faqs": [
+      {
+        "question": "What kind of tours are these?",
+        "answer": "These are self-drive tours in Canada that include car rental and all stops at booked lodges/hotels; you can choose one of our tours as-is or decide the stops yourself, adding or removing locations based on your timing and needs."
+      },
+      {
+        "question": "Travel safely with Xplore and Europ Assistance",
+        "answer": "These are self-drive tours in Canada that include car rental and all stops at booked lodges/hotels; you can choose one of our tours as-is or decide the stops yourself, adding or removing locations based on your timing and needs."
+      },
+      {
+        "question": "Travel safely with Xplore and Europ Assistance",
+        "answer": "These are self-drive tours in Canada that include car rental and all stops at booked lodges/hotels; you can choose one of our tours as-is or decide the stops yourself, adding or removing locations based on your timing and needs."
+      },
+      {
+        "question": "Can I customize one of these tours?",
+        "answer": "These are self-drive tours in Canada that include car rental and all stops at booked lodges/hotels; you can choose one of our tours as-is or decide the stops yourself, adding or removing locations based on your timing and needs."
+      }
+    ]
+  },
+  "tourAuto": {
+    "resultCount": "With this selection there are {{count}} tours.",
+    "showAsImage": "Show all as image",
+    "showAsMap": "Show all as maps"
+  },
+
+  "hero": {
+    "subSubTittle": "Travel ideas in Canada",
+    "title": "Outdoor life!",
+    "subTittle": "The difference with a trip to the United States is also in these things: Canada is the perfect place to unleash your desire for adrenaline and adventure!"
+  },
+  "section": {
+    "heading": "Vast spaces and activities",
+    "paragraphs": [
+      "If you want advice from someone who knows Canada and loves it, it's to enrich your trip to Canada with some outdoor excursions or activities! You are in a country where many people live outdoor activities and spend time outside: it would really be a shame not to take advantage of it. So go ahead... let yourself go! Tell us where you are going and let yourself be",
+      "advised by Xplore on how to fully enjoy this wild soul of Canada, whether your trip is in the eastern or western part. We can offer you a half-day rafting, canoe rental in Quebec lakes, kayak tours in the Toronto bay or among the small islands near Tofino, seaplane tours to observe from above the magnificent landscapes that only Canada",
+      "can offer... not to mention the fun of taking off and landing on the water! Lots of fun, total safety of excursions, fantastic scenery and emotions that will remain indelible among your travel memories. Organize your next trip to Canada with Xplore and enjoy every moment!"
+    ],
+    "cards": [
+      {
+        "heading": "CANADIAN QUINTESSENCE",
+        "subHeading": "Even just half a day, we bet you'll have fun?",
+        "paragraphs": [
+          "Have you ever tried kayaking? Imagine yourself with a few other people and an instructor at your disposal who first explains the basics and then follows you while paddling through the fjords of Tofino also explaining the flora and fauna of the ecosystem you are visiting. Or how about a few hours of rafting? In Western Canada there are rivers that allow tours of all difficulties, from the easiest to the expert ones! Or a bike tour among trails and less traveled roads near Algonquin Provincial Park in Ontario or other beautiful locations? Would you like to do a small trek but don't know where to start?",
+          "No problem, in Canada we can also organize that. If you are more experienced, we can also manage the bookings of Canadian alpine huts for a truly unique experience! Another option is to spend a few hours canoeing, maybe among the lakes of Quebec, alone or with a guided group: you know the pleasure of feeling relaxation and nature at water level? We bet these will be the most beautiful memories you will bring back from your trip to Canada."
+        ],
+        "isReverse": false
+      },
+      {
+        "heading": null,
+        "subHeading": null,
+        "paragraphs": [
+          "If you really want to try a bit of adrenaline but don't feel like rafting among the rapids, we recommend a seaplane tour. The takeoff and landing on the water are already memorable but what you will see from above will take your breath away. For example, the whole area of Tofino and Ucluelet, on Vancouver Island, where if you are lucky you can also spot orcas and whales from above. A unique experience! Also, for example, a helicopter tour over Niagara Falls, between Canada and the United States to better enjoy these natural wonders from above. Back on land, we can also offer you mini horse tours of a few hours between hills and forests, both in Eastern and Western Canada.",
+          "Enjoy the best of Canada, let Xplore advise you both in planning your trip and in matching some activities and excursions that will take your breath away, but never neglecting the utmost safety for you and your travel companions.",
+          "Ready for some adrenaline? The vast Canadian spaces are waiting for you!"
+        ],
+        "isReverse": true
+      }
+    ],
+    "footer": {
+      "title": "OUTDOOR LIFE",
+      "description": "Contact us to know which activities we can offer during your stay. Dive into nature and make your trip to Canada even more unique!",
+      "form": {
+        "labels": {
+          "nome": "First Name",
+          "cognome": "Last Name",
+          "email": "Email",
+          "messaggio": "Message"
+        },
+        "required": "*",
+        "privacyNote": "By clicking you authorize the processing of the entered data according to the purposes indicated in the new Privacy Policy",
+        "submit": "Request more information"
+      }
+    }
   }
 }

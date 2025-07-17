@@ -18,10 +18,12 @@ import { addItinerary, removeItinerary } from "@/Redux/features/itenariesSlice";
 import RecomendedAttractionModal from "../Modals/RecomendedAttractionModal";
 import { Modal } from "../Modals/Modal";
 import StartYourJourney from "../Modals/StartYourJourney";
+import { useTranslation } from "react-i18next";
 
 const imgBaseurl = import.meta.env.VITE_SERVER_URL;
 
 const ItenaryIdeaDetails = ({ itenariesData }) => {
+  const { t } = useTranslation();
   const [counters, setCounters] = useState({});
   const [openItems, setOpenItems] = useState(["item-0"]);
   const [open, setOpen] = useState(false);
@@ -30,11 +32,10 @@ const ItenaryIdeaDetails = ({ itenariesData }) => {
     useState(null);
 
   const navigate = useNavigate();
-  const { id: tripId } = useParams(); // Get trip ID from URL
+  const { id: tripId } = useParams();
   const dispatch = useDispatch();
-  const itineraries = useSelector(state => state.itineraries); // Get itineraries from Redux store
+  const itineraries = useSelector(state => state.itineraries);
 
-  // Initialize counters from Redux store
   useEffect(() => {
     const initialCounters = {};
     itineraries.forEach(item => {
@@ -45,11 +46,10 @@ const ItenaryIdeaDetails = ({ itenariesData }) => {
     setCounters(initialCounters);
   }, [itineraries, tripId]);
 
-  // Add or update itinerary in Redux store
   const handleAddItinerary = faq => {
     const itinerary = {
       id: faq.id,
-      tripId, // Associate with the current trip
+      tripId,
       title: faq.title,
       place_name: faq.place_name,
       sub_title: faq.sub_title,
@@ -62,7 +62,6 @@ const ItenaryIdeaDetails = ({ itenariesData }) => {
     }));
   };
 
-  // Remove or decrement itinerary in Redux store
   const handleRemoveItinerary = faqId => {
     dispatch(removeItinerary(faqId));
     setCounters(prev => {
@@ -72,14 +71,12 @@ const ItenaryIdeaDetails = ({ itenariesData }) => {
     });
   };
 
-  // Expand all accordion items
   const expandAll = () => {
     const allItems =
       itenariesData?.allItenareies?.map((_, index) => `item-${index}`) || [];
     setOpenItems(allItems);
   };
 
-  // Collapse all accordion items
   const closeAll = () => {
     setOpenItems([]);
   };
@@ -104,20 +101,20 @@ const ItenaryIdeaDetails = ({ itenariesData }) => {
         <div className="flex flex-col gap-y-6">
           <div className="flex flex-col gap-y-4 xl:flex-row justify-between items-center">
             <h3 className="text-primary text-[34px] flex-shrink-0 font-normal leading-[120%] font-editorsNoteNormal">
-              Itinerary idea in details
+              {t("itinerary.title")}
             </h3>
             <div className="flex flex-row w-full justify-end gap-x-4">
               <span
                 onClick={closeAll}
                 className="text-2xl font-normal text-[#004265] leading-[120%] font-editorsNoteNormal cursor-pointer"
               >
-                Close All
+                {t("itinerary.closeAll")}
               </span>
               <span
                 onClick={expandAll}
                 className="text-2xl font-normal text-[#004265] leading-[120%] font-editorsNoteNormal cursor-pointer"
               >
-                Expand All
+                {t("itinerary.expandAll")}
               </span>
             </div>
           </div>
@@ -136,7 +133,7 @@ const ItenaryIdeaDetails = ({ itenariesData }) => {
             {itenariesData?.allItenareies?.map((faq, index) => (
               <AccordionItem
                 className="border-[1px] border-solid border-[#0000001F]"
-                key={`${tripId}-${faq.id}`} // Unique key combining tripId and faq.id
+                key={`${tripId}-${faq.id}`}
                 value={`item-${index}`}
               >
                 <AccordionTrigger className="text-xl w-full text-[#3E3E3E] hover:no-underline">
@@ -189,7 +186,7 @@ const ItenaryIdeaDetails = ({ itenariesData }) => {
                               onClick={() => setRecommendedOpen(true)}
                               className="h-10 lg:h-[56px] w-[168px] flex flex-row items-center justify-center bg-white border-[1px] border-solid cursor-pointer text-[#004265] font-interTight text-base xl:text-xl font-normal leading-[150%]"
                             >
-                              See the wishlist
+                              {t("itinerary.wishlist")}
                             </div>
                           </div>
                         </div>
@@ -208,7 +205,7 @@ const ItenaryIdeaDetails = ({ itenariesData }) => {
                             }
                             className="bg-white py-2 lg:py-4 px-2 whitespace-nowrap lg:px-8 border-[1px] flex flex-row items-center cursor-pointer gap-x-1 border-solid h-10 lg:h-[59px] text-primary leading-[150%] font-normal text-sm lg:text-lg"
                           >
-                            Travel Guide
+                            {t("itinerary.travelGuide")}
                             <ArrowLeft />
                           </div>
                         </div>
@@ -216,12 +213,12 @@ const ItenaryIdeaDetails = ({ itenariesData }) => {
                     </div>
                     <div className="flex flex-col gap-y-2">
                       <span className="flex flex-row items-center gap-x-2 text-primary font-medium text-base lg:text-lg">
-                        Recommended attraction <Location />
+                        {t("itinerary.recommendedAttraction")} <Location />
                       </span>
                       <div className="flex flex-col flex-wrap cursor-pointer xl:flex-row gap-y-3 3xl:gap-y-4 xl:justify-between 3xl:gap-x-4">
                         {faq?.recommended_attractions?.map((item, idx) => (
                           <div
-                            key={`${tripId}-${faq.id}-${idx}`} // Unique key for attractions
+                            key={`${tripId}-${faq.id}-${idx}`}
                             className="p-3 flex flex-col gap-y-3 bg-white shadow-primaryShadow"
                             onClick={() => {
                               setOpen(true);
