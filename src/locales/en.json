@@ -305,5 +305,93 @@
         "submit": "Request more information"
       }
     }
+  },
+  "modalform": {
+    "title": "General trip form",
+    "name": "Your name*",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email address*",
+    "confirmEmail": "Confirm email address*",
+    "telephone": "Telephone*",
+    "countryCode": "Bangladesh (+880)",
+    "phonePlaceholder": "17********",
+    "referral": "How did you hear about us?",
+    "referralPlaceholder": "I've enquired with you before",
+    "clear": "Clean all",
+    "submit": "Submit",
+    "successMessage": "Form Submitted Successfully"
+  },
+  "testModal": {
+    "planYourTrip": "Plan your trip",
+    "whereWouldYouLikeToGo": "Where would you like to go?*",
+    "selectDestination": "Select a Destination",
+    "destinations": {
+      "alaska": "Alaska",
+      "canadaWest": "Canada West",
+      "westUSA": "West USA",
+      "canadaEast": "Canada East",
+      "caribian": "Caribian",
+      "yukatan": "Yukatan and Baja California",
+      "travelWithExtension": "Travel with Extension"
+    },
+    "whenWouldYouLikeToGo": "When would you like to go?",
+    "selectMonth": "Select a Month",
+    "months": {
+      "january": "January",
+      "february": "February",
+      "march": "March",
+      "april": "April",
+      "may": "May",
+      "june": "June",
+      "july": "July",
+      "august": "August",
+      "september": "September",
+      "october": "October",
+      "november": "November",
+      "december": "December"
+    },
+    "selectYear": "Select a Year",
+    "howLongFor": "How long for?*",
+    "selectDuration": "Select a Duration",
+    "days": "Days",
+    "month": "Month",
+    "howManyPeopleTraveling": "How many people are traveling?",
+    "selectTotalPeople": "Select the Total Number of People",
+    "person": "Person",
+    "howMuchWouldYouLikeToSpend": "How much would you like to spend per person?",
+    "yourName": "Your name*",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "emailAddress": "Email address*",
+    "emailPlaceholder": "example@gmail.com",
+    "confirmEmailAddress": "Confirm Email address*",
+    "telephone": "Telephone*",
+    "telephoneCode": "Bangladesh (+880)",
+    "telephoneNumber": "123456789",
+    "howDidYouHearAboutUs": "How did you hear about us?",
+    "heardAboutUsPlaceholder": "I've enquired with you before",
+    "close": "Close",
+    "submit": "Submit"
+  },
+  "validation": {
+    "firstNameRequired": "First Name is required",
+    "firstNameMinLength": "Name must be at least 2 characters",
+    "lastNameRequired": "Last Name is required",
+    "lastNameMinLength": "Last Name must be at least 2 characters",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Invalid email address",
+    "confirmEmailRequired": "Confirm Email is required",
+    "emailsDoNotMatch": "Emails do not match",
+    "telephoneRequired": "Telephone number is required",
+    "fieldRequired": "This field is required"
+  },
+  "wishlistModal": {
+    "title": "Your Wishlist",
+    "subtitle": "Your journey awaits here. See your listing on here.",
+    "speakToExpert": "Speak To An Expert"
+  },
+  "form": {
+    "successMessage": "Form Submitted Successfully"
   }
 }

@@ -22,8 +22,10 @@ import {
 import toast from "react-hot-toast";
 import RangeSlider from "react-range-slider-input";
 import "react-range-slider-input/dist/style.css";
+import { useTranslation } from "react-i18next";
 
 const BookThisModal = ({ setOpen }) => {
+  const { t } = useTranslation();
   const {
     register,
     handleSubmit,
@@ -32,9 +34,10 @@ const BookThisModal = ({ setOpen }) => {
   } = useForm();
   const onSubmit = data => {
     console.log(data);
-    toast.success("Form Submitted Successfully");
+    toast.success(t("modalform.successMessage"));
     setOpen(false);
   };
+
   return (
     <DialogContent className=" w-[350px] sm:w-[400px] md:w-[500px] lg:w-[700px] xl:w-[900px]  3xl:min-w-[1200px] z-[9999999] px-2 py-3  lg:py-6 text-center font-nunito">
       {/* Wrap everything in a container that can scroll and hide scrollbar */}
@@ -44,7 +47,7 @@ const BookThisModal = ({ setOpen }) => {
             {/* title */}
             <div>
               <h2 className="font-editorsNoteNormal text-primary font-semibold text-2xl tracking-wide">
-                General trip form
+                {t("modalform.title")}
               </h2>
             </div>
 
@@ -69,27 +72,25 @@ const BookThisModal = ({ setOpen }) => {
                   <div className="space-y-2 w-full ">
                     <div className="space-y-2 flex flex-col gap-y-1 items-start">
                       <label
-                        htmlFor="name"
+                        htmlFor="firstName"
                         className=" text-base lg:text-lg font-medium text"
                       >
-                        Your name*
+                        {t("modalform.name")}
                       </label>
                       <div className="w-full">
                         <div className="w-full flex-col md:flex-row   flex gap-4">
                           <input
-                            required
-                            placeholder="First Name"
+                            {...register("firstName", { required: true })}
+                            placeholder={t("modalform.firstName")}
                             className="px-4  font-inter text-[#565656] h-12 focus:outline-none border border-black/10 w-full"
                             type="text"
-                            name=""
                             id="firstName"
                           />
                           <input
-                            required
-                            placeholder="Last Name"
+                            {...register("lastName", { required: true })}
+                            placeholder={t("modalform.lastName")}
                             className="px-4 py-2 font-inter text-[#565656] h-12 focus:outline-none border border-black/10 w-full"
                             type="text"
-                            name=""
                             id="lastName"
                           />
                         </div>
@@ -102,15 +103,14 @@ const BookThisModal = ({ setOpen }) => {
                         htmlFor="email"
                         className=" text-base lg:text-lg font-medium text"
                       >
-                        Email address*
+                        {t("modalform.email")}
                       </label>
                       <div className="w-full">
                         <input
-                          required
-                          placeholder="example@gmail.com"
+                          {...register("email", { required: true })}
+                          placeholder={t("modalform.email")}
                           className="px-4 py-2 font-inter text-[#565656] h-12 focus:outline-none border border-black/10 w-full"
                           type="email"
-                          name=""
                           id="email"
                         />
                       </div>
@@ -122,15 +122,14 @@ const BookThisModal = ({ setOpen }) => {
                         htmlFor="confirmEmail"
                         className="text-base lg:text-lg font-medium text"
                       >
-                        Confirm email address*
+                        {t("modalform.confirmEmail")}
                       </label>
                       <div className="w-full">
                         <input
-                          required
-                          placeholder="example@gmail.com"
+                          {...register("confirmEmail", { required: true })}
+                          placeholder={t("modalform.confirmEmail")}
                           className="px-4 py-2 font-inter text-[#565656] h-12 focus:outline-none border border-black/10 w-full"
                           type="email"
-                          name=""
                           id="confirmEmail"
                         />
                       </div>
@@ -142,25 +141,22 @@ const BookThisModal = ({ setOpen }) => {
                         htmlFor="telephone"
                         className=" text-base lg:text-lg font-medium text"
                       >
-                        Telephone*
+                        {t("modalform.telephone")}
                       </label>
                       <div className="w-full">
                         <div className="flex items-center gap-2">
                           <input
-                            required
-                            placeholder="Bangladesh (+880)"
-                            className="px-4 py-2 font-inter text-[#565656] h-12 focus:outline-none border border-black/10 w-3/5 read-only"
-                            type="email"
-                            name=""
                             readOnly
+                            placeholder={t("modalform.countryCode")}
+                            className="px-4 py-2 font-inter text-[#565656] h-12 focus:outline-none border border-black/10 w-3/5 read-only"
+                            type="text"
                             id="numberCode"
                           />
                           <input
-                            required
-                            placeholder="17********"
+                            {...register("telephone", { required: true })}
+                            placeholder={t("modalform.phonePlaceholder")}
                             className="px-4 py-2 font-inter text-[#565656] h-12 focus:outline-none border border-black/10 w-full"
                             type="number"
-                            name=""
                             id="telephone"
                           />
                         </div>
@@ -170,19 +166,18 @@ const BookThisModal = ({ setOpen }) => {
                   <div className="space-y-2 w-full">
                     <div className="space-y-2 flex flex-col gap-y-1 items-start">
                       <label
-                        htmlFor="message"
+                        htmlFor="referral"
                         className=" text-base lg:text-lg font-medium text"
                       >
-                        How did you hear about us?
+                        {t("modalform.referral")}
                       </label>
                       <div className="w-full">
                         <input
-                          required
-                          placeholder="I've enquired with you before"
+                          {...register("referral", { required: true })}
+                          placeholder={t("modalform.referralPlaceholder")}
                           className="px-4 py-2 font-inter text-[#565656] h-12 focus:outline-none border border-black/10 w-full"
                           type="text"
-                          name=""
-                          id="message"
+                          id="referral"
                         />
                       </div>
                     </div>
@@ -192,6 +187,7 @@ const BookThisModal = ({ setOpen }) => {
                   <div className="flex items-end  w-full justify-end">
                     <div className="flex   md:justify-normal  items-end justify-end gap-4">
                       <button
+                        type="button"
                         onClick={() => {
                           reset();
                         }}
@@ -200,13 +196,13 @@ const BookThisModal = ({ setOpen }) => {
                         <span>
                           <ResetButtonSvg />
                         </span>
-                        Clean all
+                        {t("modalform.clear")}
                       </button>
                       <button
-                        onClick={() => handleSubmit}
+                        type="submit"
                         className="flex items-center bg-primary text-sm lg:text-base text-white px-6 py-3 border border-primary  gap-2"
                       >
-                        Submit
+                        {t("modalform.submit")}
                       </button>
                     </div>
                   </div>
