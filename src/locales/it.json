@@ -304,5 +304,93 @@
         "submit": "Richiedi maggiori informazioni"
       }
     }
+  },
+  "modalform": {
+    "title": "Modulo generale del viaggio",
+    "name": "Il tuo nome*",
+    "firstName": "Nome",
+    "lastName": "Cognome",
+    "email": "Indirizzo email*",
+    "confirmEmail": "Conferma indirizzo email*",
+    "telephone": "Telefono*",
+    "countryCode": "Bangladesh (+880)",
+    "phonePlaceholder": "17********",
+    "referral": "Come ci hai conosciuto?",
+    "referralPlaceholder": "Ho già fatto una richiesta con voi",
+    "clear": "Pulisci tutto",
+    "submit": "Invia",
+    "successMessage": "Modulo inviato con successo"
+  },
+  "testModal": {
+    "planYourTrip": "Pianifica il tuo viaggio",
+    "whereWouldYouLikeToGo": "Dove vorresti andare?*",
+    "selectDestination": "Seleziona una destinazione",
+    "destinations": {
+      "alaska": "Alaska",
+      "canadaWest": "Canada Occidentale",
+      "westUSA": "USA Occidentali",
+      "canadaEast": "Canada Orientale",
+      "caribian": "Caraibi",
+      "yukatan": "Yucatan e Baja California",
+      "travelWithExtension": "Viaggio con estensione"
+    },
+    "whenWouldYouLikeToGo": "Quando vorresti partire?",
+    "selectMonth": "Seleziona un mese",
+    "months": {
+      "january": "Gennaio",
+      "february": "Febbraio",
+      "march": "Marzo",
+      "april": "Aprile",
+      "may": "Maggio",
+      "june": "Giugno",
+      "july": "Luglio",
+      "august": "Agosto",
+      "september": "Settembre",
+      "october": "Ottobre",
+      "november": "Novembre",
+      "december": "Dicembre"
+    },
+    "selectYear": "Seleziona un anno",
+    "howLongFor": "Per quanto tempo?*",
+    "selectDuration": "Seleziona una durata",
+    "days": "Giorni",
+    "month": "Mese",
+    "howManyPeopleTraveling": "Quante persone viaggiano?",
+    "selectTotalPeople": "Seleziona il numero totale di persone",
+    "person": "Persona",
+    "howMuchWouldYouLikeToSpend": "Quanto vorresti spendere a persona?",
+    "yourName": "Il tuo nome*",
+    "firstName": "Nome",
+    "lastName": "Cognome",
+    "emailAddress": "Indirizzo email*",
+    "emailPlaceholder": "esempio@gmail.com",
+    "confirmEmailAddress": "Conferma indirizzo email*",
+    "telephone": "Telefono*",
+    "telephoneCode": "Bangladesh (+880)",
+    "telephoneNumber": "123456789",
+    "howDidYouHearAboutUs": "Come hai sentito parlare di noi?",
+    "heardAboutUsPlaceholder": "Ti ho già contattato",
+    "close": "Chiudi",
+    "submit": "Invia"
+  },
+  "validation": {
+    "firstNameRequired": "Il nome è obbligatorio",
+    "firstNameMinLength": "Il nome deve contenere almeno 2 caratteri",
+    "lastNameRequired": "Il cognome è obbligatorio",
+    "lastNameMinLength": "Il cognome deve contenere almeno 2 caratteri",
+    "emailRequired": "L'email è obbligatoria",
+    "emailInvalid": "Indirizzo email non valido",
+    "confirmEmailRequired": "La conferma dell'email è obbligatoria",
+    "emailsDoNotMatch": "Le email non corrispondono",
+    "telephoneRequired": "Il numero di telefono è obbligatorio",
+    "fieldRequired": "Questo campo è obbligatorio"
+  },
+  "wishlistModal": {
+    "title": "La tua lista dei desideri",
+    "subtitle": "Il tuo viaggio ti aspetta qui. Vedi il tuo elenco qui.",
+    "speakToExpert": "Parla con un esperto"
+  },
+  "form": {
+    "successMessage": "Modulo inviato con successo"
   }
 }
