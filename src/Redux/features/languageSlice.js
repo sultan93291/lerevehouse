@@ -22,7 +22,6 @@ const languageSlice = createSlice({
       i18n.changeLanguage(state.language);
       localStorage.setItem("lan", state.language);
       localStorage.setItem("i18nextLng", state.language); 
-
       window.location.reload();
     },
   },

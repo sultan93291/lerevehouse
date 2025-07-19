@@ -8,10 +8,10 @@ import {
 } from "@/Redux/features/api/apiSlice";
 import toast from "react-hot-toast";
 import { InfinitySpin } from "react-loader-spinner";
-import { useTranslation } from "react-i18next"; // ✅ import i18n
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
-  const { t } = useTranslation(); // ✅ useTranslation hook
+  const { t } = useTranslation();
   const { data, error, isLoading } = useGetFooterLinkDataQuery(undefined, {
     refetchOnFocus: true,
     refetchOnReconnect: true,

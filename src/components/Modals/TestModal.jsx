@@ -24,8 +24,10 @@ import RangeSlider from "react-range-slider-input";
 import "react-range-slider-input/dist/style.css";
 import { useState } from "react";
 import { usePlanTripRequestMutation } from "@/Redux/features/api/apiSlice";
+import { useTranslation } from "react-i18next";
 
 const TestModal = ({ setOpen }) => {
+  const { t } = useTranslation();
   const [range, setRange] = useState([10000, 20000]);
   const [country, setcountry] = useState();
   const [month, setmonth] = useState();
@@ -43,6 +45,7 @@ const TestModal = ({ setOpen }) => {
     watch,
     formState: { errors },
   } = useForm();
+
   const onSubmit = async data => {
     const allSelectData = {
       destination: country,
@@ -83,6 +86,7 @@ const TestModal = ({ setOpen }) => {
       }, 3000);
     }
   };
+
   return (
     <DialogContent className=" w-[350px] sm:w-[400px] md:w-[500px] lg:w-[700px] xl:w-[900px]  3xl:min-w-[1200px]  px-2 py-3  lg:py-6 text-center font-nunito">
       {/* Wrap everything in a container that can scroll and hide scrollbar */}
@@ -92,7 +96,7 @@ const TestModal = ({ setOpen }) => {
             {/* title */}
             <div>
               <h2 className="font-editorsNoteNormal text-primary font-semibold text-2xl tracking-wide">
-                Plan your trip
+                {t("testModal.planYourTrip")}
               </h2>
             </div>
 
@@ -119,7 +123,7 @@ const TestModal = ({ setOpen }) => {
                       htmlFor="destination"
                       className=" text-base lg:text-lg font-medium text"
                     >
-                      Where would you like to go?*
+                      {t("testModal.whereWouldYouLikeToGo")}
                     </label>
                     <div className="w-full">
                       <Select
@@ -129,26 +133,18 @@ const TestModal = ({ setOpen }) => {
                         value={country}
                       >
                         <SelectTrigger className="w-full h-12 px-2 lg:px-4 text-sm lg:text-base">
-                          <SelectValue placeholder="Select a Destination" />
+                          <SelectValue placeholder={t("testModal.selectDestination")} />
                         </SelectTrigger>
                         <SelectContent>
                           <SelectGroup>
                             {/* <SelectLabel>Destination</SelectLabel> */}
-                            <SelectItem value="Alaska">Alaska</SelectItem>
-                            <SelectItem value="Canada West">
-                              Canada West
-                            </SelectItem>
-                            <SelectItem value="West USA">West USA</SelectItem>
-                            <SelectItem value="Canada East">
-                              Canada East
-                            </SelectItem>
-                            <SelectItem value="Caribian">Caribian</SelectItem>
-                            <SelectItem value="Yukatan and Baja California">
-                              Yukatan and Baja California
-                            </SelectItem>
-                            <SelectItem value="Travel with Extension">
-                              Travel with Extension
-                            </SelectItem>
+                            <SelectItem value="Alaska">{t("testModal.destinations.alaska")}</SelectItem>
+                            <SelectItem value="Canada West">{t("testModal.destinations.canadaWest")}</SelectItem>
+                            <SelectItem value="West USA">{t("testModal.destinations.westUSA")}</SelectItem>
+                            <SelectItem value="Canada East">{t("testModal.destinations.canadaEast")}</SelectItem>
+                            <SelectItem value="Caribian">{t("testModal.destinations.caribian")}</SelectItem>
+                            <SelectItem value="Yukatan and Baja California">{t("testModal.destinations.yukatan")}</SelectItem>
+                            <SelectItem value="Travel with Extension">{t("testModal.destinations.travelWithExtension")}</SelectItem>
                           </SelectGroup>
                         </SelectContent>
                       </Select>
@@ -159,7 +155,7 @@ const TestModal = ({ setOpen }) => {
                       htmlFor="destination"
                       className="text-base lg:text-lg  font-medium text"
                     >
-                      When would you like to go?
+                      {t("testModal.whenWouldYouLikeToGo")}
                     </label>
                     <div className="w-full  flex lg:flex-row flex-col items-center gap-3">
                       {/* Month */}
@@ -170,23 +166,22 @@ const TestModal = ({ setOpen }) => {
                         value={month}
                       >
                         <SelectTrigger className="w-full h-12  px-2 lg:px-4 text-sm lg:text-base">
-                          <SelectValue placeholder="Select a Month" />
+                          <SelectValue placeholder={t("testModal.selectMonth")} />
                         </SelectTrigger>
                         <SelectContent>
                           <SelectGroup>
-                            {/* <SelectLabel>Destination</SelectLabel> */}
-                            <SelectItem value="January">January</SelectItem>
-                            <SelectItem value="February">February</SelectItem>
-                            <SelectItem value="March">March</SelectItem>
-                            <SelectItem value="April">April</SelectItem>
-                            <SelectItem value="May">May</SelectItem>
-                            <SelectItem value="June">June</SelectItem>
-                            <SelectItem value="July">July</SelectItem>
-                            <SelectItem value="August">August</SelectItem>
-                            <SelectItem value="September">September</SelectItem>
-                            <SelectItem value="October">October</SelectItem>
-                            <SelectItem value="November">November</SelectItem>
-                            <SelectItem value="December">December</SelectItem>
+                            <SelectItem value="January">{t("testModal.months.january")}</SelectItem>
+                            <SelectItem value="February">{t("testModal.months.february")}</SelectItem>
+                            <SelectItem value="March">{t("testModal.months.march")}</SelectItem>
+                            <SelectItem value="April">{t("testModal.months.april")}</SelectItem>
+                            <SelectItem value="May">{t("testModal.months.may")}</SelectItem>
+                            <SelectItem value="June">{t("testModal.months.june")}</SelectItem>
+                            <SelectItem value="July">{t("testModal.months.july")}</SelectItem>
+                            <SelectItem value="August">{t("testModal.months.august")}</SelectItem>
+                            <SelectItem value="September">{t("testModal.months.september")}</SelectItem>
+                            <SelectItem value="October">{t("testModal.months.october")}</SelectItem>
+                            <SelectItem value="November">{t("testModal.months.november")}</SelectItem>
+                            <SelectItem value="December">{t("testModal.months.december")}</SelectItem>
                           </SelectGroup>
                         </SelectContent>
                       </Select>
@@ -199,11 +194,10 @@ const TestModal = ({ setOpen }) => {
                         value={year}
                       >
                         <SelectTrigger className="w-full h-12 px-2 lg:px-4 text-sm lg:text-base">
-                          <SelectValue placeholder="Select a Year" />
+                          <SelectValue placeholder={t("testModal.selectYear")} />
                         </SelectTrigger>
                         <SelectContent>
                           <SelectGroup>
-                            {/* <SelectLabel>Destination</SelectLabel> */}
                             <SelectItem value="2025">2025</SelectItem>
                             <SelectItem value="2026">2026</SelectItem>
                             <SelectItem value="2027">2027</SelectItem>
@@ -223,7 +217,7 @@ const TestModal = ({ setOpen }) => {
                       htmlFor="destination"
                       className="text-base lg:text-lg  font-medium text"
                     >
-                      How long for?*
+                      {t("testModal.howLongFor")}
                     </label>
                     <div className="w-full">
                       {/* Days */}
@@ -234,20 +228,19 @@ const TestModal = ({ setOpen }) => {
                         value={duration}
                       >
                         <SelectTrigger className="w-full h-12 px-2 lg:px-4 text-sm lg:text-base">
-                          <SelectValue placeholder="Select a Duration" />
+                          <SelectValue placeholder={t("testModal.selectDuration")} />
                         </SelectTrigger>
                         <SelectContent>
                           <SelectGroup>
-                            {/* <SelectLabel>Destination</SelectLabel> */}
-                            <SelectItem value="1 Days">1 Days</SelectItem>
-                            <SelectItem value="2 Days">2 Days</SelectItem>
-                            <SelectItem value="3 Days">3 Days</SelectItem>
-                            <SelectItem value="4 Days">4 Days</SelectItem>
-                            <SelectItem value="5 Days">5 Days</SelectItem>
-                            <SelectItem value="6 Days">6 Days</SelectItem>
-                            <SelectItem value="7 Days">7 Days</SelectItem>
-                            <SelectItem value="14 Days">14 Days</SelectItem>
-                            <SelectItem value="1 Month">1 Month</SelectItem>
+                            <SelectItem value="1 Days">1 {t("testModal.days")}</SelectItem>
+                            <SelectItem value="2 Days">2 {t("testModal.days")}</SelectItem>
+                            <SelectItem value="3 Days">3 {t("testModal.days")}</SelectItem>
+                            <SelectItem value="4 Days">4 {t("testModal.days")}</SelectItem>
+                            <SelectItem value="5 Days">5 {t("testModal.days")}</SelectItem>
+                            <SelectItem value="6 Days">6 {t("testModal.days")}</SelectItem>
+                            <SelectItem value="7 Days">7 {t("testModal.days")}</SelectItem>
+                            <SelectItem value="14 Days">14 {t("testModal.days")}</SelectItem>
+                            <SelectItem value="1 Month">1 {t("testModal.month")}</SelectItem>
                           </SelectGroup>
                         </SelectContent>
                       </Select>
@@ -258,7 +251,7 @@ const TestModal = ({ setOpen }) => {
                       htmlFor="destination"
                       className=" text-base lg:text-lg text-left font-medium text"
                     >
-                      How many people are traveling?
+                      {t("testModal.howManyPeopleTraveling")}
                     </label>
                     <div className="w-full">
                       {/* Days */}
@@ -269,18 +262,17 @@ const TestModal = ({ setOpen }) => {
                         value={totalPeople}
                       >
                         <SelectTrigger className="w-full  z-[99] h-12 px-2 lg:px-4 text-sm lg:text-base">
-                          <SelectValue placeholder="Select the Total Number of People" />
+                          <SelectValue placeholder={t("testModal.selectTotalPeople")} />
                         </SelectTrigger>
                         <SelectContent>
                           <SelectGroup>
-                            {/* <SelectLabel>Destination</SelectLabel> */}
-                            <SelectItem value="1 Person">1 Person</SelectItem>
-                            <SelectItem value="2 Person">2 Person</SelectItem>
-                            <SelectItem value="3 Person">3 Person</SelectItem>
-                            <SelectItem value="4 Person">4 Person</SelectItem>
-                            <SelectItem value="5 Person">5 Person</SelectItem>
-                            <SelectItem value="6 Person">6 Person</SelectItem>
-                            <SelectItem value="7 Person">7 Person</SelectItem>
+                            <SelectItem value="1 Person">1 {t("testModal.person")}</SelectItem>
+                            <SelectItem value="2 Person">2 {t("testModal.person")}</SelectItem>
+                            <SelectItem value="3 Person">3 {t("testModal.person")}</SelectItem>
+                            <SelectItem value="4 Person">4 {t("testModal.person")}</SelectItem>
+                            <SelectItem value="5 Person">5 {t("testModal.person")}</SelectItem>
+                            <SelectItem value="6 Person">6 {t("testModal.person")}</SelectItem>
+                            <SelectItem value="7 Person">7 {t("testModal.person")}</SelectItem>
                           </SelectGroup>
                         </SelectContent>
                       </Select>
@@ -291,12 +283,12 @@ const TestModal = ({ setOpen }) => {
                       htmlFor="destination"
                       className="text-base lg:text-lg font-medium text-left"
                     >
-                      How much would you like to spend per person?
+                      {t("testModal.howMuchWouldYouLikeToSpend")}
                     </label>
 
                     <div className="w-full flex flex-col-reverse gap-y-4 lg:flex-col">
                       <h5 className="font-semibold text-base lg:text-xl">
-                        € {range?.[0].toLocaleString()} - €
+                        € {range?.[0].toLocaleString()} - €{" "}
                         {range?.[1].toLocaleString()}
                       </h5>
 
@@ -321,38 +313,37 @@ const TestModal = ({ setOpen }) => {
                         htmlFor="name"
                         className=" text-base lg:text-lg font-medium text"
                       >
-                        Your name*
+                        {t("testModal.yourName")}
                       </label>
                       <div className="w-full">
                         <div className="w-full flex-col md:flex-row   flex gap-4">
                           <input
                             required
-                            placeholder="First Name"
+                            placeholder={t("testModal.firstName")}
                             className="px-4  font-inter text-[#565656] h-12 focus:outline-none border border-black/10 w-full"
                             type="text"
                             name=""
                             id="first_name"
                             {...register("first_name", {
-                              required: "First Name is required",
+                              required: t("validation.firstNameRequired"),
                               minLength: {
                                 value: 2,
-                                message: "Name must be at least 2 characters",
+                                message: t("validation.firstNameMinLength"),
                               },
                             })}
                           />
                           <input
                             required
-                            placeholder="Last Name"
+                            placeholder={t("testModal.lastName")}
                             className="px-4 py-2 font-inter text-[#565656] h-12 focus:outline-none border border-black/10 w-full"
                             type="text"
                             name=""
                             id="last_name"
                             {...register("last_name", {
-                              required: "Last Name is required",
+                              required: t("validation.lastNameRequired"),
                               minLength: {
                                 value: 2,
-                                message:
-                                  "Last Name must be at least 2 characters",
+                                message: t("validation.lastNameMinLength"),
                               },
                             })}
                           />
@@ -366,21 +357,21 @@ const TestModal = ({ setOpen }) => {
                         htmlFor="email"
                         className=" text-base lg:text-lg font-medium text"
                       >
-                        Email address*
+                        {t("testModal.emailAddress")}
                       </label>
                       <div className="w-full">
                         <input
                           required
-                          placeholder="example@gmail.com"
+                          placeholder={t("testModal.emailPlaceholder")}
                           className="px-4 py-2 font-inter text-[#565656] h-12 focus:outline-none border border-black/10 w-full"
                           type="email"
                           name=""
                           id="email"
                           {...register("email", {
-                            required: "Email is required",
+                            required: t("validation.emailRequired"),
                             pattern: {
                               value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                              message: "Invalid email address",
+                              message: t("validation.emailInvalid"),
                             },
                           })}
                         />
@@ -394,25 +385,25 @@ const TestModal = ({ setOpen }) => {
                         htmlFor="email"
                         className=" text-base lg:text-lg font-medium text"
                       >
-                        Confirm Email address*
+                        {t("testModal.confirmEmailAddress")}
                       </label>
                       <div className="w-full">
                         <input
                           required
-                          placeholder="example@gmail.com"
+                          placeholder={t("testModal.emailPlaceholder")}
                           className="px-4 py-2 font-inter text-[#565656] h-12 focus:outline-none border border-black/10 w-full"
                           type="email"
                           name="confirm_email"
                           id="confirm_email"
                           {...register("confirm_email", {
-                            required: "Confirm Email is required",
+                            required: t("validation.confirmEmailRequired"),
                             pattern: {
                               value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                              message: "Invalid email address",
+                              message: t("validation.emailInvalid"),
                             },
                             validate: value =>
                               value === getValues("email") ||
-                              "Emails do not match",
+                              t("validation.emailsDoNotMatch"),
                           })}
                         />
                       </div>
@@ -425,13 +416,13 @@ const TestModal = ({ setOpen }) => {
                         htmlFor="telephone"
                         className=" text-base lg:text-lg font-medium text"
                       >
-                        Telephone*
+                        {t("testModal.telephone")}
                       </label>
                       <div className="w-full">
                         <div className="flex items-center gap-2">
                           <input
                             required
-                            placeholder="Bangladesh (+880)"
+                            placeholder={t("testModal.telephoneCode")}
                             className="px-4 py-2 font-inter text-[#565656] h-12 focus:outline-none border border-black/10 w-3/5 read-only"
                             type="text"
                             name=""
@@ -440,13 +431,13 @@ const TestModal = ({ setOpen }) => {
                           />
                           <input
                             required
-                            placeholder="123456789"
+                            placeholder={t("testModal.telephoneNumber")}
                             className="px-4 py-2 font-inter text-[#565656] h-12 focus:outline-none border border-black/10 w-full"
                             type="text"
                             name=""
                             id="telephone"
                             {...register("telephone", {
-                              required: "Telephone number is required",
+                              required: t("validation.telephoneRequired"),
                             })}
                           />
                         </div>
@@ -459,18 +450,18 @@ const TestModal = ({ setOpen }) => {
                         htmlFor="heard_about_us"
                         className=" text-base lg:text-lg font-medium text"
                       >
-                        How did you hear about us?
+                        {t("testModal.howDidYouHearAboutUs")}
                       </label>
                       <div className="w-full">
                         <input
                           required
-                          placeholder="I've enquired with you before"
+                          placeholder={t("testModal.heardAboutUsPlaceholder")}
                           className="px-4 py-2 font-inter text-[#565656] h-12 focus:outline-none border border-black/10 w-full"
                           type="text"
                           name=""
                           id="heard_about_us"
                           {...register("heard_about_us", {
-                            required: "This filed is required",
+                            required: t("validation.fieldRequired"),
                           })}
                         />
                       </div>
@@ -482,33 +473,24 @@ const TestModal = ({ setOpen }) => {
                     <div className="flex   md:justify-normal  items-end justify-end gap-4">
                       <button
                         onClick={() => {
-                            settotalPeople("");
-                            setduration("");
-                            setyear("");
-                            setmonth("");
-                            setcountry("");
-                            setRange([10000, 20000]);
-                            reset();
+                          settotalPeople("");
+                          setduration("");
+                          setyear("");
+                          setmonth("");
+                          setcountry("");
+                          setRange([10000, 20000]);
+                          reset();
                           setOpen(false);
                         }}
-                        // onClick={() => {
-                        //   settotalPeople("");
-                        //   setduration("");
-                        //   setyear("");
-                        //   setmonth("");
-                        //   setcountry("");
-                        //   setRange([10000, 20000]);
-                        //   reset();
-                        // }}
                         className="flex shadow-md items-center text-sm lg:text-base px-3 lg:px-6 py-3 border border-primary gap-2"
                       >
-                        Close
+                        {t("testModal.close")}
                       </button>
                       <button
                         type="submit"
                         className="flex items-center bg-primary text-sm lg:text-base text-white px-6 py-3 border border-primary  gap-2"
                       >
-                        Submit
+                        {t("testModal.submit")}
                       </button>
                     </div>
                   </div>

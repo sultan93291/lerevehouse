@@ -28,8 +28,10 @@ import sea from "../../assets/images/recomended-attraction/sea.png";
 import React, { useState, useEffect, useRef } from "react";
 import WishListCard from "../Cards/WishListCard";
 import { Dialog } from "@radix-ui/react-dialog";
+import { useTranslation } from "react-i18next";
 
 const WishListModal = ({ open, setOpen, onSpeakToExpertClick }) => {
+  const { t } = useTranslation();
   const {
     register,
     handleSubmit,
@@ -38,13 +40,13 @@ const WishListModal = ({ open, setOpen, onSpeakToExpertClick }) => {
 
   const onSubmit = (data) => {
     console.log(data);
-    toast.success("Form Submitted Successfully");
+    toast.success(t("form.successMessage") || "Form Submitted Successfully");
     setOpen(false);
   };
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="w-[400px]  border z-[9999] text-center font-nunito">
+      <DialogContent className="w-[400px] border z-[9999] text-center font-nunito">
         {/* Wrap everything in a container that can scroll and hide scrollbar */}
         <div className="max-h-[80vh] overflow-y-auto scrollbar-hide">
           <DialogHeader>
@@ -52,10 +54,10 @@ const WishListModal = ({ open, setOpen, onSpeakToExpertClick }) => {
               {/* title */}
               <div className="flex flex-col md:w-full items-center justify-center md:gap-y-6 gap-y-3">
                 <h2 className="font-fontSpring text-[#004265] text-2xl font-light leading-[120%]">
-                  Your Wishlist
+                  {t("wishlistModal.title")}
                 </h2>
                 <span className="text-base md:text-[22px] text-center font-interTight text-[#565656] md:max-w-[422px] px-5 font-normal leading-[150%]">
-                  Your journey awaits here. See your listing on here.
+                  {t("wishlistModal.subtitle")}
                 </span>
               </div>
             </DialogTitle>
@@ -70,7 +72,7 @@ const WishListModal = ({ open, setOpen, onSpeakToExpertClick }) => {
                   onClick={onSpeakToExpertClick}
                   className="md:w-full w-[250px] mx-auto text-white h-auto md:py-4 py-2 bg-[#004265] md:text-base text-sm font-semibold font-interTight"
                 >
-                  Speak To An Expert
+                  {t("wishlistModal.speakToExpert")}
                 </button>
               </div>
             </DialogDescription>
@@ -82,3 +84,8 @@ const WishListModal = ({ open, setOpen, onSpeakToExpertClick }) => {
 };
 
 export default WishListModal;
+
+
+
+
+
