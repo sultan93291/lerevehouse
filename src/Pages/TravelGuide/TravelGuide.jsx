@@ -4,9 +4,12 @@ import {
   useGetDestinationOvreviewDetailsQuery,
   useGetDestinationsHeroSectionDataQuery,
   useGetTravelMainHeroSectionDataQuery,
+  useMetaDetailsDataMutation,
 } from "@/Redux/features/api/apiSlice";
 import { InfinitySpin } from "react-loader-spinner";
 import { useTranslation } from "react-i18next";
+import { useEffect, useState } from "react";
+import HelmetComponent from "@/components/Helmet/Helmet";
 
 const TravelGuide = () => {
   const { t } = useTranslation();
@@ -20,6 +23,20 @@ const TravelGuide = () => {
     refetchOnReconnect: true,
   });
 
+  const [
+    metaDetailsData,
+    { isLoading: isMetaDataLoading, isSuccess, isError },
+  ] = useMetaDetailsDataMutation();
+
+  const [metaData, setMetaData] = useState(null);
+
+  useEffect(() => {
+    metaDetailsData("guide_tourist")
+      .unwrap()
+      .then(res => setMetaData(res?.data))
+      .catch(err => console.error("Meta save error:", err));
+  }, [metaDetailsData]);
+
   // Fetch hero section data
   const {
     data: heroSectionData,
@@ -29,7 +46,6 @@ const TravelGuide = () => {
     refetchOnFocus: true,
     refetchOnReconnect: true,
   });
-
 
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
 
@@ -83,7 +99,10 @@ const TravelGuide = () => {
   if (error || heroSectionError) return <div>Error loading data</div>;
 
   return (
-    <div>
+    <HelmetComponent
+      title={metaData?.title}
+      description={metaData?.description}
+    >
       {/* Hero section */}
       <CommonHeroBanner
         bg={`${imgBaseurl}/${heroSectionData?.data?.background_image}`}
@@ -121,7 +140,7 @@ const TravelGuide = () => {
           </div>
         </div>
       </section>
-    </div>
+    </HelmetComponent>
   );
 };
 

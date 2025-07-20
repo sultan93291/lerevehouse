@@ -1,5 +1,5 @@
 import CommonHeroBanner from "@/components/common/HeroBanner/CommonHeroBanner";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ExploreJourney from "@/components/TravelStylesDetails/ExploreJourney";
 import FeaturedTravels from "@/components/TravelStylesDetails/FeaturedTravels";
 import HoneyMoon from "../../assets/images/honey-moon/honeymoon.png";
@@ -7,12 +7,29 @@ import {
   useGetHoneyMoonHeroSectionDataQuery,
   useGetTransportationHeroSectionDataQuery,
   useGetTripPackageDetailsQuery,
+  useMetaDetailsDataMutation,
 } from "@/Redux/features/api/apiSlice";
 import { InfinitySpin } from "react-loader-spinner";
 import toast from "react-hot-toast";
+import HelmetComponent from "@/components/Helmet/Helmet";
 
 const ViagaNozi = () => {
   const id = 1;
+
+    const [
+      metaDetailsData,
+      { isLoading: isMetaDataLoading, isSuccess, isError },
+    ] = useMetaDetailsDataMutation();
+
+    const [metaData, setMetaData] = useState(null);
+
+    useEffect(() => {
+      metaDetailsData("honeymoon")
+        .unwrap()
+        .then(res => setMetaData(res?.data))
+        .catch(err => console.error("Meta save error:", err));
+    }, [metaDetailsData]);
+
   const { data, error, isLoading } = useGetTripPackageDetailsQuery(id, {
     refetchOnFocus: true,
     refetchOnReconnect: true,
@@ -63,14 +80,17 @@ const ViagaNozi = () => {
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
 
   return (
-    <div>
+    <HelmetComponent
+      title={metaData?.title}
+      description={metaData?.description}
+    >
       <CommonHeroBanner
         bg={`${imgBaseurl}/${honeyMoondata?.data?.background_image}`}
         title={honeyMoondata?.data?.title}
       />
       {/* <ExploreJourney isBtn={false} btnTxt={"All honeymoon Trips "} /> */}
       <FeaturedTravels data={data?.data} isHoneyMoon={true} />
-    </div>
+    </HelmetComponent>
   );
 };
 
