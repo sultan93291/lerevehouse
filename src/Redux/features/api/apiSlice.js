@@ -6,7 +6,6 @@ const SiteURl = import.meta.env.VITE_SERVER_BASE_URL;
 
 const lan = localStorage.getItem("lan");
 
- 
 export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: axiosBaseQuery({ baseUrl: SiteURl }),
@@ -396,7 +395,7 @@ export const apiSlice = createApi({
 
     globalSearch: builder.query({
       query: query => ({
-        url: `/global-search?query=${query}`,
+        url: `/global-search?query=${query}&lan=${lan ? lan : "en"}`,
         method: `GET`,
       }),
     }),
@@ -409,9 +408,16 @@ export const apiSlice = createApi({
     }),
 
     getTravelStylesDetailsData: builder.query({
-      query: (id) => ({
+      query: id => ({
         url: `/travel-styles-details/${id}`,
         method: `GET`,
+      }),
+    }),
+
+    MetaDetailsData: builder.mutation({
+      query: name => ({
+        url: `/meta-tags?page=${name}&lan=${lan ? lan : "en"}`,
+        method: `POST`,
       }),
     }),
   }),
@@ -472,5 +478,6 @@ export const {
   useGetTermsAndConditionDataQuery,
   useGlobalSearchQuery,
   useGetTravelMainHeroSectionDataQuery,
-  useGetTravelStylesDetailsDataQuery
+  useGetTravelStylesDetailsDataQuery,
+  useMetaDetailsDataMutation,
 } = apiSlice;

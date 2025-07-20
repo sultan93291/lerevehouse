@@ -35,6 +35,9 @@ const TouristListDetails = () => {
     refetchOnReconnect: true,
   });
 
+  console.log(allPackaageData);
+  
+
   const {
     data: reviewData,
     error: allReviewError,

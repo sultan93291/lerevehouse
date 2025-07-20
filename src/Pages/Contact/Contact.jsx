@@ -12,14 +12,31 @@ import { Link } from "react-router-dom";
 import {
   useGetContactHeroSectionDataQuery,
   useGetOfficeDataQuery,
+  useMetaDetailsDataMutation,
 } from "@/Redux/features/api/apiSlice";
 import { InfinitySpin } from "react-loader-spinner";
+import { useEffect, useState } from "react";
+import HelmetComponent from "@/components/Helmet/Helmet";
 
 const Contact = () => {
   const handleDestinationMap = address => {
     const location = `https://www.google.com/maps?q=${address}`;
     window.open(location, "_blank");
   };
+
+  const [
+    metaDetailsData,
+    { isLoading: isMetaDataLoading, isSuccess, isError },
+  ] = useMetaDetailsDataMutation();
+
+  const [metaData, setMetaData] = useState(null);
+
+  useEffect(() => {
+    metaDetailsData("contact_us")
+      .unwrap()
+      .then(res => setMetaData(res?.data))
+      .catch(err => console.error("Meta save error:", err));
+  }, [metaDetailsData]);
 
   const { data, error, isLoading } = useGetContactHeroSectionDataQuery(
     undefined,
@@ -73,7 +90,10 @@ const Contact = () => {
   const baseImgUrl = import.meta.env.VITE_SERVER_URL;
 
   return (
-    <div>
+    <HelmetComponent
+      title={metaData?.title}
+      description={metaData?.description}
+    >
       {/* Hero section */}
       <CommonHeroBannerVideo
         heroBg={`${baseImgUrl}/${data?.data?.file_url}`}
@@ -134,7 +154,7 @@ const Contact = () => {
           })}
         </div>
       </section>
-    </div>
+    </HelmetComponent>
   );
 };
 

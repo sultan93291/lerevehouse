@@ -20,7 +20,10 @@
     "title": "Frequently asked questions",
     "subtitle": "Questions? Answers."
   },
-
+  "navbar": {
+    "search": "Search",
+    "contact": "Contact"
+  },
   "smartOffers": {
     "heading": "<span class=\"text-secondary\">Smart</span> Offers"
   },
@@ -41,7 +44,14 @@
     "emailPlaceholder": "Email Address",
     "signupBtn": "Sign Up",
     "terms": "Terms of service",
-    "privacy": "Privacy Policy"
+    "privacy": "Privacy Policy",
+    "trip": "Trip to Canada",
+    "honeymoon": "Honeymoon",
+    "tourist": "Tourist",
+    "canada": "Canada Map ",
+    "cell": "Cell",
+    "tel": "Tel",
+    "email": "Email"
   },
   "destination": {
     "ourDestinations": "Our Destinations"
