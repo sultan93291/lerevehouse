@@ -21,6 +21,7 @@ export const apiSlice = createApi({
 
     tripPackages: builder.query({
       query: id => ({
+       
         url: `/trip-packages?destination_id=${id ? id : 1}`,
         method: "GET",
       }),
@@ -395,7 +396,7 @@ export const apiSlice = createApi({
 
     globalSearch: builder.query({
       query: query => ({
-        url: `/global-search?query=${query}&lan=${lan ? lan : "en"}`,
+        url: `/global-search?query=${query}`,
         method: `GET`,
       }),
     }),
@@ -416,7 +417,7 @@ export const apiSlice = createApi({
 
     MetaDetailsData: builder.mutation({
       query: name => ({
-        url: `/meta-tags?page=${name}&lan=${lan ? lan : "en"}`,
+        url: `/meta-tags?page=${name}`,
         method: `POST`,
       }),
     }),
