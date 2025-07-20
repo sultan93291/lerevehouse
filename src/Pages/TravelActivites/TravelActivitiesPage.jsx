@@ -8,12 +8,29 @@ import {
   useGetAcitivityHeroSectionQuery,
   useGetActivityDetailsQuery,
   useGetAcitivitySloganDataQuery,
+  useMetaDetailsDataMutation,
 } from "@/Redux/features/api/apiSlice";
 import { InfinitySpin } from "react-loader-spinner";
 import toast from "react-hot-toast";
 import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import HelmetComponent from "@/components/Helmet/Helmet";
 
 const TravelActivitiesPage = () => {
+  const [
+    metaDetailsData,
+    { isLoading: isMetaDataLoading, isSuccess, isError },
+  ] = useMetaDetailsDataMutation();
+
+  const [metaData, setMetaData] = useState(null);
+
+  useEffect(() => {
+    metaDetailsData("activity")
+      .unwrap()
+      .then(res => setMetaData(res?.data))
+      .catch(err => console.error("Meta save error:", err));
+  }, [metaDetailsData]);
+
   const { data, error, isLoading } = useGetAcitivityHeroSectionQuery(
     undefined,
     {
@@ -56,7 +73,6 @@ const TravelActivitiesPage = () => {
 
   console.log(location.pathname);
 
-
   if (activitySloganError) {
     const errorMessage =
       activitySloganError.data?.message ||
@@ -90,7 +106,10 @@ const TravelActivitiesPage = () => {
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
 
   return (
-    <div>
+    <HelmetComponent
+      title={metaData?.title}
+      description={metaData?.description}
+    >
       <CommonHeroBannerV2
         isAcitivity={true}
         item={data?.data[0]}
@@ -107,7 +126,7 @@ const TravelActivitiesPage = () => {
           imgUrl={`${imgBaseurl}/${activitySloganData?.data?.background_image}`}
         />
       </div>
-    </div>
+    </HelmetComponent>
   );
 };
 

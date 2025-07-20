@@ -7,10 +7,13 @@ import TravelCta from "../../components/TravelStyles/TravelCta";
 import {
   useGetTravelStylesDescreptionDataQuery,
   useGetTravelStylesHeroSectionDataQuery,
+  useMetaDetailsDataMutation,
 } from "@/Redux/features/api/apiSlice";
 import { InfinitySpin } from "react-loader-spinner";
 import { useTranslation } from "react-i18next";
 import toast from "react-hot-toast";
+import { useEffect, useState } from "react";
+import HelmetComponent from "@/components/Helmet/Helmet";
 
 const TravelStylePage = () => {
   const { t } = useTranslation();
@@ -21,6 +24,20 @@ const TravelStylePage = () => {
       refetchOnReconnect: true,
     }
   );
+
+  const [
+    metaDetailsData,
+    { isLoading: isMetaDataLoading, isSuccess, isError },
+  ] = useMetaDetailsDataMutation();
+
+  const [metaData, setMetaData] = useState(null);
+
+  useEffect(() => {
+    metaDetailsData("travel_style")
+      .unwrap()
+      .then(res => setMetaData(res?.data))
+      .catch(err => console.error("Meta save error:", err));
+  }, [metaDetailsData]);
 
   const {
     data: descreptionData,
@@ -69,7 +86,10 @@ const TravelStylePage = () => {
   const styledTxt = slicedTxt.slice(1).join(" ");
 
   return (
-    <div>
+    <HelmetComponent
+      title={metaData?.title}
+      description={metaData?.description}
+    >
       <CommonHeroBanner
         bg={`${imgBaseurl}/${data?.data?.background_image}`}
         uppercaseItalic={true}
@@ -86,7 +106,7 @@ const TravelStylePage = () => {
         description={descreptionData?.data[0]?.short_description}
         btnText={t("btnText")}
       />
-    </div>
+    </HelmetComponent>
   );
 };
 
