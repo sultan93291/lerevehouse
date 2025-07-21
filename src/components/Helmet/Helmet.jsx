@@ -2,13 +2,16 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 
-const Helmet = ({ title, description }) => {
+const HelmetComponent = ({ title, description, children }) => {
   return (
-    <Helmet>
-      <title>{title ? `${title} | My Website` : "My Website"}</title>
-      {description && <meta name="description" content={description} />}
-    </Helmet>
+    <>
+      <Helmet>
+        <title>{title}</title>
+        {description && <meta name="description" content={description} />}
+      </Helmet>
+      {children} 
+    </>
   );
 };
 
-export default Helmet;
+export default HelmetComponent;

@@ -3,11 +3,29 @@ import SingleDestinationCard from "@/components/common/Cards/SingleDestinationCa
 import {
   useGetDestinationOvreviewDetailsQuery,
   useGetDestinationsHeroSectionDataQuery,
+  useMetaDetailsDataMutation,
 } from "@/Redux/features/api/apiSlice";
 import { InfinitySpin } from "react-loader-spinner";
 import { useTranslation } from "react-i18next";
+import { useEffect, useState } from "react";
+import HelmetComponent from "@/components/Helmet/Helmet";
+
 
 const Destination = () => {
+  const [
+    metaDetailsData,
+    { isLoading: isMetaDataLoading, isSuccess, isError },
+  ] = useMetaDetailsDataMutation();
+
+  const [metaData, setMetaData] = useState(null);
+
+  useEffect(() => {
+    metaDetailsData("destination")
+      .unwrap()
+      .then(res => setMetaData(res?.data))
+      .catch(err => console.error("Meta save error:", err));
+  }, [metaDetailsData]);
+
   const { t } = useTranslation();
   const {
     data: destinationsData,
@@ -27,8 +45,6 @@ const Destination = () => {
     refetchOnFocus: true,
     refetchOnReconnect: true,
   });
-
-  console.log(heroSectionData);
 
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
 
@@ -82,7 +98,10 @@ const Destination = () => {
   if (error || heroSectionError) return <div>Error loading data</div>;
 
   return (
-    <div>
+    <HelmetComponent
+      title={metaData?.title}
+      description={metaData?.description}
+    >
       {/* Hero section */}
       <CommonHeroBanner
         bg={`${imgBaseurl}/${heroSectionData?.data[0]?.background_image}`}
@@ -118,7 +137,7 @@ const Destination = () => {
           </div>
         </div>
       </section>
-    </div>
+    </HelmetComponent>
   );
 };
 

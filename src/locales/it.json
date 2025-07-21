@@ -21,6 +21,10 @@
     "title": "Domande frequenti",
     "subtitle": "Domande? Risposte."
   },
+  "navbar": {
+    "search": "Cerca",
+    "contact": "Contatto"
+  },
   "smartOffers": {
     "heading": "<span class=\"text-secondary\">Offerte</span> Intelligenti"
   },
@@ -40,7 +44,14 @@
     "emailPlaceholder": "Indirizzo Email",
     "signupBtn": "Iscriviti",
     "terms": "Termini di servizio",
-    "privacy": "Politica sulla privacy"
+    "privacy": "Politica sulla privacy",
+    "trip": "Viaggio in Canada",
+    "honeymoon": "Luna di miele",
+    "tourist": "Turista",
+    "canada": "Mappa del Canada",
+    "cell": "Cellulare",
+    "tel": "Telefono",
+    "email": "Email"
   },
   "destination": {
     "ourDestinations": "Le nostre destinazioni"

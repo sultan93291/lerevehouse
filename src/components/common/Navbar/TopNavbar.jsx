@@ -17,16 +17,17 @@ import {
 import { InfinitySpin } from "react-loader-spinner";
 import { useDispatch, useSelector } from "react-redux";
 import { setLanguage } from "@/Redux/features/languageSlice";
+import { useTranslation } from "react-i18next";
+
 
 const TopNavbar = () => {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
   const sideBarRef = useRef(null);
-
   const navigate = useNavigate();
   const dispatch = useDispatch();
+   const { t } = useTranslation();
 
   const language = useSelector(state => state.language.language);
-
 
   const {
     data: officeData,
@@ -74,13 +75,15 @@ const TopNavbar = () => {
     window.open(location, "_blank");
   };
 
+ 
+
   const topNavLinks = [
     {
-      title: "Search",
+      title: t("navbar.search"),
       svg: <SearchSvgNavbar />,
     },
     {
-      title: "Contact",
+      title: t("navbar.contact"),
       svg: <EmailSvgNavbar />,
     },
   ];
@@ -190,7 +193,7 @@ const TopNavbar = () => {
                   className="w-[280px] !z-[999] py-8 bg-white border-r-[1px] border-solid border-gray-200 top-0 left-0 flex flex-col items-start justify-start h-full gap-y-8"
                 >
                   <img
-                    onClick={() => { }}
+                    onClick={() => {}}
                     className="h-[70px] w-[220px] object-contain"
                     src={logo}
                     alt="Logo"
@@ -203,9 +206,10 @@ const TopNavbar = () => {
                           key={tab?.category}
                           onClick={() => setIsSideBarOpen(false)}
                           className={({ isActive }) =>
-                            `${isActive
-                              ? "text-[#7BD1FF] opacity-100"
-                              : "text-text-black opacity-65"
+                            `${
+                              isActive
+                                ? "text-[#7BD1FF] opacity-100"
+                                : "text-text-black opacity-65"
                             } font-inter uppercase font-semibold text-sm hover:opacity-100 transition-all duration-300`
                           }
                         >

@@ -7,12 +7,29 @@ import { useEffect, useMemo, useState } from "react";
 import ActivitiesSubcategoryCard from "@/components/common/Cards/ActivitiesSubcategoryCard";
 import { useParams } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import { useGetSingleActivityDetailsQuery } from "@/Redux/features/api/apiSlice";
+import {
+  useGetSingleActivityDetailsQuery,
+  useMetaDetailsDataMutation,
+} from "@/Redux/features/api/apiSlice";
 import { InfinitySpin } from "react-loader-spinner";
 import toast from "react-hot-toast";
+import HelmetComponent from "@/components/Helmet/Helmet";
 
 const ActivitiesSubcategory = () => {
   const location = useLocation();
+
+  const [metaDetailsData, { isLoading: isMetaLoading, isSuccess, isError }] =
+    useMetaDetailsDataMutation();
+
+  const [metaData, setMetaData] = useState(null);
+
+  useEffect(() => {
+    metaDetailsData("activity_details")
+      .unwrap()
+      .then(res => setMetaData(res?.data))
+      .catch(err => console.error("Meta save error:", err));
+  }, [metaDetailsData]);
+
   const [allActitvitySubCategoryTab, setallActitvitySubCategoryTab] = useState(
     []
   );
@@ -74,7 +91,10 @@ const ActivitiesSubcategory = () => {
   }, [data]);
 
   return (
-    <>
+    <HelmetComponent
+      title={metaData?.title}
+      description={metaData?.description}
+    >
       <div>
         <CommonHeroBanner bg={heroImg} title={id} italic="Activities" />
         {/* description */}
@@ -138,7 +158,7 @@ const ActivitiesSubcategory = () => {
           </div>
         </section>
       </div>
-    </>
+    </HelmetComponent>
   );
 };
 

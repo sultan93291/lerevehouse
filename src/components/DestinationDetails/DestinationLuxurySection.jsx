@@ -3,8 +3,8 @@ import { useTranslation } from "react-i18next";
 import LuxuryCard from "../common/Cards/LuxuryCard";
 
 const DestinationLuxurySection = ({ luxuryPlacesInfo }) => {
-  console.log(luxuryPlacesInfo);
   const { t } = useTranslation();
+  
 
   return (
     <div id="where-to-stay" className="xl:my-20 mt-12">

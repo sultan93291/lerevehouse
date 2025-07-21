@@ -12,17 +12,20 @@ const axiosBaseQuery =
   ({ baseUrl, defaultHeaders = {} } = {}) =>
   async ({ url, method = "GET", data, params, headers = {} }) => {
     try {
-      // Check if the data is FormData and adjust headers
       const isFormData = data instanceof FormData;
+
       const finalHeaders = {
         ...(isFormData ? {} : { "Content-Type": "application/json" }),
         ...defaultHeaders,
         ...headers,
       };
 
-      // Make the request
+      // Add lan=... properly based on whether URL already has ?
+      const separator = url.includes("?") ? "&" : "?";
+      const fullUrl = `${baseUrl}${url}${separator}lan=${lan || "en"}`;
+
       const response = await axios({
-        url: `${baseUrl}${url}?lan=${lan ? lan : "en"}`,
+        url: fullUrl,
         method,
         headers: finalHeaders,
         data: ["POST", "PUT", "PATCH"].includes(method.toUpperCase())

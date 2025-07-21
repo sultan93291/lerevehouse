@@ -38,14 +38,19 @@ const Footer = () => {
   if (isLoading || isSiteSettingLoading) {
     return (
       <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center z-50 bg-white">
-        <InfinitySpin visible={true} width="200" color="#004265" ariaLabel="infinity-spin-loading" />
+        <InfinitySpin
+          visible={true}
+          width="200"
+          color="#004265"
+          ariaLabel="infinity-spin-loading"
+        />
       </div>
     );
   }
 
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
 
-  const handleDestinationMap = (address) => {
+  const handleDestinationMap = address => {
     const location = `https://www.google.com/maps?q=${address}`;
     window.open(location, "_blank");
   };
@@ -65,7 +70,9 @@ const Footer = () => {
             <div className="space-y-3">
               <h4>{t("footer.headquarters")}</h4>
               <p
-                onClick={() => handleDestinationMap(officeData?.data[0]?.address)}
+                onClick={() =>
+                  handleDestinationMap(officeData?.data[0]?.address)
+                }
                 className="text-[#B0C4CF] cursor-pointer"
               >
                 {officeData?.data[0]?.address}
@@ -74,19 +81,25 @@ const Footer = () => {
             <div className="space-y-3">
               <h4>{t("footer.italyOffice")}</h4>
               <p
-                onClick={() => handleDestinationMap(officeData?.data[1]?.address)}
+                onClick={() =>
+                  handleDestinationMap(officeData?.data[1]?.address)
+                }
                 className="text-[#B0C4CF] text-sm lg:text-base cursor-pointer"
               >
                 {officeData?.data[1]?.address}
               </p>
-              <p className="text-[#B0C4CF]">Cell: {officeData?.data[0]?.phone}</p>
-              <p className="text-[#B0C4CF]">Tel: {officeData?.data[0]?.telephone}</p>
+              <p className="text-[#B0C4CF]">
+                {t("footer.cell")}: {officeData?.data[0]?.phone}
+              </p>
+              <p className="text-[#B0C4CF]">
+                {t("footer.tel")}: {officeData?.data[0]?.telephone}
+              </p>
               <p>
                 <a
                   href={`mailto:${officeData?.data[1]?.email}`}
                   className="text-[#B0C4CF] cursor-pointer"
                 >
-                  Email: {officeData?.data[1]?.email}
+                  {t("footer.email")}: {officeData?.data[1]?.email}
                 </a>
               </p>
             </div>
@@ -94,20 +107,34 @@ const Footer = () => {
 
           {/* Discover */}
           <div>
-            <h4 className="text-[#B0C4CF] pb-3 text-lg">{t("footer.discover")}</h4>
+            <h4 className="text-[#B0C4CF] pb-3 text-lg">
+              {t("footer.discover")}
+            </h4>
             <div className="space-y-3 text-sm lg:text-base cursor-pointer">
-              <p><Link to="/destination-details/2">Trip to Canada</Link></p>
-              <p><Link to="/viaggi-noze">Honeymoon Trip</Link></p>
-              <p><Link to="/tourist-guide">Tourist Guide</Link></p>
-              <p><Link to="/canada-map">Canada Map</Link></p>
+              <p>
+                <Link to="/destination-details/2">{t("footer.trip")}</Link>
+              </p>
+              <p>
+                <Link to="/viaggi-noze">{t("footer.honeymoon")}</Link>
+              </p>
+              <p>
+                <Link to="/tourist-guide">{t("footer.tourist")}</Link>
+              </p>
+              {/* <p>
+                <Link to="/canada-map">{t("footer.canada")}</Link>
+              </p> */}
             </div>
           </div>
 
           {/* Newsletter */}
           <div>
             <div className="space-y-3">
-              <h4 className="text-xl xl:text-3xl font-semibold">{t("footer.newsletterTitle")}</h4>
-              <p className="text-sm lg:text-base">{t("footer.newsletterText")}</p>
+              <h4 className="text-xl xl:text-3xl font-semibold">
+                {t("footer.newsletterTitle")}
+              </h4>
+              <p className="text-sm lg:text-base">
+                {t("footer.newsletterText")}
+              </p>
             </div>
 
             <form className="mt-5 space-y-5">
@@ -123,7 +150,7 @@ const Footer = () => {
               </label>
 
               <button
-                onClick={(e) => e.preventDefault()}
+                onClick={e => e.preventDefault()}
                 type="submit"
                 className="bg-secondary px-8 2xl:px-10 3xl:px-20 py-3 font-interTight text-white font-semibold transition-all duration-300 hover:bg-white border border-secondary hover:text-secondary"
               >
@@ -145,10 +172,10 @@ const Footer = () => {
 
           {/* Social Icons */}
           <div className="flex justify-between items-center gap-5">
-            {data?.data.map((item) => (
+            {data?.data.map(item => (
               <Link
                 key={item?.link}
-                onClick={() => window.location.href = item?.profile_link}
+                onClick={() => (window.location.href = item?.profile_link)}
                 className="block"
               >
                 <img

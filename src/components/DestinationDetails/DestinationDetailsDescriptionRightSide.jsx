@@ -14,9 +14,9 @@ const DestinationDetailsDescriptionRightSide = ({ data }) => {
         {/* HTML description */}
         <div className="mb-10">
           <div
+            className="prose leading-[165%] prose-lg "
             dangerouslySetInnerHTML={{ __html: data?.description }}
-            className="prose leading-[165%] prose-lg"
-          ></div>
+          />
         </div>
 
         {/* CTA card */}

@@ -160,7 +160,15 @@ const router = createBrowserRouter([
         element: <CanadaMap />,
       },
       {
+        path: "/canada-map",
+        element: <CanadaMap />,
+      },
+      {
         path: "/pages/privacy-policy",
+        element: <DynamicPage />,
+      },
+      {
+        path: "/pages/terms-and-conditions",
         element: <DynamicPage />,
       },
       {

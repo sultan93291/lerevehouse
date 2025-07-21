@@ -6,7 +6,6 @@ const SiteURl = import.meta.env.VITE_SERVER_BASE_URL;
 
 const lan = localStorage.getItem("lan");
 
- 
 export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: axiosBaseQuery({ baseUrl: SiteURl }),
@@ -409,8 +408,22 @@ export const apiSlice = createApi({
     }),
 
     getTravelStylesDetailsData: builder.query({
-      query: (id) => ({
+      query: id => ({
         url: `/travel-styles-details/${id}`,
+        method: `GET`,
+      }),
+    }),
+
+    MetaDetailsData: builder.mutation({
+      query: name => ({
+        url: `/meta-tags?page=${name}`,
+        method: `POST`,
+      }),
+    }),
+
+    getAccomadationDetails: builder.query({
+      query: id => ({
+        url: `/accommodation-details/${id}`,
         method: `GET`,
       }),
     }),
@@ -472,5 +485,7 @@ export const {
   useGetTermsAndConditionDataQuery,
   useGlobalSearchQuery,
   useGetTravelMainHeroSectionDataQuery,
-  useGetTravelStylesDetailsDataQuery
+  useGetTravelStylesDetailsDataQuery,
+  useMetaDetailsDataMutation,
+  useGetAccomadationDetailsQuery,
 } = apiSlice;
