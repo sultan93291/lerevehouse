@@ -393,5 +393,50 @@
   },
   "form": {
     "successMessage": "Form Submitted Successfully"
+  },
+  "touristGuide": {
+    "sectionTabs": [
+      "{{title}} Holiday",
+      "Tour",
+      "Place to visit",
+      "Where to stay"
+    ]
+  },
+  "explorebuttons": {
+    "explore": "Explore"
+  },
+  "destination1": {
+    "mapTitle": "{{name}} Map",
+    "topPlacesTitle": "Top Place to <italic>Visit in {{name}}</italic>"
+  },
+  "travelCard": {
+    "dayTrip": "{{count}} Day Trip",
+    "viewTour": "View This Tour"
+  },
+  "journey": {
+    "title": "Start your journey today",
+    "addItineraryWarning": "To send queries, please add at least one itinerary",
+    "form": {
+      "name": "Your name*",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email address*",
+      "emailPlaceholder": "example@gmail.com",
+      "telephone": "Telephone*",
+      "telephonePlaceholder": "Phone Number",
+      "note": "Notes",
+      "notePlaceholder": "Select as many options you want",
+      "consent": "I consent to the processing of personal data in compliance with Legislative Decree 196/03 and amendments.",
+      "submit": "Speak To An Expert",
+      "submitting": "Sending query ..."
+    },
+    "errors": {
+      "firstName": "First name is required",
+      "lastName": "Last name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Invalid email format",
+      "phone": "Phone number is required",
+      "consent": "You must consent to data processing"
+    }
   }
 }

@@ -8,6 +8,7 @@ import DestinationLuxurySection from "@/components/DestinationDetails/Destinatio
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+
 import {
   useGetAccomadationsDataQuery,
   useGetDestinationDetailsPackageQuery,
@@ -15,10 +16,11 @@ import {
 } from "@/Redux/features/api/apiSlice";
 import toast from "react-hot-toast";
 import { InfinitySpin } from "react-loader-spinner";
+import { useTranslation } from "react-i18next";
 
 const DestinationDetails = () => {
   const { id } = useParams();
-
+  const { t } = useTranslation();
   const { data, error, isLoading } = useGetDestinationDetailsQuery(id, {
     refetchOnFocus: true,
     refetchOnReconnect: true,
@@ -49,12 +51,18 @@ const DestinationDetails = () => {
   };
 
   const title = data?.data?.name || "";
-  const sectionTabs = [
-    { label: `${title} Holiday`, link: `${title}-holiday` },
-    { label: "Tour", link: "suggestions" },
-    { label: "Place to visit", link: "places-to-visit" },
-    { label: "Where to stay", link: "where-to-stay" },
-  ];
+  const sectionTabs = t("touristGuide.sectionTabs", {
+    returnObjects: true,
+    title,
+  })?.map((label, index) => ({
+    label,
+    link: [
+      `${title}-holiday`,
+      "suggestions",
+      "places-to-visit",
+      "where-to-stay"
+    ][index]
+  }));
 
   const [activeTab, setActiveTab] = useState(null);
 

@@ -392,5 +392,50 @@
   },
   "form": {
     "successMessage": "Modulo inviato con successo"
+  },
+  "touristGuide": {
+    "sectionTabs": [
+      "Vacanze a {{title}}",
+      "Tour",
+      "Luoghi da visitare",
+      "Dove alloggiare"
+    ]
+  },
+  "explorebuttons": {
+    "explore": "Esplora"
+  },
+  "destination1": {
+    "mapTitle": "Mappa di {{name}}",
+    "topPlacesTitle": "Posti migliori da <italic>visitare a {{name}}</italic>"
+  },
+  "travelCard": {
+    "dayTrip": "Viaggio di {{count}} giorni",
+    "viewTour": "Vedi il Tour"
+  },
+  "journey": {
+    "title": "Inizia il tuo viaggio oggi",
+    "addItineraryWarning": "Per inviare richieste, aggiungi almeno un itinerario",
+    "form": {
+      "name": "Il tuo nome*",
+      "firstName": "Nome",
+      "lastName": "Cognome",
+      "email": "Indirizzo email*",
+      "emailPlaceholder": "esempio@gmail.com",
+      "telephone": "Telefono*",
+      "telephonePlaceholder": "Numero di telefono",
+      "note": "Note",
+      "notePlaceholder": "Seleziona tutte le opzioni che desideri",
+      "consent": "Acconsento al trattamento dei dati personali in conformità al Decreto Legislativo 196/03 e successive modifiche.",
+      "submit": "Parla con un esperto",
+      "submitting": "Invio in corso..."
+    },
+    "errors": {
+      "firstName": "Il nome è obbligatorio",
+      "lastName": "Il cognome è obbligatorio",
+      "emailRequired": "L'email è obbligatoria",
+      "emailInvalid": "Formato email non valido",
+      "phone": "Il numero di telefono è obbligatorio",
+      "consent": "È necessario fornire il consenso al trattamento dei dati"
+    }
   }
 }

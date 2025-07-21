@@ -63,6 +63,8 @@ const AllTouristGuide = () => {
       title: 'Anchorage',
     },
   ];
+
+  
   return (
     <div className="relative">
       {/* hero */}
