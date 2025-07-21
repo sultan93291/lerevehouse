@@ -3,10 +3,12 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { DurationSvg, LinkSvg } from "../SvgContainer/SvgContainer";
 import map from "../../../assets/images/card-map.png";
+import { useTranslation } from "react-i18next";
 
 const DestinationCard = ({ item }) => {
   const [showExplore, setShowExplore] = useState(false);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const imgBaseUrl = import.meta.env.VITE_SERVER_URL;
 
@@ -23,7 +25,7 @@ const DestinationCard = ({ item }) => {
         background: `linear-gradient(180deg, rgba(30, 48, 63, 0.00) 41.29%, rgba(0, 0, 0, 0.52) 77.46%), url(${imgBaseUrl}/${item?.trip_package_image})`,
         backgroundSize: "cover",
         backgroundPosition: "40% 60%",
-        backgroundRepeat:"no-repeat"
+        backgroundRepeat: "no-repeat"
       }}
     >
       <div className="pb-8 space-y-2">
@@ -41,11 +43,10 @@ const DestinationCard = ({ item }) => {
       {/* explore button */}
       <Link
         to={`/tour-list-details/${item?.id}`}
-        className={`bg-black/20 backdrop-blur-sm px-3 py-1 absolute top-5 right-5 flex items-center gap-1 text-sm transition-all duration-300 ${
-          showExplore ? "opacity-100" : "opacity-0"
-        }`}
+        className={`bg-black/20 backdrop-blur-sm px-3 py-1 absolute top-5 right-5 flex items-center gap-1 text-sm transition-all duration-300 ${showExplore ? "opacity-100" : "opacity-0"
+          }`}
       >
-        Explore <LinkSvg />
+        {t("explorebuttons.explore")} <LinkSvg />
       </Link>
 
       {/* map */}
