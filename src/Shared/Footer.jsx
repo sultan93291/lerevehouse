@@ -120,9 +120,9 @@ const Footer = () => {
               <p>
                 <Link to="/tourist-guide">{t("footer.tourist")}</Link>
               </p>
-              <p>
+              {/* <p>
                 <Link to="/canada-map">{t("footer.canada")}</Link>
-              </p>
+              </p> */}
             </div>
           </div>
 

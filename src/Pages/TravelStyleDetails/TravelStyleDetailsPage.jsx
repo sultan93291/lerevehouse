@@ -6,12 +6,28 @@ import { useParams } from "react-router-dom";
 import {
   useGetTravelStylesDetailsDataQuery,
   useGetTripPackageDetailsQuery,
+  useMetaDetailsDataMutation,
 } from "@/Redux/features/api/apiSlice";
 import { InfinitySpin } from "react-loader-spinner";
 import toast from "react-hot-toast";
+import { useEffect, useState } from "react";
+import HelmetComponent from "@/components/Helmet/Helmet";
 
 const TravelStyleDetailsPage = () => {
   const { id } = useParams();
+
+  const [metaDetailsData, { isLoading:isMetaLoading, isSuccess, isError }] =
+    useMetaDetailsDataMutation();
+
+  const [metaData, setMetaData] = useState(null);
+
+  useEffect(() => {
+    metaDetailsData("travel_style_details")
+      .unwrap()
+      .then(res => setMetaData(res?.data))
+      .catch(err => console.error("Meta save error:", err));
+  }, [metaDetailsData]);
+
   const { data, error, isLoading } = useGetTripPackageDetailsQuery(id, {
     refetchOnFocus: true,
     refetchOnReconnect: true,
@@ -52,7 +68,10 @@ const TravelStyleDetailsPage = () => {
   console.log(`${imgBaseurl}/${singleData?.data[0]?.image}}`);
 
   return (
-    <div>
+    <HelmetComponent
+      title={metaData?.title}
+      description={metaData?.description}
+    >
       <CommonHeroBanner
         bg={`${imgBaseurl}/${singleData?.data[0]?.image}`}
         title={singleData?.data[0]?.title}
@@ -62,7 +81,7 @@ const TravelStyleDetailsPage = () => {
         btnTxt={"View All travel Style"}
       />
       <FeaturedTravels data={data?.data} />
-    </div>
+    </HelmetComponent>
   );
 };
 
