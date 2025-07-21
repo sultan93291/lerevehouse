@@ -334,6 +334,16 @@
     background-color: #fff;
   }
 
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6,
+  .prose p > strong {
+    @apply text-primary;
+  }
+
   /* .cls-1 {
     fill: none;
   } */
