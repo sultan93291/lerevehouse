@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CommonHeroBanner from "@/components/common/HeroBanner/CommonHeroBanner";
 import mountain from "../../assets/images/tour-auto/mountain.png";
 import TourAutoTabSection from "../TourAutoCanada/Sections/TourAutoTabSection/TourAutoTabSection";
@@ -7,9 +7,13 @@ import suv from "../../assets/images/tour-auto/suv.png";
 import minivan from "../../assets/images/tour-auto/minivan.jpg";
 import TestModal from "@/components/Modals/TestModal";
 import { Modal } from "@/components/Modals/Modal";
-import { useGetTransportationPageDetailsDataQuery } from "@/Redux/features/api/apiSlice";
+import {
+  useGetTransportationPageDetailsDataQuery,
+  useMetaDetailsDataMutation,
+} from "@/Redux/features/api/apiSlice";
 import { useParams } from "react-router-dom";
 import DestinationDetails from "../DestinationDetails/DestinationDetails";
+import HelmetComponent from "@/components/Helmet/Helmet";
 
 const vechicles = [
   {
@@ -36,6 +40,18 @@ const vechicles = [
 ];
 
 const TourWithCar = () => {
+  const [metaDetailsData, { isLoading: isMetaLoading, isSuccess, isError }] =
+    useMetaDetailsDataMutation();
+
+  const [metaData, setMetaData] = useState(null);
+
+  useEffect(() => {
+    metaDetailsData("transportation_details")
+      .unwrap()
+      .then(res => setMetaData(res?.data))
+      .catch(err => console.error("Meta save error:", err));
+  }, [metaDetailsData]);
+
   const [open, setOpen] = useState(false);
   const [selectedVehice, setselectedVehice] = useState(vechicles[0].id);
   const { id } = useParams();
@@ -56,11 +72,13 @@ const TourWithCar = () => {
     data?.data?.transportation_prices?.quadruple,
   ];
 
-
   const imgBaseUrl = import.meta.env.VITE_SERVER_URL;
 
   return (
-    <>
+    <HelmetComponent
+      title={metaData?.title}
+      description={metaData?.description}
+    >
       <Modal open={open} setOpen={setOpen}>
         <TestModal setOpen={setOpen} />
       </Modal>
@@ -154,7 +172,7 @@ const TourWithCar = () => {
                               className="max-w-[267px] capitalize text-[#252525] font-interTight text-[18px] leading-[120%] font-medium  "
                             >
                               {" "}
-                               {item}{" "}
+                              {item}{" "}
                             </span>
                           );
                         }
@@ -277,7 +295,7 @@ const TourWithCar = () => {
           <TourAutoTabSection data={data?.data?.transportation_ways} />
         </div>
       </section>
-    </>
+    </HelmetComponent>
   );
 };
 

@@ -18,13 +18,27 @@ import { useEffect, useState } from "react";
 import {
   useGetAcitivitySubCategoryDetailsQuery,
   useGetRecomendedActivitiesQuery,
+  useMetaDetailsDataMutation,
 } from "@/Redux/features/api/apiSlice";
+import HelmetComponent from "@/components/Helmet/Helmet";
 
 const ActivitiesDetails = () => {
   const location = useLocation();
   const [bgImg, setBgImg] = useState("");
   const [title, setTitle] = useState("");
   const { id } = useParams();
+
+  const [metaDetailsData, { isLoading: isMetaLoading, isSuccess, isError }] =
+    useMetaDetailsDataMutation();
+
+  const [metaData, setMetaData] = useState(null);
+
+  useEffect(() => {
+    metaDetailsData("activity_sub_category_details")
+      .unwrap()
+      .then(res => setMetaData(res?.data))
+      .catch(err => console.error("Meta save error:", err));
+  }, [metaDetailsData]);
 
   const { data, error, isLoading } = useGetAcitivitySubCategoryDetailsQuery(
     id || "default",
@@ -77,7 +91,10 @@ const ActivitiesDetails = () => {
   }, [location]);
 
   return (
-    <div>
+    <HelmetComponent
+      title={metaData?.title}
+      description={metaData?.description}
+    >
       <CommonHeroBanner
         uppercaseItalic={true}
         uppercaseTitle={true}
@@ -181,7 +198,7 @@ const ActivitiesDetails = () => {
           </div>
         </div>
       </section>
-    </div>
+    </HelmetComponent>
   );
 };
 

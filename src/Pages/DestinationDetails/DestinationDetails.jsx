@@ -12,12 +12,28 @@ import {
   useGetAccomadationsDataQuery,
   useGetDestinationDetailsPackageQuery,
   useGetDestinationDetailsQuery,
+  useMetaDetailsDataMutation,
 } from "@/Redux/features/api/apiSlice";
 import toast from "react-hot-toast";
 import { InfinitySpin } from "react-loader-spinner";
+import HelmetComponent from "@/components/Helmet/Helmet";
 
 const DestinationDetails = () => {
   const { id } = useParams();
+
+  const [metaDetailsData, { isLoading:isMetaloading, isSuccess, isError }] =
+    useMetaDetailsDataMutation();
+
+  const [metaData, setMetaData] = useState(null);
+
+  useEffect(() => {
+    metaDetailsData("destination_details")
+      .unwrap()
+      .then(res => setMetaData(res?.data))
+      .catch(err => console.error("Meta save error:", err));
+  }, [metaDetailsData]);
+
+
 
   const { data, error, isLoading } = useGetDestinationDetailsQuery(id, {
     refetchOnFocus: true,
@@ -32,7 +48,6 @@ const DestinationDetails = () => {
     refetchOnFocus: true,
     refetchOnReconnect: true,
   });
-
 
   const {
     data: destinationSuggestionData,
@@ -105,7 +120,11 @@ const DestinationDetails = () => {
   const DescreptionData = data?.data?.destination_details;
 
   return (
-    <div className="relative ">
+    <HelmetComponent
+      title={metaData?.title}
+      description={metaData?.description}
+      className="relative "
+    >
       {/* hero */}
       <CommonHeroBannerVideo
         heroBg={`${imgBaseurl}/${data?.data?.destination_details?.video}`}
@@ -140,11 +159,9 @@ const DestinationDetails = () => {
         <DestinationPlacesToVisit placesToVisitInfo={data?.data} />
 
         {/* Luxury Section */}
-        <DestinationLuxurySection
-          luxuryPlacesInfo={accomandationData?.data}
-        />
+        <DestinationLuxurySection luxuryPlacesInfo={accomandationData?.data} />
       </section>
-    </div>
+    </HelmetComponent>
   );
 };
 

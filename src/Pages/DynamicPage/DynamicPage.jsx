@@ -61,10 +61,8 @@ const DynamicPage = () => {
     <div className="flex flex-col gap-y-6 py-[128px] mt-[60px] container">
       <h4 className="title--xxl">{contentData?.page_title}</h4>
       <div
-        className="text-sm xl:text-lg font-inter font-medium leading-[160%] [&>p]:mb-4"
-        dangerouslySetInnerHTML={{
-          __html: contentData?.page_content,
-        }}
+        className=" mx-auto  py-8 text-gray-900 text-lg leading-relaxed tracking-wide space-y-6"
+        dangerouslySetInnerHTML={{ __html: contentData?.page_content }}
       ></div>
     </div>
   );
