@@ -12,6 +12,8 @@ const DestinationCard = ({ item }) => {
 
   const imgBaseUrl = import.meta.env.VITE_SERVER_URL;
 
+  console.log(item.duration);
+  
 
   return (
     <div

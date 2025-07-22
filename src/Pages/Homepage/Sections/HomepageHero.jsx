@@ -17,7 +17,8 @@ const HomepageHero = () => {
     }
   );
 
-  console.log(data);
+
+  
   
 
   return (

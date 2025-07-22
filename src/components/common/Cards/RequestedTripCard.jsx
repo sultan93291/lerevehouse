@@ -2,9 +2,13 @@
 
 import { Link } from "react-router-dom";
 import bg from "@/assets/images/bg.png";
+import { useTranslation } from "react-i18next";
 
 const RequestedTripCard = ({ item, idx }) => {
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
+
+  const { t } = useTranslation();
+
   return (
     <div
       className={` h-[350px] xl:h-[450px] 2xl:h-[750px] flex ${
@@ -43,7 +47,7 @@ const RequestedTripCard = ({ item, idx }) => {
             to={`/tour-list-details/${item?.id}`}
             className="underline block pt-1 lg:pt-4"
           >
-            Discover More
+            {t("discoverMore")}
           </Link>
         </div>
 
