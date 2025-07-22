@@ -4,15 +4,16 @@ import "swiper/css/pagination";
 import CommonTitle from "../common/Title/CommonTitle";
 import destinationSuggestionBg from "@/assets/images/tourtlist-bg.jpg";
 import TravelListCard from "../common/Cards/TravelListCard";
+import { useTranslation } from "react-i18next";
 // import { Pagination } from 'swiper/modules';
 
-
-const TourListDetailsSuggestions = ({data}) => {
+const TourListDetailsSuggestions = ({ data }) => {
+  const { t } = useTranslation();
   return (
     <div className="my-8 sm:my-12 xl:my-20  ">
       {/* title */}
       <div>
-        <CommonTitle title="Other tours you may be" italic="Interested In" />
+        <CommonTitle title={t("tourTitle")} />
       </div>
 
       {/* sliders */}

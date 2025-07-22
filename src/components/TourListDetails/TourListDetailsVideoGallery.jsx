@@ -1,9 +1,12 @@
+import { useTranslation } from "react-i18next";
 import CommonTitle from "../common/Title/CommonTitle";
 import { useEffect, useState } from "react";
 
 const TourListDetailsVideoGallery = ({ videos }) => {
   const [videoGallery, setvideoGallery] = useState([]);
   const imgBaseUrl = import.meta.env.VITE_SERVER_URL;
+
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (Array.isArray(videos)) {
@@ -24,7 +27,7 @@ const TourListDetailsVideoGallery = ({ videos }) => {
     <div id="Video" className="mt-8 sm:my-10 xl:my-16">
       {/* title */}
       <div>
-        <CommonTitle title="Explore our" italic="Video Gallery" />
+        <CommonTitle title={t("videoTitle")} />
       </div>
 
       {/* video gallery */}
