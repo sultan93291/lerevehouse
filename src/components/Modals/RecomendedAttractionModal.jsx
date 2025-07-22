@@ -35,6 +35,7 @@ import {
   TrafficLayer,
   useLoadScript,
 } from "@react-google-maps/api";
+import { useTranslation } from "react-i18next";
 
 // Map container style
 const containerStyle = {
@@ -45,7 +46,7 @@ const containerStyle = {
 const waypoints = [{ lat: 49.2827, lng: -123.1207 }];
 
 const RecomendedAttractionModal = ({ setOpen, modalData }) => {
-  console.log(modalData?.details);
+  const { t } = useTranslation();
 
   const containerRef = useRef(null);
   const {
@@ -67,6 +68,8 @@ const RecomendedAttractionModal = ({ setOpen, modalData }) => {
   const mapRef = useRef(null);
 
   const [activeTab, setactiveTab] = useState("Details");
+
+  console.log(modalData);
 
   // Load Google Maps API
   const { isLoaded } = useLoadScript({
@@ -134,7 +137,7 @@ const RecomendedAttractionModal = ({ setOpen, modalData }) => {
                 {modalData?.place_name}
               </h2>
               <span className="flex flex-row items-center gap-x-1 font-interTight font-normal leading-[150%] md:text-lg text-sm">
-                <Star /> 4.3 (243 reviews)
+                <Star /> 4.3 (243 {t("reviews")})
               </span>
             </div>
             <div

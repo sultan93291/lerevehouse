@@ -35,7 +35,7 @@ const RequestedTrips = () => {
         newData.type = "horizontal";
       } else if (idx === 1) {
         newData.bgColor = "#455C01";
-        newData.type = "vertical"; // fixed typo from "verticall"
+        newData.type = "vertical";
       } else if (idx === 2) {
         newData.bgColor = "#271000";
         newData.type = "vertical";

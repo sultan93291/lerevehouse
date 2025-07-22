@@ -15,6 +15,7 @@ import toast from "react-hot-toast";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import HelmetComponent from "@/components/Helmet/Helmet";
+import { useTranslation } from "react-i18next";
 
 const TravelActivitiesPage = () => {
   const [
@@ -23,6 +24,8 @@ const TravelActivitiesPage = () => {
   ] = useMetaDetailsDataMutation();
 
   const [metaData, setMetaData] = useState(null);
+
+  const { t } = useTranslation();
 
   useEffect(() => {
     metaDetailsData("activity")
@@ -70,8 +73,6 @@ const TravelActivitiesPage = () => {
   }
 
   const location = useLocation();
-
-  console.log(location.pathname);
 
   if (activitySloganError) {
     const errorMessage =
@@ -122,7 +123,7 @@ const TravelActivitiesPage = () => {
         <TravelCta
           title={activitySloganData?.data?.title}
           description={activitySloganData?.data?.short_description}
-          btnText="Contact Us"
+          btnText={t("btnText")}
           imgUrl={`${imgBaseurl}/${activitySloganData?.data?.background_image}`}
         />
       </div>
