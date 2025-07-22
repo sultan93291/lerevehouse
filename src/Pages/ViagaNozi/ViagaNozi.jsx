@@ -39,6 +39,7 @@ const ViagaNozi = () => {
       refetchOnFocus: true,
       refetchOnReconnect: true,
     });
+  
 
   const {
     data: honeyMoondata,

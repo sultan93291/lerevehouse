@@ -31,6 +31,9 @@
   "homepageTestimonials": {
     "title": "Esperienze dei clienti che parlano <br class=\"hidden lg:block\" /> da sole"
   },
+  "homepageReviewSection": {
+    "rating": "Valutazione di 4,9 su 5 basata su oltre 600 recensioni"
+  },
 
   "extraOrdinarySection": {
     "heading": "Scopri la <span class=\"text-secondary\">Gioiello Nascosto</span> che Renderà Straordinario il Tuo <br /> <span class=\"text-secondary\">Prossimo Viaggio</span>",
@@ -40,7 +43,7 @@
     "headquarters": "Le Reve House Adventure - Sede Centrale in Canada:",
     "italyOffice": "Le Reve House Itj Italia:",
     "discover": "Scopri",
-    "newsletterTitle": "Newsletter",
+    "newsletterTitle": "Notiziario",
     "newsletterText": "Iscriviti per ricevere ispirazione, notizie, offerte e consigli di viaggio.",
     "emailPlaceholder": "Indirizzo Email",
     "signupBtn": "Iscriviti",
@@ -82,11 +85,20 @@
     },
     "submitError": "Errore nell'invio del modulo:"
   },
-  "ourLuxuryAccommodation": "Our luxury accommodation",
+  "ourLuxuryAccommodation": "La nostra sistemazione di lusso",
   "btnText": "Contattaci",
+  "reviews": "recensioni",
+  "discoverMore": "Scopri di più",
 
   "exploreHeading": "Esplora i nostri <italic>stili di viaggio qui sotto</italic> per iniziare il tuo viaggio",
   "viewAll": "Vedi tutto",
+  "sectionsTab": {
+    "description": "Descrizione",
+    "itinerary-plan": "Piano dell'itinerario",
+    "dates-and-price": "Date e Prezzo",
+    "brochure-download": "Scarica la Brochure",
+    "video": "Video"
+  },
   "travelCards": {
     "honeymoon": {
       "title": "Luna di miele",

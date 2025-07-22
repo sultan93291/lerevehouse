@@ -17,9 +17,12 @@ import {
 import { useParams } from "react-router-dom";
 import { InfinitySpin } from "react-loader-spinner";
 import toast from "react-hot-toast";
+import { useTranslation } from "react-i18next";
 
 const TouristListDetails = () => {
   const { id } = useParams();
+
+  const { t } = useTranslation();
 
   const { data, error, isLoading } = useTripPackageDetailsQuery(id, {
     refetchOnFocus: true,
@@ -34,9 +37,6 @@ const TouristListDetails = () => {
     refetchOnFocus: true,
     refetchOnReconnect: true,
   });
-
-  console.log(allPackaageData);
-  
 
   const {
     data: reviewData,
@@ -129,23 +129,23 @@ const TouristListDetails = () => {
 
   const sectionTabs = [
     {
-      label: "Description",
+      label: t("sectionsTab.description"),
       link: "description",
     },
     {
-      label: "Itinerary Plan",
+      label: t("sectionsTab.itinerary-plan"),
       link: "itinerary-plan",
     },
     {
-      label: "Dates and Price",
+      label: t("sectionsTab.dates-and-price"),
       link: "dates-and-price",
     },
     {
-      label: "Brochure Download",
+      label: t("sectionsTab.brochure-download"),
       link: "brochure-download",
     },
     {
-      label: "Video",
+      label: t("sectionsTab.video"),
       link: "Video",
     },
   ];

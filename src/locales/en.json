@@ -31,6 +31,9 @@
   "homepageTestimonials": {
     "title": "Client Experiences That Speak for <br class=\"hidden lg:block\" /> Themselves"
   },
+  "homepageReviewSection": {
+    "rating": "Rated 4.9/5 from over 600 reviews"
+  },
   "extraOrdinarySection": {
     "heading": "Find the <span class=\"text-secondary\">Hidden Gem</span> That Will Make Your Next <br /> <span class=\"text-secondary\">Trip Extraordinary</span>",
     "button": "View All Destination"
@@ -83,8 +86,17 @@
   },
   "ourLuxuryAccommodation": "Our luxury accommodation",
   "btnText": "Contact Us",
+  "reviews": "Reviews",
+  "discoverMore": "Discover More",
   "exploreHeading": "Explore our <italic>travel styles below</italic> to begin your journey",
   "viewAll": "View All",
+  "sectionsTab": {
+    "description": "Description",
+    "itinerary-plan": "Itinerary Plan",
+    "dates-and-price": "Dates and Price",
+    "brochure-download": "Brochure Download",
+    "video": "Video"
+  },
   "travelCards": {
     "honeymoon": {
       "title": "Honeymoon",
