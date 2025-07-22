@@ -175,10 +175,10 @@
         "description": "Every A&K private journey is unique. Whether you want to personalize one of our expert-designed Tailormade Journeys"
       }
     },
-    "viewAll": "View All",
-    "videoTitle": "Explore our Video Gallery ",
-    "tourTitle": "Other tours you may be Interested In"
+    "viewAll": "View All"
   },
+  "videoTitle": "Explore our Video Gallery ",
+  "tourTitle": "Other tours you may be Interested In",
   "destinationDetails": {
     "tailorMadeHeading": "Creating tailor-made tours for over 20 years",
     "ratingLabel": "Excellent",
