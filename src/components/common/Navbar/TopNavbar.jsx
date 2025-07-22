@@ -19,13 +19,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { setLanguage } from "@/Redux/features/languageSlice";
 import { useTranslation } from "react-i18next";
 
-
 const TopNavbar = () => {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
   const sideBarRef = useRef(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-   const { t } = useTranslation();
+  const { t } = useTranslation();
 
   const language = useSelector(state => state.language.language);
 
@@ -74,8 +73,6 @@ const TopNavbar = () => {
     const location = `https://www.google.com/maps?q=${officeData?.data[0]?.address}`;
     window.open(location, "_blank");
   };
-
- 
 
   const topNavLinks = [
     {
@@ -131,7 +128,10 @@ const TopNavbar = () => {
                       if (item.title === "Contact") {
                         e.preventDefault();
                         window.location.href = `mailto:${officeData?.data[0]?.email}`;
-                      } else if (item.title === "Search") {
+                      } else if (
+                        item.title === "Search" ||
+                        item.title === "Cerca"
+                      ) {
                         navigate("/search");
                       }
                     }}
@@ -260,3 +260,4 @@ const TopNavbar = () => {
 };
 
 export default TopNavbar;
+// 
