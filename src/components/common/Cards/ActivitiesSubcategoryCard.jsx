@@ -1,9 +1,12 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import { ActivitiesClockSvg } from "../SvgContainer/SvgContainer";
+import { useTranslation } from "react-i18next";
 
 const ActivitiesSubcategoryCard = ({ item }) => {
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
+
+  const { t } = useTranslation();
 
   return (
     <div className="font-interTight group">
@@ -35,7 +38,7 @@ const ActivitiesSubcategoryCard = ({ item }) => {
               to={`/activities-details/${item?.id}?BgImg=${item?.image}?title=${item?.title}`}
               className="uppercase 2xl:px-6 xl:px-2 px-[10px] 2xl:py-2 xl:py-1 py-1 bg-primary border border-primary text-white hover:bg-transparent transition-all duration-300 hover:text-primary text-xs xl:text-base"
             >
-              View
+              {t("view")}
             </Link>
           </div>
         </div>

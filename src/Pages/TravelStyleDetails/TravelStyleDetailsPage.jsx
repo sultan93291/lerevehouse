@@ -12,11 +12,14 @@ import { InfinitySpin } from "react-loader-spinner";
 import toast from "react-hot-toast";
 import { useEffect, useState } from "react";
 import HelmetComponent from "@/components/Helmet/Helmet";
+import { useTranslation } from "react-i18next";
 
 const TravelStyleDetailsPage = () => {
   const { id } = useParams();
 
-  const [metaDetailsData, { isLoading:isMetaLoading, isSuccess, isError }] =
+  const { t } = useTranslation();
+
+  const [metaDetailsData, { isLoading: isMetaLoading, isSuccess, isError }] =
     useMetaDetailsDataMutation();
 
   const [metaData, setMetaData] = useState(null);
@@ -78,7 +81,7 @@ const TravelStyleDetailsPage = () => {
       />
       <ExploreJourney
         data={singleData?.data[0]}
-        btnTxt={"View All travel Style"}
+        btnTxt={t("viewAllTravelStyle")}
       />
       <FeaturedTravels data={data?.data} />
     </HelmetComponent>

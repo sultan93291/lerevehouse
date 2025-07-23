@@ -21,6 +21,7 @@ import {
   useMetaDetailsDataMutation,
 } from "@/Redux/features/api/apiSlice";
 import HelmetComponent from "@/components/Helmet/Helmet";
+import { useTranslation } from "react-i18next";
 
 const ActivitiesDetails = () => {
   const location = useLocation();
@@ -75,6 +76,7 @@ const ActivitiesDetails = () => {
   }, [error]);
 
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
+  const { t } = useTranslation();
 
   useEffect(() => {
     const url = new URL(window.location.href);
@@ -134,36 +136,43 @@ const ActivitiesDetails = () => {
 
           {/* right side */}
           <div className="flex flex-col gap-6 justify-center md:w-1/3">
+            {/* Where */}
             <div className="space-y-3">
               <h4 className="text-2xl font-editorsNoteNormal text-text-black font-medium leading-[140%]">
-                Where are the activities?
+                {t("activityDetails.where")}
               </h4>
               <div className="space-y-2 font-interTight text-text-gray">
-                <p> {data?.data[0]?.where}</p>
+                <p>{data?.data[0]?.where}</p>
               </div>
             </div>
+
+            {/* When */}
             <div className="space-y-3">
               <h4 className="text-2xl font-editorsNoteNormal text-text-black font-medium leading-[140%]">
-                When are the activities?
+                {t("activityDetails.when")}
               </h4>
               <div className="space-y-2 font-interTight text-text-gray">
-                <p> {data?.data[0]?.when}</p>
+                <p>{data?.data[0]?.when}</p>
               </div>
             </div>
+
+            {/* Available Date */}
             <div className="space-y-3">
               <h4 className="text-2xl font-editorsNoteNormal text-text-black font-medium leading-[140%]">
-                Available Date
+                {t("activityDetails.availableDate")}
               </h4>
               <div className="space-y-2 font-interTight text-text-gray">
-                <p> {data?.data[0]?.avaiable_date}</p>
+                <p>{data?.data[0]?.avaiable_date}</p>
               </div>
             </div>
+
+            {/* Number of Travelers */}
             <div className="space-y-3">
               <h4 className="text-2xl font-editorsNoteNormal text-text-black font-medium leading-[140%]">
-                Number of Travelers
+                {t("activityDetails.travelers")}
               </h4>
               <div className="space-y-2 font-interTight text-text-gray">
-                <p> {data?.data[0]?.number_of_people}</p>
+                <p>{data?.data[0]?.number_of_people}</p>
               </div>
             </div>
           </div>
@@ -186,7 +195,7 @@ const ActivitiesDetails = () => {
           {/* title */}
           <div>
             <h4 className="font-editorsNoteNormal text-3xl font-medium leading-[132%]">
-              Recommended Activities for You
+              {t("recommendedActivities")}
             </h4>
           </div>
 
