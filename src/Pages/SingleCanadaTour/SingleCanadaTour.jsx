@@ -9,15 +9,17 @@ import { useGetSingleTourDetailsQuery } from "@/Redux/features/api/apiSlice";
 import { InfinitySpin } from "react-loader-spinner";
 import toast from "react-hot-toast";
 import { Link } from "react-scroll";
+import { useTranslation } from "react-i18next";
 
-const Tabs = ["Yukon", "Northwest Territories", "Nunavut"];
 const SingleCanadaTour = () => {
-  const [activeTab, setactiveTab] = useState("Yukon");
+  const [activeTab, setactiveTab] = useState("");
   const [allTabs, setallTabs] = useState([]);
 
   const { search } = useLocation();
   const queryParams = new URLSearchParams(search);
   const id = queryParams.get("id");
+
+  const { t } = useTranslation();
 
   const { data, error, isLoading } = useGetSingleTourDetailsQuery(id, {
     refetchOnFocus: true,
@@ -26,7 +28,7 @@ const SingleCanadaTour = () => {
 
   useEffect(() => {
     if (data?.data?.place) {
-      const placeNames = data.data.place.map(place => place.name);
+      const placeNames = data?.data?.place?.map(place => place?.name);
       setallTabs(placeNames);
       setactiveTab(data?.data?.place[0]?.name);
     }
@@ -64,12 +66,12 @@ const SingleCanadaTour = () => {
         bg={`${imgBaseurl}/${data?.data?.image}`}
       />
       <div className="flex flex-col 4xl:pt-[110px] xl:pt-12 lg:pt-8 2xl:gap-y-[108px] gap-y-14">
-        <MapSection data={data.data.tourist_guide_details} />
+        <MapSection data={data?.data?.tourist_guide_details} />
         <div className="flex flex-col">
           <div>
             <div className="flex items-center border-t shadow-lg shadow-[rgba(0,0,0,0.7)] bg-white border-solid  h-[75px] justify-center">
               <span className="text-[#1687C7] text-[18px] font-semibold leading-[150%] tracking-[1px] font-interTight">
-                Consult by State
+                {t("consult")}
               </span>
             </div>
             <div className="sticky top-[145px] py-5 z-0 flex flex-row flex-wrap items-center justify-evenly md:justify-start h-auto gap-x-3 bg-[#1687C7] lg:px-[180px] px-2">
