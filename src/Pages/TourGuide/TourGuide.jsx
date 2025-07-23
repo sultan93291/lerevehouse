@@ -37,7 +37,6 @@ const TourGuide = () => {
     refetchOnReconnect: true,
   });
 
-  console.log(data, allNationalParkData);
 
   if (isLoading || isallnationalParkLaoding) {
     return (
@@ -75,6 +74,7 @@ const TourGuide = () => {
     <div>
       <CommonHeroBanner
         title={data?.data?.title}
+        subTittle={data?.data?.sub_title}
         bg={`${imgBaseurl}/${data?.data?.background_image}`}
         italic={true}
         uppercaseItalic={false}

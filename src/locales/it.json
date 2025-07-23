@@ -104,6 +104,23 @@
   "activitiesByYourself": "Attività individuali",
   "view": "Visualizza",
   "recommendedActivities": "Attività consigliate per te",
+  "transport": {
+    "length": "Lunghezza",
+    "duration": "Durata",
+    "startingFrom": "A partire da",
+    "makeAnEnquiry": "Richiedi informazioni",
+    "bookYour": "Prenota il tuo {{title}}",
+    "prices": "Prezzi",
+    "tourPrices": "Prezzi del tour",
+    "pricesStartingFrom": "Prezzi a partire da",
+    "single": "Singola",
+    "double": "Doppia",
+    "triple": "Tripla",
+    "quadruple": "Quadrupla",
+    "whatsIncluded": "Cosa è incluso",
+    "whatsNotIncluded": "Cosa non è incluso"
+  },
+
   "activitiesRight": {
     "descriptionExtra": "In superficie, kayak e stand-up paddle offrono un modo tranquillo per esplorare coste, mangrovie o baie pittoresche, unendo l'avventura alla possibilità di godersi la natura.",
     "experienceTitle": "Creiamo tour su misura da oltre 20 anni",

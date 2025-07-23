@@ -66,12 +66,13 @@ const TourGuide = () => {
     }
   }
 
+
   return (
     <div>
       <CommonHeroBanner
         title={`${data?.data?.title}`}
         isDangerousHtml={true}
-        // subTittle={data?.data?.sub_title}
+        subTittle={data?.data?.sub_title}
         bg={`${imgBaseurl}/${data?.data?.background_image}`}
         italic={true}
         uppercaseItalic={false}
