@@ -28,6 +28,7 @@ const ActivitiesDetails = () => {
   const [bgImg, setBgImg] = useState("");
   const [title, setTitle] = useState("");
   const { id } = useParams();
+    const { t } = useTranslation();
 
   const [metaDetailsData, { isLoading: isMetaLoading, isSuccess, isError }] =
     useMetaDetailsDataMutation();
@@ -76,7 +77,7 @@ const ActivitiesDetails = () => {
   }, [error]);
 
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
-  const { t } = useTranslation();
+
 
   useEffect(() => {
     const url = new URL(window.location.href);

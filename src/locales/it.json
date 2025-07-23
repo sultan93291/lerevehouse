@@ -104,6 +104,7 @@
   "activitiesByYourself": "Attività individuali",
   "view": "Visualizza",
   "recommendedActivities": "Attività consigliate per te",
+  "consult": "Cosa non è incluso",
   "transport": {
     "length": "Lunghezza",
     "duration": "Durata",
@@ -130,10 +131,10 @@
     "brochureBtn": "Richiedi una brochure"
   },
   "activityDetails": {
-    "where": "Where are the activities?",
-    "when": "When are the activities?",
-    "availableDate": "Available Date",
-    "travelers": "Number of Travelers"
+    "where": "Dove si svolgono le attività?",
+    "when": "Quando si svolgono le attività?",
+    "availableDate": "Data disponibile",
+    "travelers": "Numero di viaggiatori"
   },
   "sectionsTab": {
     "description": "Descrizione",
