@@ -19,6 +19,7 @@ import {
 } from "@/Redux/features/api/apiSlice";
 import toast from "react-hot-toast";
 import HelmetComponent from "@/components/Helmet/Helmet";
+import { useTranslation } from "react-i18next";
 
 const TouristGuide = () => {
   const { id } = useParams();
@@ -29,6 +30,8 @@ const TouristGuide = () => {
       refetchOnReconnect: true,
     }
   );
+
+  const { t } = useTranslation();
 
   const [metaDetailsData, { isLoading: isMetaLoading, isSuccess, isError }] =
     useMetaDetailsDataMutation();
@@ -102,23 +105,29 @@ const TouristGuide = () => {
 
   const FeaturedLinks = [
     {
-      txt: `View the map of ${data?.data?.destination?.name} `,
+      txt: `${t("featuredLinks.viewTheMap")} ${data?.data?.destination?.name} `,
       redirect: `/map/${id}`,
     },
     {
-      txt: "Natural Wonders: National Parks Special",
+      txt: `${t("featuredLinks.naturalPark")}`,
       redirect: `/national-park/${id}`,
     },
     {
-      txt: `Eating and drinking in ${data?.data?.destination?.name}, discover our tips `,
+      txt: `${t("featuredLinks.editingAndDrinking")} ${
+        data?.data?.destination?.name
+      }, ${t("featuredLinks.discoverOurTrips")} `,
       redirect: `/eat&-drink/${id}`,
     },
     {
-      txt: `Discover one of our tours in ${data?.data?.destination?.name} `,
+      txt: `${t("featuredLinks.discoverOurTour")} ${
+        data?.data?.destination?.name
+      } `,
       redirect: `/tour-list-details/${id}`,
     },
     {
-      txt: `Customize your trip to ${data?.data?.destination?.name}`,
+      txt: `${t("featuredLinks.customizeOurTrip")} ${
+        data?.data?.destination?.name
+      }`,
       redirect: "/tour-mezi",
     },
   ];

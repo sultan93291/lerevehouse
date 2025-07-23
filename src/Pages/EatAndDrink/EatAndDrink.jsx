@@ -14,6 +14,7 @@ import {
 import { InfinitySpin } from "react-loader-spinner";
 import toast from "react-hot-toast";
 import { useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const TourGuide = () => {
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
@@ -24,6 +25,7 @@ const TourGuide = () => {
     });
 
   const { id } = useParams();
+  const { t } = useTranslation();
 
   const {
     data: allEatingandDrinkingkData,
@@ -33,9 +35,6 @@ const TourGuide = () => {
     refetchOnFocus: true,
     refetchOnReconnect: true,
   });
-
-  console.log(allEatingandDrinkingkData);
-  
 
   if (isLoading || isEatingAndDrinkigLaoding) {
     return (
@@ -67,8 +66,6 @@ const TourGuide = () => {
     }
   }
 
-  console.log(allEatingandDrinkingkData?.data);
-
   return (
     <div>
       <CommonHeroBanner
@@ -83,7 +80,7 @@ const TourGuide = () => {
       <TourTab data={allEatingandDrinkingkData?.data} />
       <div className="md:py-5 py-2 bg-chocolate">
         <div className="container flex items-center text-white justify-center font-editorsNoteItalic text-[28px] md:text-[40px] font-light leading-[160%] ">
-          We&apos;ve added a seat at the table, yours!
+          {t("seatAtTable")}
         </div>
       </div>
       <div className=" flex flex-col">

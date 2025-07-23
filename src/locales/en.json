@@ -179,16 +179,45 @@
   },
   "videoTitle": "Explore our Video Gallery ",
   "tourTitle": "Other tours you may be Interested In",
-  "viewAllTravelStyle":"View all Travel Style",
-  "noTourFound":"No tours found.",
-  "allToursFor":"All tours for",
-  "travelTo":"Travel to",
+  "viewAllTravelStyle": "View all Travel Style",
+  "noTourFound": "No tours found.",
+  "allToursFor": "All tours for",
+  "travelTo": "Travel to",
+  "findYour": "Find your best possible tour",
+  "seatAtTable": "We've added a seat at the table, yours!",
+  "activities": "Activities",
+  "see": "See",
+  "activitiesByYourself": "Activities by Yourself",
+  "view": "View",
+  "recommendedActivities": "Recommended Activities for You",
+  "activitiesRight": {
+    "descriptionExtra": "Above the surface, kayaking and stand-up paddleboarding provide a peaceful way to explore coastlines, mangroves, or picturesque bays, blending adventure with a chance to soak in the natural surroundings.",
+    "experienceTitle": "Creating tailor-made tours for over 20 years",
+    "excellent": "Excellent",
+    "reviewsCount": "{{count}} Reviews",
+    "enquiryBtn": "Make An Enquiry",
+    "brochureBtn": "Request A Brochure"
+  },
+  "activityDetails": {
+    "where": "Where are the activities?",
+    "when": "When are the activities?",
+    "availableDate": "Available Date",
+    "travelers": "Number of Travelers"
+  },
   "destinationDetails": {
     "tailorMadeHeading": "Creating tailor-made tours for over 20 years",
     "ratingLabel": "Excellent",
     "reviews": "Reviews",
     "enquiryBtn": "Make An Enquiry",
     "brochureBtn": "Request A Brochure"
+  },
+  "featuredLinks": {
+    "viewTheMap": "View the map of",
+    "naturalPark": "Natural Wonders: National Parks Special",
+    "editingAndDrinking": "Eating and drinking in",
+    "discoverOurTrips": "discover our tips",
+    "discoverOurTour": "Discover one of our tours in",
+    "customizeOurTrip": "Customize your trip to"
   },
   "destinationDetailsSlider": {
     "suggested": "Suggested",
