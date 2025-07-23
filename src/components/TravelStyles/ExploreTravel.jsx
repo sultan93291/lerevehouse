@@ -1,13 +1,6 @@
 import { useTranslation, Trans } from "react-i18next";
 import { useLocation } from "react-router-dom";
 import { useGetAllTravelStylesDataQuery } from "@/Redux/features/api/apiSlice";
-
-import imageOne from "../../assets/images/explore-travel1.png";
-import imageTwo from "../../assets/images/explore-travel2.png";
-import imageThree from "../../assets/images/explore-travel3.png";
-import imageFour from "../../assets/images/explore-travel4.png";
-import imageFive from "../../assets/images/explore-travel5.png";
-import imageSix from "../../assets/images/explore-travel6.png";
 import TravelExploreCard from "./TravelExploreCard";
 
 const ExploreTravel = ({ travelMode }) => {
@@ -19,56 +12,9 @@ const ExploreTravel = ({ travelMode }) => {
     refetchOnReconnect: true,
   });
 
-  const translatedTravelData = [
-    {
-      id: 1,
-      title: t("travelCards.honeymoon.title"),
-      description: t("travelCards.honeymoon.description"),
-      image: imageOne,
-      btnText: t("viewAll"),
-      btnLInk: "/canada-holiday",
-    },
-    {
-      id: 2,
-      title: t("travelCards.adventureObservations.title"),
-      description: t("travelCards.adventureObservations.description"),
-      image: imageTwo,
-      btnText: t("viewAll"),
-      btnLInk: "/canada-holiday",
-    },
-    {
-      id: 3,
-      title: t("travelCards.familyTrip.title"),
-      description: t("travelCards.familyTrip.description"),
-      image: imageThree,
-      btnText: t("viewAll"),
-      btnLInk: "/canada-holiday",
-    },
-    {
-      id: 4,
-      title: t("travelCards.adventure.title"),
-      description: t("travelCards.adventure.description"),
-      image: imageFour,
-      btnText: t("viewAll"),
-      btnLInk: "/canada-holiday",
-    },
-    {
-      id: 5,
-      title: t("travelCards.nightTime.title"),
-      description: t("travelCards.nightTime.description"),
-      image: imageFive,
-      btnText: t("viewAll"),
-      btnLInk: "/canada-holiday",
-    },
-    {
-      id: 6,
-      title: t("travelCards.skiing.title"),
-      description: t("travelCards.skiing.description"),
-      image: imageSix,
-      btnText: t("viewAll"),
-      btnLInk: "/canada-holiday",
-    }
-  ];
+  console.log(data);
+  
+
 
   return (
     <section className="pb-10 sm:pb-16 xl:pb-[120px] xl:px-5 2xl:px-14">
@@ -87,7 +33,7 @@ const ExploreTravel = ({ travelMode }) => {
 
         <div>
           <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5">
-            {(data?.data || translatedTravelData).map(item => (
+            {data?.data?.map(item => (
               <TravelExploreCard
                 travelMode={travelMode}
                 key={item.id}

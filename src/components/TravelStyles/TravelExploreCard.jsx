@@ -6,12 +6,15 @@ const TravelExploreCard = ({ item, travelMode }) => {
   const { t } = useTranslation();
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
 
+  console.log(item);
+
   return (
     <div
       className="TravelExploreCard rounded-[15px] flex flex-col h-[240px] lg:h-[400px] 2xl:h-[520px] overflow-hidden items-center justify-cente relative bg-cover bg-no-repeat z-[1]"
       style={{
-        backgroundImage: `url(${imgBaseurl}/${item?.image || item?.travel_style?.image
-          })`,
+        backgroundImage: `url(${imgBaseurl}/${
+          item?.image || item?.travel_style?.image
+        })`,
       }}
     >
       <div className="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] w-full front duration-500 ease-in-out">
@@ -29,14 +32,25 @@ const TravelExploreCard = ({ item, travelMode }) => {
         <button
           className="2xl:mt-9 mt-2 md:mt-3 inline-block px-7 md:py-2 xl:py-3 py-[6px] sm:px-[62px] sm:py-2 text-white text-sm font-medium font-inter bg-secondary rounded-[5px]"
           onClick={() => {
-            navigate(
-              travelMode === "styles"
-                ? `/travel-styles-details/${item?.id}`
-                : travelMode === "travel_details" || travelMode === "honey_moon"
+            if (
+              item.name === "honeymoon" ||
+              item.name === "Honeymoon" ||
+              item.name === "viaggi noze" ||
+              item.name == "Viaggi noze"
+            ) {
+              navigate("/viaggi-noze");
+            } else {
+              navigate(
+                travelMode === "styles"
+                  ? `/travel-styles-details/${item?.id}`
+                  : travelMode === "travel_details" ||
+                    travelMode === "honey_moon"
                   ? `/tour-list-details/${item?.id}`
-                  : `/activities/subcategory/${item?.name}?bg=${imgBaseurl}/${item?.image || item?.travel_style?.image
-                  }?id=${item.id}`
-            );
+                  : `/activities/subcategory/${item?.name}?bg=${imgBaseurl}/${
+                      item?.image || item?.travel_style?.image
+                    }?id=${item.id}`
+              );
+            }
           }}
         >
           {travelMode === "travel_details"
