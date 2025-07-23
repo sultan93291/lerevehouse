@@ -179,6 +179,10 @@
   },
   "videoTitle": "Explore our Video Gallery ",
   "tourTitle": "Other tours you may be Interested In",
+  "viewAllTravelStyle":"View all Travel Style",
+  "noTourFound":"No tours found.",
+  "allToursFor":"All tours for",
+  "travelTo":"Travel to",
   "destinationDetails": {
     "tailorMadeHeading": "Creating tailor-made tours for over 20 years",
     "ratingLabel": "Excellent",

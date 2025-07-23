@@ -7,16 +7,19 @@ import {
   useGetDestinationDetailsPackageQuery,
   useGetTripPackageDetailsQuery,
 } from "@/Redux/features/api/apiSlice";
+import { useTranslation } from "react-i18next";
 
 const TourList = () => {
   const { title } = useParams();
   const [searchParams] = useSearchParams();
-  const isDestination = searchParams.get("isdestination") === "true"; // ✅ fix
+  const isDestination = searchParams.get("isdestination") === "true";
 
   const { data, error, isLoading } = useGetTripPackageDetailsQuery(title, {
     refetchOnFocus: true,
     refetchOnReconnect: true,
   });
+
+  const { t } = useTranslation();
 
   const {
     data: destinationSuggestionData,
@@ -71,11 +74,10 @@ const TourList = () => {
 
   const tourData = isDestination ? destinationSuggestionData?.data : data?.data;
 
-
   return (
     <div>
       <CommonHeroBanner
-        title="Travel to"
+        title={t("travelTo")}
         bg={bannerImage}
         italic={italicText}
       />
@@ -85,7 +87,7 @@ const TourList = () => {
         {/* Title */}
         <div>
           <h2 className="text-center text-3xl xl:text-4xl font-editorsNoteNormal text-primary">
-            All <span className="font-editorsNoteItalic">tours</span> for
+            {t("allToursFor")}
             <span>
               {" "}
               {isDestination
@@ -101,7 +103,7 @@ const TourList = () => {
             tourData.map(item => <TravelListCard key={item?.id} item={item} />)
           ) : (
             <p className="col-span-full text-center text-gray-500">
-              No tours found.
+              {t("noTourFound")}
             </p>
           )}
         </div>

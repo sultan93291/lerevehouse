@@ -89,11 +89,14 @@
   "btnText": "Contattaci",
   "reviews": "recensioni",
   "discoverMore": "Scopri di più",
-
+  "viewAllTravelStyle": "Visualizza tutto lo stile di viaggio",
   "exploreHeading": "Esplora i nostri <italic>stili di viaggio qui sotto</italic> per iniziare il tuo viaggio",
   "viewAll": "Vedi tutto",
   "videoTitle": "Esplora la nostra Galleria Video",
   "tourTitle": "Altri tour che potrebbero interessarti",
+  "noTourFound": "Nessun tour trovato.",
+  "allToursFor": "Tutti i tour per",
+  "travelTo": "Viaggio a",
   "sectionsTab": {
     "description": "Descrizione",
     "itinerary-plan": "Piano dell'itinerario",
