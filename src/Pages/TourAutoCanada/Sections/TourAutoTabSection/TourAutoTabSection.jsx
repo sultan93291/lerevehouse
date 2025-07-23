@@ -3,16 +3,7 @@ import { useTranslation } from "react-i18next";
 
 
 const TourAutoTabSection = ({ data }) => {
-  const Tabs = [
-    "Increasing price",
-    "Decreasing price",
-    "Increasing duration",
-    "Decreasing duration",
-    "Increasing length",
-    "Decreasing length",
-  ];
 
-  const [ActiveTab, setActiveTab] = useState("Increasing price");
   const [showMap, setShowMap] = useState("map");
 
   const handleImgShow = () => {
@@ -30,23 +21,6 @@ const TourAutoTabSection = ({ data }) => {
   return (
     <section className="xl:pb-[77px] pb-9 flex flex-col w-full relative items-center justify-center md:gap-y-5 gap-y-8">
       <div className="flex flex-col gap-y-[45px] w-full relative">
-        <div className="flex flex-col xl:flex-row md:justify-between justify-center w-full relative gap-y-5 2xl:gap-y-0">
-          {Tabs.map((item, index) => {
-            return (
-              <div
-                key={index}
-                onClick={() => setActiveTab(item)}
-                className={`text-[#004265] cursor-pointer ease-in-out duration-300 flex relative font-interTight text-base 2xl:text-lg font-medium leading-[120%]${
-                  item === ActiveTab &&
-                  "after:content-[''] after:absolute after:bottom-0 after:mb-[-8px] 2xl:after:left-1/2 after:left-[20%] md:after:left-[65px] 2xl:after:w-[150px] 3xl:after:w-[247px] after:w-[150px]  after:h-[3px] after:bg-[#004265] after:transform after:-translate-x-1/2 after:rounded-t-[12px]"
-                }`}
-              >
-                {item}
-              </div>
-            );
-          })}
-        </div>
-
         <div className="flex flex-row relative justify-between items-center gap-3 md:gap-0">
           <span className="text-lg w-[45%] font-medium leading-[120%] font-interTight text-[#004265]">
             {t("tourAuto.resultCount", { count: 3 })}

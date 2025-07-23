@@ -190,6 +190,22 @@
   "activitiesByYourself": "Activities by Yourself",
   "view": "View",
   "recommendedActivities": "Recommended Activities for You",
+  "transport": {
+    "length": "Length",
+    "duration": "Duration",
+    "startingFrom": "Starting from",
+    "makeAnEnquiry": "Make An Enquiry",
+    "bookYour": "Book your {{title}}",
+    "prices": "Prices",
+    "tourPrices": "Tour prices",
+    "pricesStartingFrom": "Prices starting from",
+    "single": "Single",
+    "double": "Double",
+    "triple": "Triple",
+    "quadruple": "Quadruple",
+    "whatsIncluded": "What's included",
+    "whatsNotIncluded": "What's not included"
+  },
   "activitiesRight": {
     "descriptionExtra": "Above the surface, kayaking and stand-up paddleboarding provide a peaceful way to explore coastlines, mangroves, or picturesque bays, blending adventure with a chance to soak in the natural surroundings.",
     "experienceTitle": "Creating tailor-made tours for over 20 years",
