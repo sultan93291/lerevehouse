@@ -89,17 +89,49 @@
   "btnText": "Contattaci",
   "reviews": "recensioni",
   "discoverMore": "Scopri di più",
-
+  "viewAllTravelStyle": "Visualizza tutto lo stile di viaggio",
   "exploreHeading": "Esplora i nostri <italic>stili di viaggio qui sotto</italic> per iniziare il tuo viaggio",
   "viewAll": "Vedi tutto",
   "videoTitle": "Esplora la nostra Galleria Video",
   "tourTitle": "Altri tour che potrebbero interessarti",
+  "noTourFound": "Nessun tour trovato.",
+  "allToursFor": "Tutti i tour per",
+  "travelTo": "Viaggio a",
+  "findYour": "Trova il tour migliore per te",
+  "seatAtTable": "Abbiamo aggiunto un posto a tavola, il tuo!",
+  "activities": "Attività",
+  "see": "Vedi",
+  "activitiesByYourself": "Attività individuali",
+  "view": "Visualizza",
+  "recommendedActivities": "Attività consigliate per te",
+  "activitiesRight": {
+    "descriptionExtra": "In superficie, kayak e stand-up paddle offrono un modo tranquillo per esplorare coste, mangrovie o baie pittoresche, unendo l'avventura alla possibilità di godersi la natura.",
+    "experienceTitle": "Creiamo tour su misura da oltre 20 anni",
+    "excellent": "Eccellente",
+    "reviewsCount": "{{count}} Recensioni",
+    "enquiryBtn": "Fai una richiesta",
+    "brochureBtn": "Richiedi una brochure"
+  },
+  "activityDetails": {
+    "where": "Where are the activities?",
+    "when": "When are the activities?",
+    "availableDate": "Available Date",
+    "travelers": "Number of Travelers"
+  },
   "sectionsTab": {
     "description": "Descrizione",
     "itinerary-plan": "Piano dell'itinerario",
     "dates-and-price": "Date e Prezzo",
     "brochure-download": "Scarica la Brochure",
     "video": "Video"
+  },
+  "featuredLinks": {
+    "viewTheMap": "Visualizza la mappa di",
+    "naturalPark": "Meraviglie naturali: Speciale parchi nazionali",
+    "editingAndDrinking": "Mangiare e bere a",
+    "discoverOurTrips": "scopri i nostri consigli",
+    "discoverOurTour": "Scopri uno dei nostri tour a",
+    "customizeOurTrip": "Personalizza il tuo viaggio a"
   },
   "travelCards": {
     "honeymoon": {

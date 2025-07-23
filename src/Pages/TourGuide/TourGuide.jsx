@@ -15,6 +15,7 @@ import {
 import { InfinitySpin } from "react-loader-spinner";
 import toast from "react-hot-toast";
 import { useParams } from "react-router-dom";
+import { t } from "i18next";
 
 const TourGuide = () => {
   const { id } = useParams();
@@ -35,6 +36,8 @@ const TourGuide = () => {
     refetchOnFocus: true,
     refetchOnReconnect: true,
   });
+
+  console.log(data, allNationalParkData);
 
   if (isLoading || isallnationalParkLaoding) {
     return (
@@ -80,7 +83,7 @@ const TourGuide = () => {
       <TourTab data={allNationalParkData?.data} />
       <div className=" py-5 bg-chocolate">
         <div className="container flex items-center text-white justify-center font-editorsNoteItalic text-2xl md:text-[40px] font-light leading-[160%] ">
-          Find your best possible tour
+          {t("findYour")}
         </div>
       </div>
       <div className=" flex flex-col">

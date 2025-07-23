@@ -14,6 +14,7 @@ import {
 import { InfinitySpin } from "react-loader-spinner";
 import toast from "react-hot-toast";
 import HelmetComponent from "@/components/Helmet/Helmet";
+import { useTranslation } from "react-i18next";
 
 const ActivitiesSubcategory = () => {
   const location = useLocation();
@@ -22,6 +23,8 @@ const ActivitiesSubcategory = () => {
     useMetaDetailsDataMutation();
 
   const [metaData, setMetaData] = useState(null);
+
+  const { t } = useTranslation();
 
   useEffect(() => {
     metaDetailsData("activity_details")
@@ -96,14 +99,15 @@ const ActivitiesSubcategory = () => {
       description={metaData?.description}
     >
       <div>
-        <CommonHeroBanner bg={heroImg} title={id} italic="Activities" />
+        <CommonHeroBanner bg={heroImg} title={id} italic={t("activities")} />
         {/* description */}
 
         <section className="2xl:my-20 md:my-10 mt-10 container">
           {/* title */}
           <div>
             <h2 className="text-3xl md:text-4xl xl:text-5xl font-editorsNoteNormal text-center text-primary">
-              {id} <span className="font-editorsNoteItalic">Activities</span>
+              {id}{" "}
+              <span className="font-editorsNoteItalic">{t("activities")}</span>
             </h2>
           </div>
 
@@ -125,7 +129,7 @@ const ActivitiesSubcategory = () => {
             {/* title */}
             <div>
               <h2 className="text-3xl text-primary font-editorsNoteNormal">
-                See {id} Activities by Yourself
+                {t("see")} {id} {t("activitiesByYourself")}
               </h2>
             </div>
 
@@ -148,7 +152,6 @@ const ActivitiesSubcategory = () => {
               {/* contents */}
               <div className="grid md:grid-cols-2 md:gap-2 gap-5 col-span-6 my-8 xl:my-0">
                 {activeTab?.contents?.map(item => {
-                  console.log(item);
                   return (
                     <ActivitiesSubcategoryCard item={item} key={item?.id} />
                   );
