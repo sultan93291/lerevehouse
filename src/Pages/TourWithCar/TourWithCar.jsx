@@ -151,34 +151,41 @@ const TourWithCar = () => {
                 </div>
 
                 <div className="flex flex-wrap justify-center gap-5">
-                  {data?.data.transportation_mediums?.map((item, idx) => (
-                    <div
-                      key={idx}
-                      onClick={() => setSelectedVehicle(item.id)}
-                      className={`flex py-2 flex-col w-full max-w-[500px] items-center gap-y-6 cursor-pointer transition border ${
-                        item.id === selectedVehicle
-                          ? "border-[#1687C7]"
-                          : "border-transparent"
-                      }`}
-                    >
-                      <img
-                        src={`${imgBaseUrl}/${item?.image}`}
-                        className="w-full h-[192px] object-cover"
-                        alt={item.name}
-                      />
-                      <div className="flex flex-col gap-y-3 items-center">
-                        <h2 className="text-[#1687C7] text-2xl md:text-[32px] font-interTight">
-                          {item.name}
-                        </h2>
-                        <p className="text-[#565656] text-center px-2 text-base font-interTight">
-                          {item.description}
-                        </p>
-                        <h4 className="text-[#004265] text-xl md:text-[32px] font-interTight">
-                          € {item.price}
-                        </h4>
+                  {data?.data.transportation_mediums?.map((item, idx) => {
+                    console.log(item);
+
+                    return (
+                      <div
+                        key={idx}
+                        onClick={() => setSelectedVehicle(item.id)}
+                        className={`flex py-2 flex-col w-full max-w-[500px] items-center gap-y-6 cursor-pointer transition border ${
+                          item.id === selectedVehicle
+                            ? "border-[#1687C7]"
+                            : "border-transparent"
+                        }`}
+                      >
+                        <img
+                          src={`${imgBaseUrl}/${item?.image}`}
+                          className="w-full h-[192px] object-cover"
+                          alt={item?.name}
+                        />
+                        <div className="flex flex-col gap-y-3 items-center">
+                          <h2 className="text-[#1687C7] text-2xl md:text-[32px] font-interTight">
+                            {item?.name}
+                          </h2>
+                          <div
+                            dangerouslySetInnerHTML={{
+                              __html: item?.description,
+                            }}
+                            className="text-[#565656] text-center px-2 text-base font-interTight"
+                          ></div>
+                          <h4 className="text-[#004265] text-xl md:text-[32px] font-interTight">
+                            € {item?.price}
+                          </h4>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
 
                 <div className="text-[#565656] text-sm md:text-[16px] leading-[150%] text-center font-interTight max-w-[502px]">

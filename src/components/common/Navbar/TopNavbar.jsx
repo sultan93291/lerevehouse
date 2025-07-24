@@ -79,10 +79,10 @@ const TopNavbar = () => {
       title: t("navbar.search"),
       svg: <SearchSvgNavbar />,
     },
-    {
-      title: t("navbar.contact"),
-      svg: <EmailSvgNavbar />,
-    },
+    // {
+    //   title: t("navbar.contact"),
+    //   svg: <EmailSvgNavbar />,
+    // },
   ];
 
   return (

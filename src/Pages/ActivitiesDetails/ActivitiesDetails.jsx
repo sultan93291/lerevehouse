@@ -22,13 +22,12 @@ import {
 } from "@/Redux/features/api/apiSlice";
 import HelmetComponent from "@/components/Helmet/Helmet";
 import { useTranslation } from "react-i18next";
+import toast from "react-hot-toast";
 
 const ActivitiesDetails = () => {
   const location = useLocation();
-  const [bgImg, setBgImg] = useState("");
-  const [title, setTitle] = useState("");
   const { id } = useParams();
-    const { t } = useTranslation();
+  const { t } = useTranslation();
 
   const [metaDetailsData, { isLoading: isMetaLoading, isSuccess, isError }] =
     useMetaDetailsDataMutation();
@@ -50,6 +49,10 @@ const ActivitiesDetails = () => {
       refetchOnReconnect: true,
     }
   );
+
+  const heroData = data?.data[0].activity_sub_category;
+
+  console.log(heroData);
 
   const {
     data: RecomendedData,
@@ -78,21 +81,6 @@ const ActivitiesDetails = () => {
 
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
 
-
-  useEffect(() => {
-    const url = new URL(window.location.href);
-    const bgImgRaw = url.searchParams.get("BgImg");
-
-    if (bgImgRaw?.includes("?title=")) {
-      const [imgPart, titlePart] = bgImgRaw.split("?title=");
-      setBgImg(imgPart);
-      setTitle(decodeURIComponent(titlePart));
-    } else {
-      setBgImg(bgImgRaw);
-      setTitle(url.searchParams.get("title") || "");
-    }
-  }, [location]);
-
   return (
     <HelmetComponent
       title={metaData?.title}
@@ -101,8 +89,8 @@ const ActivitiesDetails = () => {
       <CommonHeroBanner
         uppercaseItalic={true}
         uppercaseTitle={true}
-        bg={`${imgBaseurl}/${bgImg}`}
-        title={title}
+        bg={`${imgBaseurl}/${heroData?.image}`}
+        title={heroData?.title}
       />
 
       <section className="container md:my-20 mt-10 mb-10">
