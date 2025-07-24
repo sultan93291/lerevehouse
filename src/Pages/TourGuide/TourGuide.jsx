@@ -37,7 +37,6 @@ const TourGuide = () => {
     refetchOnReconnect: true,
   });
 
-
   if (isLoading || isallnationalParkLaoding) {
     return (
       <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center z-50 bg-white">
@@ -70,6 +69,8 @@ const TourGuide = () => {
 
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
 
+  console.log(data?.data);
+
   return (
     <div>
       <CommonHeroBanner
@@ -78,6 +79,7 @@ const TourGuide = () => {
         bg={`${imgBaseurl}/${data?.data?.background_image}`}
         italic={true}
         uppercaseItalic={false}
+        altTxt={data?.data?.image_alt_txt}
       />
       <MapSection data={data?.data} />
       <TourTab data={allNationalParkData?.data} />

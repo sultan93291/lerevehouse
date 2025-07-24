@@ -4,6 +4,7 @@ import ExploreJourney from "@/components/TravelStylesDetails/ExploreJourney";
 import FeaturedTravels from "@/components/TravelStylesDetails/FeaturedTravels";
 import HoneyMoon from "../../assets/images/honey-moon/honeymoon.png";
 import {
+  useGetHoneyMoonDetailsSectionQuery,
   useGetHoneyMoonHeroSectionDataQuery,
   useGetTransportationHeroSectionDataQuery,
   useGetTripPackageDetailsQuery,
@@ -16,30 +17,33 @@ import HelmetComponent from "@/components/Helmet/Helmet";
 const ViagaNozi = () => {
   const id = 1;
 
-    const [
-      metaDetailsData,
-      { isLoading: isMetaDataLoading, isSuccess, isError },
-    ] = useMetaDetailsDataMutation();
+  const [
+    metaDetailsData,
+    { isLoading: isMetaDataLoading, isSuccess, isError },
+  ] = useMetaDetailsDataMutation();
 
-    const [metaData, setMetaData] = useState(null);
+  const [metaData, setMetaData] = useState(null);
 
-    useEffect(() => {
-      metaDetailsData("honeymoon")
-        .unwrap()
-        .then(res => setMetaData(res?.data))
-        .catch(err => console.error("Meta save error:", err));
-    }, [metaDetailsData]);
+  useEffect(() => {
+    metaDetailsData("honeymoon")
+      .unwrap()
+      .then(res => setMetaData(res?.data))
+      .catch(err => console.error("Meta save error:", err));
+  }, [metaDetailsData]);
 
   const { data, error, isLoading } = useGetTripPackageDetailsQuery(id, {
     refetchOnFocus: true,
     refetchOnReconnect: true,
   });
 
-    const { data:transportData, error:transportError, isLoading:isTransportLoading } = useGetTransportationHeroSectionDataQuery(id, {
-      refetchOnFocus: true,
-      refetchOnReconnect: true,
-    });
-  
+  const {
+    data: honeyMoonDetailsData,
+    error: honeyMoonDetailsError,
+    isLoading: isHoneyDetailsLoading,
+  } = useGetHoneyMoonDetailsSectionQuery(undefined, {
+    refetchOnFocus: true,
+    refetchOnReconnect: true,
+  });
 
   const {
     data: honeyMoondata,
@@ -80,6 +84,7 @@ const ViagaNozi = () => {
 
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
 
+
   return (
     <HelmetComponent
       title={metaData?.title}
@@ -88,8 +93,13 @@ const ViagaNozi = () => {
       <CommonHeroBanner
         bg={`${imgBaseurl}/${honeyMoondata?.data?.background_image}`}
         title={honeyMoondata?.data?.title}
+        altTxt={honeyMoondata?.image_alt_txt}
       />
-      {/* <ExploreJourney isBtn={false} btnTxt={"All honeymoon Trips "} /> */}
+      <ExploreJourney
+        data={honeyMoonDetailsData.data}
+        isBtn={false}
+        btnTxt={"All honeymoon Trips "}
+      />
       <FeaturedTravels data={data?.data} isHoneyMoon={true} />
     </HelmetComponent>
   );

@@ -8,6 +8,7 @@ const ParkDetails = ({
   Images,
   isHover,
   isDouble,
+  altTxt
 }) => {
   return (
     <div className="flex container flex-col xl:my-20 md:my-10 mt-5 mb-0 pb-3 md:gap-y-[51px]">
@@ -44,7 +45,7 @@ const ParkDetails = ({
         </div>
       </div>
       <div className="flex">
-        <ParkDetialsSlider data={Images} />
+        <ParkDetialsSlider  data={Images} />
       </div>
     </div>
   );

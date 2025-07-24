@@ -207,6 +207,15 @@
     "whatsIncluded": "What's included",
     "whatsNotIncluded": "What's not included"
   },
+
+  "search": {
+    "heading": "Search Results",
+    "placeholder": "Search by name, title, or type...",
+    "error": "Error fetching results:",
+    "noResults": "No results found. Try another search.",
+    "prompt": "Enter a search term to see results."
+  },
+
   "activitiesRight": {
     "descriptionExtra": "Above the surface, kayaking and stand-up paddleboarding provide a peaceful way to explore coastlines, mangroves, or picturesque bays, blending adventure with a chance to soak in the natural surroundings.",
     "experienceTitle": "Creating tailor-made tours for over 20 years",

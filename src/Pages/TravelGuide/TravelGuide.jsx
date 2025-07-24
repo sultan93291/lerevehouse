@@ -98,6 +98,8 @@ const TravelGuide = () => {
   }
   if (error || heroSectionError) return <div>Error loading data</div>;
 
+  console.log(heroSectionData);
+
   return (
     <HelmetComponent
       title={metaData?.title}
@@ -108,6 +110,7 @@ const TravelGuide = () => {
         bg={`${imgBaseurl}/${heroSectionData?.data?.background_image}`}
         title={heroSectionData?.data?.title}
         subTittle={heroSectionData?.data?.sub_title}
+        altTxt={heroSectionData.data?.image_alt_txt}
       />
 
       {/* Destination section */}
@@ -125,16 +128,22 @@ const TravelGuide = () => {
                   row.length >= 3 ? "lg:flex-nowrap" : "md:flex-nowrap"
                 } gap-4 3xl:gap-7`}
               >
-                {row.map((destination, cardIndex) => (
-                  <SingleDestinationCard
-                    key={destination?.id}
-                    bg={`${imgBaseurl}/${destination?.image}`}
-                    title={destination?.name.trim()}
-                    height={getCardHeight(rowIndex, cardIndex)}
-                    id={destination?.id}
-                    isTravelGuide={true}
-                  />
-                ))}
+                {row.map((destination, cardIndex) => {
+                  console.log(destination);
+                  return (
+                    <SingleDestinationCard
+                      key={destination?.id}
+                      bg={`${imgBaseurl}/${destination?.image}`}
+                      title={destination?.name.trim()}
+                      height={getCardHeight(rowIndex, cardIndex)}
+                      id={destination?.id}
+                      isTravelGuide={true}
+                      subTittle={destination?.subtitle}
+                      altTxt={destination?.image_alt_txt}
+                    />
+                  );
+                  
+                })}
               </div>
             ))}
           </div>

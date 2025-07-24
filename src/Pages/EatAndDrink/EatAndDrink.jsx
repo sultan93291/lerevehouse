@@ -66,6 +66,8 @@ const TourGuide = () => {
     }
   }
 
+  console.log(data?.data);
+  
 
   return (
     <div>
@@ -76,6 +78,7 @@ const TourGuide = () => {
         bg={`${imgBaseurl}/${data?.data?.background_image}`}
         italic={true}
         uppercaseItalic={false}
+        altTxt={data?.data.image_alt_txt}
       />
       <Delights data={data?.data} />
       <TourTab data={allEatingandDrinkingkData?.data} />

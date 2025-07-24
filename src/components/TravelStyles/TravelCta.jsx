@@ -1,34 +1,38 @@
-import TravelCtaBg from "../../assets/images/travelcta-bg.png";
 import { Link } from "react-router-dom";
 
-const TravelCta = ({ title, description, btnText , imgUrl }) => {
+const TravelCta = ({ title, description, btnText, imgUrl, altTxt }) => {
   return (
     <section className="2xl:pb-[100px] mt-10 lg:mt-20 pb-10 sm:pb-16 md:pb-20 xl:px-5 2xl:px-14">
       <div className="container">
-        <div
-          className="max-w-[1330px] travel-cta relative z-[1] 2xl:py-[82px] py-14 lg:py-[70px] 2xl:px-[300px] mx-auto bg-cover bg-no-repeat text-center rounded-2xl md:rounded-[18px] overflow-hidden px-5 "
-          style={{
-            backgroundImage: `url(${imgUrl})`,
-          }}
-        >
-          <div
-            dangerouslySetInnerHTML={{
-              __html: title,
-            }}
-            className="title--xxl font-editorsNoteNormal text-white"
-          ></div>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: description,
-            }}
-            className="text-base lg:text-[18px] text-white mt-3 md:mt-6 font-interTight"
-          ></div>
-          <Link
-            to={"/contact"}
-            className="font-inter border-[2px] border-secondary 2xl:py-[19px] py-2 lg:py-[14px] 2xl:px-[62px] px-5 lg:px-10 bg-secondary inline-block rounded-[5px] text-sm text-white xl:mt-[68px] mt-5 lg:mt-8 duration-200 ease-in-out hover:bg-white hover:border-white hover:text-secondary"
-          >
-            {btnText}
-          </Link>
+        <div className="relative z-[1] max-w-[1330px] mx-auto rounded-2xl md:rounded-[18px] overflow-hidden">
+          {/* Image */}
+          <img
+            src={imgUrl}
+            alt={altTxt || "CTA Background"}
+            className="w-full h-full object-cover"
+          />
+
+          {/* Overlay content */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-5 2xl:py-[82px] py-14 lg:py-[70px] 2xl:px-[300px] bg-black/50">
+            <div
+              dangerouslySetInnerHTML={{
+                __html: title,
+              }}
+              className="title--xxl font-editorsNoteNormal text-white"
+            ></div>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: description,
+              }}
+              className="text-base lg:text-[18px] text-white mt-3 md:mt-6 font-interTight"
+            ></div>
+            <Link
+              to="/contact"
+              className="font-inter border-[2px] border-secondary 2xl:py-[19px] py-2 lg:py-[14px] 2xl:px-[62px] px-5 lg:px-10 bg-secondary inline-block rounded-[5px] text-sm text-white xl:mt-[68px] mt-5 lg:mt-8 duration-200 ease-in-out hover:bg-white hover:border-white hover:text-secondary"
+            >
+              {btnText}
+            </Link>
+          </div>
         </div>
       </div>
     </section>

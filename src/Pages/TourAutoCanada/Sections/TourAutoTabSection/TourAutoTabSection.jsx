@@ -82,8 +82,8 @@ const TourAutoTabSection = ({ data }) => {
                   ></div>
                 ) : (
                   <img
-                    src={`${imgBaseUrl}/${item.image}`}
-                    alt="tour image"
+                    src={`${imgBaseUrl}/${item?.image}`}
+                    alt={item?.image_alt_txt}
                     className="2xl:w-[655px] 2xl:h-[456px] object-cover"
                   />
                 )}

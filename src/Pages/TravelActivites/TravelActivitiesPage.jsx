@@ -106,6 +106,8 @@ const TravelActivitiesPage = () => {
 
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
 
+  console.log(activitySloganData?.data);
+
   return (
     <HelmetComponent
       title={metaData?.title}
@@ -115,6 +117,7 @@ const TravelActivitiesPage = () => {
         isAcitivity={true}
         item={data?.data[0]}
         bgImg={`${imgBaseurl}/${data?.data[0]?.background_image}`}
+        altTxt={data?.data?.image_alt_txt}
       />
       <TripAttraction data={activityDetails?.data[0]} />
       <BrowseThings />
@@ -125,6 +128,7 @@ const TravelActivitiesPage = () => {
           description={activitySloganData?.data?.short_description}
           btnText={t("btnText")}
           imgUrl={`${imgBaseurl}/${activitySloganData?.data?.background_image}`}
+          altTxt={activitySloganData?.data?.image_alt_txt}
         />
       </div>
     </HelmetComponent>

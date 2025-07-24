@@ -1,13 +1,16 @@
 /* eslint-disable react/prop-types */
 const BookCard = ({ info }) => {
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
+
+  console.log(info);
+
   return (
     <div className="font-interTight group">
       <div className="h-48 w-full overflow-hidden ">
         <img
           className="w-full h-full object-cover group-hover:scale-95 transition-all duration-300"
           src={`${imgBaseurl}/${info?.background_image}`}
-          alt=""
+          alt={info?.image_alt_txt}
         />
       </div>
       {/* title */}

@@ -105,6 +105,13 @@
   "view": "Visualizza",
   "recommendedActivities": "Attività consigliate per te",
   "consult": "Cosa non è incluso",
+  "search": {
+    "heading": "Risultati della ricerca",
+    "placeholder": "Cerca per nome, titolo o tipo...",
+    "error": "Errore durante il recupero dei risultati:",
+    "noResults": "Nessun risultato trovato. Prova un'altra ricerca.",
+    "prompt": "Inserisci un termine di ricerca per vedere i risultati."
+  },
   "transport": {
     "length": "Lunghezza",
     "duration": "Durata",

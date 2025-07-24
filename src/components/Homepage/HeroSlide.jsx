@@ -5,11 +5,10 @@ import { Modal } from "../Modals/Modal";
 import HeroReviewButton from "./HeroReviewButton";
 import TestModal from "../Modals/TestModal";
 
-const HeroSlide = ({ vidoeUrl, title, subTitle }) => {
+const HeroSlide = ({ vidoeUrl, title, subTitle, btnTxt }) => {
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
   const [open, setOpen] = useState(false);
 
-  // Function to render title with highlighted word after "and" or "&"
   const renderTitle = text => {
     const regex = /(.*?)\s*(?:&|and)\s+(\w+)\s*(.*)/i;
     const match = text.match(regex);
@@ -56,7 +55,7 @@ const HeroSlide = ({ vidoeUrl, title, subTitle }) => {
             {subTitle}
           </h4>
           <div onClick={() => setOpen(true)}>
-            <HeroBtn />
+            <HeroBtn btnTxt={btnTxt} />
           </div>
         </div>
       </div>

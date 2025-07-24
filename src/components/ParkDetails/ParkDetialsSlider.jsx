@@ -10,6 +10,7 @@ import ImageSlide from "./ImageSlide";
 
 const ParkDetailsSlider = ({ data }) => {
   const [swiperRef, setSwiperRef] = useState(null);
+  
   return (
     <div className="!w-full">
       {/* Slider */}
