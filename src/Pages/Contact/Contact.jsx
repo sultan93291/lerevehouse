@@ -89,6 +89,8 @@ const Contact = () => {
 
   const baseImgUrl = import.meta.env.VITE_SERVER_URL;
 
+  
+
   return (
     <HelmetComponent
       title={metaData?.title}
@@ -108,13 +110,15 @@ const Contact = () => {
         {/* right side */}
         <div className="flex flex-col gap-10 md:gap-16  justify-center lg:w-1/2 lg:pl-12 md:py-10 lg:py-0  lg:my-6 my-0 lg:mr-6 mr-0">
           {officeData.data.map((item, idx) => {
+            console.log(item);
+            
             return (
               <div className="flex flex-col 2xl:flex-row items-center gap-4">
                 {/* img */}
                 <img
                   className="md:h-[300px] lg:w-full xl:w-full 2xl:w-[276px] 3xl:w-[300px] md:w-full object-cover"
                   src={`${baseImgUrl}/${item?.image}`}
-                  alt=""
+                  alt={item?.image_alt_txt}
                 />
                 {/* contents */}
                 <div className="font-interTight ml-4 md:ml-0">

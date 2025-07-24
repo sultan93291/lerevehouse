@@ -153,8 +153,6 @@ const TouristGuide = () => {
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
 
   console.log(data?.data);
-  
-
 
   return (
     <HelmetComponent
@@ -172,7 +170,7 @@ const TouristGuide = () => {
               <img
                 src={`${imgBaseurl}/${data?.data?.map}`}
                 className="hidden xl:block md:w-[750px] md:h-[471px]"
-                alt="not foun"
+                alt={data?.data?.image_alt_txt}
               />
               <div className="flex flex-col gap-y-4 md:mt-0">
                 <div
@@ -204,29 +202,31 @@ const TouristGuide = () => {
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5 gap-4">
-            {tourPlacesData?.data?.map((item, index) => {
+            {tourPlacesData?.data?.map((item, index) => { 
               return (
                 <div
                   key={index}
                   onClick={() => {
                     navigate(`/tour-guides?id=${item?.id}`);
                   }}
-                  style={{
-                    backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url(${imgBaseurl}/${item.image})`,
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "center",
-                  }}
-                  className="2xl:h-[404px] cursor-pointer h-[220px] 2xl:w-[312px] w-full relative"
+                  className="2xl:h-[404px] h-[220px] 2xl:w-[312px] w-full relative cursor-pointer overflow-hidden group"
                 >
-                  <div className="h-full w-full flex items-center  justify-center ">
+                  <img
+                    src={`${imgBaseurl}/${item.image}`}
+                    alt={item?.image_alt_txt}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-50 transition-all duration-300" />
+
+                  {/* Title */}
+                  <div className="absolute inset-0 flex items-center justify-center px-2 text-center">
                     <NavLink
-                      className="text-white md:max-w-[238px] text-center cursor-pointer font-interTight
-                  md:text-2xl font-bold leading-[160%]"
                       to={item.title}
+                      className="text-white md:max-w-[238px] font-interTight md:text-2xl text-lg font-bold leading-[160%] z-10"
                     >
-                      {" "}
-                      {item?.title}{" "}
+                      {item?.title}
                     </NavLink>
                   </div>
                 </div>
@@ -296,4 +296,3 @@ const TouristGuide = () => {
 };
 
 export default TouristGuide;
-

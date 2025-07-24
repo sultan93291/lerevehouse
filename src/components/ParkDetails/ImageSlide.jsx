@@ -1,31 +1,25 @@
-import { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import {
-  NextSlideSvg,
-  PrevSlideSvg,
-} from "../common/SvgContainer/SvgContainer";
 
-const ImageSlide = ({ images }) => {  
+const ImageSlide = ({ images }) => {
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
 
   return (
-    <div className="flex items-center justify-center relative h-[300px] xl:h-[500px] gap-0">
-      {images.map((image, idx) => {        
+    <div className="flex items-center justify-center relative h-[300px] xl:h-[500px] gap-0 overflow-hidden">
+      {images.map((image, idx) => {
         return (
           <div
             key={idx}
-            className={`shadow-md transition-all duration-300
-          ${idx === 1 ? "w-[866px]" : "w-[363px]"}
-          h-[250px] sm:h-[300px] lg:h-full`}
-            style={{
-              backgroundImage: `url(${imgBaseurl}/${image?.image})`,
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-            }}
-          ></div>
+            className={`shadow-md transition-all duration-300 overflow-hidden
+              ${idx === 1 ? "w-[866px]" : "w-[363px]"}
+              h-[250px] sm:h-[300px] lg:h-full`}
+          >
+            <img
+              src={`${imgBaseurl}/${image?.image}`}
+              alt={image?.image_alt_txt}
+              className="w-full h-full object-cover"
+            />
+          </div>
         );
       })}
     </div>

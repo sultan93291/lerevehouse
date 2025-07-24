@@ -11,7 +11,7 @@ const TravelListCard = ({ item }) => {
     item.description = item?.travel_style?.description.slice(0, 120) + "...";
   }
 
-  const imgBaseurl = import.meta.env.VITE_SERVER_URL;
+  const imgBaseurl = import.meta.env.VITE_SERVER_URL;  
 
   return (
     <div className="px-4 py-5 font-interTight group bg-[#f4f4f4]">
@@ -19,7 +19,7 @@ const TravelListCard = ({ item }) => {
         <img
           className="w-full h-full object-cover group-hover:scale-110 transition-all duration-300"
           src={`${imgBaseurl}/${item?.trip_package_image}`}
-          alt="not found"
+          alt={item?.image_alt_txt}
         />
       </div>
 
@@ -45,7 +45,7 @@ const TravelListCard = ({ item }) => {
 
         <div className="w-full flex items-center justify-between pt-3">
           <span className="text-primary text-sm lg:text-base font-semibold">
-            ${item.package_price}
+            ${item?.package_price}
           </span>
           <Link
             to={`/tour-list-details/${item?.id}`}

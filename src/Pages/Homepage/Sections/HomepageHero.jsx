@@ -16,7 +16,7 @@ const HomepageHero = () => {
       refetchOnReconnect: true,
     }
   );
-
+  
   return (
     <div className="-mt-[56px] 2xl:mt-0 4xl:-mt-[56px] relative">
       {/* Custom Pagination Container */}
@@ -40,6 +40,7 @@ const HomepageHero = () => {
               vidoeUrl={item?.file_url}
               title={item?.title}
               subTitle={item?.short_description}
+              btnTxt={item?.button_text}
             />
           </SwiperSlide>
         ))}

@@ -216,31 +216,29 @@ const ItenaryIdeaDetails = ({ itenariesData }) => {
                         {t("itinerary.recommendedAttraction")} <Location />
                       </span>
                       <div className="flex flex-col flex-wrap cursor-pointer xl:flex-row gap-y-3 3xl:gap-y-4 xl:justify-between 3xl:gap-x-4">
-                        {faq?.recommended_attractions?.map((item, idx) => (
-                          <div
-                            key={`${tripId}-${faq.id}-${idx}`}
-                            className="p-3 flex flex-col gap-y-3 bg-white shadow-primaryShadow"
-                            onClick={() => {
-                              setOpen(true);
-                              setRecomendedAttractionData(item);
-                            }}
-                          >
+                        {faq?.recommended_attractions?.map((item, idx) => {
+                          return (
                             <div
-                              style={{
-                                backgroundImage: `url(${imgBaseurl}/${item.image})`,
-                                backgroundSize: "cover",
-                                backgroundRepeat: "no-repeat",
-                                backgroundPosition: "center",
+                              key={`${tripId}-${faq.id}-${idx}`}
+                              className="p-3 flex flex-col gap-y-3 bg-white shadow-primaryShadow"
+                              onClick={() => {
+                                setOpen(true);
+                                setRecomendedAttractionData(item);
                               }}
-                              className="w-full xl:w-[270px] 2xl:w-[350px] 3xl:w-[450px] 4xl:w-[464px] h-[200px] 2xl:h-[243px]"
-                            ></div>
-                            <div className="flex flex-col items-center justify-center h-[30px]">
-                              <span className="text-base lg:text-xl text-primary leading-[150%]">
-                                {item?.place_name}
-                              </span>
+                            >
+                              <img
+                                className="w-full xl:w-[270px] 2xl:w-[350px] 3xl:w-[450px] 4xl:w-[464px] h-[200px] 2xl:h-[243px] object-cover "
+                                src={`${imgBaseurl}/${item?.image}`}
+                                alt={item?.image_alt_txt}
+                              />
+                              <div className="flex flex-col items-center justify-center h-[30px]">
+                                <span className="text-base lg:text-xl text-primary leading-[150%]">
+                                  {item?.place_name}
+                                </span>
+                              </div>
                             </div>
-                          </div>
-                        ))}
+                          );
+                        })}
                       </div>
                     </div>
                   </div>

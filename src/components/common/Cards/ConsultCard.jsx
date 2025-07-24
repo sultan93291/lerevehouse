@@ -33,9 +33,10 @@ const ConsultCard = ({ data }) => {
         {data?.place_details?.images?.map((item, index) => {
           return (
             <img
+              key={index}
               className="xl:w-[480px] w-full 2xl:h-[383px] h-[180px] object-cover"
               src={`${imgBaseurl}/${item?.image}`}
-              alt="not found"
+              alt={item?.image_alt_txt}
             />
           );
         })}

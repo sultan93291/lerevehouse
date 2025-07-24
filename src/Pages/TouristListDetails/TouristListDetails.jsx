@@ -112,6 +112,7 @@ const TouristListDetails = () => {
     price: data?.data?.package_price,
     suggestedHolidayLenght: data?.data.duration,
     heroImage: data?.data?.trip_package_image,
+    img_alt_txt: data?.data?.image_alt_txt,
   };
 
   const itenariesData = {

@@ -26,7 +26,8 @@ const RequestedTrips = () => {
       const newData = {
         id: item?.trip_package?.id,
         image: item?.trip_package?.trip_package_image,
-        title: item?.trip_package?.trip_package_title,
+        image_alt_txt: item?.trip_package?.image_alt_txt,
+        title: item?.trip_package?.trip_package_title || null,
         description: item?.trip_package?.trip_detail?.hero_section_description,
       };
 
@@ -56,8 +57,11 @@ const RequestedTrips = () => {
       <div>
         <h2 className="text-center text-3xl 2xl:text-5xl font-editorsNoteNormal text-primary">
           {t("requestedTrips.sectionTitle.part1")}{" "}
-          <span className="text-secondary">{t("requestedTrips.sectionTitle.highlight")}</span>{" "}
-          {t("requestedTrips.sectionTitle.part2")} <br /> {t("requestedTrips.sectionTitle.part3")}
+          <span className="text-secondary">
+            {t("requestedTrips.sectionTitle.highlight")}
+          </span>{" "}
+          {t("requestedTrips.sectionTitle.part2")} <br />{" "}
+          {t("requestedTrips.sectionTitle.part3")}
         </h2>
       </div>
 

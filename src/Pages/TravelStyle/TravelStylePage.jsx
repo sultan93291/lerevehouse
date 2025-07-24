@@ -85,6 +85,8 @@ const TravelStylePage = () => {
   const normalTxt = slicedTxt[0];
   const styledTxt = slicedTxt.slice(1).join(" ");
 
+  
+
   return (
     <HelmetComponent
       title={metaData?.title}
@@ -96,6 +98,7 @@ const TravelStylePage = () => {
         uppercaseTitle={true}
         title={normalTxt}
         italic={styledTxt}
+        altTxt={data?.data?.image_alt_txt}
       />
       <Description Description={data?.data?.description} />
       <ExploreTravel travelMode={"styles"} />

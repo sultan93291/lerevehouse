@@ -12,19 +12,19 @@ import HelmetComponent from "@/components/Helmet/Helmet";
 const TourCanada = () => {
   const navigate = useNavigate();
 
-   const [
-     metaDetailsData,
-     { isLoading: isMetaDataLoading, isSuccess, isError },
-   ] = useMetaDetailsDataMutation();
+  const [
+    metaDetailsData,
+    { isLoading: isMetaDataLoading, isSuccess, isError },
+  ] = useMetaDetailsDataMutation();
 
-   const [metaData, setMetaData] = useState(null);
+  const [metaData, setMetaData] = useState(null);
 
-   useEffect(() => {
-     metaDetailsData("transportation")
-       .unwrap()
-       .then(res => setMetaData(res?.data))
-       .catch(err => console.error("Meta save error:", err));
-   }, [metaDetailsData]);
+  useEffect(() => {
+    metaDetailsData("transportation")
+      .unwrap()
+      .then(res => setMetaData(res?.data))
+      .catch(err => console.error("Meta save error:", err));
+  }, [metaDetailsData]);
 
   const { data, error, isLoading } = useGetTransportationHeroSectionDataQuery(
     undefined,
@@ -91,7 +91,6 @@ const TourCanada = () => {
   }
 
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
-  
 
   return (
     <HelmetComponent
@@ -118,18 +117,20 @@ const TourCanada = () => {
                 key={index}
                 className={`group ${
                   index % 3 === 2
-                    ? " lg:h-[380px] 2xl:h-[570px] h-[250px] w-full"
-                    : " lg:h-[380px] 2xl:h-[521px] h-[250px] xl:w-[49%] 3xl:w-[49.4%] md:w-full"
-                } flex flex-col items-center justify-center relative overflow-hidden`}
-                style={{
-                  backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url(${imgBaseurl}/${item?.image})`,
-                  backgroundSize: "cover",
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "100% 100%",
-                }}
+                    ? "lg:h-[380px] 2xl:h-[570px] h-[250px] w-full"
+                    : "lg:h-[380px] 2xl:h-[521px] h-[250px] xl:w-[49%] 3xl:w-[49.4%] md:w-full"
+                } relative flex flex-col items-center justify-center overflow-hidden`}
               >
-                {/* Content inside should only be visible on hover */}
-                <div className="md:h-full h-[300px] w-full flex flex-col items-center justify-center md:gap-y-[38px] gap-y-4 px-5 md:px-0 transition-all duration-500 ease-in-out transform group-hover:scale-100 group-hover:opacity-100 opacity-0 scale-95">
+                {/* Image */}
+                <img
+                  src={`${imgBaseurl}/${item?.image}`}
+                  alt={item?.image_alt_txt}
+                  className="absolute inset-0 w-full h-full object-cover object-bottom z-0"
+                />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/40 z-10"></div>
+
+                <div className="md:h-full h-[300px] w-full flex flex-col items-center justify-center md:gap-y-[38px] gap-y-4 px-5 md:px-0 transition-all duration-500 ease-in-out transform group-hover:scale-100 group-hover:opacity-100 opacity-0 scale-95 z-20">
                   <div className="flex flex-col items-center text-center justify-center md:gap-y-[22px]">
                     <h2 className="text-white text-2xl md:text-[32px] font-semibold leading-[150%] tracking-[1px] font-interTight">
                       {item?.title}
@@ -162,18 +163,14 @@ const TourCanada = () => {
                     : "flex xl:flex-row flex-col-reverse items-center gap-x-8"
                 }`}
               >
-                <div
+                <img
                   className="2xl:w-[868px] w-full lg:h-[380px] xl:h-[434px] h-[250px]"
-                  style={{
-                    backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url(${imgBaseurl}/${item.background_image})`,
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "center",
-                  }}
-                ></div>
+                  src={`${imgBaseurl}/${item?.background_image}`}
+                  alt={item?.image_alt_txt}
+                />
                 <div className="flex flex-col xl:gap-y-6 md:max-w-[698px] w-full mt-5 mb-8 xl:mt-0">
                   <h4 className="text-[#000] font-interTight text-[25px] md:text-[32px] font-semibold leading-[150%] tracking-[1px]">
-                    {item.title}
+                    {item?.title}
                   </h4>
                   <div
                     dangerouslySetInnerHTML={{ __html: item?.description }}

@@ -11,10 +11,7 @@ const ExploreTravel = ({ travelMode }) => {
     refetchOnFocus: true,
     refetchOnReconnect: true,
   });
-
-  console.log(data);
   
-
 
   return (
     <section className="pb-10 sm:pb-16 xl:pb-[120px] xl:px-5 2xl:px-14">

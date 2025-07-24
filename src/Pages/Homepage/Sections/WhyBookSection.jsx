@@ -1,10 +1,8 @@
 import BookCard from "@/components/common/Cards/BookCard";
-import image1 from "@/assets/images/11.jpg";
-import image2 from "@/assets/images/22.jpg";
-import image3 from "@/assets/images/33.jpg";
 import { forwardRef } from "react";
 import { useGetWhyBookWithLereveHouseQuery } from "@/Redux/features/api/apiSlice";
 import { useTranslation } from "react-i18next";
+
 const WhyBookSection = forwardRef(({ ...props }, ref) => {
    const { data, error, isLoading } = useGetWhyBookWithLereveHouseQuery(
      undefined,
