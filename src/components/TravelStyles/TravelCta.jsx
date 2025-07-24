@@ -1,4 +1,3 @@
-import TravelCtaBg from "../../assets/images/travelcta-bg.png";
 import { Link } from "react-router-dom";
 
 const TravelCta = ({ title, description, btnText , imgUrl }) => {

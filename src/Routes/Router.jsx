@@ -66,7 +66,7 @@ const router = createBrowserRouter([
         element: <TouristGuide />,
       },
       {
-        path: "/activities/subcategory/:id",
+        path: "/activities/subcategory/:queryId",
         element: <ActivitiesSubcategory />,
       },
       {

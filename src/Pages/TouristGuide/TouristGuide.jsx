@@ -118,12 +118,12 @@ const TouristGuide = () => {
       }, ${t("featuredLinks.discoverOurTrips")} `,
       redirect: `/eat&-drink/${id}`,
     },
-    {
-      txt: `${t("featuredLinks.discoverOurTour")} ${
-        data?.data?.destination?.name
-      } `,
-      redirect: `/tour-list-details/${id}`,
-    },
+    // {
+    //   txt: `${t("featuredLinks.discoverOurTour")} ${
+    //     data?.data?.destination?.name
+    //   } `,
+    //   redirect: `/tour-list-details/${id}`,
+    // },
     {
       txt: `${t("featuredLinks.customizeOurTrip")} ${
         data?.data?.destination?.name
@@ -151,6 +151,9 @@ const TouristGuide = () => {
   }
 
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
+
+  console.log(data?.data);
+  
 
 
   return (

@@ -6,8 +6,6 @@ const TravelExploreCard = ({ item, travelMode }) => {
   const { t } = useTranslation();
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
 
-  console.log(item);
-
   return (
     <div
       className="TravelExploreCard rounded-[15px] flex flex-col h-[240px] lg:h-[400px] 2xl:h-[520px] overflow-hidden items-center justify-cente relative bg-cover bg-no-repeat z-[1]"
@@ -46,9 +44,7 @@ const TravelExploreCard = ({ item, travelMode }) => {
                   : travelMode === "travel_details" ||
                     travelMode === "honey_moon"
                   ? `/tour-list-details/${item?.id}`
-                  : `/activities/subcategory/${item?.name}?bg=${imgBaseurl}/${
-                      item?.image || item?.travel_style?.image
-                    }?id=${item.id}`
+                  : `/activities/subcategory/${item.id}`
               );
             }
           }}

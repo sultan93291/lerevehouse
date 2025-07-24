@@ -24,6 +24,8 @@ const ActivitiesSubcategory = () => {
 
   const [metaData, setMetaData] = useState(null);
 
+  const { queryId } = useParams();
+
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -39,22 +41,6 @@ const ActivitiesSubcategory = () => {
   const { id } = useParams();
   const [activeTab, setActiveTab] = useState([]);
 
-  const { heroImg, queryId } = useMemo(() => {
-    const params = new URLSearchParams(location.search);
-    const bgWithId = params.get("bg");
-
-    if (bgWithId) {
-      const [bgUrl, idPart] = bgWithId.split("?");
-      const idParams = new URLSearchParams(idPart);
-      return {
-        heroImg: bgUrl,
-        queryId: idParams.get("id"),
-      };
-    }
-
-    return { heroImg: "", queryId: "" };
-  }, [location.search]);
-
   const { data, error, isLoading } = useGetSingleActivityDetailsQuery(
     queryId || "default",
     {
@@ -63,6 +49,10 @@ const ActivitiesSubcategory = () => {
       refetchOnReconnect: true,
     }
   );
+
+  const heroData = data?.data?.activity_details[0]?.activity;
+
+  console.log(heroData);
 
   useEffect(() => {
     if (error) {
@@ -99,14 +89,18 @@ const ActivitiesSubcategory = () => {
       description={metaData?.description}
     >
       <div>
-        <CommonHeroBanner bg={heroImg} title={id} italic={t("activities")} />
+        <CommonHeroBanner
+          bg={`${imgBaseurl}/${heroData?.image}`}
+          title={heroData?.name}
+          italic={t("activities")}
+        />
         {/* description */}
 
         <section className="2xl:my-20 md:my-10 mt-10 container">
           {/* title */}
           <div>
             <h2 className="text-3xl md:text-4xl xl:text-5xl font-editorsNoteNormal text-center text-primary">
-              {id}{" "}
+              {heroData?.name}{" "}
               <span className="font-editorsNoteItalic">{t("activities")}</span>
             </h2>
           </div>
@@ -129,7 +123,7 @@ const ActivitiesSubcategory = () => {
             {/* title */}
             <div>
               <h2 className="text-3xl text-primary font-editorsNoteNormal">
-                {t("see")} {id} {t("activitiesByYourself")}
+                {t("see")} {heroData?.name} {t("activitiesByYourself")}
               </h2>
             </div>
 

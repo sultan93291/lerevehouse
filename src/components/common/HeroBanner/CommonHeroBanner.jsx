@@ -30,14 +30,14 @@ const CommonHeroBanner = ({
           (isDangerousHtml ? (
             <div
               dangerouslySetInnerHTML={{ __html: decode(subSubTittle) }}
-              className="text-[24px] text-white font-medium leading-[150%] tracking-[1px]"
+              className="text-[24px]  text-white font-medium leading-[150%] tracking-[1px]"
             ></div>
           ) : (
             <span className="!text-[24px] !text-white !font-medium !leading-[150%] !tracking-[1px]">
               {subSubTittle}
             </span>
           ))}
-        <h1 className="text-2xl md:text-4xl xl:text-6xl text-center xl:text-left font-editorsNoteNormal font-light text-white xl:leading-[102.4px]">
+        <h1 className="text-2xl md:text-4xl xl:text-6xl text-center  font-editorsNoteNormal font-light text-white xl:leading-[102.4px]">
           <span
             className={`${
               uppercaseTitle ? "uppercase" : "capitalize"
