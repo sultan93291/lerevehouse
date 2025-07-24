@@ -70,6 +70,9 @@ const TravelStyleDetailsPage = () => {
 
   console.log(`${imgBaseurl}/${singleData?.data[0]?.image}}`);
 
+  console.log(singleData);
+  
+
   return (
     <HelmetComponent
       title={metaData?.title}
@@ -78,6 +81,7 @@ const TravelStyleDetailsPage = () => {
       <CommonHeroBanner
         bg={`${imgBaseurl}/${singleData?.data[0]?.image}`}
         title={singleData?.data[0]?.title}
+        altTxt={singleData?.data[0]?.image_alt_txt}
       />
       <ExploreJourney
         data={singleData?.data[0]}

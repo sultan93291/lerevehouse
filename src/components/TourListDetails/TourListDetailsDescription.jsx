@@ -8,8 +8,12 @@ const TourListDetailsDescription = descreptionData => {
     setIsExpanded(!isExpanded);
   };
   return (
-    <div id="description"  className="my-7 tour-desc sm:my-10">
-      {parse(descreptionData?.descreptionData)}
+    <div
+      dangerouslySetInnerHTML={{ __html: descreptionData?.descreptionData }}
+      id="description"
+      className="my-7 sm:my-10 py-6 sm:py-8   text-base sm:text-lg 2xl:text-xl  text-gray-800 leading-[160%] "
+    >
+
     </div>
   );
 };

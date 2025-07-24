@@ -1,36 +1,39 @@
 import { AiOutlineInfoCircle } from "react-icons/ai";
 
-const CommonHeroBannerV2 = ({ item, bgImg, isAcitivity }) => {
-
+const CommonHeroBannerV2 = ({ item, bgImg, isAcitivity, altTxt }) => {
   return (
-    <section
-      className="mt-24 bg-cover bg-center 2xl:pt-[130px] md:pt-[90px] pt-14 pb-[70px]"
-      style={{
-        backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${bgImg})`,
-        backgroundColor: "lightgray",
-        backgroundPosition: "50%",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
-    >
-      <div className="container">
+    <section className="relative mt-24 2xl:pt-[130px] md:pt-[90px] pt-14 pb-[70px] overflow-hidden">
+      {/* Background image */}
+      <img
+        src={bgImg}
+        alt={altTxt}
+        className="absolute inset-0 w-full h-full object-cover z-0"
+      />
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/40 z-10"></div>
+
+      {/* Content */}
+      <div className="relative z-20 container">
         <div className="text-center max-w-[1030px] mx-auto">
           <p className="py-[6px] px-[12px] font-interTight bg-[#004265] rounded-[5px] text-[12px] font-medium inline-block text-white uppercase">
             {item?.title}
           </p>
+
           <div
             dangerouslySetInnerHTML={{
               __html: item?.subtitle || item.sub_title,
             }}
             className="text-[25px] xs:text-[28px] sm:text-[32px] lg:text-[40px] 2xl:text-[56px] font-editorsNoteNormal capitalize text-white leading-normal mt-3"
           ></div>
-          {/* <p className="text-[15px] lg:text-[18px] font-interTight mt-4 text-white"></p> */}
+
           <div
             dangerouslySetInnerHTML={{
               __html: item?.description || item.short_description,
             }}
             className="lg:mt-8 text-[15px] lg:text-[18px] text-white font-interTight lg:leading-9 leading-6 px-0 md:px-5"
           ></div>
+
           {!isAcitivity && (
             <div className="sm:mt-8 mt-4 flex items-center justify-center gap-4 sm:gap-8">
               <div className="text-center">

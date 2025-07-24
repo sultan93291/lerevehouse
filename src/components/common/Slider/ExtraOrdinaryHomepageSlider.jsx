@@ -1,30 +1,31 @@
 /* eslint-disable react/prop-types */
-import { LinkSvgSlider } from '../SvgContainer/SvgContainer';
-import { Link } from 'react-router-dom';
+import { LinkSvgSlider } from "../SvgContainer/SvgContainer";
+import { Link } from "react-router-dom";
+
 const ExtraOrdinaryHomepageSlider = ({ destination }) => {
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
-  console.log(destination);
-  
-  
+
   return (
-    <div
-      className=" h-[300px] lg:h-[500px] flex items-end justify-center py-10 w-[220px] lg:w-[350px]"
-      style={{
-        background: `url(${imgBaseurl}/${destination?.image})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat:"no-repeat"
-      }}
-    >
-      <Link
-        to={`/destination-details/${destination.id}`}
-        className="flex items-center gap-2 font-interTight text-base md:text-lg px-2 lg:text-xl text-white"
-      >
-        <h5 className="uppercase">{destination?.name}</h5>
-        <span>
-          <LinkSvgSlider />
-        </span>
-      </Link>
+    <div className="relative h-[300px] lg:h-[500px] w-[220px] lg:w-[350px] overflow-hidden">
+      {/* Main image */}
+      <img
+        src={`${imgBaseurl}/${destination?.image}`}
+        alt={destination?.image_alt_txt}
+        className="h-full w-full object-cover"
+      />
+
+      {/* Overlay content */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center justify-center">
+        <Link
+          to={`/destination-details/${destination?.id}`}
+          className="flex items-center gap-2 font-interTight text-base md:text-lg lg:text-xl px-2 text-white"
+        >
+          <h5 className="uppercase">{destination?.name}</h5>
+          <span>
+            <LinkSvgSlider />
+          </span>
+        </Link>
+      </div>
     </div>
   );
 };

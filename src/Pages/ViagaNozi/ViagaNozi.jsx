@@ -84,6 +84,7 @@ const ViagaNozi = () => {
 
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
 
+
   return (
     <HelmetComponent
       title={metaData?.title}
@@ -92,6 +93,7 @@ const ViagaNozi = () => {
       <CommonHeroBanner
         bg={`${imgBaseurl}/${honeyMoondata?.data?.background_image}`}
         title={honeyMoondata?.data?.title}
+        altTxt={honeyMoondata?.image_alt_txt}
       />
       <ExploreJourney
         data={honeyMoonDetailsData.data}

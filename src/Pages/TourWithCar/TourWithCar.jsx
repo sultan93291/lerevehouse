@@ -60,6 +60,7 @@ const TourWithCar = () => {
         <CommonHeroBanner
           bg={`${imgBaseUrl}/${data?.data?.image}`}
           title={data?.data?.title}
+          altTxt={data?.data?.image_alt_txt}
         />
 
         <div className="flex flex-col xl:gap-y-[112px] gap-y-10 py-4 container">
@@ -152,8 +153,6 @@ const TourWithCar = () => {
 
                 <div className="flex flex-wrap justify-center gap-5">
                   {data?.data.transportation_mediums?.map((item, idx) => {
-                    console.log(item);
-
                     return (
                       <div
                         key={idx}
@@ -167,7 +166,7 @@ const TourWithCar = () => {
                         <img
                           src={`${imgBaseUrl}/${item?.image}`}
                           className="w-full h-[192px] object-cover"
-                          alt={item?.name}
+                          alt={item?.image_alt_txt}
                         />
                         <div className="flex flex-col gap-y-3 items-center">
                           <h2 className="text-[#1687C7] text-2xl md:text-[32px] font-interTight">

@@ -6,7 +6,6 @@ import {
 } from "@/components/common/SvgContainer/SvgContainer";
 
 const MapSection = ({ data }) => {
-
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
 
   return (
@@ -15,7 +14,7 @@ const MapSection = ({ data }) => {
         <div className="hidden xl:block md:h-[460px] md:w-[641px] 2xl:flex items-center justify-center">
           <img
             src={`${imgBaseurl}/${data[0]?.map_image}`}
-            alt="SVG Image"
+            alt={data[0]?.image_alt_txt}
             className="h-full w-full object-contain"
           />
         </div>
@@ -30,7 +29,7 @@ const MapSection = ({ data }) => {
                 {data[0]?.first_question}
               </h4>
               <span className="text-text-gray text-sm md:text-[16px] font-normal max-w-[577px] leading-[150%] tracking-[1px] font-interTight">
-                {data[0].first_answer}
+                {data[0]?.first_answer}
               </span>
             </div>
           </div>

@@ -56,6 +56,7 @@ const SingleCanadaTour = () => {
   }
 
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
+  
 
   return (
     <section className=" mt-10 flex flex-col">
@@ -64,6 +65,7 @@ const SingleCanadaTour = () => {
         italic={false}
         subTittle={data?.data?.sub_title}
         bg={`${imgBaseurl}/${data?.data?.image}`}
+        altTxt={data?.data?.image_alt_txt}
       />
       <div className="flex flex-col 4xl:pt-[110px] xl:pt-12 lg:pt-8 2xl:gap-y-[108px] gap-y-14">
         <MapSection data={data?.data?.tourist_guide_details} />

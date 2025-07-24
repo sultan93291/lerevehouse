@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const SingleDestinationCard = ({
   bg,
@@ -7,36 +7,45 @@ const SingleDestinationCard = ({
   height,
   id,
   isTravelGuide = false,
+  altTxt,
+  subTittle,
 }) => {
   const navigate = useNavigate();
 
-  // /tourist-guide/:id
+  const handleClick = () => {
+    const path = isTravelGuide
+      ? `/tourist-guide/${id}`
+      : `/destination-details/${id}`;
+    navigate(path);
+  };
 
   return (
     <div
-      onClick={() => {
-        if (isTravelGuide) {
-          navigate(`/tourist-guide/${id}`);
-        } else {
-          navigate(`/destination-details/${id}`);
-        }
-      }}
-      className={`${
-        height == "full"
-          ? " h-[250px] 3xl:h-[650px]"
-          : " h-[250px] 3xl:h-[450px]"
-      } group hover:bg-opacity-55 transition-all duration-500 bg-center cursor-pointer w-full flex items-center justify-center text-white`}
-      style={{
-        backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url(${bg})`,
-        backgroundColor: "lightgray",
-        backgroundPosition: "50%",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
+      onClick={handleClick}
+      className={`relative group cursor-pointer w-full overflow-hidden ${
+        height === "full"
+          ? "h-[250px] 3xl:h-[650px]"
+          : "h-[250px] 3xl:h-[450px]"
+      }`}
     >
-      <p className=" text-2xl 3xl:text-4xl font-semibold font-editorsNoteNormal text-center xl:text-left group-hover:scale-105 transition-all duration-500">
-        {title}
-      </p>
+      <img
+        src={bg}
+        alt={altTxt}
+        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-55 transition-all duration-500" />
+      <div className="absolute inset-0 flex items-center justify-center px-4 text-center">
+        <div className="flex px-2 flex-col gap-y-2 items-center">
+          <p className="text-white text-2xl 3xl:text-4xl font-semibold font-editorsNoteNormal transition-all duration-500 group-hover:scale-105 drop-shadow-md">
+            {title}
+          </p>
+          {subTittle && (
+            <p className="text-white text-base 3xl:text-lg font-light opacity-90 transition-all duration-500 group-hover:scale-[1.03] drop-shadow">
+              {subTittle}
+            </p>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
