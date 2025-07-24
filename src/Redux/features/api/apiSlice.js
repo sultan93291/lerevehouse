@@ -259,6 +259,13 @@ export const apiSlice = createApi({
       }),
     }),
 
+    getHoneyMoonDetailsSection: builder.query({
+      query: () => ({
+        url: `/cms/honeymoon-details-section`,
+        method: `GET`,
+      }),
+    }),
+
     getAllTransportationData: builder.query({
       query: () => ({
         url: `/transportations`,
@@ -488,4 +495,5 @@ export const {
   useGetTravelStylesDetailsDataQuery,
   useMetaDetailsDataMutation,
   useGetAccomadationDetailsQuery,
+  useGetHoneyMoonDetailsSectionQuery,
 } = apiSlice;
