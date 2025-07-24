@@ -152,6 +152,7 @@ const TouristGuide = () => {
 
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
 
+
   return (
     <HelmetComponent
       title={metaData?.title}
@@ -166,7 +167,7 @@ const TouristGuide = () => {
             ></div>
             <div className="flex items-center flex-col 2xl:flex-row 2xl:gap-x-[155px] gap-12">
               <img
-                src={canadaMap}
+                src={`${imgBaseurl}/${data?.data?.map}`}
                 className="hidden xl:block md:w-[750px] md:h-[471px]"
                 alt="not foun"
               />
@@ -293,4 +294,3 @@ const TouristGuide = () => {
 
 export default TouristGuide;
 
-// re pushing
