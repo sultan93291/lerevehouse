@@ -152,7 +152,6 @@ const TouristGuide = () => {
 
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
 
-  console.log(data.data);
 
   return (
     <HelmetComponent
@@ -295,4 +294,3 @@ const TouristGuide = () => {
 
 export default TouristGuide;
 
-// re pushing
