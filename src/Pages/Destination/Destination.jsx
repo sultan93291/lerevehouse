@@ -36,7 +36,7 @@ const Destination = () => {
     refetchOnReconnect: true,
   });
 
-  // Fetch hero section data
+
   const {
     data: heroSectionData,
     error: heroSectionError,
@@ -123,15 +123,18 @@ const Destination = () => {
                   row.length >= 3 ? "lg:flex-nowrap" : "md:flex-nowrap"
                 } gap-4 3xl:gap-7`}
               >
-                {row.map((destination, cardIndex) => (
-                  <SingleDestinationCard
-                    key={destination?.id}
-                    bg={`${imgBaseurl}/${destination?.image}`}
-                    title={destination?.name.trim()}
-                    height={getCardHeight(rowIndex, cardIndex)}
-                    id={destination?.id}
-                  />
-                ))}
+                {row.map((destination, cardIndex) => {                  
+                  return (
+                    <SingleDestinationCard
+                      key={destination?.id}
+                      bg={`${imgBaseurl}/${destination?.image}`}
+                      title={destination?.name.trim()}
+                      height={getCardHeight(rowIndex, cardIndex)}
+                      id={destination?.id}
+                      subTittle={destination?.subtitle}
+                    />
+                  );
+                })}
               </div>
             ))}
           </div>
