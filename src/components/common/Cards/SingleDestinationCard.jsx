@@ -19,6 +19,8 @@ const SingleDestinationCard = ({
     navigate(path);
   };
 
+  console.log(subTittle);
+
   return (
     <div
       onClick={handleClick}
@@ -33,7 +35,7 @@ const SingleDestinationCard = ({
         alt={altTxt}
         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
       />
-      <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-55 transition-all duration-500" />
+      <div className="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-55 transition-all duration-500" />
       <div className="absolute inset-0 flex items-center justify-center px-4 text-center">
         <div className="flex px-2 flex-col gap-y-2 items-center">
           <p className="text-white text-2xl 3xl:text-4xl font-semibold font-editorsNoteNormal transition-all duration-500 group-hover:scale-105 drop-shadow-md">
