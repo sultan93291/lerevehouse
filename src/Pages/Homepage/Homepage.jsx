@@ -18,7 +18,6 @@ import HelmetComponent from "@/components/Helmet/Helmet";
 const Homepage = () => {
   const [metaDetailsData, { isLoading, isSuccess, isError }] =
     useMetaDetailsDataMutation();
-
   const [metaData, setMetaData] = useState(null);
 
   const {
