@@ -7,7 +7,7 @@ import RequestedTripCard from "@/components/common/Cards/RequestedTripCard";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-const RequestedTrips = () => {
+const RequestedTrips = ({ title }) => {
   const { t } = useTranslation();
 
   const { data, error, isLoading } = useGetRequestedTripsQuery(undefined, {
@@ -56,12 +56,7 @@ const RequestedTrips = () => {
       {/* Title */}
       <div>
         <h2 className="text-center text-3xl 2xl:text-5xl font-editorsNoteNormal text-primary">
-          {t("requestedTrips.sectionTitle.part1")}{" "}
-          <span className="text-secondary">
-            {t("requestedTrips.sectionTitle.highlight")}
-          </span>{" "}
-          {t("requestedTrips.sectionTitle.part2")} <br />{" "}
-          {t("requestedTrips.sectionTitle.part3")}
+          {title}
         </h2>
       </div>
 

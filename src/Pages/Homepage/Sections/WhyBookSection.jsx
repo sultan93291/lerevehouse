@@ -3,17 +3,19 @@ import { forwardRef } from "react";
 import { useGetWhyBookWithLereveHouseQuery } from "@/Redux/features/api/apiSlice";
 import { useTranslation } from "react-i18next";
 
-const WhyBookSection = forwardRef(({ ...props }, ref) => {
-   const { data, error, isLoading } = useGetWhyBookWithLereveHouseQuery(
-     undefined,
-     {
-       refetchOnFocus: true,
-       refetchOnReconnect: true,
-     }
+const WhyBookSection = forwardRef(({ title, ...props }, ref) => {
+  const { data, error, isLoading } = useGetWhyBookWithLereveHouseQuery(
+    undefined,
+    {
+      refetchOnFocus: true,
+      refetchOnReconnect: true,
+    }
   );
 
   const { t } = useTranslation();
-  
+
+  console.log(title);
+
   return (
     <section
       ref={ref}
@@ -23,13 +25,13 @@ const WhyBookSection = forwardRef(({ ...props }, ref) => {
     >
       <div>
         <h2 className=" text-[28px] md:text-4xl xl:text-5xl font-editorsNoteNormal text-center text-primary">
-          {t("whyBookHeading")}
+          {title}
         </h2>
       </div>
 
       {/* cards */}
       <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-12 mb-16 mt-10">
-        {data?.data?.map((info) => (
+        {data?.data?.map(info => (
           <BookCard key={info?.title} info={info} />
         ))}
       </div>

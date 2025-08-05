@@ -3,12 +3,16 @@ import footerLogo from "../assets/images/logo-light.png";
 import { Link } from "react-router-dom";
 import {
   useGetFooterLinkDataQuery,
+  useGetFooterNavDataQuery,
+  useGetNewsLetterTxtQuery,
   useGetOfficeDataQuery,
   useGetSiteSettingDataQuery,
+  useSubscribeNewsletterMutation,
 } from "@/Redux/features/api/apiSlice";
 import toast from "react-hot-toast";
 import { InfinitySpin } from "react-loader-spinner";
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -16,6 +20,42 @@ const Footer = () => {
     refetchOnFocus: true,
     refetchOnReconnect: true,
   });
+
+  const {
+    data: newsLetterTxt,
+    error: newsLetterError,
+    isLoading: isNewsLetterLoading,
+  } = useGetNewsLetterTxtQuery(undefined, {
+    refetchOnFocus: true,
+    refetchOnReconnect: true,
+  });
+
+  const {
+    data: footerData,
+    error: footerError,
+    isLoading: isFooterLoading,
+  } = useGetFooterNavDataQuery(undefined, {
+    refetchOnFocus: true,
+    refetchOnReconnect: true,
+  });
+
+  const [
+    subscribeNewsletter,
+    { isLoading: isSubscribeLoading, isSuccess, error: isSubscribeError },
+  ] = useSubscribeNewsletterMutation();
+
+  const [email, setemail] = useState();
+
+  const handleNewsletterSubmit = async () => {
+    if (!email)
+      return toast.error("Before submitting please add your email address");
+    try {
+      const res = await subscribeNewsletter({ email }).unwrap();
+      toast.success(res?.message);
+    } catch (err) {
+      console.error("Subscription failed", err);
+    }
+  };
 
   const {
     data: officeData,
@@ -111,18 +151,13 @@ const Footer = () => {
               {t("footer.discover")}
             </h4>
             <div className="space-y-3 text-sm lg:text-base cursor-pointer">
-              <p>
-                <Link to="/destination-details/2">{t("footer.trip")}</Link>
-              </p>
-              <p>
-                <Link to="/viaggi-noze">{t("footer.honeymoon")}</Link>
-              </p>
-              <p>
-                <Link to="/tourist-guide">{t("footer.tourist")}</Link>
-              </p>
-              {/* <p>
-                <Link to="/canada-map">{t("footer.canada")}</Link>
-              </p> */}
+              {footerData?.data?.map((item, idx) => {
+                return (
+                  <p key={idx}>
+                    <Link to={item?.link_url}>{item?.link_text}</Link>
+                  </p>
+                );
+              })}
             </div>
           </div>
 
@@ -130,11 +165,14 @@ const Footer = () => {
           <div>
             <div className="space-y-3">
               <h4 className="text-xl xl:text-3xl font-semibold">
-                {t("footer.newsletterTitle")}
+                {newsLetterTxt?.data[0]?.title}
               </h4>
-              <p className="text-sm lg:text-base">
-                {t("footer.newsletterText")}
-              </p>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: newsLetterTxt?.data[0]?.short_description,
+                }}
+                className="text-sm lg:text-base"
+              ></div>
             </div>
 
             <form className="mt-5 space-y-5">
@@ -145,16 +183,22 @@ const Footer = () => {
                     className="focus:outline-none text-text-black w-[150px] lg:w-full"
                     placeholder={t("footer.emailPlaceholder")}
                     type="email"
+                    onChange={e => {
+                      setemail(e.target.value);
+                    }}
                   />
                 </div>
               </label>
 
               <button
-                onClick={e => e.preventDefault()}
+                onClick={e => {
+                  e.preventDefault();
+                  handleNewsletterSubmit();
+                }}
                 type="submit"
                 className="bg-secondary px-8 2xl:px-10 3xl:px-20 py-3 font-interTight text-white font-semibold transition-all duration-300 hover:bg-white border border-secondary hover:text-secondary"
               >
-                {t("footer.signupBtn")}
+                {newsLetterTxt?.data[0]?.button_text}
               </button>
             </form>
           </div>
