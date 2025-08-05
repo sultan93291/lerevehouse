@@ -4,10 +4,19 @@ import HeroBtn from "../common/Buttons/HeroBtn";
 import { Modal } from "../Modals/Modal";
 import HeroReviewButton from "./HeroReviewButton";
 import TestModal from "../Modals/TestModal";
+import { useNavigate } from "react-router-dom";
 
-const HeroSlide = ({ vidoeUrl, title, subTitle, btnTxt }) => {
+const HeroSlide = ({
+  vidoeUrl,
+  title,
+  subTitle,
+  btnTxt,
+  isExternalBtnLink,
+  buttonLink,
+}) => {
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
 
   const renderTitle = text => {
     const regex = /(.*?)\s*(?:&|and)\s+(\w+)\s*(.*)/i;
@@ -54,7 +63,15 @@ const HeroSlide = ({ vidoeUrl, title, subTitle, btnTxt }) => {
           <h4 className="font-interTight font-semibold text-lg lg:text-xl">
             {subTitle}
           </h4>
-          <div onClick={() => setOpen(true)}>
+          <div
+            onClick={
+              isExternalBtnLink === 1
+                ? () => {
+                    window.open(buttonLink, "_blank");
+                  }
+                : () => setOpen(true)
+            }
+          >
             <HeroBtn btnTxt={btnTxt} />
           </div>
         </div>

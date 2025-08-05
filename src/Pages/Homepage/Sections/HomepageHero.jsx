@@ -16,6 +16,11 @@ const HomepageHero = () => {
       refetchOnReconnect: true,
     }
   );
+
+  console.log(data?.data);
+  
+
+  
   
   return (
     <div className="-mt-[56px] 2xl:mt-0 4xl:-mt-[56px] relative">
@@ -41,6 +46,8 @@ const HomepageHero = () => {
               title={item?.title}
               subTitle={item?.short_description}
               btnTxt={item?.button_text}
+              isExternalBtnLink={item?.is_link_available}
+              buttonLink={item?.button_link}
             />
           </SwiperSlide>
         ))}
