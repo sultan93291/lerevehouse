@@ -15,7 +15,7 @@ import { InfinitySpin } from "react-loader-spinner";
 import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 
-const HomepageTestimonials = () => {
+const HomepageTestimonials = ({title}) => {
   const { t } = useTranslation();
   const { data, error, isLoading } = useGetAllReviewsQuery(undefined, {
     refetchOnFocus: true,
@@ -54,7 +54,7 @@ const HomepageTestimonials = () => {
         <div className="py-10">
           <h2
             className="text-center text-white font-editorsNoteNormal font-medium text-3xl xl:text-4xl 2xl:text-5xl leading-[128%] lg:leading-[1.1]"
-            dangerouslySetInnerHTML={{ __html: t("homepageTestimonials.title") }}
+            dangerouslySetInnerHTML={{ __html: title }}
           />
         </div>
 

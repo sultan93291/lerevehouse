@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
-import { useMetaDetailsDataMutation } from "@/Redux/features/api/apiSlice";
+import {
+  useGetHomePageTitleQuery,
+  useMetaDetailsDataMutation,
+} from "@/Redux/features/api/apiSlice";
 
 import HomeFaqSection from "./Sections/HomeFaqSection";
 import HomepageAdventure from "./Sections/HomepageAdventure";
@@ -15,8 +18,18 @@ import HelmetComponent from "@/components/Helmet/Helmet";
 const Homepage = () => {
   const [metaDetailsData, { isLoading, isSuccess, isError }] =
     useMetaDetailsDataMutation();
-
   const [metaData, setMetaData] = useState(null);
+
+  const {
+    data,
+    error,
+    isLoading: isHomePageTitleloading,
+  } = useGetHomePageTitleQuery(undefined, {
+    refetchOnFocus: true,
+    refetchOnReconnect: true,
+  });
+
+  console.log(data?.data);
 
   useEffect(() => {
     metaDetailsData("home")
@@ -32,12 +45,12 @@ const Homepage = () => {
     >
       <HomepageHero />
       <HomepageDestinationTabContainer />
-      <WhyBookSection />
-      <RequestedTrips />
+      <WhyBookSection title={data?.data[0].title} />
+      <RequestedTrips title={data?.data[1].title} />
       <HomeFaqSection />
-      <SmartOffersSection />
-      <HomepageTestimonials />
-      <HomepageExtraOrdinarySection />
+      <SmartOffersSection title={data?.data[2].title} />
+      <HomepageTestimonials title={data?.data[3].title} />
+      <HomepageExtraOrdinarySection title={data?.data[4].title} />
       <HomepageAdventure />
     </HelmetComponent>
   );

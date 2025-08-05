@@ -4,28 +4,34 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import { EffectCoverflow, Pagination } from "swiper/modules";
 import ExtraOrdinaryHomepageSlider from "@/components/common/Slider/ExtraOrdinaryHomepageSlider";
-import { NextSlideSvg, PrevSlideSvg } from "@/components/common/SvgContainer/SvgContainer";
+import {
+  NextSlideSvg,
+  PrevSlideSvg,
+} from "@/components/common/SvgContainer/SvgContainer";
 import { useState } from "react";
 import TransparentButton from "@/components/common/Buttons/TransparentButton";
 import { useGetDestinationOvreviewDetailsQuery } from "@/Redux/features/api/apiSlice";
 import { useTranslation } from "react-i18next";
 
-const HomepageExtraOrdinarySection = () => {
+const HomepageExtraOrdinarySection = ({ title }) => {
   const { t } = useTranslation();
-  const { data, error, isLoading } = useGetDestinationOvreviewDetailsQuery(undefined, {
-    refetchOnFocus: true,
-    refetchOnReconnect: true,
-  });
+  const { data, error, isLoading } = useGetDestinationOvreviewDetailsQuery(
+    undefined,
+    {
+      refetchOnFocus: true,
+      refetchOnReconnect: true,
+    }
+  );
 
   const [swiperRef, setSwiperRef] = useState(null);
 
   return (
     <section className="container mx-auto px-4 lg:px-8 2xl:px-16 3xl:px-32 mb-10 lg:mb-20">
       {/* Title */}
-      <div className="py-5 xl:py-10">
+      <div className="py-5 flex items-center justify-center xl:py-10">
         <h2
-          className="text-center text-primary font-editorsNoteNormal font-medium text-3xl xl:text-4xl 2xl:text-5xl leading-[128%] lg:leading-[1.1]"
-          dangerouslySetInnerHTML={{ __html: t("extraOrdinarySection.heading") }}
+          className="text-center max-w-[650px] text-primary   font-medium text-3xl xl:text-4xl 2xl:text-5xl leading-[128%] lg:leading-[1.1]"
+          dangerouslySetInnerHTML={{ __html: title }}
         />
       </div>
 
@@ -72,7 +78,10 @@ const HomepageExtraOrdinarySection = () => {
 
       {/* Button */}
       <div className="mt-10 flex items-center justify-center">
-        <TransparentButton title={t("extraOrdinarySection.button")} path="/destination" />
+        <TransparentButton
+          title={t("extraOrdinarySection.button")}
+          path="/destination"
+        />
       </div>
     </section>
   );

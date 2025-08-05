@@ -434,6 +434,42 @@ export const apiSlice = createApi({
         method: `GET`,
       }),
     }),
+
+    subscribeNewsletter: builder.mutation({
+      query: data => ({
+        url: `/newsletter-subscriber-store`,
+        method: `POST`,
+        data: data,
+      }),
+    }),
+
+    footerAboveSection: builder.query({
+      query: () => ({
+        url: `/cms/footer-above-section`,
+        method: `GET`,
+      }),
+    }),
+
+    getNewsLetterTxt: builder.query({
+      query: () => ({
+        url: `/cms/footer-newsletter`,
+        method: `GET`,
+      }),
+    }),
+
+    getFooterNavData: builder.query({
+      query: () => ({
+        url: `/cms/footer-links`,
+        method: `GET`,
+      }),
+    }),
+
+    getHomePageTitle: builder.query({
+      query: () => ({
+        url: `/cms/home-page-titles`,
+        method:`GET`
+      }),
+    }),
   }),
 });
 
@@ -496,4 +532,10 @@ export const {
   useMetaDetailsDataMutation,
   useGetAccomadationDetailsQuery,
   useGetHoneyMoonDetailsSectionQuery,
+  useSubscribeNewsletterMutation,
+  useFooterAboveSectionQuery,
+  useGetNewsLetterTxtQuery,
+  useGetHomePageTitleQuery,
+  useGetFooterNavDataQuery
+
 } = apiSlice;

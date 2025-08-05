@@ -2,12 +2,15 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import DestinationCard from "@/components/common/Cards/DestinationCard";
-import { NextSlideSvg, PrevSlideSvg } from "@/components/common/SvgContainer/SvgContainer";
+import {
+  NextSlideSvg,
+  PrevSlideSvg,
+} from "@/components/common/SvgContainer/SvgContainer";
 import { useState } from "react";
 import { useGetSmartOfferDataQuery } from "@/Redux/features/api/apiSlice";
 import { useTranslation } from "react-i18next";
 
-const SmartOffersSection = () => {
+const SmartOffersSection = ({ title }) => {
   const { data } = useGetSmartOfferDataQuery(undefined, {
     refetchOnFocus: true,
     refetchOnReconnect: true,
@@ -22,7 +25,7 @@ const SmartOffersSection = () => {
       <div>
         <h2
           className="text-center text-4xl xl:text-5xl font-editorsNoteNormal text-primary"
-          dangerouslySetInnerHTML={{ __html: t("smartOffers.heading") }}
+          dangerouslySetInnerHTML={{ __html: title }}
         />
       </div>
 
@@ -39,7 +42,7 @@ const SmartOffersSection = () => {
           onSwiper={setSwiperRef}
           className="mySwiper"
         >
-          {data?.data?.map((item) => (
+          {data?.data?.map(item => (
             <SwiperSlide key={item?.destinationTitle}>
               <DestinationCard item={item} />
             </SwiperSlide>
