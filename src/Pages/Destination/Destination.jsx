@@ -3,13 +3,13 @@ import SingleDestinationCard from "@/components/common/Cards/SingleDestinationCa
 import {
   useGetDestinationOvreviewDetailsQuery,
   useGetDestinationsHeroSectionDataQuery,
+  useGetDestinationTitleQuery,
   useMetaDetailsDataMutation,
 } from "@/Redux/features/api/apiSlice";
 import { InfinitySpin } from "react-loader-spinner";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import HelmetComponent from "@/components/Helmet/Helmet";
-
 
 const Destination = () => {
   const [
@@ -32,6 +32,15 @@ const Destination = () => {
     isLoading,
     error,
   } = useGetDestinationOvreviewDetailsQuery(undefined, {
+    refetchOnFocus: true,
+    refetchOnReconnect: true,
+  });
+
+  const {
+    data: destinationTitle,
+    isLoading: dsetinationTitleLoadin,
+    error: destinationError,
+  } = useGetDestinationTitleQuery(undefined, {
     refetchOnFocus: true,
     refetchOnReconnect: true,
   });
@@ -113,7 +122,7 @@ const Destination = () => {
       <section className="my-8 md:my-10 3xl:my-20 container mx-auto">
         <div>
           <h2 className="text-3xl lg:text-4xl 3xl:text-5xl font-editorsNoteNormal text-primary">
-            {t("destination.ourDestinations")}
+            {destinationTitle?.data[0]?.title}
           </h2>
           <div className="mt-7 xs:mt-8 xl:mt-10 3xl:mt-16 flex flex-col gap-4 3xl:gap-7">
             {groupDestinations().map((row, rowIndex) => (
@@ -123,7 +132,7 @@ const Destination = () => {
                   row.length >= 3 ? "lg:flex-nowrap" : "md:flex-nowrap"
                 } gap-4 3xl:gap-7`}
               >
-                {row.map((destination, cardIndex) => {                  
+                {row.map((destination, cardIndex) => {
                   return (
                     <SingleDestinationCard
                       key={destination?.id}

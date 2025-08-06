@@ -2,7 +2,6 @@ import React from "react";
 
 const TripAttraction = ({ data }) => {
   
-  
   return (
     <section className="2xl:py-20 pt-16 pb-7">
       <div className="container">

@@ -5,6 +5,9 @@ const ExploreJourney = ({ btnTxt, isBtn, data }) => {
   const { id } = useParams();
   const { t } = useTranslation();
 
+  console.log(data);
+  
+
 
   return (
     <section className="py-8 xl:py-20  bg-[#F5F3F4] xl:px-5 2xl:px-14">
