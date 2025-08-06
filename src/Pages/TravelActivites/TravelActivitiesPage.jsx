@@ -9,6 +9,7 @@ import {
   useGetActivityDetailsQuery,
   useGetAcitivitySloganDataQuery,
   useMetaDetailsDataMutation,
+  useGetActivityTitleQuery,
 } from "@/Redux/features/api/apiSlice";
 import { InfinitySpin } from "react-loader-spinner";
 import toast from "react-hot-toast";
@@ -41,6 +42,18 @@ const TravelActivitiesPage = () => {
       refetchOnReconnect: true,
     }
   );
+
+  const {
+    data: activityTitle,
+    error: activityTitleError,
+    isLoading: isAcitivityLoading,
+  } = useGetActivityTitleQuery(undefined, {
+    refetchOnFocus: true,
+    refetchOnReconnect: true,
+  });
+
+  console.log(activityTitle);
+
   const {
     data: activityDetails,
     error: activityDetailsError,
@@ -106,7 +119,6 @@ const TravelActivitiesPage = () => {
 
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
 
-  console.log(activitySloganData?.data);
 
   return (
     <HelmetComponent
@@ -120,7 +132,7 @@ const TravelActivitiesPage = () => {
         altTxt={data?.data?.image_alt_txt}
       />
       <TripAttraction data={activityDetails?.data[0]} />
-      <BrowseThings />
+      <BrowseThings title={activityTitle.data[1].title} />
       {/* <ActivitiesCanDo /> */}
       <div className="2xl:pt-20">
         <TravelCta

@@ -4,8 +4,10 @@ import ExploreJourney from "@/components/TravelStylesDetails/ExploreJourney";
 import FeaturedTravels from "@/components/TravelStylesDetails/FeaturedTravels";
 import HoneyMoon from "../../assets/images/honey-moon/honeymoon.png";
 import {
+  useGetHomePageTitleQuery,
   useGetHoneyMoonDetailsSectionQuery,
   useGetHoneyMoonHeroSectionDataQuery,
+  useGetHoneyMoonTitleQuery,
   useGetTransportationHeroSectionDataQuery,
   useGetTripPackageDetailsQuery,
   useMetaDetailsDataMutation,
@@ -35,6 +37,17 @@ const ViagaNozi = () => {
     refetchOnFocus: true,
     refetchOnReconnect: true,
   });
+
+  const {
+    data: honeyMoonData,
+    error: honeymoonError,
+    isLoading: isHoneyMoonLoading,
+  } = useGetHoneyMoonTitleQuery(id, {
+    refetchOnFocus: true,
+    refetchOnReconnect: true,
+  });
+
+  console.log(honeyMoonData);
 
   const {
     data: honeyMoonDetailsData,
@@ -84,7 +97,6 @@ const ViagaNozi = () => {
 
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
 
-
   return (
     <HelmetComponent
       title={metaData?.title}
@@ -100,7 +112,11 @@ const ViagaNozi = () => {
         isBtn={false}
         btnTxt={"All honeymoon Trips "}
       />
-      <FeaturedTravels data={data?.data} isHoneyMoon={true} />
+      <FeaturedTravels
+        data={data?.data}
+        isHoneyMoon={true}
+        title={honeyMoonData?.data[0]?.title}
+      />
     </HelmetComponent>
   );
 };

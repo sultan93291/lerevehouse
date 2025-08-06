@@ -3,6 +3,7 @@ import SingleDestinationCard from "@/components/common/Cards/SingleDestinationCa
 import {
   useGetDestinationOvreviewDetailsQuery,
   useGetDestinationsHeroSectionDataQuery,
+  useGetDestinationTitleQuery,
   useGetTravelMainHeroSectionDataQuery,
   useMetaDetailsDataMutation,
 } from "@/Redux/features/api/apiSlice";
@@ -19,6 +20,15 @@ const TravelGuide = () => {
     isLoading,
     error,
   } = useGetDestinationOvreviewDetailsQuery(undefined, {
+    refetchOnFocus: true,
+    refetchOnReconnect: true,
+  });
+
+  const {
+    data: destinationTitle,
+    isLoading: dsetinationTitleLoadin,
+    error: destinationError,
+  } = useGetDestinationTitleQuery(undefined, {
     refetchOnFocus: true,
     refetchOnReconnect: true,
   });
@@ -98,8 +108,6 @@ const TravelGuide = () => {
   }
   if (error || heroSectionError) return <div>Error loading data</div>;
 
-  console.log(heroSectionData);
-
   return (
     <HelmetComponent
       title={metaData?.title}
@@ -117,7 +125,7 @@ const TravelGuide = () => {
       <section className="my-8 md:my-10 3xl:my-20 container mx-auto">
         <div>
           <h2 className="text-3xl lg:text-4xl 3xl:text-5xl font-editorsNoteNormal text-primary">
-            {t("travelGuide.ourDestinations")}
+            {destinationTitle?.data[0]?.title}
           </h2>
 
           <div className="mt-7 xs:mt-8 xl:mt-10 3xl:mt-16 flex flex-col gap-4 3xl:gap-7">
@@ -142,7 +150,6 @@ const TravelGuide = () => {
                       altTxt={destination?.image_alt_txt}
                     />
                   );
-                  
                 })}
               </div>
             ))}

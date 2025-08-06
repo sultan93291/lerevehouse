@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 import { useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-const BrowseThings = () => {
+const BrowseThings = ({ title }) => {
   const { t } = useTranslation();
   const { data, error, isLoading } = useGetAllTravelStylesDataQuery(undefined, {
     refetchOnFocus: true,
@@ -51,13 +51,7 @@ const BrowseThings = () => {
     <section className="2xl:py-20 md:py-0 py-1">
       <div className="container">
         <div className="2x:mb-[60px] mb-7 md:mb-10">
-          <h3 className="title--xxl text-center">
-            {t("browseThings.title")}{" "}
-            <span className="text-secondary font-editorsNoteItalic">
-              {t("browseThings.highlight")}
-            </span>{" "}
-            {t("browseThings.subtitle")}
-          </h3>
+          <h3 className="title--xxl text-center">{title}</h3>
         </div>
         <div>
           <div className="grid lg:grid-cols-3 gap-5">

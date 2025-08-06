@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { useGetAllTravelStylesDataQuery } from "@/Redux/features/api/apiSlice";
 import TravelExploreCard from "./TravelExploreCard";
 
-const ExploreTravel = ({ travelMode }) => {
+const ExploreTravel = ({ travelMode, title }) => {
   const { t } = useTranslation();
   const location = useLocation();
 
@@ -11,7 +11,6 @@ const ExploreTravel = ({ travelMode }) => {
     refetchOnFocus: true,
     refetchOnReconnect: true,
   });
-  
 
   return (
     <section className="pb-10 sm:pb-16 xl:pb-[120px] xl:px-5 2xl:px-14">
@@ -19,12 +18,7 @@ const ExploreTravel = ({ travelMode }) => {
         {/* section title */}
         <div className="section-title">
           <h1 className="text-[24px] sm:text-[35px] lg:text-[48px] 2xl:text-[54px] max-w-[1050px] mx-auto text-center font-medium font-editorsNoteNormal leading-normal mb-8 sm:mb-12 lg:mb-20 xl:mb-[100px]">
-            <Trans
-              i18nKey="exploreHeading"
-              components={{
-                italic: <span className="font-editorsNoteItalic text-secondary" />
-              }}
-            />
+            {title}
           </h1>
         </div>
 
