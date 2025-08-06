@@ -8,9 +8,7 @@ import imageSix from "../../assets/images/explore-travel6.png";
 import TravelExploreCard from "../TravelStyles/TravelExploreCard";
 import { useTranslation } from "react-i18next";
 
-
-
-const FeaturedTravels = ({ isHoneyMoon, data }) => {
+const FeaturedTravels = ({ isHoneyMoon, data, title }) => {
   const { t } = useTranslation();
 
   return (
@@ -18,29 +16,27 @@ const FeaturedTravels = ({ isHoneyMoon, data }) => {
       <div className="container">
         <div className="text-center mb-10 lg:mb-20 2xl:mb-[113px]">
           <h3 className="title--xxl">
-            {isHoneyMoon
-              ? t("browseThingss.honeymoonTitle")
-              : t("browseThingss.featuredTitle")}
+            {isHoneyMoon ? title : t("browseThingss.featuredTitle")}
           </h3>
         </div>
         <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5">
           {isHoneyMoon
             ? data?.map(item => (
-              <TravelExploreCard
-                travelMode={isHoneyMoon ? "honey_moon" : "travel_details"}
-                key={item.id}
-                item={item}
-              />
-            ))
-            : data
-              ?.slice(0, 9)
-              ?.map(item => (
                 <TravelExploreCard
-                  key={item.id}
                   travelMode={isHoneyMoon ? "honey_moon" : "travel_details"}
+                  key={item.id}
                   item={item}
                 />
-              ))}
+              ))
+            : data
+                ?.slice(0, 9)
+                ?.map(item => (
+                  <TravelExploreCard
+                    key={item.id}
+                    travelMode={isHoneyMoon ? "honey_moon" : "travel_details"}
+                    item={item}
+                  />
+                ))}
         </div>
       </div>
     </section>

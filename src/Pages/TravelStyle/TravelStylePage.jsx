@@ -7,6 +7,7 @@ import TravelCta from "../../components/TravelStyles/TravelCta";
 import {
   useGetTravelStylesDescreptionDataQuery,
   useGetTravelStylesHeroSectionDataQuery,
+  useGetTravelStyleTitleQuery,
   useMetaDetailsDataMutation,
 } from "@/Redux/features/api/apiSlice";
 import { InfinitySpin } from "react-loader-spinner";
@@ -24,6 +25,17 @@ const TravelStylePage = () => {
       refetchOnReconnect: true,
     }
   );
+
+  const {
+    data: travelStyleTitle,
+    isLoading: isTravelStyleLoading,
+    error: travleSTyleError,
+  } = useGetTravelStyleTitleQuery(undefined, {
+    refetchOnFocus: true,
+    refetchOnReconnect: true,
+  });
+
+  console.log(travelStyleTitle);
 
   const [
     metaDetailsData,
@@ -85,8 +97,6 @@ const TravelStylePage = () => {
   const normalTxt = slicedTxt[0];
   const styledTxt = slicedTxt.slice(1).join(" ");
 
-  
-
   return (
     <HelmetComponent
       title={metaData?.title}
@@ -101,7 +111,10 @@ const TravelStylePage = () => {
         altTxt={data?.data?.image_alt_txt}
       />
       <Description Description={data?.data?.description} />
-      <ExploreTravel travelMode={"styles"} />
+      <ExploreTravel
+        travelMode={"styles"}
+        title={travelStyleTitle?.data[0]?.title}
+      />
       <AdvanturePlaningSection />
       <TravelCta
         imgUrl={`${imgBaseurl}/${descreptionData?.data[0]?.background_image}`}

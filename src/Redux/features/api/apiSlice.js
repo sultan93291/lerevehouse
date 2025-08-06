@@ -467,7 +467,35 @@ export const apiSlice = createApi({
     getHomePageTitle: builder.query({
       query: () => ({
         url: `/cms/home-page-titles`,
-        method:`GET`
+        method: `GET`,
+      }),
+    }),
+
+    getDestinationTitle: builder.query({
+      query: () => ({
+        url: `/cms/destinations-page-titles`,
+        method: `GET`,
+      }),
+    }),
+
+    getTravelStyleTitle: builder.query({
+      query: () => ({
+        url: `/cms/travel-style-page-titles`,
+        method: `GET`,
+      }),
+    }),
+
+    getActivityTitle: builder.query({
+      query: () => ({
+        url: `/cms/activity-page-titles`,
+        method: `GET`,
+      }),
+    }),
+
+    getHoneyMoonTitle: builder.query({
+      query: () => ({
+        url: `/cms/honey-moon-page-titles`,
+        method: `GET`,
       }),
     }),
   }),
@@ -536,6 +564,9 @@ export const {
   useFooterAboveSectionQuery,
   useGetNewsLetterTxtQuery,
   useGetHomePageTitleQuery,
-  useGetFooterNavDataQuery
-
+  useGetFooterNavDataQuery,
+  useGetDestinationTitleQuery,
+  useGetTravelStyleTitleQuery,
+  useGetActivityTitleQuery,
+  useGetHoneyMoonTitleQuery
 } = apiSlice;
