@@ -69,19 +69,18 @@ const TourGuide = () => {
 
   const imgBaseurl = import.meta.env.VITE_SERVER_URL;
 
-  console.log(data?.data);
 
   return (
     <div>
       <CommonHeroBanner
         title={data?.data?.title}
-        subTittle={data?.data?.sub_title}
+        // subTittle={data?.data?.sub_title}
         bg={`${imgBaseurl}/${data?.data?.background_image}`}
         italic={true}
         uppercaseItalic={false}
         altTxt={data?.data?.image_alt_txt}
       />
-      <MapSection data={data?.data} />
+      {/* <MapSection data={data?.data} /> */}
       <TourTab data={allNationalParkData?.data} />
       <div className=" py-5 bg-chocolate">
         <div className="container flex items-center text-white justify-center font-editorsNoteItalic text-2xl md:text-[40px] font-light leading-[160%] ">
